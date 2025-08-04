@@ -1,0 +1,51 @@
+{%- macro include(fileName) -%}
+{%- include fileName ignore missing -%}
+{%- endmacro -%}
+{#- // 들여쓰기(Tab Indent) 조정을 위한 macro -#}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>퍼블리싱리스트</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../../images/bigdatafavicon.png" type="image/x-icon">
+<link href="../../css/common.css" rel="stylesheet" />
+<link href="../../css/guide.css" rel="stylesheet" />
+<script src="../../js/jquery-3.7.0.min.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<script src="../../js/swiper-bundle.min.js"></script>
+<script src="../../js/air-datepicker.js"></script>
+<script src="../../js/main.js"></script>
+</head>
+<body>
+  {# 퍼블리싱 가이드 레이아웃 #}
+<div class="wrap guide">
+  <aside class="aside">
+    {{ include( "pubguide/_menulist.njk" ) | tabIndent(2) }}
+  </aside>
+
+  <main class="container">
+    {% filter tabIndent(1) %}
+      <div class="content">
+        {% block content %}{% endblock %}
+      </div>
+    {%- endfilter %}
+  </main>
+  <!-- // content -->
+
+</div>
+<!-- //wrap -->
+
+<script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DM01.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- 필터 팝업 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">필터</div>
+        <div class="message-box">
+            <p class="message-title">분야</p>
+            <div class="chip-box">
+                <label class="chip"><input type="radio" name="location-radio1" value="" checked><i>분야</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>전체</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>외식</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>여행</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>의료</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>커머스</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>부동산</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>유통</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>소셜</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>통신</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>공공</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>환경</i></label>
+                <label class="chip"><input type="radio" name="location-radio1" value=""><i>모빌리티</i></label>
+            </div>
+            <p class="message-title">사용목적</p>
+            <div class="chip-box">
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>사용목적</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>전체</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>시장조사</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>상권분석</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>고객분석</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>정책</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>상품전략</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>채널분석</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>마케팅</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>연구</i></label>
+                <label class="chip"><input type="radio" name="location-radio2" value=""><i>리스크</i></label>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">초기화</button>
+            <button class="button-p close-modal" type="button">적용하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //필터 팝업 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal1');return false;">[필터]</button>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

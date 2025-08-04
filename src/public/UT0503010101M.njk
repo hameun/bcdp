@@ -1,0 +1,30 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT0503010101.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 데이터 상품을 삭제할 경우 해당 데이터 상품 하위에 등록된 모든 데이터가 삭제됩니다. <br>삭제하시겠습니까?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">삭제</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal_1');return false;">[삭제]</button>
+        <button type="button" class="button-q" onclick="fn_toast('삭제되었습니다',1);return false;">[삭제] 토스트팝업</button>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

@@ -1,0 +1,407 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT0503010102.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_01">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>분야를 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_02">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>사용 목적을 1개 이상 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_03">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>제공 방식을 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_04">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 상품명을 입력해주세요.<br>(최대 50자 이내) </p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_05">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 한줄 요약을 입력해주세요.<br>(최대 20자 이내)</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_06">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 상품 안내 내용을 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_07">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로고 이미지를 등록해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_08">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>노출 여부를 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_09">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>업데이트 주기를 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_10">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>이용허락범위를 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_11">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>다운로드 가능 기간을 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_12">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>등록할 데이터 형식을 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_21">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 데이터 상품을 삭제할 경우 해당 데이터 상품 하위에 등록된 모든 데이터가 삭제됩니다. <br>삭제하시겠습니까?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">삭제</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal_22">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 상품 등록을 취소할까요? <br>화면을 벗어나면 입력한 내용은 저장되지 않아요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">취소</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_23">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 상품 등록을 요청하시겠어요? <br>관리자의 승인 후에 실제 등록이 완료됩니다.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">등록 요청</button>
+        </div>
+    </div>
+</div> 
+<div class="pop-modal modal-hidden" id="modal_24">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 상품 수정을 요청하시겠어요? <br>관리자의 승인 후에 실제 수정이 완료됩니다.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">수정 요청</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_25">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 데이터를 삭제하시겠어요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">삭제</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_26">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터를 등록하시겠어요? <br>관리자 승인 절차 없이 바로 등록 됩니다.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">등록</button>
+        </div>
+    </div>
+</div>
+<!-- 데이터 등록 팝업 -->
+<div class="pop-modal modal-hidden" id="dataRegiModal">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">데이터 등록</div>
+        <div class="message-box">
+            <div class="regist-box">
+            <form>
+                <div class="condition">
+                    <label class="input-title" for="">데이터명<span class="required">(필수)</span></label>
+                    <div class="input-box">
+                        <input type="text" class="ipt" placeholder="데이터명을 입력해주세요.">
+                        <span class="util-box">
+                            <button type="button" class="ipt-clear">내용 지우기</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="condition">
+                    <p class="input-title">데이터파일(xls)<span class="required">(필수)</span></p>
+                    <div class="input-file">
+                        <div class="input-box">
+                            <input type="file" id="fileDataRegi">
+                            <input type="text" class="ipt" placeholder="파일을 등록하세요." disabled="" id="fileDataRegiPath">
+                        </div>
+                        <div class="button-box-large">
+                            <label type="button" class="button-s" for="fileDataRegi">파일 찾기</label>
+                        </div>
+                    </div>
+                    <p class="info-text">
+                        파일은 최대 850MB까지 업로드 가능합니다. <br>
+                        850MB 이상의 파일을 업로드해야 하는 경우에는 운영담당자에게 연락 바랍니다.<br>
+                        첨부 가능 확장자 : zip, csv, xlsx, txt, pdf, json
+                    </p>
+                </div>
+                
+                <div class="condition">
+                    <label class="input-title">데이터 총 용량</label>
+                    <div class="options">
+                        <p><span>0.0KB</span></p>
+                    </div>
+                </div>
+                
+                <div class="condition">
+                    <label class="input-title">판매금액<span class="required">(필수)</span></label>
+                    <div class="input-box">
+                        <input type="text" class="ipt" placeholder="0원">
+                        <span class="util-box">
+                            <button type="button" class="ipt-clear">내용 지우기</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="condition">
+                    <label class="input-title">노출여부<span class="required">(필수)</span></label>
+                    <div class="options">
+                        <label class="ipt-radio"><input type="radio" id="" name="radio1" checked=""><i>노출</i></label>
+                        <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>비노출</i></label>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button" onclick="fn_dataRegiModal();">등록</button>
+        </div>
+    <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //데이터 등록 팝업 -->
+
+<!-- 데이터 수정 팝업 -->
+<div class="pop-modal modal-hidden" id="dataModiModal">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">데이터 등록</div>
+        <div class="message-box">
+            <div class="regist-box">
+            <form>
+                <div class="condition">
+                    <label class="input-title" for="">데이터명<span class="required">(필수)</span></label>
+                    <div class="input-box">
+                        <input type="text" class="ipt" placeholder="데이터명을 입력해주세요.">
+                        <span class="util-box">
+                            <button type="button" class="ipt-clear">내용 지우기</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="condition">
+                    <p class="input-title">데이터파일(xls)<span class="required">(필수)</span></p>
+                    <div class="input-file">
+                        <div class="input-box">
+                            <input type="file" id="fileDataModi">
+                            <input type="text" class="ipt" placeholder="파일을 등록하세요." disabled="" id="fileDataModiPath">
+                        </div>
+                        <div class="button-box-large">
+                            <label type="button" class="button-s" for="fileDataModi">파일 찾기</label>
+                        </div>
+                    </div>
+                    <p class="info-text">
+                        파일은 최대 850MB까지 업로드 가능합니다. <br>
+                        850MB 이상의 파일을 업로드해야 하는 경우에는 운영담당자에게 연락 바랍니다.<br>
+                        첨부 가능 확장자 : zip, csv, xlsx, txt, pdf, json
+                    </p>
+                </div>
+                
+                <div class="condition">
+                    <label class="input-title">데이터 총 용량</label>
+                    <div class="options">
+                        <p><span>0.0KB</span></p>
+                    </div>
+                </div>
+                
+                <div class="condition">
+                    <label class="input-title">판매금액<span class="required">(필수)</span></label>
+                    <div class="input-box">
+                        <input type="text" class="ipt" placeholder="0원">
+                        <span class="util-box">
+                            <button type="button" class="ipt-clear">내용 지우기</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="condition">
+                    <label class="input-title">노출여부<span class="required">(필수)</span></label>
+                    <div class="options">
+                        <label class="ipt-radio"><input type="radio" id="" name="radio1" checked=""><i>노출</i></label>
+                        <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>비노출</i></label>
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button" onclick="fn_dataModiModal();">수정</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //데이터 수정 팝업 -->
+
+<div class="pop-modal modal-hidden" id="modal_27">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터를 수정하시겠어요? <br>관리자 승인 절차 없이 바로 수정 됩니다.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">수정</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal_28">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지원되는 형식은  zip, csv, xlsx, txt, pdf, json이며, 850MB 이내 파일만 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_01');return false;">분야 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_02');return false;">사용 목적 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_03');return false;">제공방식 미선택 </a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_04');return false;">데이터 상품명 미입력</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_05');return false;">데이터 한줄요약 미입력</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_06');return false;">데이터 상품안내 미입력</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_07');return false;">로고 미등록</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_08');return false;">노출 여부 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_09');return false;">업데이트 주기 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_10');return false;">이용허락범위 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_11' );return false;">다운로드 가능 기간 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_12' );return false;">등록할 데이터 형식 미선택</a>
+    </div>
+    
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-q" onclick="fn_toast('노출 순서가 저장되었어요.', 1);return false;">[노출순서저장]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_21');return false;">데이터셋 [삭제]</a>
+        <a href="#" class="button-q" onclick="fn_toast('삭제되었습니다.',1);return false;">데이터셋 [삭제] 토스트팝업</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_22');return false;">데이터셋 [취소]</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_23');return false;">데이터셋 [등록]</a>
+        <a href="#" class="button-q" onclick="fn_toast('등록요청이 완료되었어요',1);return false;">데이터셋 [등록] 토스트팝업</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_24');return false;">데이터셋 [수정]</a>
+        <a href="#" class="button-q" onclick="fn_toast('수정 요청이 완료되었어요.',1);return false;">데이터셋 [수정] 토스트팝업</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_25');return false;">데이터 테이블 수정/삭제 [삭제]</a>
+        <a href="#" class="button-q" onclick="fn_toast('삭제되었습니다.',1);return false;">데이터 테이블 수정/삭제 [삭제] 토스트팝업</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataRegiModal');return false;">[데이터 등록]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_26');return false;">[데이터 등록] > [등록]</a>
+        <a href="#" class="button-q" onclick="fn_toast('등록이 완료되었어요.',1);return false;">[데이터 등록] > [등록] 토스트팝업</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataModiModal');return false;">데이터 테이블 수정/삭제 [수정]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_27');return false;">데이터 테이블 수정/삭제 [수정] > [수정]</a>
+        <a href="#" class="button-q" onclick="fn_toast('수정이 완료되었어요.',1);return false;">데이터 테이블 수정/삭제 [수정] > [수정] 토스트팝업</a>
+
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_28');return false;">파일 유효성 Alert</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

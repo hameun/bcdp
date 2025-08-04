@@ -1,0 +1,69 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT0301.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>만 14세 이상 부터 회원가입할 수 있어요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 정보로 가입된 계정이 있어요. <br>로그인 후 이용해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>인증이 완료되었어요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modalTerm">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">회원약관</div>
+        <div class="message-box">
+            <!--  -->
+            회원약관 약관내용
+            <!-- // -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">[본인인증(PASS)인증 후 14세 미만인 경우, 새창 닫히며 알럿 호출]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_2');return false;">[이미 가입된 고객일 경우,새창 닫히며 알럿 호출]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_3');return false;">[본인인증(PASS)인증 완료한 경우, 새창 닫히며 알럿 호출]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalTerm');return false;">[약관팝업]<a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}
+
+
+

@@ -1,0 +1,34 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_AI01.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인 후 알림 설정이 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">다음에</button>
+            <button class="button-p close-modal" type="button">로그인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_1');return false;">[알림설정] 로그인 전</a>
+        <a href="#" class="button-p" onclick="document.querySelector('.insight-alram').classList.add('on');return false;">[알림설정] 로그인 후 알림설정 완료</a>
+        <a href="#" class="button-q" onclick="fn_toast('이메일 알림 설정이 완료되었어요.',1);return false;">[알림설정] 로그인 후 알림설정 완료 > 토스트팝업</a>
+        <a href="#" class="button-p" onclick="document.querySelector('.insight-alram').classList.remove('on');return false;">[알림설정] 로그인 후 알림설정 해제</a>
+        <a href="#" class="button-q" onclick="onLoading('.insight-contents');return false;">리스트 로딩 중</a>
+        <a href="#" class="button-q" onclick="removeLoading('.insight-contents', 1000);return false;">리스트 로딩 완료</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

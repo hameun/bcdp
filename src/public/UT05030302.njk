@@ -1,0 +1,166 @@
+{%- extends "_templates/_layout.njk" -%}
+{% block content %}
+<div class="content page-partner">
+    <h1 class="headline1">데이터파트너</h1>
+    <p class="head-guidetext">필요한 모든 관리가, 이 한 곳에.</p>
+
+    <div class="partner-header">
+        <div class="info-box">
+            <p class="name">매그넘빈트(김*진님)</p>
+            <p class="email">ky******@mvint.co.kr</p>
+        </div>
+        <a href="#" class="link">데이터파트너 정보수정</a>
+    </div>
+    <div class="tab-box">
+        <ul class="tabs">
+            <li><a href="#">상품 관리</a></li>
+            <li><a href="#">매출 관리</a></li>
+            <li class="is-on"><a href="#">통계현황</a></li>
+            <li><a href="#">Q&A 관리</a></li>
+        </ul>
+    </div>
+    <div class="tab-box">
+        <ul class="tabs-sub">
+            <li><a href="#">분야별 통계</a></li>
+            <li class="is-on"><a href="#">상품별 통계</a></li>
+        </ul>
+    </div>
+    <!-- [데이터파트너] -->
+    <div class="partner-contents"> 
+        <div class="search-box">
+            <form>
+            <div class="condition">
+                <label class="label" for="date1">기간</label>
+                <!-- [2025.07.31 데이트피커 적용] -->
+                <div class="term">
+                    <div class="input-box">
+                        <input type="text" class="ipt" id="date1" placeholder="날짜 입력">
+                    </div>
+                </div>
+                <script>
+                    let startDate = new Date('2025-07-25');
+                    new AirDatepicker('#date1', {
+                        firstDay: 0,
+                        startDate,
+                        range: true,
+                        navTitles: {days: '<i>yyyy</i>.MMMM'},
+                        selectedDates: [startDate],
+                        multipleDatesSeparator: '-',
+                        position({$datepicker, $target, $pointer}) {
+                            let coords = $target.getBoundingClientRect()
+                            let top = window.scrollY + coords.height + coords.y + 10;
+                            $datepicker.style.top = `${top}px`;
+                            $datepicker.style.left = `${coords.x -2}px`;
+                            $pointer.style.display = 'none';
+                        }
+                    });
+                </script>
+                <!-- //[2025.07.31 데이트피커 적용] -->
+                <div class="chip-box">
+                    <label class="chip"><input type="radio" name="radio1" checked><i>일주일</i></label>
+                    <label class="chip"><input type="radio" name="radio1"><i>한달</i></label>
+                    <label class="chip"><input type="radio" name="radio1"><i>1년</i></label>
+                </div>
+            </div>
+            <div class="button-box-large">
+                <button class="button-t">초기화</button>
+                <button class="button-q">검색</button>
+            </div>
+            </form>
+        </div>
+        <div class="contents-summary">
+            <p class="title">내역 <strong>17</strong></p>
+            <div class="page-select">
+                <select>
+                    <option value="10">10개</option>
+                    <option value="10">20개</option>
+                    <option value="10">30개</option>
+                </select>
+            </div>
+        </div>
+        <div class="table">
+            <table summary="상품별 통계 정보 테이블">
+                <colgroup>
+                    <col width="*">
+                    <col width="100px">
+                    <col width="120px">
+                    <col width="160px">
+                    <col width="210px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>상품명</th>
+                        <th>분야</th>
+                        <th>다운로드수</th>
+                        <th>결제건수</th>
+                        <th>판매금액</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="title">BC카드 2019년 강남구 프랜차이즈 매출 BC카드 2019년 강남구 프랜차이즈 매출 영영 초과 시, 줄바꿈하여 전체 출력</td>
+                        <td>여행</td>
+                        <td>452</td>
+                        <td>231,321</td>
+                        <td class="right">12,313,131원</td>
+                    </tr>
+                    <tr>
+                        <td class="title">BC카드 2019년 강남구 프랜차이즈 매출 BC카드 2019년 강남구 프랜차이즈 매출 영영 초과 시, 줄바꿈하여 전체 출력</td>
+                        <td>여행</td>
+                        <td>452</td>
+                        <td>231,321</td>
+                        <td class="right">12,313,131원</td>
+                    </tr>
+                    <tr>
+                        <td class="title">BC카드 2019년 강남구 프랜차이즈 매출 BC카드 2019년 강남구 프랜차이즈 매출 영영 초과 시, 줄바꿈하여 전체 출력</td>
+                        <td>여행</td>
+                        <td>452</td>
+                        <td>231,321</td>
+                        <td class="right">12,313,131원</td>
+                    </tr>
+                    <tr>
+                        <td class="title">BC카드 2019년 강남구 프랜차이즈 매출 BC카드 2019년 강남구 프랜차이즈 매출 영영 초과 시, 줄바꿈하여 전체 출력</td>
+                        <td>여행</td>
+                        <td>452</td>
+                        <td>231,321</td>
+                        <td class="right">12,313,131원</td>
+                    </tr>
+                    <tr>
+                        <td class="title">BC카드 2019년 강남구 프랜차이즈 매출 BC카드 2019년 강남구 프랜차이즈 매출 영영 초과 시, 줄바꿈하여 전체 출력</td>
+                        <td>여행</td>
+                        <td>452</td>
+                        <td>231,321</td>
+                        <td class="right">12,313,131원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-bottom">
+            <div class="button-box-large">
+                <button type="button" class="button-p right-btn">엑셀다운로드<i class="icon-right icon-download"></i></button>
+            </div>
+            <div class="paging">
+                <span class="arrow">
+                    <a href="#" class="first disabled">처음</a>
+                    <a href="#" class="prev disabled">이전</a>
+                </span>
+                <span class="count">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#" class="current">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <i class="shortening">...</i>
+                    <a href="#">33</a>
+                </span>
+                <span class="arrow">
+                    <a href="#" class="next">다음</a>
+                    <a href="#" class="last">마지막</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- //[데이터파트너] -->
+</div> 
+<!-- //.content .page-partner -->
+{%- endblock %}

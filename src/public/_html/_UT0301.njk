@@ -1,0 +1,69 @@
+<script>
+window.onload = function(){
+    fn_agreeTerms(joinMember);
+}
+</script>
+<div class="content page-join">
+    <h1 class="headline1">회원가입</h1>
+    <p class="welcome-copy">금융 빅데이터플랫폼에 회원가입하고<br> 다양한 데이터 서비스를 이용해보세요.</p>
+    <div class="step-box">
+        <ol class="step">
+            <li class="current">
+                <span class="num">1</span>
+                <span class="txt">약관동의</span>
+            </li>
+            <li>
+                <span class="num">2</span>
+                <span class="txt">정보입력</span>
+            </li>
+            <li>
+                <span class="num">3</span>
+                <span class="txt">가입완료</span>
+            </li>
+        </ol>
+    </div>
+    
+    <div class="formbox">
+    <form>
+        <div class="agree-box">
+            <ul class="agree-list">
+                <li class="">
+                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 회원약관</i></label>
+                    <a href="#" class="agreement-open">내용보기</a>
+                </li>
+                <li class="">
+                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 개인정보 수집/이용 필수동의</i></label>
+                    <a href="#" class="agreement-open">내용보기</a>
+                </li>
+                <li class="">
+                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 개인정보처리방침</i></label>
+                    <a href="#" class="agreement-open">내용보기</a>
+                </li>
+                <li class="">
+                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 데이터 공급 기본계약 약관</i></label>
+                    <a href="#" class="agreement-open">내용보기</a>
+                </li>
+                <li class="">
+                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 정보 보안관리 약정서</i></label>
+                    <a href="#" class="agreement-open">내용보기</a>
+                </li>
+                <li class="has-sub is-unchecked"><!-- toggle .is-unchecked -->
+                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[선택] 개인정보 수집/이용 선택동의</i></label>
+                    <a href="#" class="agreement-open">내용보기</a>
+                    <ul class="agree-list-sub">
+                        <li><label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>메일 수신</i></label></li>
+                        <li><label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>SMS 수신</i></label></li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="agree-all"><label class="ipt-check"><input type="checkbox" name="checkbox1"><i>전체 동의</i></label></p>
+        </div>
+    </form>
+    </div>
+</div>
+    
+<div class="bottom-box">
+    <div class="button-box-large">
+        <button type="button" class="button-p" disabled id="joinMember">다음</button>
+    </div>
+</div>

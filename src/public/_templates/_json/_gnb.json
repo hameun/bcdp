@@ -1,0 +1,810 @@
+{
+  "publist_data": [
+    {
+      "nav" : "데이터마켓/OPEN API",
+      "href": "datamarket",
+      "end" : "8/5",
+      "menus" : [
+      {
+        "group": "데이터마켓",
+        "name": "목록",
+        "dep" : 0,
+        "href": "DM01",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "DM01M",
+        "date": "작업예정"
+      },
+      {
+        "name": "상세",
+        "dep" : 1,
+        "href": "DM02",
+        "date": "작업예정"
+      },
+      {
+        "name": "OPEN API 상세",
+        "dep" : 1,
+        "href": "OA02",
+        "date": "작업예정",
+        "text": ["결과샘플, API결과 공백제거 후 테스트 필요"]
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "DM02M",
+        "date": "작업예정"
+      },
+      {
+        "name": "결제하기",
+        "dep" : 1,
+        "href": "DM03",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "DM03M",
+        "date": "작업예정"
+      },
+      {
+        "name": "구매완료",
+        "dep" : 1,
+        "href": "DM04",
+        "date": "작업예정"
+      }
+    ]},
+    {
+      "nav" : "AI인사이트",
+      "href": "aiinsight",
+      "end" : "7/25",
+      "menus" : [
+      {
+        "group": "AI인사이트",
+        "name": "목록",
+        "dep" : 0,
+        "href": "AI01",
+        "stat": "end",
+        "date": "7/25"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "AI01M",
+        "stat": "end",
+        "date": "7/25",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "상세",
+        "dep" : 1,
+        "href": "AI02",
+        "stat": "end",
+        "date": "7/25"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "AI02M",
+        "stat": "end",
+        "date": "7/25",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      }
+    ]},
+    {
+      "nav" : "데이터파트너",
+      "href": "datapartner",
+      "end" : "7/25",
+      "menus" : [
+      {
+        "group": "상품관리",
+        "name": "데이터셋 관리",
+        "dep" : 0,
+        "href": "UT0503010101",
+        "stat": "end",
+        "date": "7/24"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT0503010101M",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "등록/수정/삭제",
+        "dep" : 2,
+        "href": "UT0503010102",
+        "stat": "end",
+        "date": "7/24"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 3,
+        "href": "UT0503010102M",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "[팝업] 데이터 등록",
+        "dep" : 3,
+        "__href": "UT05030101OP01",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["등록팝업 ID: dataRegiModal / 수정팝업 ID: dataModiModal", "데이터셋 관리 [모달] 페이지에서 확인"]
+      },
+      {
+        "group": "매출관리",
+        "name": "",
+        "dep" : 0,
+        "href": "UT05030201",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.31 데이트피커 적용]"]
+      },
+      {
+        "name": "[모달]",
+        "dep" : 1,
+        "href": "UT05030201M",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "group": "통계현황",
+        "name": "분야별 통계",
+        "dep" : 0,
+        "href": "UT05030301",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.31 데이트피커 적용]"]
+      },
+      {
+        "name": "상품별통계",
+        "dep" : 1,
+        "href": "UT05030302",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.31 데이트피커 적용]"]
+      },
+      {
+        "group": "Q&A관리",
+        "name": "Q&A",
+        "dep" : 0,
+        "href": "UT05030401",
+        "stat": "end",
+        "date": "7/24"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT05030401M",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      { 
+        "name": "상세",
+        "dep" : 2,
+        "href": "UT05030402",
+        "stat": "end",
+        "date": "7/24"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 3,
+        "href": "UT05030402M",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "group": "데이터파트너 정보수정",
+        "name": "",
+        "dep" : 0,
+        "href": "UT050305",
+        "stat": "end",
+        "date": "7/24"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT050305M",
+        "stat": "end",
+        "date": "7/24",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      }
+    ]},
+    {
+      "nav" : "상권분석 서비스",
+      "href": "analysis",
+      "end" : "7/18",
+      "menus" : [
+      {
+        "name": "상권분석",
+        "dep" : 0,
+        "href": "BA01",
+        "stat": "end",
+        "date": "7/18",
+        "text": ["[2025.07.29 모달팝업 변경]", "✔ 주석 : [2025.07.23 로딩추가]"]
+      },
+      {
+        "name": "[팝업]지역선택",
+        "dep" : 1,
+        "__href": "BAP01.html",
+        "date": "7/18",
+        "stat": "end",
+        "text": ["본페이지에서 확인"]
+      },
+      {
+        "name": "[팝업]업종선택",
+        "dep" : 1,
+        "__href": "BAP02.html",
+        "date": "7/18",
+        "stat": "end",
+        "text": [
+          "본페이지에서 확인"
+        ]
+      },
+      {
+        "name": "로딩",
+        "dep" : 1,
+        "href": "",
+        "date": "7/18",
+        "stat": "end",
+        "text": [
+          "본페이지에서 확인"
+        ]
+      }
+    ]},
+    {
+      "nav" : "로그인/회원가입",
+      "href": "login",
+      "end" : "7/11",
+      "menus" : [
+      {
+        "name": "로그인",
+        "dep" : 0,
+        "href": "UT01",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 1,
+        "href": "UT01M",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "group": "아이디/비밀번호 찾기",
+        "name": "",
+        "dep" : 0,
+        "href": "UT02",
+        "date": "7/24",
+        "stat": "ing",
+        "text": ["✔ 개발용 페이지 통합 (ex)비밀번호찾기재설정 콘솔창 fn_loginFind(3) 페이지 확인 가능)"]
+      },
+      {
+        "group": "아이디 찾기",
+        "name": "입력",
+        "dep" : 0,
+        "href": "UT0201",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT0201M",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "결과",
+        "dep" : 1,
+        "href": "UT020101",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "group": "비밀번호 찾기",
+        "name": "입력",
+        "dep" : 0,
+        "href": "UT0202",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT0202M",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "재설정",
+        "dep" : 1,
+        "href": "UT020201",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT020201M",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "재설정 완료",
+        "dep" : 1,
+        "href": "UT02020101",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "group": "회원가입",
+        "name": "약관동의",
+        "dep" : 0,
+        "href": "UT0301",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT0301M",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "[팝업]약관상세",
+        "dep" : 2,
+        "_href": "UT0301P02",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["약관동의 [모달] 페이지에서 확인"]
+      },
+      {
+        "name": "정보입력 ",
+        "dep" : 1,
+        "href": "UT0303",
+        "date": "7/15",
+        "stat": "end"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "UT0303M",
+        "date": "7/15",
+        "stat": "end",
+        "text": ["[2025.07.29 모달팝업 변경]"]
+      },
+      {
+        "name": "회원가입 완료",
+        "dep" : 1,
+        "href": "UT0304",
+        "date": "7/15",
+        "stat": "end"
+      }
+    ]},
+    {
+      "nav" : "AI검색",
+      "href": "aisearch",
+      "end" : "8/19",
+      "menus" : [
+      {
+        "group": "AI검색",
+        "name": "검색",
+        "dep" : 0,
+        "href": "AS01",
+        "date": "작업예정"
+      },
+      {
+        "name": "결과",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]별로인 응답 클릭시",
+        "dep" : 2,
+        "href": "AS01P01",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달]로그인 유도",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "약관 동의 정의",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "약관상세",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      }
+    ]},
+    {
+      "nav" : "데이터폴리오",
+      "href": "datafolio",
+      "end" : "8/8",
+      "menus" : [
+      {
+        "group": "데이터폴리오",
+        "name": "조건선택",
+        "dep" : 0,
+        "href": "DP01",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정",
+        "text": [
+          "작성 중 다른 Tab선택시",
+          "작성 중 다른 메뉴로 이동 시",
+          "필수항목 미선택되었을 경우 데이터 구매하기 버튼 선택 시",
+          "비로그인 상태인 경우 데이터 구매하기",
+          "임시저장 버튼 선택 시"
+        ]
+      },
+      {
+        "name": "[팝업]샘플데이터",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]임시저장",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]임시저장 - 내용 없는 경우",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]임시저장 - 휴지통 아이콘 선택 시",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "구매",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달]이전 버튼 선택 시",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]정보 보안관리 약정서(공통)",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]전자계약안내(공통) ",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "구매완료",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "데이터폴리오 준비 완료 시 이메일 전송폼",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "로딩",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      }
+    ]},
+    {
+      "nav" : "데이터경진대회",
+      "href": "datacontest",
+      "end" : "9/12",
+      "menus" : [
+      {
+        "name": "데이터경진대회",
+        "dep" : 0,
+        "href": "DC01",
+        "date": "작업예정"
+      }
+    ]},
+    {
+      "nav" : "이용안내",
+      "href": "guidance",
+      "end" : "9/3",
+      "menus" : [ 
+      {
+        "group": "플랫폼 소개",
+        "name": "금융 빅데이터 플랫폼 소개",
+        "dep" : 0,
+        "href": "UG0101",
+        "date": "작업예정"
+      },
+      {
+        "name": "제공기관 안내",
+        "dep" : 1,
+        "href": "UG0102",
+        "date": "작업예정"
+      },
+      {
+        "group": "공지사항",
+        "name": "목록",
+        "dep" : 0,
+        "href": "UG0201",
+        "date": "작업예정"
+      },
+      {
+        "name": "상세",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "검색결과 없음",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "FAQ ",
+        "dep" : 0,
+        "href": "UG0301",
+        "date": "작업예정"
+      },
+      {
+        "name": "Q&A ",
+        "dep" : 0,
+        "href": "UG034",
+        "date": "작업예정"
+      }
+    ]},
+    {
+      "nav" : "마이페이지",
+      "href": "mypage",
+      "end" : "8/27",
+      "menus" : [
+      {
+        "group": "구매내역",
+        "name": "데이터마켓",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "데이터폴리오",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]발행정보 입력",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "구매내역 없음",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "group": "문의 내역",
+        "name": "목록",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "문의하기",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "데이터 경진대회 응모 현황",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "group": "개인정보 수정",
+        "name": "비밀번호 입력",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "수정",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]휴대폰번호 변경",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]비밀번호 변경",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달]",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "기업등록",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]기업찾기",
+        "dep" : 3,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]기업추가",
+        "dep" : 3,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "group": "센터관리자 신청",
+        "name": "약관동의",
+        "dep" : 2 ,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "정보입력",
+        "dep" : 3,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "group": "장바구니",
+        "name": "데이터마켓",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "데이터폴리오",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]옵션변경",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]쿠폰",
+        "dep" : 2,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "쿠폰",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      }
+    ]},
+    {
+      "nav" : "공통",
+      "href": "common",
+      "end" : "수시 업데이트",
+      "menus" : [
+      {
+        "name": "GNB (8/18)",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "통합검색/푸터 (9/3)",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "이메일폼 (9/3)",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[팝업]히스토리 레이어팝업",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "[모달] 공유하기",
+        "dep" : 0,
+        "href": "",
+        "date": "작업예정",
+        "text": ["퍼블리싱 가이드 참고"]
+      }
+    ]}
+  ],
+
+  "pubguide_data": [
+    {
+      "name": "Color/ Typography",
+      "href": "guide_color.html"
+    },
+    {
+      "name": "Button/ Icon",
+      "href": "guide_button.html"
+    },
+    {
+      "name": "Form/ Textarea",
+      "href": "guide_form.html"
+    },
+    {
+      "name": "Tab/ Table/ Paging",
+      "href": "guide_tab.html"
+    },
+    {
+      "name": "Modal/ Toast/ Loading",
+      "href": "guide_modal.html"
+    },
+    {
+      "name": "라이브러리/ etc",
+      "href": "guide_etc.html"
+    },
+    {
+      "_name": "Icons",
+      "href": "guide_icons.html"
+    }
+  ]
+}

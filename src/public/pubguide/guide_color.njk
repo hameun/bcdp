@@ -1,0 +1,84 @@
+{%- extends "pubguide/_layout.njk" -%}
+{%- import "_templates/_macro/_macro.njk" as macro -%}
+
+{% block content %}
+<h1 class="title1">Color&Typography</h1>
+<h2 class="title2">Primary Color</h2>
+<div class="palette">
+    <ul>
+        <li style="background-color: #EFEFFF; color: #7A8394;">#EFEFFF</li>
+        <li style="background-color: #E8E7FF; color: #7A8394;">#E8E7FF</li>
+        <li style="background-color: #CFCEFE;">#CFCEFE</li>
+        <li style="background-color: #6361FC;">#6361FC</li>
+        <li style="background-color: #5957E3;">#5957E3</li>
+        <li style="background-color: #4F4ECA;">#4F4ECA</li>
+        <li style="background-color: #4A49BD;">#4A49BD</li>
+        <li style="background-color: #3B3A97;">#3B3A97</li>
+        <li style="background-color: #2D2C71;">#2D2C71</li>
+        <li style="background-color: #232258;">#232258</li>
+    </ul>
+</div>
+
+
+<h2 class="title2">Text Color</h2>
+<div class="text-color">
+    <ul>
+        <li style="background-color: #F8F9FC; color: #7A8394;">gray 20 #F8F9FC</li>
+        <li style="background-color: #F3F5F8; color: #7A8394;">gray 40 #F3F5F8</li>
+        <li style="background-color: #E7E9EF; color: #7A8394;">gray 60 #E7E9EF</li>
+        <li style="background-color: #CDD1DA; color: #7A8394;">gray 100 #CDD1DA</li>
+        <li style="background-color: #B2B7C2;">gray 200 #B2B7C2</li>
+        <li style="background-color: #969DAB;">gray 300 #969DAB</li>
+        <li style="background-color: #7A8394;">gray 400 #7A8394</li>
+        <li style="background-color: #626A7A;">gray 500 #626A7A</li>
+        <li style="background-color: #4B515D;">gray 600 #4B515D</li>
+        <li style="background-color: #343841;">gray 700 #343841</li>
+        <li style="background-color: #22252A;">gray 800 #22252A</li>
+        <li style="background-color: #191B1E;">gray 900 #191B1E</li>
+        <li style="background-color: #0E1013;">gray 950 #0E1013</li>
+        <li style="background-color: #fff; color: #7A8394;">white #fff</li>
+        <li style="background-color: #000;">black #000</li>
+    </ul>
+</div>
+
+<h2 class="title2">Typography</h2>
+<div class="typography">
+    <p class="text-weight">
+        <span class="t-bold">Aa가 / Bold</span>
+        <span class="t-semibold">Aa가 / SemiBold</span>
+        <span class="t-medium">Aa가 / Medium</span>
+        <span class="t-reqular">Aa가 / Regular</span>
+        <span class="t-bold t-highlight">Aa가 / Bold</span>
+        <span class="t-semibold t-highlight">Aa가 / SemiBold</span>
+        <span class="t-medium t-highlight">Aa가 / Medium</span>
+        <span class="t-reqular t-highlight">Aa가 / Regular</span>
+    </p>
+
+    <ul class="title">
+        <li class="headline1">Headline1/헤드라인1 Bold</li>
+        <li class="title1">Title1/타이틀1 Bold</li>
+        <li class="title2">Title2/타이틀2 Bold</li>
+        <li class="title3">Title3/타이틀3 Bold</li>
+        <li class="title4">Title4/타이틀4 Bold</li>
+    </ul>
+
+    <p class="bodytext">
+        <span class="body1">Body1 본문1 Regular</span>
+        <span class="body1-semibold">Body1 본문1 SemiBold</span>
+    </p>
+    <p class="bodytext">
+        <span class="body2">Body2 본문2 Regular</span>
+        <span class="body2-medium">Body2 본문2 Medium</span>
+        <span class="body2-semibold">Body2 본문2 SemiBold</span>
+    </p>
+    <p class="bodytext">
+        <span class="body3">Body3 본문3 Regular</span>
+        <span class="body3-medium">Body3 본문3 Medium</span>
+    </p>
+    <p class="bodytext">
+        <span class="caption1">Caption1 캡션1 Medium</span>
+        <span class="caption1-semibold">Caption1 캡션1 SemiBold</span>
+        <span class="caption2">Caption2 캡션2 Medium</span>
+    </p>
+</div>
+{%- endblock %}

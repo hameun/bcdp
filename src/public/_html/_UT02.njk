@@ -1,0 +1,103 @@
+<div class="content page-login-find">
+    <h1 class="headline1">아이디 · 비밀번호 찾기</h1>
+    <div class="tab-box">
+        <ul class="tabs" aria-role="tablist">
+            <li class="is-on" aria-role="tab"><a href="#tabContent1">아이디 찾기</a></li>
+            <li><a href="#tabContent2" aria-role="tab">비밀번호 찾기</a></li>
+        </ul>
+    </div>
+    
+    <!-- [아이디 찾기] -->
+    <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">
+        <!-- 아이디 찾기 : 입력 -->
+        <div class="formbox">
+            {{ include( "_html/_UT0201.njk" ) }}
+        </div>
+        <!-- //아이디 찾기 : 입력 -->
+        <!-- 아이디 찾기 : 결과 -->
+        <div class="formbox">
+            {{ include( "_html/_UT020101.njk" ) }}
+        </div>
+        <!-- //아이디 찾기 : 결과 -->
+    </div>
+    <!-- //[아이디 찾기] -->
+
+    <!-- [비밀번호 찾기] -->
+    <div class="tab-contents" aria-role="tabpanel" id="tabContent2"  tabindex="0">
+        <div class="formbox">
+        <!-- 비밀번호 찾기 : 입력 -->
+            {{ include( "_html/_UT0202.njk" ) }}
+            <!-- //비밀번호 찾기 : 입력 -->
+        </div>
+        <!-- 비밀번호 찾기 : 재설정 -->
+        <div class="formbox">
+            {{ include( "_html/_UT020201.njk" ) }}
+        </div>
+        <!-- //비밀번호 찾기 : 재설정 -->
+        <!-- 비밀번호 찾기 : 결과 -->
+        <div class="formbox">
+            {{ include( "_html/_UT02020101.njk" ) }}
+        </div>
+        <!-- //비밀번호 찾기 : 결과 -->
+    </div>
+    <!-- //[비밀번호 찾기] -->
+</div>
+
+<div class="bottom-box">
+    <!-- [아이디 찾기] -->
+    <div class="button-box-large">
+        <button type="button" class="button-p" disabled>다음</button>
+    </div>
+    <div class="button-box-large">
+        <button type="button" class="button-s">비밀번호 찾기</button>
+        <button type="button" class="button-p">로그인</button>
+    </div>
+    <!-- //[아이디 찾기] -->
+    <!-- [비밀번호 찾기] -->
+    <div class="button-box-large">
+        <button type="button" class="button-p" disabled>다음</button>
+    </div>
+    <div class="button-box-large">
+        <button type="button" class="button-p" disabled>다음</button>
+    </div>
+    <div class="button-box-large">
+        <button type="button" class="button-p">로그인</button>
+    </div>
+    <!-- //[비밀번호 찾기] -->
+</div>
+
+<!-- 퍼블리싱 스텝별 페이지 확인용 -->
+<script>
+function fn_loginFind(_idx){
+    document.querySelector('.page-login-find').style.opacity = 0;
+    const forms = document.querySelectorAll('.formbox');
+    const buttons = document.querySelectorAll('.bottom-box .button-box-large');
+
+    for ( i = 0; i < forms.length ; i++ ) {
+        const currentForm = forms[i];
+        if (i === _idx) {
+             forms[i].style.display = 'block';
+             buttons[i].style.display = 'flex';
+        } else {
+            forms[i].style.display = 'none';
+            buttons[i].style.display = 'none';
+        }
+
+        if (_idx < 2) {
+            document.querySelectorAll('.tabs li')[0].classList.add('is-on');
+            document.querySelectorAll('.tabs li')[1].classList.remove('is-on');
+            document.getElementById('tabContent1').style.display = "block";
+            document.getElementById('tabContent2').style.display = "none";
+        } else {
+            document.querySelectorAll('.tabs li')[1].classList.add('is-on');
+            document.querySelectorAll('.tabs li')[0].classList.remove('is-on');
+            document.getElementById('tabContent1').style.display = "none";
+            document.getElementById('tabContent2').style.display = "block";
+        }
+    }
+    setTimeout(function(){
+        document.querySelector('.page-login-find').removeAttribute('style');
+    }, 100 );
+}
+</script>
+<!-- //퍼블리싱 스텝별 페이지 확인용 -->

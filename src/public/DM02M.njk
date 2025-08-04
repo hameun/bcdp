@@ -1,0 +1,182 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DM02.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- 공유하기 -->
+<div class="pop-modal modal-hidden" id="shareModal">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">공유하기</div>
+        <div class="share-sns">
+            <a href="#" class="kakao"><span class="icon-kakao"></span><i class="txt">카카오톡</i></a>
+            <a href="#" class="facebook"><span class="icon-facebook"></span><i class="txt">페이스북</i></a>
+            <a href="#" class="naverblog"><span class="icon-naverblog"></span><i class="txt">네이버블로그</i></a>
+            <a href="#" class="url-copy"><span class="icon-url"></span><i class="txt">URL복사</i></a>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //공유하기 -->
+
+<!-- 세부정보 -->
+<div class="pop-modal modal-hidden" id="dataInfoModal">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">세부정보</div>
+        <div class="data-info-box">
+            데이터 사용기간
+            이용허락범위
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //세부정보 -->
+
+<!-- 데이터선택 -->
+<div class="pop-modal modal-hidden" id="dataSelectModal">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">데이터 선택</div>
+        <div class="message-box">
+            <!-- 데이터 리스트 -->
+            <div class="price-cart">
+                <div class="item-scroll-wrap">
+                    <div class="item">
+                        <p class="i-title">[Sample]온라인상세매출 온라인상세매출 온라인상세매출 온라인상세매출</p>
+                        <span class="i-price">무료</span>
+                        <button type="button" class="item-del">삭제</button>
+                    </div>
+                    <div class="item">
+                        <p class="i-title">2025년 4월의 온라인 2025년 4월의 온라인 2025년 4월의 온라인</p>
+                        <span class="i-price">2,202,240,200</span>
+                        <button type="button" class="item-del">삭제</button>
+                    </div>
+                    <div class="item">
+                        <p class="i-title">2025년 4월의 온라인</p>
+                        <span class="i-price">2,240,200</span>
+                        <button type="button" class="item-del">삭제</button>
+                    </div>
+                    <div class="item">
+                        <p class="i-title">[Sample]온라인상세매출</p>
+                        <span class="i-price">무료</span>
+                        <button type="button" class="item-del">삭제</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //데이터 리스트 -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">초기화</button>
+            <button class="button-p" type="button">데이터 선택하기</button>
+        </div>
+    </div>
+</div>
+<!-- //데이터선택 -->
+
+<!-- 사용기간선택 -->
+<div class="pop-modal modal-hidden" id="dateSelectModal">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">사용기간 선택</div>
+        <!-- 데이터 리스트 -->
+        <div class="price-cart">
+            <div class="item-scroll-wrap">
+                <div class="item">
+                    <label class="ipt-radio"><input type="radio" name="radio1"><i class="i-title">6개월</i><span class="i-price">2,202,240,200</span></label>
+                </div>
+                <div class="item">
+                    <label class="ipt-radio"><input type="radio" name="radio1"><i class="i-title">12개월</i><span class="i-price">2,202,240,200</span></label>
+                </div>
+            </div>
+        </div>
+        <script>
+            const modal = document.getElementById('dateSelectModal');
+            const radios = document.querySelectorAll('.item-scroll-wrap input');
+            radios.forEach(function(radio){
+                radio.addEventListener('click', function(){
+                    fn_modalPopClose(modal);
+                })
+            });
+        </script>
+        <!-- //데이터 리스트 -->
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //사용기간선택 -->
+
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인이 필요한 서비스입니다.<br>지금 로그인하고 데이터를 구매해보세요!</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p" type="button">로그인하러 가기</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>선택한 데이터가 없어요.<br>원하는 데이터를 먼저 골라주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>선택한 사용기간이 없어요.<br>사용기간을 먼저 골라주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- OPEN API 안내 -->
+<div class="pop-modal modal-hidden" id="infoApiModal">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">OPEN API안내</div>
+        <div class="message-box">
+            OPEN API란?
+
+            OPEN API란 인터넷 이용자 또는 애플리케이션 개발자가 직접 응용프로그램과 서비스를 손쉽게 개발할 수 있도록 일정하게 정해진 형식으로 정보를 공개하는 것으로 OPEN API(개방형 환경)을 제공하고 있습니다. (예 : 날씨정보, 버스정보 등)
+            금융 빅데이터 플랫폼은 자체적으로 보유한 빅데이터 중 민간 수요가 많은 데이터를 OPEN API 형태로 개발하여, 개발자가 웹브라우저, 스마트기기의 모바일 앱 서비스 등으로 개발이 용이하도록 제공하고 있습니다.
+
+            금융 빅데이터 플랫폼에서 제공하는 OPEN API 서비스는?
+
+            금융 빅데이터 플랫폼이 보유하고 있는 정보를 웹브라우저 또는 앱 서비스 등의 개발에 좀 더 쉽고 편리하게 활용 및 이용할 수 있도록 금융 빅데이터 플랫폼에서 공개한 개발자를 위한 OPEN API 서비스 입니다.
+            제공되는 정보는 각 제공기관이 제공하고 금융 빅데이터 플랫폼이 보유 관리하는 OPEN API 정보를 실시간 제공 받으실 수 있으며, 개발에 활용 할 수 있습니다. 추후 지속적으로 업데이트 될 예정이므로 정보의 활성화 및 홍보를 위해 많은 활용 바랍니다.
+
+            OPEN API 이용 방법
+
+            사용할 OPEN API  확정
+            OPEN API 인증키 신청
+            승인 및 인증키 발급
+            OPEN API 활용하여 애플리케이션 구현
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //OPEN API 안내 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('shareModal');return false;">[공유하기]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataInfoModal');return false;">^[세부정보]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataSelectModal');return false;">^[데이터 선택]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dateSelectModal');return false;">^[사용기간 선택]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal1');return false;">[바로 구매하기] 비로그인 Case</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal2');return false;">[바로 구매하기] 데이터 데이터 미선택 Case</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal3');return false;">[바로 구매하기] OPEN API 상품 && 사용기간 미선택</a>
+        <a href="#" class="button-s" onclick="fn_toast('선택하신 상품을 장바구니에 담았어요.',1);return false;">[장바구니 담기]</a>
+        <a href="#" class="button-t" onclick="fn_modalPopOpen('infoApiModal');return false;">^API 상세 > 자세히보기 [OPEN API안내]</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

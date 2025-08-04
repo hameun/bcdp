@@ -1,0 +1,118 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DM03.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금 돌아가면 설정한 내용이 모두 사라져요. <br>이전 화면으로 가시겠어요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p" type="button">이전 화면으로 이동</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2_1">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">쿠폰</div>
+        <div class="message-box">
+            <p>쿠폰 리스트 출력</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">초기화</button>
+            <button class="button-p" type="button">적용하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2_2">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">쿠폰</div>
+        <div class="message-box">
+            <p>보유한 쿠폰이 없어요</p>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 약관보기 팝업 -->
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">전자계약안내</div>
+        <div class="message-box">
+            <div class="tab-box is-static">
+                <ul class="tabs-sub">
+                    <li class="is-on"><a href="#">전자계약 결제 안내</a></li>
+                    <li><a href="#">전자계약 결제 방식별 절차 안내</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2_1" tabindex="0">아이디 찾기 컨텐츠 내용</div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2_2" tabindex="0">비밀번호 찾기 컨텐츠 내용</div>
+            전자계약 결제 안내
+전자계약 결제는 법인인증 완료 회원만 이용 가능합니다. 
+법인회원 인증을 위해 아래 정보 입력 및 관리자 승인이 필요합니다.
+•
+소속 이메일 도메인 인증
+•
+사업자번호, 대표자명 등 사업장 정보 입력
+•
+사업자등록증 첨부
+•
+관리자 승인(최대 1~2일 소요)
+전자계약 결제 방식별 절차 안내
+카드결제
+①
+전자서명 (구매자)
+②
+관리자 검토 및 서명
+③
+마이페이지 > 구매내역 > 카드결제 진행
+④
+결제 완료 후 즉시 다운로드 가능
+세금계산서
+①
+전자서명 (구매자)
+②
+마이페이지 > 구매내역 > 세금계산서 발행 정보 입력
+③
+관리자 서명 및 다운로드 승인
+④
+다운로드 후 세금계산서 발행 협의 가능
+안내
+•
+관리자 서명까지 평균 1~2일 소요될 수 있습니다.
+•
+전자계약은 승인 절차로 시간이 소요될 수 있습니다.
+빠른 진행을 원하시면 카드결제를 선택해 주세요.
+            <!-- // -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">확인</button>
+            <button class="button-p" type="button">법인회원 인증하기</button>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //약관보기 팝업 -->
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal1');return false;">[이전]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_1');return false;">[쿠폰적용/쿠폰변경]</a>
+        <a href="#" class="button-t" onclick="fn_toast('쿠폰 적용이 해제되었어요', 1);return false;">[쿠폰적용/쿠폰변경] > 쿠폰해제</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_2');return false;">[쿠폰적용/쿠폰변경] > 쿠폰 없는 경우</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal3');return false;">전자계약 자세히 보기</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

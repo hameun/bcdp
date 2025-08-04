@@ -1,0 +1,265 @@
+{%- extends "pubguide/_layout.njk" -%}
+{%- import "_templates/_macro/_macro.njk" as macro -%}
+
+{% block content %}
+<h1 class="title1">Form/Textarea</h1>
+
+<h2 class="title2">Radio</h2>
+<div class="radio">
+    <label class="ipt-radio"><input type="radio" name="radio1"><i>라디오버튼</i></label>
+    <label class="ipt-radio"><input type="radio" name="radio1" checked><i>라디오버튼</i></label>
+    <label class="ipt-radio"><input type="radio" name="radio1" disabled><i>라디오버튼</i></label>
+    <label class="ipt-radio"><input type="radio" name="radio2" checked disabled><i>라디오버튼</i></label>
+</div>
+<div class="radio">
+    <label class="ipt-radio-small"><input type="radio" name="radio3"><i>라디오버튼</i></label>
+    <label class="ipt-radio-small"><input type="radio" name="radio3" checked><i>라디오버튼</i></label>
+    <label class="ipt-radio-small"><input type="radio" name="radio3" disabled><i>라디오버튼</i></label>
+    <label class="ipt-radio-small"><input type="radio" name="radio4" checked disabled><i>라디오버튼</i></label>
+</div>
+
+<h2 class="title2">Checkbox</h2>
+<div class="checkbox">
+    <label class="ipt-check"><input type="checkbox" name="checkbox1"><i>체크박스</i></label>
+    <label class="ipt-check"><input type="checkbox" name="checkbox2" checked><i>체크박스</i></label>
+    <label class="ipt-check"><input type="checkbox" name="checkbox3" disabled><i>체크박스</i></label>
+    <label class="ipt-check"><input type="checkbox" name="checkbox4" checked disabled><i>체크박스</i></label>
+</div>
+<div class="checkbox">
+    <label class="ipt-check-small"><input type="checkbox" name="checkbox1"><i>체크박스</i></label>
+    <label class="ipt-check-small"><input type="checkbox" name="checkbox2" checked><i>체크박스</i></label>
+    <label class="ipt-check-small"><input type="checkbox" name="checkbox3" disabled><i>체크박스</i></label>
+    <label class="ipt-check-small"><input type="checkbox" name="checkbox4" checked disabled><i>체크박스</i></label>
+</div>
+<div class="checkbox">
+    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>체크박스</i></label>
+    <label class="ipt-check-sub"><input type="checkbox" name="checkbox2" checked><i>체크박스</i></label>
+    <label class="ipt-check-sub"><input type="checkbox" name="checkbox3" disabled><i>체크박스</i></label>
+    <label class="ipt-check-sub"><input type="checkbox" name="checkbox4" checked disabled><i>체크박스</i></label>
+</div>
+
+
+<div class="chip-box">
+    <label class="chip"><input type="radio" name="radio1" checked><i>전체</i></label>
+    <label class="chip"><input type="radio" name="radio1"><i>답변대기</i></label>
+    <label class="chip"><input type="radio" name="radio1"><i>완료</i></label>
+</div>
+
+<h2 class="title2">Text Field</h2>
+<div class="inputfield">
+
+    <div class="fieldset">
+        <h3 class="body1-semibold">normal</h3>
+       
+        <label for="id" class="input-title">default</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="입력하세요">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+            </span>
+        </div>
+        <p class="input-help">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-error">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-pass">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-disabled">헬프텍스트를 입력해 주세요.</p>
+       
+        <label for="id" class="input-title">button</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="입력하세요">
+            <span class="util-box button-box-xsmall">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="button-t">button</button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">icon</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="검색어를 입력하세요">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-search"><i>검색</i></button>
+            </span>
+        </div>
+       
+       <label class="input-title">count</label>
+       <div class="input-box">
+            <input type="text" placeholder="숫자 6자리 입력" name="passnum" value="123456" maxlength="6">
+            <span class="util-box">
+                <a href="#" class="ipt-clear">내용 지우기</a>
+                <strong class="ipt-count">02:59</strong>
+            </span>
+        </div>
+
+        <label for="id" class="input-title">password</label>
+        <div class="input-box">
+            <input type="password" class="ipt" placeholder="주민등록번호 뒤 첫번째 자리" value="1234">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-mask"><i>비밀번호 보기</i></button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">password</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="주민등록번호 뒤 첫번째 자리" value="1234">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-mask off"><i>비밀번호 숨기기</i></button>
+            </span>
+        </div>
+    </div>
+
+    <div class="fieldset">
+        <h3 class="body1-semibold">error</h3>
+       
+        <label for="id" class="input-title">default</label>
+        <div class="input-box is-error">
+            <input type="text" class="ipt" placeholder="입력하세요">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+            </span>
+        </div>
+        <p class="input-help">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-error">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-pass">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-disabled">헬프텍스트를 입력해 주세요.</p>
+
+       
+        <label for="id" class="input-title">button</label>
+        <div class="input-box is-error">
+            <input type="text" class="ipt" placeholder="입력하세요">
+            <span class="util-box button-box-xsmall">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="button-t">button</button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">icon</label>
+        <div class="input-box is-error">
+            <input type="text" class="ipt" placeholder="검색어를 입력하세요">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-search"><i>검색</i></button>
+            </span>
+        </div>
+
+       <label class="input-title">count</label>
+       <div class="input-box is-error">
+            <input type="text" placeholder="숫자 6자리 입력" name="passnum" value="123456" maxlength="6">
+            <span class="util-box">
+                <a href="#" class="ipt-clear">내용 지우기</a>
+                <strong class="ipt-count">02:59</strong>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">password</label>
+        <div class="input-box is-error">
+            <input type="password" class="ipt" placeholder="주민등록번호 뒤 첫번째 자리" value="1234">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-mask"><i>비밀번호 보기</i></button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">password</label>
+        <div class="input-box is-error">
+            <input type="text" class="ipt" placeholder="주민등록번호 뒤 첫번째 자리" value="1234">
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-mask off"><i>비밀번호 숨기기</i></button>
+            </span>
+        </div>
+    </div>
+
+    <div class="fieldset">
+        <h3 class="body1-semibold">disabled</h3>
+       
+        <label for="id" class="input-title">default</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="입력하세요" disabled>
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+            </span>
+        </div>
+        <p class="input-help">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-error">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-pass">헬프텍스트를 입력해 주세요.</p>
+        <p class="input-help is-disabled">헬프텍스트를 입력해 주세요.</p>
+       
+        <label for="id" class="input-title">button</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="입력하세요" disabled>
+            <span class="util-box button-box-xsmall">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="button-t" disabled>button</button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">icon</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="검색어를 입력하세요" disabled>
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-search"><i>검색</i></button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">count</label>
+        <div class="input-box">
+            <input type="text" placeholder="숫자 6자리 입력" name="passnum" value="123456" maxlength="6" disabled>
+            <span class="util-box">
+                <a href="#" class="ipt-clear">내용 지우기</a>
+                <!-- <strong class="ipt-count">02:59</strong> -->
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">password</label>
+        <div class="input-box">
+            <input type="password" class="ipt" placeholder="주민등록번호 뒤 첫번째 자리" value="1234" disabled>
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-mask"><i>비밀번호 보기</i></button>
+            </span>
+        </div>
+       
+        <label for="id" class="input-title">password</label>
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="주민등록번호 뒤 첫번째 자리" value="1234" disabled>
+            <span class="util-box">
+                <button class="ipt-clear">내용 지우기</button>
+                <button type="button" class="ipt-mask off"><i>비밀번호 숨기기</i></button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<h2 class="title2">Textarea</h2>
+<div class="textarea">
+<textarea rows="6" readonly>
+    "안녕하세요, 금융빅데이터플랫폼에 관심 가져 주셔서 감사합니다.
+
+    구두로 답변드렸습니다.
+    좋은하루 보내시길 바랍니다. 
+    감사합니다."
+</textarea>
+</div>
+
+
+<div class="codeview">
+    <pre>
+        [{
+            "mer_nm" : "십일번가주식회사",
+            "purc_dv_val" : "재방문",
+            "purc_dnx" : "1000 이하",
+            "bizno" : "8158101244",
+            "mer_dv_val" : "개인",
+            "tpbuz_mcls_nm" : "가공식품",
+            "tpbuz_lcls_nm" : "식품",
+            "tpbuz_scls_nm" : "간식품",
+            "strd_yymm" : "202201",
+            "avg_purc_amt" : "48838",
+            "url" : "-"
+        }]
+    </pre>
+</div>
+{%- endblock %}

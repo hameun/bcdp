@@ -1,0 +1,32 @@
+{%- extends "pubguide/_layout.njk" -%}
+{%- import "_templates/_macro/_macro.njk" as macro -%}
+
+{% block content %}
+<h1 class="title1">Popover</h1>
+
+<div class="codetest" style="height: 1200px;">
+<div class="codeview">
+    <pre>
+
+
+    fn_popOver(messageData);
+
+    </pre>
+    <script>
+    const popoverData = {
+        case001: '비교지역은 같은 시·도 내 다른 지역들과의 평균을 의미해요.',
+        case002: '🍜 음식 업종의 흐름을 확인해보세요',
+        case003: '사람들이 이 지역에 얼마나 자주 찾는지를 나타내요.'
+
+    }
+    </script>
+
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_popOver(event,popoverData.case001);">[비교지역은 같은 시·도 내 다른 지역들과의 평균을 의미해요.]</a>
+        <a href="#" class="button-s" onclick="fn_popOver(event,popoverData.case002);">[🍜 음식 업종의 흐름을 확인해보세요']</a>
+        <a href="#" class="button-s" onclick="fn_popOver(event,popoverData.case003);">[사람들이 이 지역에 얼마나 자주 찾는지를 나타내요.]</a>
+    </div>
+</div>
+
+
+{%- endblock %}

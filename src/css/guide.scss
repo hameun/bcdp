@@ -1,0 +1,232 @@
+@charset "utf-8";
+@use '_variable' as *;
+
+.guide {
+  .aside {
+    overflow: auto;
+  }
+  h2 {
+    margin-top: 20px;
+    padding: 10px 0;
+    p {
+      font-size: 16px;
+      color: $navy-300;
+    }
+  }
+  h4 {margin: 10px 0;}
+
+  /***** index *****/
+  .pub-flag {
+    @include text-body(2, 'r', $primary);
+  }
+  .publist {
+    * {
+      @include text-body;
+    }
+    > li {
+      padding: 2px 0;
+      border-bottom: 1px solid $gray-60;
+      &:hover {
+        background-color: $white;
+        * {
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    .location {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &.ing .menu-stat .caption {background-color: $input-error;}
+      &.end .menu-stat .caption {background-color: $primary;} 
+      &.del {
+        background-color: $gray-100;
+        .title {
+          color: $gray-600;
+          text-decoration: line-through;
+        }
+        .menu-stat .caption {color: $gray-40;}
+      }
+
+    }
+    .menu-title {
+      display: flex;
+      min-width: 400px;
+      box-sizing: border-box;
+
+      $depth-size: 100px;
+      .title {
+        min-width: $depth-size;
+        // white-space: nowrap; 
+      }
+      &.dep0 {
+        padding-left: $depth-size * 0;
+      }
+      &.dep1 {
+        padding-left: $depth-size * 1;
+      }
+      &.dep2 {
+        padding-left: $depth-size * 2;
+      }
+      &.dep3 {
+        padding-left: $depth-size * 3;
+        .title {
+        }
+      }
+    }
+    .menu-stat {
+      flex-basis: 70px;
+      min-width: 80px;
+      margin-right: 4px;
+      text-align: right;
+      .caption {
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: $gray-200;
+        @include text-body(3, 'r', $white);
+      }
+    }
+    .menu-link {
+      flex-basis: 40px;
+      display: flex;
+      min-width: 160px;
+      a {
+        @include set-button('xs', 't');
+        padding: 2px 8px;
+        @include text-body;
+        min-width: inherit;
+        .icon-extlink {
+          margin-left: 4px !important;
+        }
+      }
+    }
+    .menu-text {
+      padding: 0 8px;
+      li {
+        list-style: circle;
+        @include text-body(3, 'r', $gray-500);
+      }
+    }
+  }
+
+  /***** color *****/
+  .palette {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      width: 150px;
+      padding: 20px 10px;
+      margin: 5px;
+      color: #fff;
+      box-shadow: 4px 4px 16px 0px #0000001A;
+    }
+  }
+  .text-color {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    li {
+      width: 150px;
+      padding: 20px 10px;
+      margin: 5px;
+      color: #fff;
+      box-shadow: 4px 4px 16px 0px #0000001A;
+
+    }
+  }
+  .typography {
+    li {
+      margin: 10px 5px;
+    }
+    .text-weight {
+      display: flex;
+      gap: 10px;
+      margin: 10px 5px;
+      flex-wrap: wrap;
+      span {
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid $navy-100;
+        font-size: 32px;
+        background: #fff;
+        box-shadow: 4px 4px 16px 0px #0000001A;
+      }
+    }
+    .bodytext {
+      margin: 20px 5px;
+      span {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  /***** Form *****/
+  .inputfield {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .fieldset {
+      flex: 1;
+      margin-right: 10px;
+    }
+  }
+
+  /***** Tab *****/
+  .tab-box {
+    margin-bottom: 20px;
+  }
+  .tab-contents {
+    height: 100px;
+    border: 1px solid $gray-500;
+  }
+}
+.preview {
+  padding: 10px;
+  width: 50%;
+  border: 2px solid $primary;
+}
+.codetest {
+  padding: 10px 20px;
+  .codeview {
+    white-space: pre-line;
+    @include text-body(2);
+  }
+  .codeview2 {
+    margin-left: -120px;
+    @include text-body(2);
+  }
+  .comments {
+    color: darkgreen;
+  }
+}
+// 
+@media screen and (max-width: 820px){
+  .guide .publist .location {
+    width: auto;
+    flex-wrap: wrap;
+  }
+  .guide .publist .menu-title {
+    flex-basis: calc(100% - 130px);
+    min-width: auto !important;
+    padding-left: 0 !important;
+  }
+  .guide .publist .menu-link {
+    min-width: auto;
+    justify-items: right;
+    a {
+      font-size: 0;
+      i.icon-extlink {
+        margin: 0;
+      }
+    }
+  }
+  .guide .publist .menu-text {
+    flex-basis: 100%;
+    padding-left: 40px;
+  }
+}
+@media screen and (max-width: 768px){
+}

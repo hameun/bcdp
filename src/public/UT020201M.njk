@@ -1,0 +1,35 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT02.njk" ) }}
+<!-- 퍼블리싱 확인 -->
+<script>
+window.addEventListener('load', function() {
+    fn_loginFind(3);
+})
+</script>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>이전에 사용했던 비밀번호는 사용할 수 없어요. 다른 비밀번호를 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">[이전에 사용했던 비밀번호의 경우, 알럿 호출]</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

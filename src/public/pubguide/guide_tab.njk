@@ -1,0 +1,176 @@
+{%- extends "pubguide/_layout.njk" -%}
+{%- import "_templates/_macro/_macro.njk" as macro -%}
+
+{% block content %}
+<h1 class="title1">Tab/Table/paging</h1>
+<h2 class="title2">Tab</h2>
+<div class="tab-box">
+    <ul class="tabs">
+        <li class="is-on"><a href="#tabContent1">아이디 찾기</a></li>
+        <li><a href="#tabContent2">비밀번호 찾기</a></li>
+        <li><a href="#tabContent3">비밀번호 재설정</a></li>
+        <li><a href="#tabContent4">회원가입 완료</a></li>
+    </ul>
+</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">아이디 찾기 컨텐츠 내용</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">비밀번호 찾기 컨텐츠 내용</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent3" tabindex="0" style="display:none;">비밀번호 재설정 컨텐츠 내용</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent4" tabindex="0" style="display:none;">회원가입 완료 컨텐츠 내용</div>
+
+
+<div class="tab-box is-static"><!-- 컨텐츠 내용이 바뀌지 않고 스크롤 되는 탭인경우 is-static -->
+    <ul class="tabs-small">
+        <li class="is-on"><a href="#tabContent2_1">아이디 찾기</a></li>
+        <li><a href="#tabContent2_2">비밀번호 찾기</a></li>
+        <li><a href="#tabContent2_3">비밀번호 재설정</a></li>
+        <li><a href="#tabContent2_4">회원가입 완료</a></li>
+    </ul>
+</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent2_1" tabindex="0">아이디 찾기 컨텐츠 내용</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent2_2" tabindex="0">비밀번호 찾기 컨텐츠 내용</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent2_3" tabindex="0">비밀번호 재설정 컨텐츠 내용</div>
+<div class="tab-contents" aria-role="tabpanel" id="tabContent2_4" tabindex="0">회원가입 완료 컨텐츠 내용</div>
+
+
+<div class="tab-box">
+    <ul class="tabs-scroll">
+        <li class="is-on"><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+    </ul>
+</div>
+<div class="tab-box">
+    <ul class="tabs-sub">
+        <li class="is-on"><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+    </ul>
+</div>
+
+<div class="tab-box">
+    <ul class="segment">
+        <li class="is-on"><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+    </ul>
+</div>
+
+<div class="tab-box">
+    <ul class="segment-small">
+        <li class="is-on"><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+    </ul>
+</div>
+
+<h2 class="title2">Table/paging</h2>
+<div class="contents-summary">
+    <p class="title">내역 <strong>17</strong></p>
+    <div class="page-select">
+        <select>
+            <option value="10">10개</option>
+            <option value="10">20개</option>
+            <option value="10">30개</option>
+        </select>
+    </div>
+</div>
+<div class="table align-left">
+    <table summary="기본인자 정보 테이블">
+        <colgroup>
+            <col width="*" style="min-width:100px;">
+            <col width="*" style="min-width:100px;">
+            <col width="*" style="min-width:100px;">
+            <col width="*" style="min-width:100px;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>변수명</th>
+                <th>타입</th>
+                <th>변수설명</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>apiAtckNo</td>
+                <td>STRING</td>
+                <td>OPEN API호출 인증키</td>
+                <td>내용OPEN API 승인 시 발급되는고유키</td> 
+            </tr>
+            <tr>
+                <td>apiAtckNo</td>
+                <td>STRING</td>
+                <td>OPEN API호출 인증키</td>
+                <td>내용OPEN API 승인 시 발급되는고유키</td> 
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="table">
+    <table summary="분야별 통계 정보 테이블">
+        <colgroup>
+            <col width="*" style="min-width:100px;">
+            <col width="160px" style="min-width:100px;">
+            <col width="160px" style="min-width:100px;">
+            <col width="210px" style="min-width:100px;">
+            <col width="210px" style="min-width:100px;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>분야</th>
+                <th>조회수</th>
+                <th>다운로드수</th>
+                <th>결제건수</th>
+                <th>판매금액</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>여행</td>
+                <td>452</td>
+                <td>452</td>
+                <td>231,321</td>
+                <td class="right">12,313,131원</td>
+            </tr>
+            <tr>
+                <td>여행</td>
+                <td>452</td>
+                <td>452</td>
+                <td>231,321</td>
+                <td class="right">12,313,131원</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="table-bottom">
+    <div class="button-box-large">
+        <button type="button" class="button-s">삭제</button>
+        <button type="button" class="button-p">등록</button>
+        <button type="button" class="button-p right-btn">엑셀다운로드<i class="icon-right icon-download"></i></button>
+    </div>
+    <div class="paging">
+        <span class="arrow">
+            <a href="#" class="first disabled">처음</a>
+            <a href="#" class="prev disabled">이전</a>
+        </span>
+        <span class="count">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#" class="current">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <i class="shortening">...</i>
+            <a href="#">33</a>
+        </span>
+        <span class="arrow">
+            <a href="#" class="next">다음</a>
+            <a href="#" class="last">마지막</a>
+        </span>
+    </div>
+</div>
+{%- endblock %}

@@ -1,0 +1,56 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT01.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>안전한 정보 보호를 위해 비밀번호를 정기적으로 변경해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">나중에 변경하기</button>
+            <button class="button-p close-modal" type="button">지금 변경하기</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden modal2" id="modal2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>비밀번호 변경 주기가 만료되었어요. 안전한 이용을 위해 새로운 비밀번호로 변경해주세요.</p>
+        </div>
+        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden modal3" id="modal3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>아이디 또는 비밀번호가 일치하지 않습니다. <br>5회 오류 시 로그인이 제한돼요. (N/5)</p>
+        </div>
+        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden modal4" id="modal4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>비밀번호를 5회 이상 잘못 입력하셨습니다. <br>비밀번호 재설정 후 다시 로그인해주세요.</p>
+        </div>
+        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[비밀번호 변경 주기 도래 시]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">[비밀번호 변경 주기 만료 시]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');return false;">[로그인 오류일 경우(1~4회)]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">[로그인 오류일 경우(5회 이상)]</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

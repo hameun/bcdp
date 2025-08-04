@@ -1,0 +1,33 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_AI02.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<!-- 공유하기 팝업 -->
+<div class="pop-modal modal-hidden" id="shareModal">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">공유하기</div>
+        <div class="share-sns">
+            <a href="#" class="kakao"><span class="icon-kakao"></span><i class="txt">카카오톡</i></a>
+            <a href="#" class="facebook"><span class="icon-facebook"></span><i class="txt">페이스북</i></a>
+            <a href="#" class="naverblog"><span class="icon-naverblog"></span><i class="txt">네이버블로그</i></a>
+            <a href="#" class="url-copy"><span class="icon-url"></span><i class="txt">URL복사</i></a>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //공유하기 팝업 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('shareModal');return false;">[공유하기]</a>
+        <a href="#" class="button-q" onclick="fn_toast('URL이 복사 되었습니다',1);return false;">[공유하기] URL복사</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

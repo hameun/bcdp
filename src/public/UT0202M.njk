@@ -1,0 +1,69 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT02.njk" ) }}
+<!-- 퍼블리싱 확인 -->
+<script>
+window.addEventListener('load', function() {
+    fn_loginFind(2);
+})
+</script>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 정보로 가입된 계정이 없어요. <br>회원가입 후 로그인해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-s" type="button">회원가입</button>
+            <button class="button-p close-modal" type="button">재입력</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>인증번호가 전송되었습니다. <br>인증번호를 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>인증이 완료되었습니다.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>인증번호가 올바르지 않습니다. <br>다시 확인 후 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">[가입된 계정 없을 시, 알럿 호출]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_2');return false;">[인증번호 전송] 버튼 선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_3');return false;">인증번호 6자리 입력 즉시 인증번호 검증 [성공]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_4');return false;">인증번호 6자리 입력 즉시 인증번호 검증 [실패]</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

@@ -1,0 +1,64 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT050305.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터파트너정보 수정을 취소하시겠어요? <br>변경한 정보는 저장되지 않습니다.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">취소</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터파트너정보 수정을 요청하시겠어요? <br>관리자의 승인 후에 실제 수정이 완료됩니다.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p close-modal" type="button">수정 요청</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지원되는 형식은 PDF이며, 50MB 이내 파일만 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지원되는 형식은 PNG이며, 50MB 이내 파일만 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_1');return false;">[취소]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_2');return false;">[수정]</a>
+        <a href="#" class="button-q" onclick="fn_toast('수정 요청이 완료되었어요.',1);return false;">[수정] 토스트팝업</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_3');return false;">[통장사본, 통신판매업종신고증 유효성  알럿]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_4');return false;">[로고 유효성 알럿]</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

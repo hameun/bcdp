@@ -1,0 +1,36 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT02.njk" ) }}
+<!-- 퍼블리싱 확인 -->
+<script>
+window.addEventListener('load', function() {
+    fn_loginFind(0);
+})
+</script>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}
+
+{% block modal %}
+<!-- [2025.07.29 모달팝업 변경] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 정보로 가입된 계정이 없어요. <br>회원가입 후 로그인해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-s" type="button">회원가입</button>
+            <button class="button-p close-modal" type="button">재입력</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">[가입된 계정 없을 시, 알럿 호출]</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+<!-- //[2025.07.29 모달팝업 변경] -->
+{%- endblock %}

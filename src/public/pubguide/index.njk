@@ -1,0 +1,47 @@
+{%- extends "pubguide/_layout.njk" -%}
+{%- import "_templates/_macro/_macro.njk" as macro -%}
+
+{% block content %}
+    <h1 class="title1">퍼블리싱 리스트</h1>
+    <p class="notice">✔ 완료표시 전 까지는 마크업 계속 변경됩니다.</p>
+
+    {% for title in publist_data %}
+    <h2 class="title2" id="{{title.href}}">{{title.nav}} <span class="pub-flag">완료예정: {{title.end}}</span></h2>
+    <ul class="publist">
+        {% for menu in title.menus %}
+        <li>
+            <ul class="location {{menu.stat}}">
+                <li class="menu-title dep{{menu.dep}}">
+                    {% if menu.group %}
+                    <span class="title">{{menu.group}}</span>
+                    {% endif %}
+                    <span class="title">{{menu.name}}</span>
+                </li>
+                <li class="menu-stat"><span class="caption">{{menu.date}}<span></li>
+                <li class="menu-link">
+                    <span>
+                        {% if menu.href %}
+                        <a href="../{{menu.href}}.html" target="_blank">
+                            {{menu.href}}
+                            <i class="icon-extlink icon-right">새창으로 이동</i>
+                        </a>
+                        {% else %}
+                        {# <a href="../{{menu.href}}.html" target="_blank" class="button-q">{{menu.href}}</a> #}
+                        {% endif %}
+                    </span>
+                </li>
+                {% if menu.text %}
+                <li class="menu-text">
+                    <ul>
+                        {% for t in menu.text %}
+                        <li>{{t}}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+            </ul>
+        </li>
+        {%- endfor %}
+    </ul>
+    {% endfor %}
+{%- endblock %}
