@@ -76,6 +76,11 @@ body.is-fixed {
     padding-top: $layout-padding;
   }
 }
+.container {
+  &:has(.page-login), &:has(.page-login-find) {
+    justify-content: center;
+  }
+}
 .content {
   width: 100%;
   max-width: 1000px;
@@ -294,11 +299,6 @@ navigation
   }
 }
 @media screen and (min-width: 768px){
-  .container {
-    &:has(.page-login), &:has(.page-login-find) {
-      justify-content: center;
-    }
-  }
   // Mobil only
   .is-mobile {display: none !important;}
 }

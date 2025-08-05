@@ -11,7 +11,8 @@
         "dep" : 0,
         "href": "DM01",
         "date": "8/5",
-        "stat": "ing"
+        "stat": "ing",
+        "text": ["목록>리스트/카드 기능 미구현"]
       },
       {
         "name": "[모달]",
@@ -25,7 +26,8 @@
         "dep" : 1,
         "href": "DM02",
         "date": "8/5",
-        "stat": "ing"
+        "stat": "ing",
+        "text": ["탭 스크롤 미구현"]
       },
       {
         "name": "OPEN API 상세",
@@ -33,28 +35,31 @@
         "href": "OA02",
         "stat": "ing",
         "date": "8/5",
-        "text": ["결과샘플, API결과 공백제거 후 테스트 필요"]
+        "text": ["탭 스크롤 미구현", "결과샘플, API결과 공백제거 후 테스트 필요"]
       },
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "DM02M",
         "date": "8/5",
-        "stat": "ing"
+        "stat": "ing",
+        "text": ["데이터선택 데이터명 말줄임 미적용"]
       },
       {
         "name": "결제하기",
         "dep" : 1,
         "href": "DM03",
         "date": "8/5",
-        "stat": "ing"
+        "stat": "ing",
+        "text": ["데이터상품 내용 보기/접기 미구현"]
       },
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "DM03M",
         "date": "8/5",
-        "stat": "ing"
+        "stat": "ing",
+        "text": ["전자계약 자세히보기 > 탭 스크롤 미구현"]
       },
       {
         "name": "구매완료",

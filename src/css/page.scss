@@ -18,6 +18,7 @@ $pageLogin-width: 405px;
   }
   & ~.bottom-box {
     max-width: $pageLogin-width;
+    margin-top: 0;
     .button-box-large button {
       flex: 1;
     }
@@ -1623,11 +1624,16 @@ page : page-datamarket
         dl {
           margin-top: 16px;
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           &.apply-coupon {
             margin-top: 8px;
             dt {
               font-weight: 400;
+              &::before {
+                content: 'ㄴ';
+                margin-right: 4px;
+              }
             }
             dd {
               color: $point-blue;
@@ -1675,6 +1681,7 @@ page : page-datamarket
             flex: 0 0 92px;
           }
           dd {
+            // position: relative;
             flex: auto;
             text-align: right;
             display: flex;
@@ -1685,6 +1692,8 @@ page : page-datamarket
               align-items: center;
               align-self: flex-start;
               margin-left: auto;
+              // position: absolute;
+              // right: 0;
             }
             .data {
               padding: 6px 11px;
@@ -1734,7 +1743,7 @@ page : page-datamarket
 
     // 최종 결제금액
     .pay-total {
-      flex: 1;
+      flex: 0 0 385px;
       // .item-group {
       //   position: sticky;
       //   top: 56px;
@@ -2033,5 +2042,53 @@ MEDIA QUERY
         }
       }
     }
+  }
+
+  .page-datamarket .datamarket-pay .item-pqyment .desc {
+    display: block;
+  }
+  .page-datamarket .datamarket-pay .item-pqyment .desc .detail-info {
+    margin-left: 0;
+    text-align: right;
+  }
+  .page-datamarket .datamarket-pay .item-group .item .desc {
+    // flex-direction: column;
+  }
+
+  .page-datamarket .datamarket-pay .item-group .item-bottom dl.apply-coupon {
+    flex-direction: column;
+    dt {
+      flex: 1;
+      width: 100%;
+      text-align: left;
+    }
+    dd {
+      flex: 1;
+      width: 100%;
+      text-align: right;
+    }
+  }
+  .page-datamarket .datamarket-pay .item-group .item .price {
+    margin-top: 32px;
+  }
+  .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set {
+    flex-direction: column;
+    position: relative;
+  }apply-coupon
+  .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set dd .show-detail {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set dt {
+    flex-basis: auto;
+    padding: 0 0 12px;
+  }
+  .page-datamarket .datamarket-pay .item-pqyment .chip-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+  }
+  .page-datamarket .datamarket-pay .item-pqyment .chip-box-large .chip {
+    flex: 0 0 45%;
   }
 } // end @media screen and (max-width: 767px)

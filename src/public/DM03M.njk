@@ -21,8 +21,91 @@
 <div class="pop-modal modal-hidden" id="modal2_1">
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">쿠폰</div>
-        <div class="message-box">
-            <p>쿠폰 리스트 출력</p>
+        <div class="coupon-box">
+            <div class="item-scroll-wrap">
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="radio" name="couponDuplication0">
+                            <i class="txt">100% 할인</i>
+                        </label>
+                        <span class="flag flag-primary">최대 할인 쿠폰</span>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="radio" name="coupon" disabled>
+                            <i class="txt">10% 할인</i>
+                        </label>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="radio" name="coupon">
+                            <i class="txt">5% 할인</i>
+                        </label>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="radio" name="coupon">
+                            <i class="txt">100% 할인</i>
+                        </label>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="radio" name="couponDuplication1">
+                            <i class="txt">10% 할인 (최대 20,000원)</i>
+                        </label>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="radio" name="couponDuplication2">
+                            <i class="txt">10% 할인 (최대 20,000원)</i>
+                        </label>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
         <div class="button-box-medium">
             <button class="button-q" type="button">초기화</button>
@@ -32,10 +115,10 @@
     </div>
 </div>
 
-<div class="pop-modal modal-hidde n" id="modal2_2">
+<div class="pop-modal modal-hidden" id="modal2_2">
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">쿠폰</div>
-        <div class="message-box">
+        <div class="coupon-box">
             <div class="result-none">
                 <p class="message">보유한 쿠폰이 없어요</p>
             </div>
@@ -48,52 +131,51 @@
 <div class="pop-modal modal-hidden" id="modal3">
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">전자계약안내</div>
-        <div class="message-box">
+        <div class="modal-tabs-sub-paragraph">
             <div class="tab-box is-static">
-                <ul class="tabs-sub">
+                <ul class="tabs-sub-small">
                     <li class="is-on"><a href="#">전자계약 결제 안내</a></li>
                     <li><a href="#">전자계약 결제 방식별 절차 안내</a></li>
                 </ul>
             </div>
-            <div class="tab-contents" aria-role="tabpanel" id="tabContent2_1" tabindex="0">아이디 찾기 컨텐츠 내용</div>
-            <div class="tab-contents" aria-role="tabpanel" id="tabContent2_2" tabindex="0">비밀번호 찾기 컨텐츠 내용</div>
-            전자계약 결제 안내
-전자계약 결제는 법인인증 완료 회원만 이용 가능합니다. 
-법인회원 인증을 위해 아래 정보 입력 및 관리자 승인이 필요합니다.
-•
-소속 이메일 도메인 인증
-•
-사업자번호, 대표자명 등 사업장 정보 입력
-•
-사업자등록증 첨부
-•
-관리자 승인(최대 1~2일 소요)
-전자계약 결제 방식별 절차 안내
-카드결제
-①
-전자서명 (구매자)
-②
-관리자 검토 및 서명
-③
-마이페이지 > 구매내역 > 카드결제 진행
-④
-결제 완료 후 즉시 다운로드 가능
-세금계산서
-①
-전자서명 (구매자)
-②
-마이페이지 > 구매내역 > 세금계산서 발행 정보 입력
-③
-관리자 서명 및 다운로드 승인
-④
-다운로드 후 세금계산서 발행 협의 가능
-안내
-•
-관리자 서명까지 평균 1~2일 소요될 수 있습니다.
-•
-전자계약은 승인 절차로 시간이 소요될 수 있습니다.
-빠른 진행을 원하시면 카드결제를 선택해 주세요.
-            <!-- // -->
+            <div class="tabs-sub-contents">
+                <div class="item-scroll-wrap">
+                    <h1 id="tabContent1">전자계약 결제 안내</h1>
+
+                    <p>전자계약 결제는 법인인증 완료 회원만 이용 가능합니다.<br>
+                    법인회원 인증을 위해 아래 정보 입력 및 관리자 승인이 필요합니다.</p>
+                    <ul>
+                        <li>소속 이메일 도메인 인증</li>
+                        <li>사업자번호, 대표자명 등 사업장 정보 입력</li>
+                        <li>사업자등록증 첨부</li>
+                        <li>관리자 승인(최대 1~2일 소요)</li>
+                    </ul>
+
+                    <h1 id="tabContent2">전자계약 결제 방식별 절차 안내</h1>
+                    
+                    <h2>카드결제</h2>
+                    <ul class="list-circle-num">
+                        <li><i class="mark">①</i>전자서명 (구매자)</li>
+                        <li><i class="mark">②</i>관리자 검토 및 서명</li>
+                        <li><i class="mark">③</i>마이페이지 > 구매내역 > 카드결제 진행</li>
+                        <li><i class="mark">④</i>결제 완료 후 즉시 다운로드 가능</li>
+                    </ul>
+                    
+                    <h2>세금계산서</h2>
+                    <ul class="list-circle-num">
+                        <li><i class="mark">①</i>전자서명 (구매자)</li>
+                        <li><i class="mark">②</i>마이페이지 > 구매내역 > 세금계산서 발행 정보 입력</li>
+                        <li><i class="mark">③</i>관리자 서명 및 다운로드 승인</li>
+                        <li><i class="mark">④</i>다운로드 후 세금계산서 발행 협의 가능</li>
+                    </ul>
+                    
+                    <h2>안내</h2>
+                    <ul class="list-bul">
+                        <li><i class="mark">•</i>관리자 서명까지 평균 1~2일 소요될 수 있습니다.</li>
+                        <li><i class="mark">•</i>전자계약은 승인 절차로 시간이 소요될 수 있습니다. 빠른 진행을 원하시면 카드결제를 선택해 주세요.</li>
+                    </ul>
+                </div>
+            </div><!-- //.tabs-sub-contents -->
         </div>
         <div class="button-box-medium">
             <button class="button-q" type="button">확인</button>
@@ -106,6 +188,20 @@
     </div>
 </div>
 <!-- //약관보기 팝업 -->
+
+<div class="pop-modal modal-hidden" id="modal4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금 법인회원 인증을 하러가면 결제 정보가 저장되지 않아요. 장바구니에 먼저 담아두고 진행해주세요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p" type="button">인증하러 가기</button>
+        </div>
+    </div>
+</div>
+
+
 <!-- 퍼블리싱 확인 -->
 <div class="modal-test">
     <div class="button-box-xsmall">  
@@ -114,6 +210,7 @@
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_1');return false;">[쿠폰적용/쿠폰변경]</a>
         <a href="#" class="button-t" onclick="fn_toast('쿠폰 적용이 해제되었어요', 1);return false;">[쿠폰적용/쿠폰변경] > 쿠폰해제 토스트팝업</a>
         <a href="#" class="button-q" onclick="fn_modalPopOpen('modal3');return false;">전자계약 자세히 보기</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal4');return false;">[법인회원 인증하기 버튼 선택 시, 컨펌 호출]</a>
     </div> 
 </div>
 <!-- //퍼블리싱 확인 -->
