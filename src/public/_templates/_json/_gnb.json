@@ -10,50 +10,58 @@
         "name": "목록",
         "dep" : 0,
         "href": "DM01",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       },
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "DM01M",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       },
       {
         "name": "상세",
         "dep" : 1,
         "href": "DM02",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       },
       {
         "name": "OPEN API 상세",
         "dep" : 1,
         "href": "OA02",
-        "date": "작업예정",
+        "stat": "ing",
+        "date": "8/5",
         "text": ["결과샘플, API결과 공백제거 후 테스트 필요"]
       },
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "DM02M",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       },
       {
         "name": "결제하기",
         "dep" : 1,
         "href": "DM03",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       },
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "DM03M",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       },
       {
         "name": "구매완료",
         "dep" : 1,
         "href": "DM04",
-        "date": "작업예정"
+        "date": "8/5",
+        "stat": "ing"
       }
     ]},
     {

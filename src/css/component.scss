@@ -103,6 +103,14 @@
 .icon-info-s {@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);}
 .icon-filter {@include set-icon(20px, 20px, svg-icon(search-filter));}
 
+.icon-link {@include set-icon(24px, 24px, svg-icon(chevron-right, $gray-900));}
+
+.icon-cc {@include set-icon(20px, 20px, svg-icon(data-cc));}
+.icon-by {@include set-icon(20px, 20px, svg-icon(data-by));}
+.icon-nc {@include set-icon(20px, 20px, svg-icon(data-nc));}
+.icon-nd {@include set-icon(20px, 20px, svg-icon(data-nd));}
+.icon-sa {@include set-icon(20px, 20px, svg-icon(data-sa));}
+
 .loading {
   width: 100%;
   display: flex;
@@ -587,7 +595,7 @@ CHECKBOX / RADIO
       $icon-check-sub-unSelected,
       $icon-check-sub-unSelected-hover
     );
-    @include text-body(1); 
+    @include text-body(1);
   }
 }
 
@@ -782,6 +790,7 @@ MODAL POPUP
     }
     &-medium {
       flex-basis: 480px;
+      max-width: 480px;
       .message-box {
         overflow: hidden;
         overflow-y: auto;
@@ -791,6 +800,7 @@ MODAL POPUP
     }
     &-large {
       flex-basis: 600px;
+      max-width: 600px;
       .message-box {
         overflow: hidden;
         overflow-y: auto;
@@ -820,6 +830,47 @@ MODAL POPUP
       }
     }
   }
+  .paragraph-box {
+    p {
+      margin-bottom: 16px;
+      @include text-body(1,'r',$gray-700);
+      em {
+        margin-bottom: 8px;
+        display: block;
+      @include text-body(1,'sb');
+      }
+    }
+    .more {
+      margin-top: 24px;
+      .step {
+        overflow: hidden;
+        margin-top: -14px;
+        li {
+          float: left;
+          display: flex;
+          align-items: center;
+          margin-right: 10px;
+          margin-top: 12px;
+          @include text-body(2,'m');
+          .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            margin-right: 6px;
+            background-color: $primary;
+            border-radius: 50%;
+            @include text-body(3,'m',$white);
+          }
+          a {
+            @include text-body(2,'m');
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
   .button-box-medium {
     button {
       flex: 1;
@@ -841,6 +892,82 @@ MODAL POPUP
   padding: 8px 0;
   .location-breadcrumb {
     margin-bottom: 20px;
+  }
+}
+.modal-data-info {
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    & +.info {
+      margin-top: 12px;
+    }
+    dt {
+      flex: auto;
+      @include text-body(1,'r',$gray-400);
+    }
+    dd {
+      flex: auto;
+      text-align: right;
+      @include text-body(1,'r',$gray-700);
+    }
+  }
+  .desc {
+    margin-top: 16px;
+    padding: 12px;
+    background-color: $gray-40;
+    border-radius: 12px;
+    dt {
+      @include text-body(2,'m',$gray-700);
+    }
+    dd {
+      @include text-body(2,'r',$gray-500);
+    }
+  }
+}
+.item-scroll-wrap {
+  max-height: auto;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 8px 0;
+  margin: -8px 0;
+  &::-webkit-scrollbar {width: 20px;}
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-100;
+    border: 8px solid #fff;
+    border-radius: 20px;
+  }
+}
+.modal-price-cart {
+  overflow-y: hidden;
+  padding: 8px 0 20px;
+  &:has(.item:nth-child(12)) {
+    margin-right: -20px;
+  }
+  .item-scroll-wrap {
+    max-height: 442px;
+  }
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    & + .item {
+      margin-top: 16px;
+    }
+    label {
+      flex: auto;
+      align-items: center;
+      i {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include text-body(1,'m',$gray-700);
+      }
+    }
+    .i-price {
+      margin-left: auto;
+      @include text-body(1,'m',$point);
+    }
   }
 }
 .modal-hidden {
@@ -875,6 +1002,14 @@ MODAL POPUP
       background-color: $white;
       white-space: nowrap;
       @include text-body(1,'r',$gray-700);
+    }
+  }
+  &-large {
+    .chip i {
+      flex: auto;
+      padding: 11px 16px;
+      font-weight: 600;
+      text-align: center;
     }
   }
 }

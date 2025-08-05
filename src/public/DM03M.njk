@@ -32,11 +32,13 @@
     </div>
 </div>
 
-<div class="pop-modal modal-hidden" id="modal2_2">
+<div class="pop-modal modal-hidde n" id="modal2_2">
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">쿠폰</div>
         <div class="message-box">
-            <p>보유한 쿠폰이 없어요</p>
+            <div class="result-none">
+                <p class="message">보유한 쿠폰이 없어요</p>
+            </div>
         </div>
         <button class="modal-close" type="button">닫기</button>
     </div>
@@ -108,9 +110,9 @@
 <div class="modal-test">
     <div class="button-box-xsmall">  
         <a href="#" class="button-q" onclick="fn_modalPopOpen('modal1');return false;">[이전]</a>
-        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_1');return false;">[쿠폰적용/쿠폰변경]</a>
-        <a href="#" class="button-t" onclick="fn_toast('쿠폰 적용이 해제되었어요', 1);return false;">[쿠폰적용/쿠폰변경] > 쿠폰해제</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_2');return false;">[쿠폰적용/쿠폰변경] > 쿠폰 없는 경우</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_1');return false;">[쿠폰적용/쿠폰변경]</a>
+        <a href="#" class="button-t" onclick="fn_toast('쿠폰 적용이 해제되었어요', 1);return false;">[쿠폰적용/쿠폰변경] > 쿠폰해제 토스트팝업</a>
         <a href="#" class="button-q" onclick="fn_modalPopOpen('modal3');return false;">전자계약 자세히 보기</a>
     </div> 
 </div>
