@@ -1022,6 +1022,71 @@ MODAL POPUP
   }
 }
 
+
+.modal-qna-reply {
+  margin-right: -20px;
+  .item-scroll-wrap {
+    max-height: 600px;
+  }
+  .info-box {
+    position: relative;
+    padding-left: 52px;
+    .title {
+      @include text-body(0,'sb');
+    }
+    .info {
+      display: flex;
+      margin-top: 4px;
+      span {
+        display: flex;
+        align-items: center;
+        @include text-body(1,'r',$gray-500);
+        & + span::before {
+          content: '';
+          display: inline-block;
+          margin: 0 10px;
+          width: 1px;
+          height: 14px;
+          background-color: $gray-100;
+        }
+        &.partner {
+          font-weight: 500;
+          color: $gray-900;
+        }
+      }
+    }
+    &::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      color: $white;
+      border-radius: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+  .qna-q {
+    .info-box::before {
+      content: 'Q';
+      background-color: $primary;
+    }
+  }
+  .qna-a {
+    margin-top: 40px;
+    .info-box::before {
+      content: 'A';
+      background-color: $gray-700;
+    }
+  }
+  .textarea {
+    margin: 32px 0;
+  }
+}
 .modal-tabs-sub-paragraph {
   margin-right: -20px;  
   // &:has(.item:nth-child(12)) {

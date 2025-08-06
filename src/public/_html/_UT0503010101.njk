@@ -170,6 +170,276 @@
             </div>
         </div>
     </div>
+
+    <!-- [2025.08.06 등록/수정/삭제 추가] -->
+    <div class="partner-contents">
+        <div class="regist-box dataset">
+        <form>
+            <h2 class="title4">데이터셋 정보</h2>
+
+            <div class="condition">
+                <label class="input-title" for="">분야<span class="required">(필수)</span></label>
+                <div class="options">
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1" checked><i>외식</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>여행</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>의료</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>커머스</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>부동산</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>유통</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>소셜</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>통신</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>공공</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>환경</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>모빌리티</i></label>
+                </div>
+            </div>
+
+            <div class="condition">
+                <label class="input-title" for="">사용목적<span class="required">(필수)</span></label>
+                <div class="options">
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>시장조사</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>상권분석</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>고객분석</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>정책</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>상품전략</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>채널분석</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>마케팅</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>연구</i></label>
+                    <label class="ipt-check"><input type="checkbox" id="" name="checkbox1"><i>리스크</i></label>
+                </div>
+            </div>
+
+            <div class="condition">
+                <label class="input-title" for="">가격협의<span class="required">(필수)</span></label>
+                <div class="options">
+                    <label class="ipt-radio"><input type="radio" id="" name="radio2" checked><i>표준 가격</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio2"><i>가격협의</i></label>
+                </div>
+            </div>
+
+            <div class="condition">
+                <label class="input-title" for="">데이터 상품명<span class="required">(필수)</span></label>
+                <div class="input-box">
+                    <input type="text" class="ipt" placeholder="50자 이내로 입력해주세요.">
+                    <span class="util-box">
+                        <button type="button" class="ipt-clear">내용 지우기</button>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="condition">
+                <label class="input-title" for="">데이터 한줄요약<span class="required">(필수)</span></label>
+                <div class="input-box">
+                    <input type="text" class="ipt" placeholder="20자 이내로 입력해주세요.">
+                    <span class="util-box">
+                        <button type="button" class="ipt-clear">내용 지우기</button>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="condition">
+                <label class="input-title" for="">데이터 상품안내<span class="required">(필수)</span></label>
+                <div class="editor">
+                    <!-- 에디터 영역 -->
+                    <div style="background-color:#aaa; height: 400px;">에디터 영역</div>
+                    <!-- 에디터 영역 -->
+                </div>
+            </div>
+            
+            <div class="condition">
+                <p class="input-title" for="">샘플데이터</p>
+                <div class="input-file">
+                    <div class="input-box">
+                        <input type="file" id="fileSample">
+                        <input type="text" class="ipt" placeholder="파일을 등록하세요."  disabled id="fileSamplePath">
+                    </div>
+                    <div class="button-box-large">
+                        <label type="button" class="button-s" for="fileSample">파일 찾기</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="condition">
+                <p class="input-title" for="">테이블명세서</p>
+                <div class="input-file">
+                    <div class="input-box">
+                        <input type="file" id="fileTable">
+                        <input type="text" class="ipt" placeholder="파일을 등록하세요."  disabled id="fileTablePath">
+                    </div>
+                    <div class="button-box-large">
+                        <label type="button" class="button-s" for="fileTable">파일 찾기</label>
+                        <a href="#" class="button-q" download>가이드 파일</a>
+                    </div>
+                </div>
+                <p class="info-text">HTML 탭에서 수정하신 내용을 에디터에서 확인한 뒤 등록해주세요.</p>
+            </div>
+
+            <div class="condition">
+                <label class="input-title" for="">검색 키워드</label>
+                <div class="textarea">
+                    <textarea name="" id="" placeholder="부동산, 아파트" style="height:200px;"></textarea>
+                </div>
+                <p class="info-text">데이터 상품 검색 시 키워드로 사용됩니다. , <span>(쉼표)</span>로 구분하여 입력하세요.</p>
+            </div>
+
+            <div class="condition">
+                <label class="input-title" for="">노출여부<span class="required">(필수)</span></label>
+                <div class="options">
+                    <label class="ipt-radio"><input type="radio" id="" name="radio3"><i>노출</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio3"><i>비노출</i></label>
+                </div>
+            </div>
+            
+            <div class="condition">
+                <label class="input-title" for="">등록일/최종수정일</label>
+                <div class="options">
+                    <p><span>2025.07.07</span> / <span>-</span></p>
+                </div>
+            </div>
+
+            <h2 class="title4">데이터 정보</h2>
+            
+            <div class="condition">
+                <label class="input-title" for="">이용허락범위<span class="required">(필수)</span></label>
+                <div class="options">
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>데이터 상품명</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>이용허락범위 제한 없음</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>저작자 표시</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>저작자자표시-비영리</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>저작자표시-변경금지</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>저작자표시-동일조건변경허락</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>저작자표시-비영리-동일조건변경허락</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio4"><i>저작자표시-비영리-변경경금지</i></label>
+                </div>
+            </div>
+
+            <div class="condition">
+                <label class="input-title" for="">다운로드 가능 기간<span class="required">(필수)</span></label>
+                <div class="options">
+                    <label class="ipt-radio"><input type="radio" id="" name="radio5"><i>30일</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio5"><i>60일</i></label>
+                    <label class="ipt-radio"><input type="radio" id="" name="radio5"><i>90일</i></label>
+                </div>
+            </div>
+
+            <div class="button-box-large">
+                <button class="button-q left-btn" type="button">삭제</button>
+                <button class="button-s right-btn" type="button">취소</button>
+                <button class="button-p" type="button">등록</button><!-- 데이터셋 등록 전 -->
+                <button class="button-p" type="button">수정</button><!-- 데이터셋 등록 후 -->
+            </div>
+        </form>
+        </div>
+
+        <!-- 데이터셋 등록 전 -->
+        <div class="contents-summary">
+            <p class="title">데이터</p>
+        </div>
+        <div class="result-none">
+            <p class="message">데이터셋을 등록해주세요.</p>
+            <p class="message-sub">데이터셋을 등록하신 후 데이터를 추가할 수 있어요.</p>
+        </div>
+        <!-- //데이터셋 등록 전 -->
+
+        <!-- 등록된 데이터 없는 경우 -->
+        <div class="contents-summary">
+            <p class="title">데이터</p>
+            <div class="button-box-small">
+                <button type="button" class="button-s">데이터 등록</button>
+            </div>
+        </div>
+        <div class="result-none">
+            <p class="message">등록된 데이터가 없습니다.</p>
+            <p class="message-sub">데이터를 등록해보시겠어요?</p>
+            <div class="button-box-small">
+                <button type="button" class="button-s">데이터 등록</button>
+            </div>
+        </div>
+        <!-- //등록된 데이터 없는 경우 -->
+
+        <!-- 데이터 등록 후 -->
+        <div class="contents-summary">
+            <p class="title">데이터</p>
+            <div class="button-box-small">
+                <button type="button" class="button-t">노출순서저장</button>
+                <button type="button" class="button-s">데이터 등록</button>
+            </div>
+        </div>
+        <div class="table">
+            <table summary="데이터셋 등록 리스트 테이블">
+                <colgroup>
+                    <col width="*">
+                    <col width="172px">
+                    <col width="95px">
+                    <col width="95px">
+                    <col width="123px">
+                    <col width="136px">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>데이터명</th>
+                        <th>금액</th>
+                        <th>노출여부</th>
+                        <th>노출순서</th>
+                        <th>등록일/수정일</th>
+                        <th>수정/삭제</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="title2"><a href="#">신용카드 거래 내역 집계(2019년 1월)2줄 처리 2줄 2줄처리 2줄 영역 초과 시 줄바꿈하여 전체 출력</a></th>
+                        <td class="right">91,644,666원</td>
+                        <td>노출</td>
+                        <td>
+                            <a href="#" class="icon-up">위로</a>
+                            <a href="#" class="icon-down">아래로</a>
+                        </td>
+                        <td><p>2025.07.16</p><p>2025.09.09</p></td>
+                        <td>
+                            <div class="button-box-xsmall">
+                                <button type="button" class="button-s">수정</button>
+                                <button type="button" class="button-p">삭제</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="title2"><a href="#">신용카드 거래 내역 집계(2019년 1월)2줄 처리 2줄 2줄처리 2줄 영역 초과 시 줄바꿈하여 전체 출력</a></th>
+                        <td class="right">91,644,666원</td>
+                        <td>노출</td>
+                        <td>
+                            <a href="#" class="icon-up">위로</a>
+                            <a href="#" class="icon-down">아래로</a>
+                        </td>
+                        <td><p>2025.07.16</p><p>2025.09.09</p></td>
+                        <td>
+                            <div class="button-box-xsmall">
+                                <button type="button" class="button-s">수정</button>
+                                <button type="button" class="button-p">삭제</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="title2"><a href="#">신용카드 거래 내역 집계(2019년 1월)</a></th>
+                        <td class="right">91,644,666원</td>
+                        <td>노출</td>
+                        <td>
+                            <a href="#" class="icon-up">위로</a>
+                            <a href="#" class="icon-down">아래로</a>
+                        </td>
+                        <td><p>2025.07.16</p><p>2025.09.09</p></td>
+                        <td>
+                            <div class="button-box-xsmall">
+                                <button class="button-s" type="button">수정</button>
+                                <button class="button-p" type="button">삭제</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- //데이터 등록 후 -->
+    </div>
+    <!-- //[2025.08.06 등록/수정/삭제 추가] -->
     <!-- //[데이터파트너] -->
 </div>
 <!-- //.content .page-partner -->
