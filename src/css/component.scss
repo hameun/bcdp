@@ -1687,10 +1687,10 @@ TOAST POPUP
   .tab-box {
     &.is-static,
     &.is-sticky {
-      height: 93px;
+      height: 88px;
       .tabs {
-        padding-top: 37px;
-        height: 93px;
+        padding-top: 32px; // 88 - 56
+        height: 88px;
       }
     }
   }

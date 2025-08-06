@@ -365,7 +365,7 @@ function fn_tabs(){
                 if (tab.classList.contains('is-static') || tab.classList.contains('is-sticky')) {
                     const targetY = currentTabContent.getBoundingClientRect().y;
                     window.scrollTo({
-                        top: targetY + window.pageYOffset - 113, // PC : 20px(상단여백) + 93px(탭높이)
+                        top: targetY + window.pageYOffset - 120, // PC : 32px(패딩값) + 88px(탭높이)
                         behavior: 'smooth'
                     });
                 } else {
