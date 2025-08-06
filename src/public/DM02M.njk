@@ -292,7 +292,7 @@
         <!-- 퍼블리싱 확인 -->
         <script>
             const modal = document.getElementById('dateSelectModal');
-            const radios = document.querySelectorAll('.item-scroll-wrap input');
+            const radios = modal.querySelectorAll('.item-scroll-wrap input');
             radios.forEach(function(radio){
                 radio.addEventListener('click', function(){
                     fn_modalPopClose(modal);

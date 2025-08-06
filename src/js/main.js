@@ -1,9 +1,6 @@
-let windowWidth;
-let windowHeight;
-let aside;
 window.addEventListener('load', function(){
-    windowWidth = this.innerWidth;
-    windowHeight = this.innerHeight;
+    // windowWidth = this.innerWidth;
+    // windowHeight = this.innerHeight;
     aside = document.querySelector('.aside');
     console.log('loaded');
     /** 기본 로드될 함수 */
@@ -15,20 +12,43 @@ window.addEventListener('load', function(){
     fn_fileInput();
     fn_aside();
     fn_selectbox();
-
-    fn_marketSlider();
+    
     fn_insightSlider();
-}); // end window.onload
 
-window.addEventListener('scroll', function(){
+    fn_marketList(); // [데이터마켓] 리스트 스타일 변경
+    fn_marketPayItemFold(); // [데이터마켓] 결제하기
+    fn_marketSlider();
+}); // end window.onload
+let windowWidth = 0;
+let windowHeight = 0;
+let aside;
+window.addEventListener('scroll', function(e){
     windowWidth = this.innerWidth;
     windowHeight = this.innerHeight;
+    fn_tabSticky(e);
 });
-window.addEventListener('resize', function(){
+window.addEventListener('resize', function(e){
     windowWidth = this.innerWidth;
     windowHeight = this.innerHeight;
     fn_aside();
+    fn_tabSticky(e);
 });
+
+function fn_tabSticky(_e){
+    const tab = document.querySelector('.tab-box');
+    if (!tab) return false;
+
+    let tabY  = tab.getBoundingClientRect().y;
+    if ( tab.classList.contains('is-static') || tab.classList.contains('is-sticky') ) {
+        if( tabY <= 0 ) {
+            tab.classList.remove('is-static');
+            tab.classList.add('is-sticky');
+        } else {
+            tab.classList.remove('is-sticky');
+            tab.classList.add('is-static');
+        }
+    };
+}
 
 function fn_aside(){
     if (windowHeight < 650 && innerWidth > 1023) {
@@ -73,6 +93,70 @@ function fn_fileInput (){
             _this.nextElementSibling.value = _this.value;
         });
     });
+}
+
+function fn_marketList(){
+    const marketContent = document.querySelector('.datamarket-contents');
+    if (!marketContent) return false;
+
+    const dataList = marketContent.querySelector('.data-list >ul');
+    const listBtns = marketContent.querySelectorAll('.list-type button');
+    listBtns.forEach(function(prevListBtn){
+
+        prevListBtn.addEventListener('click', function(){
+            prevListBtn.classList.remove('is-show');
+
+            const prevListNames = prevListBtn.classList;
+            let prevListType;
+            for ( var i = 0; i < prevListNames.length ; i++ ) {
+                if (prevListNames[i].indexOf('type-') != -1) {
+                    prevListType = prevListNames[i].split('type-')[1];
+                }
+            }
+            dataList.classList.remove(prevListType);
+            
+            const currentListBtn = prevListBtn.previousElementSibling || prevListBtn.nextElementSibling;
+            currentListBtn.classList.add('is-show');
+
+            const currentlistNames = currentListBtn.classList;
+            let currentListType;
+            for ( var i = 0; i < currentlistNames.length ; i++ ) {
+                if (currentlistNames[i].indexOf('type-') != -1) {
+                    currentListType = currentlistNames[i].split('type-')[1];
+                }
+            }
+            dataList.classList.add(currentListType);
+        });
+    });
+}
+
+function fn_marketPayItemFold(){
+    const marketPay = document.querySelector('.pay-items');
+    if (!marketPay) return false;
+    
+    const marketItemBtns = marketPay.querySelectorAll('.item-header button');
+    marketItemBtns.forEach(function(marketItemBtn){
+        marketItemBtn.addEventListener('click', function(){
+            const isFold = marketItemBtn.classList.contains('icon-up');
+            console.log(isFold);
+
+            if ( isFold ) {
+                marketItemBtn.classList.remove('icon-up');
+                marketItemBtn.classList.add('icon-down');
+                marketItemBtn.innerText = '상세내용 펼치기';
+            } else {
+                marketItemBtn.classList.remove('icon-down');
+                marketItemBtn.classList.add('icon-up');
+                marketItemBtn.innerText = '상세내용 접기';
+            }
+
+            const itemGroup = marketItemBtn.closest('.item-group');
+            const itemContents = itemGroup.querySelectorAll('.item-body, .item-bottom');
+            itemContents.forEach(function(itemContent){
+                itemContent.classList.toggle('is-fold');
+            });
+        });
+    })
 }
 
 // 데이터마켓 슬라이드
@@ -256,8 +340,8 @@ function fn_inputBoxFocesOut(e){
 /** 탭 기본 */
 function fn_tabs(){
     const tabs = document.querySelectorAll('.tab-box');
-
     if (!tabs) return false;
+
     tabs.forEach(function(tab){
         const tabLinks = tab.querySelectorAll('li a');
 
@@ -271,22 +355,28 @@ function fn_tabs(){
                 prev.classList.remove(currentClassName);
                 current.classList.add(currentClassName);
 
-                if (tab.classList.contains('is-static')) return false;
-
                 const currentTabId = _this.getAttribute('href');
                 const currentTabContentId = currentTabId.substr(1);
                 const currentTabContent = document.getElementById(currentTabContentId);
-                
                 const prevTabId = prev.firstChild.getAttribute('href');
                 const prevTabContentId = prevTabId.substr(1);
                 const prevTabContent = document.getElementById(prevTabContentId);
-                if ( !currentTabContent || !prevTabContent) {
-                    return false;
+
+                if (tab.classList.contains('is-static') || tab.classList.contains('is-sticky')) {
+                    const targetY = currentTabContent.getBoundingClientRect().y;
+                    window.scrollTo({
+                        top: targetY + window.pageYOffset - 113, // PC : 20px(상단여백) + 93px(탭높이)
+                        behavior: 'smooth'
+                    });
                 } else {
-                    prevTabContent.style.display = 'none';
-                    prevTabContent.tabindex = '-1';
-                    currentTabContent.style.display = 'block';
-                    currentTabContent.tabindex = '0';
+                    if ( !currentTabContent || !prevTabContent) {
+                        return false;
+                    } else {
+                        prevTabContent.style.display = 'none';
+                        prevTabContent.tabindex = '-1';
+                        currentTabContent.style.display = 'block';
+                        currentTabContent.tabindex = '0';
+                    }
                 }
             });
         }

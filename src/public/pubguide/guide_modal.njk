@@ -273,8 +273,10 @@
 <h2 class="title2">Loading</h2>
 <div class="codeview">
 <pre>
-onLoading();
-removeLoading();
+onLoading(_target);
+ex) onLoading('#location .graph-data');
+removeLoading(_target, _removeTime);
+ex) removeLoading('#location .graph-data', 1000);
 </pre>
 </div>
 
