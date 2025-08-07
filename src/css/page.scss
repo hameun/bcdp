@@ -132,7 +132,10 @@ page : join
 page : page-analysis
 ***********/
 $body-text-color: #2F2727;
-$graph-green: #43D79F;
+$graph-color0: #7572FF;
+$graph-color1: #C8C9FF;
+$graph-color2: $gray-300;
+$graph-color3: $gray-100;
 .page-analysis {
   width: 100%;
   // 큰 단락 공통 CSS
@@ -390,8 +393,8 @@ $graph-green: #43D79F;
         &::after {
           content: '';
           display: inline-block;
-          width: 20px;
-          height: 20px;
+          width: 24px;
+          height: 24px;
           margin-left: 4px;
           background: url($icon-revese) no-repeat 50% 50%;
         }
@@ -418,7 +421,7 @@ $graph-green: #43D79F;
         flex: 1;
         transition: 500ms;
         transform-style: preserve-3d;
-        height: 229px;
+        height: 184px;
         .selected dt {
             display: inline-block;
             padding: 4px 10px;
@@ -427,7 +430,7 @@ $graph-green: #43D79F;
             @include text-body(1,'m',$navy-400);
           }
         .card-front {
-          padding: 20px 0;
+          padding: 16px 0 16px;
           border-radius: 20px;
           background-color: $white;
           flex: 1;
@@ -435,10 +438,8 @@ $graph-green: #43D79F;
           z-index: 2;
           backface-visibility: hidden;
           .selected {
-            dt {
-            }
             .count {
-              margin: 24px 0;
+              margin: 24px 0 16px;
               line-height: 1;
               strong {
                 @include text-title(1);
@@ -446,7 +447,7 @@ $graph-green: #43D79F;
             }
           }
           .comparison {
-            margin-top: 24px;
+            margin-top: 16px;
             dt {
               @include text-body;
             }
@@ -483,8 +484,8 @@ $graph-green: #43D79F;
             margin: 0 auto;
           }
           dd {
-            margin-top: 46px;
             flex: 1;
+            align-content: center;
             padding: 0 24px;
             @include text-body(0,'sb');
             word-break: keep-all;
@@ -520,18 +521,35 @@ $graph-green: #43D79F;
             border-radius: 10px;
           }
           &:first-child::before {
-            background-color: $primary;
+            background-color: $graph-color0;
           }
           &:nth-child(2)::before {
-            background-color: $graph-green;
+            background-color: $graph-color1;
           }
           &:nth-child(3)::before {
-            background-color: $gray-100;
+            background-color: $graph-color2;
+          }
+          &:nth-child(4)::before {
+            background-color: $graph-color3;
           }
         }
       }
     }
     .pattern-person {
+      .legend {
+        & >li:first-child::before {
+          background-color: $graph-color0;
+        }
+        & >li:nth-child(2)::before {
+          background-color: $graph-color1;
+        }
+        & >li:nth-child(3)::before {
+          background-color: $graph-color2;
+        }
+        & >li:nth-child(4)::before {
+          background-color: $graph-color2;
+        }
+      }
       ol {
         display: flex;
         flex-direction: column-reverse;
@@ -566,12 +584,12 @@ $graph-green: #43D79F;
             text-align: right;
             .selected p {
               margin-left: auto;
-              background-color: #43D79F;
+              background-color: $graph-color1;
               border-radius: 16px 0 0 16px;
             }
             .comparison p {
               margin-left: auto;
-              background-color: $gray-100;
+              background-color: $graph-color2;
               border-radius: 16px 0 0 16px;
             }
           }
@@ -579,11 +597,11 @@ $graph-green: #43D79F;
             flex: 1;
             order: 2;
             .selected p {
-              background-color: $primary;
+              background-color: $graph-color0;
               border-radius: 0 16px 16px 0;
             }
             .comparison p {
-              background-color: $gray-100;
+              background-color: $graph-color2;
               border-radius: 0 16px 16px 0;
             }
           }
@@ -630,7 +648,7 @@ $graph-green: #43D79F;
               background-color: $primary;
             }
             .night {
-              background-color: $graph-green;
+              background-color: $graph-color1;
             }
           }
           .graph-comparison {
