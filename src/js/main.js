@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
 window.addEventListener('scroll', function(e){
     windowWidth = window.innerWidth;
-    fn_tabSticky(e);
+    fn_tabSticky();
 });
 window.addEventListener('resize', function(e){
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
     fn_aside();
-    fn_tabSticky(e);
+    fn_tabSticky();
 });
 
 function fn_aside(){
@@ -45,7 +45,7 @@ function fn_aside(){
     }
 }
 
-function fn_tabSticky(_e){
+function fn_tabSticky(){
     const tab = document.querySelector('.tab-box');
     if (!tab) return false;
 
@@ -801,53 +801,67 @@ function fn_cardToBack(){
     const btn = document.querySelector('.show-explanation');
     if (!btn) return false;
     
-    let toBackCount = 0;
-    const targetElements = document.querySelectorAll('.detail-list .card');
+    let _toBackCount = 0;
+    let _toBack = false;
+    const targetElements = document.querySelectorAll('.explanation-slider .card');
     const btnText = ['지표 수치 보기', '지표 설명 보기'];
     btn.addEventListener('click', function(){
-        toBackCount = toBackCount === 0 ? targetElements.length : 0;
-
         targetElements.forEach(function(targetElement){
-            targetElement.classList.toggle('to-back');
+            if ( _toBack ) {
+                _toBackCount = 0;
+                btn.innerText = btnText[1];
+                targetElement.classList.remove('to-back');
+            } else {
+                _toBackCount = targetElements.length;
+                btn.innerText = btnText[0];
+                targetElement.classList.add('to-back');
+            }
         });
-        fn_btnText();
+        if ( _toBack ) {
+            _toBack = false;
+        } else {
+            _toBack = true;
+        }
     });
     
     targetElements.forEach(function(targetElement){
         targetElement.addEventListener('click', function(){
             if (this.classList.contains('to-back')) {
-                toBackCount--;
+                _toBackCount--;
             } else {
-                toBackCount++;
+                _toBackCount++;
+            }
+            
+            if ( _toBackCount === targetElements.length ) {
+                btn.innerText = btnText[0];
+                _toBack = true;
+            } else if ( _toBackCount === 0 ) {
+                btn.innerText = btnText[1];
+                _toBack = false;
             }
             this.classList.toggle('to-back');
-
-            fn_btnText();
+            
         });
     });
-
-    function fn_btnText(){
-        if ( toBackCount == targetElements.length ) {
-            btn.innerText = btnText[0];
-        } else if ( toBackCount == 0 ) {
-            btn.innerText = btnText[1];
-        }
-    }
 };
-// 지표설명보기 슬라이드
+
+// 지표설명보기 모바일슬라이드
 function fn_explanationSlider(){
-    const slider = document.querySelector('.detail-list');
+    const slider = document.querySelector('.explanation-slider');
     if (!slider) return false;
-    var swiper = new Swiper('.swiper-container', {
-        // 기본 설정 (모바일에서만 적용될 설정)
+
+    var swiper = new Swiper('.explanation-slider', {
+        pagination: {
+            clickable: true,
+            el: '.swiper-pagination',
+        },
         slidesPerView: 1,
-        spaceBetween: 10,
-        // breakpoints 옵션 설정
+        spaceBetween: 24,
         breakpoints: {
-            768: { // 768px 이상
-            slidesPerView: 'auto', // 또는 다른 설정
-            spaceBetween: 0,
-            enabled: false // Swiper 비활성화
+            768: {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+                enabled: false
             }
         }
     });
