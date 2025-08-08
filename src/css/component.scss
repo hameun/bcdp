@@ -198,6 +198,7 @@
 }
 .data-tag {
   display: inline-flex;
+  flex-wrap: wrap;
   gap: 4px;
   $red-bg: #E73D441F;
   $red-font: #E73D44;
@@ -370,6 +371,24 @@ FORM TEXT
   background: url(svg-icon(info, $gray-500)) no-repeat 0 1px;
   background-size: 20px auto;
 }
+.guide-text {
+  margin-top: 12px;
+  @include text-body(2,'r',$gray-500);
+  & +.guide-text {
+    margin-top: 4px;
+  }
+  &.type-bul {
+    padding-left: 12px;
+    &::before {
+      content: '•';
+      display: inline-flex;
+      width: 8px;
+      margin-left: -12px;
+      margin-right: 4px;
+      text-align: center;
+    }
+  }
+}
 
 /***********
 INPUT TEXT
@@ -472,6 +491,16 @@ INPUT TEXT
     padding: 0;
     .ipt-count {
       color: $input-error;
+    }
+  }
+  .agreement {
+    display: flex;
+    flex: 1;
+    padding: 12.5px 19px;
+    @include text-body(0,'m',$gray-700);
+    .icon-link {
+      margin-left: auto;
+      background-image: url(svg-icon(chevron-right, $gray-200));
     }
   }
 }
@@ -1020,9 +1049,66 @@ MODAL POPUP
     right: 14px;
     @include set-icon(24px, 24px, $icon-close);
   }
+  &.no-dim {
+    background-color: transparent;
+  }
 }
-
-
+.modal-faq {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .tab-box {
+    flex: 0 0 46px;
+  }
+  .tab-contents {
+    $contentH: calc(40px + 46px + 46px + 48px);
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: calc(100vh - $contentH);
+    .formbox {
+      padding: 24px 0 20px;
+      margin-bottom: 20px;
+    }
+    .faqbox {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      .chip-box {
+        flex: 0 0 56px;
+        flex-wrap: nowrap;
+      }
+      .faq-list {
+        flex: auto;
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: calc(100vh - $contentH - 56px);
+        // padding-bottom: 50px;
+      }
+    }
+  }
+}
+.modal-login {
+  padding: 44px 20px 20px;
+  .title {
+    margin-bottom: 32px;
+    @include text-title(3);
+    text-align: center;
+  }
+  .login-util {
+    margin-top: 32px;
+    text-align: center;
+  }
+  & +.button-box-large {
+    margin-top: 20px;
+    padding: 20px;
+    button {
+      flex: 1;
+    }
+  }
+}
+.modal-aiagree {
+  padding: 0 0 20px;
+}
 .modal-qna-reply {
   margin-right: -20px;
   .item-scroll-wrap {
@@ -1784,7 +1870,7 @@ TOAST POPUP
     margin-left: -160px;
     left: 0;
     display: none;
-    z-index: 3;
+    z-index: 10;
     width: 160px;
     .ui-menu {
       overflow: auto;
@@ -1877,6 +1963,19 @@ TOAST POPUP
       flex: 1;
     }
   }
+  
+  .pop-modal.is-full {
+    .modal {
+      height: 100%;
+      border-radius: 0;
+
+      & >.button-box-medium,
+      & >.button-box-large {
+        margin-top: auto;
+      }
+    }
+  }
+
   .tab-box {
     &.is-static,
     &.is-sticky {

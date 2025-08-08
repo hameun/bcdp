@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
     fn_fileInput();
     fn_aside();
     fn_selectbox();
+    fn_selectIpt();
     
     fn_insightSlider();
 
@@ -88,6 +89,15 @@ function fn_selectbox(){
     })
 }
 
+function fn_selectIpt(){
+    const selects = document.querySelectorAll(".input-box select");
+    if (!selects.length) return false;
+
+    selects.forEach(function(select){
+        $(select).selectmenu();
+    })
+}
+
 /** 로딩 */
 function onLoading(_target){
     const loading = document.createElement('div');
@@ -156,7 +166,7 @@ function fn_tabs(){
 function ui_glassBg(){
     const filepath = this.location.pathname;
     const filename = filepath.substring(filepath.lastIndexOf('/') + 1).split(".")[0];
-    const glassBgPages = ["UT01", "UT01M"];
+    const glassBgPages = ["UT01", "UT01M", ""];
     for ( glassBgPage of glassBgPages ) {
         if (filename == glassBgPage) {
             const body = document.getElementsByTagName('body')[0];
@@ -165,15 +175,9 @@ function ui_glassBg(){
             bodyBg.id = 'bg';
             document.body.appendChild(bodyBg);
 
-            // const bgData = document.createElement('script');
-            // bgData.type = "module";
-            // bgData.src = "../images/bg_gradient.js";
-            // document.body.appendChild(bgData);
-
             const lottieScript = document.createElement('script');
             lottieScript.type = "text/javascript";
             lottieScript.src = "../js/lottie.min.js";
-            
 
             document.body.appendChild(lottieScript);
             lottieScript.onload = function() {
@@ -524,11 +528,17 @@ function fn_modalClose(_remove, _this){
 }; // fn_modalClose
 
 /** 모달팝업 */
-function fn_modalPopOpen(_this){
+function fn_modalPopOpen(_this, _isFull, _hasDim){
     const modal = document.getElementById(_this);
     modal.classList.remove('modal-hidden');
+    if (_isFull === true) {
+        modal.classList.add('is-full');
+    }
+    if (_hasDim === false) {
+        modal.classList.add('no-dim');
+    }
 
-    const modalButtons = modal.querySelectorAll('.button-box-medium button, .modal-close');
+    const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close');
     modalButtons.forEach(function(modalButton){
         modalButton.addEventListener('click', function(){
             fn_modalPopClose(modal);
