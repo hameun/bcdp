@@ -1,0 +1,187 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+
+<div class="content page-polio">
+    <div class="content-head-btn">
+        <div class="content-head">
+            <h1 class="headline1">데이터폴리오</h1>
+            <p class="head-guidetext">원하는 조건을 선택하면 맞춤형 데이터를 생성해드려요.</p>
+        </div>
+        <div class="button-box-small">
+            <button type="button" class="button-t">임시저장 <i class="count">7</i></button>
+        </div>
+    </div>             
+
+    <div class="datapolio-search">
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="조건을 입력하면 AI가 자동 선택해드려요.">
+            <span class="util-box">
+                <button type="button" class="ipt-search"><i>검색</i></button>
+            </span>
+        </div>
+    </div>
+
+    <div class="datapolio-contents">
+        <div class="content-step">
+            <ul>
+                <li class="on">
+                    <em class="step-bedge">필수</em>
+                    <em class="step-txt">데이터유형</em>
+                </li>
+                <li class="on">
+                    <em class="step-bedge">필수</em>
+                    <em class="step-txt">기간</em>
+                </li>
+                <li class="on">
+                    <em class="step-bedge">필수</em>
+                    <em class="step-txt">지역</em>
+                </li>
+                <li class="on">
+                    <em class="step-bedge">필수</em>
+                    <em class="step-txt">업종</em>
+                </li>
+                <li>
+                    <em class="step-txt">세부항목</em>
+                </li>
+            </ul>
+        </div>
+
+        <div class="step-content">
+            <p class="title3">어떤 기준으로 업종 데이터를 만들까요?</p>
+            <div class="chip-box chip-box-large">
+                <label class="chip"><input type="radio" name="radio1" checked=""><i>대분류</i></label>
+                <label class="chip"><input type="radio" name="radio1"><i>중분류</i></label>
+                <label class="chip"><input type="radio" name="radio1"><i>소분류</i></label>
+            </div>
+            <!-- 대분류 -->
+            <div class="chip-check-wrap">
+                <div class="chip-tit-wrap">
+                    <span class="tit">대분류<span class="sub_tit">(다중선택 가능)</span></span>
+                    <button type="button" class="filter-reset disabled">초기화</button>
+                </div>
+                <div class="checkbox">
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전체</i></label>          
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>   
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
+
+                </div>
+            </div>
+            <!-- //대분류 -->
+            <!-- 중분류 -->
+            <div class="chip-check-wrap">
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span><a href="#" class="txt-link">대분류</a> 교과학원, 교육기타</span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="checkbox">
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전체</i></label>          
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%중분류명%</i></label>   
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%중분류명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명% </i></label>
+
+                </div>
+            </div>
+            <!-- //중분류 -->
+            <!-- 소분류 -->
+            <div class="chip-check-wrap">
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span><a href="#" class="txt-link">가전통신</a> <a href="#" class="txt-link">가전</a>소분류</span>
+                        <span class="sub_tit">(다중선택 가능)</span></span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="checkbox">
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>            
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%소분류명%</i></label>   
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%소분류명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
+
+                </div>
+            </div>
+            <!-- //소분류 -->
+        </div>
+        
+    </div>
+
+    <div class="datapolio-bottom">
+    <div class="btn-filter">
+        <button type="button" class="btn-icon-filter is-filter">
+            <i>선택조건 있음</i>
+        </button>
+    </div>
+    <div class="bottom-content">
+        <div class="polio-quote">
+            <div class="quote-box">
+                <div class="quote-tit">
+                    <span class="tit">견적</span>
+                    <span class="sub">(VAT 포함)</span>
+                    <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+                </div>
+                <div class="quote-result">
+                    <span class="price">
+                        <i>0</i>원
+                    </span>
+                    <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+                </div>
+            </div>
+            <div class="textbutton-box-xsmall">
+                <a href="#" class="textbutton-p underline disabled">샘플데이터 확인</a>
+            </div>
+        </div> 
+        <div class="button-box-large">
+            <button class="button-q" type="button">이전</button>
+            <button class="button-p" type="button">데이터 구매하기</button>
+            <a href="#" class="icon-cart"></a>
+        </div>
+    </div>
+    </div>
+    
+</div> 
+{%- endblock %}                  
