@@ -23,6 +23,9 @@ $(function(){
     fn_marketList(); // [데이터마켓] 리스트 스타일 변경
     fn_marketPayItemFold(); // [데이터마켓] 결제하기
     fn_marketSlider();
+    fn_datapicker();
+    fn_accordion();//아코디언
+    fn_filter();
 
     window.addEventListener('scroll', function(e){
         windowWidth = window.innerWidth;
@@ -1085,3 +1088,123 @@ function fn_agreeTerms(_id){
     });    
 };
 /** //로그인/회원가입 */
+
+/** 필터 */
+function fn_filter() {
+  const btnFilter = document.querySelector('.btn-icon-filter'); // 필터 열기 버튼
+  const filterContent = document.querySelector('.filter_box'); // 필터 영역
+  const btnClose = document.querySelector('.filter-close'); // 필터 닫기 버튼
+  const header = document.querySelector('.header'); // 헤더 요소
+  const button = document.querySelector('.page-polio .content-head-btn .button-box-small'); 
+
+  // 처음에는 filter-content 숨기기
+  filterContent.style.display = 'none';
+
+  // 필터 열기 버튼 클릭
+  btnFilter.addEventListener('click', function () {
+    filterContent.style.display = 'flex';
+    btnFilter.style.display = 'none';
+
+    // 모바일 사이즈일 때 header z-index 초기화
+    if (window.innerWidth <= 768) {
+      header.style.zIndex = 'auto';
+      button.style.zIndex = '9';
+    }
+  });
+
+  // 필터 닫기 버튼 클릭
+  btnClose.addEventListener('click', function () {
+    filterContent.style.display = 'none';
+    btnFilter.style.display = 'block';
+
+    // 모바일 사이즈일 때 header z-index 20으로 복원
+    if (window.innerWidth <= 768) {
+      header.style.zIndex = '20';
+      button.style.zIndex = '99';
+    }
+  });
+}
+
+/** 아코디언 */
+function fn_accordion() {
+  const items = document.querySelectorAll('.accordion-item');
+
+  items.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    const toggleText = header.querySelector('button');
+
+    header.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      if (isActive) {
+        // 이미 열려있으면 -> 닫기
+        item.classList.remove('active');
+        toggleText.textContent = '상세화면 열기';
+      } else {
+        // 다른 아이템 닫기
+        items.forEach(i => {
+          i.classList.remove('active');
+          const textEl = i.querySelector('.accordion-header button');
+          if (textEl) textEl.textContent = '상세화면 열기';
+        });
+
+        // 현재 클릭한 항목 열기
+        item.classList.add('active');
+        toggleText.textContent = '상세화면 닫기';
+      }
+    });
+  });
+};
+/** //아코디언 */
+
+// S:데이터폴리오 달력
+function fn_datapicker() {
+  document.querySelectorAll('.year-picker-input, .month-picker-input, .day-picker-input')
+    .forEach(function (input) {
+      const type = input.dataset.type;
+
+      let options = {
+        inline: true,
+        view: (type === 'year') ? 'years' : (type === 'month') ? 'months' : 'days',
+        minView: (type === 'year') ? 'years' : (type === 'month') ? 'months' : 'days',
+
+        // 인풋에 들어갈 기본 포맷
+        dateFormat: (type === 'year') ? 'yyyy'
+                  : (type === 'month') ? 'yyyy.MM'
+                  : 'yyyy.MM', // day 달력은 상단 YYYY.MM로 표시, 인풋은 onSelect에서 별도로
+
+        // 상단 네비게이션(달력 헤더) 포맷 정의
+        firstDay: 0,
+        navTitles: {days: '<i>yyyy</i>.MMMM'},
+
+        onSelect({ date }) {
+          if (!date) {
+            input.value = '';
+            return;
+          }
+          if (type === 'year') {
+            input.value = date.getFullYear();
+          } else if (type === 'month') {
+            const m = date.getMonth() + 1;
+            input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}`;
+          } else if (type === 'day') {
+            const m = date.getMonth() + 1;
+            const d = date.getDate();
+            input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}.${d < 10 ? '0' + d : d}`;
+          }
+        }
+      };
+
+      // AirDatepicker 생성
+      new AirDatepicker(input, options);
+
+      // 생성 후 DOM 이동 (container 미지원 버전 호환)
+      const pickerEl = input.parentNode.querySelector('.air-datepicker.-inline-');
+      if (pickerEl) {
+        input.closest('.input-picker').insertAdjacentElement('afterend', pickerEl);
+      }
+    });
+};
+
+
+// E:데이터폴리오 달력
