@@ -1,0 +1,234 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_AS01.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>검색이 5회를 초과하여, 새로운 검색으로 전환됩니다.</p>
+        </div>
+        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-login">
+            <p class="title">로그인하고 AI검색을 시작해보세요!</p>
+            <div class="formbox">
+                <form>
+                    <label for="loginId" class="input-title">아이디</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="이메일 아이디 입력" id="loginId">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+                    <p class="input-help is-error">아이디를 입력해주세요.</p>
+                    <p class="input-help is-error">이메일 형식으로 입력해주세요.</p>
+
+                    <label for="loginpassword" class="input-title">비밀번호</label>
+                    <div class="input-box">
+                        <input type="password" placeholder="비밀번호 입력" id="loginpassword">
+                        <span class="util-box">
+                            <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+                        </span>
+                    </div>
+                    <p class="input-help is-error">비밀번호를 입력해주세요.</p>
+
+                    <p class="login-util">
+                        <span class="textbutton-box-xsmall">
+                            <a href="#" class="textbutton-s">아이디 찾기</a>
+                            <a href="#" class="textbutton-s">비밀번호 찾기</a>
+                            <a href="#" class="textbutton-p">회원가입</a>
+                        </span>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="button-box-large">
+            <button type="button" class="button-p">로그인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>아이디 또는 비밀번호가 일치하지 않습니다. <br>5회 오류 시 로그인이 제한돼요. (N/5)</p>
+        </div>
+        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal3_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>비밀번호를 5회 이상 잘못 입력하셨습니다. <br>비밀번호 재설정 후 다시 로그인해주세요.</p>
+        </div>
+        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">AI서비스 이용을 위한 약관에 동의해주세요.</div>
+        <div class="modal-aiagree">
+            <div class="input-box">
+                <a href="#" class="agreement">AI서비스약관(가칭) <i class="icon-link">내용보기</i></a>
+            </div>
+            <p class="guide-text type-bul">모든 답변은 AI가 생성해요.</p><!-- AI검색 Case -->
+            <p class="guide-text type-bul">같은 질문도 대화 문맥에 따라 다른 답변이 제공될 수 있어요.</p><!-- AI검색 Case -->
+            <p class="guide-text type-bul">AI가 입력하신 내용을 분석해 적합한 조건을 미리 선택해요.</p><!-- 데이터폴리오 Case -->
+            <p class="guide-text type-bul">더 정확한 결과를 원하시면 항목을 자유롭게 추가하거나 제거하실 수 있어요.</p><!-- 데이터폴리오 Case -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">동의하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 문의하기 -->
+<div class="pop-modal modal-hidden" id="modalFaq">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">문의하기</div>
+        <div class="modal-faq">
+            <div class="tab-box">
+                <ul class="tabs-small">
+                    <li><a href="#tabContent1">일반 문의</a></li>
+                    <li><a href="#tabContent2">상품 문의</a></li>
+                    <li class="is-on"><a href="#tabContent3">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0" style="display:none;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA01Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA01Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+
+                        <label for="QnA01Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA01Provider">
+                                <option value="" disabled>제공기관을 선택해주세요.</option>
+                                <option value="">제공기관 1_1</option>
+                                <option value="">제공기관 1_2</option>
+                                <option value="">제공기관 1_3</option>
+                                <option value="">제공기관 1_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA01Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <p class="text-byte">0/4,000Byte</p>
+                        <div class="textarea">
+                            <textarea name="" id="QnA01Content" placeholder="문의 내용을 작성해주세요"></textarea>
+                        </div>
+
+                        <label for="QnA01Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA01Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA02Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA02Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+                        <label for="QnA02Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA02Provider">
+                                <option value="" disabled>제공기관을 선택해주세요.</option>
+                                <option value="">제공기관 2_1</option>
+                                <option value="">제공기관 2_2</option>
+                                <option value="">제공기관 2_3</option>
+                                <option value="">제공기관 2_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA02Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <textarea name="" id="QnA02Content" placeholder="문의 내용을 작성해주세요"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA02Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA02Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent3" tabindex="0" style="display:block;">
+                <div class="faqbox">
+                    <div class="chip-box">
+                        <label class="chip"><input type="radio" name="radio1"><i>전체<em>22</em></i></label>
+                        <label class="chip"><input type="radio" name="radio1"><i>회원/계정<em>7</em></i></label>
+                        <label class="chip"><input type="radio" name="radio1"><i>데이터 이용<em>6</em></i></label>
+                        <label class="chip"><input type="radio" name="radio1"><i>구매/취소<em>5</em></i></label>
+                        <label class="chip"><input type="radio" name="radio1"><i>기타<em>4</em></i></label>
+                    </div>
+                    <div class="faq-list">
+                        <ul>
+                            <li class="list-item">
+                                <div class="item-title">
+                                    <span class="category">회원/계정</span>
+                                    <p class="question">휴면 해제를 어떻게 하나요?</p>
+                                </div>
+                                <div class="item-content">
+                                    <p class="answer">회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+                                </div>
+                            </li>
+                            <li class="list-item">
+                                <span class="category">회원/이용안내</span>
+                                <p class="f"></p>
+                                <p class="q" style="white-space:pre-line;">휴면 회원의 경우 로그인한 후, 본인인증을 통해 해제 가능합니다.
+                                    정상 회원으로 상태 변경 시 개인정보 수집/이용 선택 동의 항목이 철회됩니다.
+                                    당사가 제공하는 유익한 서비스나 제휴 혜택, 상품 등을 안내받고자 하실 경우 마이페이지 > 개인정보관리 에서 개인정보 수집/이용 선택 동의 항목에 재동의 해주셔야 합니다.</p>
+                            </li>
+                        </ul>
+                        <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //문의하기 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <button type="button" class="button-q" onclick="fn_modalPopOpen('modal1');return false;">[5회 초과 질의 시]</button>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal2');return false;">[비로그인상태 && 프롬프트 영역]</button>
+        <button type="button" class="button-q" onclick="fn_modalPopOpen('modal2'); fn_modalPopOpen('modal2_1');return false;">[로그인 오류일 경우(1~4회)]</button>
+        <button type="button" class="button-q" onclick="fn_modalPopOpen('modal2'); fn_modalPopOpen('modal3_2');return false;">[로그인 오류일 경우(5회 이상)]</button>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal3');return false;">[로그인상태 && 프롬프트 영역&&AI약관 미동의 회원]</button>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modalFaq');return false;">[문의하기]</button>
+        <button type="button" class="button-q" onclick="fn_toast('본문 내용이 복사되었습니다.',1);">[복사하기] 토스트 팝업</button>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

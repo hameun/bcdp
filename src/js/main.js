@@ -2,13 +2,13 @@ var windowWidth;
 var windowHeight;
 var windowScrollTopFix;
 var aside;
-document.addEventListener('DOMContentLoaded', function(){
+$(function(){
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
     aside = document.querySelector('.aside');
     console.log('ready');
     /** 기본 로드될 함수 */
-    ui_glassBg();
+    // ui_glassBg();
     fn_iptClear();
     fn_iptIsFocus();
     fn_passwordMask();
@@ -23,18 +23,40 @@ document.addEventListener('DOMContentLoaded', function(){
     fn_marketList(); // [데이터마켓] 리스트 스타일 변경
     fn_marketPayItemFold(); // [데이터마켓] 결제하기
     fn_marketSlider();
-}); // end window.onload
 
-window.addEventListener('scroll', function(e){
-    windowWidth = window.innerWidth;
-    fn_tabSticky();
+    window.addEventListener('scroll', function(e){
+        windowWidth = window.innerWidth;
+        fn_tabSticky();
+    });
+    window.addEventListener('resize', function(e){
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+        fn_aside();
+        fn_tabSticky();
+    });
+
+    // fn_swipe();
 });
-window.addEventListener('resize', function(e){
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
-    fn_aside();
-    fn_tabSticky();
-});
+
+function fn_swipe(){
+    const element = document.getElementById('myElement');
+    let startX = 0;
+
+    element.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    element.addEventListener('touchmove', (e) => {
+        const currentX = e.touches[0].clientX;
+        const deltaX = currentX - startX;
+        element.style.transform = `translateX(${deltaX}px)`;
+    });
+
+    element.addEventListener('touchend', () => {
+        // Reset transform or snap to a position
+        element.style.transform = `translateX(0px)`;
+    });
+}
 
 function fn_aside(){
     if (!aside) return false;
@@ -166,7 +188,7 @@ function fn_tabs(){
 function ui_glassBg(){
     const filepath = this.location.pathname;
     const filename = filepath.substring(filepath.lastIndexOf('/') + 1).split(".")[0];
-    const glassBgPages = ["UT01", "UT01M", ""];
+    const glassBgPages = ["UT01", "UT01M", "AS01"];
     for ( glassBgPage of glassBgPages ) {
         if (filename == glassBgPage) {
             const body = document.getElementsByTagName('body')[0];
@@ -629,6 +651,32 @@ function fn_toast(_message, _type){
 /*************
 페이지 별 기능
 **************/
+/** AI검색 */
+function fn_aisearch_accordion(_accordion1Id){
+    const accordion = document.getElementById(_accordion1Id);
+    $( `#${_accordion1Id}` ).accordion({
+        active: false,
+        collapsible: true,
+        header:"h3",
+        heightStyle:"auto"
+    });
+}
+function fn_aisearch_slider(_sliderId){
+    const slider = document.getElementById(_sliderId);
+    const swiper = new Swiper(`#${_sliderId} .aisearch-slider`, {
+        // cssMode: true,
+        slidesPerView: 3,
+        spaceBetween: 12,
+        navigation: {
+            nextEl: slider.querySelector(".next"),
+            prevEl: slider.querySelector(".prev")
+        },
+        pagination: {
+        el: slider.querySelector(".swiper-pagination"),
+        clickable: true,
+        },
+    });
+}
 /** 데이터마켓 */
 // 리스트 스타일 변경
 function fn_marketList(){

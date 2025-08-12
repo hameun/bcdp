@@ -72,13 +72,17 @@ body.is-fixed {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  &:has(.insight-view) {
-    padding-top: $layout-padding;
-  }
 }
 .container {
   &:has(.page-login), &:has(.page-login-find) {
     justify-content: center;
+  }
+  &:has(.insight-view) {
+    padding-top: $layout-padding;
+  }
+  &:has(.page-aisearch) {
+    padding: 0;
+    overflow: hidden;
   }
 }
 .content {

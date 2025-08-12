@@ -831,50 +831,25 @@ MODAL POPUP
   justify-content: center;
   z-index: 10;
   padding-left: calc($layout-asideWidth + $layout-padding);
-  .modal {
-    flex: 0 0 320px;
-    max-width: 100%;
-    box-sizing: border-box;
-    background-color: $white;
-    border-radius: 16px;
-    padding: 20px;
-    position: relative;
-    .modal-header {
-      // padding: 20px 0 16px; 07.22 수정
-      margin-bottom: 16px; // 07.22 수정
-      @include text-title(4);
-    }
-    .modal-description {
-      margin-top: 8px;
-      margin-bottom: 20px;
-      @include text-body(1,'r',$gray-500 );
-    }
-    &-medium {
-      flex-basis: 480px;
-      max-width: 480px;
-      .message-box {
-        overflow: hidden;
-        overflow-y: auto;
-        min-height: 125px;
-        max-height: 442px;
-      }
-    }
-    &-large {
-      flex-basis: 600px;
-      max-width: 600px;
-      .message-box {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        overflow-y: auto;
-        min-height: 125px;
-        max-height: 600px;
-        .regist-box {
-          padding-top: 8px;
-          margin-bottom: 0;
-        }
-      }
-    }
+  &.no-dim {
+    background-color: transparent;
+  }
+  &.modal-hidden {
+    display: none;
+  }
+}
+.modal {
+  flex: 0 0 320px;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: $white;
+  border-radius: 16px;
+  padding: 20px;
+  position: relative;
+  .modal-header {
+    // padding: 20px 0 16px; 07.22 수정
+    margin-bottom: 16px; // 07.22 수정
+    @include text-title(4);
   }
   .message-box {
     margin-bottom: 24px;
@@ -890,14 +865,6 @@ MODAL POPUP
       @include text-body(1,'sb', $black);
       & ~.message-title {
         margin-top: 20px;
-      }
-    }
-  }
-  .coupon-box {
-    .result-none {
-      margin-top: 0;
-      .message {
-        font-size: 18px;
       }
     }
   }
@@ -938,6 +905,55 @@ MODAL POPUP
             text-decoration: underline;
           }
         }
+      }
+    }
+  }
+  .modal-description {
+    margin-top: 8px;
+    margin-bottom: 20px;
+    @include text-body(1,'r',$gray-500 );
+  }
+  &-medium {
+    flex-basis: 480px;
+    max-width: 480px;
+    .message-box {
+      overflow: hidden;
+      overflow-y: auto;
+      min-height: 125px;
+      max-height: 442px;
+    }
+  }
+  &-large {
+    flex-basis: 600px;
+    max-width: 600px;
+    .message-box {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      overflow-y: auto;
+      min-height: 125px;
+      max-height: 600px;
+      .regist-box {
+        padding-top: 8px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 14px;
+    @include set-icon(24px, 24px, $icon-close);
+  }
+}
+
+// 페이지로 옮기기
+.modal {
+  .coupon-box {
+    .result-none {
+      margin-top: 0;
+      .message {
+        font-size: 18px;
       }
     }
   }
@@ -1043,264 +1059,249 @@ MODAL POPUP
       .button-p {flex: 2}
     }
   }
-  .modal-close {
-    position: absolute;
-    top: 20px;
-    right: 14px;
-    @include set-icon(24px, 24px, $icon-close);
-  }
-  &.no-dim {
-    background-color: transparent;
-  }
-}
-.modal-faq {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  .tab-box {
-    flex: 0 0 46px;
-  }
-  .tab-contents {
-    $contentH: calc(40px + 46px + 46px + 48px);
-    overflow: hidden;
-    overflow-y: auto;
-    max-height: calc(100vh - $contentH);
-    .formbox {
-      padding: 24px 0 20px;
-      margin-bottom: 20px;
+  .modal-faq {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .tab-box {
+      flex: 0 0 46px;
     }
-    .faqbox {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 20px;
-      .chip-box {
-        flex: 0 0 56px;
-        flex-wrap: nowrap;
-      }
-      .faq-list {
-        flex: auto;
+    .tab-contents {
+      .formbox {
+        padding: 24px 0 20px;
+        margin-bottom: 20px;
         overflow: hidden;
         overflow-y: auto;
-        max-height: calc(100vh - $contentH - 56px);
-        // padding-bottom: 50px;
       }
-    }
-  }
-}
-.modal-login {
-  padding: 44px 20px 20px;
-  .title {
-    margin-bottom: 32px;
-    @include text-title(3);
-    text-align: center;
-  }
-  .login-util {
-    margin-top: 32px;
-    text-align: center;
-  }
-  & +.button-box-large {
-    margin-top: 20px;
-    padding: 20px;
-    button {
-      flex: 1;
-    }
-  }
-}
-.modal-aiagree {
-  padding: 0 0 20px;
-}
-.modal-qna-reply {
-  margin-right: -20px;
-  .item-scroll-wrap {
-    max-height: 600px;
-  }
-  .info-box {
-    position: relative;
-    padding-left: 52px;
-    .title {
-      @include text-body(0,'sb');
-    }
-    .info {
-      display: flex;
-      margin-top: 4px;
-      span {
+      .faqbox {
         display: flex;
-        align-items: center;
-        @include text-body(1,'r',$gray-500);
-        & + span::before {
-          content: '';
-          display: inline-block;
-          margin: 0 10px;
-          width: 1px;
-          height: 14px;
-          background-color: $gray-100;
+        flex-direction: column;
+        .chip-box {
+          flex: 0 0 56px;
+          flex-wrap: nowrap;
         }
-        &.partner {
-          font-weight: 500;
-          color: $gray-900;
+        .faq-list {
+          flex: auto;
+          overflow: hidden;
+          overflow-y: auto;
         }
       }
     }
-    &::before {
-      content: '';
-      display: block;
-      width: 40px;
-      height: 40px;
-      font-size: 24px;
-      color: $white;
-      border-radius: 20px;
-      position: absolute;
-      top: 0;
-      left: 0;
+  }
+  .modal-login {
+    padding: 44px 20px 20px;
+    .title {
+      margin-bottom: 32px;
+      @include text-title(3);
       text-align: center;
-      line-height: 40px;
     }
-  }
-  .qna-q {
-    .info-box::before {
-      content: 'Q';
-      background-color: $primary;
+    .login-util {
+      margin-top: 32px;
+      text-align: center;
     }
-  }
-  .qna-a {
-    margin-top: 40px;
-    .info-box::before {
-      content: 'A';
-      background-color: $gray-700;
-    }
-  }
-  .textarea {
-    margin: 32px 0;
-  }
-}
-.modal-tabs-sub-paragraph {
-  margin-right: -20px;  
-  // &:has(.item:nth-child(12)) {
-  //   margin-right: -20px;
-  // }
-  .tabs-sub-contents {
-    padding: 24px 0 20px;
-    .item-scroll-wrap {
-      max-height: 350px;
-    }
-    @include text-body(1,'r',$gray-700);
-    h1 {
-      & ~ h1 {
-        margin-top: 20px;
+    & +.button-box-large {
+      margin-top: 20px;
+      padding: 20px;
+      button {
+        flex: 1;
       }
-      margin-bottom: 12px;
-      @include text-body(0,'sb',$gray-700);
     }
-    h2 {
-      margin-top:12px;
-      margin-bottom: 8px; 
-      @include text-body(1,'m',$gray-700);
+  }
+  .modal-aiagree {
+    padding: 0 0 20px;
+  }
+  .modal-qna-reply {
+    margin-right: -20px;
+    .item-scroll-wrap {
+      max-height: 600px;
+    }
+    .info-box {
+      position: relative;
+      padding-left: 52px;
+      .title {
+        @include text-body(0,'sb');
+      }
+      .info {
+        display: flex;
+        margin-top: 4px;
+        span {
+          display: flex;
+          align-items: center;
+          @include text-body(1,'r',$gray-500);
+          & + span::before {
+            content: '';
+            display: inline-block;
+            margin: 0 10px;
+            width: 1px;
+            height: 14px;
+            background-color: $gray-100;
+          }
+          &.partner {
+            font-weight: 500;
+            color: $gray-900;
+          }
+        }
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 40px;
+        font-size: 24px;
+        color: $white;
+        border-radius: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        line-height: 40px;
+      }
+    }
+    .qna-q {
+      .info-box::before {
+        content: 'Q';
+        background-color: $primary;
+      }
+    }
+    .qna-a {
+      margin-top: 40px;
+      .info-box::before {
+        content: 'A';
+        background-color: $gray-700;
+      }
+    }
+    .textarea {
+      margin: 32px 0;
+    }
+  }
+  .modal-tabs-sub-paragraph {
+    margin-right: -20px;  
+    // &:has(.item:nth-child(12)) {
+    //   margin-right: -20px;
+    // }
+    .tabs-sub-contents {
+      padding: 24px 0 20px;
+      .item-scroll-wrap {
+        max-height: 350px;
+      }
+      @include text-body(1,'r',$gray-700);
+      h1 {
+        & ~ h1 {
+          margin-top: 20px;
+        }
+        margin-bottom: 12px;
+        @include text-body(0,'sb',$gray-700);
+      }
+      h2 {
+        margin-top:12px;
+        margin-bottom: 8px; 
+        @include text-body(1,'m',$gray-700);
+      }
+      
+      .list-circle-num {
+        padding-left: 18px;
+        .mark {
+          display: inline-flex;
+          width: 18px;
+          margin-left: -18px;
+          @include text-body(1,'r',$gray-700);
+        }
+      }
+      .list-bul {
+        padding-left: 12px;
+        .mark {
+          display: inline-flex;
+          width: 12px;
+          margin-left: -12px;
+        }
+      }
     }
     
-    .list-circle-num {
-      padding-left: 18px;
-      .mark {
-        display: inline-flex;
-        width: 18px;
-        margin-left: -18px;
+  }
+  .modal-content-analysis-select {
+    padding: 8px 0;
+    .location-breadcrumb {
+      margin-bottom: 20px;
+    }
+    .chip-box {
+      gap: 16px 8px;
+    }
+  }
+  .modal-data-info {
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      & +.info {
+        margin-top: 12px;
+      }
+      dt {
+        flex: auto;
+        @include text-body(1,'r',$gray-400);
+      }
+      dd {
+        flex: auto;
+        text-align: right;
         @include text-body(1,'r',$gray-700);
       }
     }
-    .list-bul {
-      padding-left: 12px;
-      .mark {
-        display: inline-flex;
-        width: 12px;
-        margin-left: -12px;
-      }
-    }
-  }
-  
-}
-
-.modal-content-analysis-select {
-  padding: 8px 0;
-  .location-breadcrumb {
-    margin-bottom: 20px;
-  }
-}
-.modal-data-info {
-  .info {
-    display: flex;
-    flex-wrap: wrap;
-    & +.info {
-      margin-top: 12px;
-    }
-    dt {
-      flex: auto;
-      @include text-body(1,'r',$gray-400);
-    }
-    dd {
-      flex: auto;
-      text-align: right;
-      @include text-body(1,'r',$gray-700);
-    }
-  }
-  .desc {
-    margin-top: 16px;
-    padding: 12px;
-    background-color: $gray-40;
-    border-radius: 12px;
-    dt {
-      @include text-body(2,'m',$gray-700);
-    }
-    dd {
-      @include text-body(2,'r',$gray-500);
-    }
-  }
-}
-.modal-price-cart {
-  overflow-y: hidden;
-  padding: 8px 0 20px;
-  &:has(.item:nth-child(12)) {
-    margin-right: -20px;
-  }
-  .item-scroll-wrap {
-    max-height: 442px;
-  }
-  .item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-    & + .item {
+    .desc {
       margin-top: 16px;
-    }
-    label {
-      flex: auto;
-      align-items: center;
-      input {
-        width: 0;
-        height: 0;
-        margin: 0;
+      padding: 12px;
+      background-color: $gray-40;
+      border-radius: 12px;
+      dt {
+        @include text-body(2,'m',$gray-700);
       }
-      i {
-        display: block;
-        max-width: 440px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        @include text-body(1,'m',$gray-700);
-        &::before {
-          display: inline-block;
-          margin-right: 8px;
-          vertical-align: middle;
+      dd {
+        @include text-body(2,'r',$gray-500);
+      }
+    }
+  }
+  .modal-price-cart {
+    overflow-y: hidden;
+    padding: 8px 0 20px;
+    &:has(.item:nth-child(12)) {
+      margin-right: -20px;
+    }
+    .item-scroll-wrap {
+      max-height: 442px;
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      & + .item {
+        margin-top: 16px;
+      }
+      label {
+        flex: auto;
+        align-items: center;
+        input {
+          width: 0;
+          height: 0;
+          margin: 0;
+        }
+        i {
+          display: block;
+          max-width: 440px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include text-body(1,'m',$gray-700);
+          &::before {
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+          }
         }
       }
-    }
-    .i-price {
-      margin-left: auto;
-      @include text-body(1,'m',$point);
+      .i-price {
+        margin-left: auto;
+        @include text-body(1,'m',$point);
+      }
     }
   }
-}
-.modal-hidden {
-  display: none;
 }
 
 .chip-box {
@@ -1583,13 +1584,20 @@ TABLE
   .title {
     max-height: 3em;
     overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     @include text-body(0,'sb');
   }
   .desc {
     margin-top: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
-    // white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     @include text-body(2,'r',$gray-500);
   }
   .etc {
@@ -1976,6 +1984,24 @@ TOAST POPUP
     }
   }
 
+  .modal-faq .tab-contents {
+    // 팝업 상하여백 40
+    // 팝업 타이틀 46
+    // 탭 높이 46
+    // .formbox 여백 64
+    // .formbox 버튼 46
+    // .faqbox 필터 56
+    $contentMargin: calc(40px + 46px + 46px);
+    $formboxMargin: calc(64px + 46px);
+    .formbox {
+        height: calc(100vh - $contentMargin - $formboxMargin);
+    }
+    .faqbox {
+      .faq-list {
+        height: calc(100vh - $contentMargin - 56px);
+      }
+    }
+  }
   .tab-box {
     &.is-static,
     &.is-sticky {
