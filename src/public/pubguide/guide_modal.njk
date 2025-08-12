@@ -30,6 +30,7 @@
 </pre>
 </div>
 
+<h3 class="title3">[알럿]</h3>
 <div class="pop-modal modal-hidden" id="modal1">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -52,6 +53,17 @@
 <div class="pop-modal modal-hidden" id="modal3">
     <div class="modal" tabindex="0">
         <div class="message-box">
+            <p>해당 정보로 가입된 계정이 없어요. <br>회원가입 후 로그인해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-s" type="button">회원가입</button>
+            <button class="button-p close-modal" type="button">재입력</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
             <p>해당 데이터 상품을 삭제할 경우 해당 데이터 상품 하위에 등록된 모든 데이터가 삭제됩니다. <br>삭제하시겠습니까?</p>
         </div>
         <div class="button-box-medium col-3">
@@ -63,11 +75,13 @@
 
 <div class="button-box-xsmall">
     <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');">[기본알럿]</a>
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');">[button2]</a>
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');">[Confirm : 버튼 비율]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');">[button2 > button-q]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');">[button2 > button-s]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');">[버튼 비율 col-3]</a>
 </div>
 
 
+<h3 class="title3">[공통]</h3>
 <div class="pop-modal modal-hidden" id="shareModal">
     <div class="modal modal-medium" tabindex="0">
         <div class="modal-header">공유하기</div>
@@ -80,11 +94,11 @@
         <button class="modal-close" type="button">닫기</button>
     </div>
 </div>
-
 <div class="button-box-xsmall">
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('shareModal');">[공유하기]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('shareModal');">[medium: 공유하기]</a>
 </div>
 
+<h3 class="title3">[기타]</h3>
 <!-- 약관보기 팝업 -->
 <div class="pop-modal modal-hidden" id="modalLarge1">
     <div class="modal modal-large" tabindex="0">
@@ -226,37 +240,37 @@
         <div class="message-box">
             <p class="message-title">분야</p>
             <div class="chip-box">
-                <label class="chip"><input type="radio" name="location-radio1" value="" checked><i>분야</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>전체</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>외식</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>여행</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>의료</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>커머스</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>부동산</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>유통</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>소셜</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>통신</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>공공</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>환경</i></label>
-                <label class="chip"><input type="radio" name="location-radio1" value=""><i>모빌리티</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value="" checked><i>분야</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>전체</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>외식</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>여행</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>의료</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>커머스</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>부동산</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>유통</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>소셜</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>통신</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>공공</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>환경</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>모빌리티</i></label>
             </div>
             <p class="message-title">사용목적</p>
             <div class="chip-box">
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>사용목적</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>전체</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>시장조사</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>상권분석</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>고객분석</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>정책</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>상품전략</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>채널분석</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>마케팅</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>연구</i></label>
-                <label class="chip"><input type="radio" name="location-radio2" value=""><i>리스크</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>사용목적</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>전체</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>시장조사</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>상권분석</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>고객분석</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>정책</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>상품전략</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>채널분석</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>마케팅</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>연구</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>리스크</i></label>
             </div>
         </div>
         <div class="button-box-medium">
-            <button class="button-q" type="button">초기화</button>
+            <button class="button-q maintain-modal" type="button">초기화</button><!-- [2025.08.08 모달유지 .maintain-modal 추가] -->
             <button class="button-p close-modal" type="button">적용하기</button>
         </div>
         <button class="modal-close" type="button">닫기</button>
@@ -264,11 +278,140 @@
 </div>
 <!-- //필터 팝업 -->
 <div class="button-box-xsmall">
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge1');">[large 팝업 / 약관보기]</a>
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge2');">[large 팝업 / 데이터 등록]</a>
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge3');">[large 팝업 / 지역검색]</a>
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge4');">[large 팝업 / 필터]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge1');">[large: 약관보기]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge2');">[large: 데이터 등록]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge3');">[large: 지역검색]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge4');">[large: 필터] [2025.08.08 모달유지 .maintain-modal 추가]</a>
 </div>
+
+<h3 class="title3">[풀팝업(모바일)]</h3>
+<!-- 문의하기 -->
+<div class="pop-modal modal-hidden" id="modalFaq">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">문의하기</div>
+        <div class="modal-faq">
+            <div class="tab-box">
+                <ul class="tabs-small">
+                    <li class="is-on"><a href="#tabContent1">일반 문의</a></li>
+                    <li><a href="#tabContent2">상품 문의</a></li>
+                    <li><a href="#tabContent3">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA01Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA01Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+
+                        <label for="QnA01Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA01Provider">
+                                <option value="" disabled>제공기관을 선택해주세요.</option>
+                                <option value="">제공기관 1_1</option>
+                                <option value="">제공기관 1_2</option>
+                                <option value="">제공기관 1_3</option>
+                                <option value="">제공기관 1_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA01Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <p class="text-byte">0/4,000Byte</p>
+                        <div class="textarea">
+                            <textarea name="" id="QnA01Content" placeholder="문의 내용을 작성해주세요"></textarea>
+                        </div>
+
+                        <label for="QnA01Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA01Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA02Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA02Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+                        <label for="QnA02Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA02Provider">
+                                <option value="" disabled>제공기관을 선택해주세요.</option>
+                                <option value="">제공기관 2_1</option>
+                                <option value="">제공기관 2_2</option>
+                                <option value="">제공기관 2_3</option>
+                                <option value="">제공기관 2_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA02Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <textarea name="" id="QnA02Content" placeholder="문의 내용을 작성해주세요"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA02Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA02Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent3" tabindex="0" style="display:none;">
+                <div class="faq-category">
+                    <div class="chip-box">
+                        <div class="chips">
+                            <label class="chip"><input type="radio" name="radio1"><i>전체<em>22</em></i><label>
+                            <label class="chip"><input type="radio" name="radio1"><i>회원/계정<em>7</em></i><label>
+                            <label class="chip"><input type="radio" name="radio1"><i>데이터 이용<em>6</em></i><label>
+                            <label class="chip"><input type="radio" name="radio1"><i>구매/취소<em>5</em></i><label>
+                            <label class="chip"><input type="radio" name="radio1"><i>기타<em>4</em></i><label>
+                        </div> 
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <ul>
+                        <li class="list-item">
+                            <div class="item-title">
+                                <span class="category">회원/계정</span>
+                                <p class="question">휴면 해제를 어떻게 하나요?</p>
+                            </div>
+                            <div class="item-content">
+                                <p class="answer">회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+                            </div>
+                        </li>
+                        <li class="list-item">
+                            <span class="category">회원/이용안내</span>
+                            <p class="f"></p>
+                            <p class="q" style="white-space:pre-line;">휴면 회원의 경우 로그인한 후, 본인인증을 통해 해제 가능합니다.
+                                정상 회원으로 상태 변경 시 개인정보 수집/이용 선택 동의 항목이 철회됩니다.
+                                당사가 제공하는 유익한 서비스나 제휴 혜택, 상품 등을 안내받고자 하실 경우 마이페이지 > 개인정보관리 에서 개인정보 수집/이용 선택 동의 항목에 재동의 해주셔야 합니다.</p>
+                        </li>
+                    </ul>
+                    <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+                </div>
+            </div>
+        </div> 
+        <div class="button-box-medium">
+            <button class="button-p" type="button">문의하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //문의하기 -->
+<div class="button-box-xsmall">
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalFaq',true);">[medium: 문의하기]</a>
+</div>
+
 
 <h2 class="title2">Loading</h2>
 <div class="codeview">

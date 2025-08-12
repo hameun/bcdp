@@ -181,6 +181,7 @@ $graph-color3: $gray-100;
         position: absolute;
         top: 24px;
         right: 24px;
+        z-index: 1;
       }
       .map-data {
         flex: 1;
