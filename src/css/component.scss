@@ -71,16 +71,20 @@
 .caption2 {@include text-caption2;}
 .blind {@include set-icon-text-blind;}
 
+// navi
 .icon-extlink {@include set-icon(20px, 20px, $icon-external-link, 20px);}
-.icon-home {@include set-icon(48px, 48px, $icon-home, 20px);} 
-.icon-menufold {@include set-icon(40px, 40px, $icon-fold, 20px);}
-.icon-aisearch {@include set-icon(40px, 40px, $icon-aisearch, 20px);}
+.icon-home {@include set-icon(48px, 48px, $icon-home, 36px);} 
+.icon-menufold {@include set-icon(48px, 48px, $icon-fold, 20px);}
+.icon-aisearch {@include set-icon(48px, 48px, $icon-aisearch, 20px);}
 .icon-search {@include set-icon(48px, 48px, $icon-search, 48px);}
 .icon-history {@include set-icon(48px, 48px, $icon-history, 48px);}
 .icon-cart {@include set-icon(48px, 48px, $icon-cart, 48px);}
 .icon-mypage {@include set-icon(48px, 48px, $icon-mypage, 48px);}
 .icon-login {@include set-icon(48px, 48px, $icon-login, 20px);}
 .icon-logout {@include set-icon(48px, 48px, $icon-logout, 20px);}
+.icon-menuclose {@include set-icon(48px, 48px, svg-icon(close-16, $gray-900), 20px);}
+
+
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
 .icon-download {@include set-icon(24px, 24px, $icon-download);}
@@ -127,13 +131,13 @@
     border-radius: 10px;
     background: $gray-300;
     &.dot1 {
-      animation: loading1 1500ms linear infinite;
+      animation: loading1 1s linear infinite;
     }
     &.dot2 {
-      animation: loading2 1500ms linear infinite;
+      animation: loading2 1s linear infinite;
     }
     &.dot3 {
-      animation: loading3 1500ms linear infinite;
+      animation: loading3 1s linear infinite;
     }
   }
   &.remove {
@@ -503,7 +507,32 @@ INPUT TEXT
       background-image: url(svg-icon(chevron-right, $gray-200));
     }
   }
+  
+  .select-placeholder {
+    padding: 11px 14px;
+    text-align: left;
+    width: 100%;
+  }
+  .ui-selectmenu-button.ui-button {
+    // position: absolute;
+    // padding-top: 56px;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    width: 100%;
+    display: flex;
+    padding: 11px 14px;
+    &::placeholder {
+      color: $gray-300;
+    }
+  }
 }
+
+
+.input-box .ui-selectmenu-text {
+  @include text-body(0);
+}
+.ui-menu-item.ui-state-disabled {display: none;}
 .input-file {
   display: flex;
   .input-box {
@@ -939,6 +968,9 @@ MODAL POPUP
       }
     }
   }
+  .tab-box {
+    background-color: transparent;
+  }
   .modal-close {
     position: absolute;
     top: 20px;
@@ -1072,18 +1104,86 @@ MODAL POPUP
         margin-bottom: 20px;
         overflow: hidden;
         overflow-y: auto;
+        .textarea {
+          position: relative;
+          .text-byte {
+            position: absolute;
+            right: 0;
+            top: -26px;
+            @include text-body(2,'r',$gray-400);
+          }
+        }
       }
       .faqbox {
         display: flex;
         flex-direction: column;
+        &::-webkit-scrollbar {width: 4px;}
+        &::-webkit-scrollbar-thumb {
+          background-color: transparent;
+          border-radius: 4px;
+        }
+        &::-webkit-scrollbar-button {
+          height: 7px;
+        }
+        &:hover::-webkit-scrollbar-thumb {
+          background-color: $gray-100;
+        }
         .chip-box {
           flex: 0 0 56px;
           flex-wrap: nowrap;
+          overflow: auto;
+          width: calc(100vw - 40px);
+          max-width: 440px;
+          .chip i {
+            padding: 3px 11px;
+            @include text-body(1,'r',$gray-700);
+            em {
+              margin-left: 4px;
+              @include text-body(1,'m',$navy-400);
+            }
+          }
         }
         .faq-list {
           flex: auto;
           overflow: hidden;
           overflow-y: auto;
+          &::-webkit-scrollbar {width: 4px;}
+          &::-webkit-scrollbar-thumb {
+            background-color: transparent;
+            border-radius: 4px;
+          }
+          &::-webkit-scrollbar-button {
+            height: 7px;
+          }
+          &:hover::-webkit-scrollbar-thumb {
+            background-color: $gray-100;
+          }
+
+          .list-item {
+            & +.list-item {
+              border-top: 1px solid $gray-60;
+            }
+            .item-title {
+              padding: 16px 0;
+              .category {
+                margin-bottom: 4px;
+                padding: 1px 5px;
+                border-radius: 4px;
+                border: 1px solid $gray-100;
+                @include text-body(3,'m',$gray-700);
+              }
+              .question {
+                @include text-body(1,'sb',$gray-700);
+              }
+            }
+            .item-content {
+              padding-bottom: 16px;
+              .answer {
+                @include text-body(2,'r',$gray-600);
+                white-space: pre-line;
+              }
+            }
+          }
         }
       }
     }
@@ -1878,7 +1978,7 @@ TOAST POPUP
     margin-left: -160px;
     left: 0;
     display: none;
-    z-index: 10;
+    z-index: 15;
     width: 160px;
     .ui-menu {
       overflow: auto;
@@ -2033,7 +2133,7 @@ TOAST POPUP
     width: auto;
     background: rgba(0,0,0,0.5);
     display: none;
-    z-index: 3;
+    z-index: 15;
 
     .ui-menu {
       flex: 0;

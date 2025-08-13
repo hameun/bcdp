@@ -1,15 +1,77 @@
 <header class="header">
-  <nav class="is-pc">
-    <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
-    <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
-    <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
-    <a href="#" class="icon-mypage">마이페이지</a>
-    <a href="#" class="icon-login">로그인</a>
-    <a href="#" class="icon-logout">로그아웃</a>
-  </nav>
-  <nav class="is-mobile">
-    <a href="#" class="icon-home">메인으로</a>
-    <a href="#" class="icon-menu">메뉴보기</a>
-  </nav>
-</header>
-<!-- // header -->  
+    <nav>
+        <a href="#" class="icon-home">메인으로</a>
+        <a href="#" class="icon-menu">메뉴보기</a>
+    </nav>
+</header><!-- // .header -->
+<aside class="aside">
+    <nav class="statebar">
+        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+        <a href="#" class="icon-mypage">마이페이지</a>
+        <a href="#" class="icon-login">로그인</a>
+        <!-- <a href="#" class="icon-logout">로그아웃</a> -->
+        <a href="#" class="icon-menuclose">메뉴닫기</a>
+    </nav>
+    <div class="navigation">
+        <div class="util-menu">
+            <a href="#" class="icon-home">메인으로</a>
+            <a href="#" class="icon-menufold">메뉴접기</a>
+            <a href="#" class="icon-aisearch">AI 검색하기</a>
+        </div>
+        <!-- 메인 메뉴 -->
+        <nav class="main-nav">
+            <ul class="main-menu">
+                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+            </ul>
+            <ul class="guidance-menu">
+                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+            </ul>
+            <footer class="footer">
+                <ul class="footer-menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                </ul>
+                <ul class="company-info">
+                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+                </ul>
+                <p class="copyright">© Copyright 2025 BC Card </p>
+            </footer>
+        </nav>
+        <!-- //메인 메뉴 -->
+        <!-- 이용안내 메뉴 -->
+        <nav class="main-nav" style="display: none;">
+            <ul class="main-menu">
+                <li><a href="#"><i class="icon-n-info"></i><i class="txt">플랫폼 소개</i></a></li>
+                <li><a href="#"><i class="icon-n-bcdata"></i><i class="txt">BC Data</i></a></li>
+                <li><a href="#"><i class="icon-n-notice"></i><i class="txt">공지사항</i></a></li>
+                <li><a href="#"><i class="icon-n-faq"></i><i class="txt">FAQ</i></a></li>
+                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+            </ul>
+            <footer class="footer">
+                <ul class="footer-menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+                </ul>
+                <ul class="company-info">
+                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+                </ul>
+                <p class="copyright">© Copyright 2025 BC Card </p>
+            </footer>
+        </nav>
+        <!-- //이용안내 메뉴 -->
+    </div>
+</aside><!-- // .aside --> 
