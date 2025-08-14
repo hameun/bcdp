@@ -25,12 +25,7 @@ $(function(){
 
     fn_marketList(); // [데이터마켓] 리스트 스타일 변경
     fn_marketPayItemFold(); // [데이터마켓] 결제하기
-<<<<<<< HEAD
-    fn_marketSlider(); // [데이터마켓] 슬라이더
-    fn_datapicker();
-=======
     fn_marketSlider();
->>>>>>> 20c416dbd4d043de107d33d51b1a835011309b82
     fn_accordion();//아코디언
     fn_filter();
 
