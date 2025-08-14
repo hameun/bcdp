@@ -529,10 +529,24 @@ INPUT TEXT
 }
 
 
-.input-box .ui-selectmenu-text {
-  @include text-body(0);
+.input-box {
+  .ui-selectmenu-button .ui-selectmenu-text {
+    @include text-body(0, 'r');
+  }
+  // .ui-selectmenu-button-closed .ui-selectmenu-text {
+  //   @include text-body(0, 'r', $gray-300);
+  // }
+  // .ui-selectmenu-button-closed[aria-disabled="false"] .ui-selectmenu-text {
+  //   @include text-body(0);
+  // }
+  .ui-selectmenu-button .ui-selectmenu-text.placeholder {
+    color: $gray-300
+  }
 }
+
 .ui-menu-item.ui-state-disabled {display: none;}
+
+
 .input-file {
   display: flex;
   .input-box {
@@ -765,6 +779,7 @@ TAPS / SWITCH
 } 
 .segment {@include set-tabs-segment(48px, 1);}
 .segment-small {@include set-tabs-segment(40px, 2);}
+.segment-xsmall {@include set-tabs-segment(32px, 2);}
 .tabs {@include set-tabs(56px, 0);}
 .tabs-small {@include set-tabs(46px, 1);}
 .tabs-sub {@include set-tabs-sub;}
@@ -878,6 +893,7 @@ MODAL POPUP
   .modal-header {
     // padding: 20px 0 16px; 07.22 수정
     margin-bottom: 16px; // 07.22 수정
+    min-height: 27px;
     @include text-title(4);
   }
   .message-box {
@@ -981,14 +997,42 @@ MODAL POPUP
 
 // 페이지로 옮기기
 .modal {
-  .coupon-box {
-    .result-none {
-      margin-top: 0;
-      .message {
-        font-size: 18px;
+  .modal-banner {
+    .banner-slider-wrap {
+      position: relative;
+      padding-bottom: 20px;
+      .banner-slider {
+        border-radius: 12px;
+      }
+      .swiper-pagination {
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        .swiper-pagination-bullet {
+          background-color: $gray-100;
+          border-radius: 8px;
+          opacity: 1;
+          transition: all 300ms;
+        }
+        .swiper-pagination-bullet-active {
+          background-color: $gray-900;
+          width: 16px;
+        }
       }
     }
-  }
+    .banner-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding: 0 2px;
+      @include text-body(1, 'm');
+      .txt-light {
+        color: $gray-400;
+      }
+    }
+  } //.modal-banner
+
+
   .coupon-box {
     padding: 8px 0 20px;
     &:has(.item:nth-child(4)) {
@@ -1079,6 +1123,12 @@ MODAL POPUP
         }
       }
 
+    }
+    .result-none {
+      margin-top: 0;
+      .message {
+        font-size: 18px;
+      }
     }
   }
   .button-box-medium {
@@ -1978,7 +2028,7 @@ TOAST POPUP
     margin-left: -160px;
     left: 0;
     display: none;
-    z-index: 15;
+    z-index: 11;
     width: 160px;
     .ui-menu {
       overflow: auto;
@@ -2058,6 +2108,7 @@ TOAST POPUP
     flex-direction: column;
     flex-basis: 100%;
     align-self: flex-end;
+    width: 100%;
     .modal-header { flex: 0;}
     .message-box { flex: 1;}
     .button-box-medium { flex: 0;}
@@ -2133,7 +2184,7 @@ TOAST POPUP
     width: auto;
     background: rgba(0,0,0,0.5);
     display: none;
-    z-index: 15;
+    z-index: 11;
 
     .ui-menu {
       flex: 0;

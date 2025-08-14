@@ -82,19 +82,24 @@
         "name": "메인",
         "dep" : 0,
         "href": "AS01MAIN",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중",
+        "text": []
       },
       {
         "name": "결과",
         "dep" : 1,
         "href": "AS01",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중",
+        "text": ["미적용: 검색창 그라데이션/ 스켈레톤/ 연관된 상품 데이터만들기"]
       },
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "AS01M",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/14"
       }
     ]},
     {
@@ -532,56 +537,6 @@
       }
     ]},
     {
-      "nav" : "이용안내",
-      "href": "guidance",
-      "end" : "9/3",
-      "menus" : [ 
-      {
-        "group": "플랫폼 소개",
-        "name": "금융 빅데이터 플랫폼 소개",
-        "dep" : 0,
-        "href": "UG0101",
-        "date": "작업예정"
-      },
-      {
-        "name": "제공기관 안내",
-        "dep" : 1,
-        "href": "UG0102",
-        "date": "작업예정"
-      },
-      {
-        "group": "공지사항",
-        "name": "목록",
-        "dep" : 0,
-        "href": "UG0201",
-        "date": "작업예정"
-      },
-      {
-        "name": "상세",
-        "dep" : 1,
-        "href": "",
-        "date": "작업예정"
-      },
-      {
-        "name": "검색결과 없음",
-        "dep" : 1,
-        "href": "",
-        "date": "작업예정"
-      },
-      {
-        "name": "FAQ ",
-        "dep" : 0,
-        "href": "UG0301",
-        "date": "작업예정"
-      },
-      {
-        "name": "Q&A ",
-        "dep" : 0,
-        "href": "UG034",
-        "date": "작업예정"
-      }
-    ]},
-    {
       "nav" : "마이페이지",
       "href": "mypage",
       "end" : "8/27",
@@ -725,15 +680,65 @@
       }
     ]},
     {
+      "nav" : "이용안내",
+      "href": "guidance",
+      "end" : "9/3",
+      "menus" : [ 
+      {
+        "group": "플랫폼 소개",
+        "name": "금융 빅데이터 플랫폼 소개",
+        "dep" : 0,
+        "href": "UG01",
+        "date": "작업예정"
+      },
+      {
+        "name": "제공기관 안내",
+        "dep" : 1,
+        "href": "UG0102",
+        "date": "작업예정"
+      },
+      {
+        "group": "공지사항",
+        "name": "목록",
+        "dep" : 0,
+        "href": "UG0201",
+        "date": "작업예정"
+      },
+      {
+        "name": "상세",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "검색결과 없음",
+        "dep" : 1,
+        "href": "",
+        "date": "작업예정"
+      },
+      {
+        "name": "FAQ ",
+        "dep" : 0,
+        "href": "UG0301",
+        "date": "작업예정"
+      },
+      {
+        "name": "Q&A ",
+        "dep" : 0,
+        "href": "UG034",
+        "date": "작업예정"
+      }
+    ]},
+    {
       "nav" : "공통",
       "href": "common",
       "end" : "수시 업데이트",
       "menus" : [
       {
-        "name": "GNB (8/18)",
+        "name": "GNB 이용안내 (8/18)",
         "dep" : 0,
-        "href": "",
-        "date": "작업예정"
+        "href": "UG01",
+        "date": "작업중"
       },
       {
         "name": "통합검색/푸터 (9/3)",

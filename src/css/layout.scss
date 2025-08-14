@@ -159,6 +159,9 @@ aside
 .aside {
   .statebar {
     display: flex;
+    .mypage-menu {
+      display: none;
+    }
   }
   .navigation {
     flex: auto;
@@ -171,7 +174,7 @@ aside
     }
     .main-menu {
       margin-top: 12px;
-      padding: 0 12px;
+      padding: 0 6px;
       li {
         & +li {
           margin-top: 8px;
@@ -269,24 +272,100 @@ aside
       }
     }
     
-    .icon-n-search {@include set-icon(24px, 24px, $icon-n-search, 20px);}
-    .icon-n-insight {@include set-icon(24px, 24px, $icon-n-insight, 20px);}
-    .icon-n-polio {@include set-icon(24px, 24px, $icon-n-polio, 20px);}
-    .icon-n-market {@include set-icon(24px, 24px, $icon-n-market, 20px);}
-    .icon-n-guidenace {@include set-icon(24px, 24px, $icon-n-guidenace, 20px);}
+    .icon-n-search {@include set-icon(24px, 24px, svg-icon(n-search), 20px);}
+    .icon-n-insight {@include set-icon(24px, 24px, svg-icon(n-insight), 20px);}
+    .icon-n-polio {@include set-icon(24px, 24px, svg-icon(n-polio), 20px);}
+    .icon-n-market {@include set-icon(24px, 24px, svg-icon(n-market), 20px);}
+    .icon-n-guidenace {@include set-icon(24px, 24px, svg-icon(n-guidenace), 20px);}
 
 
-    .icon-n-info {@include set-icon(24px, 24px, $icon-n-info, 20px);}
-    .icon-n-bcdata {@include set-icon(24px, 24px, $icon-n-bcdata, 20px);}
-    .icon-n-notice {@include set-icon(24px, 24px, $icon-n-notice, 20px);}
-    .icon-n-faq {@include set-icon(24px, 24px, $icon-n-faq, 20px);}
+    .icon-n-info {@include set-icon(24px, 24px, svg-icon(n-info), 20px);}
+    .icon-n-bcdata {@include set-icon(24px, 24px, svg-icon(n-bcdata), 20px);}
+    .icon-n-notice {@include set-icon(24px, 24px, svg-icon(n-notice), 20px);}
+    .icon-n-faq {@include set-icon(24px, 24px, svg-icon(n-faq), 20px);}
 
-    .icon-n-contest {@include set-icon(24px, 24px, $icon-n-contest, 20px);}
-    .icon-n-analysis {@include set-icon(24px, 24px, $icon-n-analysis, 20px);}
-    .icon-n-request {@include set-icon(24px, 24px, $icon-n-request, 20px);}
+    .icon-n-contest {@include set-icon(24px, 24px, svg-icon(n-contest), 20px);}
+    .icon-n-analysis {@include set-icon(24px, 24px, svg-icon(n-analysis), 20px);}
+    .icon-n-request {@include set-icon(24px, 24px, svg-icon(n-request), 20px);}
+
+    .is-current {
+      .icon-n-search {@include set-icon(24px, 24px, svg-icon(n-search, $primary), 20px);}
+      .icon-n-insight {@include set-icon(24px, 24px, svg-icon(n-insight, $primary), 20px);}
+      .icon-n-polio {@include set-icon(24px, 24px, svg-icon(n-polio, $primary), 20px);}
+      .icon-n-market {@include set-icon(24px, 24px, svg-icon(n-market, $primary), 20px);}
+      .icon-n-guidenace {@include set-icon(24px, 24px, svg-icon(n-guidenace, $primary), 20px);}
+
+
+      .icon-n-info {@include set-icon(24px, 24px, svg-icon(n-info, $primary), 20px);}
+      .icon-n-bcdata {@include set-icon(24px, 24px, svg-icon(n-bcdata, $primary), 20px);}
+      .icon-n-notice {@include set-icon(24px, 24px, svg-icon(n-notice, $primary), 20px);}
+      .icon-n-faq {@include set-icon(24px, 24px, svg-icon(n-faq, $primary), 20px);}
+
+      .icon-n-contest {@include set-icon(24px, 24px, svg-icon(n-contest, $primary), 20px);}
+      .icon-n-analysis {@include set-icon(24px, 24px, svg-icon(n-analysis, $primary), 20px);}
+      .icon-n-request {@include set-icon(24px, 24px, svg-icon(n-request, $primary), 20px);}
+    }
   }
 }
 
+
+.pop-history {
+  position: fixed;
+  top: 88px;
+  right: 20px;
+  width: 320px;
+  z-index: 10;
+  .modal {
+    box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
+    backdrop-filter: blur(20px);
+  }
+  .tab-box {
+    margin-bottom: 20px;
+  }
+  .history-box {
+    margin-top: -20px;
+  }
+  .item-scroll-wrap {
+    height: 336px;
+    &:has(li:nth-child(6)) {
+      margin-right: -20px;
+    }
+    &::-webkit-scrollbar-button {
+      height: 12px;
+    }
+  }
+  .history-list {
+    // padding: 12px 0;
+    li +li {
+      // margin-top: 12px;
+      border-top: 1px solid $gray-60;
+    }
+    li {
+      padding: 12px 0;
+      // margin-bottom: 12px;
+      a {
+        display: block;
+        .title {
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          @include text-body(2,'m',$gray-700);
+        }
+        .info {
+          margin-top: 2px;
+          display: flex;
+          span {
+            @include text-body(3,'m',$gray-300);
+          }
+        }
+      }
+    }
+  }
+  &.modal-hidden {
+    display: none;
+  }
+}
 .modal-test {
   position: fixed;
   bottom: $layout-padding;
@@ -313,6 +392,7 @@ aside
       z-index: 10;
       
       padding: 2px;
+
       border-radius: 20px;
       border: 2px solid #FFF;
       border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
@@ -320,6 +400,28 @@ aside
       box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
       backdrop-filter: blur(20px);
 
+      .mypage-menu {
+        position: absolute;
+        right: -2px;
+        top: calc(100% + 14px);
+        padding: 6px;
+
+        border-radius: 20px;
+        border: 2px solid #FFF;
+        border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
+        backdrop-filter: blur(20px);
+        a {
+          display: block;
+          min-width: 100px;
+          padding: 9.5px 32px 9.5px 12px;
+          @include text-body(2,'m');
+        }
+        &.is-open {
+          display: block;
+        }
+      }
       .icon-menuclose {
         display: none;
       }
@@ -363,7 +465,7 @@ aside
             display: flex;
             align-items: center;
             padding: 7.5px 14px;
-            margin-bottom: 12px;
+            // margin-bottom: 12px;
             i[class^="icon-n-"] {
               display: none;
             }
@@ -592,6 +694,21 @@ aside
         right: 0;
         background: linear-gradient(180deg, rgba($layout-bg, 0) 0, $layout-bg 24px, $layout-bg 100%);
       }
+    }
+  }
+
+  .pop-history {
+    top: 0;
+    right: 0;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .modal {
+      border-radius: 16px 16px 0 0;
     }
   }
 }

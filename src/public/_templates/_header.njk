@@ -4,14 +4,23 @@
         <a href="#" class="icon-menu">메뉴보기</a>
     </nav>
 </header><!-- // .header -->
+
 <aside class="aside">
     <nav class="statebar">
+        {% if headertype == "main" %}
         <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
         <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
         <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+        {% endif %}
         <a href="#" class="icon-mypage">마이페이지</a>
         <a href="#" class="icon-login">로그인</a>
-        <!-- <a href="#" class="icon-logout">로그아웃</a> -->
+        <div class="mypage-menu">
+            <ul>
+                <li><a href="#">마이페이지</a></li>
+                <li><a href="#">개인정보 수정</a></li>
+                <li><a href="#">로그아웃</a> </li>
+            </ul>
+        </div>
         <a href="#" class="icon-menuclose">메뉴닫기</a>
     </nav>
     <div class="navigation">
@@ -20,6 +29,7 @@
             <a href="#" class="icon-menufold">메뉴접기</a>
             <a href="#" class="icon-aisearch">AI 검색하기</a>
         </div>
+        {% if headertype == "main" %}
         <!-- 메인 메뉴 -->
         <nav class="main-nav">
             <ul class="main-menu">
@@ -49,10 +59,11 @@
             </footer>
         </nav>
         <!-- //메인 메뉴 -->
+        {% elseif headertype == "guide" %}
         <!-- 이용안내 메뉴 -->
-        <nav class="main-nav" style="display: none;">
+        <nav class="main-nav">
             <ul class="main-menu">
-                <li><a href="#"><i class="icon-n-info"></i><i class="txt">플랫폼 소개</i></a></li>
+                <li class="is-current"><a href="#"><i class="icon-n-info"></i><i class="txt">플랫폼 소개</i></a></li><!-- 현재메뉴 .is-current -->
                 <li><a href="#"><i class="icon-n-bcdata"></i><i class="txt">BC Data</i></a></li>
                 <li><a href="#"><i class="icon-n-notice"></i><i class="txt">공지사항</i></a></li>
                 <li><a href="#"><i class="icon-n-faq"></i><i class="txt">FAQ</i></a></li>
@@ -73,5 +84,6 @@
             </footer>
         </nav>
         <!-- //이용안내 메뉴 -->
+        {% endif %}
     </div>
-</aside><!-- // .aside --> 
+</aside><!-- // .aside -->
