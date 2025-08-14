@@ -10,72 +10,83 @@
         "name": "데이터유형",
         "dep" : 0, 
         "href": "DP01",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/14"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
         "href": "DP01M",
-        "date": "작업예정",
+        "stat": "end",
+        "date": "8/14",
         "text": []
       },
       {
         "name": "기간선택",
         "dep" : 1,
         "href": "DP02",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/14"
       },
       {
         "name": "지역선택",
         "dep" : 1,
-        "href": "DP03",                      
-        "date": "작업예정"
+        "href": "DP03",
+        "stat": "end",                      
+        "date": "8/14"
       },
       {
         "name": "업종선택",
         "dep" : 1,
-        "href": "DP04",                      
-        "date": "작업예정"
+        "href": "DP04",
+        "stat": "end",                      
+        "date": "8/14"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
         "href": "DP04M",
-        "date": "작업예정",
+        "stat": "end",
+        "date": "8/14",
         "text": []
       },
       {
         "name": "세부항목 ",
         "dep" : 1,
-        "href": "DP05",                      
-        "date": "작업예정"
+        "href": "DP05",
+        "stat": "end",                      
+        "date": "8/14"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
         "href": "DP05M",
-        "date": "작업예정",
+        "stat": "end",
+        "date": "8/14",
         "text": []
       },
       {
         "name": "구매완료 ",
         "dep" : 1,
-        "href": "DP07",                      
-        "date": "작업예정"
+        "href": "DP07",
+        "stat": "end",                      
+        "date": "8/14"
       }
       ,
       {
         "name": "로딩 ",
         "dep" : 1,
-        "href": "DPLoading",                      
-        "date": "작업예정"
+        "href": "DPLoading",
+        "stat": "end",                      
+        "date": "8/14"
       }
       ,
       {
         "name": "스켈레톤 ",
         "dep" : 1,
-        "href": "DPskeleton",                      
-        "date": "작업예정"
+        "href": "DPskeleton",
+        "stat": "end",                      
+        "date": "8/14"
       }
     ]},
     {
