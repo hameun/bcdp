@@ -22,54 +22,60 @@
       {
         "name": "기간선택",
         "dep" : 1,
-        "href": "",
+        "href": "DP02",
         "date": "작업예정"
-      },
-      {
-        "name": "[모달]",
-        "dep" : 2, 
-        "href": "",
-        "date": "작업예정",
-        "text": []
       },
       {
         "name": "지역선택",
         "dep" : 1,
-        "href": "",                      
+        "href": "DP03",                      
         "date": "작업예정"
-      },
-      {
-        "name": "[모달]",
-        "dep" : 2, 
-        "href": "",
-        "date": "작업예정",
-        "text": []
       },
       {
         "name": "업종선택",
         "dep" : 1,
-        "href": "",                      
+        "href": "DP04",                      
         "date": "작업예정"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
-        "href": "",
+        "href": "DP04M",
         "date": "작업예정",
         "text": []
       },
       {
         "name": "세부항목 ",
         "dep" : 1,
-        "href": "",                      
+        "href": "DP05",                      
         "date": "작업예정"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
-        "href": "",
+        "href": "DP05M",
         "date": "작업예정",
         "text": []
+      },
+      {
+        "name": "구매완료 ",
+        "dep" : 1,
+        "href": "DP07",                      
+        "date": "작업예정"
+      }
+      ,
+      {
+        "name": "로딩 ",
+        "dep" : 1,
+        "href": "DPLoading",                      
+        "date": "작업예정"
+      }
+      ,
+      {
+        "name": "스켈레톤 ",
+        "dep" : 1,
+        "href": "DPskeleton",                      
+        "date": "작업예정"
       }
     ]},
     {

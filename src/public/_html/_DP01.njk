@@ -17,29 +17,52 @@
                 <button type="button" class="ipt-search"><i>검색</i></button>
             </span>
         </div>
+        <!-- 결과대기중 :is-ai-->
+        <div class="input-box is-ai">
+            <input type="text" class="ipt" placeholder="조건을 입력하면 AI가 자동 선택해드려요." value="조건을 입력하면 AI가 자동 선택해드려요">
+            <span class="util-box">
+                <button type="button" class="ipt-search"><i>검색</i></button>
+            </span>
+        </div>
+        <!-- 결과대기중 -->
     </div>
 
     <div class="datapolio-contents">
         <div class="content-step">
             <ul>
                 <li class="on">
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">데이터유형</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">데이터유형</em>
+                    </div>
                 </li>
                 <li>
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">기간</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">기간</em>
+                    </div>
                 </li>
                 <li>
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">지역</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">지역</em>
+                    </div>
                 </li>
                 <li>
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">업종</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">업종</em>
+                    </div>
                 </li>
                 <li>
-                    <em class="step-txt">세부항목</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-txt">세부항목</em>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -57,7 +80,7 @@
 
     <div class="datapolio-bottom">
     <div class="btn-filter">
-        <button type="button" class="btn-icon-filter is-filter">
+        <button type="button" class="btn-icon-filter is-filter"><!-- 조건선택여부 class : is-filter -->
             <i>선택조건 있음</i>
         </button>
     </div>

@@ -1,0 +1,363 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DP05.njk" ) }}
+{%- endblock %}                  
+
+{% block modal %}
+
+<!-- 데이터구매하기 - 비로그인 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인이 필요한 서비스입니다.<br>
+                지금 로그인하고 데이터를 구매해보세요!</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">로그인하러 가기</button>
+        </div>
+    </div>
+</div>
+<!-- //데이터구매하기 - 비로그인-->
+
+<!-- 최종견적 -->
+<div class="pop-modal modal-hidden" id="modal2">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">최종 견적 확인 후 결제를 진행해주세요.</div>
+        <div class="modal-description">선택하신 조건 중 일부 항목은 현재 보유한 데이터가 없어 제외되었어요. 실제 구매 가능한 항목을 기준으로 최종 견적이 산정됩니다.</div>
+        <div class="datapolio-box">
+            <div class="title">제외항목 <span class="count">4</span></div>
+            <div class="modal-data-info datapolio">
+                <dl class="info">
+                    <dt>업종</dt>
+                    <dd>
+                        <span>(소분류)가정통신>가전>건강가전</span>
+                        <span>(소분류)가정통신>가전>건강가전</span>
+                    </dd>
+                </dl>
+                <dl class="info">
+                    <dt>지역</dt>
+                    <dd>
+                        <span>(광역시/도)인천시</span>
+                        <span>(광역시/도)경기도</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="modal-data-info datapolio">
+                <dl class="info">
+                    <dt>예상 견적금액</dt>
+                    <dd>320,000원</dd>
+                </dl>
+                <dl class="info">
+                    <dt>제외항목 차감</dt>
+                    <dd>-20,000원</dd>
+                </dl>
+                <dl class="info total">
+                    <dt>최종 견적금액</dt>
+                    <dd>300,000원</dd>
+                </dl>
+                <dl class="info my-total">
+                    <dt>나의 최종 예상 구매 가격</dt>
+                    <dd>250,000원</dd>
+                </dl>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">최종 견적 확인 후 결제하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //최종견적 -->
+
+<!-- 최종견적 - 조건변경 -->
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">최종 견적 확인 후 결제를 진행해주세요.</div>
+        <div class="modal-description">선택하신 조건 중 일부 항목은 현재 보유한 데이터가 없어 제외되었어요. 실제 구매 가능한 항목을 기준으로 최종 견적이 산정됩니다.</div>
+        <div class="datapolio-box">
+            <div class="title">제외항목 <span class="count">4</span></div>
+            <div class="modal-data-info datapolio">
+                <dl class="info">
+                    <dt>업종</dt>
+                    <dd>
+                        <span>(소분류)가정통신>가전>건강가전</span>
+                        <span>(소분류)가정통신>가전>건강가전</span>
+                    </dd>
+                </dl>
+                <dl class="info">
+                    <dt>지역</dt>
+                    <dd>
+                        <span>(광역시/도)인천시</span>
+                        <span>(광역시/도)경기도</span>
+                    </dd>
+                </dl>
+            </div>
+            <div class="modal-data-info datapolio">
+                <dl class="info">
+                    <dt>예상 견적금액</dt>
+                    <dd>320,000원</dd>
+                </dl>
+                <dl class="info">
+                    <dt>제외항목 차감</dt>
+                    <dd>-20,000원</dd>
+                </dl>
+                <dl class="info total">
+                    <dt>최종 견적금액</dt>
+                    <dd>300,000원</dd>
+                </dl>
+            </div>
+            <div class="datapolio">
+                <p class="info-txt">최종 견적이 0원으로 결제할 수 없습니다.</p>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">조건 변경하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //최종견적 -조건변경 -->
+
+
+<!-- 데이터폴리오 상세 -->
+<div class="pop-modal modal-hidden" id="modal4">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">데이터폴리오 타이틀</div>
+        <div class="modal-data-info datapolio">
+            <dl class="info">
+                <dt>데이터유형</dt>
+                <dd>내국인 카드 소비 데이터</dd>
+            </dl>
+            <dl class="info">
+                <dt>기간</dt>
+                <dd>(연도별)2024</dd>
+            </dl>
+            <dl class="info">
+                <dt>지역</dt>
+                <dd>
+                    <span>(광역시/도)서울시</span>
+                    <span>(광역시/도)인천시</span>
+                    <span>(광역시/도)경기도</span>
+                </dd>
+            </dl>
+            <dl class="info">
+                <dt>업종</dt>
+                <dd>
+                    <span>(소분류)가정통신>가전>건강가전</span>
+                    <span>(소분류)가정통신>가전>건강가전</span>
+                </dd>
+            </dl>
+            <dl class="info">
+                <dt>요일</dt>
+                <dd>주말</dd>
+            </dl>
+            <dl class="info">
+                <dt>시간대</dt>
+                <dd>저녁</dd>
+            </dl>
+            <dl class="info">
+                <dt>연령대</dt>
+                <dd>
+                    <span>20대</span>
+                    <span>30대</span>
+                </dd>
+            </dl>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //데이터폴리오 상세 -->
+
+<!-- 임시저장 입력 -->
+<div class="pop-modal modal-hidden" id="modal5">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">변경할 데이터폴리오명을 입력해주세요.</div>
+        <div class="model-ipt">
+            <div class="input-box">
+                <input type="text" class="ipt" placeholder="최대 50자까지 입력 가능해요">
+                <span class="util-box">
+                    <button type="button" class="ipt-clear">내용 지우기</button>
+                </span>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p disabled" type="button">입력완료</button>
+        </div>
+        <button class="modal-close" type="butto n">닫기</button>
+    </div>
+</div>
+<!-- //임시저장 입력 -->
+
+<!-- 임시저장 입력완료 -->
+<div class="pop-modal modal-hidden" id="modal6">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">변경할 데이터폴리오명을 입력해주세요.</div>
+        <div class="model-ipt">
+            <div class="input-box">
+                <input type="text" class="ipt" placeholder="최대 50자까지 입력 가능해요" value="중구 20대 여자 카페 매출">
+                <span class="util-box">
+                    <button type="button" class="ipt-clear">내용 지우기</button>
+                </span>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">입력완료</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //임시저장 입력완료 -->
+
+<!-- 정보보안관리 약정서 -->
+<div class="pop-modal modal-hidden is-full" id="modal7">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">정보 보안관리 약정서</div>
+        <div class="security-box">
+            <div class="item-scroll-wrap">
+                <p class="description">비씨카드주식회사(이하 ‘공급자’라 함)가 금융 빅데이터 플랫폼 회원(이하 "구매자"라 함)에게 익명 정보(이하 “데이터”이라 함)를 공급하는데 있어서 다음과 같이 정보 보안관리 약정을 체결합니다.</p>
+
+                <h2>제 1조(개요)</h2>
+                <ul>
+                    <li>본 약정은 ‘구매자’가 활용하는 익명 정보에 대한 안전관리대책과 책임사항을 명확히 규정함으로써 익명 정보를 안전하게 활용하는 것을 목적으로 한다.</li>
+                </ul>
+
+                <h2>제 2 조(목적 및 내용)</h2>
+                <ul class="depth-1">
+                    <li>① ‘구매자’가 ‘공급자’로부터 제공 받은 익명 정보의 이용 목적 및 범위는 다음과 같다. 
+                        <ul class="depth-2">
+                            <li>* 데이터 공급 기본계약서 내 ‘계약 기본사항’의 4. 데이터 이용 목적 또는 유/무료 데이터 구매 시 입력한 데이터 이용 목적</li>
+                        </ul>
+                    </li>
+                    <li>② ‘구매자’가 ‘공급자’로부터 제공 받은 익명 정보의 이용 목적 및 범위는 다음과 같다. 
+                        <ul class="depth-2">
+                            <li>* 데이터 공급 기본계약서 내 ‘계약 기본사항’의 ‘6. 제공 데이터’에 해당하는 구매자가 이용 및 다운로드한 모든 유∙무료 데이터 일체</li>
+                        </ul>
+                    </li>
+                    <li>③ 본 조항에서 정의한 이용 목적 및 범위에 따른 익명 정보의 보유 및 이용기간은 금융 빅데이터 플랫폼에서 제공하는 데이터별 이용기간까지로 한다.
+                    </li>
+                </ul>
+
+                <h2>제 3 조(목적 외 사용 및 재식별 금지)</h2>
+                <ul class="depth-1">
+                    <li>① ‘구매자’는 ‘공급자’로부터 제공 받은 익명 정보는 약정된 ‘이용 목적 및 범위’ 외의 다른 용도로 활용하거나, 제3자에게 임의 제공·누설 또는 불특정 다수에게 공개해서는 안된다.</li>
+                    <li>② ‘구매자’는 ‘공급자’로부터 제공 받은 익명 정보를 협의되지 않은 다른 정보와의 결합을 통해 개인을 재식별하려는 어떠한 행위도 해서는 안된다. </li>
+                </ul>
+
+                <h2>제 4 조(계약해지 및 책임사항)</h2>
+                <ul class="depth-1">
+                    <li>① ‘공급자’는 다음 각 호의 사항에 해당하는 경우 본 약정과 관련된 유관 계약을 해지할 수 있다.
+                        <ul class="depth-2">
+                            <li>1. ‘구매자’가 정당한 사유 없이 본 약정서상의 안전관리 및 책임사항 이행·관리가 소홀한 경우</li>
+                            <li>2. ‘구매자’의 고의·과실 또는 본 약정서 상의 의무이행 소홀 등으로 ‘공급자’ 또는 ‘공급자’의 고객에게 손해가 발생된 경우</li>
+                        </ul>
+                    </li>
+                    <li>② ‘구매자’는 고의·과실 또는 본 약정서상의 의무이행 소홀 등으로 인하여 ‘공급자’에게 손해가 발생하거나 법적 책임이 부과될 경우 모두 책임지고 배상하여야 한다.
+                </ul>
+                <p class="last-txt">이 약정의 내용을 증명하기 위하여 ‘공급자’와 ‘구매자’는 약정서를 작성하여 보관한다.</p>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">미동의</button>
+            <button class="button-p close-modal" type="button">동의하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //정보보안관리 약정서 -->
+
+<!-- 전자계약안내 -->
+<div class="pop-modal modal-hidden" id="modal8">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">전자계약안내</div>
+        <div class="modal-tabs-sub-paragraph">
+            <div class="tab-box is-static">
+                <ul class="tabs-sub-small">
+                    <li class="is-on"><a href="#">전자계약 결제 안내</a></li>
+                    <li><a href="#">전자계약 결제 방식별 절차 안내</a></li>
+                </ul>
+            </div>
+            <div class="tabs-sub-contents">
+                <div class="item-scroll-wrap">
+                    <h1 id="tabContent1">전자계약 결제 안내</h1>
+
+                    <p>전자계약 결제는 법인인증 완료 회원만 이용 가능합니다.<br>
+                    법인회원 인증을 위해 아래 정보 입력 및 관리자 승인이 필요합니다.</p>
+                    <ul class="list-bul">
+                        <li><i class="mark">•</i>소속 이메일 도메인 인증</li>
+                        <li><i class="mark">•</i>사업자번호, 대표자명 등 사업장 정보 입력</li>
+                        <li><i class="mark">•</i>사업자등록증 첨부</li>
+                        <li><i class="mark">•</i>관리자 승인(최대 1~2일 소요)</li>
+                    </ul>
+
+                    <h1 id="tabContent2">전자계약 결제 방식별 절차 안내</h1>
+                    
+                    <h2>카드결제</h2>
+                    <ul class="list-circle-num">
+                        <li><i class="mark">①</i>전자서명 (구매자)</li>
+                        <li><i class="mark">②</i>관리자 검토 및 서명</li>
+                        <li><i class="mark">③</i>마이페이지 > 구매내역 > 카드결제 진행</li>
+                        <li><i class="mark">④</i>결제 완료 후 즉시 다운로드 가능</li>
+                    </ul>
+                    
+                    <h2>세금계산서</h2>
+                    <ul class="list-circle-num">
+                        <li><i class="mark">①</i>전자서명 (구매자)</li>
+                        <li><i class="mark">②</i>마이페이지 > 구매내역 > 세금계산서 발행 정보 입력</li>
+                        <li><i class="mark">③</i>관리자 서명 및 다운로드 승인</li>
+                        <li><i class="mark">④</i>다운로드 후 세금계산서 발행 협의 가능</li>
+                    </ul>
+                    
+                    <h2>안내</h2>
+                    <ul class="list-bul">
+                        <li><i class="mark">•</i>관리자 서명까지 평균 1~2일 소요될 수 있습니다.</li>
+                        <li><i class="mark">•</i>전자계약은 승인 절차로 시간이 소요될 수 있습니다. 빠른 진행을 원하시면 카드결제를 선택해 주세요.</li>
+                    </ul>
+                </div>
+            </div><!-- //.tabs-sub-contents -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">확인</button>
+            <button class="button-p" type="button">법인회원 인증하기</button>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //전자계약 팝업 -->
+
+<div class="pop-modal modal-hidden" id="modal9">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금 법인회원 인증을 하러가면 결제 정보가 저장되지 않아요. 장바구니에 먼저 담아두고 진행해주세요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p" type="button">인증하러 가기</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[데이터구매하기]비로그인인 상태</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">최종견적확인</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');return false;">조건변경</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">데이터폴리오 상세</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal5');return false;">입력 전</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal6');return false;">입력 완료</a>
+        <a href="#" class="button-q" onclick="fn_toast('데이터폴리오명이 변경되었어요.',1);return false;">[폴리오명 변경] 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal7');return false;">정보 보안관리 약정서</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal8');return false;">전자계약안내</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal9');return false;">[법인회원 인증하기 버튼 선택 시, 컨펌 호출]</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}
