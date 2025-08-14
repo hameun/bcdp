@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function(){
     fn_marketList(); // [데이터마켓] 리스트 스타일 변경
     fn_marketPayItemFold(); // [데이터마켓] 결제하기
     fn_marketSlider();
-    fn_datapicker();
     fn_accordion();//아코디언
     fn_filter();
 }); // end window.onload
@@ -1109,54 +1108,3 @@ function fn_accordion() {
 };
 /** //아코디언 */
 
-// S:데이터폴리오 달력
-function fn_datapicker() {
-  document.querySelectorAll('.year-picker-input, .month-picker-input, .day-picker-input')
-    .forEach(function (input) {
-      const type = input.dataset.type;
-
-      let options = {
-        inline: true,
-        view: (type === 'year') ? 'years' : (type === 'month') ? 'months' : 'days',
-        minView: (type === 'year') ? 'years' : (type === 'month') ? 'months' : 'days',
-
-        // 인풋에 들어갈 기본 포맷
-        dateFormat: (type === 'year') ? 'yyyy'
-                  : (type === 'month') ? 'yyyy.MM'
-                  : 'yyyy.MM', // day 달력은 상단 YYYY.MM로 표시, 인풋은 onSelect에서 별도로
-
-        // 상단 네비게이션(달력 헤더) 포맷 정의
-        firstDay: 0,
-        navTitles: {days: '<i>yyyy</i>.MMMM'},
-
-        onSelect({ date }) {
-          if (!date) {
-            input.value = '';
-            return;
-          }
-          if (type === 'year') {
-            input.value = date.getFullYear();
-          } else if (type === 'month') {
-            const m = date.getMonth() + 1;
-            input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}`;
-          } else if (type === 'day') {
-            const m = date.getMonth() + 1;
-            const d = date.getDate();
-            input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}.${d < 10 ? '0' + d : d}`;
-          }
-        }
-      };
-
-      // AirDatepicker 생성
-      new AirDatepicker(input, options);
-
-      // 생성 후 DOM 이동 (container 미지원 버전 호환)
-      const pickerEl = input.parentNode.querySelector('.air-datepicker.-inline-');
-      if (pickerEl) {
-        input.closest('.input-picker').insertAdjacentElement('afterend', pickerEl);
-      }
-    });
-};
-
-
-// E:데이터폴리오 달력

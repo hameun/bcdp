@@ -1,0 +1,33 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DP04.njk" ) }}
+{%- endblock %}                  
+
+{% block modal %}
+
+<!-- 데이터구매하기 - 비로그인 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인이 필요한 서비스입니다.<br>
+                지금 로그인하고 데이터를 구매해보세요!</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">로그인하러 가기</button>
+        </div>
+    </div>
+</div>
+<!-- //데이터구매하기 - 비로그인-->
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-q" onclick="fn_toast('상품을 장바구니에 담았아요.',1);return false;">장바구니 완료 토스트팝업</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[데이터구매하기]비로그인인 상태</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

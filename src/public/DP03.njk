@@ -26,23 +26,38 @@
         <div class="content-step">
             <ul>
                 <li class="on">
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">데이터유형</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">데이터유형</em>
+                    </div>
                 </li>
                 <li class="on">
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">기간</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">기간</em>
+                    </div>
                 </li>
                 <li class="on">
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">지역</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">지역</em>
+                    </div>
                 </li>
                 <li>
-                    <em class="step-bedge">필수</em>
-                    <em class="step-txt">업종</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-bedge">필수</em>
+                        <em class="step-txt">업종</em>
+                    </div>
                 </li>
                 <li>
-                    <em class="step-txt">세부항목</em>
+                    <i class="bar"></i>
+                    <div class="step-title">
+                        <em class="step-txt">세부항목</em>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -150,7 +165,6 @@
             </div>
             <!-- //행정동 -->
         </div>
-        
     </div>
 
     <div class="datapolio-bottom">
@@ -158,6 +172,107 @@
         <button type="button" class="btn-icon-filter is-filter">
             <i>선택조건 있음</i>
         </button>
+    </div>
+    <div class="filter_box">
+        <div class="filter-content">
+            <span class="filter-tit">선택한 조건</span>
+            
+            <!-- 선택한 조건 있을 경우 -->
+            <button type="button" class="filter-reset">초기화</button>
+            <div class="filter-option item-scroll-wrap">
+                <div class="option-box">
+                    <span class="option-tit">데이터유형 <em class="count">1</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>내국인 카드소비 데이터</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <span class="option-tit">기간 <em class="count">1</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>2024</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                        <div class="option-txt is-ai">
+                            <span>2024</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                        <div class="option-txt">
+                            <span>내국인 카드소비 데이터</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <span class="option-tit">지역 <em class="count">2</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>서울특별시 강남구 논현동</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                        <div class="option-txt">
+                            <span>서울특별시 강남구 청담동</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <span class="option-tit">업종 <em class="count">2</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>가정통신 > 가전 > 건강가전</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                        <div class="option-txt is-ai">
+                            <span>가정통신 > 가전 > 건강가전</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <span class="option-tit">요일 <em class="count">2</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>주말</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <span class="option-tit">시간대 <em class="count">2</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>저녁</span>
+                            <button type="but                                     on" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="option-box">
+                    <span class="option-tit">연령 <em class="count">2</em></span>
+                    <div class="option-filter-box">
+                        <div class="option-txt is-ai">
+                            <span>20대</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                        <div class="option-txt is-ai">
+                            <span>30대</span>
+                            <button type="button" class="del">삭제</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //선택한 조건 있을 경우 -->
+            <!-- 선택한 조건 없을 경우 -->
+            <button type="button" class="filter-reset disabled">초기화</button>
+            <div class="result-none">
+                <p class="message">선택한 조건이 없어요</p>
+            </div>
+            <!-- //선택한 조건 없을 경우 -->
+            <button class="filter-close" type="button">닫기</button>
+        </div>
     </div>
     <div class="bottom-content">
         <div class="polio-quote">
@@ -187,3 +302,5 @@
     
 </div> 
 {%- endblock %}                  
+
+

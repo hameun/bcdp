@@ -1889,7 +1889,7 @@ page : page-polio
     justify-content: space-between;
     .button-box-small{
       .button-t{
-        padding:11px 16px 11px 20px;
+        padding:11px 16px;
         background:inherit;
       }
       .count{
@@ -1927,6 +1927,7 @@ page : page-polio
         background: rgba(255, 255, 255, 0.8);
         &::placeholder {
           //background: rgba(255, 255, 255, 0.8);
+          color:$gray-300;
         }
       }
       &.is-focusin{
@@ -1948,6 +1949,13 @@ page : page-polio
         background:#6361FC url($icon-input-arrow) no-repeat center;
       }
     }
+    .is-ai{
+      border:2px solid transparent;
+      background-image:linear-gradient(#fff,#fff),linear-gradient(to left ,#C14EFF ,#C4B5FD, #6361FC);
+      background-clip: padding-box, border-box;
+      background-origin: border-box;
+
+    }
   }
   .content-step{
     margin-top:40px;
@@ -1955,21 +1963,36 @@ page : page-polio
       display:flex;
       gap:12px;
       li{
+        flex-direction: column;
         flex:1;
-        position:relative;
-        padding-top:10px;
+        // position:relative;
+        // padding-top:10px;
         display:flex;
         gap:6px;
         align-items: center;
-        &::before {
-          content:'';
-          position:absolute;
-          top:0;
+        // &::before {
+        //   content:'';
+        //   position:absolute;
+        //   top:0;
+        //   width: 100%;
+        //   height: 4px;
+        //   border-radius: 2px;
+        //   opacity: 1;
+        //   background:$gray-100;
+        // }
+
+        .bar {
           width: 100%;
           height: 4px;
           border-radius: 2px;
           opacity: 1;
           background:$gray-100;
+        }
+        .step-title{
+          display:flex;
+          justify-content: flex-start;
+          width:100%;
+          gap:6px;
         }
         .step-txt{
           font-weight: 500;
@@ -1991,7 +2014,7 @@ page : page-polio
           background:$gray-100;
         }
         &.on{
-          &::before {background:$navy-300;}
+          .bar {background:$navy-300;}
           .step-txt{color:$navy-300;}
           .step-bedge{background:$navy-300;}
         }
@@ -2174,8 +2197,9 @@ page : page-polio
             border-radius: 50%;
             background:$navy-300;
           }
-          i{@include blind;}
+          
         }
+        i{@include blind;}
       }
     }
     .filter-content{
@@ -2354,6 +2378,12 @@ page : page-polio
             }
           }
         }
+        .textbutton-p{
+          color:$gray-500;
+          &.underline::before{
+            border-color: $gray-500;
+          }
+        }
       }
       .button-box-large{
         .button-q{
@@ -2423,6 +2453,12 @@ page : page-polio
       background-color:$white;
       box-sizing: border-box;
     }
+  }
+  .loading{
+    position: absolute;
+    top: calc(50% - -60px);
+    transform: translateY(-50%);
+    left: 0;
   }
 }
 //구매완료 하단
@@ -2536,10 +2572,61 @@ page : page-polio
     }
     
   }
-  
-
 }
 
+// 스켈레톤 UI
+.skeleton {
+    background: linear-gradient(
+      90deg,
+      #F3F5F8 25%,
+      #E7E9EF 50%,
+      #F3F5F8 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite linear;
+    border-radius: 8px;
+  }
+
+  /* 애니메이션 효과 */
+  @keyframes skeleton-loading {
+    0% {
+    background-position-x: 100%;
+    }
+    100% {
+      background-position-x: -100%;
+    }
+  }
+
+  .skeleton-box{
+    margin:0 auto;
+    margin-top:80px;
+    max-width: 720px;
+    .skeleton-tit{
+      width: 358px;
+      height: 36px;
+      margin:0 auto;
+    }
+    .skeleton-chip{
+      display:flex;
+      gap:8px;
+      margin-top:24px;
+      .skeleton{flex:1; height:48px;}
+    }
+    .ckeleton-top{
+      display: flex;
+      justify-content: space-between;
+      margin-top:32px;
+      .skeleton{width:120px; height:21px;}
+      .skeleton:last-child{width:62px; height:21px;}
+    }
+    .ckeleton-chk{
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      .skeleton{width:174px; height:48px;}
+    }
+  }
 
 
 
@@ -2946,10 +3033,36 @@ MEDIA QUERY
     .filter-reset{justify-content: end;    display: flex;    width: 100%;}
     .accordion ul .accordion-item .accordion-header{padding:16px;}
     .accordion ul .accordion-item .accordion-content .checkbox .ipt-check-box i{width:100%;}
-  }
+    .result-complete{margin-top:32px; padding-bottom:60px;}
+    .result-complete .message{font-size:18px;}
+    .result-complete .message-sub{font-size:16px;}
+    .etc-wrap{margin-top:0; margin-bottom: -233px;}
+    .etc-wrap ul{flex-direction:column; padding:20px; border:1px solid #E7E9EF; border-radius: 20px; background:#F3F5F8;}
+    .etc-wrap ul li{border:0; padding:0; }
+    .etc-wrap ul li span{justify-content:flex-start; padding:1px 0; padding-left:32px; font-size:14px; background-position:center left;}
+    .etc-wrap ul li span br{display:none;}
 
-  // .page-polio .content-step ul li *{display:none !important;}
-  // .page-polio .content-step ul li.on:not(:has(~ li.on)) {min-width: 0; position:absolute;}
-  // .page-polio .content-step ul li.on:not(:has(~ li.on)) *{display:block !important; white-space:nowrap; overflow:visible;}
-  
+    .step-content{
+      .picker-wrap{    
+        flex-direction: column;
+        width:100%;
+        gap:20px;
+      } 
+      .picker-wrap > ::after{content: none;}
+    }
+    .etc-wrap ul li span{text-align:left; background-size:24px;}
+    
+  }
+  .page-polio .content-step ul{position:relative; gap:4px;}
+  .page-polio .content-step ul li .step-title *{display:none !important;}
+  .page-polio .content-step ul li.on:not(:has(~ li.on)) *{display:flex !important; white-space:nowrap; overflow:visible;}
+  .page-polio .content-step ul li.on:not(:has(~ li.on)) .step-title{position:absolute; left:0; top:10px;}
+
+  .picker-model .modal-large{
+    position:absolute; bottom:0; width:100%; left:50%; transform:translateX(-50%);
+    .air-datepicker.-inline-{border:0; width:100%;}
+    .mo-picker-wrap{margin:-20px;}
+    .air-datepicker-body--cells.-years-{grid-template-columns:repeat(3, 1fr)}
+  }
+  .skeleton-box .ckeleton-chk .skeleton{width:calc((100% - 8px) / 2);}
 } // end @media screen and (max-width: 767px)

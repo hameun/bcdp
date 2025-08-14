@@ -1,0 +1,448 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DP01.njk" ) }}
+{%- endblock %}                  
+
+{% block modal %}
+
+<!-- 미입력 삳태에서 검색버튼 선택시 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>1글자 이상 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //미입력 삳태에서 검색버튼 선택시 -->
+
+<!-- 비로그인상태 -->
+<div class="pop-modal modal-hidden" id="modal2">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-login">
+            <p class="title">로그인하고 AI검색을 시작해보세요!</p>
+            <div class="formbox">
+                <form>
+                    <label for="loginId" class="input-title">아이디</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="이메일 아이디 입력" id="loginId">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+                    <p class="input-help is-error">아이디를 입력해주세요.</p>
+                    <p class="input-help is-error">이메일 형식으로 입력해주세요.</p>
+
+                    <label for="loginpassword" class="input-title">비밀번호</label>
+                    <div class="input-box">
+                        <input type="password" placeholder="비밀번호 입력" id="loginpassword">
+                        <span class="util-box">
+                            <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+                        </span>
+                    </div>
+                    <p class="input-help is-error">비밀번호를 입력해주세요.</p>
+
+                    <p class="login-util">
+                        <span class="textbutton-box-xsmall">
+                            <a href="#" class="textbutton-s">아이디 찾기</a>
+                            <a href="#" class="textbutton-s">비밀번호 찾기</a>
+                            <a href="#" class="textbutton-p">회원가입</a>
+                        </span>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="button-box-large">
+            <button type="button" class="button-p">로그인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //비로그인상태 -->
+
+<!-- 미동의 회원 -->
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">AI서비스 이용을 위한 약관에 동의해주세요.</div>
+        <div class="modal-aiagree">
+            <div class="input-box">
+                <a href="#" class="agreement">AI서비스약관(가칭) <i class="icon-link">내용보기</i></a>
+            </div>
+            <p class="guide-text type-bul">AI가 입력하신 내용을 분석해 적합한 조건을 미리 선택해요.</p>
+            <p class="guide-text type-bul">더 정확한 결과를 원하시면 항목을 자유롭게 추가하거나 제거하실 수 있어요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">동의하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //미동의 회원 -->
+
+<!-- 임시저장 - 메뉴이탈시 -->
+<div class="pop-modal modal-hidden" id="modal4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금 나가시면 작성중인 내용이 모두 사라져요.<br>임시저장하고 나가시겠어요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">임시저장 후 나가기</button>
+        </div>
+    </div>
+</div>
+<!-- //임시저장 - 메뉴이탈시 -->
+
+<!-- 임시저장 - 로그인 필요 -->
+<div class="pop-modal modal-hidden" id="modal5">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인이 필요한 서비스입니다.<br>지금 로그인하고 데이터를 구매해보세요!</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">로그인하러 가기</button>
+        </div>
+    </div>
+</div>
+<!-- //임시저장 - 로그인 필요 -->
+
+<!-- 임시저장 - 내역 불러오기 -->
+<div class="pop-modal modal-hidden" id="modal6">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>작성 중인 내용을 임시저장하고<br>선택한 내역으로 불러올까요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">임시저장 후 불러오기</button>
+        </div>
+    </div>
+</div>
+<!-- //임시저장 - 내역 불러오기-->
+
+<!-- 임시저장 - 내역삭제 후 저장 -->
+<div class="pop-modal modal-hidden" id="modal7">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>임시저장은 최대 10개까지 가능합니다.<br>가장 오래된 내역을 삭제하고 저장할까요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">임시저장하기</button>
+        </div>
+    </div>
+</div>
+<!-- //임시저장 - 내역삭제 후 저장-->
+
+<!-- 임시저장 입력 -->
+<div class="pop-modal modal-hidden" id="modal8">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">임시저장 제목을 입력해주세요.</div>
+        <div class="model-ipt">
+            <div class="input-box">
+                <input type="text" class="ipt" placeholder="데이터명을 입력해주세요.">
+                <span class="util-box">
+                    <button type="button" class="ipt-clear">내용 지우기</button>
+                </span>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p disabled" type="button">입력완료</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //임시저장 입력 -->
+
+<!-- 임시저장 입력완료 -->
+<div class="pop-modal modal-hidden" id="modal9">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">임시저장 제목을 입력해주세요.</div>
+        <div class="model-ipt">
+            <div class="input-box">
+                <input type="text" class="ipt" placeholder="데이터명을 입력해주세요." value="중구 20대 여자 카페 매출">
+                <span class="util-box">
+                    <button type="button" class="ipt-clear">내용 지우기</button>
+                </span>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">입력완료</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //임시저장 입력완료 -->
+
+<!-- 임시저장 - 임시저장 제목이 있는 경우 -->
+<div class="pop-modal modal-hidden" id="modal10">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>이미 존재하는 임시저장 제목입니다.<br>해당 제목으로 저장하면 기존 내역이 덮어쓰기됩니다. 새롭게 저장하려면 제목을 변경해주세요.</p>
+            <p class="guide-text type-bul">임시저장명 : %임시저장 제목%</p>
+            <p class="guide-text type-bul">임시저장된 날짜 : YYYY.MM.DD HH:MM</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">덮어쓰기</button>
+        </div>
+    </div>
+</div>
+<!-- //임시저장 - 임시저장 제목이 있는 경우-->
+
+<!-- 임시저장 - 삭제 -->
+<div class="pop-modal modal-hidden" id="modal11">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>선택한 임시저장 내역을 삭제할까요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">삭제하기</button>
+        </div>
+    </div>
+</div>
+<!-- //임시저장 - 삭제-->
+
+<!-- 임시저장 - 내역 없음 -->
+<div class="pop-modal modal-hidden" id="modal12">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">임시저장 <span class="count">0</span>
+        <p class="info-txt">최대 10개까지만 저장됩니다.</p></div>
+        <div class="draft-box">
+            <div class="result-none">
+                <p class="message">임시저장된 내역이 없습니다</p>
+                <p class="sub-message">현재 확인 가능한 내역이 없습니다.</p>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //임시저장 - 내역 없음 -->
+
+<!-- 임시저장 - 내역 있음 -->
+<div class="pop-modal modal-hidden" id="modal13">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">임시저장 <span class="count">10</span>
+        <p class="info-txt">최대 10개까지만 저장됩니다.</p></div>
+        <div class="draft-box">
+            <div class="draft-list item-scroll-wrap">
+                <ul>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                    <li>
+                        <a href="#" class="draft-list-box">
+                            <span class="draft-list-txt">내국인 카드소비 데이터</span>
+                            <span class="draft-list-date">2025.05.27 16:00</span>
+                            <p class="draft-list-tit">2025년 디저트 카페 창업 매출, 한 줄 이상시 말줄임표, 한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표한 줄 이상시 말줄임표.....</p>
+                            <span class="draft-list-price">견적 500,000원</span>
+                        </a>
+                        <button type="button" class="item-del">삭제하기</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //임시저장 - 내역 있음 -->
+
+<!-- 샘플데이터 -->
+<div class="pop-modal modal-hidden is-full" id="modal14">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">샘플데이터</div>
+        <div class="sample-box">
+            <div class="table align-left">
+                <table summary="데이터 샘플 정보 테이블">
+                    <colgroup>
+                        <col width="230px" style="min-width:230px;">
+                        <col width="230px" style="min-width:230px;">
+                        <col width="230px" style="min-width:230px;">
+                        <col width="230px" style="min-width:230px;">
+                        <col width="230px" style="min-width:230px;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>DATA</th>
+                            <th>DATA</th>
+                            <th>DATA</th>
+                            <th>DATA</th>
+                            <th>DATA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>내용</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                             <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                            <td>추가 내용2</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //샘플데이터 -->
+
+<!-- 데이터유형 삭제시 -->
+<div class="pop-modal modal-hidden" id="modal15">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터유형을 변경하면 처음부터 다시 작성해야합니다. 새로 작성할까요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">새로 작성하기</button>
+        </div>
+    </div>
+</div>
+<!-- //데이터유형 삭제시-->
+
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">미입력 상태에서 검색버튼 선택시</a>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal2',true);return false;">[비로그인상태 && 프롬프트 영역]</button>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal3');return false;">[로그인상태 && 프롬프트 영역&&AI약관 미동의 회원]</button>
+        <a href="#" class="button-q" onclick="fn_toast('AI 조건 자동 선택이 완료되었어요.',1);return false;">AI 자동선택 완료 토스트팝업</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">[임시저장] 메뉴 이탈시</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal5');return false;">[임시저장] 로그인 필요</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal6');return false;">[임시저장] 내역불러오기</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal7');return false;">[임시저장] 내역 삭제 후 저장</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal8');return false;">[임시저장] 입력 전</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal9');return false;">[임시저장] 입력 완료</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal10');return false;">[임시저장] 동일한 제목일 있는 경우</a>
+        <a href="#" class="button-q" onclick="fn_toast('임시저장이 완료되었어요.',1);return false;">임시저장 완료 토스트팝업</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal11');return false;">[임시저장] 삭제</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal12');return false;">[임시저장] 내역없음</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal13');return false;">[임시저장] 내역있음</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal14');return false;">샘플데이터</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal15');return false;">새로 작성하기</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

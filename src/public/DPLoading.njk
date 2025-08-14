@@ -2,103 +2,6 @@
 
 {% block content %}
 
-<script>
-// 달력 js 
-function fn_datapicker() {
-  const isMobile = window.innerWidth <= 768;
-
-  document.querySelectorAll('.year-picker-input, .month-picker-input, .day-picker-input')
-    .forEach(function (input) {
-      const type = input.dataset.type;
-
-      // PC 버전
-      if (!isMobile) {
-        let options = {
-          inline: true,
-          view: type === 'year' ? 'years' : type === 'month' ? 'months' : 'days',
-          minView: type === 'year' ? 'years' : type === 'month' ? 'months' : 'days',
-          dateFormat: type === 'year' ? 'yyyy' :
-                      type === 'month' ? 'yyyy.MM' : 'yyyy.MM',
-          firstDay: 0,
-          navTitles: { days: '<i>yyyy</i>.MMMM' },
-          onSelect({ date }) {
-            if (!date) {
-              input.value = '';
-              return;
-            }
-            if (type === 'year') {
-              input.value = date.getFullYear();
-            } else if (type === 'month') {
-              const m = date.getMonth() + 1;
-              input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}`;
-            } else {
-              const m = date.getMonth() + 1;
-              const d = date.getDate();
-              input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}.${d < 10 ? '0' + d : d}`;
-            }
-          }
-        };
-
-        new AirDatepicker(input, options);
-
-        const pickerEl = input.parentNode.querySelector('.air-datepicker.-inline-');
-        if (pickerEl) {
-          input.closest('.input-picker').insertAdjacentElement('afterend', pickerEl);
-        }
-      } 
-      
-      // 모바일
-      else {
-        const modal = document.querySelector('#picker-mo');
-        const pickerWrap = modal.querySelector('.mo-picker-wrap');
-        const closeBtn = modal.querySelector('.modal-close');
-
-        input.addEventListener('click', function () {
-          modal.style.display = 'block';
-          pickerWrap.innerHTML = ''; // 이전 달력 제거
-
-          // 📌 모달 안에 달력을 붙일 dummy element 생성
-          const dummyDiv = document.createElement('div');
-          pickerWrap.appendChild(dummyDiv);
-
-          // 모달 안에서 달력 생성
-          new AirDatepicker(dummyDiv, {
-            inline: true,
-            view: type === 'year' ? 'years' : type === 'month' ? 'months' : 'days',
-            minView: type === 'year' ? 'years' : type === 'month' ? 'months' : 'days',
-            dateFormat: type === 'year' ? 'yyyy' :
-                        type === 'month' ? 'yyyy.MM' : 'yyyy.MM',
-            firstDay: 0,
-            navTitles: { days: '<i>yyyy</i>.MMMM' },
-            selectedDates: input.value ? [input.value] : [], // 기존 값 있으면 선택 반영
-            onSelect({ date }) {
-              if (!date) {
-                input.value = '';
-              } else if (type === 'year') {
-                input.value = date.getFullYear();
-              } else if (type === 'month') {
-                const m = date.getMonth() + 1;
-                input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}`;
-              } else {
-                const m = date.getMonth() + 1;
-                const d = date.getDate();
-                input.value = `${date.getFullYear()}.${m < 10 ? '0' + m : m}.${d < 10 ? '0' + d : d}`;
-              }
-              modal.style.display = 'none';
-            }
-          });
-        });
-
-        closeBtn.addEventListener('click', function () {
-          modal.style.display = 'none';
-        });
-      }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', fn_datapicker);
-</script>
-
 <div class="content page-polio">
     <div class="content-head-btn">
         <div class="content-head">
@@ -136,7 +39,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                         <em class="step-txt">기간</em>
                     </div>
                 </li>
-                <li>
+                <li class="on">
                     <i class="bar"></i>
                     <div class="step-title">
                         <em class="step-bedge">필수</em>
@@ -159,75 +62,8 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
             </ul>
         </div>
 
-        <div class="step-content">
-            <p class="title3">어떤 기준으로 기간 데이터를 만들까요?</p>
-            <div class="chip-box chip-box-large">
-                <label class="chip"><input type="radio" name="radio1" checked=""><i>연도별</i></label>
-                <label class="chip"><input type="radio" name="radio1"><i>월별</i></label>
-                <label class="chip"><input type="radio" name="radio1"><i>일별</i></label>
-            </div>
-            <!-- 연도별 -->
-            <div class="picker-wrap">
-                <div class="picker-s">
-                    <label class="picker-tit" for="year-picker-s">시작 년도</label>
-                    <div class="input-picker">
-                        <div class="input-box is-error"><!--error : is-error-->
-                            <input type="text" class="ipt year-picker-input" id="year-picker-s" data-type="year" placeholder="YYYY" >
-                        </div>
-                        <p class="input-help is-error">날짜를 입력해 주세요.</p>
-                    </div>
-                </div>
-                <div class="picker-e">
-                    <label class="picker-tit" for="year-picker-e">종료 년도</label>
-                    <div class="input-picker">
-                        <div class="input-box">
-                            <input type="text" class="ipt year-picker-input" id="year-picker-e" data-type="year" placeholder="YYYY" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- //연도별 -->
-            <!-- 월별 -->
-            <div class="picker-wrap">
-                <div class="picker-s">
-                    <label class="picker-tit" for="month-picker-s">시작 월</label>
-                    <div class="input-picker">
-                        <div class="input-box">
-                            <input type="text" class="ipt month-picker-input" id="month-picker-s" data-type="month" placeholder="YYYY.MM" >
-                        </div>
-                    </div>
-                </div>
-                <div class="picker-e">
-                    <label class="picker-tit" for="month-picker-e">종료 월</label>
-                    <div class="input-picker">
-                        <div class="input-box">
-                            <input type="text" class="ipt month-picker-input" id="month-picker-e" data-type="month" placeholder="YYYY.MM" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- //월별 -->
-            <!-- 일별 -->
-            <div class="picker-wrap">
-                <div class="picker-s">
-                    <label class="picker-tit" for="day-picker-s">시작 날짜</label>
-                    <div class="input-picker">
-                        <div class="input-box">
-                            <input type="text" class="ipt day-picker-input" id="day-picker-s" data-type="day" placeholder="YYYY.MM.DD" >
-                        </div>
-                    </div>
-                </div>
-                <div class="picker-e">
-                    <label class="picker-tit" for="day-picker-e">종료 날짜</label>
-                    <div class="input-picker">
-                        <div class="input-box">
-                            <input type="text" class="ipt day-picker-input" id="day-picker-e" data-type="day" placeholder="YYYY.MM.DD" >
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- //일별 -->
-        </div>
+        <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+        
     </div>
 
     <div class="datapolio-bottom">
@@ -364,14 +200,6 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
     </div>
     
 </div> 
-{%- endblock %}   
-{% block modal %}
-<div class="pop-modal picker-model" id="picker-mo" style="display:none">
-    <div class="modal modal-large" tabindex="0">
-        <div class="modal-header">날짜 선택</div>
-        <div class="mo-picker-wrap"></div>
-        <button class="modal-close" type="button">닫기</button>
-    </div>
-</div>
-{%- endblock %}                
+{%- endblock %}                  
+
 
