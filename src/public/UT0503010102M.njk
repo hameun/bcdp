@@ -1,7 +1,7 @@
 {%- extends "_templates/_layout.njk" -%}
 
 {% block content %}
-{{ include( "_html/_UT0503010102.njk" ) }}
+{{ include( "_html/_UT0503010101.njk" ) }}
 {%- endblock %}
 
 {% block modal %}
@@ -126,6 +126,18 @@
         </div>
     </div>
 </div>
+<!-- [2025.08.14 수정/추가] -->
+<div class="pop-modal modal-hidden" id="modal_13">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>실제 첨부되어 있던 파일이 삭제 되며 복구할 수 없습니다. 정말로 삭제를 진행 하시겠습니까?</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //[2025.08.14 수정/추가] -->
 <div class="pop-modal modal-hidden" id="modal_21">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -221,6 +233,13 @@
                             <label type="button" class="button-s" for="fileDataRegi">파일 찾기</label>
                         </div>
                     </div>
+                    <!-- [2025.08.14 수정/추가] -->
+                    <div class="filedown">
+                        <div class="button-box-small">
+                            <button class="button-t" type="button"><i class="icon-left icon-download"></i>파일 다운로드</button>
+                        </div>
+                    </div>
+                    <!-- //[2025.08.14 수정/추가] -->
                     <p class="info-text">
                         파일은 최대 850MB까지 업로드 가능합니다. <br>
                         850MB 이상의 파일을 업로드해야 하는 경우에는 운영담당자에게 연락 바랍니다.<br>
@@ -292,6 +311,13 @@
                             <label type="button" class="button-s" for="fileDataModi">파일 찾기</label>
                         </div>
                     </div>
+                    <!-- [2025.08.14 수정/추가] -->
+                    <div class="filedown">
+                        <div class="button-box-small">
+                            <button class="button-t" type="button"><i class="icon-left icon-download"></i>파일 다운로드</button>
+                        </div>
+                    </div>
+                    <!-- //[2025.08.14 수정/추가] -->
                     <p class="info-text">
                         파일은 최대 850MB까지 업로드 가능합니다. <br>
                         850MB 이상의 파일을 업로드해야 하는 경우에는 운영담당자에게 연락 바랍니다.<br>
@@ -373,6 +399,8 @@
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_10');return false;">이용허락범위 미선택</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_11' );return false;">다운로드 가능 기간 미선택</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_12' );return false;">등록할 데이터 형식 미선택</a>
+        <hr>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_13' );return false;">삭제 버튼 선택 시</a><!-- [2025.08.14 수정/추가] -->
     </div>
     
     <div class="button-box-xsmall"> 

@@ -87,7 +87,7 @@
 
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
-.icon-download {@include set-icon(24px, 24px, $icon-download);}
+.icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
 .icon-up {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(270deg);}
 .icon-down {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(90deg);}
 .icon-share {@include set-icon(20px, 20px, $icon-share);}
@@ -319,7 +319,7 @@ FORM TEXT
   }
 }
 .regist-box {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
   .title4 {margin: 80px 0 40px;}
   .condition {
     margin-bottom: 32px;
@@ -327,6 +327,13 @@ FORM TEXT
       display: flex;
       flex-wrap: wrap;
       gap: 16px;
+    }
+    .filedown {
+      margin-top: 8px;
+      .button-box-small {
+        justify-content: flex-start;
+        .icon-download {@include set-icon(16px, 16px, svg-icon(download))}
+      }
     }
   }
   .condition-box {
@@ -563,6 +570,9 @@ INPUT TEXT
   }
   .button-box-large {
     position: relative;
+    [class^="button-"] {
+      width: 120px;
+    }
   }
 }
 
