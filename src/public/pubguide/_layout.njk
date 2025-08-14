@@ -30,9 +30,7 @@
 <body>
   {# 퍼블리싱 가이드 레이아웃 #}
 <div class="wrap guide">
-  <aside class="aside">
-    {{ include( "pubguide/_menulist.njk" ) | tabIndent(2) }}
-  </aside>
+  {{ include( "pubguide/_menulist.njk" ) | tabIndent(1) }}
 
   <main class="container">
     {% filter tabIndent(1) %}

@@ -2,13 +2,15 @@ var windowWidth;
 var windowHeight;
 var windowScrollTopFix;
 var aside;
-document.addEventListener('DOMContentLoaded', function(){
+$(function(){
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
     aside = document.querySelector('.aside');
-    console.log('ready');
+    // console.log('ready');
     /** 기본 로드될 함수 */
+    ui_navi();
     ui_glassBg();
+
     fn_iptClear();
     fn_iptIsFocus();
     fn_passwordMask();
@@ -19,24 +21,47 @@ document.addEventListener('DOMContentLoaded', function(){
     fn_selectIpt();
     
     fn_insightSlider();
+    fn_exquestionSwipe(); // [AI검색] 예시 질문
 
     fn_marketList(); // [데이터마켓] 리스트 스타일 변경
     fn_marketPayItemFold(); // [데이터마켓] 결제하기
     fn_marketSlider();
     fn_accordion();//아코디언
     fn_filter();
-}); // end window.onload
 
-window.addEventListener('scroll', function(e){
-    windowWidth = window.innerWidth;
-    fn_tabSticky();
+    window.addEventListener('scroll', function(e){
+        windowWidth = window.innerWidth;
+        fn_tabSticky();
+    });
+    window.addEventListener('resize', function(e){
+        windowWidth = window.innerWidth;
+        windowHeight = window.innerHeight;
+        fn_aside();
+        fn_tabSticky();
+    });
 });
-window.addEventListener('resize', function(e){
-    windowWidth = window.innerWidth;
-    windowHeight = window.innerHeight;
-    fn_aside();
-    fn_tabSticky();
-});
+
+function fn_exquestionSwipe(){
+    const slider = document.querySelector('.exquestion-type.swiper-container');
+    if (!slider) return false;
+
+    const swiper = new Swiper(slider, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        freemode: true
+    });
+
+    const exquestions = document.querySelectorAll('.exquestion-type .swiper-slide');
+    exquestions.forEach(function(exquestion){
+        
+        exquestion.addEventListener('click', function(){
+            // exquestion.classList.remove('is-active');
+            const prev = this.closest('.titles').querySelector('.is-active');
+            prev.classList.remove('is-active');
+            this.classList.add('is-active');
+        });
+    });
+}
 
 function fn_aside(){
     if (!aside) return false;
@@ -96,7 +121,24 @@ function fn_selectIpt(){
     if (!selects.length) return false;
 
     selects.forEach(function(select){
-        $(select).selectmenu();
+        $(select).selectmenu({
+            // width: 160,
+            position: {
+                of: select.parentElement,
+                at: "left bottom",
+                my: "left top+8"
+            },
+            open: function( event ) {
+                $(event.target.id).toggleClass('open');
+                const menu = $('#' + event.target.id + '-menu')[0];
+                if ( $(menu.children).hasClass('selected') ) return false;
+                $(menu.firstChild).addClass('selected');
+            },
+            change: function( event ) {
+                $(event.currentTarget).siblings().removeClass('selected');
+                $(event.currentTarget).addClass('selected');
+            }
+        });
     })
 }
 
@@ -164,11 +206,29 @@ function fn_tabs(){
     });
 };
 
+/** 네비게이션 */
+function ui_navi(){
+    const foldBtn = aside.querySelector('.icon-menufold');
+    foldBtn.addEventListener('click', function(){
+        aside.classList.toggle('is-fold');
+    });
+
+    const header = document.querySelector('header.header');
+    const openBtn = header.querySelector('.icon-menu');
+    const closeBtn = aside.querySelector('.icon-menuclose');
+    openBtn.addEventListener('click', function(){
+        aside.classList.toggle('is-open');
+    });
+    closeBtn.addEventListener('click', function(){
+        aside.classList.toggle('is-open');
+    });
+}
+
 /** 백그라운드 적용 */
 function ui_glassBg(){
     const filepath = this.location.pathname;
     const filename = filepath.substring(filepath.lastIndexOf('/') + 1).split(".")[0];
-    const glassBgPages = ["UT01", "UT01M", ""];
+    const glassBgPages = ["UT01", "UT01M", "AS01MAIN"];
     for ( glassBgPage of glassBgPages ) {
         if (filename == glassBgPage) {
             const body = document.getElementsByTagName('body')[0];
@@ -631,6 +691,44 @@ function fn_toast(_message, _type){
 /*************
 페이지 별 기능
 **************/
+/** AI검색 */
+function fn_faqAccpdion(_popId){
+    const pop = document.getElementById(_popId);
+    const accordion = pop.querySelector('.faq-list');
+    $( accordion ).accordion({
+        active: false,
+        collapsible: true,
+        header:".item-title"
+        // heightStyle:"auto"
+    });
+}
+function fn_aisearchAccordion(_accordion1Id){
+    const accordion = document.getElementById(_accordion1Id);
+    $( `#${_accordion1Id}` ).accordion({
+        active: false,
+        collapsible: true,
+        header:"h3",
+        heightStyle:"auto"
+    });
+}
+function fn_aisearchSlider(_sliderId){
+    const slider = document.getElementById(_sliderId);
+    const swiper = new Swiper(`#${_sliderId} .aisearch-slider`, {
+        slidesPerView: 3,
+        spaceBetween: 12,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+        speed: 600,
+        navigation: {
+            nextEl: slider.querySelector(".next"),
+            prevEl: slider.querySelector(".prev")
+        },
+        pagination: {
+            el: slider.querySelector(".swiper-pagination"),
+            clickable: true,
+        },
+    });
+}
 /** 데이터마켓 */
 // 리스트 스타일 변경
 function fn_marketList(){
@@ -1043,6 +1141,8 @@ function fn_agreeTerms(_id){
 /** 필터 */
 function fn_filter() {
   const btnFilter = document.querySelector('.btn-icon-filter'); // 필터 열기 버튼
+  if (!btnFilter) { return false; }
+
   const filterContent = document.querySelector('.filter_box'); // 필터 영역
   const btnClose = document.querySelector('.filter-close'); // 필터 닫기 버튼
   const header = document.querySelector('.header'); // 헤더 요소
@@ -1078,7 +1178,8 @@ function fn_filter() {
 
 /** 아코디언 */
 function fn_accordion() {
-  const items = document.querySelectorAll('.accordion-item');
+  const items = document.querySelectorAll('.page-polio .accordion-item');
+  if (!items) { return false; }
 
   items.forEach(item => {
     const header = item.querySelector('.accordion-header');

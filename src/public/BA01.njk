@@ -10,11 +10,12 @@
         <div class="a-contents" id="location">
             <div class="location-breadcrumb">
                 <a href="#" class="breadcrumb" onclick="fn_modalPopOpen('modalArea');">
-                    <span>전국</span><span class="none" style="display:none;"></span>
+                    <span class="none">서울특별시</span><span>강남구</span>
                 </a>
             </div>
             <div class="cont-location">
                 <div class="a-cont map">
+                    <p class="title3">상권 변화 한눈에 보기</p><!-- [2025.08.11 수정] -->
                     <div class="map-control"><button type="button" class="icon-reload">새로고침</button></div>
                     <div class="map-data">
                         <!-- dummy -->
@@ -60,7 +61,7 @@
             <h2 class="title1">이 지역, 다른 곳과 얼마나 다를까?</h2>
             <p class="title-guidetext">최근 변화율을 기준으로 <br class="is-mobile"><em class="t-highlight">$강남구$</em>와 비교지역을 나란히 보여줘요.</p>
             
-            <div class="cont-compare">
+            <div class="cont-compare a-cont"><!-- [2025.08.11 수정] -->
                 <div class="tab-box">
                     <ul class="tabs">
                         <li class="is-on"><a href="#">한눈에보기</a></li>
@@ -135,11 +136,11 @@
                                         <p class="title">결제고객 성장률</p>
                                         <dl class="selected">
                                             <dt>$강남구$</dt>
-                                            <dd><span style="height:39%"><strong>39%</strong></span></dd>
+                                            <dd class="minus"><span style="height:70%"><strong>-70%</strong></span></dd><!-- [2025.08.11 수정 : 마이너이 인 경우 .minus] -->
                                         </dl>
                                         <dl class="comparison">
                                             <dt>$서울시$ 평균</dt>
-                                            <dd><span style="height:52%"><strong>52%</strong></span></dd>
+                                            <dd><span style="height:70%"><strong>70%</strong></span></dd>
                                         </dl>
                                     </div>
                                 </div>
@@ -158,7 +159,7 @@
                                         </dl>
                                         <dl class="comparison">
                                             <dt>$서울시$ 평균</dt>
-                                            <dd><span style="height:52%"><strong>52%</strong></span></dd>
+                                            <dd class="minus"><span style="height:52%"><strong>-52%</strong></span></dd><!-- [2025.08.11 수정 : 마이너이 인 경우 .minus] -->
                                         </dl>
                                     </div>
                                 </div>
@@ -215,11 +216,11 @@
         <!-- [상권핵심지표] 업종 -->
         <div class="a-contents" id="industry">
             <h2 class="title1">이 지역, 어떤 업종이 잘 나갈까?</h2>
-            <p class="title-guidetext">앞으로 3개월간 <em class="t-highlight">$강남구$</em>에선 <em class="t-highlight">$의료$</em> 업종의 <br class="is-mobile">예상 매출이 증가할 것으로 보여요. <br>
+            <p class="title-guidetext">앞으로 3개월간 <em class="t-highlight">$강남구$</em>에선 <em class="t-highlight">$의료$</em> 업종의 <br class="is-mobile">예상 매출이 <em class="t-highlight">$증가$</em>할 것으로 보여요. <br><!-- [2025.08.11 수정] -->
                 상권의 흐름을 미리 읽고, 유망 업종을 확인해보세요.</p>
 
-            <div class="cont-industry">
-                <div class="industry-summary">2024.01 - 2025.03</div>
+            <div class="cont-industry a-cont"><!-- [2025.08.11 수정] -->
+                <!-- <div class="industry-summary">2024.01 - 2025.03</div> --><!-- [2025.08.11 수정] -->
                 <div class="tab-box">
                     <ul class="tabs">
                         <li class="is-on"><a href="#">전체</a></li>
@@ -249,7 +250,7 @@
             <p class="title-guidetext"><em class="t-highlight">$강남구$</em> <em class="t-highlight">$음식$</em>업종의 <br class="is-mobile">매장 수, 소비흐름, 방문자 특성까지 <br>상권을 이루는 다양한 데이터를 하나씩 확인해보세요.</p>
             
             <div class="cont-detail">
-                <div class="button-box-medium">
+                <div class="button-box-small"><!-- [2025.08.11 수정] -->
                     <button type="button" class="button-p show-explanation">지표 설명 보기</button>
                 </div>
                 <!-- [2025.08.07 지표설명보기 모바일슬라이드 적용] -->
@@ -387,7 +388,7 @@
 
         <!-- [업종별 흐름] 성별,연령대&요일 -->
         <div class="a-contents" id="pattern">
-            <h2 class="title1">이 지역, 소비자의 시간과 특성을 살펴보면?</h2>
+            <h2 class="title1">이 지역, 소비자의 시간과 <br class="is-mobile">특성을 살펴보면?</h2><!-- [2025.08.11 수정] -->
             <p class="title-guidetext"><em class="t-highlight">$강남구$</em> <em class="t-highlight">$음식$</em>업종은 <br>어떤 요일, 어떤 사람이 더 많이 소비하는지 <br class="is-mobile">데이터를 통해 확인해보세요.</p>
 
             <div class="cont-pattern">
@@ -714,7 +715,7 @@
             <div class="modal-content-analysis-select">
                 <div class="location-breadcrumb">
                     <a href="#" class="breadcrumb">
-                        <span>전국</span><span class="none" style="display:none;"></span>
+                        <span class="none">시/도</span><span class="none">구/군/시</span>
                     </a>
                 </div>
                 <div class="depth1">

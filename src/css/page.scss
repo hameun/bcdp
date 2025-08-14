@@ -142,14 +142,12 @@ $graph-color3: $gray-100;
   .analysis-contents {
     .a-contents {
       padding: 80px 0;
-      & +.a-contents {
-        margin-top: 20px;
-      }
       .location-breadcrumb {
-        margin: -40px 0 40px;
+        margin: -40px 0 16px;
       }
       .title1 {
         text-align: center;
+        word-break: keep-all;
       }
       .title-guidetext {
         margin: 24px 0 60px;
@@ -159,24 +157,31 @@ $graph-color3: $gray-100;
         text-align: center;
       }
       .tab-box {
-        margin-bottom: 40px;
+        background-color: transparent;
       }
     }
     .a-cont {
-      padding: 40px;
+      padding: 20px 32px;
       border-radius: 20px;
       background-color: $white;
+      .a-cont {
+        padding: 0;
+      }
     }
   }
   // [상권핵심지표] 위치
   .cont-location {
     display: flex;
-    gap: 22px ;
+    gap: 22px;
+    .title3 {
+      margin-bottom: 40px;
+    }
     .map {
       position: relative;
-      flex: 1;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      flex: 1;
+      padding: 20px;
       .map-control {
         position: absolute;
         top: 24px;
@@ -185,16 +190,14 @@ $graph-color3: $gray-100;
       }
       .map-data {
         flex: 1;
+        align-content: center;
       }
     }
     .graph {
       display: flex;
       flex-direction: column;
       flex: 1;
-      // align-items: center;
-      .title3 {
-        margin: -10px 0 40px;
-      }
+      padding: 20px;
       .graph-data {
         position: relative;
         .loading {
@@ -209,15 +212,21 @@ $graph-color3: $gray-100;
   }
   // [상권핵심지표] 비교
   .cont-compare {
+    &.a-cont {
+      padding: 20px 0;
+    }
+    .tab-box {
+      margin: 0 32px;
+    }
     .compare-slider {
-      margin-top: 60px;
+      margin-top: 32px;
       .swiper-wrapper,
       .swiper-slide {
         display: flex;
         height: auto;
       }
       .guidandce {
-        margin-bottom: 60px;
+        margin-bottom: 32px;
         @include text-body(0,'m',$gray-800);
         text-align: center;
         word-break: keep-all;
@@ -226,7 +235,7 @@ $graph-color3: $gray-100;
         width: 60px;
         height: 60px;
         position: absolute;
-        top: 50%;
+        top: 56%;
         left: 0;
         z-index: 10;
         background: url($icon-slider-control) no-repeat 50% 50%;
@@ -240,7 +249,7 @@ $graph-color3: $gray-100;
         width: 60px;
         height: 60px;
         position: absolute;
-        top: 50%;
+        top: 56%;
         right: 0;
         z-index: 10;
         background: url($icon-slider-control) no-repeat 50% 50%;
@@ -269,19 +278,20 @@ $graph-color3: $gray-100;
         }
         dd {
           font-weight: 700;
-          font-size: 48px;
+          font-size: 24px;
           line-height: 1.2;
         }
         &.selected dd strong {
           color: $navy-400;
         }
         &.comparison dd {
-          color: $gray-300;
+          color: $gray-500;
         }
       }
     }
     .data-summary {
       padding-top: 62px;
+      height: 320px;
       .guidandce {
         flex: 1;
         display: flex;
@@ -305,7 +315,7 @@ $graph-color3: $gray-100;
         align-items: center;
         justify-content: center;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         color: $gray-900;
       }
       dl {
@@ -315,7 +325,7 @@ $graph-color3: $gray-100;
           width: 100%;
           bottom: calc(100% + 24px);
           text-align: center;
-          @include text-title(2,$body-text-color);
+          @include text-title(4,$body-text-color);
         }
         dd {
           flex: 1;
@@ -332,6 +342,7 @@ $graph-color3: $gray-100;
     .data-partial {
       display: flex;
       flex: 1;
+      padding: 20px 0;
       .guidandce {
         position: absolute;
         @include blind;
@@ -344,53 +355,110 @@ $graph-color3: $gray-100;
       }
       dl {
         display: flex;
-        flex: 0 0 300px;
+        flex: 0 0 45%;
         flex-direction: column;
         align-items: center;
-        margin-top: 16px;
+        max-width: 270px;
+        margin: 20px 0 164px;
+        border-bottom: 1px solid $gray-100;
         dt {
-          order: 1;
-          @include text-title(3,$body-text-color);
+          position: absolute;
+          bottom: 0;
+          font-size: 18px;
+          font-weight: 600;
           flex: 0;
           margin-top: 20px;
+          display: flex;
+          height: 3em;
+          align-items: center;
+          text-align: center;
+          word-break: keep-all;
+          max-width: 120px;
         }
         dd {
+          position: relative;
           flex: 1;
           align-content: flex-end;
+          width: 120px;
+          // height: 157px;
           span {
             position: relative;
             display: flex;
-            width: 120px;
-            border-radius: 12px;
+            // width: 120px;
+            width: 100%;
+            border-radius: 12px 12px 0 0;
             strong {
               position: absolute;
-              bottom: calc(100% + 20px);
+              bottom: calc(100% + 10px);
               width: 100%;
               text-align: center;
             }
           }
+          &.minus {
+            span {
+              position: absolute;
+              top: 100%;
+              border-radius: 0 0 12px 12px;
+            }
+            strong {
+              bottom: auto;
+              top: calc(100% + 10px);
+            }
+          }
+        }
+        &.selected {
+          padding-left: 30px;
+        }
+        &.comparison {
+          padding-right: 30px;
         }
         &.selected dd span {background-color: $primary;}
-        &.comparison dd span {background-color: $gray-400;}
+        &.comparison dd span {background-color: $gray-300;}
       }
     }
   }
   // [상권핵심지표] 업종
   .cont-industry {
+    .tab-box {
+      margin-bottom: 40px;
+    }
     .industry-summary {
       margin-bottom: 30px;
       @include text-body(0,'m');
       text-align: center;
     }
+    .legend {
+      margin-bottom: 32px;
+      text-align: right;
+      ul {
+        display: inline-flex;
+        & >li {
+          margin-left: 16px;
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-right: 6px;
+            border-radius: 10px;
+          }
+        }
+        li:first-child::before {
+          background-color: $graph-color0;
+        }
+        li:nth-child(2)::before {
+          background-color: $graph-color2;
+        }
+      }
+    }
   }
   // [업종별 흐름] 상세
   .cont-detail {
-    .button-box-medium {
+    .button-box-small {
       margin-bottom: 40px;
       justify-content: flex-end;
       .show-explanation {
         flex: 0;
-        padding: 13px 20px; 
         &::after {
           content: '';
           display: inline-block;
@@ -681,6 +749,8 @@ $graph-color3: $gray-100;
   }
   // [지역 요약] 요약
   .cont-summary {
+    max-width: 800px;
+    margin: 0 auto;
     .flags {
       display: flex;
       flex-wrap: wrap;
@@ -1665,6 +1735,17 @@ page : page-datamarket
           display: flex;
           flex-wrap: wrap;
           align-items: center;
+          &.set-coupon {
+            dd {
+              display: inline-flex;
+              justify-content: flex-end;
+              align-items: center;
+              .price {
+                margin-right: 2.5px;
+                color: $point-blue;
+              }
+            }
+          }
           &.apply-coupon {
             margin-top: 8px;
             dt {
@@ -1877,6 +1958,473 @@ page : page-datamarket
     }
   }
 }
+/***********
+page : page-aisearch
+***********/
+$contentWidth: 700px;
+.page-aisearch {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  height: calc(100vh - 113px - 20px);
+  overflow: hidden;
+  overflow-y: auto;
+
+  &:has(.aisearch-header) {
+    justify-content: center; // 메인일때만
+  }
+
+  &::-webkit-scrollbar {width: 4px;}
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-button {
+    height: 7px;
+  }
+
+  .aisearch-header {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: $gray-900;
+    }
+    .exquestion-type {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(113px + 20px + 20px);
+      padding: 0 20px;
+      touch-action: pan-y; /* 수직 스크롤 방해 방지 */
+      .titles {
+        max-width: 660px;
+        margin: 0 auto;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
+        flex: 0;
+        order: 1;
+        transition: transform 0.3s ease;
+      }
+      a {
+        display: block;
+        box-sizing: border-box;
+        padding: 16px;
+        border-radius: 16px;
+        background-color: #FFFFFF99;
+        box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+
+        border: 2px solid #FFFFFF;
+        border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        outline: none;
+        transition: background-image 300ms;
+
+        background-image:linear-gradient(#fff,#fff);
+        background-clip: padding-box, border-box;
+        background-origin: border-box;
+        &:focus {
+          outline: none;
+        }
+        &.is-active {
+            background-image:linear-gradient(#fff,#fff),linear-gradient(to left ,#C14EFF ,#C4B5FD, #6361FC);
+          }
+        h2 {
+          @include text-body(2,'sb');
+        }
+        p {
+          @include text-body(2,'r',$gray-500);
+        }
+      }
+    }
+    @media screen and (max-width: 677px) {
+      .exquestion-type {
+        .titles {
+          margin: 0;
+          gap: 0;
+          a {
+            width: 210px;
+          }
+        }
+      }
+    }
+    .flow-text {
+      overflow-x: hidden;
+      padding: 40px 0;
+      margin: 20px 0 -40px
+    }
+    .exquestion-list {
+      display: grid;
+      grid-template-columns: repeat(20,1fr);
+      gap: 12px;
+      transform: translateX(-100px);
+      transition: all;
+      & +.exquestion-list {
+        margin-top: 12px;
+        transform: translateX(-500px);
+      }
+      .exquestion-item {
+        display: flex;
+        box-sizing: border-box;
+        width: 280px;
+        height: 74px;
+        padding: 16px 20px;
+        border-radius: 16px;
+        @include text-body(2,'b');
+        border: 2px solid #FFFFFF;
+        border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        background-color: #FFFFFF99;
+        box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+        cursor: pointer;
+       &:hover {
+        text-decoration: underline;
+       }
+      }
+
+    }
+  }
+  .aisearch-body {
+    width: 100%;
+    max-width: $contentWidth;
+    margin: 0 auto;
+    padding-top: 100px;
+    .search-request {
+      margin: 0 20px 32px;
+      .request-text {
+        text-align: right;
+        p {
+          max-width: 80%;
+          display: inline-block;
+          padding: 12px 16px;
+          border-radius: 16px;
+          background-color: $gray-60;
+          @include text-body(1);
+        }
+        & +.util {
+          text-align: right;
+        }
+      }
+      .contents {
+        margin-top: 20px;
+        .graph {
+          border: 2px solid #fff;
+          border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+          border: 16px;
+          padding: 20px;
+          background-color: #FFFFFF99;
+        }
+        .link {
+          & >li + li {
+            margin-top: 20px;
+          }
+           a {
+            margin-bottom: 8px;
+            text-decoration: underline;
+            @include text-body(2,'m',$gray-700);
+           }
+           .source {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            border: 2px solid #fff;
+            background: $gray-40;
+            border: 2px solid;
+            border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+            box-shadow: 0px 8px 16px 0px #23225814;
+            backdrop-filter: blur(20px);
+            box-shadow: 0px 4px 12px 0px #23225805 inset;
+            @include text-body(3,'m',$gray-500);
+           }
+        }
+      }
+      .util {
+        margin-top: 8px;
+        button {
+          width: 32px;
+          height: 32px;
+          border-radius: 8px;
+          @include set-icon-text-blind;
+          transition: all 500ms;
+          &:hover {
+            background-color: $gray-60;
+          }
+        }
+        .icon-copy {
+          background: url(svg-icon(search-copy,$gray-500)) no-repeat 50% 50%;
+          &.is-on {
+            background: url(svg-icon(search-copy, $primary)) no-repeat 50% 50%;
+          }
+        }
+        .icon-good,
+        .icon-bad {
+          background: url(svg-icon(search-good,$gray-500)) no-repeat 50% 50%;
+          &.is-on {
+            background: url(svg-icon(search-good,$primary)) no-repeat 50% 50%;
+          }
+          &.is-off {
+            display: none;
+          }
+        }
+        .icon-bad {
+          transform: rotate(180deg);
+        }
+      }
+      .accordion-list {
+        max-width: 436px;
+        .accordion-item {
+          border: 2px solid $white;
+          border-radius: 16px;
+          background-color: #FFFFFF99;
+          box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+          padding: 14px;
+          & + .accordion-item {
+            margin-top: 12px;
+          }
+        }
+        .accordion-title {
+          border-image: linear-gradient(180deg, #FFFFFF, #FFFFFF33);
+          cursor: pointer;
+          p {
+            position: relative;
+            padding-right: 28px;
+            @include text-body(2,'sb');
+            &::after {
+              content: '';
+              // display: inline-block;
+              position: absolute;
+              right: 0;
+              top: 0;
+              width: 20px;
+              height: 20px;
+              background: url(svg-icon(chevron-right, $gray-300)) no-repeat 100% 50%;
+              background-size: 20px 20px;
+              transform: rotate(90deg);
+            }
+          }
+          &.ui-state-active p::after {
+            transform: rotate(270deg);
+          }
+        }
+        .accordion-content {
+          padding-top: 16px;
+          white-space: pre-line;
+          @include text-body(2,'r',$gray-500);
+        }
+      }
+      .feedback-modal {
+        display: none;
+        margin-top: 32px;
+        .modal {
+          position: relative;
+          border-radius: 16px;
+          padding: 20px;
+        }
+        .modal-title {
+          margin-bottom: 20px;
+          @include text-body(1,'sb');
+        }
+        .modal-content {
+          .chip-box {
+            // display: flex;
+            // gap: 8px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            .chip {
+              // flex: 1 1 30%
+            }
+            .chip i {
+              flex: 1;
+              text-align: center;
+            }
+          }
+        }
+        .modal-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          @include set-icon(24px, 24px, $icon-close);
+        }
+        &.is-show {
+          display: block;
+          height: auto;
+        }
+      }
+    }
+  }
+  .aisearch-slider-wrap {
+    position: relative;
+    padding-bottom: 24px;
+    .aisearch-slider {
+      overflow: visible;
+    }
+    .swiper-wrapper {
+      overflow: visible;
+    }
+    .swiper-slide {
+      opacity: 0;
+      transition: opacity 500ms ease;
+    }
+    .swiper-slide-visible {
+      opacity: 1;
+    }
+    .aisearch-slide {
+      display: block;
+      border-radius: 16px;
+      border: 2px solid;
+      border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+      padding: 10px;
+      background-color: #FFFFFF99;
+      backdrop-filter: blur(20px);
+      box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+      &:has(.image) {
+        height: 246px;
+      }
+      .image {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 12px;
+        img {
+          width: 188px;
+          height: 188px;
+          object-fit: cover;
+        }
+      }
+      .txt {
+        height: 3em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:2;
+        @include text-body(2,'sb'); 
+      }
+      .location {
+        margin-top: 12px;
+        @include text-body(3,'m',$gray-500);
+      }
+    }
+    // .swiper-slide {
+    //   opacity: 0;
+    // }
+    // .swiper-slide-prev,
+    // .swiper-slide-active,
+    // .swiper-slide-next,
+    // .swiper-slide-next + .swiper-slide {
+    //   opacity: 1;
+    // }
+    .swiper-pagination {
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      .swiper-pagination-bullet {
+        background-color: $gray-100;
+        border-radius: 8px;
+        opacity: 1;
+        transition: all 300ms;
+      }
+      .swiper-pagination-bullet-active {
+        background-color: $gray-900;
+        width: 16px;
+      }
+    }
+    .control-box {
+      position: relative;
+      z-index: 1;
+      .prev,
+      .next {
+        position: absolute;
+        top: calc(50% - 30px);
+        width: 40px;
+        height: 40px;
+        border: 1px solid $gray-60;
+        border-radius: 40px;
+        background: url(svg-icon(chevron-right)) no-repeat 50% 50%;
+        @include set-icon-text-blind;
+        background-size: 20px 20px;
+        &:disabled {
+          background-image: url(svg-icon(chevron-right, $gray-100));
+        }
+      }
+      .prev {
+        left: -52px;
+        transform: rotate(180deg);
+      }
+      .next {
+        right: -52px;
+      }
+    }
+  }
+} 
+.aisearch-bottom {
+  flex: 1;
+  margin: 0 auto;
+  // width: 100%;
+  margin: 0 20px;
+  position: relative;
+  z-index: 1;
+  .search-area {
+    overflow: hidden;
+    position: relative;
+    max-width: 660px;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+    background-color: #FFFFFFCC;
+
+    textarea {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 113px;
+      // border: 3px solid transparent;
+      box-sizing: border-box;
+      border: 2px solid #fff;
+      padding: 12px 54px 12px 12px;
+      @include text-body(0,'m');
+      resize: none;
+      // border: none;
+      outline: none;
+
+      // background: url('data:image/svg+xml,%3Csvg%20width%3D%22660%22%20height%3D%22113%22%20viewBox%3D%220%200%20660%20113%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask%20id%3D%22path-1-inside-1_4626_2272%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M0%2032C0%2020.799%200%2015.1984%202.17987%2010.9202C4.09734%207.15695%207.15695%204.09734%2010.9202%202.17987C15.1984%200%2020.799%200%2032%200H628C639.201%200%20644.802%200%20649.08%202.17987C652.843%204.09734%20655.903%207.15695%20657.82%2010.9202C660%2015.1984%20660%2020.799%20660%2032V81C660%2092.201%20660%2097.8016%20657.82%20102.08C655.903%20105.843%20652.843%20108.903%20649.08%20110.82C644.802%20113%20639.201%20113%20628%20113H32C20.799%20113%2015.1984%20113%2010.9202%20110.82C7.15695%20108.903%204.09734%20105.843%202.17987%20102.08C0%2097.8016%200%2092.201%200%2081V32Z%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M10.9202%20110.82L12.2822%20108.147L10.9202%20110.82ZM2.17987%20102.08L-0.49315%20103.442L2.17987%20102.08ZM657.82%20102.08L660.493%20103.442L657.82%20102.08ZM649.08%20110.82L650.442%20113.493L649.08%20110.82ZM649.08%202.17987L647.718%204.85289L649.08%202.17987ZM657.82%2010.9202L660.493%209.55822L657.82%2010.9202ZM10.9202%202.17987L12.2822%204.85289L10.9202%202.17987ZM32%200V3H628V0V-3H32V0ZM660%2032H657V81H660H663V32H660ZM628%20113V110H32V113V116H628V113ZM0%2081H3V32H0H-3V81H0ZM32%20113V110C26.35%20110%2022.2929%20109.998%2019.1083%20109.737C15.9588%20109.48%2013.9279%20108.986%2012.2822%20108.147L10.9202%20110.82L9.55822%20113.493C12.1907%20114.834%2015.0992%20115.43%2018.6197%20115.718C22.1053%20116.002%2026.449%20116%2032%20116V113ZM0%2081H-3C-3%2086.551%20-3.00233%2090.8947%20-2.71755%2094.3803C-2.42991%2097.9008%20-1.83449%20100.809%20-0.49315%20103.442L2.17987%20102.08L4.85289%20100.718C4.01436%2099.0721%203.51985%2097.0412%203.26252%2093.8917C3.00233%2090.7071%203%2086.65%203%2081H0ZM10.9202%20110.82L12.2822%20108.147C9.08341%20106.517%206.48274%20103.917%204.85289%20100.718L2.17987%20102.08L-0.49315%20103.442C1.71194%20107.77%205.23049%20111.288%209.55822%20113.493L10.9202%20110.82ZM660%2081H657C657%2086.65%20656.998%2090.7071%20656.737%2093.8917C656.48%2097.0412%20655.986%2099.0721%20655.147%20100.718L657.82%20102.08L660.493%20103.442C661.834%20100.809%20662.43%2097.9008%20662.718%2094.3803C663.002%2090.8947%20663%2086.551%20663%2081H660ZM628%20113V116C633.551%20116%20637.895%20116.002%20641.38%20115.718C644.901%20115.43%20647.809%20114.834%20650.442%20113.493L649.08%20110.82L647.718%20108.147C646.072%20108.986%20644.041%20109.48%20640.892%20109.737C637.707%20109.998%20633.65%20110%20628%20110V113ZM657.82%20102.08L655.147%20100.718C653.517%20103.917%20650.917%20106.517%20647.718%20108.147L649.08%20110.82L650.442%20113.493C654.77%20111.288%20658.288%20107.77%20660.493%20103.442L657.82%20102.08ZM628%200V3C633.65%203%20637.707%203.00233%20640.892%203.26252C644.041%203.51985%20646.072%204.01436%20647.718%204.85289L649.08%202.17987L650.442%20-0.49315C647.809%20-1.83449%20644.901%20-2.42991%20641.38%20-2.71755C637.895%20-3.00233%20633.551%20-3%20628%20-3V0ZM660%2032H663C663%2026.449%20663.002%2022.1053%20662.718%2018.6197C662.43%2015.0992%20661.834%2012.1907%20660.493%209.55822L657.82%2010.9202L655.147%2012.2822C655.986%2013.9279%20656.48%2015.9588%20656.737%2019.1083C656.998%2022.2929%20657%2026.35%20657%2032H660ZM649.08%202.17987L647.718%204.85289C650.917%206.48274%20653.517%209.08341%20655.147%2012.2822L657.82%2010.9202L660.493%209.55822C658.288%205.23049%20654.77%201.71194%20650.442%20-0.49315L649.08%202.17987ZM32%200V-3C26.449%20-3%2022.1053%20-3.00233%2018.6197%20-2.71755C15.0992%20-2.42991%2012.1907%20-1.83449%209.55822%20-0.49315L10.9202%202.17987L12.2822%204.85289C13.9279%204.01436%2015.9588%203.51985%2019.1083%203.26252C22.2929%203.00233%2026.35%203%2032%203V0ZM0%2032H3C3%2026.35%203.00233%2022.2929%203.26252%2019.1083C3.51985%2015.9588%204.01436%2013.9279%204.85289%2012.2822L2.17987%2010.9202L-0.49315%209.55822C-1.83449%2012.1907%20-2.42991%2015.0992%20-2.71755%2018.6197C-3.00233%2022.1053%20-3%2026.449%20-3%2032H0ZM10.9202%202.17987L9.55822%20-0.49315C5.23049%201.71194%201.71194%205.23049%20-0.49315%209.55822L2.17987%2010.9202L4.85289%2012.2822C6.48274%209.08341%209.08341%206.48274%2012.2822%204.85289L10.9202%202.17987Z%22%20fill%3D%22white%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%2F%3E%3Cg%20clip-path%3D%22url(%23paint0_angular_4626_2272_clip_path)%22%20data-figma-skip-parse%3D%22true%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%3E%3Cg%20transform%3D%22matrix(-0.33%200%200%20-0.0565%20330%2056.5)%22%3E%3CforeignObject%20x%3D%22-1053.1%22%20y%3D%22-1053.1%22%20width%3D%222106.19%22%20height%3D%222106.19%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22background%3Aconic-gradient(from%2090deg%2Crgba(193%2C%2078%2C%20255%2C%201)%200deg%2Crgba(193%2C%2078%2C%20255%2C%201)%2018deg%2Crgba(196%2C%20181%2C%20253%2C%201)%20126deg%2Crgba(99%2C%2097%2C%20252%2C%201)%20198deg%2Crgba(196%2C%20181%2C%20253%2C%201)%20318.462deg%2Crgba(193%2C%2078%2C%20255%2C%201)%20342deg%2Crgba(193%2C%2078%2C%20255%2C%201)%20360deg)%3Bheight%3A100%25%3Bwidth%3A100%25%3Bopacity%3A1%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fg%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10.9202%20110.82L12.2822%20108.147L10.9202%20110.82ZM2.17987%20102.08L-0.49315%20103.442L2.17987%20102.08ZM657.82%20102.08L660.493%20103.442L657.82%20102.08ZM649.08%20110.82L650.442%20113.493L649.08%20110.82ZM649.08%202.17987L647.718%204.85289L649.08%202.17987ZM657.82%2010.9202L660.493%209.55822L657.82%2010.9202ZM10.9202%202.17987L12.2822%204.85289L10.9202%202.17987ZM32%200V3H628V0V-3H32V0ZM660%2032H657V81H660H663V32H660ZM628%20113V110H32V113V116H628V113ZM0%2081H3V32H0H-3V81H0ZM32%20113V110C26.35%20110%2022.2929%20109.998%2019.1083%20109.737C15.9588%20109.48%2013.9279%20108.986%2012.2822%20108.147L10.9202%20110.82L9.55822%20113.493C12.1907%20114.834%2015.0992%20115.43%2018.6197%20115.718C22.1053%20116.002%2026.449%20116%2032%20116V113ZM0%2081H-3C-3%2086.551%20-3.00233%2090.8947%20-2.71755%2094.3803C-2.42991%2097.9008%20-1.83449%20100.809%20-0.49315%20103.442L2.17987%20102.08L4.85289%20100.718C4.01436%2099.0721%203.51985%2097.0412%203.26252%2093.8917C3.00233%2090.7071%203%2086.65%203%2081H0ZM10.9202%20110.82L12.2822%20108.147C9.08341%20106.517%206.48274%20103.917%204.85289%20100.718L2.17987%20102.08L-0.49315%20103.442C1.71194%20107.77%205.23049%20111.288%209.55822%20113.493L10.9202%20110.82ZM660%2081H657C657%2086.65%20656.998%2090.7071%20656.737%2093.8917C656.48%2097.0412%20655.986%2099.0721%20655.147%20100.718L657.82%20102.08L660.493%20103.442C661.834%20100.809%20662.43%2097.9008%20662.718%2094.3803C663.002%2090.8947%20663%2086.551%20663%2081H660ZM628%20113V116C633.551%20116%20637.895%20116.002%20641.38%20115.718C644.901%20115.43%20647.809%20114.834%20650.442%20113.493L649.08%20110.82L647.718%20108.147C646.072%20108.986%20644.041%20109.48%20640.892%20109.737C637.707%20109.998%20633.65%20110%20628%20110V113ZM657.82%20102.08L655.147%20100.718C653.517%20103.917%20650.917%20106.517%20647.718%20108.147L649.08%20110.82L650.442%20113.493C654.77%20111.288%20658.288%20107.77%20660.493%20103.442L657.82%20102.08ZM628%200V3C633.65%203%20637.707%203.00233%20640.892%203.26252C644.041%203.51985%20646.072%204.01436%20647.718%204.85289L649.08%202.17987L650.442%20-0.49315C647.809%20-1.83449%20644.901%20-2.42991%20641.38%20-2.71755C637.895%20-3.00233%20633.551%20-3%20628%20-3V0ZM660%2032H663C663%2026.449%20663.002%2022.1053%20662.718%2018.6197C662.43%2015.0992%20661.834%2012.1907%20660.493%209.55822L657.82%2010.9202L655.147%2012.2822C655.986%2013.9279%20656.48%2015.9588%20656.737%2019.1083C656.998%2022.2929%20657%2026.35%20657%2032H660ZM649.08%202.17987L647.718%204.85289C650.917%206.48274%20653.517%209.08341%20655.147%2012.2822L657.82%2010.9202L660.493%209.55822C658.288%205.23049%20654.77%201.71194%20650.442%20-0.49315L649.08%202.17987ZM32%200V-3C26.449%20-3%2022.1053%20-3.00233%2018.6197%20-2.71755C15.0992%20-2.42991%2012.1907%20-1.83449%209.55822%20-0.49315L10.9202%202.17987L12.2822%204.85289C13.9279%204.01436%2015.9588%203.51985%2019.1083%203.26252C22.2929%203.00233%2026.35%203%2032%203V0ZM0%2032H3C3%2026.35%203.00233%2022.2929%203.26252%2019.1083C3.51985%2015.9588%204.01436%2013.9279%204.85289%2012.2822L2.17987%2010.9202L-0.49315%209.55822C-1.83449%2012.1907%20-2.42991%2015.0992%20-2.71755%2018.6197C-3.00233%2022.1053%20-3%2026.449%20-3%2032H0ZM10.9202%202.17987L9.55822%20-0.49315C5.23049%201.71194%201.71194%205.23049%20-0.49315%209.55822L2.17987%2010.9202L4.85289%2012.2822C6.48274%209.08341%209.08341%206.48274%2012.2822%204.85289L10.9202%202.17987Z%22%20data-figma-gradient-fill%3D%22%7B%26%2334%3Btype%26%2334%3B%3A%26%2334%3BGRADIENT_ANGULAR%26%2334%3B%2C%26%2334%3Bstops%26%2334%3B%3A%5B%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.050000000745058060%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.34999999403953552%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.38823530077934265%2C%26%2334%3Bg%26%2334%3B%3A0.38039216399192810%2C%26%2334%3Bb%26%2334%3B%3A0.98823529481887817%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.55000001192092896%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.88461536169052124%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.94999998807907104%7D%5D%2C%26%2334%3BstopsVar%26%2334%3B%3A%5B%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.050000000745058060%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.34999999403953552%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.38823530077934265%2C%26%2334%3Bg%26%2334%3B%3A0.38039216399192810%2C%26%2334%3Bb%26%2334%3B%3A0.98823529481887817%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.55000001192092896%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.88461536169052124%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.94999998807907104%7D%5D%2C%26%2334%3Btransform%26%2334%3B%3A%7B%26%2334%3Bm00%26%2334%3B%3A-660.0%2C%26%2334%3Bm01%26%2334%3B%3A-5.7703841704892511e-12%2C%26%2334%3Bm02%26%2334%3B%3A660.0%2C%26%2334%3Bm10%26%2334%3B%3A-6.3668514904691165e-13%2C%26%2334%3Bm11%26%2334%3B%3A-113.0%2C%26%2334%3Bm12%26%2334%3B%3A113.0%7D%2C%26%2334%3Bopacity%26%2334%3B%3A1.0%2C%26%2334%3BblendMode%26%2334%3B%3A%26%2334%3BNORMAL%26%2334%3B%2C%26%2334%3Bvisible%26%2334%3B%3Atrue%7D%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%2F%3E%3Cdefs%3E%3CclipPath%20id%3D%22paint0_angular_4626_2272_clip_path%22%3E%3Cpath%20d%3D%22M10.9202%20110.82L12.2822%20108.147L10.9202%20110.82ZM2.17987%20102.08L-0.49315%20103.442L2.17987%20102.08ZM657.82%20102.08L660.493%20103.442L657.82%20102.08ZM649.08%20110.82L650.442%20113.493L649.08%20110.82ZM649.08%202.17987L647.718%204.85289L649.08%202.17987ZM657.82%2010.9202L660.493%209.55822L657.82%2010.9202ZM10.9202%202.17987L12.2822%204.85289L10.9202%202.17987ZM32%200V3H628V0V-3H32V0ZM660%2032H657V81H660H663V32H660ZM628%20113V110H32V113V116H628V113ZM0%2081H3V32H0H-3V81H0ZM32%20113V110C26.35%20110%2022.2929%20109.998%2019.1083%20109.737C15.9588%20109.48%2013.9279%20108.986%2012.2822%20108.147L10.9202%20110.82L9.55822%20113.493C12.1907%20114.834%2015.0992%20115.43%2018.6197%20115.718C22.1053%20116.002%2026.449%20116%2032%20116V113ZM0%2081H-3C-3%2086.551%20-3.00233%2090.8947%20-2.71755%2094.3803C-2.42991%2097.9008%20-1.83449%20100.809%20-0.49315%20103.442L2.17987%20102.08L4.85289%20100.718C4.01436%2099.0721%203.51985%2097.0412%203.26252%2093.8917C3.00233%2090.7071%203%2086.65%203%2081H0ZM10.9202%20110.82L12.2822%20108.147C9.08341%20106.517%206.48274%20103.917%204.85289%20100.718L2.17987%20102.08L-0.49315%20103.442C1.71194%20107.77%205.23049%20111.288%209.55822%20113.493L10.9202%20110.82ZM660%2081H657C657%2086.65%20656.998%2090.7071%20656.737%2093.8917C656.48%2097.0412%20655.986%2099.0721%20655.147%20100.718L657.82%20102.08L660.493%20103.442C661.834%20100.809%20662.43%2097.9008%20662.718%2094.3803C663.002%2090.8947%20663%2086.551%20663%2081H660ZM628%20113V116C633.551%20116%20637.895%20116.002%20641.38%20115.718C644.901%20115.43%20647.809%20114.834%20650.442%20113.493L649.08%20110.82L647.718%20108.147C646.072%20108.986%20644.041%20109.48%20640.892%20109.737C637.707%20109.998%20633.65%20110%20628%20110V113ZM657.82%20102.08L655.147%20100.718C653.517%20103.917%20650.917%20106.517%20647.718%20108.147L649.08%20110.82L650.442%20113.493C654.77%20111.288%20658.288%20107.77%20660.493%20103.442L657.82%20102.08ZM628%200V3C633.65%203%20637.707%203.00233%20640.892%203.26252C644.041%203.51985%20646.072%204.01436%20647.718%204.85289L649.08%202.17987L650.442%20-0.49315C647.809%20-1.83449%20644.901%20-2.42991%20641.38%20-2.71755C637.895%20-3.00233%20633.551%20-3%20628%20-3V0ZM660%2032H663C663%2026.449%20663.002%2022.1053%20662.718%2018.6197C662.43%2015.0992%20661.834%2012.1907%20660.493%209.55822L657.82%2010.9202L655.147%2012.2822C655.986%2013.9279%20656.48%2015.9588%20656.737%2019.1083C656.998%2022.2929%20657%2026.35%20657%2032H660ZM649.08%202.17987L647.718%204.85289C650.917%206.48274%20653.517%209.08341%20655.147%2012.2822L657.82%2010.9202L660.493%209.55822C658.288%205.23049%20654.77%201.71194%20650.442%20-0.49315L649.08%202.17987ZM32%200V-3C26.449%20-3%2022.1053%20-3.00233%2018.6197%20-2.71755C15.0992%20-2.42991%2012.1907%20-1.83449%209.55822%20-0.49315L10.9202%202.17987L12.2822%204.85289C13.9279%204.01436%2015.9588%203.51985%2019.1083%203.26252C22.2929%203.00233%2026.35%203%2032%203V0ZM0%2032H3C3%2026.35%203.00233%2022.2929%203.26252%2019.1083C3.51985%2015.9588%204.01436%2013.9279%204.85289%2012.2822L2.17987%2010.9202L-0.49315%209.55822C-1.83449%2012.1907%20-2.42991%2015.0992%20-2.71755%2018.6197C-3.00233%2022.1053%20-3%2026.449%20-3%2032H0ZM10.9202%202.17987L9.55822%20-0.49315C5.23049%201.71194%201.71194%205.23049%20-0.49315%209.55822L2.17987%2010.9202L4.85289%2012.2822C6.48274%209.08341%209.08341%206.48274%2012.2822%204.85289L10.9202%202.17987Z%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E') no-repeat 50% 50%;
+      // background-size: 100%;
+      // background-color: transparent;
+
+      background-image:linear-gradient(#fff,#fff);
+      // background-clip: padding-box, border-box;
+      // background-origin: border-box;
+      background-clip: border-box;
+      background-origin: border-box;
+      &:focus {
+        padding: 14px 56px 14px 14px;
+        border: none;
+        // background: url('data:image/svg+xml,%3Csvg%20width%3D%22660%22%20height%3D%22113%22%20viewBox%3D%220%200%20660%20113%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask%20id%3D%22path-1-inside-1_4626_2272%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M0%2032C0%2020.799%200%2015.1984%202.17987%2010.9202C4.09734%207.15695%207.15695%204.09734%2010.9202%202.17987C15.1984%200%2020.799%200%2032%200H628C639.201%200%20644.802%200%20649.08%202.17987C652.843%204.09734%20655.903%207.15695%20657.82%2010.9202C660%2015.1984%20660%2020.799%20660%2032V81C660%2092.201%20660%2097.8016%20657.82%20102.08C655.903%20105.843%20652.843%20108.903%20649.08%20110.82C644.802%20113%20639.201%20113%20628%20113H32C20.799%20113%2015.1984%20113%2010.9202%20110.82C7.15695%20108.903%204.09734%20105.843%202.17987%20102.08C0%2097.8016%200%2092.201%200%2081V32Z%22%2F%3E%3C%2Fmask%3E%3Cpath%20d%3D%22M10.9202%20110.82L12.2822%20108.147L10.9202%20110.82ZM2.17987%20102.08L-0.49315%20103.442L2.17987%20102.08ZM657.82%20102.08L660.493%20103.442L657.82%20102.08ZM649.08%20110.82L650.442%20113.493L649.08%20110.82ZM649.08%202.17987L647.718%204.85289L649.08%202.17987ZM657.82%2010.9202L660.493%209.55822L657.82%2010.9202ZM10.9202%202.17987L12.2822%204.85289L10.9202%202.17987ZM32%200V3H628V0V-3H32V0ZM660%2032H657V81H660H663V32H660ZM628%20113V110H32V113V116H628V113ZM0%2081H3V32H0H-3V81H0ZM32%20113V110C26.35%20110%2022.2929%20109.998%2019.1083%20109.737C15.9588%20109.48%2013.9279%20108.986%2012.2822%20108.147L10.9202%20110.82L9.55822%20113.493C12.1907%20114.834%2015.0992%20115.43%2018.6197%20115.718C22.1053%20116.002%2026.449%20116%2032%20116V113ZM0%2081H-3C-3%2086.551%20-3.00233%2090.8947%20-2.71755%2094.3803C-2.42991%2097.9008%20-1.83449%20100.809%20-0.49315%20103.442L2.17987%20102.08L4.85289%20100.718C4.01436%2099.0721%203.51985%2097.0412%203.26252%2093.8917C3.00233%2090.7071%203%2086.65%203%2081H0ZM10.9202%20110.82L12.2822%20108.147C9.08341%20106.517%206.48274%20103.917%204.85289%20100.718L2.17987%20102.08L-0.49315%20103.442C1.71194%20107.77%205.23049%20111.288%209.55822%20113.493L10.9202%20110.82ZM660%2081H657C657%2086.65%20656.998%2090.7071%20656.737%2093.8917C656.48%2097.0412%20655.986%2099.0721%20655.147%20100.718L657.82%20102.08L660.493%20103.442C661.834%20100.809%20662.43%2097.9008%20662.718%2094.3803C663.002%2090.8947%20663%2086.551%20663%2081H660ZM628%20113V116C633.551%20116%20637.895%20116.002%20641.38%20115.718C644.901%20115.43%20647.809%20114.834%20650.442%20113.493L649.08%20110.82L647.718%20108.147C646.072%20108.986%20644.041%20109.48%20640.892%20109.737C637.707%20109.998%20633.65%20110%20628%20110V113ZM657.82%20102.08L655.147%20100.718C653.517%20103.917%20650.917%20106.517%20647.718%20108.147L649.08%20110.82L650.442%20113.493C654.77%20111.288%20658.288%20107.77%20660.493%20103.442L657.82%20102.08ZM628%200V3C633.65%203%20637.707%203.00233%20640.892%203.26252C644.041%203.51985%20646.072%204.01436%20647.718%204.85289L649.08%202.17987L650.442%20-0.49315C647.809%20-1.83449%20644.901%20-2.42991%20641.38%20-2.71755C637.895%20-3.00233%20633.551%20-3%20628%20-3V0ZM660%2032H663C663%2026.449%20663.002%2022.1053%20662.718%2018.6197C662.43%2015.0992%20661.834%2012.1907%20660.493%209.55822L657.82%2010.9202L655.147%2012.2822C655.986%2013.9279%20656.48%2015.9588%20656.737%2019.1083C656.998%2022.2929%20657%2026.35%20657%2032H660ZM649.08%202.17987L647.718%204.85289C650.917%206.48274%20653.517%209.08341%20655.147%2012.2822L657.82%2010.9202L660.493%209.55822C658.288%205.23049%20654.77%201.71194%20650.442%20-0.49315L649.08%202.17987ZM32%200V-3C26.449%20-3%2022.1053%20-3.00233%2018.6197%20-2.71755C15.0992%20-2.42991%2012.1907%20-1.83449%209.55822%20-0.49315L10.9202%202.17987L12.2822%204.85289C13.9279%204.01436%2015.9588%203.51985%2019.1083%203.26252C22.2929%203.00233%2026.35%203%2032%203V0ZM0%2032H3C3%2026.35%203.00233%2022.2929%203.26252%2019.1083C3.51985%2015.9588%204.01436%2013.9279%204.85289%2012.2822L2.17987%2010.9202L-0.49315%209.55822C-1.83449%2012.1907%20-2.42991%2015.0992%20-2.71755%2018.6197C-3.00233%2022.1053%20-3%2026.449%20-3%2032H0ZM10.9202%202.17987L9.55822%20-0.49315C5.23049%201.71194%201.71194%205.23049%20-0.49315%209.55822L2.17987%2010.9202L4.85289%2012.2822C6.48274%209.08341%209.08341%206.48274%2012.2822%204.85289L10.9202%202.17987Z%22%20fill%3D%22white%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%2F%3E%3Cg%20clip-path%3D%22url(%23paint0_angular_4626_2272_clip_path)%22%20data-figma-skip-parse%3D%22true%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%3E%3Cg%20transform%3D%22matrix(-0.33%200%200%20-0.0565%20330%2056.5)%22%3E%3CforeignObject%20x%3D%22-1053.1%22%20y%3D%22-1053.1%22%20width%3D%222106.19%22%20height%3D%222106.19%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22background%3Aconic-gradient(from%2090deg%2Crgba(193%2C%2078%2C%20255%2C%201)%200deg%2Crgba(193%2C%2078%2C%20255%2C%201)%2018deg%2Crgba(196%2C%20181%2C%20253%2C%201)%20126deg%2Crgba(99%2C%2097%2C%20252%2C%201)%20198deg%2Crgba(196%2C%20181%2C%20253%2C%201)%20318.462deg%2Crgba(193%2C%2078%2C%20255%2C%201)%20342deg%2Crgba(193%2C%2078%2C%20255%2C%201)%20360deg)%3Bheight%3A100%25%3Bwidth%3A100%25%3Bopacity%3A1%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fg%3E%3C%2Fg%3E%3Cpath%20d%3D%22M10.9202%20110.82L12.2822%20108.147L10.9202%20110.82ZM2.17987%20102.08L-0.49315%20103.442L2.17987%20102.08ZM657.82%20102.08L660.493%20103.442L657.82%20102.08ZM649.08%20110.82L650.442%20113.493L649.08%20110.82ZM649.08%202.17987L647.718%204.85289L649.08%202.17987ZM657.82%2010.9202L660.493%209.55822L657.82%2010.9202ZM10.9202%202.17987L12.2822%204.85289L10.9202%202.17987ZM32%200V3H628V0V-3H32V0ZM660%2032H657V81H660H663V32H660ZM628%20113V110H32V113V116H628V113ZM0%2081H3V32H0H-3V81H0ZM32%20113V110C26.35%20110%2022.2929%20109.998%2019.1083%20109.737C15.9588%20109.48%2013.9279%20108.986%2012.2822%20108.147L10.9202%20110.82L9.55822%20113.493C12.1907%20114.834%2015.0992%20115.43%2018.6197%20115.718C22.1053%20116.002%2026.449%20116%2032%20116V113ZM0%2081H-3C-3%2086.551%20-3.00233%2090.8947%20-2.71755%2094.3803C-2.42991%2097.9008%20-1.83449%20100.809%20-0.49315%20103.442L2.17987%20102.08L4.85289%20100.718C4.01436%2099.0721%203.51985%2097.0412%203.26252%2093.8917C3.00233%2090.7071%203%2086.65%203%2081H0ZM10.9202%20110.82L12.2822%20108.147C9.08341%20106.517%206.48274%20103.917%204.85289%20100.718L2.17987%20102.08L-0.49315%20103.442C1.71194%20107.77%205.23049%20111.288%209.55822%20113.493L10.9202%20110.82ZM660%2081H657C657%2086.65%20656.998%2090.7071%20656.737%2093.8917C656.48%2097.0412%20655.986%2099.0721%20655.147%20100.718L657.82%20102.08L660.493%20103.442C661.834%20100.809%20662.43%2097.9008%20662.718%2094.3803C663.002%2090.8947%20663%2086.551%20663%2081H660ZM628%20113V116C633.551%20116%20637.895%20116.002%20641.38%20115.718C644.901%20115.43%20647.809%20114.834%20650.442%20113.493L649.08%20110.82L647.718%20108.147C646.072%20108.986%20644.041%20109.48%20640.892%20109.737C637.707%20109.998%20633.65%20110%20628%20110V113ZM657.82%20102.08L655.147%20100.718C653.517%20103.917%20650.917%20106.517%20647.718%20108.147L649.08%20110.82L650.442%20113.493C654.77%20111.288%20658.288%20107.77%20660.493%20103.442L657.82%20102.08ZM628%200V3C633.65%203%20637.707%203.00233%20640.892%203.26252C644.041%203.51985%20646.072%204.01436%20647.718%204.85289L649.08%202.17987L650.442%20-0.49315C647.809%20-1.83449%20644.901%20-2.42991%20641.38%20-2.71755C637.895%20-3.00233%20633.551%20-3%20628%20-3V0ZM660%2032H663C663%2026.449%20663.002%2022.1053%20662.718%2018.6197C662.43%2015.0992%20661.834%2012.1907%20660.493%209.55822L657.82%2010.9202L655.147%2012.2822C655.986%2013.9279%20656.48%2015.9588%20656.737%2019.1083C656.998%2022.2929%20657%2026.35%20657%2032H660ZM649.08%202.17987L647.718%204.85289C650.917%206.48274%20653.517%209.08341%20655.147%2012.2822L657.82%2010.9202L660.493%209.55822C658.288%205.23049%20654.77%201.71194%20650.442%20-0.49315L649.08%202.17987ZM32%200V-3C26.449%20-3%2022.1053%20-3.00233%2018.6197%20-2.71755C15.0992%20-2.42991%2012.1907%20-1.83449%209.55822%20-0.49315L10.9202%202.17987L12.2822%204.85289C13.9279%204.01436%2015.9588%203.51985%2019.1083%203.26252C22.2929%203.00233%2026.35%203%2032%203V0ZM0%2032H3C3%2026.35%203.00233%2022.2929%203.26252%2019.1083C3.51985%2015.9588%204.01436%2013.9279%204.85289%2012.2822L2.17987%2010.9202L-0.49315%209.55822C-1.83449%2012.1907%20-2.42991%2015.0992%20-2.71755%2018.6197C-3.00233%2022.1053%20-3%2026.449%20-3%2032H0ZM10.9202%202.17987L9.55822%20-0.49315C5.23049%201.71194%201.71194%205.23049%20-0.49315%209.55822L2.17987%2010.9202L4.85289%2012.2822C6.48274%209.08341%209.08341%206.48274%2012.2822%204.85289L10.9202%202.17987Z%22%20data-figma-gradient-fill%3D%22%7B%26%2334%3Btype%26%2334%3B%3A%26%2334%3BGRADIENT_ANGULAR%26%2334%3B%2C%26%2334%3Bstops%26%2334%3B%3A%5B%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.050000000745058060%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.34999999403953552%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.38823530077934265%2C%26%2334%3Bg%26%2334%3B%3A0.38039216399192810%2C%26%2334%3Bb%26%2334%3B%3A0.98823529481887817%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.55000001192092896%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.88461536169052124%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.94999998807907104%7D%5D%2C%26%2334%3BstopsVar%26%2334%3B%3A%5B%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.050000000745058060%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.34999999403953552%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.38823530077934265%2C%26%2334%3Bg%26%2334%3B%3A0.38039216399192810%2C%26%2334%3Bb%26%2334%3B%3A0.98823529481887817%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.55000001192092896%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.76862746477127075%2C%26%2334%3Bg%26%2334%3B%3A0.70980393886566162%2C%26%2334%3Bb%26%2334%3B%3A0.99215686321258545%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.88461536169052124%7D%2C%7B%26%2334%3Bcolor%26%2334%3B%3A%7B%26%2334%3Br%26%2334%3B%3A0.75686275959014893%2C%26%2334%3Bg%26%2334%3B%3A0.30588236451148987%2C%26%2334%3Bb%26%2334%3B%3A1.0%2C%26%2334%3Ba%26%2334%3B%3A1.0%7D%2C%26%2334%3Bposition%26%2334%3B%3A0.94999998807907104%7D%5D%2C%26%2334%3Btransform%26%2334%3B%3A%7B%26%2334%3Bm00%26%2334%3B%3A-660.0%2C%26%2334%3Bm01%26%2334%3B%3A-5.7703841704892511e-12%2C%26%2334%3Bm02%26%2334%3B%3A660.0%2C%26%2334%3Bm10%26%2334%3B%3A-6.3668514904691165e-13%2C%26%2334%3Bm11%26%2334%3B%3A-113.0%2C%26%2334%3Bm12%26%2334%3B%3A113.0%7D%2C%26%2334%3Bopacity%26%2334%3B%3A1.0%2C%26%2334%3BblendMode%26%2334%3B%3A%26%2334%3BNORMAL%26%2334%3B%2C%26%2334%3Bvisible%26%2334%3B%3Atrue%7D%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%2F%3E%3Cdefs%3E%3CclipPath%20id%3D%22paint0_angular_4626_2272_clip_path%22%3E%3Cpath%20d%3D%22M10.9202%20110.82L12.2822%20108.147L10.9202%20110.82ZM2.17987%20102.08L-0.49315%20103.442L2.17987%20102.08ZM657.82%20102.08L660.493%20103.442L657.82%20102.08ZM649.08%20110.82L650.442%20113.493L649.08%20110.82ZM649.08%202.17987L647.718%204.85289L649.08%202.17987ZM657.82%2010.9202L660.493%209.55822L657.82%2010.9202ZM10.9202%202.17987L12.2822%204.85289L10.9202%202.17987ZM32%200V3H628V0V-3H32V0ZM660%2032H657V81H660H663V32H660ZM628%20113V110H32V113V116H628V113ZM0%2081H3V32H0H-3V81H0ZM32%20113V110C26.35%20110%2022.2929%20109.998%2019.1083%20109.737C15.9588%20109.48%2013.9279%20108.986%2012.2822%20108.147L10.9202%20110.82L9.55822%20113.493C12.1907%20114.834%2015.0992%20115.43%2018.6197%20115.718C22.1053%20116.002%2026.449%20116%2032%20116V113ZM0%2081H-3C-3%2086.551%20-3.00233%2090.8947%20-2.71755%2094.3803C-2.42991%2097.9008%20-1.83449%20100.809%20-0.49315%20103.442L2.17987%20102.08L4.85289%20100.718C4.01436%2099.0721%203.51985%2097.0412%203.26252%2093.8917C3.00233%2090.7071%203%2086.65%203%2081H0ZM10.9202%20110.82L12.2822%20108.147C9.08341%20106.517%206.48274%20103.917%204.85289%20100.718L2.17987%20102.08L-0.49315%20103.442C1.71194%20107.77%205.23049%20111.288%209.55822%20113.493L10.9202%20110.82ZM660%2081H657C657%2086.65%20656.998%2090.7071%20656.737%2093.8917C656.48%2097.0412%20655.986%2099.0721%20655.147%20100.718L657.82%20102.08L660.493%20103.442C661.834%20100.809%20662.43%2097.9008%20662.718%2094.3803C663.002%2090.8947%20663%2086.551%20663%2081H660ZM628%20113V116C633.551%20116%20637.895%20116.002%20641.38%20115.718C644.901%20115.43%20647.809%20114.834%20650.442%20113.493L649.08%20110.82L647.718%20108.147C646.072%20108.986%20644.041%20109.48%20640.892%20109.737C637.707%20109.998%20633.65%20110%20628%20110V113ZM657.82%20102.08L655.147%20100.718C653.517%20103.917%20650.917%20106.517%20647.718%20108.147L649.08%20110.82L650.442%20113.493C654.77%20111.288%20658.288%20107.77%20660.493%20103.442L657.82%20102.08ZM628%200V3C633.65%203%20637.707%203.00233%20640.892%203.26252C644.041%203.51985%20646.072%204.01436%20647.718%204.85289L649.08%202.17987L650.442%20-0.49315C647.809%20-1.83449%20644.901%20-2.42991%20641.38%20-2.71755C637.895%20-3.00233%20633.551%20-3%20628%20-3V0ZM660%2032H663C663%2026.449%20663.002%2022.1053%20662.718%2018.6197C662.43%2015.0992%20661.834%2012.1907%20660.493%209.55822L657.82%2010.9202L655.147%2012.2822C655.986%2013.9279%20656.48%2015.9588%20656.737%2019.1083C656.998%2022.2929%20657%2026.35%20657%2032H660ZM649.08%202.17987L647.718%204.85289C650.917%206.48274%20653.517%209.08341%20655.147%2012.2822L657.82%2010.9202L660.493%209.55822C658.288%205.23049%20654.77%201.71194%20650.442%20-0.49315L649.08%202.17987ZM32%200V-3C26.449%20-3%2022.1053%20-3.00233%2018.6197%20-2.71755C15.0992%20-2.42991%2012.1907%20-1.83449%209.55822%20-0.49315L10.9202%202.17987L12.2822%204.85289C13.9279%204.01436%2015.9588%203.51985%2019.1083%203.26252C22.2929%203.00233%2026.35%203%2032%203V0ZM0%2032H3C3%2026.35%203.00233%2022.2929%203.26252%2019.1083C3.51985%2015.9588%204.01436%2013.9279%204.85289%2012.2822L2.17987%2010.9202L-0.49315%209.55822C-1.83449%2012.1907%20-2.42991%2015.0992%20-2.71755%2018.6197C-3.00233%2022.1053%20-3%2026.449%20-3%2032H0ZM10.9202%202.17987L9.55822%20-0.49315C5.23049%201.71194%201.71194%205.23049%20-0.49315%209.55822L2.17987%2010.9202L4.85289%2012.2822C6.48274%209.08341%209.08341%206.48274%2012.2822%204.85289L10.9202%202.17987Z%22%20mask%3D%22url(%23path-1-inside-1_4626_2272)%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E') no-repeat 50% 50%;
+        
+        background-image:linear-gradient(#fff,#fff),linear-gradient(to left ,#C14EFF ,#C4B5FD, #6361FC);
+      }
+    }
+    button {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: url(svg-icon(search-arrow)) no-repeat 50% 50% $primary;
+      background-size: 20px 20px;
+      @include set-icon-text-blind;
+    }
+  }
+}
+
 /***********
 page : page-polio
 ***********/
@@ -2650,6 +3198,11 @@ MEDIA QUERY
   .page-datamarket .data-list > ul.col-3 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .page-aisearch {
+    .aisearch-body {
+      padding-top: calc(56px + 20px);
+    }
+  }
 
   .page-polio .datapolio-bottom{
     max-width: 100%;
@@ -2688,6 +3241,51 @@ MEDIA QUERY
       margin-top: -24px;
     }
   }
+
+
+
+  .page-aisearch .aisearch-body .search-request {
+      .feedback-modal {
+        display: none;
+        margin-top: 32px;
+        .modal {
+          background-color: #FFFFFF99;
+          border: 2px solid #ffffff;
+          border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+          backdrop-filter: blur(20px);
+          box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+        }
+        .modal-title {
+          margin-bottom: 20px;
+          @include text-body(1,'sb');
+        }
+        .modal-content {
+          .chip-box {
+            // display: flex;
+            // gap: 8px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            .chip {
+              // flex: 1 1 30%
+            }
+            .chip i {
+              flex: 1;
+              text-align: center;
+            }
+          }
+        }
+        .modal-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          @include set-icon(24px, 24px, $icon-close);
+        }
+        &.is-show {
+          display: block;
+          height: auto;
+        }
+      }
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -2696,13 +3294,31 @@ MEDIA QUERY
     
     .cont-location {
       flex-direction: column;
+      .map .map-data,
+      .graph .graph-data {
+        margin: 0 -20px;
+      }
     }
     .analysis-contents {
       .a-cont {
-        padding: 20px;
+        padding: 20px 32px;
+        .title3 {
+          padding-left: 8px;
+        }
+        &:has(.tab-box) {
+          background-color: transparent;
+          padding: 0;
+        }
       }
       .a-contents {
         padding: 60px 0;
+        .tab-box {
+          margin-left: 0;
+          margin-right: -20px;
+          .tabs {
+            gap: 20px;
+          }
+        }
         .title-guidetext {
           font-size: 16px;
           margin-bottom: 40px;
@@ -2720,26 +3336,33 @@ MEDIA QUERY
         font-size: 14px;
       }
       .data-summary dl dt {
-        @include text-title(4,$body-text-color);
+        font-size: 16px;
       }
-      .compare-slide dl dd  {font-size: 32px;}
+      // .compare-slide dl dd  {font-size: 32px;}
       .data-partial dl {
         flex: 1;
         dt {
-          font-size: 20px;
+          font-size: 16px;
           margin-top: 16px;
         }
-        dd span {
+        dd {
           width: 94px;
           strong {
             bottom: calc(100% + 16px);
           }
+        }
+        &.selected,
+        &.comparison {
+          padding: 0;
         }
       }
     }
     .cont-industry {
     }
     .cont-pattern {
+      .legend ul {
+        display: block;
+      }
       .pattern-person {
         ol > li .graph-title {
           flex-basis: 80px;
@@ -2755,10 +3378,10 @@ MEDIA QUERY
       }
     }
     .cont-detail {
-      .button-box-medium {
+      .button-box-small {
         margin-bottom: 20px;
       }
-      .button-box-medium .show-explanation {
+      .button-box-small .show-explanation {
         font-size: 16px;
         padding: 9px 20px;
         border-radius: 8px;
@@ -2781,6 +3404,7 @@ MEDIA QUERY
         }
         .detail-list {
           grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
         }
         .swiper-pagination {
           bottom: 0;
@@ -2929,7 +3553,7 @@ MEDIA QUERY
   .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set {
     flex-direction: column;
     position: relative;
-  }apply-coupon
+  }
   .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set dd .show-detail {
     position: absolute;
     right: 0;
@@ -2950,6 +3574,33 @@ MEDIA QUERY
   .contents-summary .list-type {display: none;}
   .page-datamarket .data-list > ul.col-3 {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .page-aisearch {
+    .aisearch-slider-wrap .control-box {
+      display: none;
+    }
+    .aisearch-body .search-request .feedback-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 5;
+      &.is-show {
+        display: flex;
+        align-items: flex-end;
+        .modal {
+          min-width: 100%;
+          border-radius: 16px 16px 0 0;
+        }
+      }
+      .modal-content .chip-box {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
   }
 
   .page-polio{
