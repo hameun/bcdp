@@ -905,6 +905,9 @@ MODAL POPUP
     margin-bottom: 16px; // 07.22 수정
     min-height: 27px;
     @include text-title(4);
+    .count{
+      color:$navy-300;
+    }
   }
   .message-box {
     margin-bottom: 24px;
@@ -994,6 +997,15 @@ MODAL POPUP
       }
     }
   }
+  .info-txt{
+    margin-top:4px;
+    padding-left:22px;
+    font-size:14px;
+    font-weight: 400;
+    color:$gray-500;
+    // background:@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);
+    background: url(svg-icon(info-16, $gray-500)) no-repeat center left;
+  }
   .tab-box {
     background-color: transparent;
   }
@@ -1003,6 +1015,8 @@ MODAL POPUP
     right: 14px;
     @include set-icon(24px, 24px, $icon-close);
   }
+  .mo-br{display:none !important;}
+  .modal .modal-login .title{text-align: left;}
 }
 
 // 페이지로 옮기기
@@ -2287,6 +2301,7 @@ TOAST POPUP
   .title1 {font-size: 24px;}
   .title3 {font-size: 24px;}
   .title4 {font-size: 20px;}
+  .mo-br{display: block;}
   .pop-modal .modal-large,
   .pop-modal .modal-medium {
     border-radius: 24px 24px 0 0;
