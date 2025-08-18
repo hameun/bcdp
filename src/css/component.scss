@@ -88,6 +88,7 @@
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
 .icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
+.button-s .icon-download {background: url(svg-icon(download, $primary));}
 .icon-up {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(270deg);}
 .icon-down {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(90deg);}
 .icon-share {@include set-icon(20px, 20px, $icon-share);}
@@ -1918,7 +1919,13 @@ TABLE
     top: 15px;
   }
 }
-
+.page-bottom {
+  .button-box-large {
+    button {
+      min-width: 180px;
+    }
+  }
+}
 .data-card {
   position: relative;
   padding: 20px;

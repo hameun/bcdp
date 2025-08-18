@@ -255,6 +255,7 @@ $icon-ai: 'data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20vi
   } @else if ($button-type == 's') {
     $border-color: $navy-300;
     $font-color: $navy-400;
+    $icon-margin: 4px;
   } @else if ($button-type == 't') {
     $border-color: $gray-100;
     $font-color: $gray-900;

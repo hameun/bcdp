@@ -1,0 +1,81 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-mypage">
+    <h1 class="headline1">마이페이지</h1>
+    <p class="head-guidetext">필요한 모든 관리가, 이 한 곳에.</p>
+    <div class="head-float-menu">
+        <div class="switch-box">
+            <ul class="switch">
+                <li class="is-on"><a href="#">MY PAGE</a></li>
+                <li><a href="#">MY COMPANY </a></li> 
+            </ul>
+        </div>
+    </div>
+
+    <div class="partner-header">
+        <div class="info-box">
+            <p class="name">매그넘빈트(김*진님)</p>
+            <p class="email">ky******@mvint.co.kr</p>
+        </div>
+        <div class="link-box">
+            <a href="#" class="link">장바구니</a>
+            <a href="#" class="link">쿠폰</a>
+            <a href="#" class="link">문의하기</a>
+        </div>
+    </div>
+    <div class="tab-box">
+        <ul class="tabs">
+            <li class="is-on"><a href="#">구매 내역</a></li>
+            <li><a href="#">문의 내역</a></li>
+        </ul>
+    </div>
+
+    <!-- [마이페이지 > 구매 내역] -->
+    <div class="partner-contents">
+        <div>
+            <p>최근 5년간의 구매 내역을 조회하실 수 있습니다.</p>
+        </div>
+
+        <!-- 구매한 내역 없는 경우 -->
+        <div class="contents-summary">
+            <p class="title">내역 <strong>0</strong></p>
+        </div>
+        <div class="result-none">
+            <p class="message">구매한 내역이 없습니다.</p>
+            <p class="message-sub">원하는 데이터를 찾고 계신가요? <br>관심 있는 주제로 데이터를 찾아보세요.</p>
+            <div class="button-box-small">
+                <button type="button" class="button-t">데이터 보러가기</button>
+            </div>
+        </div>
+        <!-- //구매한 내역 없는 경우 -->
+
+
+        <div class="contents-summary">
+            <p class="title">내역 <strong>17</strong></p>
+            <div class="page-select">
+                <select>
+                    <option value="10">최신순</option>
+                    <option value="10">가격 낮은순</option>
+                    <option value="10">가격 높은순</option>
+                </select>
+            </div>
+        </div>
+        <div class="content-date">
+            <p class="date">2025.06.25</p>
+        </div>
+
+        <div class="page-bottom">
+            <div class="button-box-large">
+                <button type="button" class="button-q">구매취소</button>
+                <button type="button" class="button-s">전체 다운로드<i class="icon-right icon-download"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- //[마이페이지 > 구매 내역] -->
+
+    <!-- [마이페이지 > 문의 내역 -->
+    <!-- //[마이페이지 > 문의 내역 -->
+</div>
+<!-- //.content .page-partner -->
+{%- endblock %}
