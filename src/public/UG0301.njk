@@ -1,0 +1,20 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-notice">
+    <div class="content-head-btn">
+        <div class="content-head">
+            <h1 class="headline1">공지사항</h1>
+            <p class="head-guidetext">서비스 안내사항과 업데이트 소식을 알려드려요.</p>
+        </div>
+    </div>   
+    <div class="input-box">
+        <input type="text" class="ipt" placeholder="검색어를 입력해주세요.">
+        <span class="util-box">
+            <button class="ipt-clear">내용 지우기</button>
+            <button type="button" class="ipt-search"><i>검색</i></button>
+        </span>
+    </div>              
+</div>
+
+{%- endblock %}
