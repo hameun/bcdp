@@ -71,6 +71,24 @@
 .caption2 {@include text-caption2;}
 .blind {@include set-icon-text-blind;}
 
+.list-circle-num {
+  padding-left: 18px;
+  .mark {
+    display: inline-flex;
+    width: 18px;
+    margin-left: -18px;
+    @include text-body(1,'r',$gray-700);
+  }
+}
+.list-bul {
+  padding-left: 12px;
+  .mark {
+    display: inline-flex;
+    width: 12px;
+    margin-left: -12px;
+  }
+}
+
 // navi
 .icon-extlink {@include set-icon(20px, 20px, $icon-external-link, 20px);}
 .icon-home {@include set-icon(48px, 48px, $icon-home, 36px);} 
@@ -383,6 +401,7 @@ FORM TEXT
   background: url(svg-icon(info, $gray-500)) no-repeat 0 1px;
   background-size: 20px auto;
 }
+
 .guide-text {
   margin-top: 12px;
   @include text-body(2,'r',$gray-500);
@@ -400,6 +419,12 @@ FORM TEXT
       text-align: center;
     }
   }
+}
+.input-title + .guide-text {
+  margin: 8px 0;
+}
+.formbox + .guide-text {
+  margin-top: 24px;
 }
 
 /***********
@@ -515,7 +540,6 @@ INPUT TEXT
       background-image: url(svg-icon(chevron-right, $gray-200));
     }
   }
-  
   .select-placeholder {
     padding: 11px 14px;
     text-align: left;
@@ -535,7 +559,14 @@ INPUT TEXT
     }
   }
 }
-
+.input-box-date {
+  display: flex;
+  gap: 8px;
+  .input-box {
+    flex: 1;
+    min-width: auto;
+  }
+}
 
 .input-box {
   .ui-selectmenu-button .ui-selectmenu-text {
@@ -549,6 +580,12 @@ INPUT TEXT
   // }
   .ui-selectmenu-button .ui-selectmenu-text.placeholder {
     color: $gray-300
+  }
+  .ui-selectmenu-button.ui-state-disabled {
+    background-color: $gray-40;
+    color: $gray-100;
+    border-radius: 12px;
+    margin: -1px;
   }
 }
 
@@ -715,6 +752,14 @@ CHECKBOX / RADIO
     }
     &::-webkit-scrollbar-track {
       background-color: transparent;
+    }
+    &:disabled {
+      background-color: $gray-40;
+      color: $gray-300;
+    }
+    &:read-only {
+      background-color: $gray-40;
+      color: $gray-300;
     }
   }
 }
@@ -1548,24 +1593,6 @@ MODAL POPUP
         margin-bottom: 8px; 
         @include text-body(1,'m',$gray-700);
       }
-      
-      .list-circle-num {
-        padding-left: 18px;
-        .mark {
-          display: inline-flex;
-          width: 18px;
-          margin-left: -18px;
-          @include text-body(1,'r',$gray-700);
-        }
-      }
-      .list-bul {
-        padding-left: 12px;
-        .mark {
-          display: inline-flex;
-          width: 12px;
-          margin-left: -12px;
-        }
-      }
     }
     
   }
@@ -1579,6 +1606,11 @@ MODAL POPUP
     }
   }
   .modal-data-info {
+    .title {
+      margin-bottom: 24px;
+      text-align: center;
+      @include text-title(3);
+    }
     .info {
       display: flex;
       flex-wrap: wrap;
@@ -1593,6 +1625,10 @@ MODAL POPUP
         flex: auto;
         text-align: right;
         @include text-body(1,'r',$gray-700);
+        p {
+          text-align: left;
+          word-break: break-word;
+        }
       }
     }
     .desc {
@@ -1652,6 +1688,10 @@ MODAL POPUP
         @include text-body(1,'m',$point);
       }
     }
+  }
+  .modal-public-info {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1919,13 +1959,6 @@ TABLE
     top: 15px;
   }
 }
-.page-bottom {
-  .button-box-large {
-    button {
-      min-width: 180px;
-    }
-  }
-}
 .data-card {
   position: relative;
   padding: 20px;
@@ -2172,10 +2205,13 @@ TOAST POPUP
 .toast-message {
   position: fixed;
   bottom: 10px;
-  left: 50%;
+  left: calc($layout-asideWidth + $layout-padding);
+  right: 0;
   z-index: 100;
   opacity: 0;
-  transition: opacity 700ms;
+  transition: opacity 500ms;
+  display: flex;
+  justify-content: center;
   p {
     display: flex;
     align-items: center;
@@ -2214,6 +2250,7 @@ TOAST POPUP
 @media screen and (max-width: 1023px){
   .headline1 {font-size: 32px;}
   .pop-modal {padding-left: 0;}
+  .toast-message {left: 0;}
   .tab-box {
     &.is-static,
     &.is-sticky {
@@ -2248,6 +2285,7 @@ TOAST POPUP
       border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
       backdrop-filter: blur(20px);
       box-shadow: 0px 4px 12px 0px #23225805 inset;
+      max-height: 232px;
       .ui-selectmenu-optgroup {
         font-size: 1em;
         font-weight: bold;

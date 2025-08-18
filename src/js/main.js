@@ -265,8 +265,8 @@ function ui_navi(){
     });
     const historyModalCloseBtn = historyModal.querySelector('.modal-close');
     historyModalCloseBtn.addEventListener('click', function(){
-        // historyModal.classList.remove('modal-hidden');
-        fn_modalPopClose(historyModal);
+        // fn_modalPopClose(historyModal);
+        historyModal.classList.add('modal-hidden');
     });
 }
 

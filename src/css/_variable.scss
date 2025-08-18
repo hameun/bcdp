@@ -297,7 +297,7 @@ $icon-ai: 'data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20vi
     margin: 0 $icon-margin 0 0;
   }
   i.icon-right {
-    margin: 0 0 0 $icon-margin;
+    margin: 0 calc(-1 * $icon-margin) 0 $icon-margin;
   }
   &.disabled {
     pointer-events: none;
