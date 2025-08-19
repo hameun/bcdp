@@ -3131,57 +3131,180 @@ page : page-polio
 
 // 스켈레톤 UI
 .skeleton {
-    background: linear-gradient(
-      90deg,
-      #F3F5F8 25%,
-      #E7E9EF 50%,
-      #F3F5F8 75%
-    );
-    background-size: 200% 100%;
-    animation: skeleton-loading 1.5s infinite linear;
-    border-radius: 8px;
-  }
+  background: linear-gradient(
+    90deg,
+    #F3F5F8 25%,
+    #E7E9EF 50%,
+    #F3F5F8 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 8px;
+}
 
-  /* 애니메이션 효과 */
-  @keyframes skeleton-loading {
-    0% {
-    background-position-x: 100%;
-    }
-    100% {
-      background-position-x: -100%;
-    }
+/* 애니메이션 효과 */
+@keyframes skeleton-loading {
+  0% {
+  background-position-x: 100%;
   }
+  100% {
+    background-position-x: -100%;
+  }
+}
 
-  .skeleton-box{
+.skeleton-box{
+  margin:0 auto;
+  margin-top:80px;
+  max-width: 720px;
+  .skeleton-tit{
+    width: 358px;
+    height: 36px;
     margin:0 auto;
-    margin-top:80px;
-    max-width: 720px;
-    .skeleton-tit{
-      width: 358px;
-      height: 36px;
-      margin:0 auto;
-    }
-    .skeleton-chip{
-      display:flex;
-      gap:8px;
-      margin-top:24px;
-      .skeleton{flex:1; height:48px;}
-    }
-    .ckeleton-top{
-      display: flex;
-      justify-content: space-between;
-      margin-top:32px;
-      .skeleton{width:120px; height:21px;}
-      .skeleton:last-child{width:62px; height:21px;}
-    }
-    .ckeleton-chk{
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      .skeleton{width:174px; height:48px;}
+  }
+  .skeleton-chip{
+    display:flex;
+    gap:8px;
+    margin-top:24px;
+    .skeleton{flex:1; height:48px;}
+  }
+  .ckeleton-top{
+    display: flex;
+    justify-content: space-between;
+    margin-top:32px;
+    .skeleton{width:120px; height:21px;}
+    .skeleton:last-child{width:62px; height:21px;}
+  }
+  .ckeleton-chk{
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    .skeleton{width:174px; height:48px;}
+  }
+}
+
+// 게시판
+.page-notice{
+  .input-box{
+    margin-top:24px;
+  }
+  .contents-summary{
+    margin-top:60px;
+    margin-bottom:12px;
+  }
+}
+.notice-list{
+  ul{
+    display:grid;
+    gap:12px;
+    .data-card{
+      .bedge-notice{
+        display:inline-flex;
+        margin-bottom:8px;
+        padding:4px 6px;
+        border-radius: 4px;
+        background:$navy-300;
+        color:$white;
+        font-size:12px;
+        font-weight: 600;
+      }
+      .icon-box{
+        display:flex;
+        gap:4px;
+        align-items: center;
+      }
+      .title{
+        max-height: 1.5em;
+        -webkit-line-clamp:1;
+        strong{
+          color:$navy-400;
+        }
+      }
+      .desc{
+        margin-top:4px;
+      }
     }
   }
+}
+.notice-detail{
+  margin-top:60px;
+  .desc{
+    display: flex;
+    justify-content: space-between;
+    margin-top:12px;
+    font-size:14px;
+    font-weight: 500;
+    color:$gray-500;
+    .icon-url-s{
+      max-width: 232px;
+      padding-left:22px;
+      font-size:14px;
+      font-weight: 500;
+      color:$gray-500;
+      background: url(svg-icon(icon-url-s,$gray-500)) no-repeat left center;
+      background-size: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+      text-overflow: ellipsis;  
+      white-space: nowrap;
+    }
+  }
+  .detail-content{
+    margin-top:25px;
+    padding:40px 0;      
+    border-top:1px solid $gray-60;    
+  }
+  .bottom-box{
+    .button-q{flex-basis: 200px;}
+  }
+}
+
+// 데이터파트너 신청
+.page-datapartner{
+  .datapartner-contents{
+    margin-top:60px;
+    .search-data{
+      display: flex;
+      gap:12px;
+      .input-box{
+        -webkit-box-flex: 1;
+        flex:auto;
+      }
+      .button-s{
+        width:120px;
+      }
+    }
+    // 약관동의
+    .regist-box{
+      margin-bottom:60px;
+      .agreement-terms{
+        .title{
+          display:inline-block;
+          margin-top:28px;
+          margin-bottom:16px;
+          font-size:20px;
+          font-weight: 700;
+        }
+        .agree-box{
+          padding:20px;
+          border-radius: 20px;
+          background:#fff;
+          .agree-all{
+            position:initial;
+            .ipt-check{
+              margin-bottom:20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottom-box{
+    .button-q{flex-basis:200px;}
+  }
+
+
+}
 
 
 

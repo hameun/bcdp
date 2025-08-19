@@ -1,0 +1,29 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UG0301.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+
+<!-- 미입력 삳태에서 검색버튼 선택시 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>1글자 이상 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //미입력 삳태에서 검색버튼 선택시 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">미입력 상태에서 검색버튼 선택시</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

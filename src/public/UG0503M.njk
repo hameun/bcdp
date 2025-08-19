@@ -1,0 +1,33 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UG0503.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+
+<!-- 이메일 확인 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>등록된 기업의 도메인과 입력하신<br>
+                기업 이메일의 도메인이 일치하지 않습니다. <br>
+                이메일을 다시 확인해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //이메일 확인 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">이메일 확인</a>
+         <a href="#" class="button-q" onclick="fn_toast('인증번호를 발송했어요',1);return false;">인증번호 토스트팝업</a>
+        <a href="#" class="button-q" onclick="fn_toast('기업 등록을 신청했습니다',1);return false;">기업등록 토스트팝업</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}
