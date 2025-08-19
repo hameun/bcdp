@@ -72,8 +72,6 @@ body.is-fixed {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-}
-.container {
   &:has(.page-login), &:has(.page-login-find) {
     justify-content: center;
   }
@@ -85,6 +83,7 @@ body.is-fixed {
     overflow: hidden;
   }
 }
+
 .content {
   width: 100%;
   max-width: 1000px;
@@ -539,7 +538,7 @@ aside
           display: none;
         }
       }
-      & +.container {
+      & ~.container {
         margin-left: 64px + 20px;
       }
     }

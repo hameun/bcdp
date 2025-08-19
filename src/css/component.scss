@@ -44,6 +44,8 @@
 .t-reqular {font-weight: 400;}
 .t-highlight {color: $primary;}
 
+.underline {text-decoration: underline;}
+
 .headline1 {font-weight: 700; font-size: 36px; color: $gray-800;}
 .title1 {@include text-title(1);}
 .title2 {@include text-title(2);}
@@ -102,7 +104,6 @@
 .icon-logout {@include set-icon(48px, 48px, $icon-logout, 20px);}
 .icon-menuclose {@include set-icon(48px, 48px, svg-icon(close-16, $gray-900), 20px);}
 
-
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
 .icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
@@ -110,6 +111,11 @@
 .icon-up {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(270deg);}
 .icon-down {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(90deg);}
 .icon-share {@include set-icon(20px, 20px, $icon-share);}
+.icon-waste {@include set-icon(20px, 20px, svg-icon(waste-bin));}
+.icon-modify {@include set-icon(20px, 20px, svg-icon(modify));}
+
+.icon-file-pdf {@include set-icon(48px, 48px, "../images/icon_file_pdf.png", 48px);}
+.icon-stat-complete {@include set-icon(10px, 10px, svg-icon(stat-complete), 10px);}
 
 .icon-kakao {@include set-icon(60px, 60px, $icon-kakao); background-color: #FAE54D;}
 .icon-facebook {@include set-icon(60px, 60px, $icon-facebook); background-color: #1877F2;}
@@ -123,6 +129,7 @@
 .on .icon-alram {background-image: url(svg-icon(alram-s-on, $primary));}
 }
 .icon-info {@include set-icon(24px, 24px, svg-icon(info, $gray-400), 24px);}
+.icon-info-m {@include set-icon(20px, 20px, svg-icon(info-16, $gray-400), 20px);}
 .icon-info-s {@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);}
 .icon-filter {@include set-icon(20px, 20px, svg-icon(search-filter));}
 
@@ -133,6 +140,7 @@
 .icon-nc {@include set-icon(20px, 20px, svg-icon(data-nc));}
 .icon-nd {@include set-icon(20px, 20px, svg-icon(data-nd));}
 .icon-sa {@include set-icon(20px, 20px, svg-icon(data-sa));}
+
 
 .loading {
   width: 100%;
@@ -322,6 +330,32 @@ BUTTON
   @include set-textbutton($gray-500);
 }
 
+.flag-stat {
+  padding: 3.5px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  &.stat-review {
+    color: $flag-blue;
+    background-color: $flag-blue-bg;
+  }
+  &.stat-reject {
+    color: $flag-red;
+    background-color: $flag-red-bg;
+  }
+  &.stat-wait {
+    color: $flag-orange;
+    background-color: $flag-orange-bg;
+  }
+  &.stat-cancel {
+    color: $flag-gray;
+    background-color: $flag-gray-bg;
+  }
+  &.stat-complete {
+    color: $flag-green;
+    background-color: $flag-green-bg;
+  }
+}
 /***********
 FORM TEXT
 ***********/
@@ -395,11 +429,21 @@ FORM TEXT
   }
 }
 .info-text {
-  margin-top: 8px;
-  padding-left: 28px; 
-  @include text-body(1,'r',$gray-500);
-  background: url(svg-icon(info, $gray-500)) no-repeat 0 1px;
-  background-size: 20px auto;
+  @mixin info-text($font-size) {
+    margin-top: 8px;
+    padding-left: 28px;
+    font-weight: 400;
+    font-size: #{$font-size}px;
+    color: $gray-500;
+    background: url(svg-icon(info, $gray-500)) no-repeat 0 1px;
+    background-size: 20px auto;
+    @content;
+  }
+  @include info-text(16);
+  &-small {
+    @include info-text(14);
+    padding-top: 2px;
+  }
 }
 
 .guide-text {
@@ -931,11 +975,33 @@ MODAL POPUP
   justify-content: center;
   z-index: 10;
   padding-left: calc($layout-asideWidth + $layout-padding);
+  .modal {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+    .modal-content {
+      overflow: hidden;
+      overflow-y: scroll;
+      margin: 0 -12px 20px -20px;
+      padding : 0 8px 20px 20px;
+      
+      &::-webkit-scrollbar {width: 4px;}
+      &::-webkit-scrollbar-thumb {
+        background-color: $gray-100;
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-button {
+        height: 7px;
+      }
+    }
+  }
   &.no-dim {
     background-color: transparent;
   }
   &.modal-hidden {
     display: none;
+  }
+  &.is-full {
   }
 }
 .modal {
@@ -954,6 +1020,10 @@ MODAL POPUP
     .count{
       color:$navy-300;
     }
+  }
+  .modal-content {
+    margin: 0 0 20px;
+    padding: 0 0 20px;
   }
   .message-box {
     margin-bottom: 24px;
@@ -1102,7 +1172,13 @@ MODAL POPUP
     }
   } //.modal-banner
 
-
+  .datamarket-pay.mydata-pay {
+    border: 1px solid $gray-60;
+    border-radius: 16px;
+    .pay-items {
+      padding: 15px;
+    }
+  }
   .coupon-box {
     padding: 8px 0 20px;
     &:has(.item:nth-child(4)) {
@@ -1629,6 +1705,14 @@ MODAL POPUP
           text-align: left;
           word-break: break-word;
         }
+      }
+    }
+    .info-col-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      .info {
+        margin: 0;
       }
     }
     .desc {
@@ -2371,9 +2455,11 @@ TOAST POPUP
   
   .pop-modal.is-full {
     .modal {
+      max-height: 100%;
       height: 100%;
       border-radius: 0;
-
+      .modal-content {
+      }
       & >.button-box-medium,
       & >.button-box-large {
         margin-top: auto;

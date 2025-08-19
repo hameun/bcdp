@@ -233,8 +233,6 @@ function fn_tabs(){
 /** 네비게이션 */
 function ui_navi(){
     const foldBtn = aside.querySelector('.icon-menufold');
-    if (!foldBtn) return false;
-
     foldBtn.addEventListener('click', function(){
         aside.classList.toggle('is-fold');
     });
@@ -251,23 +249,30 @@ function ui_navi(){
 
     const mypageBtn = aside.querySelector('.icon-mypage');
     const mypageMenu = aside.querySelector('.mypage-menu');
-    mypageBtn.addEventListener('mouseover', function(){
-        mypageMenu.classList.add('is-open');
-    });
-    mypageMenu.addEventListener('mouseleave', function(){
-        mypageMenu.classList.remove('is-open');
-    });
+    if (mypageBtn) {
+        mypageBtn.addEventListener('mouseover', function(){
+            mypageMenu.classList.add('is-open');
+        });
+        mypageMenu.addEventListener('mouseleave', function(){
+            mypageMenu.classList.remove('is-open');
+        });
+    }
 
     const historyBtn = aside.querySelector('.icon-history');
     const historyModal = document.getElementById('modalHistory');
-    historyBtn.addEventListener('mouseover', function(){
-        historyModal.classList.remove('modal-hidden');
-    });
+    if (historyBtn) {
+        historyBtn.addEventListener('mouseover', function(){
+            historyModal.classList.remove('modal-hidden');
+        });
+    }
+
     const historyModalCloseBtn = historyModal.querySelector('.modal-close');
-    historyModalCloseBtn.addEventListener('click', function(){
-        // fn_modalPopClose(historyModal);
-        historyModal.classList.add('modal-hidden');
-    });
+    if (historyModalCloseBtn) {
+        historyModalCloseBtn.addEventListener('click', function(){
+            // fn_modalPopClose(historyModal);
+            historyModal.classList.add('modal-hidden');
+        });
+    }
 }
 
 /** 백그라운드 적용 */
