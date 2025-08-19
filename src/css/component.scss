@@ -124,6 +124,8 @@
 
 .icon-alram {@include set-icon(24px, 24px, svg-icon(alram));}
 .on .icon-alram {background-image: url(svg-icon(alram-on, $primary));}
+.icon-new{@include set-icon(24px, 24px, $icon-new);}
+.icon-file{@include set-icon(24px, 24px, $icon-file);}
 @media screen and (max-width: 767px) {
   .icon-alram {@include set-icon(16px, 16px, svg-icon(alram-s));}
 .on .icon-alram {background-image: url(svg-icon(alram-s-on, $primary));}

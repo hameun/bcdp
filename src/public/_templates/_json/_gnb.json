@@ -689,31 +689,26 @@
         "group": "공지사항",
         "name": "목록",
         "dep" : 0,
-        "href": "UG0201",
+        "href": "UG0301",
         "date": "작업예정"
       },
       {
-        "name": "상세",
-        "dep" : 1,
-        "href": "",
-        "date": "작업예정"
-      },
-      {
-        "name": "검색결과 없음",
-        "dep" : 1,
-        "href": "",
+        "name": "[모달]",
+        "dep" : 2, 
+        "href": "UG0301M",
+        "text": [],
         "date": "작업예정"
       },
       {
         "name": "FAQ ",
         "dep" : 0,
-        "href": "UG0301",
+        "href": "UG0401",
         "date": "작업예정"
       },
       {
-        "name": "Q&A ",
+        "name": "데이터파트너 신청 ",
         "dep" : 0,
-        "href": "UG034",
+        "href": "UG0503",
         "date": "작업예정"
       }
     ]},
