@@ -3820,8 +3820,58 @@ page : page-polio
   .contents-summary{
     margin-top:60px;
     margin-bottom:12px;
+    gap:12px;
+    .copy{
+      margin-left:auto;
+      font-weight: 500;
+      color:$gray-500;
+    }
+    .link{
+      padding-right: 26px;
+      @include text-body(1,'m',$navy-400);
+      background: url(svg-icon(arrow, $navy-400)) no-repeat right center;
+      background-size: 24px; 
+    }
   }
 }
+.faq-contents{
+    margin-top:60px;
+    
+    .accordion{
+      margin-top:20px;
+      max-width: 100%;
+      .bedge-notice{
+        padding:3px 6px;
+        border-radius: 4px;
+        border:1px solid $gray-100;
+        font-size:12px;
+        font-weight: 500;
+        color:$gray-700;
+      }
+      .title{
+        margin-top:8px;
+        font-size:18px; 
+        font-weight: 600;
+        color:$gray-700;
+        strong {
+          color: #5957E3;
+        }
+      }
+      ul .accordion-item{
+        .accordion-header button{
+          top:36px;
+        }
+        .accordion-info{
+          padding-top:20px;
+          font-weight: 400;
+          font-size: 16px;
+          color:$gray-500;
+          border-top:1px solid $gray-60;
+        }
+      }
+      
+    }
+  }
 .notice-list{
   ul{
     display:grid;
@@ -3931,11 +3981,81 @@ page : page-polio
   .bottom-box{
     .button-q{flex-basis:200px;}
   }
-
-
 }
 
+/***********
+footer
+***********/
+.footer-contents{
+  margin-top:60px;
+  .tab-type{
+    .tabs{
+      display:inline-flex;
+      gap:24px;
+    }
+  }
 
+  .tab-footer-view{
+    margin-top:40px;
+  }
+
+  //개인정보처리방침
+  .security-box{
+    margin-top:40px;
+    margin-bottom:80px;
+    padding:0;
+    .title2{
+      display:flex;
+      margin-bottom:20px;
+    }
+    .description+.description,
+    .depth-1+.description{margin-top:8px;}
+    h2{margin-top:40px;}
+    .title4{
+      margin-bottom:16px;
+      font-size:20px;
+      font-weight: 700;
+    }
+    .depth-2{
+      margin-top:8px;
+      >li{
+        padding-left:22px;
+        text-indent: -15px;
+      }
+      .depth-2-descript{text-indent: 0; padding-left: 4px;}
+      .underline{display:initial; font-size:14px; font-weight: 500;}
+      .underline:before{bottom:-2px;}
+    }
+    .table{
+      margin:20px 0;
+      overflow-x: auto;
+      td{
+        color:$gray-900;
+      }
+    }
+  }
+}
+
+// 통합검색
+.modal-search{
+  padding-top:88px;
+  align-items: flex-start;
+  .modal{
+    border: 2px solid #fff;
+    box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.08);
+    background: #FFFFFFCC;
+    max-width: 1000px;
+    margin:0 auto;
+    flex:auto;
+    .modal-close{
+      right:20px;
+      width:28px;
+      height:28px;
+      background-size:24px auto;
+    }
+
+  }
+}
 
 
 /***********
@@ -3983,7 +4103,8 @@ MEDIA QUERY
       }
     }
   }
-  .page-polio .step-content .chip-box{width:100%;      }
+  .page-polio .step-content .chip-box{width:100%;}
+  .footer-contents .tab-type{padding:0 24px; margin:0 -24px;   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .analysis-nav .area-list.is-open,
@@ -4471,4 +4592,11 @@ MEDIA QUERY
     .air-datepicker-body--cells.-years-{grid-template-columns:repeat(3, 1fr)}
   }
   .skeleton-box .ckeleton-chk .skeleton{width:calc((100% - 8px) / 2);}
+  .footer-contents{
+    margin-top:32px;
+    .tab-footer-view{margin-top:32px;}
+  }
+  .footer-contents .security-box{margin-top:32px;}
+  .footer-contents .security-box .title2{margin-bottom:16px; font-size:20px;}
+  .footer-contents .security-box .title4{margin-top:32px; font-size:18px;}
 } // end @media screen and (max-width: 767px)

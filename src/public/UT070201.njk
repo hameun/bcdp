@@ -1,0 +1,27 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-footer">
+    <h1 class="headline1">이용약관</h1>
+    <p class="head-guidetext">금융 빅데이터 플랫폼 이용약관을 확인할 수 있어요.</p>
+
+    <div class="footer-contents">
+        <div class="tab-box tab-type">
+            <ul class="tabs">
+                <li class="is-on"><a href="#tabContent1">금융 빅데이터 플랫폼 이용약관</a></li>
+                <li><a href="#tabContent2">AI 이용약관</a></li>
+                <li><a href="#tabContent3">데이터파트너 이용약관</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-footer-view">
+            <!-- dummy -->
+            <div style="background:#aaa; height: 300px; text-align:center;">
+                관리자 호출 영역<br>
+                (기준 데이터 셋 > 데이터 상품안내, 필수값)
+            </div>
+            <!-- //dummy -->
+        </div>
+    </div>
+</div>
+{%- endblock %}
