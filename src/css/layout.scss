@@ -90,7 +90,11 @@ body.is-fixed {
   padding: 100px 0 80px;
   margin: 0 auto;
   .head-guidetext {
+    margin-bottom: 60px;
     @include text-body(0,'r',$gray-500);
+  }
+  & >.button-box-large {
+    margin-top: 60px;
   }
 }
 .bottom-box {

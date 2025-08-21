@@ -1,0 +1,42 @@
+<div class="content page-mypage">
+    <h1 class="headline1">마이페이지</h1>
+    <p class="head-guidetext">필요한 모든 관리가, 이 한 곳에.</p>
+    <div class="head-float-menu">
+        <div class="switch-box">
+            <ul class="switch">
+                <li class="is-on"><a href="#">MY PAGE</a></li>
+                <li><a href="#">MY COMPANY </a></li> 
+            </ul>
+        </div>
+    </div>
+
+    <div class="partner-header">
+        <div class="info-box">
+            <p class="name">매그넘빈트(김*진님)</p>
+            <p class="email">ky******@mvint.co.kr</p>
+        </div>
+        <div class="link-box">
+            <a href="#" class="link">장바구니</a>
+            <a href="#" class="link">쿠폰</a>
+            <a href="#" class="link">문의하기</a>
+        </div>
+    </div>
+
+    <div class="myhistory-contents">
+        <div class="tab-box">
+            <ul class="tabs">
+                <li class="is-on"><a href="#tabContent1">구매 내역</a></li>
+                <li><a href="#tabContent2">문의 내역</a></li>
+            </ul>
+        </div>
+
+        <!-- [마이페이지 > 구매 내역] -->
+        {{ include( "_html/_UT050101.njk" ) | tabIndent(2) }}
+        <!-- //[마이페이지 > 구매 내역] -->
+
+        <!-- [마이페이지 > 문의 내역 -->
+        {{ include( "_html/_UT050102.njk" ) | tabIndent(2) }}
+        <!-- //[마이페이지 > 문의 내역 -->
+    </div>
+</div>
+<!-- //.content .page-mypage -->

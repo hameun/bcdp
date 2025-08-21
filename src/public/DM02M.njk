@@ -275,6 +275,25 @@
 </div>
 <!-- //데이터선택 -->
 
+<!-- [2025.08.20] 등록된 데이터 없는 경우 -->
+<div class="pop-modal modal-hidden" id="dataSelectModal2">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">데이터 선택</div>
+        <!-- 데이터 리스트 -->
+        <div class="modal-price-cart">
+            <div class="data-none">
+                <p class="message">등록된 데이터가 없어요</p>
+            </div>
+        </div>
+        <!-- //데이터 리스트 -->
+        <div class="button-box-medium">
+            <button class="button-p" type="button">닫기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //[2025.08.20] 등록된 데이터 없는 경우 -->
+
 <!-- 사용기간선택 -->
 <div class="pop-modal modal-hidden" id="dateSelectModal">
     <div class="modal modal-medium" tabindex="0">
@@ -376,7 +395,8 @@
         <a href="#" class="button-q" onclick="fn_modalPopOpen('dataInfoModal_4');return false;">[세부정보] > 저작자표시-동일조건변경허락(CC_BY_SA)</a>
         <a href="#" class="button-q" onclick="fn_modalPopOpen('dataInfoModal_5');return false;">[세부정보] > 저작자표시-비영리-동일조건변경허락(CC_BY_NC_SA)</a>
         <a href="#" class="button-q" onclick="fn_modalPopOpen('dataInfoModal_6');return false;">[세부정보] > 저작자표시-비영리-변경금지(CC_BY_NC_ND)</a>
-        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataSelectModal');return false;">[데이터 선택]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataSelectModal', true);return false;">[데이터 선택]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('dataSelectModal2', true);return false;">[데이터 선택] > 등록된 데이터 없는 경우</a><!-- [2025.08.20] 데이터선택 내역없을 때 -->
         <a href="#" class="button-p" onclick="fn_modalPopOpen('dateSelectModal');return false;">[사용기간 선택]</a>
         <a href="#" class="button-p" onclick="fn_modalPopOpen('modal1');return false;">[바로 구매하기] 비로그인 Case</a>
         <a href="#" class="button-p" onclick="fn_modalPopOpen('modal2');return false;">[바로 구매하기] 데이터 데이터 미선택 Case</a>

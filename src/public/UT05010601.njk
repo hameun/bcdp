@@ -1,0 +1,192 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-mypage">
+    <h1 class="headline1">쿠폰</h1>
+    <p class="head-guidetext">사용 가능한 쿠폰이 여기에 모여있어요</p>
+
+    <!-- [마이페이지 > 문의 내역 -->
+    <div class="mycoupon-contents">
+        <div class="tab-box">
+            <ul class="tabs-sub-small">
+                <li class="is-on"><a href="#tabContent1">보유쿠폰 (11장)</a></li>
+                <li><a href="#tabContent2">쿠폰함 (20장)</a></li>
+            </ul>
+        </div>
+
+        <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">
+            <div class="result-none">
+                <p class="message">보유한 쿠폰이 없어요</p>
+                <p class="message-sub">쿠폰함에서 다운로드 받을 수 있는 쿠폰을 찾아보세요.</p>
+            </div>
+
+            <div class="coupon-box">
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">100% 할인</i></p>
+                        <span class="flag flag-primary">최대 할인 쿠폰</span>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">10% 할인</i></p>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">5% 할인 (최대 20,000원)</i></p>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">10% 할인 (최대 20,000원)</i></p>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                        <p class="label"><i class="txt">10% 할인 (최대 20,000원)</i></p>
+                        </label>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">100% 할인</i></p>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+            <div class="all-coupon-download">
+                <div class="button-box-small">
+                    <button type="button" class="button-t"><i class="icon-download icon-left"></i>전체 다운로드</button>
+                </div>
+            </div>
+            <!-- 퍼블리싱 확인용 -->
+            <script>
+                $(function(){
+                    $('.all-coupon-download').on('click', 'button', function(){
+                        fn_toast('쿠폰을 다운받았어요.', 1);
+                    });
+                });
+            </script>
+            <!-- //퍼블리싱 확인용 -->
+
+            <div class="result-none">
+                <p class="message">다운로드 받을 수 있는 쿠폰이 없어요</p>
+                <p class="message-sub">현재 진행 중인 쿠폰 이벤트가 없어요. </p>
+            </div>
+
+            <div class="coupon-box">
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">100% 할인</i></p>
+                        <span class="flag flag-primary">최대 할인 쿠폰</span>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                    <button type="button" class="button-xsmall"><i class="icon-download icon-left"></i>다운로드</button>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">10% 할인</i></p>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                    <button type="button" class="button-xsmall"><i class="icon-download icon-left"></i>다운로드</button>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">5% 할인 (최대 20,000원)</i></p>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                    <button type="button" class="button-xsmall"><i class="icon-download icon-left"></i>다운로드</button>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">10% 할인 (최대 20,000원)</i></p>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                    <button type="button" class="button-xsmall"><i class="icon-download icon-left"></i>다운로드</button>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                        <p class="label"><i class="txt">10% 할인 (최대 20,000원)</i></p>
+                        </label>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                    <button type="button" class="button-xsmall"><i class="icon-download icon-left"></i>다운로드</button>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <p class="label"><i class="txt">100% 할인</i></p>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                    <button type="button" class="button-xsmall"><i class="icon-download icon-left"></i>다운로드</button>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <!-- //[마이페이지 > 문의 내역 -->
+</div>
+<!-- //.content .page-mypage -->
+{%- endblock %}

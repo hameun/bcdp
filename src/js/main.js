@@ -370,6 +370,7 @@ function fn_iptClear(){
 
     iptClear.forEach(function(btn){
         btn.addEventListener('click', function(e){
+            e.preventDefault();
             let input = e.target.closest('.util-box').previousElementSibling;
             input.value = "";
             input.focus();
@@ -722,6 +723,8 @@ function fn_toast(_message, _type){
 
     if (_type === 1) {
         message.classList.add('pass');
+    } else if (_type === 2) {
+        message.classList.add('error');
     }
 
     setTimeout(function(){

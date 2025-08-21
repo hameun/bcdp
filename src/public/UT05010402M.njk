@@ -1,0 +1,183 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT05010402.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<div class="pop-modal modal-hidden" id="modalPhoneNum">
+    <div class="modal modal-medium2" tabindex="0">
+        <div class="modal-header">휴대폰번호 변경하기</div>
+        <div class="modal-content">
+            <div class="formbox">
+                <form>
+                    <label for="" class="input-title">휴대폰 번호</label>
+                    <div class="input-box">
+		                <input type="text" placeholder="휴대폰번호 입력" name="phone">
+		                <span class="util-box button-box-xsmall">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                    <a href="#" type="button" class="button-t disabled">인증번호 전송</a>
+		                </span>
+		            </div>
+                    <div class="input-box">
+		                <input type="text" placeholder="휴대폰번호 입력" name="phone" value="01012345678">
+		                <span class="util-box button-box-xsmall">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                    <a href="#" type="button" class="button-t">인증번호 전송</a>
+		                </span>
+		            </div>
+                    <div class="input-box">
+		                <input type="text" placeholder="휴대폰번호 입력" name="phone1" value="01012345678">
+		                <span class="util-box button-box-xsmall">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                    <a href="#" type="button" class="button-t">재전송</a>
+		                </span>
+		            </div>
+                    <div class="input-box">
+		                <input type="text" placeholder="휴대폰번호 입력" name="phone2" disabled="" value="01012345678">
+		                <span class="util-box button-box-xsmall">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                    <a href="#" type="button" class="button-t disabled">재전송</a>
+		                </span>
+		            </div>
+
+                    <label for="passnum" class="input-title">인증번호</label>
+                    <div class="input-box">
+		                <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6">
+		                <span class="util-box">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                </span>
+		            </div>
+                    <div class="input-box">
+		                <input type="text" placeholder="숫자 6자리 입력" name="passnum" value="123456" maxlength="6">
+		                <span class="util-box">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                    <strong class="ipt-count">02:59</strong>
+		                </span>
+		            </div>
+                    <div class="input-box is-error">
+		                <input type="text" placeholder="숫자 6자리 입력" name="passnum" value="123456" maxlength="6">
+		                <span class="util-box">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                    <strong class="ipt-count">02:59</strong>
+		                </span>
+		            </div>
+                    <div class="input-box">
+		                <input type="text" placeholder="숫자 6자리 입력" name="passnum" value="123456" maxlength="6" disabled="">
+		                <span class="util-box">
+		                    <a href="#" class="ipt-clear">내용 지우기</a>
+		                </span>
+		            </div>
+                    <p class="input-help is-error">인증번호를 입력해주세요.</p>
+                    <p class="input-help is-error">인증번호 6자리를 입력해주세요.</p>
+                    <p class="input-help is-error">인증시간이 초과했습니다. 다시 전송 후 진행해주세요.</p>
+                </form>
+            </div>    
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">취소하기</button>
+            <button class="button-p" type="button">변경하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modalPassword">
+    <div class="modal modal-medium2" tabindex="0">
+        <div class="modal-header">비밀번호 변경하기</div>
+        <div class="modal-content">
+            <div class="formbox">
+                <form>
+                    <label for="" class="input-title">기존 비밀번호</label>
+                    <div class="input-box">
+		                <input type="password" placeholder="기존 비밀번호 입력" name="password">
+		                <span class="util-box">
+		                    <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+		                </span>
+		            </div>
+                    <div class="input-box is-error">
+		                <input type="password" placeholder="기존 비밀번호 입력" name="password">
+		                <span class="util-box">
+		                    <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+		                </span>
+		            </div>
+                    <p class="input-help is-error">기존 비밀번호가 올바르지 않아요.</p>
+
+                    <label for="" class="input-title">새 비밀번호</label>
+                    <div class="input-box">
+		                <input type="password" placeholder="새 비밀번호 입력" name="password">
+		                <span class="util-box">
+		                    <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+		                </span>
+		            </div>
+                    <p class="input-help">비밀번호는 영문/숫자/특수문자를 조합하여 8자 이상으로 입력해주세요.</p>
+                    <p class="input-help is-error">비밀번호는 영문/숫자/특수문자를 조합하여 8자 이상으로 입력해주세요.</p>
+                    <p class="input-help is-error">비밀번호를 입력해주세요.</p>
+
+                    <label for="" class="input-title">새 비밀번호 확인</label>
+                    <div class="input-box">
+		                <input type="password" placeholder="새 비밀번호 재입력" name="password">
+		                <span class="util-box">
+		                    <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+		                </span>
+		            </div>
+                    <p class="input-help is-error">비밀번호를 한번 더 입력해주세요.</p>
+                    <p class="input-help is-error">입력하신 비밀번호와 일치하지 않습니다.</p>
+                </form>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">취소하기</button>
+            <button class="button-p" type="button">변경하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+
+
+<div class="pop-modal modal-hidden" id="modal_0">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>비밀번호가 일치하지 않습니다.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>관리자가 기입한 반려 사유 출력</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 파트너로 등록된 상태에서는 기업 변경이 불가합니다. 관리자에게 문의해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_0');return false;">개인정보수정 > 비밀번호 불일치</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">(반려) 기업명</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_2');return false;">기업명 [변경하기] > 데이터파트너로 등록 되어 있을 경우</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalPhoneNum');return false;">휴대폰번호 변경하기</a>
+        <a href="#" class="button-q" onclick="fn_toast('인증번호를 발송햇어요.',1);return false;">휴대폰번호 변경하기 > [인증번호 받기] 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalPassword');return false;">비밀번호 변경하기</a>
+        <a href="#" class="button-q" onclick="fn_toast('비밀번호 변경에 실패했어요.',2);return false;">비밀번호 변경하기 > [변경하기] > 기존 비밀번호 불일치==비밀번호 변경실패 토스트팝업</a>
+        <a href="#" class="button-q" onclick="fn_toast('휴대폰번호가 변경되었어요.',1);return false;">휴대폰번호 변경하기 > [변경하기] 토스트팝업</a>
+        <a href="#" class="button-q" onclick="fn_toast('비밀번호가 변경 되었어요.',1);return false;">비밀번호 변경하기 > [변경하기] 토스트팝업</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

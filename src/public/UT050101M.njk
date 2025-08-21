@@ -1,42 +1,43 @@
 {%- extends "_templates/_layout.njk" -%}
 
 {% block content %}
-{{ include( "_html/_UT050101.njk" ) }}
+{{ include( "_html/_UT0501.njk" ) }}
 {%- endblock %}
  
 {% block modal %}
-
 <!-- 카드결제 Case -->
 <div class="pop-modal modal-hidden" id="modalDataInfo1">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">결제 상세</div>
-        <div class="modal-data-info">
-            <div class="pay-details">
-                <p class="title">롯데 신용카드(2192)</p>
-                <dl class="info">
-                    <dt>승인일시</dt>
-                    <dd>2025.06.01   08:52:58</dd>
-                </dl>
-                <dl class="info">
-                    <dt>승인번호</dt>
-                    <dd>33782667</dd>
-                </dl>
-                <dl class="info">
-                    <dt>결제구분</dt>
-                    <dd>일시불</dd>
-                </dl>
-                <dl class="info">
-                    <dt>원가</dt>
-                    <dd>21,154,654원</dd>
-                </dl>
-                <dl class="info">
-                    <dt>할인금액</dt>
-                    <dd>-1,154,654원</dd>
-                </dl>
-                <dl class="info">
-                    <dt>결제금액</dt>
-                    <dd>20,000,000원</dd>
-                </dl>
+        <div class="modal-content">
+            <div class="modal-data-info">
+                <div class="info-details">
+                    <p class="title">롯데 신용카드(2192)</p>
+                    <dl class="info">
+                        <dt>승인일시</dt>
+                        <dd>2025.06.01   08:52:58</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>승인번호</dt>
+                        <dd>33782667</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>결제구분</dt>
+                        <dd>일시불</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>원가</dt>
+                        <dd>21,154,654원</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>할인금액</dt>
+                        <dd>-1,154,654원</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>결제금액</dt>
+                        <dd>20,000,000원</dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <div class="button-box-medium">
@@ -48,39 +49,41 @@
 
 <!-- 전자계약(카드결제) Case -->
 <div class="pop-modal modal-hidden" id="modalDataInfo2">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">결제 상세</div>
-        <div class="modal-data-info">
-            <div class="pay-details">
-                <p class="title">롯데 신용카드(2192)</p>
-                <dl class="info">
-                    <dt>결제방식</dt>
-                    <dd>전자계약(카드결제)</dd>
-                </dl>
-                <dl class="info">
-                    <dt>승인일시</dt>
-                    <dd>2025.06.01   08:52:58</dd>
-                </dl>
-                <dl class="info">
-                    <dt>승인번호</dt>
-                    <dd>33782667</dd>
-                </dl>
-                <dl class="info">
-                    <dt>결제구분</dt>
-                    <dd>일시불</dd>
-                </dl>
-                <dl class="info">
-                    <dt>원가</dt>
-                    <dd>21,154,654원</dd>
-                </dl>
-                <dl class="info">
-                    <dt>할인금액</dt>
-                    <dd>-1,154,654원</dd>
-                </dl>
-                <dl class="info">
-                    <dt>결제금액</dt>
-                    <dd>20,000,000원</dd>
-                </dl>
+        <div class="modal-content">
+            <div class="modal-data-info">
+                <div class="info-details">
+                    <p class="title">롯데 신용카드(2192)</p>
+                    <dl class="info">
+                        <dt>결제방식</dt>
+                        <dd>전자계약(카드결제)</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>승인일시</dt>
+                        <dd>2025.06.01   08:52:58</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>승인번호</dt>
+                        <dd>33782667</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>결제구분</dt>
+                        <dd>일시불</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>원가</dt>
+                        <dd>21,154,654원</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>할인금액</dt>
+                        <dd>-1,154,654원</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>결제금액</dt>
+                        <dd>20,000,000원</dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <div class="button-box-medium">
@@ -92,27 +95,29 @@
 
 <!-- 전자계약(세금계산서) Case -->
 <div class="pop-modal modal-hidden" id="modalDataInfo3">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">결제 상세</div>
-        <div class="modal-data-info">
-            <div class="pay-details">
-                <p class="title">세금계산서</p>
-                <dl class="info">
-                    <dt>결제방식</dt>
-                    <dd>전자계약(카드결제)</dd>
-                </dl>
-                <dl class="info">
-                    <dt>원가</dt>
-                    <dd>21,154,654원</dd>
-                </dl>
-                <dl class="info">
-                    <dt>할인금액</dt>
-                    <dd>-1,154,654원</dd>
-                </dl>
-                <dl class="info">
-                    <dt>결제금액</dt>
-                    <dd>20,000,000원</dd>
-                </dl>
+        <div class="modal-content">
+            <div class="modal-data-info">
+                <div class="info-details">
+                    <p class="title">세금계산서</p>
+                    <dl class="info">
+                        <dt>결제방식</dt>
+                        <dd>전자계약(카드결제)</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>원가</dt>
+                        <dd>21,154,654원</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>할인금액</dt>
+                        <dd>-1,154,654원</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>결제금액</dt>
+                        <dd>20,000,000원</dd>
+                    </dl>
+                </div>
             </div>
         </div>
         <div class="button-box-medium">
@@ -123,9 +128,9 @@
 </div>
 
 <div class="pop-modal modal-hidden" id="modalPublicInfo1">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">발행 정보 입력</div>
-        <div class="modal-public-info">
+        <div class="modal-content">
             <div class="formbox">
                 <form>
                     <label for="publicEmail" class="input-title">세금계산서 발행 이메일<span class="required">(필수)</span></label>
@@ -135,7 +140,7 @@
 
                     <label for="publicDate" class="input-title">세금계산서 희망 발행일</label>
                     <p class="guide-text">구매일 기준 3개월 후 말일까지 선택 가능</p>
-                    <div class="input-box-date">
+                    <div class="input-box-col">
                         <div class="input-box">
                             <select id="publicYear">
                                 <option value="2025">2025년</option>
@@ -202,9 +207,9 @@
 </div>
 
 <div class="pop-modal modal-hidden" id="modalPublicInfo2">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">발행 정보 확인</div>
-        <div class="modal-public-info">
+        <div class="modal-content">
             <div class="formbox">
                 <form>
                     <label for="publicEmail" class="input-title">세금계산서 발행 이메일<span class="required">(필수)</span></label>
@@ -214,7 +219,7 @@
 
                     <label for="publicDate" class="input-title">세금계산서 희망 발행일</label>
                     <p class="guide-text">구매일 기준 3개월 후 말일까지 선택 가능</p>
-                    <div class="input-box-date">
+                    <div class="input-box-col">
                         <div class="input-box">
                             <select id="publicYear" disabled>
                                 <option value="2025">2025년</option>
@@ -247,7 +252,7 @@
 </div>
 
 <div class="pop-modal modal-hidden" id="modalRequireAPI">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">OPEN API 사용 요청</div>
         <div class="modal-content">
             <div class="modal-data-info">
@@ -275,6 +280,7 @@
                         <ul class="list-bul">
                             <li><i class="mark">•</i>위치기반 서비스를 사용하고자 할 경우 “위치정보의 보호 및 이용 등에 관한 법률”에 따라 방송통신위원회 “위치정보서비스 허가”를 받거나 “위치기반 서비스사업 신고”를 하여야합니다. 이에 해당하는 경우에는 첨부파일에 “위치기반서비스 사업자신고필증”을 첨부해주시기 바랍니다.</li>
                         </ul>
+                
                         <div class="attach-file">
                             <div class="file-drop">
                                 <p class="message">파일을 선택하거나 이곳에 끌어다 놓으세요</p>
@@ -283,65 +289,67 @@
                                     <label class="button-t file-attach">파일 찾기<input type="file"></label>
                                 </div>
                             </div>
-                            <div class="file-uploaded" style="display: none;">
+                            <div class="file-uploaded">
                                 <i class="icon-file-pdf">pdf 파일</i>
                                 <p class="file-title">사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증.pdf</p>
                                 <p class="file-info">
-                                    <span class="byte">94 KB of 94 KB</span>
+                                    <span class="byte"><i>94</i> KB of 94 KB</span>
+                                    <span class="stat"><i class="icon-stat-loading"></i>Uploading...</span>
                                     <span class="stat"><i class="icon-stat-complete"></i>Completed</span>
                                 </p>
+                                <p class="file-info-statbar"><span class="bar" style="width: 60%">60%</span></p>
                                 <button type="button" class="icon-waste">삭제</button>
                             </div>
                         </div>
                         
-                    <!-- 퍼블리싱 확인 -->
-                    <script>
-                    $(function(){
-                        fileAttatch();
-                    });
-
-                    function fileAttatch () {
-                        const dropArea = $('.file-drop');
-
-                        const dropedArea = $('.file-uploaded');
-                        const dropedFileTitle = dropedArea.find('.file-title');
-                        const dropedFileDel = dropedArea.find('.icon-waste');
-
-                        
-                        const attachFileBtb = dropArea.find('input[type="file"]');
-                        attachFileBtb.on('change', function(){
-                            dropArea.hide();
-                            dropedFileTitle.text(this.value);
-                            dropedArea.show();
+                        <!-- 퍼블리싱 확인 -->
+                        <script>
+                        $(function(){
+                            fileAttatch();
                         });
 
+                        function fileAttatch () {
+                            const dropArea = $('.file-drop');
 
-                        dropArea.on('dragover', function(e){
-                            e.stopPropagation();
-                            e.preventDefault();
-                        });
+                            const dropedArea = $('.file-uploaded');
+                            const dropedFileTitle = dropedArea.find('.file-title');
+                            const dropedFileDel = dropedArea.find('.icon-waste');
 
-                        dropArea.on('drop', function(e) {
-                            e.preventDefault();
-
-                            var files = e.originalEvent.dataTransfer.files;
-                            if (files.length > 1) {
-                                fn_modalPopOpen('modal_5')
-                                return false;
-                            }
                             
-                            dropArea.hide();
-                            dropedFileTitle.text(files[0].name);
-                            dropedArea.show();
-                        });
+                            const attachFileBtb = dropArea.find('input[type="file"]');
+                            attachFileBtb.on('change', function(){
+                                dropArea.hide();
+                                dropedFileTitle.text(this.value);
+                                dropedArea.show();
+                            });
 
-                        dropedFileDel.on('click', function(){
-                            dropedArea.hide();
-                            dropArea.show();
-                        });
-                    }
-                    </script>
-                    <!-- //퍼블리싱 확인 -->
+
+                            dropArea.on('dragover', function(e){
+                                e.stopPropagation();
+                                e.preventDefault();
+                            });
+
+                            dropArea.on('drop', function(e) {
+                                e.preventDefault();
+
+                                var files = e.originalEvent.dataTransfer.files;
+                                if (files.length > 1) {
+                                    fn_modalPopOpen('modal_5')
+                                    return false;
+                                }
+                                
+                                dropArea.hide();
+                                dropedFileTitle.text(files[0].name);
+                                dropedArea.show();
+                            });
+
+                            dropedFileDel.on('click', function(){
+                                dropedArea.hide();
+                                dropArea.show();
+                            });
+                        }
+                        </script>
+                        <!-- //퍼블리싱 확인 -->
                     </div>
                     <!-- //위치기반 서비스 사용 -->
 
@@ -361,11 +369,11 @@
 </div>
 
 <div class="pop-modal modal-hidden" id="modalInfoAPI">
-    <div class="modal modal-medium" tabindex="0">
+    <div class="modal modal-medium2" tabindex="0">
         <div class="modal-header">OPEN API 정보</div>
         <div class="modal-content">
             <div class="modal-data-info">
-                <div class="info-api">
+                <div class="info-details">
                     <dl class="info">
                         <dt>상태</dt>
                         <dd>사용중</dd>
@@ -431,7 +439,7 @@
             </div>
 
             <p class="title">취소 정보</p>
-            <div class="datamarket-pay mydata-pay">
+            <div class="datamarket-pay payment-history">
                 <div class="pay-items is-fold">
                     <div class="payment-number">
                         <div class="number-order">
@@ -552,7 +560,7 @@
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header"><button type="button" class="modal-close">닫기</button></div>
         <div class="modal-content">
-            <div class="datamarket-pay mydata-pay">
+            <div class="datamarket-pay payment-history">
                 <div class="pay-items">
                     <div class="payment-number">
                         <div class="number-order">

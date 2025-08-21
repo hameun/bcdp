@@ -1,0 +1,35 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-mypage">
+    <h1 class="headline1">개인정보수정</h1>
+    <p class="head-guidetext">내 정보, 직접 수정하고 관리하세요.</p>
+
+    <div class="myinfo-contents">
+        <h2 class="headline1">정보를 안전하게 보호하기 위해 <br>비밀번호를 다시 한 번 입력해주세요.</h2>
+        <div class="formbox">
+        <form>
+            <label for="password" class="input-title">비밀번호</label>
+            <div class="input-box">
+                <input type="password" placeholder="비밀번호 입력" name="password">
+                <span class="util-box">
+                    <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+                </span>
+            </div>
+            <div class="input-box is-error">
+                <input type="password" placeholder="비밀번호 입력" name="password">
+                <span class="util-box">
+                    <a href="#" type="button" class="ipt-mask"><i>비밀번호 보기</i></a>
+                </span>
+            </div>
+            <p class="input-help is-error">비밀번호를 입력해주세요.</p>
+        </form>
+        </div>
+    </div>
+</div>
+
+<div class="button-box-large">
+    <button type="button" class="button-p">확인</button>
+</div>
+<!-- //.content .page-mypage -->
+{%- endblock %}

@@ -1,5 +1,91 @@
 {%- extends "_templates/_layout.njk" -%}
 
 {% block content %}
-{{ include( "_html/_UT050102.njk" ) }}
+{{ include( "_html/_UT0501.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<div class="pop-modal modal-hidden" id="modalMyQuestion1">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-content">
+    <div class="myquestion">
+        <div class="myquestion-item">
+            <a href="#" class="item-header">
+                <span class="type">상품문의</span>
+                <p class="title">자료범위를 알려주세요.<span class="flag-stat2 stat-none">답변대기</span></p>
+            </a>
+            <div class="item-body">
+                <div class="question">
+                    <div class="context">
+                        <p>소상원인 지원 어플을 만들 예정입니다.
+                            특정 지역의 가맹점별로 업종, 주소, 주중, 주말 매출 확인이 가능하나요?
+                            불가능하다면 특정 지역의 업종별로 면적당 매출액도 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modalMyQuestion2">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-content">
+    <div class="myquestion">
+        <div class="myquestion-item">
+            <a href="#" class="item-header">
+                <span class="type">상품문의</span>
+                <p class="title">자료범위를 알려주세요.<span class="flag-stat2 stat-complete">답변완료</span></p>
+            </a>
+            <div class="item-body">
+                <div class="question">
+                    <div class="context">
+                        <p>소상원인 지원 어플을 만들 예정입니다.
+                            특정 지역의 가맹점별로 업종, 주소, 주중, 주말 매출 확인이 가능하나요?
+                            불가능하다면 특정 지역의 업종별로 면적당 매출액도 가능합니다.</p>
+                    </div>
+                </div>
+                <div class="answer">
+                    <div class="author">
+                        <p class="title">금융빅데이터플랫폼 담당자</p>
+                        <p class="info"><span class="date">2025.07.08</span></p>
+                    </div>
+                    <div class="context">
+                        <p>안녕하세요, 금융빅데이터플랫폼 담당자입니다.
+                            특정 지역의 가맹점별 업종, 주소, 주중/주말 매출정보 제공 가능하며,
+                            가맹점별 매출 정보는 bigdata@bccard.com 문의를 통해 구매하실 수 있습니다.
+                            감사합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modalMyQuestion1',true);return false;">모바일 [문의내역 상세보기] 답변대기</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modalMyQuestion2',true);return false;">모바일 [문의내역 상세보기] 답변완료</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+
+<!-- 퍼블리싱 확인용 -->
+<script>
+    $(function(){
+        document.querySelectorAll('.tabs li')[1].classList.add('is-on');
+        document.querySelectorAll('.tabs li')[0].classList.remove('is-on');
+        document.getElementById('tabContent1').style.display = "none";
+        document.getElementById('tabContent2').style.display = "block";
+        $('.tab-box li:nth-child(2) a').on('click', function(){
+            console.log(1);
+        });
+    });
+</script>
+<!-- //퍼블리싱 확인용 -->
 {%- endblock %}

@@ -95,6 +95,7 @@
 .icon-extlink {@include set-icon(20px, 20px, $icon-external-link, 20px);}
 .icon-home {@include set-icon(48px, 48px, $icon-home, 36px);} 
 .icon-menufold {@include set-icon(48px, 48px, $icon-fold, 20px);}
+.icon-menuclose {@include set-icon(48px, 48px, svg-icon(close-16, $gray-900), 20px);}
 .icon-aisearch {@include set-icon(48px, 48px, $icon-aisearch, 20px);}
 .icon-search {@include set-icon(48px, 48px, $icon-search, 48px);}
 .icon-history {@include set-icon(48px, 48px, $icon-history, 48px);}
@@ -102,20 +103,38 @@
 .icon-mypage {@include set-icon(48px, 48px, $icon-mypage, 48px);}
 .icon-login {@include set-icon(48px, 48px, $icon-login, 20px);}
 .icon-logout {@include set-icon(48px, 48px, $icon-logout, 20px);}
-.icon-menuclose {@include set-icon(48px, 48px, svg-icon(close-16, $gray-900), 20px);}
 
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
 .icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
-.button-s .icon-download {background: url(svg-icon(download, $primary));}
+.button-s .icon-download {background-image: url(svg-icon(download, $primary));}
+.button-xsmall .icon-download,
+.button-t .icon-download {background-image: url(svg-icon(download));}
 .icon-up {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(270deg);}
 .icon-down {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(90deg);}
 .icon-share {@include set-icon(20px, 20px, $icon-share);}
 .icon-waste {@include set-icon(20px, 20px, svg-icon(waste-bin));}
 .icon-modify {@include set-icon(20px, 20px, svg-icon(modify));}
+.icon-filter {@include set-icon(20px, 20px, svg-icon(search-filter));}
+.icon-link {@include set-icon(24px, 24px, svg-icon(chevron-right, $gray-900));}
 
+.icon-info-s {@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);}
+.icon-info-m {@include set-icon(20px, 20px, svg-icon(info-16, $gray-400), 20px);}
+.icon-info {@include set-icon(24px, 24px, svg-icon(info, $gray-400), 24px);}
+
+.icon-new{@include set-icon(24px, 24px, $icon-new);}
+.icon-file{@include set-icon(24px, 24px, $icon-file);}
 .icon-file-pdf {@include set-icon(48px, 48px, "../images/icon_file_pdf.png", 48px);}
 .icon-stat-complete {@include set-icon(10px, 10px, svg-icon(stat-complete), 10px);}
+.icon-stat-loading {
+  @include set-icon(10px, 10px, svg-icon(stat-loading), 10px);
+  animation: loadingFile 2500ms linear infinite;
+}
+@keyframes loadingFile {
+    0% { transform: rotate(0) scale(1); }
+    50% { transform: rotate(180deg) scale(0.8); }
+    100% { transform: rotate(360deg) scale(1); }
+}
 
 .icon-kakao {@include set-icon(60px, 60px, $icon-kakao); background-color: #FAE54D;}
 .icon-facebook {@include set-icon(60px, 60px, $icon-facebook); background-color: #1877F2;}
@@ -124,18 +143,10 @@
 
 .icon-alram {@include set-icon(24px, 24px, svg-icon(alram));}
 .on .icon-alram {background-image: url(svg-icon(alram-on, $primary));}
-.icon-new{@include set-icon(24px, 24px, $icon-new);}
-.icon-file{@include set-icon(24px, 24px, $icon-file);}
 @media screen and (max-width: 767px) {
   .icon-alram {@include set-icon(16px, 16px, svg-icon(alram-s));}
 .on .icon-alram {background-image: url(svg-icon(alram-s-on, $primary));}
 }
-.icon-info {@include set-icon(24px, 24px, svg-icon(info, $gray-400), 24px);}
-.icon-info-m {@include set-icon(20px, 20px, svg-icon(info-16, $gray-400), 20px);}
-.icon-info-s {@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);}
-.icon-filter {@include set-icon(20px, 20px, svg-icon(search-filter));}
-
-.icon-link {@include set-icon(24px, 24px, svg-icon(chevron-right, $gray-900));}
 
 .icon-cc {@include set-icon(20px, 20px, svg-icon(data-cc));}
 .icon-by {@include set-icon(20px, 20px, svg-icon(data-by));}
@@ -228,6 +239,12 @@
   font-size: 14px;
   font-weight: 500;
   color: $gray-900;
+  i.icon-right {
+    margin: 0 calc(-1 * 2px) 0 2px;
+  }
+  i.icon-left {
+    margin: 0 2px 0 calc(-1 * 2px);
+  }
 }
 .data-tag {
   display: inline-flex;
@@ -332,8 +349,8 @@ BUTTON
   @include set-textbutton($gray-500);
 }
 
-.flag-stat {
-  padding: 3.5px 6px;
+.flag-stat,
+.flag-stat2 {
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
@@ -349,7 +366,7 @@ BUTTON
     color: $flag-orange;
     background-color: $flag-orange-bg;
   }
-  &.stat-cancel {
+  &.stat-none {
     color: $flag-gray;
     background-color: $flag-gray-bg;
   }
@@ -357,6 +374,13 @@ BUTTON
     color: $flag-green;
     background-color: $flag-green-bg;
   }
+}
+.flag-stat {
+  padding: 3.5px 6px;
+}
+.flag-stat2 {
+  border-radius: 28px;
+  padding: 3.5px 8px;
 }
 /***********
 FORM TEXT
@@ -513,7 +537,7 @@ INPUT TEXT
         right: 0;
         // .ipt-count {display: none;}
         .button-t {
-          background-color: transparent;
+          // background-color: transparent; // 기업추가 팝업 주소영역에서 버튼 색상필요로 삭제
           pointer-events: none;
         }
       }
@@ -605,7 +629,7 @@ INPUT TEXT
     }
   }
 }
-.input-box-date {
+.input-box-col {
   display: flex;
   gap: 8px;
   .input-box {
@@ -613,7 +637,11 @@ INPUT TEXT
     min-width: auto;
   }
 }
-
+.input-box-row {
+  .input-box + .input-box {
+    margin-top: 8px;
+  }
+}
 .input-box {
   .ui-selectmenu-button .ui-selectmenu-text {
     @include text-body(0, 'r');
@@ -768,6 +796,7 @@ CHECKBOX / RADIO
 
 
 .textarea {
+  position: relative;
   border: 1px solid $gray-100;
   border-radius: 12px;
   display: flex;
@@ -807,6 +836,12 @@ CHECKBOX / RADIO
       background-color: $gray-40;
       color: $gray-300;
     }
+  }
+  .text-byte {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 8px);
+    @include text-body(2,'r',$gray-400);
   }
 }
 
@@ -887,6 +922,88 @@ TAPS / SWITCH
 .tabs-sub {@include set-tabs-sub;}
 .tabs-sub-small {@include set-tabs-sub(4px,1);}
 
+.switch-box {
+    --w: 50px;
+    --h: 30px;
+    --p: 2px;
+    --thumb: calc( var(--h) - var(--p) * 2 );
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: var(--w);
+    height: var(--h);
+    order: 2;
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: $gray-100;
+      border-radius: calc(var(--h) / 2);
+      transition: background-color .2s ease;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        left: var(--p);
+        top: var(--p);
+        width: var(--thumb);
+        height: var(--thumb);
+        background: $white;
+        border-radius: 50%;
+        transition: transform .2s ease;
+      }
+    }
+  }
+  // .switch.switch-small {
+  //   --w: px;
+  //   --h: px;
+  //   --p: px;
+  // }
+  input {
+    position: absolute;
+    // inset: 0;
+    opacity: 0;
+    margin: 0;
+    left: calc(50% - var(--w)/2);
+    width: var(--w);
+    height: var(--h);
+    cursor: pointer;
+    z-index: 1;
+  }
+  input:checked + .switch .slider {
+    background-color: $primary;
+    &::before {
+      transform: translateX(calc(var(--w) - var(--thumb) - var(--p)*2));
+    }
+  }
+  .switch-label {
+    @include text-body(0,'r',$gray-500);
+    order: 2;
+    &.on {
+      text-align: left;
+    }
+    &.off {
+      text-align: right;
+      order: 1;
+    }
+  }
+  // input:checked ~ .switch-label.off {color: gray}
+  input:checked ~ .switch-label.on {
+    @include text-body(0,'m',$gray-900);
+  }
+  input:not(:checked) ~ .switch-label.off {
+    @include text-body(0,'m',$gray-900);
+  }
+  // input:not(:checked) ~ .switch-label.on {color: gray}
+}
+/***********
+
+***********/
 
 .step-box {
   .step {
@@ -984,8 +1101,8 @@ MODAL POPUP
     .modal-content {
       overflow: hidden;
       overflow-y: scroll;
-      margin: 0 -12px 20px -20px;
-      padding : 0 8px 20px 20px;
+      margin: 0 -12px 0 -20px;
+      padding : 8px 8px 20px 20px;
       
       &::-webkit-scrollbar {width: 4px;}
       &::-webkit-scrollbar-thumb {
@@ -994,6 +1111,9 @@ MODAL POPUP
       }
       &::-webkit-scrollbar-button {
         height: 7px;
+      }
+      & +.button-box-medium {
+        margin-top: 20px;
       }
     }
   }
@@ -1022,10 +1142,6 @@ MODAL POPUP
     .count{
       color:$navy-300;
     }
-  }
-  .modal-content {
-    margin: 0 0 20px;
-    padding: 0 0 20px;
   }
   .message-box {
     margin-bottom: 24px;
@@ -1099,6 +1215,16 @@ MODAL POPUP
       max-height: 442px;
     }
   }
+  &-medium2 {
+    flex-basis: 420px;
+    max-width: 420px;
+    .message-box {
+      overflow: hidden;
+      overflow-y: auto;
+      min-height: 125px;
+      max-height: 442px;
+    }
+  }
   &-large {
     flex-basis: 600px;
     max-width: 600px;
@@ -1139,6 +1265,167 @@ MODAL POPUP
 
 // 페이지로 옮기기
 .modal {
+  .coupon-box {
+    padding: 8px 0 20px;
+    &:has(.item:nth-child(4)) {
+      margin-right: -20px;
+    }
+    .item-scroll-wrap {
+      max-height: 442px;
+    }
+    .coupon {
+      border-color: transparent;
+      & +.coupon {
+        margin-top: 12px;
+      }
+    }
+  }
+  .require-api {
+    // max-height: 640px;
+    // margin: -8px -12px 20px 0;
+    // padding: 8px 8px 20px 0;
+    // padding-right: 8px;
+
+    // overflow: auto;
+    // overflow-x: hidden;
+    .info-box {
+      margin: 24px 0;
+      padding: 0 8px;
+      .info {
+        .align-center {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+        .ipt-radio + .ipt-radio {
+          margin-left: 16px;
+        }
+      }
+    }
+    .service-selected {
+      display: none;
+      .list-bul {
+        margin-bottom: 24px;
+      }
+      .list-bul li {
+        font-size: 14px;
+      }
+    }
+  }
+  
+  .attach-file {
+    .file-drop {
+      border-radius: 20px;
+      border: 1px solid $gray-100;
+      padding: 40px;
+      text-align: center;
+      .message {
+        @include text-body(0,'sb',$gray-700);
+        &::before {
+          content: '';
+          display: block;
+          width: 64px;
+          height: 64px;
+          background: url('../images/icon_file_attatch.png') no-repeat 50% 50%;
+          background-size: cover;
+          margin: 0 auto 12px;
+        }
+      }
+      .sub-message {
+        margin: 4px 0 24px;
+        @include text-body(1,'r',$gray-500);
+      }
+      .file-attach {
+        position: relative;
+        input[type=file] {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+    }
+    .file-uploaded { 
+      border-radius: 12px;
+      border: 1px solid $gray-100;
+      position: relative;
+      // padding: 15px 60px 15px 68px;
+      padding: 15px 9px;
+      // padding-left: 58px;
+      .icon-file-pdf {
+        position: absolute;
+        top: 15px;
+        left: 9px;
+      }
+      .file-title {
+        padding: 0 59px;
+        @include text-body(1,'m');
+      }
+      .file-info {
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        padding-left: 59px;
+        .byte {
+          @include text-body(3,'r',$gray-600);
+        }
+        .stat {
+          margin-left: 6px;
+          position: relative;
+          padding-left: 14px;
+          @include text-body(3,'m');
+          [class^="icon-stat-"] {
+            position: absolute;
+            left: 0;
+            top: 4px;
+          }
+        }
+      }
+      .file-info-statbar {
+        margin: 10px 8px 0;
+        border-radius: 4px;
+        background-color: $gray-40;
+        .bar {
+          display: block;
+          height: 4px;
+          width: 0;
+          border-radius: 4px;
+          background-color: #3EBF8F;
+          @include set-icon-text-blind;
+        }
+      }
+      .icon-waste {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+    }
+  }
+  .modal-find-company {
+    .result-none {
+      margin-top: 24px;
+      padding: 80px 0;
+    }
+    .result-content {
+      margin-top: 24px;
+        max-height: 50vh;
+        overflow: auto;
+      .table {
+      }
+      .regi-company {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        p {
+          margin-right: 8px;
+          @include text-body(0,'sb');
+        }
+      }
+    }
+  }
   .modal-banner {
     .banner-slider-wrap {
       position: relative;
@@ -1174,109 +1461,11 @@ MODAL POPUP
     }
   } //.modal-banner
 
-  .datamarket-pay.mydata-pay {
+  .datamarket-pay.payment-history {
     border: 1px solid $gray-60;
     border-radius: 16px;
     .pay-items {
       padding: 15px;
-    }
-  }
-  .coupon-box {
-    padding: 8px 0 20px;
-    &:has(.item:nth-child(4)) {
-      margin-right: -20px;
-    }
-    .item-scroll-wrap {
-      max-height: 442px;
-    }
-    .coupon {
-      position: relative;
-      padding: 16px;
-      & +.coupon {
-        margin-top: 12px;
-      }
-      .coupon-discount {
-        display: flex;
-        align-items: center;
-        input {
-          width: 0;
-          margin: 0;
-          position: absolute;
-          z-index: -1;
-          appearance: none;
-          &+ .txt::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 1px solid $gray-100;
-            border-radius: 8px;
-          }
-          &:checked +.txt::before {
-            border: 2px solid $primary;
-          }
-        }
-        
-        label::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-        }
-        label {
-          margin-right: auto;
-        }
-        .txt {
-          @include text-body(0,'sb', $point);
-        }
-        .flag {
-          display: inline-flex;
-          background-color: $gray-60;
-          padding: 2px 6px;
-          border-radius: 4px;
-          margin-left: 4px;
-          @include text-body(3,'sb', $gray-500);
-          &-primary {
-            background-color: $primary;
-            color: $white;
-          }
-        }
-      }
-      .coupon-details {
-        margin-top: 12px;
-        border-top: 1px solid $gray-60;
-        padding-top: 12px;
-        dt {
-          margin-bottom: 20px;
-          @include text-body(1,'sb', $gray-700);
-        }
-        dd {
-          margin-top: 8px;
-          @include text-body(3,'r', $gray-500);
-        }
-      }
-      
-      &:has(input:disabled) {
-        .txt,
-        .coupon-details dt,
-        .coupon-details dd {
-          color: $gray-100;
-        }
-        .txt::before {
-          border-color: $gray-60;
-        }
-      }
-
-    }
-    .result-none {
-      margin-top: 0;
-      .message {
-        font-size: 18px;
-      }
     }
   }
   .model-ipt{
@@ -1689,6 +1878,9 @@ MODAL POPUP
       text-align: center;
       @include text-title(3);
     }
+    .info-details { // dl.info 좌우여백 있을때
+      padding: 0 20px;
+    }
     .info {
       display: flex;
       flex-wrap: wrap;
@@ -1703,9 +1895,15 @@ MODAL POPUP
         flex: auto;
         text-align: right;
         @include text-body(1,'r',$gray-700);
+        // 오른쪽 정렬인 경우
         p {
           text-align: left;
           word-break: break-word;
+        }
+        &.attach-file .file-uploaded {
+          margin-top: 8px;
+          background-color: $gray-20;
+          border-color: transparent;
         }
       }
     }
@@ -1731,11 +1929,9 @@ MODAL POPUP
     }
   }
   .modal-price-cart {
-    overflow-y: hidden;
-    padding: 8px 0 20px;
-    &:has(.item:nth-child(12)) {
-      margin-right: -20px;
-    }
+    &::-webkit-scrollbar {width: 0px;}
+    // &:has(.item:nth-child(12)) {
+    // }
     .item-scroll-wrap {
       max-height: 442px;
     }
@@ -1774,10 +1970,6 @@ MODAL POPUP
         @include text-body(1,'m',$point);
       }
     }
-  }
-  .modal-public-info {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
   }
 }
 
@@ -1881,7 +2073,7 @@ SEARCH BOX
 }
 
 /***********
-TABLE
+CONTENT HEAD
 ***********/
 .contents-summary {
   margin-top: 40px;
@@ -1947,6 +2139,24 @@ TABLE
     }
   }
 }
+.contents-date {
+  margin-top: 24px;
+  .date {
+    @include text-title(3);
+  }
+}
+.contents-messege {
+  h2 {
+    margin: 40px 0 24px;
+    @include text-title(2);
+  }
+  p {
+    @include text-body(0,'m',$gray-700);
+  }
+}
+/***********
+TABLE
+***********/
 .table {
   border-radius: 8px;
   table {
@@ -2045,6 +2255,9 @@ TABLE
     top: 15px;
   }
 }
+/***********
+CONTENT COMPONENT
+***********/
 .data-card {
   position: relative;
   padding: 20px;
@@ -2129,6 +2342,7 @@ TABLE
     flex-direction: column;
     .title {
       max-height: none;
+      -webkit-line-clamp: none;
     }
     .button-box-small {
       margin-top: auto;
@@ -2136,7 +2350,582 @@ TABLE
     }
   }
 }
+// 데이터 상품 결제하기/장바구니 리스트
+.datamarket-pay {
+  display: flex;
+  gap: 20px;
+  // 공통
+  .payment-number {
+    position: relative;
+    margin-bottom: 24px;
+    .number-order {
+      display: flex;
+      align-items: center;
+      .flag-stat {
+        margin-right: 16px;
+      }
+      p {
+        @include text-title(4);
+      }
+    }
+    .number-price {
+      margin-top: 18.5px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      p {
+        @include text-body(0,'r',$gray-500);
+      }
+      .total {
+        @include text-body(0,'r',$gray-900);
+        text-decoration: underline;
+      }
+    }
+    .icon-up,
+    .icon-down {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  .item-group {
+    padding: 24px 16px;
+    border-radius: 24px;
+    background-color: $white;
+    .item-header {
+      position: relative;
+      .summary {
+        padding-right: 40px;
+        p {
+          display: inline;
+          @include text-body(1,'sb');
+        }
+        strong {
+          display: inline-flex;
+          padding: 2px 8px;
+          @include text-body(3,'sb',$white);
+          background-color: $primary;
+          border-radius: 15px;
+        }
+      }
+      .provider {
+        margin-top: 8px;
+        @include text-body(1,'r',$gray-500);
+      }
+      .icon-up,
+      .icon-down {
+        position: absolute;
+        top: 0;
+        right: 0; 
+      }
+    }
+    .item {
+        margin-top: 16px;
+      padding: 20px;
+      background-color: $gray-20;
+      border-radius: 20px;
+      .desc {
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        p {
+          @include text-body(1,'m');
+        }
+        .useable {
+          display: inline-flex;
+          align-items: center;
+          @include text-body(1,'r', $gray-500);
+          &::before {
+            content: '';
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid $gray-100;
+            height: 14px;
+            margin: 0 8px;
+          }
+        }
+        .button-xsmall {
+          margin-left: auto;
+        }
+      }
+      .count {
+        text-align: right;
+        margin-top: 16px;
+        @include text-body(1,'m');
+      }
+      .price {
+        text-align: right;
+        @include text-body(0,'sb');
+      }
+      & >.button-box-small {
+        margin-top: 16px;
+        button {
+          flex: auto;
+        }
+      }
+    }
+    .item2 {
+      margin-top: 16px;
+      padding: 20px;
+      background-color: $navy-50;
+      border-radius: 20px;
+      .desc {
+        display: flex;
+        p {
+          @include text-body(0,'m');
+        }
+        .price {
+          margin-left: auto;
+          @include text-body(0,'sb');
+        }
+      }
+    }
+    .flags {
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px; 
+      .flag {
+        border-radius: 16px;
+        padding: 4px 8px;
+        background-color: #F2F3F4;
+        @include text-body(3,'sb',$gray-500);
+        &.data-market {
+          margin-right: auto;
+          color: $point;
+          background-color: $navy-50;
+        }
+        &.data-openapi {
+          margin-right: auto;
+          color: $flag-green;
+          background-color: $flag-green-bg;
+        }
+        &.data-polio {
+          margin-right: auto;
+          color: $flag-red;
+          background-color: $flag-red-bg;
+        }
+      }
+    }
+    .item-bottom {
+      dl {
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        &.set-coupon {
+          dd {
+            display: inline-flex;
+            justify-content: flex-end;
+            align-items: center;
+            .price {
+              margin-right: 2.5px;
+              color: $point-blue;
+            }
+          }
+        }
+        &.apply-coupon {
+          margin-top: 8px;
+          dt {
+            font-weight: 400;
+            &::before {
+              content: 'ㄴ';
+              margin-right: 4px;
+            }
+          }
+          dd {
+            color: $point-blue;
+          }
+        }
+        dt {
+          flex: auto;
+          @include text-body(1,'m',$gray-500);
+        }
+        dd {
+          flex: auto;
+          text-align: right;
+          justify-items: flex-end;
+          @include text-body(0,'m');
+          &.total {
+            @include text-body(0,'sb');
+            .down-percent {
+              margin-right: 4px;
+              color: $point-red;
+            }
+          }
+        }
+      }
+    }
+    .item-body,
+    .item-bottom {
+      &.is-fold {
+        overflow: hidden;
+        height: 0;
+      }
+    }
+  }
+  // 결제 항목
+  .pay-items {
+    flex: 2;
+    .all-check {
+      display: flex;
+      align-items: center;
+      margin-bottom: 28px;
+      .icon-info-m {
+        margin-left: 10px;
+      }
+      & ~.item-group {
+        .ipt-check {
+          float: left;
+          & +p {
+            display: block;
+            overflow: hidden;
+          }
+        }
+        .provider {
+          margin-left: 32px;
+        }
+        &.item-market .item .desc p {
+          margin-left: 32px;
+        }
+      }
+    }
+    .item-group +.item-group {
+      margin-top: 24px;
+    }
+    .item-market {
+    }
+    .item-polio {
+      .data-polio-set {
+        & +.data-polio-set {
+          margin-top: 20px;
+        }
+        display: flex;
+        align-items: flex-start;
+        dt {
+          padding: 6px 0;
+          @include text-body(1,'m');
+          flex: 0 0 92px;
+        }
+        dd {
+          // position: relative;
+          flex: auto;
+          text-align: right;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px; 
+          .show-detail {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            margin-left: auto;
+            // position: absolute;
+            // right: 0;
+          }
+          .data {
+            padding: 6px 11px;
+            border-radius: 8px;
+            border: 1px solid $gray-60;
+            background-color: $white;
+            @include text-body(2,'r',$gray-500);
+          }
+          .hash {
+            border-color: transparent;
+            background-color: $navy-100;
+            color: $gray-700;
+          }
+        }
+      }
+    }
+  }
+  // 결제 방법
+  .item-pqyment {
+    margin-top: 60px;
+    .title {
+      margin-bottom: 24px;
+      @include text-body(0,'sb');
+    }
+    .chip-box-large {
+      .chip {flex: 1;}
+    }
+    .desc {
+      margin-top: 16px;
+      display: flex;
+      p {
+        flex: 1;
+        padding-left: 13px;
+        position: relative;
+        @include text-body(2,'r',$gray-700);
+        &::before {
+          content: '※';
+          position: absolute;
+          left: 0;
+        }
+      }
+      .detail-info {
+        margin-left: 26px;
+      }
+    }
+  }
+  // 최종 결제금액
+  .pay-total {
+    flex: 0 0 385px;
+    // .item-group {
+    //   position: sticky;
+    //   top: 56px;
+    // }
+    .total-header {
+      .title {
+        @include text-body(0,'sb');
+      }
+      dl {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        dt {
+          @include text-body(2,'m',$gray-500);
+        }
+        dd {
+          flex: auto;
+          justify-items: flex-end;
+          text-align: right;
+          @include text-body(1,'m');
+        }
+      }
+      .apply-coupon dd {color: $point-blue;}
+    }
+    .total-item {
+      margin-top: 24px;
+      p {
+        @include text-body(1,'sb');
+      }
+      .coupon {
+        margin-top: 8px;
+        display: flex;
+        padding: 10px 16px;
+        border-radius: 16px;
+        background-color: #F1F4FF;
+        .txt {
+          flex: auto;
+          p {
+            @include text-body(2,'m',$point-blue);
+          } 
+        }
+      }
+    }
+    // 총 결제금액
+    .total-count {
+      margin-top: 32px;
+      border-top: 1px solid $gray-60;
+      dl {
+        margin-top: 32px;
+        display: flex;
+        dt {
+          @include text-body(1,'sb');
+        }
+        dd {
+          margin-left: auto;
+          @include text-body(0,'sb');
+          .down-percent {
+            margin-right: 4px;
+            @include text-body(1,'sb',$point-red);
+          }
+        }
+      }
+    }
+    .total-terms {
+      margin-top: 32px;
+      ul li {
+        .ipt-check-sub i {
+          align-items: flex-start;
+          @include text-body(1,'m',$gray-700);
+        }
+        .textbutton-box-xsmall {
+          float: right;
+        }
+        &+ li {
+          margin-top: 16px;
+        }
+      }
+    }
+    .button-box-large {
+      margin-top: 40px;
+      button {
+        flex: 1;
+      }
+    }
+  }
+}
+.coupon-box {
+  .coupon {
+    position: relative;
+    padding: 16px;
+    background-color: $white;
+    border: 1px solid $gray-100;
+    border-radius: 8px;
+    .coupon-discount {
+      display: flex;
+      align-items: center;
+      input {
+        width: 0;
+        margin: 0;
+        position: absolute;
+        z-index: -1;
+        appearance: none;
+        &+ .txt::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 1px solid $gray-100;
+          border-radius: 8px;
+        }
+        &:checked +.txt::before {
+          border: 2px solid $primary;
+        }
+      }
+      label::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+      .label, label {
+        margin-right: auto;
+      }
+      .txt {
+        @include text-body(0,'sb', $point);
+      }
+      .flag {
+        display: inline-flex;
+        background-color: $gray-60;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-left: 4px;
+        @include text-body(3,'sb', $gray-500);
+        &-primary {
+          background-color: $primary;
+          color: $white;
+        }
+      }
+    }
+    .coupon-details {
+      margin-top: 12px;
+      border-top: 1px solid $gray-60;
+      padding-top: 12px;
+      dt {
+        margin-bottom: 20px;
+        @include text-body(1,'sb', $gray-700);
+      }
+      dd {
+        margin-top: 8px;
+        @include text-body(3,'r', $gray-500);
+      }
+    }
+    
+    &:has(input:disabled) {
+      .txt,
+      .coupon-details dt,
+      .coupon-details dd {
+        color: $gray-100;
+      }
+      .txt::before {
+        border-color: $gray-60;
+      }
+    }
 
+  }
+  .result-none {
+    margin-top: 0;
+    .message {
+      font-size: 18px;
+    }
+  }
+}
+// 문의내역
+.myquestion-item {
+  margin-top: 16px;
+  background: $white;
+  border-radius: 24px;
+  .context {
+    border: 1px solid $gray-100;
+    border-radius: 12px;
+    padding: 15px;
+    p {
+      white-space: pre-line;
+      @include text-body(0,'r');
+    }
+  }
+  .item-header {
+    position: relative;
+    display: block;
+    padding-right: 30px;
+    .type {
+      // float: left;
+      margin-right: 12px;
+      @include text-body(0,'sb',$point-blue);
+    }
+    .title {
+      // overflow: hidden;
+      display: inline;
+      @include text-body(0,'sb');
+      .flag-stat2 {
+        margin-left: 16px;
+        vertical-align: 2px;
+      }
+    }
+    .icon-down,
+    .icon-up {
+      position: absolute;
+      right: 0;
+      top: 2px;
+      background-image: url(svg-icon(chevron-right,$gray-500));
+    }
+  }
+  .item-body {
+    display: block;
+    .question {
+      .context {
+        margin-top: 24px;
+      }
+    }
+    .answer {
+      margin-top: 32px;
+      .author {
+        padding-left: 52px;
+        .title {
+          @include text-body(0,'sb');
+        }
+        .info {
+          margin-top: 4px;
+        .data {
+            @include text-body(1,'r',$gray-500);
+        }
+        }
+      }
+      .context {
+        margin-top: 32px;
+      }
+      &::before {
+        content: 'A';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        background-color: $gray-500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        color: $white;
+        font-size: 24px;
+      }
+    }
+  }
+}
 .complete-box {
   padding: 60px 0;
   text-align: center;
@@ -2162,7 +2951,8 @@ TABLE
   }
 }
 .result-none,
-.result-complete {
+.result-complete,
+.data-none {
   margin-top: 40px;
   padding: 104px 0 100px;
   text-align: center;
@@ -2170,7 +2960,6 @@ TABLE
     content: '';
     display: block;
     margin: 0 auto;
-    border-radius: 50%;
   }
   .message {
     margin-top: 16px;
@@ -2183,16 +2972,31 @@ TABLE
   .button-box-small {
     margin-top: 20px;
   }
+  .button-box-medium,
+  .button-box-large {
+    margin-top: 24px;
+    button {
+      flex: 0;
+      padding-left: 19px;
+      padding-right: 19px;
+    } 
+  }
 }
 .result-none::before {
+    border-radius: 50%;
     @include set-icon(56px, 56px, $icon-result-none, 5px);
     background-color: $gray-60;
 }
 .result-complete::before {
+    border-radius: 50%;
     width: 56px;
     height: 56px;
     background: url($icon-check) no-repeat center $navy-100;
     background-size: 32px auto;
+}
+.data-none {margin-top: 0;}
+.data-none::before {
+    @include set-icon(64px, 64px, $icon-data-none, 64px);
 }
 /***********
 PAGING
@@ -2316,6 +3120,16 @@ TOAST POPUP
       background: url(svg-icon(check, $white)) no-repeat 50% 50% #2D7AEB;
       background-size: 13px;
     }
+    &.error::before {
+      content: '';
+      display: 0 0 20px;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border-radius: 20px;
+      background: url(svg-icon(close-14, $white)) no-repeat 50% 50% #FF3F53;
+      background-size: 13px;
+    }
   }
   &.on {
     opacity: 1;
@@ -2434,7 +3248,8 @@ TOAST POPUP
   .title4 {font-size: 20px;}
   .mo-br{display: block;}
   .pop-modal .modal-large,
-  .pop-modal .modal-medium {
+  .pop-modal .modal-medium,
+  .pop-modal .modal-medium2 {
     border-radius: 24px 24px 0 0;
     display: flex;
     flex-direction: column;
@@ -2442,7 +3257,8 @@ TOAST POPUP
     align-self: flex-end;
     width: 100%;
     .modal-header { flex: 0;}
-    .message-box { flex: 1;}
+    .message-box,
+    .modal-content { flex: 1;}
     .button-box-medium { flex: 0;}
   }
   .modal-large {
@@ -2460,15 +3276,38 @@ TOAST POPUP
       max-height: 100%;
       height: 100%;
       border-radius: 0;
-      .modal-content {
-      }
       & >.button-box-medium,
       & >.button-box-large {
         margin-top: auto;
       }
     }
   }
-
+  .modal .modal-price-cart {
+    flex: auto;
+    overflow: scroll;
+    // margin-right: -20px;
+    .item-scroll-wrap {
+      max-height: 100%;
+    }
+    .item {
+      display: block;
+    }
+    .item label {
+      display: block;
+    }
+    .item label i {
+      padding-right: 30px;
+      white-space: inherit;
+      max-width: none;
+      &::before {
+        position: absolute;
+        right: 0;
+        top: calc(50% + 10px);
+        transform: translateY(-50%);
+        margin: 0;
+      }
+    }
+  }
   .modal-faq .tab-contents {
     // 팝업 상하여백 40
     // 팝업 타이틀 46

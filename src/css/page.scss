@@ -894,17 +894,12 @@ $graph-color3: $gray-100;
     }
   }
 }
-/***********
+/*********** 마이페이지
 page : page-mypage
 ***********/
-.contents-date {
-  margin-top: 24px;
-  .date {
-    @include text-title(3);
-  }
-}
+// 마이페이지 상단
 .partner-header {
-  margin-top: 60px;
+  margin-bottom: 40px;
   border: 1px solid #fff;
   background-color: #FFFFFFCC;
   border-radius: 20px;
@@ -940,7 +935,6 @@ page : page-mypage
       margin-left: 24px;
     }
   }
-  & +.tab-box {margin:40px 0 32px;}
   &:has(.info-table) {
     margin-bottom: 60px;
     padding: 31px;
@@ -973,416 +967,69 @@ page : page-mypage
       }
     }
   }
-}
-
-// 데이터 상품 결제 리스트
-.payment-number {
-  position: relative;
-  margin-bottom: 24px;
-  .number-order {
-    display: flex;
-    align-items: center;
-    .flag-stat {
-      margin-right: 16px;
-    }
-    p {
-      @include text-title(4);
-    }
-  }
-  .number-price {
-    margin-top: 18.5px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    p {
-      @include text-body(0,'r',$gray-500);
-    }
-    .total {
-      @include text-body(0,'r',$gray-900);
-      text-decoration: underline;
-    }
-  }
-  .icon-up,
-  .icon-down {
-    position: absolute;
-    top: 0;
-    right: 0;
+  & +.tab-box +.tab-box {
+    margin-top: 32px;
   }
 }
-.datamarket-pay {
-  margin-top: 60px;
-  display: flex;
-  gap: 20px;
-  // 공통
-  .item-group {
-    padding: 24px 16px;
-    border-radius: 24px;
-    background-color: $white;
-    .item-header {
-      position: relative;
-      .summary {
-        padding-right: 40px;
-        p {
-          display: inline;
-          @include text-body(1,'sb');
-        }
-        strong {
-          display: inline-flex;
-          padding: 2px 8px;
-          @include text-body(3,'sb',$white);
-          background-color: $primary;
-          border-radius: 15px;
-        }
-      }
-      .provider {
-        margin-top: 8px;
+.mycontext-box {
+  margin-bottom: 40px;
+  border-radius: 16px;
+  padding: 32px;
+  background: rgba(255, 255, 255, -0.4);
+  border: 1px solid transparent;
+  border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+  box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
+  backdrop-filter: blur(20px);
+  @include text-body(0,'r',$gray-600);
+  .title {
+    margin-bottom: 8px;
+    @include text-title(4);
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    min-height: 40px; 
+    & +.info {
+      margin-top: 8px;
+    }
+    dt {
+      flex: auto;
+      @include text-body(0,'m');
+      white-space: nowrap;
+      .sub-txt {
         @include text-body(1,'r',$gray-500);
       }
-      .icon-up,
-      .icon-down {
-        position: absolute;
-        top: 0;
-        right: 0; 
-      }
     }
-    .item {
-        margin-top: 16px;
-      padding: 20px;
-      background-color: $gray-20;
-      border-radius: 20px;
-      .desc {
-        margin-top: 12px;
-        display: flex;
-        align-items: center;
-        p {
-          @include text-body(1,'m');
-        }
-        .useable {
-          display: inline-flex;
-          align-items: center;
-          @include text-body(1,'r', $gray-500);
-          &::before {
-            content: '';
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid $gray-100;
-            height: 14px;
-            margin: 0 8px;
-          }
-        }
-        .button-xsmall {
-          margin-left: auto;
-        }
-      }
-      .count {
-        text-align: right;
-        margin-top: 16px;
-        @include text-body(1,'m');
-      }
-      .price {
-        text-align: right;
-        @include text-body(0,'sb');
-      }
-      & >.button-box-small {
-        margin-top: 16px;
-        button {
-          flex: auto;
-        }
-      }
-    }
-    .item2 {
-      margin-top: 16px;
-      padding: 20px;
-      background-color: $navy-50;
-      border-radius: 20px;
-      .desc {
-        display: flex;
-        p {
-          @include text-body(0,'m');
-        }
-        .price {
-          margin-left: auto;
-          @include text-body(0,'sb');
-        }
-      }
-    }
-    .flags {
-      display: flex;
-      justify-content: flex-end;
-      gap: 6px; 
-      .flag {
-        border-radius: 16px;
-        padding: 4px 8px;
-        background-color: #F2F3F4;
-        @include text-body(3,'sb',$gray-500);
-        &.data-market {
-          margin-right: auto;
-          color: $point;
-          background-color: $navy-50;
-        }
-        &.data-openapi {
-          margin-right: auto;
-          color: $flag-green;
-          background-color: $flag-green-bg;
-        }
-        &.data-polio {
-          margin-right: auto;
-          color: $flag-red;
-          background-color: $flag-red-bg;
-        }
-      }
-    }
-    .item-bottom {
-      dl {
-        margin-top: 16px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        &.set-coupon {
-          dd {
-            display: inline-flex;
-            justify-content: flex-end;
-            align-items: center;
-            .price {
-              margin-right: 2.5px;
-              color: $point-blue;
-            }
-          }
-        }
-        &.apply-coupon {
-          margin-top: 8px;
-          dt {
-            font-weight: 400;
-            &::before {
-              content: 'ㄴ';
-              margin-right: 4px;
-            }
-          }
-          dd {
-            color: $point-blue;
-          }
-        }
-        dt {
-          flex: auto;
-          @include text-body(1,'m',$gray-500);
-        }
-        dd {
-          flex: auto;
-          text-align: right;
-          justify-items: flex-end;
-          @include text-body(0,'m');
-          &.total {
-            @include text-body(0,'sb');
-            .down-percent {
-              margin-right: 4px;
-              color: $point-red;
-            }
-          }
-        }
-      }
-    }
-    .item-body,
-    .item-bottom {
-      &.is-fold {
-        overflow: hidden;
-        height: 0;
-      }
-    }
-  }
-  // 결제 항목
-  .pay-items {
-    flex: 2;
-    .all-check {
+    dd {
+      flex: 0;
       display: flex;
       align-items: center;
-      margin-bottom: 28px;
-      .icon-info-m {
-        margin-left: 10px;
+      justify-content: flex-end;
+      white-space: nowrap;
+      @include text-body(0,'r',$gray-500);
+      .button-box-small {
+        display: inline-flex;
       }
-      & ~.item-group {
-        .ipt-check {
-          float: left;
-          & +p {
-            display: block;
-            overflow: hidden;
-          }
-        }
-        .provider {
-          margin-left: 32px;
-        }
-        &.item-market .item .desc p {
-          margin-left: 32px;
-        }
+      .switch-box {
+        height: 60px;
       }
-    }
-    .item-group +.item-group {
-      margin-top: 24px;
-    }
-    .item-market {
-    }
-    .item-polio {
-      .data-polio-set {
-        & +.data-polio-set {
-          margin-top: 20px;
-        }
-        display: flex;
-        align-items: flex-start;
-        dt {
-          padding: 6px 0;
-          @include text-body(1,'m');
-          flex: 0 0 92px;
-        }
-        dd {
-          // position: relative;
-          flex: auto;
-          text-align: right;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 12px; 
-          .show-detail {
-            display: inline-flex;
-            align-items: center;
-            align-self: flex-start;
-            margin-left: auto;
-            // position: absolute;
-            // right: 0;
-          }
-          .data {
-            padding: 6px 11px;
-            border-radius: 8px;
-            border: 1px solid $gray-60;
-            background-color: $white;
-            @include text-body(2,'r',$gray-500);
-          }
-          .hash {
-            border-color: transparent;
-            background-color: $navy-100;
-            color: $gray-700;
-          }
-        }
+      .switch-label {
+        width: 70px;
+      }
+      &.btn {
+        margin-left: 16px;
       }
     }
   }
-  // 결제 방법
-  .item-pqyment {
-    margin-top: 60px;
-    .title {
-      margin-bottom: 24px;
-      @include text-body(0,'sb');
-    }
-    .chip-box-large {
-      .chip {flex: 1;}
-    }
-    .desc {
-      margin-top: 16px;
-      display: flex;
-      p {
-        flex: 1;
-        padding-left: 13px;
-        position: relative;
-        @include text-body(2,'r',$gray-700);
-        &::before {
-          content: '※';
-          position: absolute;
-          left: 0;
-        }
-      }
-      .detail-info {
-        margin-left: 26px;
-      }
-    }
+  .info-tit {
+    @include text-body(0,'m');
   }
-  // 최종 결제금액
-  .pay-total {
-    flex: 0 0 385px;
-    // .item-group {
-    //   position: sticky;
-    //   top: 56px;
-    // }
-    .total-header {
-      .title {
-        @include text-body(0,'sb');
-      }
-      dl {
-        margin-top: 24px;
-        display: flex;
-        align-items: center;
-        dt {
-          @include text-body(2,'m',$gray-500);
-        }
-        dd {
-          flex: auto;
-          justify-items: flex-end;
-          text-align: right;
-          @include text-body(1,'m');
-        }
-      }
-      .apply-coupon dd {color: $point-blue;}
-    }
-    .total-item {
-      margin-top: 24px;
-      p {
-        @include text-body(1,'sb');
-      }
-      .coupon {
-        margin-top: 8px;
-        display: flex;
-        padding: 10px 16px;
-        border-radius: 16px;
-        background-color: #F1F4FF;
-        .txt {
-          flex: auto;
-          p {
-            @include text-body(2,'m',$point-blue);
-          } 
-        }
-      }
-    }
-    // 총 결제금액
-    .total-count {
-      margin-top: 32px;
-      border-top: 1px solid $gray-60;
-      dl {
-        margin-top: 32px;
-        display: flex;
-        dt {
-          @include text-body(1,'sb');
-        }
-        dd {
-          margin-left: auto;
-          @include text-body(0,'sb');
-          .down-percent {
-            margin-right: 4px;
-            @include text-body(1,'sb',$point-red);
-          }
-        }
-      }
-    }
-    .total-terms {
-      margin-top: 32px;
-      ul li {
-        .ipt-check-sub i {
-          align-items: flex-start;
-          @include text-body(1,'m',$gray-700);
-        }
-        .textbutton-box-xsmall {
-          float: right;
-        }
-        &+ li {
-          margin-top: 16px;
-        }
-      }
-    }
-    .button-box-large {
-      margin-top: 40px;
-      button {
-        flex: 1;
-      }
-    }
+  .textarea {
+    margin-top: 53px;
   }
 }
-
-.datamarket-pay.mydata-pay {
+// 결제내역 => 모바일 모달팝업으로 보여져야 해서 공통으로 옮김
+.datamarket-pay.payment-history {
   display: block;
   margin-top: 16px;
   .pay-items {
@@ -1458,8 +1105,13 @@ page : page-mypage
     }
   }
 }
-
-
+// 문의내역 => 모바일 모달팝업으로 보여져야 해서 공통으로 옮김
+.myquestion-item {
+  padding: 24px;
+  .item-body {
+    display: none;
+  }
+}
 .page-mypage {
   .head-float-menu {
     position: relative;
@@ -1469,133 +1121,71 @@ page : page-mypage
       bottom: 0;
     }
   }
-  .contents-messege {
-    h2 {
-      margin: 40px 0 24px;
-      @include text-title(2);
+  .tab-box { // 나의 내역
+    margin-bottom: 40px;
+  }
+}
+
+// 구매내역/문의내역
+.myhistory-contents {
+}
+// 개인정보 수정
+.myinfo-contents {
+  max-width: 720px;
+  margin: 0 auto;
+  .button-box-large {
+    button {
+      min-width: 160px;
+    }
+  }
+  .mycontext-box {
+    .title {
+      margin-bottom: 16px;
     }
   }
 }
-.page-company {
-  .formbox {
-    &.regi-company .button-box-large button {
+// 장바구니
+.mycart-contents {}
+// 쿠폰
+.mycoupon-contents {
+  .tab-box {
+    margin-bottom: 24px;
+  }
+  .result-none {
+    margin-top: 0;
+  }
+  .coupon-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    .button-xsmall {
+      position: absolute;
+      right: 19px;
+      bottom: 15px;
+    }
+  }
+}
+// 회원탈퇴
+.withdrawal-contents {
+  .service-check {
+    margin-top: 24px;
+    display: grid;
+    gap: 16px;
+  }
+}
+/*********** 마이페이지>마이컴퍼니
+page : page-mycompany
+***********/
+.page-mycompany {
+
+  .companyregi-contents {
+    .button-box-large button {
       flex-basis: 200px;
     }
   }
 }
-
-.modal {
-  .pay-details,
-  .info-api {
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-  .require-api {
-    // max-height: 640px;
-    // margin: -8px -12px 20px 0;
-    // padding: 8px 8px 20px 0;
-    // padding-right: 8px;
-
-    // overflow: auto;
-    // overflow-x: hidden;
-    .info-box {
-      margin: 24px 0;
-      padding: 0 8px;
-      .info {
-        .align-center {
-          display: flex;
-          align-items: center;
-          justify-content: flex-end;
-        }
-        .ipt-radio + .ipt-radio {
-          margin-left: 16px;
-        }
-      }
-    }
-    .service-selected {
-      display: none;
-      .list-bul li {
-        font-size: 14px;
-      }
-    }
-  }
-  
-  .attach-file {
-    margin-top: 24px;
-    border-radius: 24px;
-    border: 1px solid $gray-100;
-    .file-drop {
-      padding: 40px;
-      text-align: center;
-      .message {
-        @include text-body(0,'sb',$gray-700);
-        &::before {
-          content: '';
-          display: block;
-          width: 64px;
-          height: 64px;
-          background: url('../images/icon_file_attatch.png') no-repeat 50% 50%;
-          background-size: cover;
-          margin: 0 auto 12px;
-        }
-      }
-      .sub-message {
-        margin: 4px 0 24px;
-        @include text-body(1,'r',$gray-500);
-      }
-      .file-attach {
-        position: relative;
-        input[type=file] {
-          position: absolute;
-          left: 0;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          opacity: 0;
-        }
-      }
-    }
-    .file-uploaded { 
-      position: relative;
-      padding: 15px 60px 15px 68px;
-      // padding-left: 58px;
-      .icon-file-pdf {
-        position: absolute;
-        top: 15px;
-        left: 9px;
-      }
-      .file-title {
-        margin-bottom: 4px;
-        @include text-body(1,'m');
-      }
-      .file-info {
-        display: flex;
-        align-items: center;
-        .byte {
-          @include text-body(3,'r',$gray-600);
-        }
-        .stat {
-          margin-left: 6px;
-          position: relative;
-          padding-left: 14px;
-          @include text-body(3,'m');
-          .icon-stat-complete {
-            position: absolute;
-            left: 0;
-            top: 4px;
-          }
-        }
-      }
-      .icon-waste {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-      }
-    }
-  }
-}
 @media screen and (max-width: 767px) {
-  .page-mypage .datamarket-pay {
+  .page-mypage .datamarket-pay.payment-history {
     .payment-number {
       margin-bottom: 0;
     }
@@ -1609,65 +1199,10 @@ page : page-mypage
     }
   }
 }
-/***********
+/*********** 마이페이지>데이터파트너
 page : page-partner
 ***********/
 .page-partner {
-  // .partner-header {
-  //   margin-top: 60px;
-  //   border: 1px solid #fff;
-  //   background-color: #FFFFFFCC;
-  //   border-radius: 20px;
-  //   padding: 19px;
-  //   box-shadow: 0px 16px 32px 0px #23225814;
-  //   backdrop-filter: blur(20px);
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   align-items: center;
-  //   .info-box {
-  //     .name {@include text-title(3,'sb');}
-  //     .email {@include text-body(1,'r', $gray-500);}
-  //   }
-  //   .link {
-  //     margin-left: auto;
-  //     padding-right: 26px;
-  //     @include text-body(0,'m',$gray-500);
-  //     background: url(svg-icon(chevron-right,$gray-500)) no-repeat 100% 50%;
-  //   }
-  //   & +.tab-box {margin:40px 0 32px;}
-  //   &:has(.info-table) {
-  //     margin-bottom: 60px;
-  //     padding: 31px;
-  //   }
-  //   .info-table {
-  //     display: flex;
-  //     flex-wrap: wrap;
-  //     flex: 1;
-  //     .title3{
-  //       flex: 0 0 100%;
-  //       margin-bottom: 16px;
-  //     }
-  //     dl {
-  //       flex: 1;
-  //       dt {
-  //         float: left;
-  //         width: 130px;
-  //         margin-right: 20px;
-  //         @include text-body(1,'r',$gray-500);
-  //         &:not(:first-child) {
-  //           margin-top: 8px;
-  //           & +dd {
-  //             margin-top: 8px;
-  //           }
-  //         }
-  //       }
-  //       dd {
-  //         overflow: hidden;
-  //         @include text-body(1);
-  //       }
-  //     }
-  //   }
-  // }
   .stats {
     .ing,
     .done {
@@ -1831,7 +1366,6 @@ page : page-insight
   }
   // 리스트
   .insight-header {
-    margin-top: 60px;
     .header-title {
       @include text-title(4);
     }
@@ -2131,7 +1665,7 @@ page : page-datamarket
     min-height: 320px;
     display: flex;
     gap: 20px;
-    margin: 60px 0 43px;
+    margin-bottom: 43px;
     .data-card {
       flex: 1;
       display: flex;
@@ -2325,6 +1859,9 @@ page : page-datamarket
         opacity: 0;
       }
     }
+  }
+  .datamarket-pay {
+    margin-top: 60px;
   }
   // 결제하기
   // .datamarket-pay {
@@ -2804,6 +2341,9 @@ page : page-polio
 .page-polio{ 
   padding-bottom:304px;
   box-sizing: border-box;
+  .head-guidetext {
+    margin-bottom: 0;
+  }
   .content-head-btn{
     display:flex;
     align-items: center;
@@ -3686,6 +3226,10 @@ page : page-polio
 MEDIA QUERY
 ***********/
 @media screen and (min-width: 1024px) {
+  // 마이페이지 > 회원탈퇴
+  .withdrawal-contents .service-check {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .analysis-nav .area-list.is-open,
   .analysis-nav .industry-list.is-open {
     display: block;
@@ -3695,10 +3239,11 @@ MEDIA QUERY
   .analysis-nav {
     left: 20px;
   }
+  
+  .datamarket-pay {
+    flex-direction: column;
+  }
   .page-datamarket {
-    .datamarket-pay {
-      flex-direction: column;
-    }
     .data-list > ul.col-3 {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -3732,12 +3277,28 @@ MEDIA QUERY
   .page-polio .step-content .chip-box{width:100%;      }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  // 마이페이지 > 회원탈퇴
+  .withdrawal-contents .service-check {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .analysis-nav .area-list.is-open,
   .analysis-nav .industry-list.is-open {
     display: block;
   }
 }
 @media screen and (min-width: 768px) {
+  // div{ background-color: red;}
+  .page-mypage {
+    .all-coupon-download {
+      position: relative;
+      .button-box-small {
+        position: absolute;
+        right: 0;
+        bottom: 24px;
+      }
+    }
+  }
+
   .page-insight {
     .insight-contents .contents-filter {
       max-width: calc(100% - 100px);
@@ -3792,6 +3353,81 @@ MEDIA QUERY
 }
 
 @media screen and (max-width: 767px) {
+  .mycontext-box {
+    .info {
+      flex-wrap: wrap;
+      & +.info {
+        margin-top: 20px;
+      }
+      dd.btn {
+        margin-left: 0;
+        margin-top: 12px;
+        flex-basis: 100%;
+        .button-box-small {
+          display: flex;
+          flex: 1;
+          button {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+  .page-mypage {
+    .head-float-menu {
+      position: relative;
+      .switch-box {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .tab-box { // 나의 내역
+      margin-bottom: 40px;
+    }
+  }
+
+  // 구매내역/문의내역
+  .myhistory-contents {}
+  // 개인정보 수정
+  .myinfo-contents {}
+  // 장바구니
+  .mycart-contents {}
+  // 쿠폰
+  .mycoupon-contents {}
+  // 회원탈퇴
+  .withdrawal-contents {}
+
+
+  .page-mypage {
+    .myquestion-item .item-header {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right: 0;
+      padding-right: 60px;
+      .title {
+      }
+      .icon-down, 
+      .icon-up {
+        display: none;
+      }
+      .flag-stat2 {
+        position: absolute;
+        right: 0;
+      }
+    } 
+    .all-coupon-download {
+      margin-bottom: 24px;
+      .button-box-small {
+        position: relative;
+        button {flex: 1;}
+      }
+    }
+    .coupon-box {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
   .page-analysis {
     padding-top: 20px;
     
