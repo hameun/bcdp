@@ -29,20 +29,13 @@
 </head>
 <body>
 <div class="wrap">
-    {# 상단 메뉴 #}
     {% set headertype ='main' %}
     {{ include( "_templates/_header.njk" ) | tabIndent(1) }}
-    {# 좌측 네비게이션 & 푸터 #}
-    {# {{ include( "_templates/_menulist.njk" ) | tabIndent(1) }} #}
-
     <main class="container">
-        <!-- content -->
         {% filter tabIndent(2) %}
         {% block content %}{% endblock %}
         {%- endfilter %}
     </main>
-    <!-- // content -->
-
 </div>
 <!-- //wrap -->
 

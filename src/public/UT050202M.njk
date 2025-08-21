@@ -1,0 +1,213 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT050202.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+
+
+<div class="pop-modal modal-hidden" id="modalRegiCompany">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">기업 추가</div>
+        <div class="modal-content">
+            <div class="formbox">
+                <form>
+                    <label for="companyName" class="input-title">법인명</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="법인명을 입력해주세요." id="companyName">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+
+                    <label for="companyCode" class="input-title">사업자등록번호</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="- 를 제외한 사업자등록번호를 입력해주세요." id="companyCode">
+                        <span class="util-box button-box-xsmall">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                            <a href="#" type="button" class="button-t">확인</a>
+                        </span>
+                    </div>
+                    <div class="input-box is-error">
+                        <input type="text" placeholder="- 를 제외한 사업자등록번호를 입력해주세요." id="companyCode">
+                        <span class="util-box button-box-xsmall">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                            <a href="#" type="button" class="button-t">확인</a>
+                        </span>
+                    </div>
+                    <p class="input-help is-error">사업자등록번호는 숫자 10자리로 입력해주세요.</p>
+
+                    <label for="companyDomain" class="input-title">법인도메인</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="@를 제외한 주소 입력" id="companyDomain">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+
+                    <label for="companyOrner" class="input-title">대표자명</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="대표자명을 입력해주세요" id="companyOrner">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+                    <p class="input-help">대표자명은 사업자명과 동일하게 입력되어야 합니다.</p>
+
+                    <label for="companyAddress" class="input-title">소재지 주소</label>
+                    <div class="input-box">
+                        <input type="text" placeholder="주소를 검색해주세요" id="companyAddress" disabled>
+                        <span class="util-box button-box-xsmall">
+                            <a href="#" type="button" class="button-t">주소검색</a>
+                        </span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="상세주소를 입력해주세요." id="companyAddress2">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+
+                    <p for="companyAddress" class="input-title">사업자등록증</p>
+                    
+                    <div class="attach-file">
+                        <div class="file-drop">
+                            <p class="message">파일을 선택하거나 이곳에 끌어다 놓으세요</p>
+                            <p class="sub-message">PDF 최대 50MB</p>
+                            <div class="button-box-small">
+                                <label class="button-t file-attach">파일 찾기<input type="file"></label>
+                            </div>
+                        </div>
+                        <div class="file-uploaded" style="display: none;">
+                            <i class="icon-file-pdf">pdf 파일</i>
+                            <p class="file-title">사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증.pdf</p>
+                            <p class="file-info">
+                                <span class="byte">94 KB of 94 KB</span>
+                                <span class="stat"><i class="icon-stat-complete"></i>Completed</span>
+                            </p>
+                            <button type="button" class="icon-waste">삭제</button>
+                        </div>
+                    </div>
+                    
+                        
+                <!-- 퍼블리싱 확인 -->
+                <script>
+                    $(function(){
+                        fileAttatch();
+                    });
+
+                    function fileAttatch () {
+                        const dropArea = $('.file-drop');
+
+                        const dropedArea = $('.file-uploaded');
+                        const dropedFileTitle = dropedArea.find('.file-title');
+                        const dropedFileDel = dropedArea.find('.icon-waste');
+
+                        
+                        const attachFileBtb = dropArea.find('input[type="file"]');
+                        attachFileBtb.on('change', function(){
+                            dropArea.hide();
+                            dropedFileTitle.text(this.value);
+                            dropedArea.show();
+                        });
+
+
+                        dropArea.on('dragover', function(e){
+                            e.stopPropagation();
+                            e.preventDefault();
+                        });
+
+                        dropArea.on('drop', function(e) {
+                            e.preventDefault();
+
+                            var files = e.originalEvent.dataTransfer.files;
+                            if (files.length > 1) {
+                                fn_modalPopOpen('modal_5')
+                                return false;
+                            }
+                            
+                            dropArea.hide();
+                            dropedFileTitle.text(files[0].name);
+                            dropedArea.show();
+                        });
+
+                        dropedFileDel.on('click', function(){
+                            dropedArea.hide();
+                            dropArea.show();
+                        });
+                    }
+                </script>
+                <!-- //퍼블리싱 확인 -->
+                </form>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">취소하기</button>
+            <button class="button-p" type="button">동의하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+
+
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>등록된 기업의 도메인과 입력하신 기업 이메일의 도메인이 일치하지 않습니다. 이메일을 다시 확인해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>파일 형식 PDF, 용량 50MB 이하의 파일만 업로드 가능합니다.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 기업에서 탈퇴하시겠습니까?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p" type="button">네, 탈퇴할게요.</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>다른 회원님이 요청하신 해당 기업 정보 수정 건은 아직 관리자에 의해 승인 또는 반려가 결정되지 않았습니다. 관리자의 처리가 완료되면 기업 정보 수정을 진행하실 수 있습니다.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal_1');return false;">[기입한 도메인과 이메일 도메인이 상이할 경우 ]</a>
+        <a href="#" class="button-t" onclick="fn_toast('인증번호를 발송했어요.',1);return false;">[인증번호 전송] 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_toast('기업 등록을 신청했습니다.',1);return false;">[기업 등록하기] 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_', true);return false;">^^^^[기업찾기]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modalRegiCompany', true);return false;">;">^^^^[[기업추가]</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal_2');return false;">파일 유효성 Alert</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_');return false;">^^^^[기업정보]</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal_3');return false;">[기업정보] > 탈퇴하기</a>
+        <a href="#" class="button-q" onclick="fn_toast('기업에서 탈퇴 되었습니다.',1);return false;">[기업정보] > 탈퇴하기 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_4');return false;">[기업정보] > 수정하기</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

@@ -277,6 +277,7 @@
     </div>
 </div>
 <!-- //필터 팝업 -->
+
 <div class="button-box-xsmall">
     <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge1');">[large: 약관보기]</a>
     <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge2');">[large: 데이터 등록]</a>
@@ -408,8 +409,45 @@
     </div>
 </div>
 <!-- //문의하기 -->
+
+<!-- Full 팝업 기본셋팅 -->
+<div class="pop-modal modal-hidden" id="modalInfoAPI">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">OPEN API 정보</div>
+        <div class="modal-content">
+            <div class="modal-data-info">
+                <div class="info-api">
+                    <dl class="info">
+                        <dt>상태</dt>
+                        <dd>사용중</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>사용일자</dt>
+                        <dd>2025.07.11 ~ 2026.01.11 (6개월)</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>호출수</dt>
+                        <dd>0</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>OPEN API KEY<button type="button" class="icon-copy">복사하기</button></dt> 
+                    </dl>
+                    <dl class="info">
+                        <dt>요청주소<button type="button" class="icon-copy">복사하기</button></dt>
+                        <dd><p>https://dev.bigdata-finance.kr/openApi/v1/API20200917001.json</p></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
 <div class="button-box-xsmall">
     <a href="#" class="button-s" onclick="fn_modalPopOpen('modalFaq',true);">[medium: 문의하기]</a>
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalInfoAPI',true);">[medium: 컨텐츠 scroll]</a>
 </div>
 
 

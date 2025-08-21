@@ -1,0 +1,80 @@
+<div class="content page-company">
+    <h1 class="headline1">기업 등록</h1>
+    <p class="head-guidetext">기업 정보를 등록하고 관리하세요.</p>
+
+    <div class="company-contents">
+        <div class="formbox regi-company">
+            <form>
+                <label for="name" class="input-title">기업명</label>
+                <div class="input-box">
+                    <input type="text" placeholder="기업 찾기 버튼을 클릭해 기업을 검색해주세요." name="name" readonly>
+                    <span class="util-box button-box-xsmall">
+                        <a href="#" type="button" class="button-t">기업 찾기</a>
+                    </span>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="기업 찾기 버튼을 클릭해 기업을 검색해주세요." name="name" readonly value="매그넘빈트">
+                    <span class="util-box button-box-xsmall">
+                        <a href="#" type="button" class="button-t">수정하기</a>
+                        <a href="#" type="button" class="button-t">기업 찾기</a>
+                    </span>
+                </div>
+                <div class="input-box is-error">
+                    <input type="text" placeholder="기업 찾기 버튼을 클릭해 기업을 검색해주세요." name="name" readonly value="매그넘빈트">
+                    <span class="util-box button-box-xsmall">
+                        <a href="#" type="button" class="button-t">수정하기</a>
+                        <a href="#" type="button" class="button-t">기업 찾기</a>
+                    </span>
+                </div>
+                <p class="input-help is-error">등록한 기업 정보가 반려되었습니다. 다시 등록해주세요.</p>
+
+                <label for="email" class="input-title">기업 이메일</label>
+                <div class="input-box">
+                    <input type="text" placeholder="이메일 아이디 입력" name="email">
+                    <span class="util-box button-box-xsmall">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                        <a href="#" type="button" class="button-t disabled">인증번호 전송</a>
+                        <a href="#" type="button" class="button-t">인증번호 전송</a>
+                        <a href="#" type="button" class="button-t">재전송</a>
+                    </span>
+                </div>
+
+                <label for="passnum" class="input-title">인증번호</label>
+                <div class="input-box">
+                    <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6">
+                    <span class="util-box">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                        <strong class="ipt-count">02:59</strong>
+                    </span>
+                </div>
+
+                <div class="input-box is-error">
+                    <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6" value="123456">
+                    <span class="util-box">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                        <strong class="ipt-count">02:59</strong>
+                    </span>
+                </div>
+                <p class="input-help is-error">인증번호를 다시 확인해주세요.</p>
+                <p class="input-help is-error">인증시간이 초과했습니다. 다시 전송 후 진행해주세요.</p>
+
+                <div class="input-box">
+                    <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6" value="123456">
+                    <span class="util-box">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                        <strong class="ipt-count">02:59</strong>
+                    </span>
+                </div>
+                <p class="input-help is-pass">인증번호가 확인되었습니다.</p>
+                
+                <div class="button-box-large">
+                    <button type="button" class="button-p" disabled>기업 등록하기</button>
+                </div>
+                <div class="button-box-large">
+                    <button type="button" class="button-p">기업 등록하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- //.content .page-mypage -->
