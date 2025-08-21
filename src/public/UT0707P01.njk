@@ -1,0 +1,87 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block modal %}
+
+<!-- 금융빅데이터플랫폼 이용약관 -->
+<div class="pop-modal is-full modal-hidden" id="pop1">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">금융빅데이터플랫폼 이용약관</div>
+        <div class="message-box">
+            <!--  -->
+            회원약관 약관내용
+            <!-- // -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //금융빅데이터플랫폼 이용약관 -->
+
+<!-- 비식별 정보 보안관리 약정서 -->
+<div class="pop-modal is-full modal-hidden" id="pop2">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">비식별 정보 보안관리 약정서</div>
+        <div class="security-box">
+            <div class="item-scroll-wrap">
+                <p class="description">비씨카드주식회사(이하 ‘공급자’라 함)가 금융 빅데이터 플랫폼 회원(이하 "구매자"라 함)에게 익명 정보(이하 “데이터”이라 함)를 공급하는데 있어서 다음과 같이 정보 보안관리 약정을 체결합니다.</p>
+
+                <h2>제 1조(개요)</h2>
+                <ul>
+                    <li>본 약정은 ‘구매자’가 활용하는 익명 정보에 대한 안전관리대책과 책임사항을 명확히 규정함으로써 익명 정보를 안전하게 활용하는 것을 목적으로 한다.</li>
+                </ul>
+
+                <h2>제 2 조(목적 및 내용)</h2>
+                <ul class="depth-1">
+                    <li>① ‘구매자’가 ‘공급자’로부터 제공 받은 익명 정보의 이용 목적 및 범위는 다음과 같다. 
+                        <ul class="depth-2">
+                            <li>* 데이터 공급 기본계약서 내 ‘계약 기본사항’의 4. 데이터 이용 목적 또는 유/무료 데이터 구매 시 입력한 데이터 이용 목적</li>
+                        </ul>
+                    </li>
+                    <li>② ‘구매자’가 ‘공급자’로부터 제공 받은 익명 정보의 이용 목적 및 범위는 다음과 같다. 
+                        <ul class="depth-2">
+                            <li>* 데이터 공급 기본계약서 내 ‘계약 기본사항’의 ‘6. 제공 데이터’에 해당하는 구매자가 이용 및 다운로드한 모든 유∙무료 데이터 일체</li>
+                        </ul>
+                    </li>
+                    <li>③ 본 조항에서 정의한 이용 목적 및 범위에 따른 익명 정보의 보유 및 이용기간은 금융 빅데이터 플랫폼에서 제공하는 데이터별 이용기간까지로 한다.
+                    </li>
+                </ul>
+
+                <h2>제 3 조(목적 외 사용 및 재식별 금지)</h2>
+                <ul class="depth-1">
+                    <li>① ‘구매자’는 ‘공급자’로부터 제공 받은 익명 정보는 약정된 ‘이용 목적 및 범위’ 외의 다른 용도로 활용하거나, 제3자에게 임의 제공·누설 또는 불특정 다수에게 공개해서는 안된다.</li>
+                    <li>② ‘구매자’는 ‘공급자’로부터 제공 받은 익명 정보를 협의되지 않은 다른 정보와의 결합을 통해 개인을 재식별하려는 어떠한 행위도 해서는 안된다. </li>
+                </ul>
+
+                <h2>제 4 조(계약해지 및 책임사항)</h2>
+                <ul class="depth-1">
+                    <li>① ‘공급자’는 다음 각 호의 사항에 해당하는 경우 본 약정과 관련된 유관 계약을 해지할 수 있다.
+                        <ul class="depth-2">
+                            <li>1. ‘구매자’가 정당한 사유 없이 본 약정서상의 안전관리 및 책임사항 이행·관리가 소홀한 경우</li>
+                            <li>2. ‘구매자’의 고의·과실 또는 본 약정서 상의 의무이행 소홀 등으로 ‘공급자’ 또는 ‘공급자’의 고객에게 손해가 발생된 경우</li>
+                        </ul>
+                    </li>
+                    <li>② ‘구매자’는 고의·과실 또는 본 약정서상의 의무이행 소홀 등으로 인하여 ‘공급자’에게 손해가 발생하거나 법적 책임이 부과될 경우 모두 책임지고 배상하여야 한다.
+                </li></ul>
+                <p class="last-txt">이 약정의 내용을 증명하기 위하여 ‘공급자’와 ‘구매자’는 약정서를 작성하여 보관한다.</p>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //비식별 정보 보안관리 약정서 -->
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-t" onclick="fn_modalPopOpen('pop1');return false;">금융 빅데이터플랫폼 이용약관</a>
+        <a href="#" class="button-t" onclick="fn_modalPopOpen('pop2');return false;">비식별 정보 보안관리 약정서</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

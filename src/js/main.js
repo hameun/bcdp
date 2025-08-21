@@ -1247,7 +1247,7 @@ function fn_filter() {
 
 /** 아코디언 */
 function fn_accordion() {
-  const items = document.querySelectorAll('.page-polio .accordion-item');
+  const items = document.querySelectorAll('.page-polio .accordion-item ,.accordion-item');
   if (!items) { return false; }
 
   items.forEach(item => {

@@ -1514,44 +1514,7 @@ MODAL POPUP
     }
     
   }
-  //정보보안
-  .security-box{
-    font-size:16px;
-    font-weight: 400;
-    color:$gray-700;
-    padding-top:12px;
-    padding-bottom:40px;
-    .item-scroll-wrap{
-      max-height: 442px;
-      margin-right:-20px;
-    }
-    h2{
-      margin-top:20px;
-      font-weight: 600;
-      font-size: 16px;
-    }
-    li{margin-top:8px;}
-    .depth-1{
-      li{
-        padding-left:18px;
-        text-indent: -18px;
-      }
-    }
-    .depth-2{
-      li{
-        margin-top:4px;
-        font-size: 14px;
-        color:$gray-500;
-        padding-left:11px;
-        text-indent: -11px;
-      }
-    }
-    .last-txt{
-      margin:20px 0 0;
-      font-weight: 600;
-      color:$gray-700;
-    }
-  }
+  
   //임시저장
   .draft-box {
     // margin-right:-20px;
@@ -1973,6 +1936,45 @@ MODAL POPUP
   }
 }
 
+//정보보안
+.security-box{
+  font-size:16px;
+  font-weight: 400;
+  color:$gray-700;
+  padding-top:12px;
+  padding-bottom:40px;
+  .item-scroll-wrap{
+    max-height: 442px;
+    margin-right:-20px;
+  }
+  h2{
+    margin-top:20px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  li{margin-top:8px;}
+  .depth-1{
+    li{
+      padding-left:18px;
+      text-indent: -18px;
+    }
+  }
+  .depth-2{
+    li{
+      margin-top:4px;
+      font-size: 14px;
+      color:$gray-500;
+      padding-left:11px;
+      text-indent: -11px;
+    }
+  }
+  .last-txt{
+    margin:20px 0 0;
+    font-weight: 600;
+    color:$gray-700;
+  }
+}
+
 .chip-box {
   display: flex;
   flex-wrap: wrap;
@@ -2009,6 +2011,22 @@ MODAL POPUP
       padding: 11px 16px;
       font-weight: 600;
       text-align: center;
+    }
+  }
+  &.count{
+    .chip{
+      i{
+        border-radius: 12px;
+        font-size:18px;
+        color:$gray-900;
+        font-weight: 500;
+        em{
+          margin-left:4px;
+          font-size:18px;
+          font-weight: 500;
+          color:$primary;
+        }
+      }
     }
   }
 }
@@ -3425,5 +3443,5 @@ TOAST POPUP
   .pop-modal .draft-box .item-scroll-wrap{max-height: 486px;}
   .pop-modal .draft-box ul .draft-list-box .draft-list-tit{width:calc( 100vw - 118px );}
   .pop-modal .sample-box{width:calc( 100vw - 40px );}
-  .pop-modal .security-box .item-scroll-wrap{max-height: calc( 100vh - 186px );}
+  .security-box .item-scroll-wrap{max-height: calc( 100vh - 186px );}
 }
