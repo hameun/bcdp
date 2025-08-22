@@ -1,0 +1,14 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="page-error">
+    <div class="result-error">
+        <p class="message">예상치 못한 오류가 발생했어요</p>
+        <p class="message-sub">작업을 처리하는 중 예상치 못한 오류가 발생했어요<br>
+    잠시 후 다시 이용해주세요.</p>
+        <div class="button-box-small">
+            <button type="button" class="button-p">메인으로 이동</button>
+        </div>
+    </div>
+</div>
+{%- endblock %}

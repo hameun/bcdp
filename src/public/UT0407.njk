@@ -1,0 +1,37 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-search">
+    <p class="title3"><strong>금빅데</strong>에 대한 총 <strong>0</strong>건의 검색결과가 있어요.</p>
+    <div class="input-box">
+        <input type="text" class="ipt" placeholder="무슨 데이터가 필요하세요?" value="금빅데">
+        <span class="util-box">
+            <button class="ipt-clear">내용 지우기</button>
+            <button type="button" class="ipt-search"><i>검색</i></button>
+        </span>
+    </div>
+    <div class="search-content">
+        <div class="result-none">
+            <p class="message">검색 결과가 없습니다</p>
+            <p class="message-sub">검색하신 조건에 해당하는 게시물이 없습니다.</p>
+            <div class="button-box-small">
+                <button type="button" class="button-t">메인으로 이동</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer-etc">
+        <div class="footer-etc-cont">
+            <a href="#">
+                <p class="title">데이터 만들기</p>
+                <p class="txt">찾는 데이터 상품이 없으신가요?</p>
+            </a>
+        </div>
+        <div class="footer-etc-cont">
+            <a href="#">
+                <p class="title">문의하기</p>
+                <p class="txt">원하는 답변이 없으신가요?</p>
+            </a>
+        </div>
+    </div>
+</div>
+{%- endblock %}
