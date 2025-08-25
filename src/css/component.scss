@@ -43,6 +43,9 @@
 .t-medium {font-weight: 500;}
 .t-reqular {font-weight: 400;}
 .t-highlight {color: $primary;}
+.t-red {color: #FF3F53;}
+
+.t-align-left {text-align: left ;}
 
 .underline {text-decoration: underline;}
 
@@ -350,12 +353,16 @@ BUTTON
 .textbutton-s {
   @include set-textbutton($gray-500);
 }
-
 .flag-stat,
 .flag-stat2 {
-  border-radius: 4px;
+  border-radius: 28px; 
+  padding: 3.5px 8px;
   font-size: 14px;
   font-weight: 600;
+  &.stat-review {
+    color: $flag-blue;
+    background-color: $flag-blue-bg;
+  }
   &.stat-review {
     color: $flag-blue;
     background-color: $flag-blue-bg;
@@ -376,13 +383,6 @@ BUTTON
     color: $flag-green;
     background-color: $flag-green-bg;
   }
-}
-.flag-stat {
-  padding: 3.5px 6px;
-}
-.flag-stat2 {
-  border-radius: 28px;
-  padding: 3.5px 8px;
 }
 /***********
 FORM TEXT
@@ -1117,6 +1117,13 @@ MODAL POPUP
       & +.button-box-medium {
         margin-top: 20px;
       }
+      .content-title {
+        @include text-body(0,'sb');
+        margin-bottom: 16px;
+      }
+      .modal-data-info +.content-title {
+        margin-top: 32px;
+      }
     }
   }
   &.no-dim {
@@ -1464,10 +1471,35 @@ MODAL POPUP
   } //.modal-banner
 
   .datamarket-pay.payment-history {
+    // border: 1px solid $gray-60;
+    // border-radius: 16px;
+    .pay-items {
+      padding: 0px;
+    }
+  }
+  .payment-history-view {
     border: 1px solid $gray-60;
     border-radius: 16px;
-    .pay-items {
-      padding: 15px;
+    padding: 19px;
+    .datamarket-pay.payment-history {
+      margin-top: 0;
+      .item-group {
+        margin-top: 23px;
+      }
+      // .pay-items.is-fold {
+      //   .payment-number .number-price {
+      //     display: none;
+      //   }
+      // }
+    }
+    .payment-number {
+      .number-order p {
+        font-size: 16px;
+      }
+      .number-price p,
+      .number-price .total {
+        font-size: 14px;
+      }
     }
   }
   .model-ipt{
@@ -1860,7 +1892,7 @@ MODAL POPUP
         flex: auto;
         text-align: right;
         @include text-body(1,'r',$gray-700);
-        // 오른쪽 정렬인 경우
+        // 왼쪽 정렬인 경우
         p {
           text-align: left;
           word-break: break-word;
@@ -1890,6 +1922,20 @@ MODAL POPUP
       }
       dd {
         @include text-body(2,'r',$gray-500);
+      }
+    }
+    &.termstyle1 {
+      .info {
+        flex-wrap: nowrap;
+        gap: 8px;
+        dt {
+          flex-basis: 110px;
+          // white-space: nowrap;
+          min-width: 110px;
+        }
+        dd {
+          @include text-body(1,'m',$gray-700);
+        }
       }
     }
   }
@@ -2391,6 +2437,7 @@ CONTENT COMPONENT
     .number-price {
       margin-top: 18.5px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 16px;
       p {
@@ -2399,6 +2446,9 @@ CONTENT COMPONENT
       .total {
         @include text-body(0,'r',$gray-900);
         text-decoration: underline;
+      }
+      .button-box-small {
+        margin-left: auto;
       }
     }
     .icon-up,
@@ -2440,7 +2490,7 @@ CONTENT COMPONENT
       }
     }
     .item {
-        margin-top: 16px;
+      margin-top: 16px;
       padding: 20px;
       background-color: $gray-20;
       border-radius: 20px;
@@ -2503,26 +2553,26 @@ CONTENT COMPONENT
     .flags {
       display: flex;
       justify-content: flex-end;
-      gap: 6px; 
+      gap: 6px;  
       .flag {
-        border-radius: 16px;
-        padding: 4px 8px;
+        border-radius: 4px; 
+        padding: 2px 6px;
         background-color: #F2F3F4;
         @include text-body(3,'sb',$gray-500);
         &.data-market {
           margin-right: auto;
-          color: $point;
-          background-color: $navy-50;
+          color: $flag-market;
+          background-color: $flag-market-bg;
         }
         &.data-openapi {
           margin-right: auto;
-          color: $flag-green;
-          background-color: $flag-green-bg;
+          color: $flag-openapi;
+          background-color: $flag-openapi-bg;
         }
         &.data-polio {
           margin-right: auto;
-          color: $flag-red;
-          background-color: $flag-red-bg;
+          color: $flag-polio;
+          background-color: $flag-polio-bg;
         }
       }
     }
@@ -2615,6 +2665,12 @@ CONTENT COMPONENT
     .item-market {
     }
     .item-polio {
+      .item {
+        position: relative;
+        .price {
+          margin: 16px 0 20px;
+        }
+      }
       .data-polio-set {
         & +.data-polio-set {
           margin-top: 20px;
@@ -2636,10 +2692,14 @@ CONTENT COMPONENT
           .show-detail {
             display: inline-flex;
             align-items: center;
-            align-self: flex-start;
-            margin-left: auto;
-            // position: absolute;
-            // right: 0;
+            // align-self: flex-start;
+            // margin-left: auto;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            .icon-link {
+              background-image: url(svg-icon(chevron-right, $gray-500));
+            }
           }
           .data {
             padding: 6px 11px;
@@ -3584,6 +3644,9 @@ TOAST POPUP
       }
     }
   }
+  .modal .modal-data-info .info-col-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .modal-faq .tab-contents {
     // 팝업 상하여백 40
     // 팝업 타이틀 46
@@ -3705,6 +3768,30 @@ TOAST POPUP
   .ai-content .info-box .title {
     min-height: inherit;
   }
+  
+  .datamarket-pay {
+    flex-direction: column;
+    .pay-items {
+      .item-polio .data-polio-set {
+        flex-direction: column;
+      }
+      // .item-polio .data-polio-set dd .show-detail {
+      //   position: absolute;
+      //   right: 0;
+      //   top: 0;
+      // }
+      .item-polio .data-polio-set dt {
+        flex-basis: auto;
+        padding: 0 0 12px;
+      }
+    }
+  }
+  .modal .payment-history-view {
+    .datamarket-pay.payment-history .pay-items.is-fold .payment-number .number-price {
+      display: none;
+    }
+  }
+  
 
   .chip-box.count .chip i{padding:3px 12px; font-size:16px; font-weight: 400; border-radius: 8px;}
   .chip-box.count .chip i em{font-size:16px;}

@@ -6,8 +6,8 @@
     <p class="head-guidetext">필요한 모든 관리가, 이 한 곳에.</p>
     <div class="head-float-menu">
         <div class="switch-mypage" aria-label="마이페이지 전환 메뉴">
-           <a href="#">MY PAGE</a>
-           <a href="#" class="is-current" aria-selected="true">MY COMPANY</a>
+           <a href="#" class="menu-mypage">MY PAGE</a>
+           <a href="#" class="menu-mycompany is-current" aria-selected="true">MY COMPANY</a>
         </div>
     </div>
 
@@ -98,16 +98,16 @@
         <div class="datamarket-pay payment-history">
             <div class="pay-items">
                 <div class="payment-number">
-                    <div class="number-order">
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-complete">결제완료</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
+                    </a>
                     <div class="number-price">
                         <p>주문 금액 <strong>10,000,000</strong><i>원</i></p>
                         <p>할인 금액 <strong>15,000,000</strong><i>원</i></p>
                         <a href="#" class="total">최종결제 금액 <strong>15,000,000</strong><i>원</i></a>
                     </div>
-                    <button type="button" class="icon-up">상세내용 접기</button>
+                    <i class="icon-up">상세내용 접기</i>
                 </div>
                 <!-- 데이터마켓/ OPEN API -->
                 <div class="item-group item-market">
@@ -133,7 +133,7 @@
                                     <i>500,000,000,000,000</i>원
                                 </p>
                                 <div class="info">
-                                    <p>
+                                    <p class="date-info">
                                         <span>다운로드 2025.07.01</span>
                                         <span>기한 2026.08.20</span>
                                     </p>
@@ -205,7 +205,7 @@
                             <dl class="data-polio-set">
                                 <dt>데이터 유형</dt>
                                 <dd>
-                                    <!-- <button type="button" class="show-detail">상세보기<i class="icon-link"></i></button> -->
+                                    <button type="button" class="show-detail">상세보기<i class="icon-link"></i></button>
                                     <span class="hash data">내국민 카드소비 데이터</span>
                                 </dd>
                             </dl>
@@ -240,7 +240,7 @@
                                 <div class="desc">
                                     <p>AI 보고서</p>
                                 </div>
-                                <p>
+                                <p class="date-info">
                                     <span>다운로드 2025.07.01</span>
                                     <span>기한 2026.08.20</span>
                                 </p>
@@ -249,7 +249,7 @@
                                 <div class="desc">
                                     <p>다운로드</p>
                                 </div>
-                                <p>
+                                <p class="date-info">
                                     <span>다운로드 2025.07.01</span>
                                     <span>기한 2026.08.20</span>
                                 </p>
@@ -274,28 +274,32 @@
         <div class="datamarket-pay payment-history">
             <div class="pay-items">
                 <div class="payment-number">
-                    <div class="number-order">
+                    <a href="#" class="number-order">
+                        <span class="flag-stat stat-review">서명 대기중</span>
+                        <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
+                    </a>
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-review">계약서 검토 중</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
-                    <div class="number-order">
+                    </a>
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-reject">계약 반려</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
-                    <div class="number-order">
+                    </a>
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-wait">결제 대기</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
-                    <div class="number-order">
+                    </a>
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-complete">결제완료</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
+                    </a>
                     <div class="number-price">
                         <p>주문 금액 <strong>10,000,000</strong><i>원</i></p>
                         <p>할인 금액 <strong>15,000,000</strong><i>원</i></p>
                         <a href="#" class="total">최종결제 금액 <strong>15,000,000</strong><i>원</i></a>
                     </div>
-                    <button type="button" class="icon-up">상세내용 접기</button>
+                    <i class="icon-up">상세내용 접기</i>
                 </div>
                 <!-- 데이터마켓/ OPEN API -->
                 <div class="item-group item-market">
@@ -320,7 +324,7 @@
                                     <i>500,000,000,000,000</i>원
                                 </p>
                                 <div class="info">
-                                    <p>
+                                    <p class="date-info">
                                         <span>다운로드 2025.07.01</span>
                                         <span>기한 2026.08.20</span>
                                     </p>
@@ -355,24 +359,28 @@
         <div class="datamarket-pay payment-history">
             <div class="pay-items">
                 <div class="payment-number">
-                    <div class="number-order">
-                         <span class="flag-stat stat-review">계약서 검토 중</span>
+                    <a href="#" class="number-order">
+                        <span class="flag-stat stat-review">서명 대기중</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
-                    <div class="number-order">
+                    </a>
+                    <a href="#" class="number-order">
+                        <span class="flag-stat stat-review">계약서 검토 중</span>
+                        <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
+                    </a>
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-wait">입금 대기</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
-                    <div class="number-order">
+                    </a>
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-complete">결제완료</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
+                    </a>
                     <div class="number-price">
                         <p>주문 금액 <strong>10,000,000</strong><i>원</i></p>
                         <p>할인 금액 <strong>15,000,000</strong><i>원</i></p>
                         <a href="#" class="total">최종결제 금액 <strong>15,000,000</strong><i>원</i></a>
                     </div>
-                    <button type="button" class="icon-up">상세내용 접기</button>
+                    <i class="icon-up">상세내용 접기</i>
                 </div>
                 <!-- 데이터마켓/ OPEN API -->
                 <div class="item-group item-market">
@@ -397,7 +405,7 @@
                                     <i>500,000,000,000,000</i>원
                                 </p>
                                 <div class="info">
-                                    <p>
+                                    <p class="date-info">
                                         <span>다운로드 2025.07.01</span>
                                         <span>기한 2026.08.20</span>
                                     </p>
@@ -446,10 +454,10 @@
         <div class="datamarket-pay payment-history">
             <div class="pay-items">
                 <div class="payment-number">
-                    <div class="number-order">
+                    <a href="#" class="number-order">
                         <span class="flag-stat stat-none">구매 취소</span>
                         <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
-                    </div>
+                    </a>
                     <div class="number-price">
                         <p>주문 금액 <strong>10,000,000</strong><i>원</i></p>
                         <p>할인 금액 <strong>15,000,000</strong><i>원</i></p>
@@ -458,7 +466,7 @@
                             <button type="button" class="button-t">취소 내역보기</button>
                         </div>
                     </div>
-                    <button type="button" class="icon-up">상세내용 접기</button>
+                    <i class="icon-up">상세내용 접기</i>
                 </div>
                 <!-- 데이터마켓/ OPEN API -->
                 <div class="item-group item-market">
@@ -522,7 +530,7 @@
                             <dl class="data-polio-set">
                                 <dt>데이터 유형</dt>
                                 <dd>
-                                    <!-- <button type="button" class="show-detail">상세보기<i class="icon-link"></i></button> -->
+                                    <button type="button" class="show-detail">상세보기<i class="icon-link"></i></button>
                                     <span class="hash data">내국민 카드소비 데이터</span>
                                 </dd>
                             </dl>

@@ -924,12 +924,32 @@ page : page-mypage
     }
   }
   .link {
+    position: relative;
     margin-left: auto;
-    padding-right: 26px;
+    margin-right: 26px;
+    // padding: 1px 0;
     @include text-body(0,'m',$gray-500);
-    background: url(svg-icon(chevron-right,$gray-500)) no-repeat 100% 50%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      right: -26px;
+      width: 20px;
+      height: 20px;
+      background: url(svg-icon(chevron-right,$gray-500)) no-repeat 50% 50%;
+    }
+    .has-new {
+      position: absolute;
+      top: 0;
+      right: -8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $primary;
+    }
   }
   .link-box {
+    display: flex;
     margin-left: auto;
     .link +.link {
       margin-left: 24px;
@@ -984,12 +1004,34 @@ page : page-mypage
     background-color: $gray-400;
     border-radius: 40px;
     a {
-      padding: 6px 12px;
+      border-radius: 40px;
+      padding: 0 12px;
+      height: 36px;
+      display: inline-flex;
+      align-items: center;
       @include text-body(1,'m',$white);
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
+      }
+      &.menu-mypage::before {
+        background: url(svg-icon(my-mypage, $white)) no-repeat 50% 50%;
+      }
+      &.menu-mycompany::before {
+        background: url(svg-icon(my-mycompany, $white)) no-repeat 50% 50%;
+      }
       &.is-current {
         color: $navy-400;
         background-color: #fff;
-        border-radius: 40px;
+        &.menu-mypage::before {
+          background: url(svg-icon(my-mypage, $primary)) no-repeat 50% 50%;
+        }
+        &.menu-mycompany::before {
+          background: url(svg-icon(my-mycompany, $primary)) no-repeat 50% 50%;
+        }
       }
     }
   }
@@ -1092,20 +1134,34 @@ page : page-mypage
       margin-top: 16px;
       height: 40px;
       align-items: center;
-      & +.data-polio-set {
-        margin-top: 20px;
-      }
+      // & +.data-polio-set {
+      //   margin-top: 20px;
+      // }
       .info {
         margin-left: auto;
         display: flex;
         align-items: center;
-        p {
+        .txt {
+          @include text-body(0,'m',$gray-500);
+        }
+        .date-info {
+          display: inline-flex;
+          align-items: center;
+          margin-left: auto;
           margin-right: 12px;
-          &.txt {
-            @include text-body(0,'m',$gray-500);
-          }
           span {
-            @include text-body(2,'b',$gray-500);
+            @include text-body(2,'r',$gray-500);
+            display: inline-flex;
+            align-items: center;
+            @include text-body(2,'r',$gray-500);
+            & +span::before {
+              content: '';
+              display: inline-flex;
+              align-items: center;
+              height: 14px;
+              margin: 0 8px;
+              border-left: 1px solid $gray-100;
+            }
           }
         }
       }
@@ -1115,6 +1171,25 @@ page : page-mypage
       gap: 16px;
       .item2 {
         flex: 1;
+        display: flex;
+        .date-info {
+          display: inline-flex;
+          align-items: center;
+          margin-left: auto;
+          span {
+            display: inline-flex;
+            align-items: center;
+            @include text-body(2,'r',$gray-500);
+            & +span::before {
+              content: '';
+              display: inline-flex;
+              align-items: center;
+              height: 14px;
+              margin: 0 8px;
+              border-left: 1px solid $gray-100;
+            }
+          }
+        }
       }
     }
   }
@@ -1216,17 +1291,29 @@ page : page-mycompany
   }
 }
 @media screen and (max-width: 767px) {
-  .page-mypage .datamarket-pay.payment-history {
+  .page-mypage .datamarket-pay.payment-history,
+  .page-mycompany .datamarket-pay.payment-history {
     .payment-number {
       margin-bottom: 0;
+    }
+    .pay-items {
+      border-radius: 16px;
+      padding: 12px;
     }
     .payment-number .number-order p em,
     .payment-number .number-price,
     .payment-number .icon-up,
     .payment-number .icon-down,
+    .payment-number .number-price .button-box-small,
     .item-group,
     .item-bottom-button {
       display: none;
+    }
+    .item-bottom-button .button-box-large {
+      button {
+        flex: 1;
+        min-width: auto;
+      }
     }
   }
 }
@@ -1820,6 +1907,11 @@ page : page-datamarket
   }
   .datamarket-pay {
     margin-top: 60px;
+    .pay-items .item-polio {
+      .data-polio-set dd .show-detail {
+        top: 24px;
+      }
+    }
   }
   // 결제하기
   // .datamarket-pay {
@@ -3423,17 +3515,17 @@ MEDIA QUERY
   .analysis-nav {
     left: 20px;
   }
-  
-  .datamarket-pay {
-    flex-direction: column;
-  }
-  
+
   .page-aisearch {
     .aisearch-body {
       padding-top: calc(56px + 20px);
     }
   }
 
+
+  .datamarket-pay.payment-history .item-group .item2-box {
+    display: block;
+  }
   .page-polio .datapolio-bottom{
     max-width: 100%;
     width: 100%;
@@ -3470,7 +3562,6 @@ MEDIA QUERY
   .analysis-nav .industry-list.is-open {
     display: block;
   }
-  
 }
 @media screen and (min-width: 768px) {
   // div{ background-color: red;}
@@ -3585,7 +3676,69 @@ MEDIA QUERY
       margin-bottom: 40px;
     }
   }
-
+  .head-float-menu .switch-mypage a {
+    color: transparent;
+    text-indent: -9999px;
+    &::before {
+      margin-right: 0;
+    }
+  }
+  .datamarket-pay {
+    .payment-number {
+      .number-order p {
+        font-size: 14px;
+        em {
+          display: none;
+        }
+      }
+      .number-price {
+        margin-top: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        p, .total {
+          font-size: 14px;
+        }
+      }
+    }
+    &.payment-history {
+      .item-group {
+        .item .info-box {
+          display: block;
+          height: auto;
+          .info {
+            margin-top: 20px;
+            flex-direction: column;
+            .date-info {
+              margin: 0 0 4px;
+            }
+            .button-box-small {
+              width: 100%;
+              button {
+                flex: auto;
+              }
+            }
+          }
+        }
+        .item2-box {
+          .item2 {
+            flex-direction: column;
+            .date-info {
+              margin: 0;
+            }
+          }
+        }
+      }
+      .item-bottom-button {
+        .button-box-large {
+          button {
+            min-width: auto;
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
   // 구매내역/문의내역
   .myhistory-contents {}
   // 개인정보 수정
@@ -3914,21 +4067,21 @@ MEDIA QUERY
           }
         }
       }
-      .pay-items {
-        .item-polio .data-polio-set {
-          flex-direction: column;
-          position: relative;
-        }
-        .item-polio .data-polio-set dd .show-detail {
-          position: absolute;
-          right: 0;
-          top: 0;
-        }
-        .item-polio .data-polio-set dt {
-          flex-basis: auto;
-          padding: 0 0 12px;
-        }
-      }
+      // .pay-items {
+      //   .item-polio .data-polio-set {
+      //     flex-direction: column;
+      //     position: relative;
+      //   }
+      //   // .item-polio .data-polio-set dd .show-detail {
+      //   //   position: absolute;
+      //   //   right: 0;
+      //   //   top: 0;
+      //   // }
+      //   .item-polio .data-polio-set dt {
+      //     flex-basis: auto;
+      //     padding: 0 0 12px;
+      //   }
+      // }
     }
     
   }
