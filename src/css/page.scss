@@ -1371,30 +1371,7 @@ page : page-insight
       // .icon-alram {background-image: url(svg-icon(alram-on, $primary));}
     }
   }
-  .insight-tag {
-    display: inline-flex;
-    gap: 4px;
-    align-items: center;
-    .txt {
-      margin-right: 4px;
-      @include text-body(0,'m',$gray-700);
-    }
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      height: 20px;
-      padding: 0 5px;
-      border: 1px solid $gray-100;
-      @include text-body(3,'m',$gray-700);
-      background-color: $white;
-      border-radius: 4px;
-      &.original {
-        border-color: #FDC1C7;
-        background-color: #FA3246;
-        color: $white;
-      }
-    }
-  }
+  
   // 리스트
   .insight-header {
     .header-title {
@@ -1497,36 +1474,7 @@ page : page-insight
     li {
       flex: 0 1 31%;
     }
-    .ai-content {
-      position: relative;
-      display: block;
-      border-radius: 24px;
-      padding: 11px;
-      border: 1px solid $white;
-      background-color: #FFFFFF99;
-      box-shadow: 0px 16px 32px 0px #23225814;
-      backdrop-filter: blur(20px);
-      .image {
-        overflow: hidden;
-        border-radius: 16px;
-      }
-      .info-box {
-        .insight-tag {
-          position: absolute;
-          top: 23px;
-          left: 23px;
-        }
-        .title {
-          margin-top: 8px;
-          min-height: 3em;
-          @include text-body(0,'sb');
-        }
-        .date {
-          margin-top: 8px;
-          @include text-body(3,'r',$gray-500);
-        }
-      }
-    }
+    
   }
   .insight-contents {
     position: relative;
@@ -1636,28 +1584,7 @@ page : page-datamarket
       }
     }
   }
-  .data-list {
-    & >ul {
-      display: grid;
-      gap: 20px;
-      &.col-1 {
-        .data-card {
-          padding-left: 80px;
-          .logo {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-          }
-          .title {
-            margin-right: 120px;
-          }
-        }
-      }
-      &.col-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  }
+  
   // 리스트
   .datamarket-search {
     margin-top: 60px;
@@ -3352,25 +3279,131 @@ footer
 }
 
 // 통합검색
-.modal-search{
-  padding-top:88px;
-  align-items: flex-start;
-  .modal{
-    border: 2px solid #fff;
-    box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.08);
-    background: #FFFFFFCC;
-    max-width: 1000px;
-    margin:0 auto;
-    flex:auto;
-    .modal-close{
-      right:20px;
-      width:28px;
-      height:28px;
-      background-size:24px auto;
-    }
+// .modal-search{
+//   padding-top:88px;
+//   align-items: flex-start;
+//   .modal{
+//     border: 2px solid #fff;
+//     box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.08);
+//     background: #FFFFFFCC;
+//     max-width: 1000px;
+//     margin:0 auto;
+//     flex:auto;
+//     .modal-close{
+//       right:20px;
+//       width:28px;
+//       height:28px;
+//       background-size:24px auto;
+//     }
 
+//   }
+// }
+
+.page-search{
+  strong{color:$navy-400;}
+  .input-box{
+    margin-top:20px;
+  }
+  .contents-list-wrap{
+    display: flex;
+    width: 100%;
+    .contents-list{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+  .search-content{
+    margin-top:60px;
+    margin-bottom:16px;
+    .contents-summary{
+      margin-top:0px;
+      margin-bottom:16px;
+    }
+    .search-wrap{
+      margin-top:32px;
+      &+.search-wrap{
+        margin-top:60px;
+      }
+      .faq-contents{
+        margin-top:0;
+      }
+    }
+    .button-box-medium{
+      margin-top:40px;
+      .button-q{
+        width:160px;
+        border-radius: 12px;
+        
+      }
+      
+    }
+  }
+
+  .contents-filter{
+    margin-left:-20px;
+    margin-right:-20px;
+    .chip-box{
+      flex-wrap: nowrap;
+      overflow: hidden;
+      overflow-x: auto;
+      padding-left:20px;
+      padding-right:20px;
+      
+    }
+  }
+  
+  .footer-etc{
+    display: flex;
+    margin-top:92px;
+    gap:20px;
+    justify-content:center;
+    .footer-etc-cont{
+      flex:1;
+      max-width: 320px;
+      border-radius: 20px;
+      background:#fff;
+      a{
+        position:relative;
+        display:block;
+        padding:20px;
+        padding-top:92px;
+        background: url(svg-icon(chevron-right, $gray-300)) no-repeat right 22px bottom 36px;
+        &:before{
+          position:absolute;
+          content:"";
+          display:block;
+          top:20px;
+          left:20px;
+          border-radius: 15px;
+          @include set-icon(48px, 48px, $icon-etc-a);
+          background-color: $gray-40;
+          background-size:24px;
+        }
+      }
+      .title{
+        font-size:18px;
+        font-weight: 600;
+        color:$gray-900;
+      }
+      .txt{
+        font-size:16px;
+        font-weight: 400;
+        color:$gray-500;
+      }
+      +.footer-etc-cont{
+        a{
+          &:before{
+            @include set-icon(48px, 48px, $icon-etc-b);
+            background-color: $gray-40;
+            background-size:24px;
+          }
+        }
+      }
+    }
   }
 }
+
 
 
 /***********
@@ -3394,11 +3427,7 @@ MEDIA QUERY
   .datamarket-pay {
     flex-direction: column;
   }
-  .page-datamarket {
-    .data-list > ul.col-3 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+  
   .page-aisearch {
     .aisearch-body {
       padding-top: calc(56px + 20px);
@@ -3427,6 +3456,10 @@ MEDIA QUERY
   }
   .page-polio .step-content .chip-box{width:100%;}
   .footer-contents .tab-type{padding:0 24px; margin:0 -24px;   }
+  .page-search .contents-list-wrap .contents-list{    grid-template-columns: repeat(2, 1fr); width:100%;}
+  .data-tournament-list .tournament-list .tournament-content .image{max-height: 186px;}
+  .page-search .footer-etc{margin-top:60px; gap:12px;}
+  .page-search .footer-etc .footer-etc-cont{max-width: 324px;}
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   // 마이페이지 > 회원탈퇴
@@ -3437,6 +3470,7 @@ MEDIA QUERY
   .analysis-nav .industry-list.is-open {
     display: block;
   }
+  
 }
 @media screen and (min-width: 768px) {
   // div{ background-color: red;}
@@ -3786,9 +3820,6 @@ MEDIA QUERY
         .contents-list {
           grid-template-columns: auto;
         }
-        .ai-content .info-box .title {
-          min-height: inherit;
-        }
       }
     }
     .insight-alram {
@@ -3899,9 +3930,7 @@ MEDIA QUERY
         }
       }
     }
-    .data-list > ul.col-3 {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    
   }
 
   .contents-summary .list-type {display: none;}
@@ -4049,4 +4078,32 @@ MEDIA QUERY
   .footer-contents .security-box{margin-top:32px;}
   .footer-contents .security-box .title2{margin-bottom:16px; font-size:20px;}
   .footer-contents .security-box .title4{margin-top:32px; font-size:18px;}
+
+  .page-search{padding-top:20px;}
+  .page-search .title3{font-size:20px;}
+  .page-search .input-box{margin-top:16px;}
+  .page-search .search-content{margin-top:32px;}
+  .page-search .search-content .search-wrap{margin-top:24px;}
+  .page-search .search-content .button-box-medium{margin-top:32px;}
+  .page-search .search-content .button-box-medium .button-q{padding:11px; font-size:16px; width:100%; border-radius: 8px;}
+  .page-search .contents-list-wrap .contents-list{grid-template-columns:repeat(1,1fr);}
+  .page-search .footer-etc{margin-top:24px; flex-direction:column;}
+  .page-search .footer-etc .footer-etc-cont{max-width: 100%; border-radius: 16px;}
+  .page-search .footer-etc .footer-etc-cont a{padding:16px; padding-left: 68px; background-position:center right 16px;}
+  .page-search .footer-etc .footer-etc-cont a:before{top:50%; left:16px; transform:translateY(-50%); width:40px; height:40px; border-radius: 12px; background-size:20px;}
+  .page-search .footer-etc .footer-etc-cont + .footer-etc-cont a:before{ width:40px; height:40px; border-radius: 12px; background-size:20px;  }
+  .page-search .footer-etc .footer-etc-cont .title{font-size:16px;}
+  .page-search .footer-etc .footer-etc-cont .txt{font-size:14px;}
+  .notice-list .data-card{padding:16px;}
+  .notice-list ul .data-card .bedge-notice{margin-bottom:4px; padding:2px 6px;}
+  .notice-list ul .data-card .title{font-size:16px;}
+  .faq-contents .accordion .title{font-size:16px;}
+  .faq-contents .accordion ul .accordion-item .accordion-header{padding:16px;}
+
+  .data-list > ul.col-1 .data-card{border-radius: 20px; padding-left:20px;}
+  .data-list > ul.col-1 .data-card .logo{position:initial;}
+  .data-list > ul.col-1 .data-card .title{margin-right:0;}
+  .data-list > ul.col-1 .data-card .price{text-align: right;}
+  
+  
 } // end @media screen and (max-width: 767px)

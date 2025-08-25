@@ -1,22 +1,5 @@
 {%- extends "_templates/_layout.njk" -%}
 
 {% block content %}
-{{ include( "_html/_AS01MAIN.njk" ) }}
-{%- endblock %}
-
-{% block modal %}
-<div class="pop-modal modal-search" id="modal-search">
-    <div class="modal" tabindex="0">
-        <div class="modal-header">통합검색</div>
-        <div class="input-box">
-            <input type="text" class="ipt" placeholder="무엇이 궁금하신가요?">
-            <span class="util-box">
-                <button class="ipt-clear">내용 지우기</button>
-                <button type="button" class="ipt-search"><i>검색</i></button>
-            </span>
-        </div>
-        <button class="modal-close" type="button">닫기</button>
-    </div>
-</div>
 
 {%- endblock %}
