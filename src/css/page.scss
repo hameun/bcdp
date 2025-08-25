@@ -971,6 +971,29 @@ page : page-mypage
     margin-top: 32px;
   }
 }
+.head-float-menu {
+  position: relative;
+  .switch-mypage {
+    position: absolute;
+    right: 0;
+    bottom: 60px;
+    padding: 8px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    background-color: $gray-400;
+    border-radius: 40px;
+    a {
+      padding: 6px 12px;
+      @include text-body(1,'m',$white);
+      &.is-current {
+        color: $navy-400;
+        background-color: #fff;
+        border-radius: 40px;
+      }
+    }
+  }
+}
 .mycontext-box {
   margin-bottom: 40px;
   border-radius: 16px;
@@ -1113,14 +1136,6 @@ page : page-mypage
   }
 }
 .page-mypage {
-  .head-float-menu {
-    position: relative;
-    .switch-box {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-  }
   .tab-box { // 나의 내역
     margin-bottom: 40px;
   }
@@ -1133,6 +1148,22 @@ page : page-mypage
 .myinfo-contents {
   max-width: 720px;
   margin: 0 auto;
+  &.password-check {
+    max-width: 490px;
+    margin-top: 100px;
+    // padding: 80px 0;
+    h2 {
+      margin-bottom: 32px; 
+      @include text-title(1);
+      text-align: center;
+    }
+    .button-box-large {
+      margin-top: 40px;
+      button {
+        flex: 1;
+      }
+    }
+  }
   .button-box-large {
     button {
       min-width: 160px;
@@ -3475,10 +3506,28 @@ MEDIA QUERY
 
 @media screen and (max-width: 767px) {
   .mycontext-box {
+    padding: 20px;
+    .info-tit:has(button) {
+      display: flex;
+      button {
+        margin-left: auto;
+      }
+    }
     .info {
       flex-wrap: wrap;
+      min-height: none;
+      align-items: flex-start;
       & +.info {
         margin-top: 20px;
+      }
+      dt {
+        font-size: 16px;
+      }
+      dd {
+        font-size: 16px;
+        .switch-box {
+          height: auto;
+        }
       }
       dd.btn {
         margin-left: 0;
@@ -3497,11 +3546,6 @@ MEDIA QUERY
   .page-mypage {
     .head-float-menu {
       position: relative;
-      .switch-box {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
     }
     .tab-box { // 나의 내역
       margin-bottom: 40px;
@@ -3511,7 +3555,14 @@ MEDIA QUERY
   // 구매내역/문의내역
   .myhistory-contents {}
   // 개인정보 수정
-  .myinfo-contents {}
+  .myinfo-contents {
+    &.password-check {
+      margin-top: 64px;
+      h2 {
+        font-size: 16px;
+      }
+    }
+  }
   // 장바구니
   .mycart-contents {}
   // 쿠폰
