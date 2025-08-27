@@ -99,8 +99,10 @@
 .icon-home {@include set-icon(48px, 48px, $icon-home, 36px);} 
 .icon-menufold {@include set-icon(48px, 48px, $icon-fold, 20px);}
 .icon-menuclose {@include set-icon(48px, 48px, svg-icon(close-16, $gray-900), 20px);}
+.icon-searchclose {@include set-icon(48px, 48px, svg-icon(close-16, $gray-900), 20px);}
 .icon-aisearch {@include set-icon(48px, 48px, $icon-aisearch, 20px);}
 .icon-search {@include set-icon(48px, 48px, $icon-search, 48px);}
+.icon-totalsearch {@include set-icon(48px, 48px, $icon-totalsearch, 48px);}
 .icon-history {@include set-icon(48px, 48px, $icon-history, 48px);}
 .icon-cart {@include set-icon(48px, 48px, $icon-cart, 48px);}
 .icon-mypage {@include set-icon(48px, 48px, $icon-mypage, 48px);}
@@ -3519,6 +3521,40 @@ POPOVER POPUP
   }
 }
 
+// 통합검색
+.totalSearch{
+  position:fixed;
+  top:20px;
+  right:280px;
+  width: 360px;
+  box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  background-size: 24px;
+  z-index:9;
+  .icon-totalsearch{
+    position:absolute;
+    left:0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-size: 24px;
+  }
+
+  .input-box{
+    position:relative;
+    padding:0;
+    border-radius: 20px ;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    input{
+      padding-left:48px;
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+  .text-close{display:none;}
+}
 
 /***********
 TOAST POPUP
@@ -3595,6 +3631,49 @@ TOAST POPUP
   .data-list > ul.col-3 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .totalSearch{
+    display:none;
+    position:initial;
+    padding:8px 12px 9px;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    box-shadow: none;
+    background: none;
+    backdrop-filter: noinheritne;
+    border-radius: initial;
+    box-sizing: border-box;
+    
+    .input-box{
+      width:280px;
+      border-radius: 12px;
+      background:#fff;
+      input{
+        padding:7px 14px;
+        padding-left:44px;
+        background:#fff;
+      }
+    }
+
+    .text-close{
+      display: block;
+      font-size:16px;
+      font-weight: 500;
+      color:$gray-500;
+      width:48px;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      border-bottom: 1px solid #E7E9EF;
+    }
+  }
+
+  
+  
 }
 @media screen and (min-width: 768px){
   /** page select */
