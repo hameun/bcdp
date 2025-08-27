@@ -28,6 +28,7 @@ $(function(){
     fn_marketSlider();
     fn_accordion();//아코디언
     fn_filter();
+    fn_totalSearch();
 
     window.addEventListener('scroll', function(e){
         windowWidth = window.innerWidth;
@@ -1277,4 +1278,59 @@ function fn_accordion() {
   });
 };
 /** //아코디언 */
+
+//통합검색
+function fn_totalSearch() {
+  const iconSearch = document.querySelector('.icon-search, .icon-searchclose');
+  const totalSearch = document.querySelector('.totalSearch');
+  const statebar = document.querySelector('.statebar');
+
+  function showTotalSearch() {
+    if (window.innerWidth <= 1023) {
+      totalSearch.style.display = 'flex'; // 모바일에서는 flex
+    } else {
+      totalSearch.style.display = 'block'; // 데스크탑에서는 block
+    }
+    iconSearch.classList.remove('icon-search');
+    iconSearch.classList.add('icon-searchclose');
+    iconSearch.textContent = '닫기';
+  }
+
+  function hideTotalSearch() {
+    totalSearch.style.display = 'none';
+    iconSearch.classList.remove('icon-searchclose');
+    iconSearch.classList.add('icon-search');
+    iconSearch.textContent = '통합검색';
+  }
+
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  iconSearch.addEventListener('click', function(e) {
+    e.preventDefault();
+    if (iconSearch.classList.contains('icon-search')) {
+      showTotalSearch();
+      if (isMobile() && statebar) {
+        statebar.style.display = 'none';
+      }
+    } else {
+      hideTotalSearch();
+      if (isMobile() && statebar) {
+        statebar.style.display = '';
+      }
+    }
+  });
+
+  const textClose = document.querySelector('.totalSearch .text-close');
+  if (textClose) {
+    textClose.addEventListener('click', function(e) {
+      e.preventDefault();
+      hideTotalSearch();
+      if (isMobile() && statebar) {
+        statebar.style.display = '';
+      }
+    });
+  }
+}
 
