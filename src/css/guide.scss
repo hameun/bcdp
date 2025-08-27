@@ -120,7 +120,7 @@
         @include text-body;
         min-width: inherit;
         .icon-extlink {
-          margin-left: 4px !important;
+          // margin-left: 4px !important;
         }
       }
     }
@@ -229,28 +229,50 @@
 }
 // 
 @media screen and (max-width: 820px){
+  .guide {
+    h2 {
+      font-size: 20px;
+    }
+  }
+  .guide .container {
+    padding:0 12px;
+  }
   .guide .publist .location {
     width: auto;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
   }
   .guide .publist .menu-title {
-    flex-basis: calc(100% - 130px);
+    flex-basis: calc(100% - 40px);
     min-width: auto !important;
-    padding-left: 0 !important;
+    .title {
+      min-width: 70px;
+      font-size: 12px;
+      del {font-size: 12px;}
+    }
+    // padding-left: 0 !important;
+    &.dep1 {padding-left: 70px;}
+    &.dep2 {padding-left: 140px;}
+    &.dep3 {padding-left: 200px;}
   }
   .guide .publist .menu-link {
     min-width: auto;
     justify-items: right;
     a {
+      padding: 2px 6px;
       font-size: 0;
       i.icon-extlink {
         margin: 0;
       }
+      del {
+        display: none;
+      }
     }
   }
+  .guide .publist .menu-stat,
   .guide .publist .menu-text {
-    flex-basis: 100%;
-    padding-left: 40px;
+    display: none;
+    // flex-basis: 100%;
+    // padding-left: 40px;
   }
 }
 @media screen and (max-width: 768px){

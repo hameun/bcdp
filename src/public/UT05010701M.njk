@@ -1,0 +1,27 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UT05010701.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>회원 탈퇴 시, 회원정보와 구매하신 데이터는 즉시 삭제되며 재가입하셔도 복구되지 않습니다. 정말 탈퇴를 진행하시겠습니까?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니오</button>
+            <button class="button-p" type="button">탈퇴하기</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_1');return false;">[탈퇴하기]</a>
+    </div>
+</div>
+{%- endblock %}
