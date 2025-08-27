@@ -2615,6 +2615,8 @@ page : page-polio
     }
     //지역
     .chip-check-wrap{
+      max-width: 720px;
+      width:100%;
       .chip-tit-wrap{
         display: flex;
         justify-content: space-between;
@@ -4660,6 +4662,7 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .tab-bccard .bcdata-info .partner{ width:260px;}
   .bcdata-contents .tab-contents .tab-bccard .bc-box{flex-direction: column;}
   .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box{flex-basis: auto;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .inner-cont ul li{max-width: 180px;}
   .bcdata-contents .tab-contents .service-box ul{gap:16px;}
   .bcdata-contents .tab-contents .tab-credit .d-list ul li{flex:0 0 36%;}
   .bcdata-contents .tab-contents .tab-credit .service-box ul{justify-content: space-between;}

@@ -695,72 +695,83 @@
         "name": "금융 빅데이터 플랫폼 소개",
         "dep" : 0,
         "href": "UG01",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "제공기관 안내",
         "dep" : 1,
         "href": "UG0201",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "error",
         "dep" : 0,
         "href": "CM04",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "group": "공지사항",
         "name": "목록",
         "dep" : 0,
         "href": "UG0301",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
         "href": "UG0301M",
         "text": [],
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "상세",
         "dep" : 1,
         "href": "UG0302",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "group": "OPEN API 안내",
         "name": "[모달]",
         "dep" : 0,
         "href": "OA02P02",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "FAQ ",
         "dep" : 0,
         "href": "UG0401",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "[모달]",
         "dep" : 2, 
         "href": "UG0401M",
         "text": [],
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "데이터파트너 신청 ",
         "dep" : 0,
         "href": "UG0503",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }
       ,
       {
         "name": "[모달]",
         "dep" : 2,
         "href": "UG0503M",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }
     ]},
     {
@@ -779,68 +790,79 @@
         "name": "이용약관",
         "dep" : 0,
         "href": "UT070201",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중"
       },
       {
         "name": "약관",
         "dep" : 1,
         "href": "UT0707P01",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중"
       },
       {
         "name": "개인정보처리방침",
         "dep" : 1,
         "href": "UT070301",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "group": "통합검색 (9/3)",
         "name": "",
         "dep" : 0,
         "href": "UT04",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "전체",
         "dep" : 1,
         "href": "UT041",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "데이터마켓",
         "dep" : 1,
         "href": "UT0402",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "AI인사이트",
         "dep" : 1,
         "href": "UT0403",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "데이터경진대회",
         "dep" : 1,
         "href": "UT0404",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "공지사항",
         "dep" : 1,
         "href": "UT0405",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "FAQ",
         "dep" : 1,
         "href": "UT0406",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "결과없음",
         "dep" : 1,
         "href": "UT0407",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
 
       {
@@ -848,169 +870,197 @@
         "name": "(사용자 수신)광고성 정보 수신동의 안내",
         "dep" : 0,
         "href": "CM0102",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "(사용자 수신)휴면상태 전환 예정 안내",
         "dep" : 1,
         "href": "CM0104",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)인증번호 전송 안내",
         "dep" : 1,
         "href": "CM0105",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },
       {
         "name": "(사용자 수신)AI 인사이트 알림 안내",
         "dep" : 1,
         "href": "CM0106",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터폴리오 다운로드 안내 ",
         "dep" : 1,
         "href": "CM0107",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       },  
       {
         "name": "(사용자 수신)AI보고서 다운로드 안내 ",
         "dep" : 1,
         "href": "CM0108",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)문의 답변 안내 ",
         "dep" : 1,
         "href": "CM0109",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)기업등록 승인여부 안내_승인 ",
         "dep" : 1,
         "href": "CM0110",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)기업등록 승인여부 안내_미승인 ",
         "dep" : 1,
         "href": "CM0111",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너등록 승인여부 안내_승인 ",
         "dep" : 1,
         "href": "CM0112",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너등록 승인여부 안내_미승인 ",
         "dep" : 1,
         "href": "CM0113",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너 데이터셋 등록 승인여부 안내_승인 ",
         "dep" : 1,
         "href": "CM0114",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너 데이터셋 등록 승인여부 안내_미승인 ",
         "dep" : 1,
         "href": "CM0115",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)전자계약 체결 안내_승인",
         "dep" : 1,
         "href": "CM0116",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)기업 정보 수정 승인여부 안내_승인 ",
         "dep" : 1,
         "href": "CM0117",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)기업 정보 수정 승인여부 안내_미승인 ",
         "dep" : 1,
         "href": "CM0118",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너 정보 수정 승인여부 안내_승인 ",
         "dep" : 1,
         "href": "CM0119",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너 정보 수정 승인여부 안내_미승인 ",
         "dep" : 1,
         "href": "CM0120",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너 데이터셋 정보 수정 승인여부 안내_승인 ",
         "dep" : 1,
         "href": "CM21",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(사용자 수신)데이터파트너 데이터셋 정보 수정 승인여부 안내_미승인  ",
         "dep" : 1,
         "href": "CM22",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)문의 등록 안내",
         "dep" : 1,
         "href": "CM0201",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)기업등록 승인요청 안내",
         "dep" : 1,
         "href": "CM0202",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)데이터파트너 등록 승인요청 안내",
         "dep" : 1,
         "href": "CM0203",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)데이터파트너 데이터셋 등록 승인요청 안내",
         "dep" : 1,
         "href": "CM0204",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)전자계약 체결 안내",
         "dep" : 1,
         "href": "CM0205",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자수신)기업 정보 수정 승인요청 안내",
         "dep" : 1,
         "href": "CM0206 ",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)데이터파트너 정보 수정 승인요청 안내",
         "dep" : 1,
         "href": "CM0207",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "(관리자 수신)데이터파트너 데이터셋 정보 수정 승인요청 안내",
         "dep" : 1,
         "href": "CM0208",
-        "date": "작업예정"
+        "stat": "end",
+        "date": "8/27"
       }, 
       {
         "name": "[팝업]히스토리 레이어팝업",
