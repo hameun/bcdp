@@ -451,6 +451,12 @@ $graph-color3: $gray-100;
         }
       }
     }
+    .a-cont.industry {
+      height: 308px;
+      overflow: hidden;
+      overflow-x: auto;
+      border-radius: 0;
+    }
   }
   // [업종별 흐름] 상세
   .cont-detail {
