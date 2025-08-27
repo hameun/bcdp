@@ -5,8 +5,8 @@
     <h1 class="headline1">개인정보수정</h1>
     <p class="head-guidetext">내 정보, 직접 수정하고 관리하세요.</p>
 
-    <div class="myinfo-contents">
-        <h2 class="headline1">정보를 안전하게 보호하기 위해 <br>비밀번호를 다시 한 번 입력해주세요.</h2>
+    <div class="myinfo-contents password-check">
+        <h2>정보를 안전하게 보호하기 위해 <br>비밀번호를 다시 한 번 입력해주세요.</h2>
         <div class="formbox">
         <form>
             <label for="password" class="input-title">비밀번호</label>
@@ -23,13 +23,13 @@
                 </span>
             </div>
             <p class="input-help is-error">비밀번호를 입력해주세요.</p>
+
+            <div class="button-box-large">
+                <button type="button" class="button-p" disabled>확인</button>
+            </div>
         </form>
         </div>
     </div>
-</div>
-
-<div class="button-box-large">
-    <button type="button" class="button-p">확인</button>
 </div>
 <!-- //.content .page-mypage -->
 {%- endblock %}

@@ -6,7 +6,7 @@
 
 {% block modal %}
 <!-- [2025.07.29 모달팝업 변경] -->
-<div class="pop-modal modal-hidden" id="modal_01">
+<!-- <div class="pop-modal modal-hidden" id="modal_01">
     <div class="modal" tabindex="0">
         <div class="message-box">
             <p>분야를 선택해주세요.</p>
@@ -15,7 +15,7 @@
             <button class="button-p" type="button">확인</button>
         </div>
     </div>
-</div>
+</div> [2025.08.25] 삭제 -->
 <div class="pop-modal modal-hidden" id="modal_02">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -66,7 +66,7 @@
         </div>
     </div>
 </div>
-<div class="pop-modal modal-hidden" id="modal_07">
+<!-- <div class="pop-modal modal-hidden" id="modal_07">
     <div class="modal" tabindex="0">
         <div class="message-box">
             <p>로고 이미지를 등록해주세요.</p>
@@ -75,7 +75,7 @@
             <button class="button-p" type="button">확인</button>
         </div>
     </div>
-</div>
+</div> [2025.08.25] 삭제 -->
 <div class="pop-modal modal-hidden" id="modal_08">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -86,7 +86,7 @@
         </div>
     </div>
 </div>
-<div class="pop-modal modal-hidden" id="modal_09">
+<!-- <div class="pop-modal modal-hidden" id="modal_09">
     <div class="modal" tabindex="0">
         <div class="message-box">
             <p>업데이트 주기를 선택해주세요.</p>
@@ -125,19 +125,52 @@
             <button class="button-p" type="button">확인</button>
         </div>
     </div>
-</div>
+</div> [2025.08.25] 삭제 -->
 <!-- [2025.08.14 수정/추가] -->
 <div class="pop-modal modal-hidden" id="modal_13">
     <div class="modal" tabindex="0">
         <div class="message-box">
             <p>실제 첨부되어 있던 파일이 삭제 되며 복구할 수 없습니다. 정말로 삭제를 진행 하시겠습니까?</p>
         </div>
+        <div class="button-box-medium col-3"><!-- [2025.08.25] 수정 -->
+            <button class="button-q" type="button">아니요</button><!-- [2025.08.25] 수정 -->
+            <button class="button-p" type="button">삭제</button>
+        </div>
+    </div>
+</div>
+<!-- //[2025.08.14 수정/추가] -->
+ <!-- [2025.08.25] 추가 -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터명을 입력해주세요.</p>
+        </div>
         <div class="button-box-medium">
             <button class="button-p" type="button">확인</button>
         </div>
     </div>
 </div>
-<!-- //[2025.08.14 수정/추가] -->
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>데이터 파일을 등록해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>판매금액을 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+ <!-- //[2025.08.25] 추가 -->
 <div class="pop-modal modal-hidden" id="modal_21">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -387,20 +420,26 @@
 <!-- 퍼블리싱 확인 -->
 <div class="modal-test">
     <div class="button-box-xsmall"> 
-        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_01');return false;">분야 미선택</a>
+        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_01');return false;">분야 미선택</a> [2025.08.25] 삭제 -->
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_02');return false;">사용 목적 미선택</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_03');return false;">제공방식 미선택 </a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_04');return false;">데이터 상품명 미입력</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_05');return false;">데이터 한줄요약 미입력</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_06');return false;">데이터 상품안내 미입력</a>
-        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_07');return false;">로고 미등록</a>
+        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_07');return false;">로고 미등록</a> [2025.08.25] 삭제 -->
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_08');return false;">노출 여부 미선택</a>
-        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_09');return false;">업데이트 주기 미선택</a>
+        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_09');return false;">업데이트 주기 미선택</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_10');return false;">이용허락범위 미선택</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_11' );return false;">다운로드 가능 기간 미선택</a>
-        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_12' );return false;">등록할 데이터 형식 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_12' );return false;">등록할 데이터 형식 미선택</a> [2025.08.25] 삭제 -->
         <hr>
         <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_13' );return false;">삭제 버튼 선택 시</a><!-- [2025.08.14 수정/추가] -->
+        <!-- [2025.08.25] 추가 -->
+        <a href="#" class="button-q" onclick="fn_toast('삭제되었습니다' );return false;">삭제 버튼 선택 시 > 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_14' );return false;">데이터명 미입력</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_15' );return false;">데이터파일 미등록</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_16' );return false;">판매금액 미입력</a>
+        <!-- //[2025.08.25] 추가 -->
     </div>
     
     <div class="button-box-xsmall"> 
