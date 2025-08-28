@@ -2922,6 +2922,7 @@ page : page-polio
         padding:12px 20px;
         padding-right:52px;
         background: rgba(255, 255, 255, 0.8);
+        border-radius: 18px;
         &::placeholder {
           //background: rgba(255, 255, 255, 0.8);
           color:$gray-300;
@@ -3167,6 +3168,8 @@ page : page-polio
     z-index:9;
     .btn-filter{
       display:flex;
+      position:absolute;
+      top:-72px;
       align-items: center;
       justify-content: center;
       margin-bottom:16px;
@@ -3181,8 +3184,8 @@ page : page-polio
       background:  rgba(255, 255, 255, 0.6);
 
       .btn-icon-filter{
-        width: 56px;
-        height: 56px;
+        width: 52px;
+        height: 52px;
         background:url($icon-filter) no-repeat center;
         &.is-filter{
           &::before{
@@ -3221,7 +3224,6 @@ page : page-polio
       display:flex;
       flex-direction: column;
       box-sizing: border-box;
-      background:#fff;
         .filter-tit{
           font-size:18px;
           font-weight: 600;
@@ -3523,7 +3525,8 @@ page : page-polio
           position: absolute;
           top: 20px;
           right: 20px; 
-          @include set-icon(24px, 24px, svg-icon(chevron-right, $gray-300));
+          @include set-icon(28px, 28px, svg-icon(chevron-right, $gray-300));
+          background-size:24px auto;
           transform: rotate(90deg);
         }
 
@@ -3679,6 +3682,7 @@ page : page-polio
     margin-top:20px;
     .button-q{
       min-width: 200px;
+      font-weight: 600;
     }
   }
   
@@ -3729,7 +3733,7 @@ page : page-polio
       .bedge-notice{
         display:inline-flex;
         margin-bottom:8px;
-        padding:4px 6px;
+        padding:2px 6px;
         border-radius: 4px;
         background:$navy-300;
         color:$white;
@@ -3750,6 +3754,9 @@ page : page-polio
       }
       .desc{
         margin-top:4px;
+      }
+      .icon-file, .icon-new{
+        background-size: 24px;;
       }
     }
   }
@@ -3821,6 +3828,7 @@ page : page-polio
           .agree-all{
             position:initial;
             .ipt-check{
+              font-weight: 600;
               margin-bottom:20px;
             }
           }
@@ -3873,7 +3881,7 @@ footer
         text-indent: -15px;
       }
       .depth-2-descript{text-indent: 0; padding-left: 4px;}
-      .underline{display:initial; font-size:14px; font-weight: 500;}
+      .underline{display:initial; font-size:14px; font-weight: 500; text-decoration: none;}
       .underline:before{bottom:-2px;}
     }
     .table{
@@ -3935,6 +3943,9 @@ footer
       }
       .faq-contents{
         margin-top:0;
+      }
+      .loading{
+        padding:60px 0;
       }
     }
     .button-box-medium{
@@ -4013,6 +4024,7 @@ footer
       }
       div{
         background: url(svg-icon(chevron-right, $gray-300)) no-repeat right center;
+        background-size:20px;
       }
     }
     .title{
@@ -4060,14 +4072,12 @@ footer
   .platformIntro-contents {
     .p-cont {
       margin-top: 80px;
-
       .txt {
-        margin-top: 12px;
+        margin-top: 8px;
         font-size: 18px;
         font-weight: 400;
         color: $gray-500;
       }
-
       .text-link {
         display: inline-block;
         margin-top: 24px;
@@ -4078,20 +4088,16 @@ footer
         border: 1px solid $navy-400;
         border-radius: 12px;
       }
-
       .platform-service {
         margin-top: 32px;
-
         ul {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 20px;
-
           li {
             box-shadow: 0px 16px 32px 0px #23225814;
             backdrop-filter: blur(20px);
             border-radius: 20px;
-
             a {
               display: flex;
               position:relative;
@@ -4102,7 +4108,6 @@ footer
               background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
               background-origin: border-box;
               background-clip: padding-box, border-box;
-
               &:before{
                 content:"";
                 display:block;
@@ -4113,22 +4118,12 @@ footer
                 background-size: 22px;
                 right: 20px;
               }
-
-              &:hover {
-                border: 2px solid transparent;
-                background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #6361FC 0%, rgba(99, 97, 252, 0.6) 100%);
-                background-origin: border-box;
-                background-clip: padding-box, border-box;
-              }
-
               span{
                 padding-left:32px;
                 font-size:18px;
                 font-weight: 600;
                 color:$gray-900;
-                
               }
-
               p{
                 margin-top:32px;
                 font-size: 16px;
@@ -4153,10 +4148,16 @@ footer
             &:nth-child(6) span{
               background:url($icon-service-6) no-repeat center left;
             }
+            &.is-effect a{
+              border: 2px solid transparent;
+              background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #6361FC 0%, rgba(99, 97, 252, 0.6) 100%);
+              background-origin: border-box;
+              background-clip: padding-box, border-box;
+              outline: none;
+            }
           }
         }
       }
-
       .platform-use{
         margin-top:32px;
         ul{
@@ -4193,9 +4194,6 @@ footer
             }
           }
         }
-        
-        
-
       }
     }
   }
@@ -4232,7 +4230,14 @@ footer
     font-weight: 400;
     color:$gray-700;
   }
-  .title3{margin-top:80px; margin-bottom:20px;}
+  .title2+.txt-sub{margin-top:4px;}
+  .title3{
+    margin-top:80px; 
+    margin-bottom:32px;
+    +.txt-sub{
+      margin-top:-24px;
+    }
+  }
   .bc-box{
     border-radius:20px;
     background:$white;
@@ -4278,6 +4283,9 @@ footer
         .button-box-large{
           margin-top:32px;
           justify-content:flex-start;
+          .button-p{
+            height:48px;
+          }
         }
       }
       // 소개
@@ -4438,6 +4446,11 @@ footer
             text-align: center;
             font-size:18px;
             color:$navy-400;
+            margin-bottom:20px;
+            flex-direction: column;
+            em{
+              font-weight: 700;
+            }
           }
           
         }
@@ -4529,9 +4542,6 @@ footer
 
     //플래폼Biz 탭
     .tab-biz{
-      .txt-sub{
-        margin-top:4px;
-      }
       .title3{
         margin-bottom:32px;
       }
@@ -4562,7 +4572,8 @@ footer
             font-weight: 600;
             color:$gray-900;
             padding-top:68px;
-            min-width: 180px;
+            max-width: 180px;
+            width:100%;
             text-align: center;
             &:before{
               content:"";
@@ -4589,6 +4600,7 @@ footer
             gap:18px;
             justify-content: space-between;
             align-items: center;
+            min-width: 135px;
             span{
               font-size:14px;
               font-weight: 400;
@@ -4775,6 +4787,7 @@ footer
             .tooltip{
               margin-left: 2px;
               @include set-icon(20px, 20px, svg-icon(info-16, $navy-400), 20px);
+              background-size:16px;
              
             }
           }
@@ -4785,15 +4798,16 @@ footer
     // 광고 마케팅 탭
     .tab-marketing{
       .marketing-info{
-        ul{
+        >ul{
           display:flex;
           gap:20px;
-          li{
+          >li{
             padding:20px;
             padding-bottom:132px;
             border-radius: 20px;
             background:$white;
             flex:1;
+            box-sizing: border-box;
             &:nth-child(1){
               background:$white url($bg-service-5) no-repeat right 20px bottom 20px;
             }
@@ -4805,7 +4819,7 @@ footer
             }
             em{
               display:inline-block;
-              width:79px;
+              padding:3.5px 8px;
               font-size:14px;
               font-weight: 600;
               color:$navy-400;
@@ -5051,6 +5065,9 @@ footer
             color:$white;
             background:$navy-300;
           }
+          .title4{
+            font-weight: 600;
+          }
           .txt-n{
             margin-top:2px;
           }
@@ -5108,6 +5125,10 @@ MEDIA QUERY
     display: block;
   }
 }
+@media screen and (max-width: 1180px) {
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .inner-cont ul li{width: 180px;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .center-cont{min-width: 170px;}
+}
 @media screen and (max-width: 1023px) {
   .analysis-nav {
     left: 20px;
@@ -5160,12 +5181,17 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .tab-bccard .bcdata-info .partner{ width:260px;}
   .bcdata-contents .tab-contents .tab-bccard .bc-box{flex-direction: column;}
   .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box{flex-basis: auto;}
+  .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box .card-color-txt{margin-bottom:22px;}
+  .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box .card-color-txt em{font-weight:500;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .inner-cont ul li{max-width: 180px;}
   .bcdata-contents .tab-contents .service-box ul{gap:16px;}
   .bcdata-contents .tab-contents .tab-credit .d-list ul li{flex:0 0 36%;}
   .bcdata-contents .tab-contents .tab-credit .service-box ul{justify-content: space-between;}
   .bcdata-contents .tab-contents .tab-credit .service-box .bc-box{flex:0 0 calc(  50% - 8px );}
   .bcdata-contents .tab-contents .tab-credit .service-box .bc-box .sub-txt .tooltip{background-size: 16px;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner{padding:29px 16px;}
+  .bcdata-contents .tab-contents .tab-marketing .marketing-info > ul{overflow-x: auto; margin-right: -24px; padding-right: 24px;}
+  .bcdata-contents .tab-contents .tab-marketing .marketing-info > ul > li{min-width: 320px;}
   
   .regist-box .condition-box{flex-direction: column; gap:0;}
   
@@ -5821,7 +5847,7 @@ MEDIA QUERY
       .btn-box .btn-line{width:100%; padding:11px 16px;}
     }
     .datapolio-bottom{padding:0; bottom:0;}
-    .datapolio-bottom .btn-filter{margin-bottom:12px;}
+    .datapolio-bottom .btn-filter{top:-68px;}
     .datapolio-bottom .bottom-content{border-radius: 20px 20px 0 0; gap:16px;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-tit .tit{font-size: 14px;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result{flex-direction: column; align-items: flex-start;}
@@ -5980,22 +6006,24 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .partner-step ul li + li{margin-top:31px;}
   .bcdata-contents .tab-contents .partner-step ul li .title4{font-size:16px;}
   .bcdata-contents .tab-contents .partner-step ul li .txt-n{font-size: 14px; margin-top:6px;}
-  .bcdata-contents .tab-contents .partner-step ul li em{font-size:12px; top:0;}
+  .bcdata-contents .tab-contents .partner-step ul li em{font-size:12px; top:3px;}
 
   .bcdata-contents .tab-contents .tab-credit .bc-box{margin-top:24px; padding:30px 21px;}
-  .bcdata-contents .tab-contents .tab-credit .bc-box .box-outer{flex-direction: column;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-outer{flex-direction: column; align-items: center;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-outer .box-flow{flex-direction: row-reverse; min-height: 40px; gap:0;}
-  .bcdata-contents .tab-contents .tab-credit .bc-box .box-outer .box-flow span{font-size:12px; flex:5;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-outer .box-flow span{font-size:12px; flex:5; min-width: 111px;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner{flex-direction: column; border-radius: 16px; padding:40px 30px;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner::before{left:10px; right:0;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .txt{padding-top:51px; background:url($icon-service-26) no-repeat center top; background-size: 36px;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .center-cont{margin:66px 0; padding:6px 0;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .line-right{transform:rotateZ(90deg); left:calc( 50% - 133px ); top:calc( 50% + 20px ); width:266px;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .inner-cont ul{width:100%;}
+  .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .inner-cont ul li{width:100%; max-width:100%;}
   .bcdata-contents .tab-contents .line-right{width:40px; transform:rotateZ(90deg); flex:1;}
   .bcdata-contents .tab-contents .line-left{width:40px; transform:rotateZ(90deg); flex:1;}
   .bcdata-contents .tab-contents .line-left+span{text-align: right;}
-  .bcdata-contents .tab-contents .tab-credit .d-list ul{}
-  .bcdata-contents .tab-contents .tab-credit .d-list ul li{font-size:16px; flex:0 0 auto;}
+  .bcdata-contents .tab-contents .tab-credit .d-list ul{flex-direction: column; align-items: center;}
+  .bcdata-contents .tab-contents .tab-credit .d-list ul li{font-size:16px; width:max-content;}
   .bcdata-contents .tab-contents .tab-credit .service-box .bc-box{flex:1;}
   .bcdata-contents .tab-contents .tab-marketing .marketing-info ul{flex-direction: column;}
   .bcdata-contents .tab-contents .tab-marketing .partner-step li{display: flex; flex-direction: column; align-items: self-start;}
@@ -6013,6 +6041,8 @@ MEDIA QUERY
   .partner-header .info-table{flex-direction: column;}
   .partner-header .info-table .title3{font-size:20px;}
   .partner-header .info-table dl+dl{margin-top:8px;}
+  .partner-header .info-table dl dd{text-align: right;}
+  
   .page-datapartner .datapartner-contents{margin-top:32px;}
   .regist-box .condition{margin-bottom:20px;}
   .regist-box .input-file{flex-direction: column; gap:12px;}
@@ -6020,5 +6050,9 @@ MEDIA QUERY
   .regist-box .input-file .button-box-large [class^=button-]{font-size:16px;  flex-basis: 100%; height: 40px; border-radius: 8px;}
   .regist-box .info-text{font-size: 14px;}
   .page-datapartner .datapartner-contents .regist-box .agreement-terms .title{margin-top:12px; margin-bottom:12px; font-size:18px; font-weight: 600;}
+  .page-datapartner .bottom-box{max-width: 100%;}
+  .page-datapartner .button-box-large{position:initial !important; padding: 0 !important;}
+  .page-datapartner .button-box-large button{flex-basis: 100% !important;}
+  .page-footer .head-guidetext{margin-top:8px; margin-bottom:32px;}
   
 } // end @media screen and (max-width: 767px)

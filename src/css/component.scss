@@ -1181,6 +1181,10 @@ MODAL POPUP
         margin-top: 32px;
       }
     }
+    .txt-n{
+      @include text-body(1,'r',$gray-900);
+      margin-bottom:20px;
+    }
   }
   &.no-dim {
     background-color: transparent;
@@ -1608,7 +1612,7 @@ MODAL POPUP
     .my-total{
       margin-top:4px !important;
       dt, dd{
-        font-size: 14px; color:$gray-500 !important; font-weight: 400 !important;
+        font-size: 14px !important; color:$gray-500 !important; font-weight: 400 !important;
       }
     }
     
@@ -1960,7 +1964,7 @@ MODAL POPUP
       dd {
         flex: auto;
         text-align: right;
-        @include text-body(1,'r',$gray-700);
+        @include text-body(1,'m',$gray-700);
         // 왼쪽 정렬인 경우
         p {
           text-align: left;
@@ -2137,6 +2141,7 @@ MODAL POPUP
         font-size:18px;
         color:$gray-900;
         font-weight: 500;
+        background:initial;
         em{
           margin-left:4px;
           font-size:18px;
@@ -3328,7 +3333,7 @@ POPOVER POPUP
   .tag {
     display: inline-flex;
     align-items: center;
-    height: 22px;
+    height: 20px;
     padding: 0 5px;
     border: 1px solid $gray-100;
     @include text-body(3,'sb',$gray-500);
@@ -3345,12 +3350,13 @@ POPOVER POPUP
   position: relative;
   display: block;
   // padding: 11px;
-  border: 1px solid $white;
+  border: 2px solid $white;
   background-color: #FFFFFF99;
   box-shadow: 0px 16px 32px 0px #23225814;
   backdrop-filter: blur(20px);
   overflow: hidden;
   border-radius: 20px;
+  height: 100%;
   .info-box {
     padding:20px;
     .insight-tag {
@@ -3539,18 +3545,17 @@ POPOVER POPUP
     transform: translateY(-50%);
     background-size: 24px;
   }
-
   .input-box{
     position:relative;
     padding:0;
     border-radius: 20px ;
     border: 2px solid transparent;
-    background-image: linear-gradient(#fff, #fff), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     input{
       padding-left:48px;
-      background: rgba(255, 255, 255, 0.8);
+      background:initial;
     }
   }
   .text-close{display:none;}
@@ -3977,6 +3982,7 @@ TOAST POPUP
   .data-tournament-list .tournament-list{grid-template-columns:repeat(1, 1fr)}
   .data-tournament-list .tournament-list .tournament-content .image{max-height: 178px;}
   .data-tournament-list .tournament-list .tournament-content .info-box .etc{margin-bottom:6px;}
+  .pop-modal .modal .txt-n{color:$gray-700;}
 }
 @media screen and (max-width:599px){
   .pop-modal .draft-box .item-scroll-wrap{max-height: 486px;}
