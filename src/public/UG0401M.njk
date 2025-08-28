@@ -5,6 +5,18 @@
 {%- endblock %}
 
 {% block modal %}
+<!-- 미입력 삳태에서 검색버튼 선택시 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>1글자 이상 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //미입력 삳태에서 검색버튼 선택시 -->
 
 <!-- 문의하기 -->
 <div class="pop-modal modal-hidden" id="modal1">
@@ -92,6 +104,7 @@
     <div class="button-box-xsmall">  
         <button type="button" class="button-q" onclick="fn_toast('문의가 접수되었어요',1);">[문의접수] 토스트 팝업</button>
         <button type="button" class="button-p" onclick="fn_modalPopOpen('modal1',true);fn_faqAccodion('modal1'); return false;">[문의하기]</button>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">미입력 상태에서 검색버튼 선택시</a>
     </div>
 </div>
 <!-- //퍼블리싱 확인 -->

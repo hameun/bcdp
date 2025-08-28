@@ -1,0 +1,26 @@
+{%- extends "_templates/_layout_guide.njk" -%}
+
+{% block content %}
+{{ include( "_html/_UG0201.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+
+<!-- 개인사업자 신용등급 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">개인사업자 신용등급이란?</div>       
+            <p class="txt-n">비씨카드 개인사업자 신용등급은 개인사업자에 대한 다양한 신용정보와 가맹점 매출 데이터를 기반으로 향후 1년 내 장기연체 등 신용위험이 발생할 가능성을 수치화한 지표예요.<br>이 지표는 통계적 방법론을 통해 산출되며, 신용평점과 등급이 높을수록 연체 등의 불량 사유가 발생할 가능성이 낮다는 의미로 해석돼요. 금융사 등에서는 이를 신용거래 의사결정 시 참고 지표로 활용하고 있어요.<p>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //개인사업자 신용등급 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">개인사업자 신용등급이란?</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}
