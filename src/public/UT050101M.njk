@@ -141,19 +141,19 @@
                     <label for="publicDate" class="input-title">세금계산서 희망 발행일</label>
                     <p class="guide-text">구매일 기준 3개월 후 말일까지 선택 가능</p>
                     <div class="input-box-col">
-                        <div class="input-box">
+                        <div class="input-box year">
                             <select id="publicYear">
                                 <option value="2025">2025년</option>
                             </select>
                         </div>
-                        <div class="input-box">
+                        <div class="input-box month">
                             <select id="publicMonth">
                                 <option value="08">08월</option>
                                 <option value="09">09월</option>
                                 <option value="10">10월</option>
                             </select>
                         </div>
-                        <div class="input-box">
+                        <div class="input-box date">
                             <select id="publicDate">
                                 <option value="1">1일</option>
                                 <option value="2">2일</option>
@@ -220,18 +220,18 @@
                     <label for="publicDate" class="input-title">세금계산서 희망 발행일</label>
                     <p class="guide-text">구매일 기준 3개월 후 말일까지 선택 가능</p>
                     <div class="input-box-col">
-                        <div class="input-box">
-                            <select id="publicYear" disabled>
+                        <div class="input-box year">
+                            <select id="publicYear2" disabled>
                                 <option value="2025">2025년</option>
                             </select>
                         </div>
-                        <div class="input-box">
-                            <select id="publicMonth" disabled>
+                        <div class="input-box month">
+                            <select id="publicMonth2" disabled>
                                 <option value="09">09월</option>
                             </select>
                         </div>
-                        <div class="input-box">
-                            <select id="publicDate" disabled>
+                        <div class="input-box date">
+                            <select id="publicDate2" disabled>
                                 <option value="30">30일</option>
                             </select>
                         </div>
@@ -453,13 +453,13 @@
                         <div class="payment-number">
                             <a href="#" class="number-order">
                                 <p><em>주문번호 </em><strong>ODR20250625143000783</strong></p>
+                                <i class="icon-up">상세내용 접기</i>
                             </a>
                             <div class="number-price">
                                 <p>주문 금액 <strong>10,000,000</strong><i>원</i></p>
                                 <p>할인 금액 <strong>15,000,000</strong><i>원</i></p>
                                 <a href="#" class="total">최종결제 금액 <strong>15,000,000</strong><i>원</i></a>
                             </div>
-                            <i class="icon-up">상세내용 접기</i>
                         </div>
                         <!-- 데이터마켓/ OPEN API -->
                         <div class="item-group item-market">
@@ -473,8 +473,6 @@
                                 <div class="item">
                                     <div class="flags">
                                         <span class="flag data-market">데이터마켓</span>
-                                        <span class="flag data-type">CSV</span>
-                                        <span class="flag data-capa"><i>1.0</i> KB</span>
                                     </div>
                                     <div class="desc">
                                         <p>카드-편의점 품목별 소비데이터_샘플 카드-편의점 품목별 소비데이터_샘플 카드-편의점 품목별 소비데이터_샘플 타이틀 다 나와야함.</p>
@@ -523,7 +521,6 @@
                                     <dl class="data-polio-set">
                                         <dt>데이터 유형</dt>
                                         <dd>
-                                            <button type="button" class="show-detail">상세보기<i class="icon-link"></i></button>
                                             <span class="hash data">내국민 카드소비 데이터</span>
                                         </dd>
                                     </dl>
@@ -612,7 +609,7 @@
                                             <span>기한 2026.08.20</span>
                                         </p>
                                         <div class="button-box-small">
-                                            <button type="button" class="button-p">다운로드</button>
+                                            <button type="button" class="button-p">다운로드<i class="icon-download icon-right"></i></button>
                                         </div>
                                     </div>
                                 </div>
@@ -710,24 +707,28 @@
                                 </dl>
                             </div>
                             <div class="item2-box">
-                                <div class="item2">
+                                <!-- [2025.08.27] 수정 -->
+                                <a href="#" class="item2">
                                     <div class="desc">
                                         <p>AI 보고서</p>
+                                        <i class="icon-right icon-download"></i>
                                     </div>
                                     <p class="date-info">
                                         <span>다운로드 2025.07.01</span>
                                         <span>기한 2026.08.20</span>
                                     </p>
-                                </div>
-                                <div class="item2">
+                                </a>
+                                <a href="#" class="item2">
                                     <div class="desc">
                                         <p>다운로드</p>
+                                        <i class="icon-right icon-download"></i>
                                     </div>
                                     <p class="date-info">
                                         <span>다운로드 2025.07.01</span>
                                         <span>기한 2026.08.20</span>
                                     </p>
-                                </div>
+                                </a>
+                                <!-- //[2025.08.27] 수정 -->
                             </div>
                         </div>
                     </div>
@@ -735,7 +736,7 @@
                     <div class="item-bottom-button">
                         <div class="button-box-large">
                             <button type="button" class="button-q">구매취소</button>
-                            <button type="button" class="button-s">전체 다운로드<i class="icon-right icon-download"></i></button>
+                            <button type="button" class="button-p">전체 다운로드<i class="icon-right icon-download"></i></button>
                         </div>
                     </div>
                 </div>
@@ -823,8 +824,8 @@
         <a href="#" class="button-q" onclick="fn_toast('OPEN API 사용을 요청하였습니다.',1);return false;">[OPEN API 사용 요청] 토스트팝업</a>
         <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_4');return false;">[OPEN API 사용 요청] [파일형식&&용량 유효성 알럿]</a>
         <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_5');return false;">[드래그앤 드롭 시 1개 초과 파일 첨부 했을 때]</a>
-        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalInfoAPI');return false;">[OPEN API 정보]</a>
-        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalMyOrderDetail', true);return false;">[구매내역 상세]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalInfoAPI', true);return false;">[OPEN API 정보]</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalMyOrderDetail', true);return false;">모바일 > [구매내역 상세]</a>
     </div> 
 </div>
 <!-- //퍼블리싱 확인 -->

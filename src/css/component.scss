@@ -122,6 +122,7 @@
 .icon-modify {@include set-icon(20px, 20px, svg-icon(modify));}
 .icon-filter {@include set-icon(20px, 20px, svg-icon(search-filter));}
 .icon-link {@include set-icon(24px, 24px, svg-icon(chevron-right, $gray-900));}
+.icon-copy {@include set-icon(20px, 20px, svg-icon(txtcopy, $gray-400),20px);}
 
 .icon-info-s {@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);}
 .icon-info-m {@include set-icon(20px, 20px, svg-icon(info-16, $gray-400), 20px);}
@@ -355,12 +356,39 @@ BUTTON
 .textbutton-s {
   @include set-textbutton($gray-500);
 }
-.flag-stat,
-.flag-stat2 {
+
+.flags {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;  
+  .flag {
+    border-radius: 4px; 
+    padding: 2px 6px;
+    background-color: #F2F3F4;
+    @include text-body(3,'sb',$gray-500);
+    &.data-market {
+      margin-right: auto;
+      color: $flag-market;
+      background-color: $flag-market-bg;
+    }
+    &.data-openapi {
+      margin-right: auto;
+      color: $flag-openapi;
+      background-color: $flag-openapi-bg;
+    }
+    &.data-polio {
+      margin-right: auto;
+      color: $flag-polio;
+      background-color: $flag-polio-bg;
+    }
+  }
+}
+.flag-stat {
   border-radius: 28px; 
   padding: 3.5px 8px;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
   &.stat-review {
     color: $flag-blue;
     background-color: $flag-blue-bg;
@@ -647,23 +675,49 @@ INPUT TEXT
   }
 }
 .input-box {
-  .ui-selectmenu-button .ui-selectmenu-text {
+  .ui-selectmenu-button {
+    &.ui-state-disabled {
+      background-color: $gray-40;
+      color: $gray-300;
+      border-radius: 12px;
+      margin: -2px;
+      border: 1px solid $gray-100;
+      
+      .ui-selectmenu-icon.ui-icon {
+        background-image: url(svg-icon(arrow, $gray-300));
+      }
+    }
+  }
+
+  .ui-selectmenu-text {
+    &.placeholder {
+      color: $gray-300
+    }
     @include text-body(0, 'r');
   }
-  // .ui-selectmenu-button-closed .ui-selectmenu-text {
-  //   @include text-body(0, 'r', $gray-300);
-  // }
-  // .ui-selectmenu-button-closed[aria-disabled="false"] .ui-selectmenu-text {
-  //   @include text-body(0);
-  // }
-  .ui-selectmenu-button .ui-selectmenu-text.placeholder {
-    color: $gray-300
+  .ui-selectmenu-icon.ui-icon {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    
+    width: 20px;
+    height: 20px;
+    background: url(svg-icon(arrow, $gray-900)) no-repeat 50% 50% transparent;
+    transform: rotate(90deg);
   }
-  .ui-selectmenu-button.ui-state-disabled {
-    background-color: $gray-40;
-    color: $gray-100;
-    border-radius: 12px;
-    margin: -1px;
+  &.is-focusin {
+    .ui-selectmenu-icon.ui-icon {
+      top: 15px;
+      right: 9px;
+    }
+  }
+
+  
+  .ui-selectmenu-button-open {
+    .ui-selectmenu-icon.ui-icon {
+      top: 13px;
+      transform: rotate(-90deg);
+    }
   }
 }
 
@@ -1103,19 +1157,19 @@ MODAL POPUP
     flex-direction: column;
     max-height: 90vh;
     .modal-content {
-      overflow: hidden;
-      overflow-y: scroll;
-      margin: 0 -12px 0 -20px;
-      padding : 8px 8px 20px 20px;
+      // overflow: hidden;
+      // overflow-y: scroll;
+      // margin: 0 -12px 0 -20px;
+      // padding : 8px 8px 20px 20px;
       
-      &::-webkit-scrollbar {width: 4px;}
-      &::-webkit-scrollbar-thumb {
-        background-color: $gray-100;
-        border-radius: 4px;
-      }
-      &::-webkit-scrollbar-button {
-        height: 7px;
-      }
+      // &::-webkit-scrollbar {width: 4px;}
+      // &::-webkit-scrollbar-thumb {
+      //   background-color: $gray-100;
+      //   border-radius: 4px;
+      // }
+      // &::-webkit-scrollbar-button {
+      //   height: 7px;
+      // }
       & +.button-box-medium {
         margin-top: 20px;
       }
@@ -1156,6 +1210,22 @@ MODAL POPUP
     @include text-title(4);
     .count{
       color:$navy-300;
+    }
+  }
+  
+  .modal-content {
+    overflow: hidden;
+    overflow-y: scroll;
+    margin: 0 -12px 0 -20px;
+    padding : 8px 8px 20px 20px;
+    
+    &::-webkit-scrollbar {width: 4px;}
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray-100;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-button {
+      height: 7px;
     }
   }
   .message-box {
@@ -1281,13 +1351,6 @@ MODAL POPUP
 // 페이지로 옮기기
 .modal {
   .coupon-box {
-    padding: 8px 0 20px;
-    &:has(.item:nth-child(4)) {
-      margin-right: -20px;
-    }
-    .item-scroll-wrap {
-      max-height: 442px;
-    }
     .coupon {
       border-color: transparent;
       & +.coupon {
@@ -1893,6 +1956,10 @@ MODAL POPUP
       dt {
         flex: auto;
         @include text-body(1,'r',$gray-400);
+        .icon-copy {
+          vertical-align: 2px;
+          margin-left: 4px;
+        }
       }
       dd {
         flex: auto;
@@ -2432,6 +2499,7 @@ CONTENT COMPONENT
     position: relative;
     margin-bottom: 24px;
     .number-order {
+      position: relative;
       display: flex;
       align-items: center;
       .flag-stat {
@@ -2439,6 +2507,12 @@ CONTENT COMPONENT
       }
       p {
         @include text-title(4);
+      }
+      .icon-up,
+      .icon-down {
+        position: absolute;
+        top: 0;
+        right: 0;
       }
     }
     .number-price {
@@ -2457,12 +2531,6 @@ CONTENT COMPONENT
       .button-box-small {
         margin-left: auto;
       }
-    }
-    .icon-up,
-    .icon-down {
-      position: absolute;
-      top: 0;
-      right: 0;
     }
   }
   .item-group {
@@ -2555,31 +2623,8 @@ CONTENT COMPONENT
           margin-left: auto;
           @include text-body(0,'sb');
         }
-      }
-    }
-    .flags {
-      display: flex;
-      justify-content: flex-end;
-      gap: 6px;  
-      .flag {
-        border-radius: 4px; 
-        padding: 2px 6px;
-        background-color: #F2F3F4;
-        @include text-body(3,'sb',$gray-500);
-        &.data-market {
-          margin-right: auto;
-          color: $flag-market;
-          background-color: $flag-market-bg;
-        }
-        &.data-openapi {
-          margin-right: auto;
-          color: $flag-openapi;
-          background-color: $flag-openapi-bg;
-        }
-        &.data-polio {
-          margin-right: auto;
-          color: $flag-polio;
-          background-color: $flag-polio-bg;
+        .icon-download {
+          background-image: url(svg-icon(download));
         }
       }
     }
@@ -2649,6 +2694,9 @@ CONTENT COMPONENT
       margin-bottom: 28px;
       .icon-info-m {
         margin-left: 10px;
+      }
+      .button-box-small {
+        margin-left: auto;
       }
       & ~.item-group {
         .ipt-check {
@@ -2849,9 +2897,11 @@ CONTENT COMPONENT
     background-color: $white;
     border: 1px solid $gray-100;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     .coupon-discount {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       input {
         width: 0;
         margin: 0;
@@ -2886,12 +2936,17 @@ CONTENT COMPONENT
       .txt {
         @include text-body(0,'sb', $point);
       }
+      .txt-sub {
+        display: block;
+        @include text-body(3,'r', $gray-500);
+      }
       .flag {
         display: inline-flex;
         background-color: $gray-60;
         padding: 2px 6px;
         border-radius: 4px;
         margin-left: 4px;
+        white-space: nowrap;
         @include text-body(3,'sb', $gray-500);
         &-primary {
           background-color: $primary;
@@ -2903,12 +2958,20 @@ CONTENT COMPONENT
       margin-top: 12px;
       border-top: 1px solid $gray-60;
       padding-top: 12px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
       dt {
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
+        margin-bottom: auto;
         @include text-body(1,'sb', $gray-700);
+        & +dd {
+          margin-top: 20px;
+        }
       }
       dd {
-        margin-top: 8px;
+        margin-top: 4px;
         @include text-body(3,'r', $gray-500);
       }
     }
@@ -2959,7 +3022,7 @@ CONTENT COMPONENT
       // overflow: hidden;
       display: inline;
       @include text-body(0,'sb');
-      .flag-stat2 {
+      .flag-stat {
         margin-left: 16px;
         vertical-align: 2px;
       }
@@ -3010,6 +3073,41 @@ CONTENT COMPONENT
         color: $white;
         font-size: 24px;
       }
+    }
+  }
+}
+.modal .myquestion-item {
+  padding: 0;
+  margin-top: 0;
+  .item-header {
+    .type {
+      font-size: 14px;
+    }
+    .title {
+      margin-top: 8px;
+      display: block;
+      .flag-stat {
+        position: absolute;
+        top: -2px;
+        left: 58px;
+        margin-left: 0;
+      }
+    }
+  }
+  .context p {
+    font-size: 16px;
+  }
+  .item-body .question {
+    .context {
+      margin-top: 20px;
+    }
+  }
+  .item-body .answer {
+    .author .title {
+      font-size: 16px;
+    }
+    .context {
+      margin-top: 20px;
     }
   }
 }
@@ -3486,7 +3584,7 @@ TOAST POPUP
     @include text-body(1,'m',$white);
     &.pass::before {
       content: '';
-      display: 0 0 20px;
+      display: inline-flex;
       width: 20px;
       height: 20px;
       margin-right: 10px;
@@ -3496,13 +3594,13 @@ TOAST POPUP
     }
     &.error::before {
       content: '';
-      display: 0 0 20px;
+      display: inline-flex;
       width: 20px;
       height: 20px;
       margin-right: 10px;
       border-radius: 20px;
-      background: url(svg-icon(close-14, $white)) no-repeat 50% 50% #FF3F53;
-      background-size: 13px;
+      background: url(svg-icon(close-14, $white)) no-repeat 45% 50% #FF3F53;
+      background-size: 14px;
     }
   }
   &.on {

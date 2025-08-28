@@ -451,6 +451,12 @@ $graph-color3: $gray-100;
         }
       }
     }
+    .a-cont.industry {
+      height: 308px;
+      overflow: hidden;
+      overflow-x: auto;
+      border-radius: 0;
+    }
   }
   // [업종별 흐름] 상세
   .cont-detail {
@@ -1036,7 +1042,7 @@ page : page-mypage
     }
   }
 }
-.mycontext-box {
+.myinfo-box {
   margin-bottom: 40px;
   border-radius: 16px;
   padding: 32px;
@@ -1049,6 +1055,9 @@ page : page-mypage
   .title {
     margin-bottom: 8px;
     @include text-title(4);
+  }
+  .description {
+    @include text-body(0,'r',$gray-500);
   }
   .info {
     display: flex;
@@ -1071,18 +1080,27 @@ page : page-mypage
       align-items: center;
       justify-content: flex-end;
       white-space: nowrap;
-      @include text-body(0,'r',$gray-500);
-      .button-box-small {
-        display: inline-flex;
+      &.btn {
+        margin-left: 16px;
+        .button-box-small {
+          display: inline-flex;
+        }
+      }
+      &.items {
+        gap: 6px;
+        a {
+          display: inline-flex;
+          align-items: center;
+          .icon-info-m {
+            margin-left: 4px;
+          }
+        }
       }
       .switch-box {
         height: 60px;
       }
       .switch-label {
         width: 70px;
-      }
-      &.btn {
-        margin-left: 16px;
       }
     }
   }
@@ -1172,6 +1190,7 @@ page : page-mypage
       .item2 {
         flex: 1;
         display: flex;
+        width: 100%;
         .date-info {
           display: inline-flex;
           align-items: center;
@@ -1206,7 +1225,7 @@ page : page-mypage
 // 문의내역 => 모바일 모달팝업으로 보여져야 해서 공통으로 옮김
 .myquestion-item {
   padding: 24px;
-  .item-body {
+  .item-body.is-fold {
     display: none;
   }
 }
@@ -1244,7 +1263,7 @@ page : page-mypage
       min-width: 160px;
     }
   }
-  .mycontext-box {
+  .myinfo-box {
     .title {
       margin-bottom: 16px;
     }
@@ -1470,10 +1489,10 @@ page : page-insight
     position: relative;
     display: flex;
     border-radius: 24px;
-    padding: 11px 0 11px 11px;
+    // padding: 11px 0 11px 11px;
     align-items: center;
 
-    border: 2px solid $white;
+    border: 1px solid $white;
     border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
     background-color: #FFFFFF99;
     box-shadow: 0px 16px 32px 0px #23225814;
@@ -1656,6 +1675,9 @@ page : page-insight
       padding: 20px 0;
       display: flex;
       gap: 20px;
+      &> li {
+        flex: 1;
+      }
     }
   }
 }
@@ -2068,7 +2090,7 @@ $contentWidth: 700px;
           @include text-body(1);
         }
         & +.util {
-          text-align: right;
+          justify-content: flex-end;
         }
       }
       .contents {
@@ -2105,6 +2127,7 @@ $contentWidth: 700px;
         }
       }
       .util {
+        display: flex;
         margin-top: 8px;
         button {
           width: 32px;
@@ -2239,34 +2262,37 @@ $contentWidth: 700px;
       border-radius: 16px;
       border: 2px solid;
       border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-      padding: 10px;
+      // padding: 10px;
       background-color: #FFFFFF99;
       backdrop-filter: blur(20px);
       box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
       &:has(.image) {
-        height: 246px;
+        // height: 246px;
       }
       .image {
         border-radius: 12px;
         overflow: hidden;
-        margin-bottom: 12px;
+        // margin-bottom: 12px;
         img {
-          width: 188px;
-          height: 188px;
+          // width: 188px;
+          // height: 188px;
           object-fit: cover;
         }
       }
       .txt {
+        margin: 12px 0 16px;
+        padding: 0 16px;
         height: 3em;
         overflow: hidden;
         text-overflow: ellipsis;
         display:-webkit-box;
-        -webkit-box-orient:vertical;
+        -webkit-box-orient: vertical;
         -webkit-line-clamp:2;
         @include text-body(2,'sb'); 
       }
       .location {
-        margin-top: 12px;
+        margin: 12px 0 16px;
+        padding: 0 16px;
         @include text-body(3,'m',$gray-500);
       }
     }
@@ -2384,7 +2410,99 @@ $contentWidth: 700px;
     }
   }
 }
+.pop-aiside .modal {
+  display: flex;
+  position: fixed;
+  top: 86px;
+  right: 20px;
+  width: 300px;
+  bottom: 20px;
+  z-index: 10;
 
+  // background: #FFFFFF99;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid;
+  border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+  box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
+  backdrop-filter: blur(20px);
+
+
+  .aiside-content-tit {
+    margin-bottom: 16px;
+    @include text-body(0,'sb');
+  }
+  .aiside-keyword-content {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    background-color: #fff;
+    margin-bottom: 24px;
+    .title {
+      padding-left: 22px;
+      margin-bottom: 8px;
+      @include text-body(1,'sb',$gray-700);
+      background:url($icon-ai) no-repeat center left;
+    }
+    .keyword-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      .keyword,
+      .keyword-more {
+        flex: 0;
+        border-radius: 8px;
+        border: 1px solid $gray-60;
+        padding: 4px 8px;
+        white-space: nowrap;
+        @include text-body(2,'m',$gray-700);
+      }
+      .keyword-more {
+        background-color: $navy-100;
+        border-color: transparent;
+        color: $point-blue;
+      }
+    }
+    .button-box-small {
+      margin-top: 16px;
+      .button-s {
+        flex: 1;
+      }
+    }
+  }
+  .aiside-recomend-content {
+    .recomend-list {
+      .item-recomend {
+        padding: 15px;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        background-color: #fff;
+        & +.item-recomend {
+          margin-top: 12px;
+        }
+      }
+      dl {
+        dt {
+          margin-top: 8px;
+          @include text-body(1,'sb');
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        dd {
+          margin-top: 8px;
+          @include text-body(2,'r',$gray-500);
+          height: 3em;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp:2;
+        }
+      }
+    }
+  }
+  .modal-close {display: none;}
+}
 /***********
 page : page-polio
 ***********/
@@ -3148,6 +3266,25 @@ page : page-polio
     gap: 8px;
     flex-wrap: wrap;
     .skeleton{width:174px; height:48px;}
+  }
+  .skeleton-text {
+    .skeleton {
+      width: 100%;
+      height: 1.5em;
+      margin-bottom: 8px;
+      &:last-child {
+        width: 70%;
+      }
+    }
+  }
+  .skeleton-thumbs {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    .skeleton {
+      flex: 1;
+      height: 104px;
+    }
   }
 }
 
@@ -4699,6 +4836,11 @@ MEDIA QUERY
   
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .page-mypage {
+    .coupon-box {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
   // 마이페이지 > 회원탈퇴
   .withdrawal-contents .service-check {
     grid-template-columns: repeat(2, 1fr);
@@ -4709,7 +4851,6 @@ MEDIA QUERY
   }
 }
 @media screen and (min-width: 768px) {
-  // div{ background-color: red;}
   .page-mypage {
     .all-coupon-download {
       position: relative;
@@ -4731,51 +4872,54 @@ MEDIA QUERY
   }
 
   .page-aisearch .aisearch-body .search-request {
-      .feedback-modal {
-        display: none;
-        margin-top: 32px;
-        .modal {
-          background-color: #FFFFFF99;
-          border: 2px solid #ffffff;
-          border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-          backdrop-filter: blur(20px);
-          box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
-        }
-        .modal-title {
-          margin-bottom: 20px;
-          @include text-body(1,'sb');
-        }
-        .modal-content {
-          .chip-box {
-            // display: flex;
-            // gap: 8px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            .chip {
-              // flex: 1 1 30%
-            }
-            .chip i {
-              flex: 1;
-              text-align: center;
-            }
+    .feedback-modal {
+      display: none;
+      margin-top: 32px;
+      .modal {
+        background-color: #FFFFFF99;
+        border: 2px solid #ffffff;
+        border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        backdrop-filter: blur(20px);
+        box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+      }
+      .modal-title {
+        margin-bottom: 20px;
+        @include text-body(1,'sb');
+      }
+      .modal-content {
+        .chip-box {
+          // display: flex;
+          // gap: 8px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          .chip {
+            // flex: 1 1 30%
+          }
+          .chip i {
+            flex: 1;
+            text-align: center;
           }
         }
-        .modal-close {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          @include set-icon(24px, 24px, $icon-close);
-        }
-        &.is-show {
-          display: block;
-          height: auto;
-        }
       }
+      .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        @include set-icon(24px, 24px, $icon-close);
+      }
+      &.is-show {
+        display: block;
+        height: auto;
+      }
+    }
+    .skeleton-box {
+      margin-top: 0;
+    }
   }
 }
 
 @media screen and (max-width: 767px) {
-  .mycontext-box {
+  .myinfo-box {
     padding: 20px;
     .info-tit:has(button) {
       display: flex;
@@ -4814,11 +4958,41 @@ MEDIA QUERY
     }
   }
   .page-mypage {
-    .head-float-menu {
-      position: relative;
-    }
     .tab-box { // 나의 내역
       margin-bottom: 40px;
+    }
+    .partner-header {
+      flex-wrap: wrap;
+      .link-box {
+        margin-top: 20px;
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        .link {
+          flex: 1;
+          font-size: 14px;
+          &::after {
+            top: 2px;
+            right: auto;
+            margin-left: 4px;
+            background-size: 16px;
+          }
+          .has-new {
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+  
+  .head-float-menu {
+    position: relative;
+    .switch-mypage {
+      padding: 4px;
+      height: 44px;
+      a {
+        height: 44px;
+      }
     }
   }
   .head-float-menu .switch-mypage a {
@@ -4868,6 +5042,7 @@ MEDIA QUERY
         .item2-box {
           .item2 {
             flex-direction: column;
+            width: auto;
             .date-info {
               margin: 0;
             }
@@ -4910,17 +5085,20 @@ MEDIA QUERY
       text-overflow: ellipsis;
       margin-right: 0;
       padding-right: 60px;
-      .title {
-      }
+      cursor: default;
       .icon-down, 
       .icon-up {
         display: none;
       }
-      .flag-stat2 {
+      .flag-stat {
         position: absolute;
+        top: 0;
         right: 0;
       }
-    } 
+    }
+    .myquestion-item .item-body {
+      display: none;
+    }
     .all-coupon-download {
       margin-bottom: 24px;
       .button-box-small {
@@ -5073,7 +5251,7 @@ MEDIA QUERY
   .page-insight {
     .insight-slider-wrap {
       display: block;
-      padding: 8px 8px 0;
+      // padding: 8px 8px 0;
       .insight-slider-info {
         padding: 12px 0;
         .insight-tag {

@@ -81,6 +81,7 @@ body.is-fixed {
   &:has(.page-aisearch) {
     padding: 0;
     overflow: hidden;
+    margin-right: 320px;
   }
 }
 
@@ -683,6 +684,10 @@ aside
     padding-top: 32px;
     padding-bottom: calc(constant(safe-area-inset-bottom) + $layout-padding);
     padding-bottom: calc(env(safe-area-inset-bottom) + $layout-padding);
+
+    .head-guidetext {
+      font-size: 16px;
+    }
   }
 
   .bottom-box {

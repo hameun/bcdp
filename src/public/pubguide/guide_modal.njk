@@ -10,12 +10,14 @@
     <pre>
         fn_toast('삭제되었습니다');
         fn_toast('삭제되었습니다',1);
+        fn_toast('삭제되었습니다',2);
     </pre>
 </div>
 
 <div class="button-box-xsmall">
     <a class="toast-message on" style="position:static;z-index:0;" onclick="fn_toast('삭제되었습니다');"><p>기본</p></a>
     <a class="toast-message on" style="position:static;z-index:0;" onclick="fn_toast('삭제되었습니다',1);"><p class="pass">체크아이콘</p></a>
+    <a class="toast-message on" style="position:static;z-index:0;" onclick="fn_toast('삭제되었습니다',2);"><p class="error">엑스아이콘</p></a>
 </div>
 
 
@@ -26,8 +28,36 @@
     fn_modalOpen('모달Id');
     fn_modalPopClose('모달Id');
 
+    모바일 풀팝업
+    fn_modalPopOpen('모달Id',true);
+
     ✔이전 사용하던 fn_modal(_data) 삭제예정
-</pre>
+    </pre>
+</div>
+<div class="textarea">
+    <textarea rows="25" style="font-size: 12px;">
+    <div class="pop-modal modal-hidden" id="modalId">
+    <div class="pop-modal modal-hidden is-full" id="modalId"><!-- .is-full : 모바일 풀팝업 height: 100%; -->
+        <div class="modal" tabindex="0"><!-- width: 320px -->
+        <div class="modal modal-medium2" tabindex="0"><!-- .modal-medium2 : width: 420px -->
+        <div class="modal modal-medium" tabindex="0"><!-- .modal-medium : width: 480px -->
+        <div class="modal modal-large" tabindex="0"><!-- .modal-large : width: 600px -->
+            <div class="modal-header">OPEN API 사용 요청</div>
+            <div class="modal-content">
+                <div class="modal-data-info">
+                    <div style="height: 1200px; background: #aaa;"></div>
+                </div>
+            </div>
+            <div class="button-box-medium">
+            <div class="button-box-medium col-3"><!-- .col-3 : 버튼 비율 1:2 -->
+                <button class="button-s" type="button">취소</button>
+                <button class="button-p" type="button">사용 요청하기</button>
+                <button class="button-p" type="button maintain-modal">사용 요청하기</button><!-- .maintain-modal : 팝업닫지 않고 유지/ fn_modalPopClose('모달Id') 별도 호출 -->
+            </div>
+            <button type="button" class="modal-close">닫기</button>
+        </div>
+    </div>
+    </textarea>
 </div>
 
 <h3 class="title3">[알럿]</h3>
@@ -36,7 +66,7 @@
         <div class="message-box">
             <p>비밀번호를 5회 이상 잘못 입력하셨습니다. <br>비밀번호 재설정 후 다시 로그인해주세요.</p>
         </div>
-        <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
+        <div class="button-box-medium"><button class="button-p" type="button">확인</button></div>
     </div>
 </div>
 <div class="pop-modal modal-hidden" id="modal2">
@@ -46,7 +76,7 @@
         </div>
         <div class="button-box-medium">
             <button class="button-q" type="button">나중에 변경하기</button>
-            <button class="button-p close-modal" type="button">지금 변경하기</button>
+            <button class="button-p" type="button">지금 변경하기</button>
         </div>
     </div>
 </div>
@@ -57,7 +87,7 @@
         </div>
         <div class="button-box-medium">
             <button class="button-s" type="button">회원가입</button>
-            <button class="button-p close-modal" type="button">재입력</button>
+            <button class="button-p" type="button">재입력</button>
         </div>
     </div>
 </div>
@@ -68,7 +98,7 @@
         </div>
         <div class="button-box-medium col-3">
             <button class="button-q" type="button">아니요</button>
-            <button class="button-p close-modal" type="button">삭제</button>
+            <button class="button-p" type="button">삭제</button>
         </div>
     </div>
 </div>
@@ -81,7 +111,7 @@
 </div>
 
 
-<h3 class="title3">[공통]</h3>
+<h3 class="title3">.modal-medium</h3>
 <div class="pop-modal modal-hidden" id="shareModal">
     <div class="modal modal-medium" tabindex="0">
         <div class="modal-header">공유하기</div>
@@ -94,16 +124,146 @@
         <button class="modal-close" type="button">닫기</button>
     </div>
 </div>
+
 <div class="button-box-xsmall">
     <a href="#" class="button-s" onclick="fn_modalPopOpen('shareModal');">[medium: 공유하기]</a>
 </div>
 
-<h3 class="title3">[기타]</h3>
+<h3 class="title3">.modal-medium2</h3>
+<div class="pop-modal modal-hidden" id="modalRequireAPI">
+    <div class="modal modal-medium2" tabindex="0">
+        <div class="modal-header">OPEN API 사용 요청</div>
+        <div class="modal-content">
+            <div class="modal-data-info">
+                <div class="require-api">
+                    <ul class="list-bul">
+                        <li><i class="mark">•</i>OPEN API 사용요청 이후 승인이 되면  사용하실 수 있어요.</li>
+                        <li><i class="mark">•</i>OPEN API 사용 시작일자는 승인일자 부터 계산되어집니다.</li>
+                        <li><i class="mark">•</i>위치기반 서비스에 OPEN API를 이용하실 경우 “위치기반서비스 사업신고필증”을 꼭 첨부해주세요.</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <dl class="info">
+                            <dt>OPEN API명</dt>
+                            <dd>업종별 소상공인 분포 현황 API</dd>
+                        </dl>
+                        <dl class="info">
+                            <dt>위치기반 서비스 <br>사용여부</dt>
+                            <dd class="align-center">
+                                <label class="ipt-radio"><input type="radio" name="radio1" checked><i>미사용</i></label>
+                                <label class="ipt-radio"><input type="radio" name="radio1"><i>사용</i></label>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 위치기반 서비스 사용 -->
+                    <div class="service-selected">
+                        <ul class="list-bul">
+                            <li><i class="mark">•</i>위치기반 서비스를 사용하고자 할 경우 “위치정보의 보호 및 이용 등에 관한 법률”에 따라 방송통신위원회 “위치정보서비스 허가”를 받거나 “위치기반 서비스사업 신고”를 하여야합니다. 이에 해당하는 경우에는 첨부파일에 “위치기반서비스 사업자신고필증”을 첨부해주시기 바랍니다.</li>
+                        </ul>
+                
+                        <div class="attach-file">
+                            <div class="file-drop">
+                                <p class="message">파일을 선택하거나 이곳에 끌어다 놓으세요</p>
+                                <p class="sub-message">PDF 최대 50MB</p>
+                                <div class="button-box-small">
+                                    <label class="button-t file-attach">파일 찾기<input type="file"></label>
+                                </div>
+                            </div>
+                            <div class="file-uploaded">
+                                <i class="icon-file-pdf">pdf 파일</i>
+                                <p class="file-title">사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증.pdf</p>
+                                <p class="file-info">
+                                    <span class="byte"><i>94</i> KB of 94 KB</span>
+                                    <span class="stat"><i class="icon-stat-loading"></i>Uploading...</span>
+                                    <span class="stat"><i class="icon-stat-complete"></i>Completed</span>
+                                </p>
+                                <p class="file-info-statbar"><span class="bar" style="width: 60%">60%</span></p>
+                                <button type="button" class="icon-waste">삭제</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 퍼블리싱 확인 -->
+                        <script>
+                        $(function(){
+                            $('#modalRequireAPI').find('.info-box .ipt-radio').eq(0).on('click', function(){
+                                $('.service-selected').hide();
+                            });
+                            $('#modalRequireAPI').find('.info-box .ipt-radio').eq(1).on('click', function(){
+                                $('.service-selected').show();
+                            });
+                            fileAttatch();
+                        });
+
+                        function fileAttatch () {
+                            const dropArea = $('.file-drop');
+
+                            const dropedArea = $('.file-uploaded');
+                            const dropedFileTitle = dropedArea.find('.file-title');
+                            const dropedFileDel = dropedArea.find('.icon-waste');
+
+                            
+                            const attachFileBtb = dropArea.find('input[type="file"]');
+                            attachFileBtb.on('change', function(){
+                                dropArea.hide();
+                                dropedFileTitle.text(this.value);
+                                dropedArea.show();
+                            });
+
+
+                            dropArea.on('dragover', function(e){
+                                e.stopPropagation();
+                                e.preventDefault();
+                            });
+
+                            dropArea.on('drop', function(e) {
+                                e.preventDefault();
+
+                                var files = e.originalEvent.dataTransfer.files;
+                                if (files.length > 1) {
+                                    fn_modalPopOpen('modal_5')
+                                    return false;
+                                }
+                                
+                                dropArea.hide();
+                                dropedFileTitle.text(files[0].name);
+                                dropedArea.show();
+                            });
+
+                            dropedFileDel.on('click', function(){
+                                dropedArea.hide();
+                                dropArea.show();
+                            });
+                        }
+                        </script>
+                        <!-- //퍼블리싱 확인 -->
+                    </div>
+                    <!-- //위치기반 서비스 사용 -->
+
+                    <label for="publicRequire" class="input-title">요청사항</label>
+                    <div class="textarea">
+                        <textarea name="" id="publicRequire" placeholder="요청사항 작성" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-s" type="button">취소</button>
+            <button class="button-p" type="button">사용 요청하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+
+<div class="button-box-xsmall">
+    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalRequireAPI');">[medium2: OPEN API 사용 요청 ]</a>
+</div>
+
+<h3 class="title3">.modal-large</h3>
 <!-- 약관보기 팝업 -->
 <div class="pop-modal modal-hidden" id="modalLarge1">
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">회원약관</div>
-        <div class="message-box">
+        <div class="modal-content">
             <!--  -->
             회원약관 약관내용
             <!-- // -->
@@ -285,7 +445,7 @@
     <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge4');">[large: 필터] [2025.08.08 모달유지 .maintain-modal 추가]</a>
 </div>
 
-<h3 class="title3">[풀팝업(모바일)]</h3>
+<h3 class="title3">[모바일 풀팝업] fn_modalPopOpen('팝업아이디',true);</h3>
 <!-- 문의하기 -->
 <div class="pop-modal modal-hidden" id="modalFaq">
     <div class="modal modal-medium" tabindex="0">
@@ -447,7 +607,7 @@
 </div>
 <div class="button-box-xsmall">
     <a href="#" class="button-s" onclick="fn_modalPopOpen('modalFaq',true);">[medium: 문의하기]</a>
-    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalInfoAPI',true);">[medium: 컨텐츠 scroll]</a>
+    {# <a href="#" class="button-s" onclick="fn_modalPopOpen('modalInfoAPI',true);">[medium: 컨텐츠 scroll]</a> #}
 </div>
 
 
