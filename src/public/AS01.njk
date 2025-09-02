@@ -3,3 +3,63 @@
 {% block content %}
 {{ include( "_html/_AS01.njk" ) }}
 {%- endblock %}
+
+{% block modal %}
+<!-- 데이터 만들기 -->
+<div class="pop-aiside pop-modal modal-hidden" id="modalAiSide">
+    <div class="modal modal-medium2" tabindex="0">
+        <div class="modal-header">연관상품</div>
+        <div class="modal-content">
+            <p class="aiside-content-tit">데이터를 직접 만들어보시겠어요?</p>
+            <div class="aiside-keyword-content">
+                <p class="title">AI가 분석한 키워드</p>
+                <div class="keyword-list">
+                    <span class="keyword">2021~2022</span>
+                    <span class="keyword">서울특별시 강남 전체</span>
+                    <span class="keyword">가정통신 > 전체</span>
+                    <span class="keyword">아침</span>
+                    <span class="keyword-more">+7</span>
+                </div>
+                <div class="button-box-small">
+                    <a href="#" class="button-s">데이터 만들기 </a>
+                </div>
+            </div>
+
+            <p class="aiside-content-tit">연관된 데이터 상품이에요.</p>
+            <div class="aiside-recomend-content">
+                <ul class="recomend-list">
+                    <li class="item-recomend">
+                        <a href="#">
+                            <div class="flags"><span class="flag data-market">데이터마켓</span></div>
+                            <dl>
+                                <dt>강남구 카페 매출 리포트</dt>
+                                <dd>강남구 주요 상권의 카페 매출 흐름을 한눈에 확인해보세요.</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li class="item-recomend">
+                        <a href="#">
+                            <div class="flags"><span class="flag data-market">데이터마켓</span></div>
+                            <dl>
+                                <dt>신논현역 상권 분석 콘텐츠</dt>
+                                <dd>신논현역 주변 유동인구, 매출, 업종 경쟁도까지 정리된 인사이트 리포트를 추천해드릴게요.</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li class="item-recomend">
+                        <a href="#">
+                            <div class="flags"><span class="flag data-market">데이터마켓</span></div>
+                            <dl>
+                                <dt>강남구 카페 매출 리포트 강남구 카페 매출 리포트</dt>
+                                <dd>강남구 주요 상권의 카페 매출 흐름을 한눈에 확인해보세요. 강남구 주요 상권의 카페 매출 흐름을 한눈에 확인해보세요.</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //데이터 만들기 -->
+{%- endblock %}

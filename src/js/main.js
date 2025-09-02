@@ -9,8 +9,9 @@ $(function(){
 
     /** 기본 로드될 함수 */
     ui_navi();
+    // ui_glassBg();
+
     fn_asideFixed();
-    ui_glassBg();
     fn_tabs();
 
     fn_iptClear();
@@ -51,8 +52,8 @@ function fn_exquestionSwipe(){
 
     const swiper = new Swiper(slider, {
         slidesPerView: 'auto',
-        spaceBetween: 16,
-        freemode: true
+        spaceBetween: 12,
+        slideToClickedSlide : true
     });
 
     const exquestions = document.querySelectorAll('.exquestion-type .swiper-slide');
@@ -282,13 +283,21 @@ function ui_navi(){
             historyModal.classList.add('modal-hidden');
         });
     }
+    
+    const aisearchBtn = document.querySelector('.pop-aiside-button');
+    const aisideModal = document.getElementById('modalAiSide');
+    if (aisearchBtn) {
+        aisearchBtn.addEventListener('click', function(){
+            fn_modalPopOpen('modalAiSide', true);
+        });
+    }
 }
 
 /** 백그라운드 적용 */
 function ui_glassBg(){
     const filepath = this.location.pathname;
     const filename = filepath.substring(filepath.lastIndexOf('/') + 1).split(".")[0];
-    const glassBgPages = ["UT01", "UT01M", "AS01MAIN"];
+    const glassBgPages = ["UT01"];
     for ( glassBgPage of glassBgPages ) {
         if (filename == glassBgPage) {
             const body = document.getElementsByTagName('body')[0];
@@ -732,7 +741,9 @@ function fn_aisearchAccordion(_accordion1Id){
 function fn_aisearchSlider(_sliderId){
     const slider = document.getElementById(_sliderId);
     const swiper = new Swiper(`#${_sliderId} .aisearch-slider`, {
-        slidesPerView: 3,
+        
+        slidesPerView: "auto",
+        // slidesPerView: 3,
         spaceBetween: 12,
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
@@ -1090,7 +1101,8 @@ function fn_agreeTerms(_id){
 
     // 선택약관
     for ( optionalTerm of optionalTerms ) {
-        const optionalTermsTitle = optionalTerm.querySelector('& >label input');
+        const optionalTermsTitle = optionalTerm.firstElementChild.querySelector('input');
+        // console.log(optionalTermsTitle);
         // 선택약관 타이틀
 
         optionalTermsTitle.addEventListener('click', function(){
@@ -1282,7 +1294,7 @@ function fn_totalSearch() {
   const iconSearch = document.querySelector('.icon-search, .icon-searchclose');
   const totalSearch = document.querySelector('.totalSearch');
   const statebar = document.querySelector('.statebar');
-
+  if (!iconSearch) return false;
   function showTotalSearch() {
     if (window.innerWidth <= 1023) {
       totalSearch.style.display = 'flex'; // 모바일에서는 flex
