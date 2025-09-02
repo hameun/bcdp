@@ -2692,6 +2692,8 @@ page : page-polio
       width:720px;  
       .chip{
         flex:1;
+        i{font-weight: 400;}
+        input:checked + i{font-weight: 600;}
       }
     }
     //기간-달력
@@ -3072,6 +3074,7 @@ page : page-polio
       height:100%;
       &:checked + i{
         border:1.5px solid $navy-300;
+        padding:11px 12px 11px 16px;
         &::after {
           content:"";
           display:block;
@@ -3534,26 +3537,6 @@ footer
 }
 
 // 통합검색
-// .modal-search{
-//   padding-top:88px;
-//   align-items: flex-start;
-//   .modal{
-//     border: 2px solid #fff;
-//     box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.08);
-//     background: #FFFFFFCC;
-//     max-width: 1000px;
-//     margin:0 auto;
-//     flex:auto;
-//     .modal-close{
-//       right:20px;
-//       width:28px;
-//       height:28px;
-//       background-size:24px auto;
-//     }
-
-//   }
-// }
-
 .page-search{
   strong{color:$navy-400;}
   .input-box{
@@ -3599,14 +3582,10 @@ footer
   }
 
   .contents-filter{
-    margin-left:-20px;
-    margin-right:-20px;
     .chip-box{
       flex-wrap: nowrap;
       overflow: hidden;
       overflow-x: auto;
-      padding-left:20px;
-      padding-right:20px;
       
     }
   } 
@@ -4804,8 +4783,9 @@ MEDIA QUERY
     }
   }
   .page-polio .step-content .chip-box{width:100%;}
-  .footer-contents .tab-type{padding:0 24px; margin:0 -24px;   }
-  .page-search .contents-list-wrap .contents-list{    grid-template-columns: repeat(2, 1fr); width:100%;}
+  .page-polio .datapolio-bottom .filter-content{margin-bottom:206px;}
+  .footer-contents .tab-type{padding:0 24px; margin:0 -24px;}
+  .page-search .contents-list-wrap .contents-list{grid-template-columns: repeat(2, 1fr); width:100%;}
   .data-tournament-list .tournament-list .tournament-content .image{max-height: 186px;}
   .footer-etc{margin-top:60px; gap:12px;}
   .footer-etc .footer-etc-cont{max-width: 324px;}
@@ -4825,7 +4805,7 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .inner-cont ul li{max-width: 180px;}
   .bcdata-contents .tab-contents .service-box ul{gap:16px;}
   .bcdata-contents .tab-contents .tab-credit .d-list ul li{flex:0 0 36%;}
-  .bcdata-contents .tab-contents .tab-credit .service-box ul{justify-content: space-between;}
+  // .bcdata-contents .tab-contents .tab-credit .service-box ul{justify-content: space-between;}
   .bcdata-contents .tab-contents .tab-credit .service-box .bc-box{flex:0 0 calc(  50% - 8px );}
   .bcdata-contents .tab-contents .tab-credit .service-box .bc-box .sub-txt .tooltip{background-size: 16px;}
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner{padding:29px 16px;}
@@ -5494,7 +5474,7 @@ MEDIA QUERY
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result .my-price{margin:0;}
     .textbutton-box-xsmall{font-size:14px;}
     .datapolio-bottom .filter-content{
-      margin-top:32px; margin-bottom:0; left:0; right:0; top:initial; width:100%; border-radius: 20px 20px 0 0; border:0;
+      margin-top:32px; margin-bottom:0; left:0; right:0; top:initial; width:100%; border-radius: 20px 20px 0 0; border:0; background:rgba(255, 255, 255, 1);
     }
     .datapolio-bottom .filter-content .filter-option{margin-top:-16px;}
     .filter_box{    position: fixed;
@@ -5636,6 +5616,7 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box .circle-b li:nth-child(4){top:240px; left:calc( 50% - 65px );}
   .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box .circle-b li:nth-child(5){top:240px; left:calc( 50% + 65px );}
   .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box .circle-b:before{display:none;}
+  .bcdata-contents .tab-contents .tab-bccard .bc-box .cont-box .img-card{flex-wrap: wrap; max-width: 275px;}
   .bcdata-contents .tab-contents .service-box ul{grid-template-columns:repeat(1,1fr); gap:12px;}
   .bcdata-contents .tab-contents .partner-message{margin-top:24px; }
   .bcdata-contents .tab-contents .partner-message .txt-n{background-position: left top;}
@@ -5665,6 +5646,7 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .tab-credit .d-list ul li{font-size:16px; width:max-content;}
   .bcdata-contents .tab-contents .tab-credit .service-box .bc-box{flex:1;}
   .bcdata-contents .tab-contents .tab-marketing .marketing-info ul{flex-direction: column;}
+  .bcdata-contents .tab-contents .tab-marketing .marketing-info > ul > li{min-width: auto;}
   .bcdata-contents .tab-contents .tab-marketing .partner-step li{display: flex; flex-direction: column; align-items: self-start;}
   .bcdata-contents .tab-contents .tab-marketing .partner-step li .txt-n{margin-left:0;}
   .bcdata-contents .tab-contents .tab-data .organ-wrap{padding:20px; }
