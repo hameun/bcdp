@@ -1637,7 +1637,7 @@ MODAL POPUP
     }
     
   }
-  
+
   //임시저장
   .draft-box {
     // margin-right:-20px;
@@ -3628,6 +3628,49 @@ TOAST POPUP
     opacity: 1;
   }
 }
+
+
+.border-line-gra{
+  position:relative;
+  background-clip: padding-box;
+  overflow: hidden;
+  box-shadow: 0px 16px 32px 0px #23225814;
+  backdrop-filter: blur(20px);
+  border:0 !important;
+  &::after{
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    z-index:-1;
+    box-sizing: border-box;
+  }
+}
+
+.border-line-grab {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  background: #FFFFFF99;
+}
+.border-line-grab::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  z-index: 0;
+  background: linear-gradient(180deg, #FFFFFF, rgba(255,255,255,0.2));
+}
+
 @media screen and (min-width: 1024px){
   .tab-box {
     &.is-static,

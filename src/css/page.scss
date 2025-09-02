@@ -4899,16 +4899,16 @@ MEDIA QUERY
     }
     .datapolio-bottom{padding:0; bottom:0;}
     .datapolio-bottom .btn-filter{top:-68px;}
-    .datapolio-bottom .bottom-content{border-radius: 20px 20px 0 0; gap:16px;}
+    .datapolio-bottom .bottom-content{border-radius: 20px 20px 0 0; gap:16px; padding:16px 20px 0 20px;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-tit .tit{font-size: 14px;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result{flex-direction: column; align-items: flex-start;}
-    .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result .price{font-size: 18px;}
+    .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result .price{font-size: 18px; font-weight: 600;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result .my-price{margin:0;}
     .textbutton-box-xsmall{font-size:14px;}
-    .datapolio-bottom .filter-content{
-      margin-top:32px; margin-bottom:0; left:0; right:0; top:initial; width:100%; border-radius: 20px 20px 0 0; border:0; background:rgba(255, 255, 255, 1);
-    }
-    .datapolio-bottom .filter-content .filter-option{margin-top:-16px;}
+    .datapolio-bottom .filter-content{margin-top:32px; margin-bottom:0; left:0; right:0; top:initial; width:100%; border-radius: 20px 20px 0 0; border:0; background:rgba(255, 255, 255, 1); max-height: calc( 100% - 32px); gap:16px;}
+    .datapolio-bottom .filter-content .filter-option{margin-top:-12px;}
+    .datapolio-bottom .bottom-content .button-box-large .button-q{flex-basis: 96px;;}
+    .datapolio-bottom .bottom-content .button-box-large .button-p{min-width: auto;}
     .filter_box{    position: fixed;
       top: 0;
       left: 0;
@@ -4941,6 +4941,10 @@ MEDIA QUERY
         flex-direction: column;
         width:100%;
         gap:20px;
+        .input-box input{
+          padding-right:40px;
+          background: url($icon-calendar) no-repeat center right 20px;
+        }
       } 
       .picker-wrap > ::after{content: none;}
     }
@@ -4949,8 +4953,9 @@ MEDIA QUERY
   }
   .page-polio .content-step ul{position:relative; gap:4px;}
   .page-polio .content-step ul li .step-title *{display:none !important;}
-  .page-polio .content-step ul li.on:not(:has(~ li.on)) *{display:flex !important; white-space:nowrap; overflow:visible;}
-  .page-polio .content-step ul li.on:not(:has(~ li.on)) .step-title{position:absolute; left:0; top:10px;}
+  .page-polio .content-step ul li.on *{display:flex !important; white-space:nowrap; overflow:visible;}
+  .page-polio .content-step ul li.on .step-title{position:absolute; left:0; top:10px;}
+  
 
   .picker-model .modal-large{
     position:absolute; bottom:0; width:100%; left:50%; transform:translateX(-50%);
