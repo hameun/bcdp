@@ -131,6 +131,14 @@
 
 .icon-new{@include set-icon(24px, 24px, $icon-new);}
 .icon-file{@include set-icon(24px, 24px, $icon-file);}
+
+.icon-circlecheck{@include set-icon(28px, 28px, $icon-circlecheck)}
+.icon-layer{@include set-icon(28px, 28px, $icon-layer)}
+.icon-filecheck{@include set-icon(28px, 28px, $icon-filecheck)}
+.icon-badge{@include set-icon(28px, 28px, $icon-badge)}
+
+.icon-people {@include set-icon(24px, 24px, $icon-people);}
+
 .icon-file-pdf {@include set-icon(48px, 48px, "../images/icon_file_pdf.png", 48px);}
 .icon-stat-complete {@include set-icon(10px, 10px, svg-icon(stat-complete), 10px);}
 .icon-stat-loading {
@@ -2097,16 +2105,18 @@ MODAL POPUP
   font-size:16px;
   font-weight: 400;
   color:$gray-700;
-  padding-top:12px;
-  padding-bottom:40px;
+  // padding-top:12px;
+  // padding-bottom:40px;
   .item-scroll-wrap{
     max-height: 442px;
     margin-right:-20px;
   }
   h2{
-    margin-top:20px;
     font-weight: 600;
     font-size: 16px;
+  }
+  * ~ h2 {
+    margin-top:20px;
   }
   li{margin-top:8px;}
   .depth-1{
@@ -2122,6 +2132,12 @@ MODAL POPUP
       color:$gray-500;
       padding-left:11px;
       text-indent: -11px;
+    }
+  }
+  .depth-bul{
+    li{
+      padding-left:12px;
+      text-indent: -12px;
     }
   }
   .last-txt{
