@@ -21,7 +21,12 @@ a:focus-visible {
 //   outline: none;
 //   box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
 // }
-img {display: block; width: 100%; max-width: 100%;}
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
 button {
   padding: 0;
   border: none;
@@ -371,7 +376,7 @@ aside
   right:  $layout-padding;
   padding: 20px;
   justify-items: center;
-  z-index: 5;
+  z-index: 9;
   background-color: rgba(0,0,0,0.2);
  .button-box-xsmall {
   flex-wrap: wrap;
@@ -773,6 +778,7 @@ page : .page-main /.page-aisearch
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: auto;
   .aisearch-header {
     h1 {
       text-align: center;
@@ -782,7 +788,8 @@ page : .page-main /.page-aisearch
       transition: font-size 300ms ease;
     }
     .flow-text {
-      overflow-x: hidden;
+      // overflow-x: hidden;
+      overflow: auto;
       padding: 40px 0;
       margin: 20px 0 -40px
     }
@@ -790,11 +797,11 @@ page : .page-main /.page-aisearch
       display: grid;
       grid-template-columns: repeat(20,1fr);
       gap: 12px;
-      transform: translateX(-100px);
+      // transform: translateX(-100px);
       transition: all;
       & +.exquestion-list {
         margin-top: 12px;
-        transform: translateX(-500px);
+        // transform: translateX(-500px);
       }
       .exquestion-item {
         display: flex;
@@ -849,6 +856,7 @@ page : .page-main /.page-aisearch
           border-radius: 16px;
           background-color: $gray-60;
           @include text-body(1);
+          text-align: left;
         }
         & +.util {
           justify-content: flex-end;
@@ -902,9 +910,9 @@ page : .page-main /.page-aisearch
         }
         .icon-copy {
           background: url(svg-icon(search-copy,$gray-500)) no-repeat 50% 50%;
-          &.is-on {
-            background: url(svg-icon(search-copy, $primary)) no-repeat 50% 50%;
-          }
+          // &.is-on {
+          //   background: url(svg-icon(search-copy, $primary)) no-repeat 50% 50%;
+          // }
         }
         .icon-good,
         .icon-bad {
@@ -921,36 +929,38 @@ page : .page-main /.page-aisearch
         }
       }
       .request-list {
-        max-width: 436px;
+        // max-width: 436px;
+        // display: inline-flex;
         .request-item {
-          border: 2px solid $white;
-          border-radius: 16px;
-          background-color: #FFFFFF99;
-          box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
-          padding: 14px;
           & + .request-item {
             margin-top: 12px;
           }
         }
         .request-title {
+          display: inline-block;
+          border: 2px solid $white;
+          border-radius: 16px;
+          background-color: #FFFFFF99;
+          box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+          padding: 14px;
           border-image: linear-gradient(180deg, #FFFFFF, #FFFFFF33);
           cursor: pointer;
           p {
             position: relative;
-            padding-right: 28px;
+            // padding-right: 28px;
             @include text-body(2,'sb');
-            &::after {
-              content: '';
-              // display: inline-block;
-              position: absolute;
-              right: 0;
-              top: 0;
-              width: 20px;
-              height: 20px;
-              background: url(svg-icon(chevron-right, $gray-300)) no-repeat 100% 50%;
-              background-size: 16px 16px;
-              transform: rotate(90deg);
-            }
+            // &::after {
+            //   content: '';
+            //   // display: inline-block;
+            //   position: absolute;
+            //   right: 0;
+            //   top: 0;
+            //   width: 20px;
+            //   height: 20px;
+            //   background: url(svg-icon(chevron-right, $gray-300)) no-repeat 100% 50%;
+            //   background-size: 16px 16px;
+            //   transform: rotate(90deg);
+            // }
           }
           &.ui-state-active p::after {
             transform: rotate(270deg);
@@ -1434,7 +1444,8 @@ page : .page-main /.page-aisearch
   }
   .page-aisearch {
     margin: 0;
-    padding: 56px 24px 140px;
+    // padding: 56px 24px 140px;
+    padding: 56px 20px 140px;
     .aisearch-body {
       padding: 0;
     }
@@ -1442,11 +1453,11 @@ page : .page-main /.page-aisearch
   .page-aisearch-bottom {
     max-width: 704px;
     .search-area { 
-      left: 24px;
-      right: 24px;
+      left: 20px;
+      right: 20px;
     }
     .pop-aiside-button {
-      right: 24px;
+      right: 20px;
     }
   }
 

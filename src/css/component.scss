@@ -110,7 +110,8 @@
 .icon-logout {@include set-icon(48px, 48px, $icon-logout, 20px);}
 
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
-.icon-reload {@include set-icon(24px, 24px, $icon-reload);}
+// .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
+.icon-reload {@include set-icon(24px, 24px, svg(reload, $gray-900));}
 .icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
 .button-s .icon-download {background-image: url(svg-icon(download, $primary));}
 .button-xsmall .icon-download,
@@ -506,6 +507,10 @@ FORM TEXT
     @include info-text(14);
     padding-top: 2px;
   }
+  &-xsmall {
+    @include info-text(12);
+    padding-top: 2px;
+  }
 }
 
 .guide-text {
@@ -524,6 +529,9 @@ FORM TEXT
       margin-right: 4px;
       text-align: center;
     }
+  }
+  &.color-point {
+    color: $point;
   }
 }
 .input-title + .guide-text {
@@ -1823,6 +1831,11 @@ MODAL POPUP
       button {
         flex: 1;
       }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .modal-login {
+      padding: 44px 0 0;
     }
   }
   .modal-aiagree {
@@ -3128,7 +3141,7 @@ CONTENT COMPONENT
 .result-complete,
 .data-none,
 .result-error{
-  margin-top: 40px;
+  // margin-top: 40px;
   padding: 104px 0 100px;
   text-align: center;
   &::before {
@@ -3335,6 +3348,35 @@ POPOVER POPUP
     }
   }
 }
+.contest-tag {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  .txt {
+    margin-right: 4px;
+    @include text-body(0,'m',$gray-700);
+  }
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
+    padding: 0 5px;
+    border: 1px solid $gray-500;
+    @include text-body(3,'r',$gray-500);
+    background-color: $white;
+    border-radius: 4px;
+    &.deadline {
+      border-color: transparent;
+      background-color: $navy-300;
+      color: $white;
+    }
+    &.count {
+      border-color: $navy-300;
+      background-color: $white;
+      color: $navy-300;
+    }
+  }
+}
 .ai-content {
   position: relative;
   display: block;
@@ -3353,11 +3395,27 @@ POPOVER POPUP
       // top: 23px;
       // left: 23px;
     }
+    .contest-tag {
+      position: absolute;
+      top: 23px;
+      left: 23px;
+    }
+    .host {
+      display: inline-flex;
+      .logo {
+        width: 20px;
+        height: 20px;
+      }
+      .company {
+        margin-left: 6px;
+        @include text-body(2,'m');
+      }
+    }
     .title {
       margin-top: 8px;
       // min-height: 3em;
       @include text-body(0,'sb');
-      font-size:16px;
+      // font-size:16px;
       max-height: 3em;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -3372,6 +3430,24 @@ POPOVER POPUP
     .date {
       margin-top: 8px;
       @include text-body(3,'r',$gray-500);
+    }
+    .info {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      .date {
+        margin-top: 0;
+      }
+      .reward {
+        @include text-body(3,'r',$point);
+        &::before {
+          content: '';
+          display: inline-block;
+          height: 10px;
+          margin: 0 8px;
+          border-left: 1px solid $gray-100;
+        }
+      }
     }
   }
 }
