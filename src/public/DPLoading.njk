@@ -64,9 +64,6 @@
                 </li>
             </ul>
         </div>
-
-        <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
-        
     </div>
 
     <div class="datapolio-bottom">
@@ -201,8 +198,14 @@
         </div>
     </div>
     </div>
-    
 </div> 
+
 {%- endblock %}                  
 
-
+{% block modal %}
+<!-- 250902 딤처리 -->
+<div class="loading-dim">
+    <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+</div>
+<!-- //250902 딤처리 -->
+{%- endblock %}
