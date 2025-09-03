@@ -1195,7 +1195,8 @@ MODAL POPUP
   .modal {
     display: flex;
     flex-direction: column;
-    max-height: 70vh;
+    // max-height: 70vh;
+    max-height: 80vh; // 문의하기 팝업에서 버튼이 밀려남
     .modal-content {
       & +.button-box-medium {
         margin-top: 20px;
@@ -3838,7 +3839,7 @@ TOAST POPUP
       padding-bottom: 1px;
       border-radius: 16px;
       padding: 6px;
-      background-color: rgba(255,255,255,0.8);
+      background-color: rgba(255,255,255,0.1);
       border: 2px solid;
       border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
       backdrop-filter: blur(20px);
@@ -3979,9 +3980,10 @@ TOAST POPUP
     // .formbox 버튼 46
     // .faqbox 필터 56
     $contentMargin: calc(40px + 46px + 46px);
-    $formboxMargin: calc(64px + 46px);
+    $formboxMargin: calc(64px + 46px); // // 132px > 362px
     .formbox {
-        height: calc(100vh - $contentMargin - $formboxMargin);
+        // height: calc(100vh - $contentMargin - $formboxMargin);
+        height: calc(100vh - 362px - $formboxMargin);
     }
     .faqbox {
       .faq-list {

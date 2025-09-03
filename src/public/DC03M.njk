@@ -1,0 +1,233 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+{{ include( "_html/_DC010101.njk" ) }}
+{%- endblock %}
+
+{% block modal %}
+<!-- 공통 -->
+<div class="pop-modal modal-hidden" id="shareModal">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">공유하기</div>
+        <div class="share-sns">
+            <a href="#" class="kakao"><span class="icon-kakao"></span><i class="txt">카카오톡</i></a>
+            <a href="#" class="facebook"><span class="icon-facebook"></span><i class="txt">페이스북</i></a>
+            <a href="#" class="naverblog"><span class="icon-naverblog"></span><i class="txt">네이버블로그</i></a>
+            <a href="#" class="url-copy"><span class="icon-url"></span><i class="txt">URL복사</i></a>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modalJoinContestAgree">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">데이터경진대회 참가 동의</div>
+        <div class="modal-content">
+            1. 데이터 이용 및 보안
+            참가자는 주최사가 제공하는 데이터(이하 ‘대회 데이터’)를 본 대회 목적 외로 사용하거나 복제, 배포, 공개하지 않습니다.
+            대회 데이터의 보안을 위해 필요한 보호조치를 취하고, 무단 접근이나 유출 발생 시 즉시 주최사에 알려야 합니다.
+            2. 제출물과 사용 권리
+            참가자가 제출한 결과물(이하 ‘제출물’)은 참가자가 직접 작성한 독창적인 것이어야 하며, 제3자의 권리를 침해하지 않아야 합니다.
+            제출물에 대한 권리는 참가자에게 그대로 있으며, 주최사는 대회 홍보, 결과 검증, 내부 연구, 서비스 개선 등을 위해 이를 무상으로 사용, 복제, 공개할 수 있는 비독점적 권리를 가집니다.
+            3. 시상 및 세금
+            시상은 각 대회 공고에서 안내된 방식에 따르며, 상금, 상품, 상장 등 다양한 형태일 수 있습니다.
+            시상에 따른 제세공과금은 수상자가 부담하며, 관련 법령에 따라 주최사가 원천징수할 수 있습니다.
+            4. 시스템 오류 및 책임
+            주최사는 네트워크 장애, 서버 오류, 악성코드, 기술적 문제 등 불가항력적 사유로 인해 발생한 제출 실패, 데이터 유실, 대회 중단 등에 대해 책임을 지지 않으며, 필요한 경우 대회를 연기·변경·취소할 수 있습니다.
+
+            5. 실격 및 제출 검증
+            참가자가 허위 정보, 부정행위, 규칙 위반, 주최사나 타인을 방해·위협하는 행위를 한 경우 제출물은 심사에서 제외되며 참가 자격이 박탈될 수 있습니다.
+            제출물이 규정된 형식이나 요건을 충족하지 않을 경우, 주최사는 제출을 거부하거나 실격 처리할 수 있습니다.
+            6. 개인정보 및 홍보 활용
+            참가자가 대회 신청 시 제출한 이름, 연락처, 이메일 등은 회원 가입 시 제공된 정보로 갈음하며, 대회 운영과 수상자 통보, 시상 절차를 위해 사용됩니다.
+            주최사는 참가자의 이름과 제출 결과를 대회 홍보, 사례 공유 등 목적으로 별도 추가 동의 없이 활용할 수 있습니다(법에서 금지된 경우 제외).
+            7. 준거법 및 분쟁 해결
+            본 동의사항은 대한민국 법률에 따라 해석되며, 대회와 관련된 분쟁은 주최사 본사 소재지를 관할하는 법원의 전속 관할로 합니다.
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">동의하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- 문의하기 -->
+<div class="pop-modal modal-hidden" id="modalFaq">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">문의하기</div>
+        <div class="modal-faq">
+            <div class="tab-box">
+                <ul class="tabs-small">
+                    <li class="is-on"><a href="#tabContent1">일반 문의</a></li>
+                    <li><a href="#tabContent2">상품 문의</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0" style="display:block;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA01Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA01Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+
+                        <label for="QnA01Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="textarea">
+                            <textarea name="" id="QnA01Content" placeholder="문의 내용을 작성해주세요" rows="4"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA01Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA01Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA02Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA02Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+                        <label for="QnA02Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA02Provider">
+                                <option value="" disabled selected>제공기관을 선택해주세요.</option>
+                                <option value="option1">제공기관 2_1</option>
+                                <option value="option2">제공기관 2_2</option>
+                                <option value="option3">제공기관 2_3</option>
+                                <option value="option4">제공기관 2_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA02Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="textarea">
+                            <textarea name="" id="QnA02Content" placeholder="문의 내용을 작성해주세요" rows="4"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA02Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA02Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+        </div> 
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //문의하기 -->
+<!-- //공통 -->
+
+<div class="pop-modal modal-hidden" id="modal_0">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>대회 참가를 위해서는 로그인이 필요합니다. 지금 로그인하시겠어요?.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">로그인하기</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인 후 다운로드가 가능해요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">다음에</button>
+            <button class="button-p close-modal" type="button">로그인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>대회 참가 시에만 다운로드가 가능해요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">다음에</button>
+            <button class="button-p close-modal" type="button">참가하기</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>하루에 업로드 할 수 있는 횟수(5회)를 <br>초과했어요. 내일 다시 제출해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>총 업로드할 수 있는 횟수(30회)를 <br>초과했어요. 더이상 제출할 수 없어요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_5">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지원되는 형식은 CSV이며, <br>20MB 이내 파일만 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_6">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>잘못된 파일 형식이에요. <br>제공한 템플릿과 동일한 파일만 제출 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <!-- 공통 -->
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('shareModal');return false;">[공유하기]</a>
+        <a href="#" class="button-q" onclick="fn_toast('URL이 복사 되었습니다.',1);return false;">[공유하기] > URL복사 토스트팝업 </a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalFaq');return false;">[문의하기]</a>
+        <a href="#" class="button-p" onclick="fn_toast('문의가 접수되었어요.',1);return false;">[문의하기] > 등록시</a>
+        <!-- //공통 -->
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_0');return false;">[참가하기/연습하기] > 로그인 전</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalJoinContestAgree',true);return false;">[참가하기]</a>
+        <a href="#" class="button-q" onclick="fn_toast('참가가 완료되었습니다.',1);return false;">[참가하기] > 참가완료 토스트팝업 </a>
+
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">데이터(T) [다운로드] 로그인 전</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_2');return false;">데이터(T) [다운로드] 로그인 후 > 대회 참가 전</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_3');return false;">제출(T) [제출하기] > 하루 최대 업로드수 초과</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_4');return false;">제출(T) [제출하기] > 총 업로드수 초과</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_5');return false;">제출(T) [제출하기] > 파일유형(csv) 및 용량(최대 20MB) 오류</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_6');return false;">제출(T) [제출하기] > 컬럼명과 순서 불일치</a>
+        <a href="#" class="button-q" onclick="fn_toast('제출이 완료되었습니다..',1);return false;">제출(T) [제출하기] > 제출완료 토스트팝업 </a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+{%- endblock %}

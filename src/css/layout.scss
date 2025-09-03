@@ -7,7 +7,7 @@
 /***********
 Layout
 ***********/
-html, body, textarea, button, a {font-weight: 400; font-size: 16px; line-height: 1.5; font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; color: $gray-700; letter-spacing: -0.015em; margin: 0;}
+html, body, textarea, button, a {font-weight: 400; font-size: 16px; line-height: 1.5; font-family: "Pretendard", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif; color: $gray-700; letter-spacing: -0.04em; margin: 0;}
 html, body {width: 100%; height: 100%; min-height: 600px;}
 a {text-decoration: none; color: $gray-900;}
 a:active,
@@ -1322,12 +1322,14 @@ page : .page-main /.page-aisearch
   .aiside-recomend-content {
     .recomend-list {
       .item-recomend {
-        padding: 15px;
-        border: 1px solid transparent;
-        border-radius: 16px;
-        background-color: #fff;
         & +.item-recomend {
           margin-top: 12px;
+        }
+        a {
+          padding: 15px;
+          border: 1px solid transparent;
+          border-radius: 16px;
+          background-color: #fff;
         }
       }
       dl {

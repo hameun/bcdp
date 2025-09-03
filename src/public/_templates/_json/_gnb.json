@@ -685,7 +685,7 @@
         "dep" : 0,
         "href": "DC01",
         "stat": "ing",
-        "date": "진행중"
+        "date": "9/3"
       },
       {
         "group": "상세",
@@ -693,26 +693,30 @@
         "dep" : 1,
         "href": "DC010101",
         "stat": "ing",
-        "date": "진행중"
+        "date": "9/3"
       },
       {
         "name": "종료된 대회",
         "dep" : 2,
         "href": "DC010201",
         "stat": "ing",
-        "date": "진행중"
+        "date": "9/3"
       },
       {
-        "name": "[모달]",
+        "name": "[모달]/[데이터경진대회 참가 동의]",
         "dep" : 2,
-        "href": "DC03",
-        "date": "작업예정"
+        "href": "DC03M",
+        "stat": "ing",
+        "date": "9/3",
+        "text": []
       },
       {
         "name": "대회참가 안내",
-        "dep" : 0,
+        "dep" : 1,
         "href": "DC04",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "9/3",
+        "text": []
       }
     ]},
     {

@@ -4620,6 +4620,94 @@ footer
       }
     }
   }
+  // 안내
+  .constest-about {
+    .about-guide {
+      h2 {
+        @include text-title(2);
+      }
+      .description {
+        margin-top: 16px;
+        padding: 22px 22px 22px 68px;
+        border-radius: 24px;
+        border: 2px solid $navy-200;
+        background-color: $navy-50;
+        dt {
+          @include text-body(0,'sb');
+        }
+        dd {
+          margin-top: 4px;
+          @include text-body(1,'r',$gray-700);
+        }
+      }
+      .step-list {
+        margin-top: 40px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        li {
+          border-radius: 20px;
+          background-color: $white;
+          padding: 20px 24px;
+          strong {
+            display: block;
+            @include text-body(0,'sb');
+          }
+          p {
+            margin-top: 12px;
+            @include text-body(1,'r',$gray-500);
+            min-height: 3rem;
+          }
+          .link {
+            display: inline-block;
+            margin-top: 11px;
+            @include text-body(2,'m',$point);
+          }
+        }
+      }
+    }
+    .about-question {
+      margin-top: 60px;
+      h2 {
+        @include text-title(3);
+        text-align: center;
+        & +p {
+          margin-top: 8px;
+          @include text-body(0,'r',$gray-500);
+           text-align: center;
+        }
+      }
+      .link-list {
+        margin-top: 32px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        a {
+          display: block;
+          border-radius: 20px;
+          background-color: $white;
+          padding: 20px;
+          width: 320px;
+          &::before {
+            content: '';
+            display: block;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 24px;
+            border-radius: 14px;
+            background: $gray-40;
+          }
+          strong {
+            @include text-body(0,'sb');
+          }
+          p {
+            margin-top: 2px;
+            @include text-body(1,'r',$gray-500 );
+          }
+        }
+      }
+    }
+  }
 }
 
 
