@@ -2021,17 +2021,16 @@ page : page-polio
       input{
         padding:12px 20px;
         padding-right:52px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.6);
         border-radius: 18px;
         &::placeholder {
-          //background: rgba(255, 255, 255, 0.8);
           color:$gray-300;
         }
       }
       &.is-focusin{
         padding:1px;
         input{
-          background: rgba(255, 255, 255, 0.6);
+          background: rgba(255, 255, 255, 0.8);
         }
       }
     }
@@ -2054,6 +2053,39 @@ page : page-polio
       background-origin: border-box;
 
     }
+
+    .is-loading{
+      border-width: 0;
+      overflow: hidden;
+      padding:2px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 1500px;
+        height: 1500px;
+        top: -600px;
+        left: -100px;
+        border-radius: inherit;
+        background-image: $backgroundConicGradient;
+        z-index: 2;
+        animation: spin 1500ms linear infinite;
+      }
+      input{
+        z-index: 2;
+        background-image: linear-gradient(#fff, #fff);
+      }
+      .util-box{
+        z-index: 2;
+      }
+      &.is-focusin{
+        padding:2px;
+        input{
+          background-image: linear-gradient(#fff, #fff);
+        }
+      } 
+    }
+    
+    
   }
   .content-step{
     margin-top:40px;
@@ -2172,7 +2204,14 @@ page : page-polio
           font-size:14px;
           color:$gray-700;
           font-weight: 500;
-
+        }
+        .input-box input{
+          font-weight: 500;
+          &::placeholder{
+            color:#969DAB;
+            font-weight: 400;
+            font-size: 18px;
+          }
         }
         // 폴리오 달력 
         .air-datepicker-body--cells.-years-,
@@ -2276,15 +2315,18 @@ page : page-polio
       justify-content: center;
       margin-bottom:16px;
       border-radius: 20px;
-      border: 2px solid;
-      border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
       box-shadow: 0px 16px 32px 0px #23225814;
-      backdrop-filter: blur(20px);
       gap: 4px;
-      opacity: 1;
       box-sizing: border-box;
       background:  rgba(255, 255, 255, 0.6);
-
+      &::before{
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 20px;
+        z-index: -1;
+        background: linear-gradient(180deg, #FFFFFF, rgba(255,255,255,0.2));
+      }
       .btn-icon-filter{
         width: 52px;
         height: 52px;
@@ -2428,16 +2470,19 @@ page : page-polio
       min-width: 720px;
       max-width: 1000px;
       border-radius: 20px;
-      border: 2px solid;
-      border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
       box-shadow: 0px 16px 32px 0px #23225814;
-      backdrop-filter: blur(20px);
-      //box-shadow: 0px 4px 12px 0px #23225805 inset;
       padding: 18px;
       gap: 20px;
-      opacity: 1;
       background: rgba(255, 255, 255, 0.6);
       box-sizing: border-box;
+      &::before{
+        content: "";
+        position: absolute;
+        inset: -2px;
+        border-radius: 20px;
+        z-index: -1;
+        background: linear-gradient(180deg, #FFFFFF, rgba(255,255,255,0.2));
+      }
       .polio-quote{
         display: flex;
         flex:1;
@@ -2557,7 +2602,16 @@ page : page-polio
       background-color:$white;
       box-sizing: border-box;
     }
-  }
+  }  
+}
+.loading-dim{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(25, 27, 30, 0.6);
+  z-index: 999;
   .loading{
     position: absolute;
     top: calc(50% - -60px);

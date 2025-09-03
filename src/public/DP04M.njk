@@ -21,12 +21,39 @@
 </div>
 <!-- //데이터구매하기 - 비로그인-->
 
+<!--  250902 추가 - 광역시/도 선택안한 상태에서 시/군/구 버튼 선택 시 -->
+<div class="pop-modal modal-hidden" id="modal2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>광역시/도를 먼저 선택해 주세요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- // 광역시/도 선택안한 상태에서 시/군/구 버튼 선택 시-->
+
+<!-- 250902 추가 - 대분류 선택안한 상태에서 중분류 버튼 선택 시 -->
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>대분류를 먼저 선택해 주세요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //대분류 선택안한 상태에서 중분류 버튼 선택 시-->
 
 <!-- 퍼블리싱 확인 -->
 <div class="modal-test">
     <div class="button-box-xsmall"> 
         <a href="#" class="button-q" onclick="fn_toast('상품을 장바구니에 담았아요.',1);return false;">장바구니 완료 토스트팝업</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[데이터구매하기]비로그인인 상태</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">광역시/도 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');return false;">대분류 미선택</a>
     </div>
 </div>
 <!-- //퍼블리싱 확인 -->
