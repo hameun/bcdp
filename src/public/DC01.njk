@@ -1,0 +1,362 @@
+{%- extends "_templates/_layout.njk" -%}
+
+{% block content %}
+<div class="content page-datacontest">
+    <h1 class="headline1">데이터 경진대회</h1>
+    <p class="head-guidetext">데이터 분석 실력을 펼칠 수 있는 도전의 기회를 놓치지 마세요.</p>
+    <div class="head-float-menu">
+        <div class="button-box-small">
+            <button type="button" class="button-s">대회 참가가 처음이신가요?</button>
+        </div>
+    </div>
+
+    <!-- [데이터경진대회] -->
+    <div class="datacontest-contents">
+        <div class="tab-box is-static">
+            <ul class="tabs">
+                <li class="is-on"><a href="#tabContent1">모든 대회 <i>23</i></a></li>
+                <li><a href="#tabContent2">내가 참가한 대회 <i>23</i></a></li>
+            </ul>
+        </div>
+        <!-- 모든대회 -->
+        <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">
+            <div class="tab-box">
+                <ul class="tabs-sub-small">
+                    <li class="is-on"><a href="#tabContent1_1">진행 중인 대회 16</a></li>
+                    <li><a href="#tabContent1_2">종료된 대회 7</a></li>
+                </ul>
+            </div>
+            
+            <!-- 모든대회 > 진행 중인 대회 -->
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1_1" tabindex="0">
+                <div class="search-wrap">
+                    <div class="contents-list-wrap">
+                        <div class="result-none">
+                            <p class="message">진행 중인 대회가 없습니다</p>
+                            <p class="message-sub">현재 참가 가능한 대회가 없습니다.</p>
+                        </div>
+                        <ul class="contents-list">
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest1-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest2-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest3-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag">연습가능</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest4-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag">연습가능</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest1-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest2-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag">연습가능</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest3-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest4-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest1-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest2-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag deadline">D-31</span>
+                                            <span class="tag count">23명 참가중</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="loading">
+                        <i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 모든대회 > 종료된 대회 -->
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1_2" tabindex="0" style="display:none;">
+                <div class="search-wrap">
+                    <div class="contents-list-wrap">
+                        <div class="result-none">
+                            <p class="message">종료된 대회가 없습니다</p>
+                            <p class="message-sub">현재 종료된 대회가 없습니다.</p>
+                        </div>
+                        <ul class="contents-list">
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest3-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag">연습가능</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest4-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag">연습가능</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="ai-content">
+                                    <p class="image"><img src="../images/dummy-contest2-1000x280.png" alt="이미지"></p>
+                                    <div class="info-box">
+                                        <p class="contest-tag">
+                                            <span class="tag">연습가능</span>
+                                        </p>
+                                        <p class="host">
+                                            <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+                                            <span class="company">비씨카드</span>
+                                        </p>
+                                        <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+                                        <p class="info">
+                                            <span class="date">2025.06.30~2025.07.31</span>
+                                            <span class="reward">수상혜택 1,300만원</span>
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="loading">
+                        <i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 내가 참가한 대회 -->
+        <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+            
+            <div class="result-none">
+                <p class="message">로그인이 필요한 서비스입니다</p>
+                <p class="message-sub">내가 참가한 대회 내역은 로그인 후 확인하실 수 있습니다.</p>
+                <div class="button-box-small">
+                    <button type="button" class="button-t">로그인하기</button>
+                </div>
+            </div>
+
+            <div class="tab-box">
+                <ul class="tabs-sub-small">
+                    <li class="is-on"><a href="#tabContent2_1">진행 중인 대회 16</a></li>
+                    <li><a href="#tabContent2_2">종료된 대회 7</a></li>
+                </ul>
+            </div>
+            
+            <!-- 내가 참가한 대회 > 진행 중인 대회 -->
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2_1" tabindex="0">
+                <div class="search-wrap">
+                    <div class="contents-list-wrap">
+                        <div class="result-none">
+                            <p class="message">진행 중인 대회가 없습니다</p>
+                            <p class="message-sub">현재 참가한 대회가 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내가 참가한 대회 > 종료된 대회 -->
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2_2" tabindex="0" style="display:none;">
+                <div class="search-wrap">
+                    <div class="contents-list-wrap">
+                        <div class="result-none">
+                            <p class="message">종료된 대회가 없습니다</p>
+                            <p class="message-sub">현재 참가한 대회가 없습니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //[데이터경진대회] -->
+</div>
+{%- endblock %}

@@ -214,7 +214,11 @@ function fn_tabs(){
                 const prevTabContentId = prevTabId.substr(1);
                 const prevTabContent = document.getElementById(prevTabContentId);
 
-                if (tab.classList.contains('is-static') || tab.classList.contains('is-sticky')) {
+                // 현재 탭 앵커기능이 있는 페이지 : 데이터 마켓
+                const isAnchor = document.querySelector('.datamarket-contents');
+                // if (tab.classList.contains('is-static') || tab.classList.contains('is-sticky')) {
+                // console.log(currentTabContent);
+                if ( isAnchor ) {
                     const targetY = currentTabContent.getBoundingClientRect().y;
                     window.scrollTo({
                         top: targetY + window.pageYOffset - 120, // PC : 32px(패딩값) + 88px(탭높이)
@@ -609,7 +613,6 @@ function fn_modalPopOpen(_this, _isFull, _hasDim){
     if (_hasDim === false) {
         modal.classList.add('no-dim');
     }
-
     const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
     modalButtons.forEach(function(modalButton){
         modalButton.addEventListener('click', function(){
@@ -620,6 +623,8 @@ function fn_modalPopOpen(_this, _isFull, _hasDim){
     windowScrollTopFix = window.scrollY;
     document.body.style.top = `-${windowScrollTopFix}px`;
     document.body.classList.add('is-fixed');
+    
+    modal.firstElementChild.focus();
 }
 function fn_modalPopClose(_this){
     if ( typeof _this == 'string' ) {

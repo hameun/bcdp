@@ -116,7 +116,7 @@
         "href": "AS01",
         "stat": "ing",
         "date": "진행중",
-        "text": ["미적용: 그래프영역"]
+        "text": []
       },
       {
         "name": "[모달]",
@@ -684,20 +684,23 @@
         "name": "리스트",
         "dep" : 0,
         "href": "DC01",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중"
       },
       {
         "group": "상세",
         "name": "진행 중인 대회",
         "dep" : 1,
         "href": "DC010101",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중"
       },
       {
         "name": "종료된 대회",
         "dep" : 2,
         "href": "DC010201",
-        "date": "작업예정"
+        "stat": "ing",
+        "date": "진행중"
       },
       {
         "name": "[모달]",

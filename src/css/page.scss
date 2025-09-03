@@ -1464,6 +1464,27 @@ page : page-partner
 page : page-insight
 ***********/
 .page-insight {
+  
+  .ai-content {
+    border: 0;
+    // isolation: isolate;
+    .image img {
+      border-radius: 24px 24px 0 0;
+    }
+    .image:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      background: linear-gradient(0deg, rgba(255,255,255,0.5) 0, rgba(255,255,255,1) 100%);
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      padding: 2px;
+    }
+    .info-box {
+      position: relative;
+    }
+  }
   // 공통 컴포넌트
   .insight-alram {
     display: inline-flex;
@@ -1679,6 +1700,7 @@ page : page-insight
       gap: 20px;
       &> li {
         flex: 1;
+        max-width: 320px;
       }
     }
   }
@@ -4221,6 +4243,438 @@ footer
   }
 }
 
+/***********
+데이터 경진대회
+***********/
+.page-datacontest {
+  .head-float-menu {
+    .button-box-small {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+    }
+  }
+  .ai-content {
+    .image img {
+      height: 280px;
+    }
+    .info-box .title {
+      -webkit-line-clamp: 1;
+    }
+    .info-box-view {
+      padding: 20px;
+      position: relative;
+      .host {
+        display: inline-flex;
+        .logo {
+          width: 20px;
+          height: 20px;
+        }
+        .company {
+          margin-left: 6px;
+          @include text-body(2,'m');
+        }
+      }
+      .title {
+        margin-top: 12px;
+        @include text-title(3);
+      }
+      &.closed {
+        .title {
+          margin-right: 352px;
+        }
+      }
+    }
+  }
+  // 리스트
+  .datacontest-contents {
+    & > .tab-box {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .tab-contents {
+      .tab-box {
+        padding: 20px 0 12px;
+        margin-bottom: -12px;
+        position: sticky;
+        top: 88px;
+        background-color: $gray-20;
+        z-index: 1;
+      }
+      .contents-list-wrap {
+        margin-top: 40px;
+      }
+      .contents-list {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  // 상세
+  .datacontest-view {
+    .ai-content {
+      // margin-bottom: 60px;
+      z-index: 2;
+      .image img {
+        height: 280px;
+      }
+      .info-box .title {
+        -webkit-line-clamp: 1;
+      }
+      .info-box-view {
+        padding: 18px;
+        .host {
+          display: inline-flex;
+          .logo {
+            width: 20px;
+            height: 20px;
+          }
+          .company {
+            margin-left: 6px;
+            @include text-body(2,'m');
+          }
+        }
+        .title {
+          margin-top: 12px;
+          @include text-title(3);
+        }
+        .info {
+          margin-top: 12px;
+          p {
+            @include text-body(1,'r',$gray-400);
+            .txt {
+              @include text-body(1,'m');
+            }
+          }
+          .date,
+          .reward {
+            .txt {
+              margin-left: 8px;
+            }
+          }
+          .date {
+            .txt {
+            }
+            .tag {
+              margin-left: 8px;
+              display: inline-flex;
+              align-items: center;
+              height: 20px;
+              padding: 0 5px;
+              border: 1px solid #626A7A;
+              font-size: 12px;
+              font-weight: 400;
+              color: #626A7A;
+              background-color: #fff;
+              border-radius: 4px;
+              vertical-align: 2px;
+              &.deadline {
+                border-color: transparent;
+                background-color: #6361FC;
+                color: #fff;
+              }
+            }
+          }
+          .count {
+            margin-top: 12px;
+            padding-left: 28px;
+            strong {
+              color: $point;
+            }
+          }
+        }
+        .button-box-large {
+          position: absolute;
+          right: 18px;
+          bottom: 18px;
+          button {
+            width: 160px;
+            flex-basis: 160px;
+          }
+        }
+      }
+    }
+    .tab-box {
+      margin-bottom: 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    .tabs-sub-contents {
+      position: relative;
+      .button-box-small {
+        position: absolute;
+        right: 0;
+        top: -80px;
+      }
+      .table {
+        overflow: auto;
+      }
+    }
+    .content-title {
+      margin-bottom: 16px;
+      @include text-title(4);
+      & ~.content-title {
+        margin-top: 40px;
+      }
+      em {
+        color: $point;
+      }
+    }
+    .leaderboad {
+      position: relative;
+      height: 148px;
+      padding: 18px; 
+      border-radius: 20px;
+      border: 2px solid rgba(99, 97, 252, 0.7);
+      // border-image-source: linear-gradient(119.02deg, #6361FC -5.31%, #CFCEFE 50.46%, #6361FC 106.23%);
+      background: linear-gradient(102.25deg, #FFFFFF -4.06%, #EFEFFF 24.51%, #E8E7FF 53.07%, #CFCEFE 64.5%, #E8E7FF 75.93%, #FFFFFF 110.21%);
+      .message {
+        .count {
+          @include text-body(1,'m');
+        }
+        .myscore {
+          margin-top: 4px;
+          @include text-title(4);
+          em {
+            color: $point;
+          }
+        }
+        .current {
+          position: absolute;
+          right: 22px;
+          top: 22px;
+          display: flex;
+          align-items: center;
+          @include text-body(2,'r',$gray-500);
+          .icon-reload {
+            margin-left: 4px;
+            @include set-icon(20px, 20px, svg-icon(reload,$gray-500),18px);
+          }
+        }
+      }
+      .score {
+        position: absolute;
+        left: 22px;
+        bottom: 22px;
+        dl {
+          display: flex;
+          align-items: center;
+          gap: 8px; 
+          dt {
+            @include text-body(1,'r',$gray-500);
+          }
+          dd {
+            @include text-body(1,'m',$gray-700);
+          }
+        }
+      }
+      .button-box-medium {
+        position: absolute;
+        right: 22px;
+        bottom: 22px;
+        button {
+          width: 120px;
+
+        }
+      }
+    }
+    .score-list {
+      margin-top: 60px;
+      .score-title,
+      .score-item {
+        height: 40px;
+        padding: 11px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        // background-color: $white;
+        justify-content: center;
+        text-align: center; 
+        overflow: hidden;
+        .name {
+          flex: 5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative;
+          .ranking {
+            flex: 0;
+            flex-basis: 40px;
+          }
+          .txt {
+            flex: 1;
+            // flex-basis: 40px;
+            .flag {
+              margin-left: 8px;
+              display: inline-flex;
+              padding: 2px 6px;
+              border-radius: 4px;
+              background-color: $point;
+              @include text-body(3,'m',$white);
+              vertical-align: 1px;
+            }
+          }
+        }
+        .score,
+        .count,
+        .date {
+          flex: 6;
+          dt {
+            display: none;
+          }
+        }
+      }
+      .score-title {
+        background-color: $navy-50;
+        @include text-body(1,'sb',$gray-700);
+      }
+      .score-item {
+        margin-top: 12px;
+        background-color: $white;
+        &.myranking {
+          border-color: $point;
+        }
+        .ranking {
+          @include text-body(1,'sb',$gray-700);
+          &.ranking1 {
+            height: 40px;
+            background: url('../images/icon-lanking-1.png') no-repeat 50% 50%;
+            background-size: contain;
+            @include set-icon-text-blind;
+          }
+          &.ranking2 {
+            height: 40px;
+            background: url('../images/icon-lanking-2.png') no-repeat 50% 50%;
+            background-size: contain;
+            @include set-icon-text-blind;
+          }
+          &.ranking3 {
+            height: 40px;
+            background: url('../images/icon-lanking-3.png') no-repeat 50% 50%;
+            background-size: contain;
+            @include set-icon-text-blind;
+          }
+        }
+        .name {
+          @include text-body(1,'sb',$gray-700);
+        }
+        .score {
+          @include text-body(1,'m',$point);
+        }
+        .count {
+          @include text-body(1,'m',$gray-700); 
+        }
+        .date {
+          @include text-body(1,'m',$gray-700); 
+        }
+      }
+    }
+
+    .submit-box {
+      .guide-desc {
+        position: relative;
+        border: 1px solid $gray-60; 
+        background-color: $gray-40;
+        padding: 20px;
+        border-radius: 20px;
+        .guide-text:first-child {
+          margin-top: 0;
+        }
+        .qna-link {
+          position: absolute;
+          right: 22px;
+          top: 22px;
+          display:inline-flex;
+          padding-right: 22px;
+          @include text-body(2,'m',$gray-500);
+          background: url(svg-icon(chevron-right, $gray-500)) no-repeat 100% 50%;
+          background-size: 16px; 
+        }
+      }
+      .input-file {
+        margin-top: 12px;
+      }
+      .bottom-counts {
+        margin-top: 40px;
+        .txt {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include text-body(2,'r',$gray-500);
+          span {
+            display: inline-flex;
+            align-items: center;
+            & +span::before {
+              content:'';
+              display: inline-block;
+              margin: 0 8px;
+              background-color: $gray-100;
+              width: 1px;
+              height: 12px;
+            }
+            strong {
+              margin-left: 8px;
+              @include text-body(2,'m',$gray-700);
+              .new {
+                color: $point;
+                &.is-full {
+                  color: $point-red;
+                }
+              }
+            }
+          }
+        }
+        .button-box-large {
+          margin-top: 12px;
+          button {
+            width: 160px;
+            flex-basis: 160px;
+          }
+        }
+      }
+    }
+    .myhistory {
+      .test-date {
+        margin-bottom: 12px;
+        @include text-body(1,'sb',$gray-700);
+      }
+      & >ul > li {
+        & +li {
+          margin-top: 12px;
+        }
+      }
+      .item {
+        position: relative;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: $white;
+        .title {
+          margin-right: 92px;
+          @include text-body(1,'sb',$gray-700);
+          word-break: break-word;
+        }
+        .info {
+          margin-top: 4px;
+          .date {
+            @include text-body(2,'r',$gray-500);
+          }
+        }
+        .score {
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          @include text-body(2,'m',$point);
+        }
+      }
+    }
+  }
+}
 
 
 /***********
@@ -4248,6 +4702,24 @@ MEDIA QUERY
   .datamarket-pay.payment-history .item-group .item2-box {
     display: block;
   }
+  .page-datacontest {
+    // 리스트
+    .datacontest-contents {
+      & > .tab-box {
+        // top: 60px;
+        margin: 0 -20px;
+        padding: 0 20px;
+      }
+      .tab-contents {
+        .tab-box {
+          margin: 0 -20px;
+          padding: 12px 20px 12px;
+          top: 60px + 56px;
+        }
+      }
+    }
+  }
+
   .page-polio .datapolio-bottom{
     max-width: 100%;
     width: 100%;
@@ -4876,8 +5348,144 @@ MEDIA QUERY
   }
 
   .contents-summary .list-type {display: none;}
+  
+  // ~767 .page-datacontest
+  .page-datacontest {
+    // 리스트
+    .datacontest-contents {
+      .tab-contents {
+        .contents-list {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+    // 상세
+    .datacontest-view {
+      .ai-content {
+        .info-box-view {
+          .title {
+            margin-right: 0;
+          }
+          .button-box-large {
+            position: static;
+            margin-top: 24px;
+            button {
+              flex: auto;
+            }
+          }
+        }
+      }
+      .leaderboad {
+        height: auto;
+        .message {
+          .current {
+            position: static;
+            margin-bottom: 4px;;
+            justify-content: flex-end;
+          }
+        }
+        .score {
+          position: static;
+          display: flex;
+          gap: 12px;
+        }
+        .button-box-medium {
+          position: static;
+          button {
+            margin-top: 16px;
+            flex: auto;
+          }
+        }
+      }
+      .score-list {
+        .score-title {
+          display: none;
+        }
+        .score-item {
+          display: block;
+          height: auto;
+          border-radius: 16px;
+          padding: 16px 15px;
+          .name {
+            position: relative;
+            margin-bottom: 12px;
+            .ranking {
+              height: 24px;
+              width: 16px;
+              flex-basis: 16px;
+              margin-right: 8px;
+              &.ranking1,
+              &.ranking2,
+              &.ranking3 {
+                width: 24px;
+                flex-basis: 24px;
+              }
+            }
+            .txt {
+              text-align: left;
+              .flag {
+                position: absolute;
+                right: 0;
+                top: 0;
+              }
+            }
+          }
+          .score,
+          .count,
+          .date {
+            float: left;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            dt {
+              display: block;
+              @include text-body(2,'r',$gray-500);
+            }
+            dd {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .submit-box {
+        .guide-desc {
+          .qna-link {
+            position: static;
+            margin-top: 11.5px;
+          }
+        }
+        .input-file {
+          flex-direction: column;
+          .input-box {
+            margin: 0;
+          }
+          .button-box-large {
+            margin-top: 12px;
+            .button-s {
+              flex: 1;
+              border-radius: 8px;
+              height: 40px;
+            }
+          }
+        }
+        .bottom-counts {
+          .button-box-large {
+            button {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+  }
 
   .page-aisearch {
+    .aisearch-body .search-request .aisearch-slider-wrap {
+      padding-bottom: 0;
+    }
+    .aisearch-body .search-request .aisearch-slider-wrap .swiper-pagination,
     .aisearch-slider-wrap .control-box {
       display: none;
     }
