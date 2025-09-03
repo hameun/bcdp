@@ -432,6 +432,8 @@ FORM TEXT
   .required {
     margin-left: 2px;
     color: $gray-500;
+    font-size:12px;
+    font-weight: 400;
   }
 }
 .regist-box {
@@ -1145,6 +1147,34 @@ TAPS / SWITCH
     border-radius: 20px;
   }
 }
+
+/*
+.border-line-gra{
+  position:relative;
+  background-clip: padding-box;
+  overflow: hidden;
+  box-shadow: 0px 16px 32px 0px #23225814;
+  backdrop-filter: blur(20px);
+  border:0 !important;
+  &::after{
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    z-index:-1;
+    box-sizing: border-box;
+  }
+}
+*/
 /***********
 MODAL POPUP
 ***********/
@@ -1341,8 +1371,7 @@ MODAL POPUP
     right: 14px;
     @include set-icon(24px, 24px, $icon-close);
   }
-  .mo-br{display:none !important;}
-  .modal .modal-login .title{text-align: left;}
+  
 }
 
 // 페이지로 옮기기
@@ -1593,10 +1622,12 @@ MODAL POPUP
       }
     }
     .datapolio{
-      padding:16px 0;
+      padding:12px 0 16px;
       margin:0;
       +.datapolio{
         border-top:1px solid $gray-60;
+        padding:16px 0;
+        .info dt{font-weight: 500;}
         .info dd{
           color:$gray-900;
         }
@@ -1604,7 +1635,7 @@ MODAL POPUP
       .info-txt{margin-top:0;}
     }
     .total dt,.total dd{
-      color:$navy-400 !important; font-weight: 600;
+      color:$navy-400 !important; font-weight: 600 !important;
     }
     .my-total{
       margin-top:4px !important;
@@ -1614,7 +1645,7 @@ MODAL POPUP
     }
     
   }
-  
+
   //임시저장
   .draft-box {
     // margin-right:-20px;
@@ -1641,7 +1672,7 @@ MODAL POPUP
         opacity: 1;
         border:1px solid $gray-60;
         border-radius: 16px;
-        padding: 16px;
+        padding: 15px;
         padding-right:56px;
         .draft-list-txt{
           display:inline-block;
@@ -1679,6 +1710,7 @@ MODAL POPUP
           white-space: nowrap;
         }
         .draft-list-price{
+          display:block;
           margin-top:8px;
           font-size:14px;
           font-weight: 600;
@@ -3463,8 +3495,6 @@ POPOVER POPUP
     li{
         position: relative;
         border-radius: 20px;
-        padding: 2px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.2) 100%);
         -webkit-background-clip: padding-box;
         background-clip: padding-box;
         overflow: hidden;
@@ -3474,20 +3504,22 @@ POPOVER POPUP
     .tournament-content{
       display:block;
       position:relative;
-      padding:10px;
-      // border:2px solid #fff;
-      border-radius: 18px;
-      
-      background:rgba(255, 255, 255, 0.6);
+      border-radius: 20px;
+      border: 2px solid transparent;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      overflow: hidden;
+      height: 100%;
 
       .image{
-        border-radius: 12px;
+        border-radius: 12px 12px 0 0;
         overflow: hidden;
         height: 266px;
         background:#E7E9EF;
       }
       .info-box{
-        margin:16px 8px 0 8px;
+        margin:16px 18px 20px 16px;
         .tournament-tag{
           position:absolute;
           top:24px;
@@ -3551,7 +3583,7 @@ POPOVER POPUP
           }
         }
         .etc{
-          margin-top:16px;
+          margin-top:8px;
           font-size:12px;
           color:$gray-500;
           span+span{
@@ -3672,6 +3704,49 @@ TOAST POPUP
     opacity: 1;
   }
 }
+
+
+.border-line-gra{
+  position:relative;
+  background-clip: padding-box;
+  overflow: hidden;
+  box-shadow: 0px 16px 32px 0px #23225814;
+  backdrop-filter: blur(20px);
+  border:0 !important;
+  &::after{
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    overflow: hidden;
+    width:100%;
+    height: 100%;
+    z-index:-1;
+    box-sizing: border-box;
+  }
+}
+
+.border-line-grab {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  background: #FFFFFF99;
+}
+.border-line-grab::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 14px;
+  z-index: 0;
+  background: linear-gradient(180deg, #FFFFFF, rgba(255,255,255,0.2));
+}
+
 @media screen and (min-width: 1024px){
   .tab-box {
     &.is-static,
@@ -3829,7 +3904,6 @@ TOAST POPUP
   .title1 {font-size: 24px;}
   .title3 {font-size: 24px;}
   .title4 {font-size: 20px;}
-  .mo-br{display: block;}
   .pop-modal .modal-large,
   .pop-modal .modal-medium,
   .pop-modal .modal-medium2 {
@@ -3896,6 +3970,7 @@ TOAST POPUP
   .modal .modal-data-info .info-col-2 {
     grid-template-columns: repeat(1, 1fr);
   }
+  .modal .modal-login .title{text-align: left;}
   .modal-faq .tab-contents {
     // 팝업 상하여백 40
     // 팝업 타이틀 46
