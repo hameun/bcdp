@@ -4462,7 +4462,7 @@ footer
         position: absolute;
         left: 22px;
         bottom: 22px;
-        dl:not(:only-child) {
+        dl {
           display: flex;
           align-items: center;
           gap: 8px; 
@@ -5558,11 +5558,23 @@ MEDIA QUERY
             margin-bottom: 4px;;
             justify-content: flex-end;
           }
+          .myscore {
+            font-size: 18px;
+          }
         }
         .score {
+          margin-top: 12px;
           position: static;
           display: flex;
+          flex-wrap: wrap;
           gap: 12px;
+          dl +.guide-text {
+            margin-top: -7px;
+          }
+          .guide-text {
+            margin-top: 9px;
+            flex-basis: 100%;
+          }
         }
         .button-box-medium {
           position: static;

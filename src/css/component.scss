@@ -1253,7 +1253,8 @@ MODAL POPUP
     overflow: hidden;
     overflow-y: scroll;
     margin: 0 -12px 0 -20px;
-    padding : 8px 8px 20px 20px;
+    // padding : 8px 8px 20px 20px;
+    padding : 0px 8px 20px 20px; // 고정탭이 올 경우 여백으로 보여서 임시 수정
     
     &::-webkit-scrollbar {width: 4px;}
     &::-webkit-scrollbar-thumb {
@@ -1759,10 +1760,15 @@ MODAL POPUP
     }
   }
   .modal-faq {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // height: 100%;
+    // overflow: auto;
     .tab-box {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background-color: $white;
       flex: 0 0 46px;
     }
     .tab-contents {
@@ -3952,6 +3958,59 @@ TOAST POPUP
   .title1 {font-size: 24px;}
   .title3 {font-size: 24px;}
   .title4 {font-size: 20px;}
+  .guide-text {font-size: 12px;}
+
+  
+  .result-none,
+  .result-complete,
+  .data-none,
+  .result-error {
+    &::before {
+    }
+    .message {
+      margin-top: 12px;
+      font-size: 18px;
+    }
+    .message-sub {
+      margin-top: 8px;
+      font-size: 16px;
+    }
+    .button-box-small {
+      margin-top: 20px;
+    }
+    .button-box-medium,
+    .button-box-large {
+      margin-top: 24px;
+      button {
+        flex: 0;
+        padding-left: 19px;
+        padding-right: 19px;
+      } 
+    }
+  }
+  .result-none::before {
+      border-radius: 50%;
+      @include set-icon(56px, 56px, $icon-result-none, 5px);
+      background-color: $gray-60;
+  }
+  .result-error::before {
+      border-radius: 50%;
+      @include set-icon(56px, 56px, $icon-result-error, 32px);
+      background-color: $gray-60;
+  }
+  .result-complete::before {
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      background: url($icon-check) no-repeat center $navy-100;
+      background-size: 32px auto;
+  }
+  .data-none {margin-top: 0;}
+  .data-none::before {
+      @include set-icon(64px, 64px, $icon-data-none, 64px);
+  }
+
+
   .pop-modal .modal-large,
   .pop-modal .modal-medium,
   .pop-modal .modal-medium2 {
