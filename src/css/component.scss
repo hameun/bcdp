@@ -982,7 +982,7 @@ TAPS / SWITCH
     position: sticky;
     top: 0;
     .tabs {
-      display: block;
+      // display: block;
       & >li {
         display: inline-flex;
         & +li {
@@ -2319,13 +2319,16 @@ CONTENT HEAD
     margin-left: 10px;
     button {
       display: none;
-      padding-right: 24px;
-      background: url(svg-icon(list-type-list)) no-repeat 100% 50%;
+      width: 40px;
+      padding-right: 64px;
       &.is-show {
         display: inline-flex;
       }
-      .type-col-3 {
-        background-image: url(svg-icon(list-type-card));
+      &.type-col-1 {
+        background: url(svg-icon(list-type-list)) no-repeat 100% 50%;
+      }
+      &.type-col-3 {
+        background: url(svg-icon(list-type-card)) no-repeat 100% 50%;
       }
     }
   }
@@ -2454,6 +2457,15 @@ CONTENT COMPONENT
   padding: 20px;
   border-radius: 24px;
   background-color: #fff;
+  .item {
+    display: block;
+    padding: 20px;
+    padding-bottom: 35px + 12px + 20px;
+    margin: -20px;
+    & +.tag-list {
+      margin-top: -55px;
+    }
+  }
   .logo {
     width: 48px;
     height: 48px;
@@ -2505,7 +2517,8 @@ CONTENT COMPONENT
     }
   }
   .price {
-    margin-top: 12px;
+    // margin-top: 12px;
+    margin-top: 24px;
     text-align: right;
     @include text-body(0, 'sb');
   }
@@ -2519,6 +2532,17 @@ CONTENT COMPONENT
     position: absolute;
     right: 20px;
     top: 20px;
+    a {
+      display: flex;
+      align-items: center;
+      @include text-body(0, 'm', $gray-500);
+      &::after {
+        content: '';
+        display: block;
+        @include set-icon(24px, 24px, svg-icon(chevron-right, $gray-500),20px);
+        // background-size: 20px auto;
+      }
+    }
   }
   .share {
     position: absolute;
@@ -3750,15 +3774,32 @@ TOAST POPUP
 
 @media screen and (min-width: 1024px){
   .tab-box {
+    &.is-sticky {
+      .tabs {
+        position: absolute;
+      }
+    }
     &.is-static,
     &.is-sticky {
       height: 88px;
       .tabs {
         padding-top: 32px; // 88 - 56
         height: 88px;
+        // display: flex !important;
+        // position: absolute; 
+        & >li {
+          display: inline-flex;
+          & +li {
+            margin-left: 24px;
+          }
+        }
       }
     }
   }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
 }
 @media screen and (max-width: 1023px){
   .headline1 {font-size: 32px;}
@@ -4002,8 +4043,8 @@ TOAST POPUP
     &.is-sticky {
       // margin: 0 -24px; // 레이아웃 수정필요로 일단 주석처리
       .tabs {
-        display: flex !important;
-        position: absolute;
+        // display: flex !important;
+        // position: absolute; 
         // left: 24px; // 레이아웃 수정필요로 일단 주석처리
         // right: 24px; // 레이아웃 수정필요로 일단 주석처리
         & >li {

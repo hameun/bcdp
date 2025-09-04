@@ -4316,7 +4316,7 @@ footer
   // 상세
   .datacontest-view {
     .ai-content {
-      // margin-bottom: 60px;
+      margin-bottom: 28px;
       z-index: 2;
       .image img {
         height: 280px;
@@ -4462,7 +4462,7 @@ footer
         position: absolute;
         left: 22px;
         bottom: 22px;
-        dl {
+        dl:not(:only-child) {
           display: flex;
           align-items: center;
           gap: 8px; 
@@ -4472,6 +4472,13 @@ footer
           dd {
             @include text-body(1,'m',$gray-700);
           }
+        }
+      }
+      .guide-text {
+        display: flex;
+        align-items: center;
+        .icon-info-s {
+          margin-right: 6px; 
         }
       }
       .button-box-medium {
@@ -4852,6 +4859,23 @@ MEDIA QUERY
           margin: 0 -20px;
           padding: 12px 20px 12px;
           top: 60px + 56px;
+        }
+      }
+    }
+    // 상세
+    .datacontest-view {
+      .ai-content {
+        .info-box-view {
+          .button-box-large {
+            position: static;
+            margin-top: 24px;
+            button {
+              flex: auto;
+            }
+          }
+          &.closed .title {
+            margin-right: 0;
+          }
         }
       }
     }
@@ -5503,6 +5527,15 @@ MEDIA QUERY
     .head-guidetext {
       margin-bottom: 32px;
     }
+    .head-float-menu {
+      margin-bottom: -28px;
+      z-index: 2;
+      .button-box-small {
+        justify-content: flex-start;
+        position: static;
+        margin-top: -20px; 
+      }
+    }
     // 리스트
     .datacontest-contents {
       .tab-contents {
@@ -5515,16 +5548,6 @@ MEDIA QUERY
     .datacontest-view {
       .ai-content {
         .info-box-view {
-          .title {
-            margin-right: 0;
-          }
-          .button-box-large {
-            position: static;
-            margin-top: 24px;
-            button {
-              flex: auto;
-            }
-          }
         }
       }
       .leaderboad {
@@ -5627,6 +5650,15 @@ MEDIA QUERY
             button {
               flex: 1;
             }
+          }
+        }
+      }
+      .tabs-sub-contents {
+        .button-box-small {
+          position: static;
+          margin-top: 24px;
+          button {
+            width: 100%;
           }
         }
       }

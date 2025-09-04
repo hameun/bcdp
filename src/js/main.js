@@ -606,6 +606,7 @@ function fn_modalClose(_remove, _this){
 /** 모달팝업 */
 function fn_modalPopOpen(_this, _isFull, _hasDim){
     const modal = document.getElementById(_this);
+    const modalPop = modal.firstElementChild;
     modal.classList.remove('modal-hidden');
     if (_isFull === true) {
         modal.classList.add('is-full');
@@ -624,7 +625,7 @@ function fn_modalPopOpen(_this, _isFull, _hasDim){
     document.body.style.top = `-${windowScrollTopFix}px`;
     document.body.classList.add('is-fixed');
     
-    modal.firstElementChild.focus();
+    modalPop.focus();
 }
 function fn_modalPopClose(_this){
     if ( typeof _this == 'string' ) {
@@ -1140,8 +1141,9 @@ function fn_agreeTerms(_id){
             _optionalTerm.addEventListener('click', function(){
                 const _this = this;
                 const _subTerms = _this.closest('.has-sub');
-                const _thisTermsTitle = _subTerms.querySelector('& >label input');
-
+                // const _thisTermsTitle = _subTerms.querySelector('& >label input');
+                const _thisTermsTitle = _subTerms.firstElementChild.querySelector('input');
+                // console.log(_thisTermsTitle);
                 if ( _this.checked ) {
                     ++_optionalCheckedLength;
                 } else {
