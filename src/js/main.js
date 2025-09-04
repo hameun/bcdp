@@ -221,11 +221,22 @@ function fn_tabs(){
                 // if (tab.classList.contains('is-static') || tab.classList.contains('is-sticky')) {
                 // console.log(currentTabContent);
                 if ( isAnchor ) {
-                    const targetY = currentTabContent.getBoundingClientRect().y;
-                    window.scrollTo({
-                        top: targetY + window.pageYOffset - 120, // PC : 32px(패딩값) + 88px(탭높이)
-                        behavior: 'smooth'
-                    });
+                    if (tab.classList.contains('is-static') || tab.classList.contains('is-sticky')) {
+                        const targetY = currentTabContent.getBoundingClientRect().y;
+                        window.scrollTo({
+                            top: targetY + window.pageYOffset - 120, // PC : 32px(패딩값) + 88px(탭높이)
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        if ( !currentTabContent || !prevTabContent) {
+                            return false;
+                        } else {
+                            prevTabContent.style.display = 'none';
+                            prevTabContent.tabindex = '-1';
+                            currentTabContent.style.display = 'block';
+                            currentTabContent.tabindex = '0';
+                        }
+                    }
                 } else {
                     if ( !currentTabContent || !prevTabContent) {
                         return false;
@@ -1282,34 +1293,38 @@ function fn_filter() {
 
 /** 아코디언 */
 function fn_accordion() {
-  const items = document.querySelectorAll('.page-polio .accordion-item ,.accordion-item');
-  if (!items) { return false; }
+//   const items = document.querySelectorAll('.page-polio .accordion-item ,.accordion-item');
+  const items2 = $('.page-polio .step-content .accordion-item');
+  if (!items2) { return false; }
 
-  items.forEach(item => {
-    const header = item.querySelector('.accordion-header');
-    const toggleText = header.querySelector('button');
+//   items.forEach(item => {
+//     const header = item.querySelector('.accordion-header');
+//     const toggleText = header.querySelector('button');
 
-    header.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
+//     header.addEventListener('click', () => {
+//       const isActive = item.classList.contains('active');
 
-      if (isActive) {
-        // 이미 열려있으면 -> 닫기
-        item.classList.remove('active');
-        toggleText.textContent = '상세화면 열기';
-      } else {
-        // 다른 아이템 닫기
-        items.forEach(i => {
-          i.classList.remove('active');
-          const textEl = i.querySelector('.accordion-header button');
-          if (textEl) textEl.textContent = '상세화면 열기';
-        });
+//       if (isActive) {
+//         // 이미 열려있으면 -> 닫기
+//         item.classList.remove('active');
+//         toggleText.textContent = '상세화면 열기';
+//       } else {
+//         // 다른 아이템 닫기
+//         items.forEach(i => {
+//           i.classList.remove('active');
+//           const textEl = i.querySelector('.accordion-header button');
+//           if (textEl) textEl.textContent = '상세화면 열기';
+//         });
 
-        // 현재 클릭한 항목 열기
-        item.classList.add('active');
-        toggleText.textContent = '상세화면 닫기';
-      }
+//         // 현재 클릭한 항목 열기
+//         item.classList.add('active');
+//         toggleText.textContent = '상세화면 닫기';
+//       }
+//     });
+//   });
+    $(items2).on('click', function(){
+        $(this).toggleClass('active');
     });
-  });
 };
 /** //아코디언 */
 

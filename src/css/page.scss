@@ -142,21 +142,26 @@ $graph-color3: $gray-100;
   width: 100%;
   // 큰 단락 공통 CSS
   .analysis-contents {
+    .location-breadcrumb {
+      margin-bottom: 16px;
+    }
     .a-contents {
-      padding: 80px 0;
-      .location-breadcrumb {
-        margin: -40px 0 16px;
-      }
+      // padding: 80px 0;
       .title1 {
+        @include text-title(2);
         text-align: center;
         word-break: keep-all;
       }
       .title-guidetext {
-        margin: 24px 0 60px;
+        margin: 16px 0 40px;
         font-size: 20px;
         font-weight: 400;
         color: $gray-700;
+        @include text-body(0,'r',$gray-700);
         text-align: center;
+        .t-highlight {
+          @include text-title(4,$point);
+        }
       }
       .tab-box {
         background-color: transparent;
@@ -169,6 +174,9 @@ $graph-color3: $gray-100;
       .a-cont {
         padding: 0;
       }
+    }
+    & +.analysis-contents {
+      margin-top: 160px;
     }
   }
   // [상권핵심지표] 위치
@@ -332,6 +340,7 @@ $graph-color3: $gray-100;
         dd {
           flex: 1;
           text-align: center;
+          font-size: 32px;
         }
       }
       .selected {
@@ -463,7 +472,7 @@ $graph-color3: $gray-100;
   // [업종별 흐름] 상세
   .cont-detail {
     .button-box-small {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       justify-content: flex-end;
       .show-explanation {
         flex: 0;
@@ -526,10 +535,17 @@ $graph-color3: $gray-100;
           .comparison {
             margin-top: 16px;
             dt {
-              @include text-body;
+              @include text-body(2,'m',$gray-700);
             }
             dd {
-              @include text-body(0,'m',$navy-400);
+              // @include text-body(0,'m',$navy-400);
+              @include text-body(0,'r',$gray-700);
+              &.up {
+                color: $point-red;
+              }
+              &.down {
+                color: $point-blue;
+              }
             }
           }
           .infotext {
@@ -575,12 +591,12 @@ $graph-color3: $gray-100;
     }
     .explanation-slider {
       .swiper-wrapper {
-        gap: 24px;
+        gap: 12px;
         flex-direction: column;
       }
       .detail-list {
         display: grid;
-        gap: 24px;
+        gap: 12px;
         grid-template-columns: repeat(4, 1fr);
         // grid-template-columns: repeat(2, 1fr); // 모바일
       }
@@ -686,7 +702,7 @@ $graph-color3: $gray-100;
       }
     }
     .pattern-day {
-      margin-top: 40px;
+      margin-top: 12px;
       .legend {
         li:first-child::before {
           background-color: $graph-color1;
@@ -757,39 +773,36 @@ $graph-color3: $gray-100;
   }
   // [지역 요약] 요약
   .cont-summary {
-    max-width: 800px;
-    margin: 0 auto;
+    // max-width: 800px;
+    // margin: 0 auto;
     .flags {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
       justify-content: center;
+      gap: 20px;
     }
     .flag {
-      display: inline-flex;
-      gap: 4px;
-      border: 1px solid $navy-400;
-      padding: 7px 15px;
+      padding: 18px;
       border-radius: 30px;
-      box-shadow: 0px 4px 8px 0px #23225814;
+      border: 2px solid;
+      border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+      background: #FFFFFFCC;
+      box-shadow: 0px 4px 8px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
       backdrop-filter: blur(20px);
-      align-items: center;
-      background-color: $white;
+      width: 260px;
+      text-align: center;
       dt {
-        display: flex;
-        align-items: center;
-        @include text-body(0,'m',$gray-900);
-        i {
-          margin-right: 4px;
-          font-size: 20px;
-          font-weight: 600;
-          color: $navy-400;
-        }
+        @include text-body(2,'sb');
       }
       dd {
-        display: flex;
-        align-items: center;
-        @include text-body(0,'m',$gray-900);
+        margin-top: 16px;
+        strong {
+          @include text-body(0,'sb',$point);
+        }
+        p {
+          margin-top: 8px;
+          @include text-body(1,'r');
+        }
       }
     }
   }
@@ -798,7 +811,7 @@ $graph-color3: $gray-100;
   position: fixed;
   display: flex;
   justify-content: center;
-  bottom: $layout-padding;
+  bottom: 40px;
   right: $layout-padding;
   left: calc($layout-asideWidth + 20px);
   z-index: 1;
@@ -1763,7 +1776,9 @@ page : page-datamarket
       flex-direction: column;
       justify-items: flex-start;
       .etc {
-        margin-top: auto;}
+        margin-top: auto;
+        margin-bottom: 12px;
+      }
     }
     .data-price {
       display: flex;
@@ -2089,16 +2104,21 @@ page : page-polio
   }
   .content-step{
     margin-top:40px;
+    margin-right: -20px;
     ul{
       display:flex;
       gap:12px;
       li{
+        &:last-child {
+          padding-right: 20px;
+        }
         flex:1;
         // position:relative;
         // padding-top:10px;
         .step-button {
           display:flex;
           width: 100%;
+          min-width: 120px;
           flex-direction: column;
           gap:6px;
           align-items: center;
@@ -5235,6 +5255,9 @@ MEDIA QUERY
       }
     }
     .analysis-contents {
+      .location-breadcrumb {
+        // margin-bottom: 16px;
+      }
       .a-cont {
         padding: 20px 32px;
         .title3 {
@@ -5246,7 +5269,7 @@ MEDIA QUERY
         }
       }
       .a-contents {
-        padding: 60px 0;
+        // padding: 60px 0;
         .tab-box {
           margin-left: 0;
           margin-right: -20px;
@@ -5257,9 +5280,6 @@ MEDIA QUERY
         .title-guidetext {
           font-size: 16px;
           margin-bottom: 40px;
-        }
-        .location-breadcrumb {
-          margin: -20px 0 24px;
         }
       }
     }
@@ -5792,8 +5812,8 @@ MEDIA QUERY
     .datapolio-search{
       .input-box{
         input{
-          padding:10px 52px 10px 14px;
-          font-size:16px;
+          padding: 10px 52px 10px 14px;
+          font-size: 16px;
           .util-box{
             .ipt-search{
               width:32px;
@@ -5803,7 +5823,21 @@ MEDIA QUERY
         }
       }
     }
-    .content-step{margin-top:24px;    }
+    .content-step{
+      margin: 24px -20px 0;
+      padding: 0 20px;
+      overflow: hidden;
+      overflow-x: auto;
+      // &::-webkit-scrollbar {height: 4px;}
+      // &::-webkit-scrollbar-thumb {
+      //   background-color: $gray-100;
+      //   border-radius: 4px;
+      // }
+      // &::-webkit-scrollbar-button {
+      //   height: 7px;
+      //   width: 20px;
+      // }
+    }
     .step-content{
       margin-top:32px; align-items:flex-start;
       .title3{
@@ -5814,7 +5848,7 @@ MEDIA QUERY
     }
     .datapolio-bottom{padding:0; bottom:0;}
     .datapolio-bottom .btn-filter{top:-68px;}
-    .datapolio-bottom .bottom-content{border-radius: 20px 20px 0 0; gap:16px; padding:16px 20px 0 20px;}
+    .datapolio-bottom .bottom-content{border-radius: 20px 20px 0 0; gap:16px; padding:16px 20px 20px;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-tit .tit{font-size: 14px;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result{flex-direction: column; align-items: flex-start;}
     .datapolio-bottom .bottom-content .polio-quote .quote-box .quote-result .price{font-size: 18px; font-weight: 600;}
@@ -5866,10 +5900,10 @@ MEDIA QUERY
     .etc-wrap ul li span{text-align:left; background-size:24px;}
     
   }
-  .page-polio .content-step ul{position:relative; gap:4px;}
-  .page-polio .content-step ul li .step-title *{display:none !important;}
-  .page-polio .content-step ul li.on *{display:flex !important; white-space:nowrap; overflow:visible;}
-  .page-polio .content-step ul li.on .step-title{position:absolute; left:0; top:10px;}
+  // .page-polio .content-step ul{position:relative; gap:4px;}
+  // .page-polio .content-step ul li .step-title *{display:none !important;}
+  // .page-polio .content-step ul li.on *{display:flex !important; white-space:nowrap; overflow:visible;}
+  // .page-polio .content-step ul li.on .step-title{position:absolute; left:0; top:10px;}
   
 
   .picker-model .modal-large{

@@ -111,7 +111,7 @@
 
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 // .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
-.icon-reload {@include set-icon(24px, 24px, svg(reload, $gray-900));}
+.icon-reload {@include set-icon(24px, 24px, svg-icon(reload, $gray-900));}
 .icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
 .button-s .icon-download {background-image: url(svg-icon(download, $primary));}
 .button-xsmall .icon-download,
@@ -927,16 +927,23 @@ CHECKBOX / RADIO
   height: 300px;
   border-radius: 12px;
   display: flex;
+  overflow: auto;
+  padding: 16px 4px 16px 24px;
+  background-color: $white;
+  box-sizing: border-box;
+  border-radius: 12px;
+  &::-webkit-scrollbar {width: 20px;}
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-100;
+    border: 8px solid #fff;
+    border-radius: 20px;
+  }
   pre {
     display: block;
-    box-sizing: border-box;
-    border-radius: 12px;
     resize: none;
     width: 100%;
     @include text-body(0);
     white-space: pre-wrap;
-    padding: 16px 24px;
-    background-color: $white;
     font-size: 14px;
     font-weight: 400;
     color: $gray-400;
@@ -974,13 +981,14 @@ TAPS / SWITCH
   overflow: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  &:has(.tabs, .tabs-small) {
+  // &:has(.tabs, .tabs-small) {
     background: linear-gradient(0deg, $gray-100 0, $gray-100 1px, transparent 1px, transparent 100%);
     background-color: $layout-bg;
-  }
+  // }
   &.is-sticky {
     position: sticky;
     top: 0;
+    z-index: 1;
     .tabs {
       // display: block;
       & >li {
@@ -997,7 +1005,7 @@ TAPS / SWITCH
 .segment-xsmall {@include set-tabs-segment(32px, 2);}
 .tabs {@include set-tabs(56px, 0);}
 .tabs-small {@include set-tabs(46px, 1);}
-.tabs-sub {@include set-tabs-sub;}
+.tabs-sub {@include set-tabs-sub; background-color: $layout-bg;}
 .tabs-sub-small {@include set-tabs-sub(4px,1);}
 
 .switch-box {
@@ -2465,6 +2473,7 @@ TABLE
 CONTENT COMPONENT
 ***********/
 .data-card {
+  flex: 1;
   position: relative;
   padding: 20px;
   border-radius: 24px;
@@ -2477,6 +2486,8 @@ CONTENT COMPONENT
     & +.tag-list {
       position: absolute;
       bottom: 20px;
+      left: 20px;
+      right: 20px;
     }
   }
   .logo {
@@ -2526,18 +2537,23 @@ CONTENT COMPONENT
       }
     }
     .detail-info {
+      display: inline-flex;
       margin-left: 4px;
     }
   }
   .price {
-    margin: 24px 0 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #EBEBEB;
+    // margin: 24px 0 12px;
+    margin-top: 24px;
+    // padding-bottom: 12px;
+    margin-bottom: 50px;
+    // border-bottom: 1px solid #EBEBEB;
     text-align: right;
     @include text-body(0, 'sb');
   }
   .tag-list {
     display: inline-flex;
+    padding-top: 12px;
+    border-top: 1px solid #EBEBEB;
   }
   .api {
     position: absolute;
@@ -2568,7 +2584,10 @@ CONTENT COMPONENT
     flex-direction: column;
     .title {
       max-height: none;
-      -webkit-line-clamp: none;
+      -webkit-line-clamp: inherit;
+    }
+    .tag-list {
+      margin-top: 12px;
     }
     .button-box-small {
       margin-top: auto;
@@ -3371,6 +3390,9 @@ POPOVER POPUP
   & >ul {
     display: grid;
     gap: 20px;
+    & >li {
+      display: flex;
+    }
     &.col-1 {
       .data-card {
         padding-left: 80px;
