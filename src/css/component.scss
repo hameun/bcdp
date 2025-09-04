@@ -2172,6 +2172,9 @@ MODAL POPUP
         border-color: $primary;
         color: $primary;
       }
+      &:focus + i {
+        border-color: $primary;
+      }
     }
     i {
       flex: 0;
@@ -2325,8 +2328,11 @@ CONTENT HEAD
     margin-left: 10px;
     button {
       display: none;
-      width: 40px;
-      padding-right: 64px;
+      width: 66px;
+      padding-right: 28px;
+      white-space: nowrap;
+      justify-content: flex-end;
+
       &.is-show {
         display: inline-flex;
       }
@@ -2466,10 +2472,11 @@ CONTENT COMPONENT
   .item {
     display: block;
     padding: 20px;
-    padding-bottom: 35px + 12px + 20px;
+    padding-bottom: 42px;
     margin: -20px;
     & +.tag-list {
-      margin-top: -55px;
+      position: absolute;
+      bottom: 20px;
     }
   }
   .logo {
@@ -2523,16 +2530,14 @@ CONTENT COMPONENT
     }
   }
   .price {
-    // margin-top: 12px;
-    margin-top: 24px;
+    margin: 24px 0 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #EBEBEB;
     text-align: right;
     @include text-body(0, 'sb');
   }
   .tag-list {
-    display: flex;
-    margin-top: 12px;
-    border-top: 1px solid #EBEBEB;
-    padding-top: 12px;
+    display: inline-flex;
   }
   .api {
     position: absolute;
@@ -3369,6 +3374,10 @@ POPOVER POPUP
     &.col-1 {
       .data-card {
         padding-left: 80px;
+        .item {
+          margin-left: -80px;
+          padding-left: 80px;
+        }
         .logo {
           position: absolute;
           top: 20px;

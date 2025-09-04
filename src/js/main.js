@@ -2,6 +2,8 @@ var windowWidth;
 var windowHeight;
 var windowScrollTopFix;
 var aside;
+var lastTrigger = null;
+
 $(function(){
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
@@ -604,21 +606,35 @@ function fn_modalClose(_remove, _this){
 }; // fn_modalClose
 
 /** 모달팝업 */
+function getFocus(){
+    // return 
+}
 function fn_modalPopOpen(_this, _isFull, _hasDim){
     const modal = document.getElementById(_this);
+    const modal2 = $('#'+ _this);
     const modalPop = modal.firstElementChild;
-    modal.classList.remove('modal-hidden');
+    const modalPop2 = $(modal2).find('> .modal');
+
+    // modal.classList.remove('modal-hidden');
+    $(modal2).removeClass('modal-hidden');
     if (_isFull === true) {
-        modal.classList.add('is-full');
+        // modal.classList.add('is-full');
+        $(modal2).addClass('is-full');
     }
     if (_hasDim === false) {
-        modal.classList.add('no-dim');
+        // modal.classList.add('no-dim');
+        $(modal2).addClass('no-dim');
     }
-    const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
-    modalButtons.forEach(function(modalButton){
-        modalButton.addEventListener('click', function(){
-            fn_modalPopClose(modal);
-        });
+    // const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
+    const modalButtons = $(modal2).find('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
+    // modalButtons.forEach(function(modalButton){
+    //     modalButton.addEventListener('click', function(){
+    //         fn_modalPopClose(modal);
+    //     });
+    // });
+    $(modalButtons).on('click', function(){
+        console.log(1);
+        fn_modalPopClose(modal);
     });
     
     windowScrollTopFix = window.scrollY;
@@ -626,6 +642,7 @@ function fn_modalPopOpen(_this, _isFull, _hasDim){
     document.body.classList.add('is-fixed');
     
     modalPop.focus();
+    // modalPop2.on('focus');
 }
 function fn_modalPopClose(_this){
     if ( typeof _this == 'string' ) {

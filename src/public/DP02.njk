@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                 <button type="button" class="ipt-search"><i>검색</i></button>
             </span>
         </div>
-        <!-- 결과대기중 :is-ai-->
-        <div class="input-box is-ai">
+        <!-- 250902 모션 추가 - 결과대기중 :is-loading-->
+        <div class="input-box is-loading">
             <input type="text" class="ipt" placeholder="조건을 입력하면 AI가 자동 선택해드려요." value="조건을 입력하면 AI가 자동 선택해드려요">
             <span class="util-box">
                 <button type="button" class="ipt-search"><i>검색</i></button>
@@ -133,40 +133,52 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
     <div class="datapolio-contents">
         <div class="content-step">
             <ul>
-                <li class="on">
-                    <i class="bar"></i>
-                    <div class="step-title">
-                        <em class="step-bedge">필수</em>
-                        <em class="step-txt">데이터유형</em>
-                    </div>
+                <!-- [2025.09.04] 수정 : 버튼 태그 추가 -->
+                <li>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">데이터유형</em>
+                        </span>
+                    </button>
                 </li>
-                <li class="on">
-                    <i class="bar"></i>
-                    <div class="step-title">
-                        <em class="step-bedge">필수</em>
-                        <em class="step-txt">기간</em>
-                    </div>
+                <li class="on" aria-selected="true">
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">기간</em>
+                        </span>
+                    </button>
                 </li>
                 <li>
-                    <i class="bar"></i>
-                    <div class="step-title">
-                        <em class="step-bedge">필수</em>
-                        <em class="step-txt">지역</em>
-                    </div>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">지역</em>
+                        </span>
+                    </button>
                 </li>
                 <li>
-                    <i class="bar"></i>
-                    <div class="step-title">
-                        <em class="step-bedge">필수</em>
-                        <em class="step-txt">업종</em>
-                    </div>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">업종</em>
+                        </span>
+                    </button>
                 </li>
                 <li>
-                    <i class="bar"></i>
-                    <div class="step-title">
-                        <em class="step-txt">세부항목</em>
-                    </div>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-txt">세부항목</em>
+                        </span>
+                    </button>
                 </li>
+                <!-- //[2025.09.04] 수정 : 버튼 태그 추가 -->
             </ul>
         </div>
 
