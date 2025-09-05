@@ -397,19 +397,27 @@ function fn_iptIsFocus (){
     }
 };
 
+
 /** 인풋값 삭제 */
 function fn_iptClear(){
-    const iptClear = document.querySelectorAll('.ipt-clear');
+    // const iptClear = document.querySelectorAll('.ipt-clear');
+    const iptClear = $('.ipt-clear');
     if (!iptClear.length) return false;
     // console.log(iptClear.length);
 
-    iptClear.forEach(function(btn){
-        btn.addEventListener('click', function(e){
-            e.preventDefault();
-            let input = e.target.closest('.util-box').previousElementSibling;
-            input.value = "";
-            input.focus();
-        })
+    // iptClear.forEach(function(btn){
+    //     btn.addEventListener('click', function(e){
+    //         e.preventDefault();
+    //         let input = e.target.closest('.util-box').previousElementSibling;
+    //         input.value = "";
+    //         input.focus();
+    //     })
+    // });
+    iptClear.on('click', function(e){
+        e.preventDefault();
+        let input = $(e.target).closest('.input-box').find('input');
+        input.val('');
+        input.focus();
     });
 };
 
@@ -617,25 +625,64 @@ function fn_modalClose(_remove, _this){
 }; // fn_modalClose
 
 /** 모달팝업 */
-function getFocus(){
-    // return 
-}
-function fn_modalPopOpen(_this, _isFull, _hasDim){
-    const modal = document.getElementById(_this);
-    const modal2 = $('#'+ _this);
+var lastFocusElement = null;
+function fn_modalPopOpen(_modalId, _isFull, _hasDim){
+    const modal = document.getElementById(_modalId);
+    const modal2 = $('#'+ _modalId);
     const modalPop = modal.firstElementChild;
-    const modalPop2 = $(modal2).find('> .modal');
+    // const modalPop2 = modal2.find('> .modal');
 
     // modal.classList.remove('modal-hidden');
-    $(modal2).removeClass('modal-hidden');
+    modal2.removeClass('modal-hidden');
     if (_isFull === true) {
         // modal.classList.add('is-full');
-        $(modal2).addClass('is-full');
+        modal2.addClass('is-full');
     }
     if (_hasDim === false) {
         // modal.classList.add('no-dim');
-        $(modal2).addClass('no-dim');
+        modal2.addClass('no-dim');
     }
+
+    // focus 방지
+    lastFocusElement = $(document.activeElement);
+    console.log(lastFocusElement);
+
+    function fn_focusAbleElments() {
+        return modal2.find('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    }
+    // console.log(lastFocusElement);
+    // console.log(fn_focusAbleElments());
+    
+    function fn_keyTrap (e) {
+        if (e.key === "Escape") {
+            // console.log("Escape");
+            fn_modalPopClose(_modalId);
+            return;
+        }
+        if (e.key === "Tab") {
+            // console.log("Tab");
+            const focusAbleElments = fn_focusAbleElments();
+            const focusAbleFirst = focusAbleElments.first()[0];
+            const focusAbleLast = focusAbleElments.last()[0];
+
+            if (e.shiftKey) {
+                if (document.activeElement === focusAbleFirst) {
+                    e.preventDefault();
+                    // $(last).focus();
+                    // console.log("focusAbleFirst");
+                }
+            } else {
+                if ( document.activeElement === focusAbleLast ) {
+                    e.preventDefault();
+                    // $(last).focus();
+                    // console.log("focusAbleLast");
+                }
+            }
+        }
+    }
+
+    modal2.on("keydown",fn_keyTrap);
+
     // const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
     const modalButtons = $(modal2).find('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
     // modalButtons.forEach(function(modalButton){
@@ -653,7 +700,6 @@ function fn_modalPopOpen(_this, _isFull, _hasDim){
     document.body.classList.add('is-fixed');
     
     modalPop.focus();
-    // modalPop2.on('focus');
 }
 function fn_modalPopClose(_this){
     if ( typeof _this == 'string' ) {
@@ -664,8 +710,8 @@ function fn_modalPopClose(_this){
     document.body.style.removeProperty('top');
     document.body.classList.remove('is-fixed');
     window.scrollTo(0,windowScrollTopFix);
+    lastFocusElement.focus();
 };
-
 /** 팝오버 [작업중] */
 function fn_popOver(_e,_message){
     console.log(_e);
@@ -1200,14 +1246,6 @@ function fn_agreeTerms(_id){
                 
             });
         }
-
-        // 선택약관 약관보기
-        // const optionalTermsLink = optionalTerm.querySelector('& > .agreement-open');
-        // optionalTermsLink.addEventListener('click', function(){
-        //     const _this = this;
-        //     const _subTerms = _this.closest('.has-sub');
-        //     _subTerms.classList.toggle('is-unchecked');
-        // });
     }
     
     // 필수약관

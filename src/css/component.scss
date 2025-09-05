@@ -42,14 +42,14 @@
 .t-semibold {font-weight: 600;}
 .t-medium {font-weight: 500;}
 .t-reqular {font-weight: 400;}
-.t-highlight {color: $primary;}
+.t-highlight {color: $point;}
 .t-red {color: #FF3F53;}
 
 .t-align-left {text-align: left ;}
 
 .underline {text-decoration: underline;}
 
-.headline1 {font-weight: 700; font-size: 36px; color: $gray-800;}
+.headline1 {font-weight: 700; font-size: 36px; color: $gray-900;}
 .title1 {@include text-title(1);}
 .title2 {@include text-title(2);}
 .title3 {@include text-title(3);}
@@ -112,6 +112,7 @@
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 // .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
 .icon-reload {@include set-icon(24px, 24px, svg-icon(reload, $gray-900));}
+.icon-return {@include set-icon(28px, 28px, $icon-return, 28px);}
 .icon-download {@include set-icon(24px, 24px, svg-icon(download,$white));}
 .button-s .icon-download {background-image: url(svg-icon(download, $primary));}
 .button-xsmall .icon-download,
@@ -954,21 +955,30 @@ CHECKBOX / RADIO
 BREADCRUMB
 ***********/
 .breadcrumb {
-  padding-left: 26px;
-  background: url(svg-icon(breadcrumb)) no-repeat 0 50%;
-  background-size: 20px 20px;
+  display: inline-flex;
+  align-items: center;
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    background: url(svg-icon(breadcrumb)) no-repeat 0 50%;
+    background-size: 20px 20px;
+  }
   &> span {
-    @include text-body(0,'r',$gray-700);
+    @include text-body(0,'sb',$gray-700);
     & +span {
       padding-left: 24px;
       background: url(svg-icon(chevron-right)) no-repeat 2px 50%;
       background-size: 20px 20px;
     }
     &:last-child {
-      color: $gray-700;
+      // color: $gray-700;
     }
     &.none {
       color: $gray-300;
+      font-weight: 400;
     }
   }
 }
@@ -981,32 +991,89 @@ TAPS / SWITCH
   overflow: hidden;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  // &:has(.tabs, .tabs-small) {
-    background: linear-gradient(0deg, $gray-100 0, $gray-100 1px, transparent 1px, transparent 100%);
-    background-color: $layout-bg;
-  // }
+  .tabs,
+  .tabs-small {
+    & >li {
+      z-index: 1;
+    }
+  }
   &.is-sticky {
     position: sticky;
     top: 0;
     z-index: 1;
+    background-color:  $layout-bg;
     .tabs {
-      // display: block;
+      gap: 20px;
       & >li {
-        display: inline-flex;
-        & +li {
-          margin-left: 24px;
-        }
+        flex: 0;
       }
     }
   }
-} 
+}
+
+
+@media screen and (min-width: 1024px){
+  .tab-box {
+    &.is-static,
+    &.is-sticky {
+      height: 88px;
+      .tabs {
+        padding-top: 32px; // 88 - 56
+        height: 88px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .tab-box {
+    &.is-static,
+    &.is-sticky {
+      height: 116px;
+      .tabs {
+        padding-top: 60px;
+        height: 116px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px){
+  .tab-box {
+    margin: 0 -20px;
+    .tabs {
+      position: relative;
+      padding: 0 20px;
+      gap: 20px;
+      & >li {
+        flex: 0;
+      }
+    }
+  }
+}
 .segment {@include set-tabs-segment(48px, 1);}
 .segment-small {@include set-tabs-segment(40px, 2);}
 .segment-xsmall {@include set-tabs-segment(32px, 2);}
-.tabs {@include set-tabs(56px, 0);}
-.tabs-small {@include set-tabs(46px, 1);}
+
+.tabs,
+.tabs-small {
+  @include set-tabs(56px, 0);
+  &::after {
+    content: '';
+    position: absolute;
+    left:0;
+    right:0;
+    bottom: 0;
+    border-bottom: 1px solid $gray-100;
+  }
+}
+.tabs-small {
+  @include set-tabs(46px, 1);
+}
 .tabs-sub {@include set-tabs-sub; background-color: $layout-bg;}
 .tabs-sub-small {@include set-tabs-sub(4px,1);}
+
+
+
 
 .switch-box {
     --w: 50px;
@@ -1525,6 +1592,13 @@ MODAL POPUP
       }
     }
   }
+  
+  .modal-content-analysis-select {
+    .chip-box {
+      gap: 16px 8px;
+    }
+  }
+
   .modal-find-company {
     .result-none {
       margin-top: 24px;
@@ -1992,7 +2066,7 @@ MODAL POPUP
       margin-bottom: 20px;
     }
     .chip-box {
-      gap: 16px 8px;
+      gap: 8px;
     }
   }
   .modal-data-info {
@@ -3809,49 +3883,23 @@ TOAST POPUP
   background: linear-gradient(180deg, #FFFFFF, rgba(255,255,255,0.2));
 }
 
-@media screen and (min-width: 1024px){
-  .tab-box {
-    &.is-sticky {
-      .tabs {
-        position: absolute;
-      }
-    }
-    &.is-static,
-    &.is-sticky {
-      height: 88px;
-      .tabs {
-        padding-top: 32px; // 88 - 56
-        height: 88px;
-        // display: flex !important;
-        // position: absolute; 
-        & >li {
-          display: inline-flex;
-          & +li {
-            margin-left: 24px;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media screen and (min-width: 768px) and (max-width: 1023px){
 
 }
 @media screen and (max-width: 1023px){
-  .headline1 {font-size: 32px;}
+  // .headline1 {font-size: 32px;}
   .pop-modal {padding-left: 0;}
   .toast-message {left: 0;}
-  .tab-box {
-    &.is-static,
-    &.is-sticky {
-      height: 116px;
-      .tabs {
-        padding-top: 60px;
-        height: 116px;
-      }
-    }
-  }
+  // .tab-box {
+  //   &.is-static,
+  //   &.is-sticky {
+  //     height: 116px;
+  //     .tabs {
+  //       padding-top: 60px;
+  //       height: 116px;
+  //     }
+  //   }
+  // }
   .data-list > ul.col-3 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3985,11 +4033,23 @@ TOAST POPUP
   }
 }
 @media screen and (max-width: 767px){
-  .headline1 {font-size: 24px;}
+  .headline1 {font-size: 24px;} // 상권분석에서 확인
   .title1 {font-size: 24px;}
-  .title3 {font-size: 24px;}
+  .title3 {font-size: 20px;} // 상권분석에서 확인 20  
   .title4 {font-size: 20px;}
   .guide-text {font-size: 12px;}
+
+  .button-box-medium { // 상권분석
+    .button-p,
+    .button-s,
+    .button-t,
+    .button-q {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+  }
 
   
   .result-none,
@@ -4128,24 +4188,24 @@ TOAST POPUP
       }
     }
   }
-  .tab-box {
-    &.is-static,
-    &.is-sticky {
-      // margin: 0 -24px; // 레이아웃 수정필요로 일단 주석처리
-      .tabs {
-        // display: flex !important;
-        // position: absolute; 
-        // left: 24px; // 레이아웃 수정필요로 일단 주석처리
-        // right: 24px; // 레이아웃 수정필요로 일단 주석처리
-        & >li {
-          display: inline-flex;
-          & +li {
-            margin-left: 24px;
-          }
-        }
-      }
-    }
-  }
+  // .tab-box {
+  //   &.is-static,
+  //   &.is-sticky {
+  //     // margin: 0 -24px; // 레이아웃 수정필요로 일단 주석처리
+  //     .tabs {
+  //       // display: flex !important;
+  //       // position: absolute; 
+  //       // left: 24px; // 레이아웃 수정필요로 일단 주석처리
+  //       // right: 24px; // 레이아웃 수정필요로 일단 주석처리
+  //       & >li {
+  //         display: inline-flex;
+  //         & +li {
+  //           margin-left: 24px;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   .switch-box {
     .switch-label {
       display: none;

@@ -148,15 +148,12 @@ $graph-color3: $gray-100;
     .a-contents {
       // padding: 80px 0;
       .title1 {
-        @include text-title(2);
+        // @include text-title(2);
         text-align: center;
         word-break: keep-all;
       }
       .title-guidetext {
         margin: 16px 0 40px;
-        font-size: 20px;
-        font-weight: 400;
-        color: $gray-700;
         @include text-body(0,'r',$gray-700);
         text-align: center;
         .t-highlight {
@@ -168,7 +165,7 @@ $graph-color3: $gray-100;
       }
     }
     .a-cont {
-      padding: 20px 32px;
+      // padding: 20px 32px 32px;
       border-radius: 20px;
       background-color: $white;
       .a-cont {
@@ -183,8 +180,11 @@ $graph-color3: $gray-100;
   .cont-location {
     display: flex;
     gap: 22px;
-    .title3 {
+    .title {
       margin-bottom: 40px;
+      font-size: 20px;
+      font-weight: 600;
+      color: $gray-700;
     }
     .map {
       position: relative;
@@ -194,8 +194,9 @@ $graph-color3: $gray-100;
       padding: 20px;
       .map-control {
         position: absolute;
-        top: 24px;
-        right: 24px;
+        top: 20px;
+        right: 20px;
+        display: flex;
         z-index: 1;
       }
       .map-data {
@@ -223,51 +224,47 @@ $graph-color3: $gray-100;
   // [상권핵심지표] 비교
   .cont-compare {
     &.a-cont {
-      padding: 20px 0;
-    }
-    .tab-box {
-      margin: 0 32px;
+      padding: 20px 32px 32px;
     }
     .compare-slider {
-      margin-top: 32px;
+      // margin-top: 32px;
       .swiper-wrapper,
       .swiper-slide {
         display: flex;
         height: auto;
       }
       .guidandce {
-        margin-bottom: 32px;
+        // margin-bottom: 32px;
+        padding: 32px 0;
         @include text-body(0,'m',$gray-800);
         text-align: center;
         word-break: keep-all;
-      }
-      .prev {
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 56%;
-        left: 0;
-        z-index: 10;
-        background: url($icon-slider-control) no-repeat 50% 50%;
         cursor: pointer;
-        i {@include blind;}
-        &[aria-disabled="true"] {
-          opacity: 0;
+      }
+      .control-box {
+        position: relative;
+        z-index: 1;       
+        .prev,
+        .next {
+          position: absolute;
+          bottom: 200px;
+          width: 40px;
+          height: 40px;
+          border: 1px solid $gray-60;
+          border-radius: 40px;
+          background: url(svg-icon(chevron-right)) no-repeat 50% 50%;
+          @include set-icon-text-blind;
+          background-size: 20px 20px;
+          &:disabled {
+            background-image: url(svg-icon(chevron-right, $gray-100));
+          }
         }
-      }
-      .next {
-        width: 60px;
-        height: 60px;
-        position: absolute;
-        top: 56%;
-        right: 0;
-        z-index: 10;
-        background: url($icon-slider-control) no-repeat 50% 50%;
-        transform: rotateZ(180deg);
-        cursor: pointer;
-        i {@include blind;}
-        &[aria-disabled="true"] {
-          opacity: 0;
+        .prev {
+          left: 0;
+          transform: rotate(180deg);
+        }
+        .next {
+          right: 0;
         }
       }
       .swiper-pagination {opacity: 0; z-index: -1;}
@@ -276,6 +273,7 @@ $graph-color3: $gray-100;
       display: flex;
       flex-direction: column;
       flex: 1;
+      // padding-top: 32px;
       .data {
         display: flex;
         justify-content: center;
@@ -300,8 +298,8 @@ $graph-color3: $gray-100;
       }
     }
     .data-summary {
-      padding-top: 62px;
-      height: 320px;
+      padding: 82px 40px 0;
+      height: 300px;
       .guidandce {
         flex: 1;
         display: flex;
@@ -335,9 +333,13 @@ $graph-color3: $gray-100;
           width: 100%;
           bottom: calc(100% + 24px);
           text-align: center;
-          @include text-title(4,$body-text-color);
+          @include text-body(0,'sb',$gray-700);
         }
         dd {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 43px;
           flex: 1;
           text-align: center;
           font-size: 32px;
@@ -360,6 +362,7 @@ $graph-color3: $gray-100;
       }
       .data {
         flex: 1;
+        padding-bottom: 36px;
       }
       .title {
         @include blind;
@@ -430,6 +433,9 @@ $graph-color3: $gray-100;
   }
   // [상권핵심지표] 업종
   .cont-industry {
+    &.a-cont {
+      padding: 20px 32px 12px;
+    }
     .tab-box {
       margin-bottom: 40px;
     }
@@ -445,6 +451,7 @@ $graph-color3: $gray-100;
         display: inline-flex;
         & >li {
           margin-left: 16px;
+          @include text-body(1);
           &::before {
             content: '';
             display: inline-block;
@@ -463,25 +470,39 @@ $graph-color3: $gray-100;
       }
     }
     .a-cont.industry {
-      height: 308px;
       overflow: hidden;
-      overflow-x: auto;
+      overflow-x: scroll;
       border-radius: 0;
+      &::-webkit-scrollbar {height: 20px;}
+      &::-webkit-scrollbar-thumb {
+        background-color: $gray-100;
+        border-top: 8px solid $white;
+        border-bottom: 8px solid $white;
+        border-radius: 8px;
+      }
+      &::-webkit-scrollbar-button {
+        width: 0;
+      }
+    }
+    .graph-content {
     }
   }
   // [업종별 흐름] 상세
   .cont-detail {
-    .button-box-small {
+    .button-box-small,
+    .button-box-medium {
       margin-bottom: 20px;
       justify-content: flex-end;
       .show-explanation {
-        flex: 0;
+        // flex: 0;
+        // padding: 11px 16px;
         &::after {
           content: '';
           display: inline-block;
           width: 24px;
           height: 24px;
-          margin-left: 4px;
+          // margin-left: 4px;
+          margin: -3px -4px -3px 4px;
           background: url($icon-revese) no-repeat 50% 50%;
         }
       }
@@ -608,6 +629,7 @@ $graph-color3: $gray-100;
       margin-bottom: 20px;
       font-weight: 600;
       font-size: 20px;
+      color: $gray-700;
       text-align: center;
     }
     .legend {
@@ -617,6 +639,7 @@ $graph-color3: $gray-100;
         display: inline-flex;
         & >li {
           margin-left: 16px;
+          @include text-body(1);
           &::before {
             content: '';
             display: inline-block;
@@ -629,6 +652,9 @@ $graph-color3: $gray-100;
       }
     }
     .pattern-person {
+      &.a-cont {
+        padding: 30px 40px 40px;
+      }
       .legend {
         li:first-child::before {
           background-color: $graph-color0;
@@ -654,7 +680,7 @@ $graph-color3: $gray-100;
           .graph-title {
             flex: 0 0 136px;
             order: 1;
-            @include text-body(1 ,'m',$gray-600);
+            @include text-body(1 ,'m',$gray-700);
             text-align: center;
           }
           dl {
@@ -703,6 +729,9 @@ $graph-color3: $gray-100;
     }
     .pattern-day {
       margin-top: 12px;
+      &.a-cont {
+        padding: 30px 40px 40px;
+      }
       .legend {
         li:first-child::before {
           background-color: $graph-color1;
@@ -723,9 +752,11 @@ $graph-color3: $gray-100;
         &> li {
           flex: 1;
           display: flex;
+          gap: 8px;
           flex-wrap: wrap;
+          justify-content: center;
           dl {
-            flex: 1;
+            flex: 0;
             display: flex;
             justify-content: center;
             dt {
@@ -735,7 +766,7 @@ $graph-color3: $gray-100;
               display: flex;
               flex-direction: column;
               width: 40px;
-              height: 200px;
+              height: 188px;
               justify-content: flex-end;
               p span {
                 @include blind;
@@ -743,10 +774,10 @@ $graph-color3: $gray-100;
             }
           }
           .graph-title {
-            margin-top: 10px;
+            margin-top: 12px;
             flex: 0 0 100%;
             order: 1;
-            @include text-body(1 ,'m',$gray-600);
+            @include text-body(1 ,'m',$gray-700);
             text-align: center;
           }
           .graph-selected {
@@ -818,7 +849,7 @@ $graph-color3: $gray-100;
   nav {
     position: absolute;
     bottom: 0;
-    padding: 9px 15px;
+    padding: 6px 8px;
     margin: 0 auto;
     border: 1px solid $white;
     border-radius: 30px;
@@ -828,29 +859,47 @@ $graph-color3: $gray-100;
   }
   ul {
     display: flex;
-    gap: 16px;
     li {
       flex: auto;
-      a {
+      .area, .industry {
         display: flex;
+        gap: 2px;
         align-items: center;
-        height: 35px;
-        padding-right: 11px;
-        padding-left: calc(11px + 24px);
+        padding: 7px 14px 7px 12px;
         border: 1px solid transparent; 
         border-radius: 20px;
-        line-height: 1;
-        &.area {background: url(svg-icon(breadcrumb)) no-repeat 11px 50%;}
-        &.industry {background: url(svg-icon(chart)) no-repeat 11px 50%;}
+        @include text-body(2,'m');
+        &.area::before {
+          content: '';
+          display: inline-flex;
+          width: 20px;
+          height: 20px;
+          background: url(svg-icon(breadcrumb)) no-repeat 50% 50%;
+          background-size: 16px auto;
+        }
+        &.industry::before {
+          content: '';
+          display: inline-flex;
+          width: 20px;
+          height: 20px;
+          background: url(svg-icon(chart)) no-repeat 50% 50%;
+          background-size: 16px auto;
+        }
       }
       &.is-current {
         .area {
           color: $white;
-          background: url(svg-icon(breadcrumb,$white)) no-repeat 11px 50% $primary;
+          background-color: $primary;
+          &::before {
+            background-image: url(svg-icon(breadcrumb,$white));
+          }
         }
         .industry {
           color: $white;
-          background: url(svg-icon(chart,$white)) no-repeat 11px 50% $primary;
+          background-color: $primary;
+          &::before {
+            background-image: url(svg-icon(chart,$white));
+          }
         }
       }
     }
@@ -900,6 +949,9 @@ $graph-color3: $gray-100;
           line-height: 1.4;
         }
         &:hover i {
+          background-color: $gray-60;
+        }
+        input:focus + i {
           background-color: $gray-60;
         }
         input:checked + i::after {
@@ -1087,6 +1139,9 @@ page : page-mypage
       white-space: nowrap;
       .sub-txt {
         @include text-body(1,'r',$gray-500);
+      }
+      .button-xsmall {
+        margin-left: 12px;
       }
     }
     dd {
@@ -4861,6 +4916,17 @@ MEDIA QUERY
   .bcdata-contents .tab-contents .tab-credit .bc-box .box-inner .center-cont{min-width: 170px;}
 }
 @media screen and (max-width: 1023px) {
+  .page-analysis {
+    .headline {
+
+    }
+    
+    .cont-pattern {
+      .caption {
+        text-align: left;
+      }
+    }
+  }
   .analysis-nav {
     left: 20px;
   }
@@ -5070,6 +5136,10 @@ MEDIA QUERY
       }
       dt {
         font-size: 16px;
+        .button-xsmall {
+          margin-left: 0;
+          margin-top: 8px;
+        }
       }
       dd {
         font-size: 16px;
@@ -5245,45 +5315,48 @@ MEDIA QUERY
     }
   }
   .page-analysis {
-    padding-top: 20px;
-    
     .cont-location {
       flex-direction: column;
+      .title {
+        font-size: 18px;
+      }
       .map .map-data,
       .graph .graph-data {
-        margin: 0 -20px;
       }
     }
     .analysis-contents {
+      & + .analysis-contents {
+        margin-top: 120px;
+      }
       .location-breadcrumb {
-        // margin-bottom: 16px;
+        .breadcrumb {
+          &::before {
+            width: 20px;
+            height: 20px;
+          }
+          &> span {
+            font-size: 14px;
+            & +span {
+              background-size: 16px 16px;
+            }
+          }
+        }
       }
       .a-cont {
-        padding: 20px 32px;
         .title3 {
-          padding-left: 8px;
-        }
-        &:has(.tab-box) {
-          background-color: transparent;
-          padding: 0;
         }
       }
       .a-contents {
-        // padding: 60px 0;
-        .tab-box {
-          margin-left: 0;
-          margin-right: -20px;
-          .tabs {
-            gap: 20px;
-          }
-        }
         .title-guidetext {
           font-size: 16px;
-          margin-bottom: 40px;
         }
       }
     }
     .cont-compare {
+      &.a-cont {
+        padding: 0;
+        background: none;
+      }
       .compare-slider .guidandce {
         font-size: 16px;
       }
@@ -5313,36 +5386,83 @@ MEDIA QUERY
       }
     }
     .cont-industry {
+      &.a-cont {
+        padding: 0;
+        background: none;
+        .a-cont.industry {
+          margin: 0 -20px;
+          padding: 0 20px;
+          background-color: transparent;
+          // 모바일에서는 스크롤 노출 X
+          &::-webkit-scrollbar {height: 0;}
+          // &::-webkit-scrollbar-thumb {
+          //   background-color: $gray-100;
+          //   border-left: 20px solid $layout-bg;
+          //   border-right: 20px solid $layout-bg;
+          //   border-top: 8px solid $layout-bg;
+          //   border-bottom: 8px solid $layout-bg;
+          //   border-radius: 8px;
+          // }
+        }
+        .graph-content {
+          border-radius: 20px;
+          // padding: 32px 20px 20px;
+          // background-color: $white;
+          overflow: hidden;
+        }
+      }
+      .tab-box {
+        margin-bottom: 30px;
+      }
     }
     .cont-pattern {
+      .caption {
+        font-size: 18px;
+        // text-align: left;
+      }
       .legend ul {
         display: block;
+        & >li +li {
+          margin-top: 4px;
+        }
       }
       .pattern-person {
+        &.a-cont {
+          padding: 20px;
+        }
         ol > li .graph-title {
           flex-basis: 80px;
         }
       }
       .pattern-day {
+        &.a-cont {
+          padding: 20px;
+        }
         ol {
           gap: 8px;
-        }
-        ol > li dl dd {
-          width: 13px;
+          & > li {
+            justify-content: center;
+            .graph-title {
+              margin-top: 24px;
+            }
+            dl {
+              flex: 0;
+              // padding: 0 2px;
+              dd {
+                width: 13px;
+              }
+            }
+          }
         }
       }
     }
     .cont-detail {
-      .button-box-small {
-        margin-bottom: 20px;
-      }
-      .button-box-small .show-explanation {
-        font-size: 16px;
-        padding: 9px 20px;
-        border-radius: 8px;
-        &::after {
-          width: 16px;
-          height: 16px;
+      .button-box-small,
+      .button-box-medium {
+        .show-explanation::after {
+          width: 20px;
+          height: 20px;
+          background-size: 17px auto;
         }
       }
       .detail-list {
@@ -5381,7 +5501,7 @@ MEDIA QUERY
     .cont-compare .compare-slider .prev,
     .cont-compare .compare-slider .next {display: none;}
     
-  } // end .page-analysis
+  }
   .page-insight {
     .insight-slider-wrap {
       display: block;

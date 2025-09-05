@@ -102,6 +102,7 @@ body.is-fixed {
   padding: 100px 0 80px;
   margin: 0 auto;
   .head-guidetext {
+    margin-top: 8px;
     margin-bottom: 60px;
     @include text-body(0,'r',$gray-500);
   }
@@ -671,9 +672,6 @@ aside
     // padding-right: calc(constant(safe-area-inset-right) + $layout-padding);
     // padding-right: calc(env(safe-area-inset-right) + $layout-padding);
   }
-  // .content {
-  //   flex: auto;
-  // } 20250801
   .modal-test {
     left: $layout-padding;
   }
@@ -692,10 +690,10 @@ aside
     align-content: stretch;
   }
   .content {
-    margin: 56px auto 0; // 헤더 높이
-    padding-top: 32px;
-    padding-bottom: calc(constant(safe-area-inset-bottom) + $layout-padding);
-    padding-bottom: calc(env(safe-area-inset-bottom) + $layout-padding);
+    margin: $topHeader_h auto 0; // 헤더 높이
+    padding-top: 12px;
+    padding-bottom: calc(constant(safe-area-inset-bottom) + 100px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 100px);
 
     .head-guidetext {
       font-size: 16px;
