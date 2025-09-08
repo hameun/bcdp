@@ -3977,17 +3977,26 @@ TOAST POPUP
     display: none;
     z-index: 11;
     width: 160px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+      box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
+      backdrop-filter: blur(20px);
+      &::before {
+        content: ''; 
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        padding: 2px;
+        z-index: 0;
+      }
     .ui-menu {
       overflow: auto;
       overflow-x: hidden;
       padding-bottom: 1px;
-      border-radius: 16px;
-      padding: 6px;
-      background-color: rgba(255,255,255,0.1);
-      border: 2px solid;
-      border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-      backdrop-filter: blur(20px);
-      box-shadow: 0px 4px 12px 0px #23225805 inset;
+      padding: 8px;
       max-height: 232px;
       .ui-selectmenu-optgroup {
         font-size: 1em;
@@ -4005,7 +4014,8 @@ TOAST POPUP
   }
   .ui-selectmenu-text {
     display: block;
-    margin-right: 26px;
+    // margin-right: 26px;
+    padding-right: 26px;
     overflow: hidden;
     text-overflow: ellipsis;
     @include text-body(1,'m',$gray-500);
@@ -4014,6 +4024,8 @@ TOAST POPUP
     text-align: left;
     white-space: nowrap;
     width: 14em;
+      position: relative;
+      z-index: 1;
   }
   .ui-selectmenu-icon.ui-icon {
     float: right;
@@ -4287,7 +4299,7 @@ TOAST POPUP
   } 
   .ui-selectmenu-text {
     display: block;
-    margin-right: 26px;
+    // padding-right: 26px;
     overflow: hidden;
     text-overflow: ellipsis;
     @include text-body(1,'m',$gray-700);
