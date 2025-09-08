@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-datamarket">
+		    <h1 class="headline1">결제하기</h1>
+
+		    <!-- [데이터마켓] -->
+		    <div class="datamarket-pay">
+		        <div class="pay-items">
+		            <!-- 데이터마켓/ OPEN API -->
+		            <div class="item-group item-market">
+		                <div class="item-header">
+		                    <div class="summary">
+		                        <p>비씨카드 데이터거래사가 추천하는" 편의점 X BC카드 소비품목 결합 상품 비씨카드 데이터거래사가 추천하는" 편의점 X BC카드 소비품목 결합 상품</p>
+		                        <strong>3개</strong>
+		                    </div>
+		                    <div class="provider">BC카드</div>
+		                    <button type="button" class="icon-up">상세내용 접기</button>
+		                </div>
+		                <div class="item-body">
+		                    <div class="item">
+		                        <div class="flags">
+		                            <span class="flag data-market">데이터마켓</span>
+		                            <span class="flag data-type">CSV</span>
+		                            <span class="flag data-capa"><i>1.0</i> KB</span>
+		                        </div>
+		                        <div class="desc">
+		                            <p>카드-편의점 품목별 소비데이터_샘플 카드-편의점 품목별 소비데이터_샘플 카드-편의점 품목별 소비데이터_샘플 타이틀 다 나와야함.</p>
+		                        </div>
+		                        <p class="count"><i>500,000,000,000,000</i>원</p>
+		                    </div>
+		                    <div class="item">
+		                        <div class="flags">
+		                            <span class="flag data-openapi">OPEN API</span>
+		                            <span class="flag data-type">CSV</span>
+		                            <span class="flag data-capa"><i>1.0</i> KB</span>
+		                        </div>
+		                        <div class="desc">
+		                            <p>API데이터명</p>
+		                            <span class="useable">12개월</span>
+		                        </div>
+		                        <p class="count"><i>500,000,000,000,000</i>원</p>
+		                    </div>
+		                    <div class="item">
+		                        <div class="flags">
+		                            <span class="flag data-market">데이터마켓</span>
+		                            <span class="flag data-type">CSV</span>
+		                            <span class="flag data-capa"><i>1.0</i> KB</span>
+		                        </div>
+		                        <div class="desc">
+		                            <p>카드-편의점 품목별 소비데이터_샘플 카드-편의점 품목별 소비데이터_샘플 카드-편의점 품목별 소비데이터_샘플 타이틀 다 나와야함.</p>
+		                        </div>
+		                        <p class="count"><i>500,000,000,000,000</i>원</p>
+		                    </div>
+		                </div>
+		                <div class="item-bottom">
+		                    <dl>
+		                        <dt>상품 금액</dt>
+		                        <dd><i>500,000,000,000,000</i>원</dd>
+		                    </dl>
+		                    <dl class="set-coupon"><!-- [2025.08.13 금액추가] -->
+		                        <dt>할인 금액</dt>
+		                        <dd>
+		                            <div class="button-box-xsmall">
+		                                <button class="button-s">쿠폰 변경</button>
+		                            </div>
+		                        </dd>
+		                    </dl>
+		                    <dl class="apply-coupon">
+		                        <dt>첫구매 할인 10% (최대 20,000만원)</dt>
+		                        <dd><i>-15,000,000</i>원</dd>
+		                    </dl>
+		                    <dl>
+		                        <dt>구매 금액</dt>
+		                        <dd class="total"><i class="down-percent">10%</i><i>135,000,000</i>원</dd>
+		                    </dl>
+		                </div>
+		            </div>
+
+		            <!-- 데이터 폴리오 -->
+		            <div class="item-group item-polio">
+		                <div class="item-header">
+		                    <div class="summary">
+		                        <p>데이터폴리오 데이터셋명</p>
+		                    </div>
+		                    <div class="provider">BC카드</div>
+		                    <button type="button" class="icon-up">상세내용 접기</button>
+		                </div>
+		                <div class="item-body">
+		                    <div class="item">
+		                        <div class="flags">
+		                            <span class="flag data-polio">데이터폴리오</span>
+		                        </div>
+		                        <div class="desc">
+		                            <p>내국인 3개월 20행정동 5개분류 소비데이터</p>
+		                            <a href="#" class="button-xsmall">수정</a>
+		                        </div>
+		                    </div>
+		                    <div class="item">
+		                        <dl class="data-polio-set">
+		                            <dt>데이터 유형</dt>
+		                            <dd>
+		                                <button type="button" class="show-detail">상세보기<i class="icon-link"></i></button>
+		                                <span class="hash data">내국민 카드소비 데이터</span>
+		                            </dd>
+		                        </dl>
+		                        <dl class="data-polio-set">
+		                            <dt>기간</dt>
+		                            <dd>
+		                                <span class="hash data">#연도별</span>
+		                                <span class="data">2025.05.01~2025.05.31</span>
+		                            </dd>
+		                        </dl>
+		                        <dl class="data-polio-set">
+		                            <dt>지역</dt>
+		                            <dd>
+		                                <span class="hash data">#행정동</span>
+		                                <span class="data">서울특별시 강남구 개포1동</span>
+		                                <span class="data">서울특별시 강남구 개포2동</span>
+		                                <span class="data">서울특별시 강남구 개포2동</span>
+		                            </dd>
+		                        </dl>
+		                        <dl class="data-polio-set">
+		                            <dt>업종</dt>
+		                            <dd>
+		                                <span class="hash data">#소분류</span>
+		                                <span class="data">가전통신 > 가전 > 건강가전</span>
+		                                <span class="data">가전통신 > 가전 > 생활가전</span>
+		                                <span class="data">가전통신 > 가전 > 생활가전</span>
+		                            </dd>
+		                        </dl>
+		                        <p class="price"><i>500,000,000,000,000</i>원</p>
+		                    </div>
+		                    <div class="item2">
+		                        <div class="desc">
+		                            <p>AI 보고서</p>
+		                            <strong class="price"><i>0</i>원</strong>
+		                        </div>
+		                    </div>
+		                </div>
+		                <div class="item-bottom">
+		                    <dl>
+		                        <dt>상품 금액</dt>
+		                        <dd><i>500,000,000,000,000</i>원</dd>
+		                    </dl>
+		                    <dl class="set-coupon"><!-- [2025.08.13 금액추가] -->
+		                        <dt>할인 금액</dt>
+		                        <dd>
+		                            <span class="price"><i>0</i>원</span><!-- [2025.08.13 금액추가] -->
+		                            <div class="button-box-xsmall">
+		                                <button class="button-p">쿠폰 적용</button>
+		                            </div>
+		                        </dd>
+		                    </dl>
+		                    <dl>
+		                        <dt>구매 금액</dt>
+		                        <dd class="total"><i>135,000,000</i>원</dd>
+		                    </dl>
+		                </div>
+		            </div>
+
+		            <!-- 결제방법 -->
+		            <div class="item-pqyment">
+		                <p class="title">결제방법</p>
+		                <div class="chip-box chip-box-large">
+		                    <label class="chip"><input type="radio" name="radio1" checked=""><i>카드 결제</i></label>
+		                    <label class="chip"><input type="radio" name="radio1"><i>전자계약(카드결제)</i></label>
+		                    <label class="chip"><input type="radio" name="radio1"><i>전자계약(세금계산서)</i></label>
+		                </div>
+		                <div class="desc">
+		                    <p>전자계약은 법인회원 전용 기능입니다. 계약 체결 후 결제하는 방식으로, 회사 경비 처리가 필요한 경우에 사용됩니다. 이용하려면 법인회원 인증이 필요합니다.</p>
+		                    <div class="detail-info">
+		                        <div class="textbutton-box-xsmall">
+		                            <a href="#" class="textbutton-s underline">자세히 보기</a>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+
+		        <!-- 최종 결제금액 -->
+		        <div class="pay-total">
+		            <div class="item-group">
+		                <div class="total-header">
+		                    <p class="title">최종 결제금액</p>
+		                    <dl>
+		                        <dt>상품 금액</dt>
+		                        <dd>150,000,000원</dd>
+		                    </dl>
+		                    <dl class="apply-coupon">
+		                        <dt>할인 금액</dt>
+		                        <dd><i>-15,430,000</i>원</dd>
+		                    </dl>
+		                </div>
+		                <div class="total-item">
+		                    <p>비씨카드 데이터거래사가 추천하는" 편의점 X BC카드 소비품목 결합 상품 글자수 50자까지</p>
+		                    <div class="coupon">
+		                        <div class="txt">
+		                            <p>첫구매 할인</p>
+		                            <p>10% 할인 (최대 20,000만원)</p>
+		                        </div>
+		                        <button type="button" class="item-del">쿠폰적용 해제</button>
+		                    </div>
+		                </div>
+		                <div class="total-item">
+		                    <p>데이터폴리오 데이터셋명</p>
+		                    <div class="coupon">
+		                        <div class="txt">
+		                            <p>첫구매 할인</p>
+		                            <p>20,000원</p>
+		                        </div>
+		                        <button type="button" class="item-del">쿠폰적용 해제</button>
+		                    </div>
+		                </div>
+		                <div class="total-count">
+		                    <dl>
+		                        <dt>총 결제 금액</dt>
+		                        <dd><i class="down-percent">9.9%</i><i>111,139,570,000</i>원</dd>
+		                    </dl>
+		                </div>
+		                <div class="total-terms">
+		                    <ul>
+		                        <li>
+		                            <label class="ipt-check-sub"><input type="checkbox" name="checkbox2"><i>[필수]구매할 데이터, 금액 등의 정보를 확인했으며, 아래에 동의합니다.<br>(전자상거래법 제8조 제2항)</i></label>
+		                        </li>
+		                        <li>
+		                            <label class="ipt-check-sub"><input type="checkbox" name="checkbox2"><i>[필수]정보 보안관리 약정서</i></label>
+		                            <span class="textbutton-box-xsmall">
+		                                <a href="#" class="textbutton-s underline">보기</a>
+		                            </span>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <div class="button-box-large">
+		                    <button type="button" class="button-p">구매하기</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- //[데이터마켓] -->
+		</div>
+
+		<div class="bottom-box is-pc">
+		    <div class="button-box-large">
+		        <a href="#" class="button-q">이전</a>
+		    </div>
+		</div>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금 돌아가면 설정한 내용이 모두 사라져요. <br>이전 화면으로 가시겠어요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p" type="button">이전 화면으로 이동</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2_1">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">쿠폰</div>
+        <div class="modal-content"><!-- [2025.08.26] 수정 -->
+            <div class="coupon-box"><!-- [2025.08.26] 수정 -->
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="checkbox" name="couponDuplication0">
+                            <i class="txt">100% 할인</i>
+                        </label>
+                        <span class="flag flag-primary">최대 할인 쿠폰</span>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="checkbox" name="coupon" disabled>
+                            <i class="txt">10% 할인</i>
+                        </label>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="checkbox" name="coupon">
+                            <i class="txt">5% 할인</i>
+                        </label>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="checkbox" name="coupon">
+                            <i class="txt">100% 할인</i>
+                        </label>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>BC카드 전용 쿠폰</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="checkbox" name="couponDuplication1">
+                            <i class="txt">10% 할인</i><i class="txt-sub">(최대 20,000원)</i><!-- [2025.08.26] 수정 -->
+                        </label>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+                <div class="coupon">
+                    <div class="coupon-discount">
+                        <label>
+                            <input type="checkbox" name="couponDuplication2">
+                            <i class="txt">10% 할인</i><i class="txt-sub">(최대 20,000원)</i><!-- [2025.08.26] 수정 -->
+                        </label>
+                        <span class="flag">중복사용</span>
+                    </div>
+                    <dl class="coupon-details">
+                        <dt>첫 구매 할인</dt>
+                        <dd>100,000원 이상</dd>
+                        <dd>2025년 12월 31일까지</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">초기화</button>
+            <button class="button-p" type="button">적용하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal2_2">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">쿠폰</div>
+        <div class="coupon-box">
+            <div class="result-none">
+                <p class="message">보유한 쿠폰이 없어요</p>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 약관보기 팝업 -->
+<div class="pop-modal modal-hidden" id="modal3">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">전자계약안내</div>
+        <div class="modal-tabs-sub-paragraph">
+            <div class="tab-box is-static">
+                <ul class="tabs-sub-small">
+                    <li class="is-on"><a href="#">전자계약 결제 안내</a></li>
+                    <li><a href="#">전자계약 결제 방식별 절차 안내</a></li>
+                </ul>
+            </div>
+            <div class="tabs-sub-contents">
+                <div class="item-scroll-wrap">
+                    <h1 id="tabContent1">전자계약 결제 안내</h1>
+
+                    <p>전자계약 결제는 법인인증 완료 회원만 이용 가능합니다.<br>
+                    법인회원 인증을 위해 아래 정보 입력 및 관리자 승인이 필요합니다.</p>
+                    <ul>
+                        <li>소속 이메일 도메인 인증</li>
+                        <li>사업자번호, 대표자명 등 사업장 정보 입력</li>
+                        <li>사업자등록증 첨부</li>
+                        <li>관리자 승인(최대 1~2일 소요)</li>
+                    </ul>
+
+                    <h1 id="tabContent2">전자계약 결제 방식별 절차 안내</h1>
+                    
+                    <h2>카드결제</h2>
+                    <ul class="list-circle-num">
+                        <li><i class="mark">①</i>전자서명 (구매자)</li>
+                        <li><i class="mark">②</i>관리자 검토 및 서명</li>
+                        <li><i class="mark">③</i>마이페이지 > 구매내역 > 카드결제 진행</li>
+                        <li><i class="mark">④</i>결제 완료 후 즉시 다운로드 가능</li>
+                    </ul>
+                    
+                    <h2>세금계산서</h2>
+                    <ul class="list-circle-num">
+                        <li><i class="mark">①</i>전자서명 (구매자)</li>
+                        <li><i class="mark">②</i>마이페이지 > 구매내역 > 세금계산서 발행 정보 입력</li>
+                        <li><i class="mark">③</i>관리자 서명 및 다운로드 승인</li>
+                        <li><i class="mark">④</i>다운로드 후 세금계산서 발행 협의 가능</li>
+                    </ul>
+                    
+                    <h2>안내</h2>
+                    <ul class="list-bul">
+                        <li><i class="mark">•</i>관리자 서명까지 평균 1~2일 소요될 수 있습니다.</li>
+                        <li><i class="mark">•</i>전자계약은 승인 절차로 시간이 소요될 수 있습니다. 빠른 진행을 원하시면 카드결제를 선택해 주세요.</li>
+                    </ul>
+                </div>
+            </div><!-- //.tabs-sub-contents -->
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">확인</button>
+            <button class="button-p" type="button">법인회원 인증하기</button>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //약관보기 팝업 -->
+
+<div class="pop-modal modal-hidden" id="modal4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금 법인회원 인증을 하러가면 결제 정보가 저장되지 않아요. 장바구니에 먼저 담아두고 진행해주세요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p" type="button">인증하러 가기</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal1');return false;">[이전]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_2');return false;">[쿠폰적용/쿠폰변경] > 쿠폰 없는 경우</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2_1');return false;">[쿠폰적용/쿠폰변경]</a>
+        <a href="#" class="button-t" onclick="fn_toast('쿠폰 적용이 해제되었어요', 1);return false;">[쿠폰적용/쿠폰변경] > 쿠폰해제 토스트팝업</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal3');return false;">전자계약 자세히 보기</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal4');return false;">[법인회원 인증하기 버튼 선택 시, 컨펌 호출]</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+</body>
+</html>

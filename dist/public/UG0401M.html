@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-notice">
+		    <div class="content-head-btn">
+		        <div class="content-head">
+		            <h1 class="headline1">FAQ</h1>
+		            <p class="head-guidetext">자주 묻는 질문들을 모아뒀어요.</p>
+		        </div>
+		    </div>   
+
+		    <div class="contents-summary">
+		        <p class="title">무엇이 궁금하신가요?</p>
+		        <div class="sub-summary">
+		            <p class="copy">찾고 계신 질문이 없으신가요?</p>
+		            <a href="#" class="link">문의하기</a>
+		        </div>
+		    </div>
+
+		    <div class="input-box">
+		        <input type="text" class="ipt" placeholder="검색어를 입력해주세요.">
+		        <span class="util-box">
+		            <button class="ipt-clear">내용 지우기</button>
+		            <button type="button" class="ipt-search"><i>검색</i></button>
+		        </span>
+		    </div> 
+		    <div class="faq-contents">
+		        <div class="chip-box count">
+		            <label class="chip"><input type="radio" name="radio1" checked=""><i>전체<em>22</em></i></label>
+		            <label class="chip"><input type="radio" name="radio1"><i>회원/계정<em>14</em></i></label>
+		            <label class="chip"><input type="radio" name="radio1"><i>데이터 이용<em>14</em></i></label>
+		            <label class="chip"><input type="radio" name="radio1"><i>구매/취소<em>14</em></i></label>
+		            <label class="chip"><input type="radio" name="radio1"><i>기타<em>14</em></i></label>
+		        </div>
+		        <div class="accordion">
+		            <ul>
+		                <li class="accordion-item active"><!-- 250828 active 추가 -->
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">회원/계정</span>
+		                        <p class="title">Q. 휴면 해제를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">회원/계정</span>
+		                        <p class="title">Q. 휴면 해제를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">회원/계정</span>
+		                        <p class="title">Q. 휴면 해제를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">회원/계정</span>
+		                        <p class="title">Q. 휴면 해제를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">데이터 이용</span>
+		                        <p class="title">Q. 휴면 해제를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">데이터 이용</span>
+		                        <p class="title">Q. 휴면 <strong>해제</strong>를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		            </ul>
+		        </div>
+		        <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+
+		        <!-- 검색후 -->
+		        <div class="accordion">
+		            <ul>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">회원/계정</span>
+		                        <p class="title">Q. 휴면 <strong>해제</strong>를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		                <li class="accordion-item">
+		                    <div class="accordion-header">
+		                        <span class="bedge-notice">회원/계정</span>
+		                        <p class="title">Q. 휴면 <strong>해제</strong>를 어떻게 하나요?</p>
+		                        <button type="button">상세화면 닫기</button>
+		                    </div>
+		                    <div class="accordion-content">
+		                        <div class="accordion-info">
+		                            <p>회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+		                        </div>
+		                    </div>
+		                </li>
+		            </ul>
+		        </div>
+		        <!-- //검색후 -->
+		    </div>
+
+
+		    <!-- 검색결과 없을 경우 -->
+		    <div class="result-none">
+		        <p class="message">검색 결과가 없습니다</p>
+		        <p class="message-sub">검색하신 조건에 해당하는 게시물이 없습니다.</p>
+		        <div class="button-box-small">
+		            <button type="button" class="button-t">목록으로 이동</button>
+		        </div>
+		    </div>
+		     <!-- //검색결과 없을 경우 -->
+		</div>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 미입력 삳태에서 검색버튼 선택시 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>1글자 이상 입력해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //미입력 삳태에서 검색버튼 선택시 -->
+
+<!-- 문의하기 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">문의하기</div>
+        <div class="modal-content modal-faq"><!-- [2025.09.04 문의하기 팝업 수정] -->
+            <div class="tab-box">
+                <ul class="tabs-small">
+                    <li class="is-on"><a href="#tabContent1">일반 문의</a></li>
+                    <li><a href="#tabContent2">상품 문의</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0" style="display:block;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA01Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA01Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+
+                        <label for="QnA01Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="textarea">
+                            <textarea name="" id="QnA01Content" placeholder="문의 내용을 작성해주세요" rows="4"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA01Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA01Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA02Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA02Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+                        <label for="QnA02Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA02Provider">
+                                <option value="" disabled selected>제공기관을 선택해주세요.</option>
+                                <option value="option1">제공기관 2_1</option>
+                                <option value="option2">제공기관 2_2</option>
+                                <option value="option3">제공기관 2_3</option>
+                                <option value="option4">제공기관 2_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA02Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="textarea">
+                            <textarea name="" id="QnA02Content" placeholder="문의 내용을 작성해주세요" rows="4"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA02Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA02Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+        </div> 
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //문의하기 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <button type="button" class="button-q" onclick="fn_toast('문의가 접수되었어요',1);">[문의접수] 토스트 팝업</button>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal1',true);fn_faqAccodion('modal1'); return false;">[문의하기]</button>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">미입력 상태에서 검색버튼 선택시</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+</body>
+</html>

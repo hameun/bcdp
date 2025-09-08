@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-analysis">
+		    <h1 class="headline1">상권분석</h1>
+		    <p class="head-guidetext">지역만 고르면 상권이 한눈에 쏙!</p>
+
+		    <!-- [상권핵심지표] -->
+		    <div class="analysis-contents">
+		        <!-- [상권핵심지표] 위치 -->
+		        <div class="a-contents" id="location">
+		            <div class="location-breadcrumb">
+		                <a href="#" class="breadcrumb" onclick="fn_modalPopOpen('modalArea');">
+		                    <span class="none">서울특별시</span><span>강남구</span><!-- [2025.09.05] 수정 -->
+		                </a>
+		            </div>
+		            <div class="cont-location">
+		                <div class="a-cont map">
+		                    <p class="title-location">상권 변화 한눈에 보기</p><!-- [2025.09.05] 수정 --><!-- [2025.08.11 수정] -->
+		                    <div class="map-control"><button type="button" class="icon-return">새로고침</button></div><!-- [2025.09.05] 수정 --><!-- [2025.09.05] 수정 -->
+		                    <div class="map-data">
+		                        <!-- dummy -->
+		                        <div style="background:#eee; height: 300px">
+		                            지도영역
+		                            <p style="background-color:#EDEDFE;">컬러 코드 #EDEDFE</p>
+		                            <p style="background-color:#CECEFD;">컬러 코드 #CECEFD</p>
+		                            <p style="background-color:#A8A7FD;">컬러 코드 #A8A7FD</p>
+		                            <p style="background-color:#8280FC;">컬러 코드 #8280FC</p>
+		                            <p style="background-color:#5957E3;">컬러 코드 #5957E3</p>
+		                        </div>
+		                        <!-- //dummy -->
+		                    </div>
+		                </div>
+		                <div class="a-cont graph">
+		                    <p class="title-location">상권 핵심 지표 한눈에 보기</p><!-- [2025.09.05] 수정 -->
+		                    <div class="graph-data">
+		                        <!-- dummy --> 
+		                        <div style="background:#eee; height: 380px">
+		                            그래프영역<br>
+		                            첫진입화면 - 전국기준 그래프 출력
+		                        </div>
+		                        <!-- //dummy -->
+		                        <!-- 퍼블리싱 확인 -->
+		                        <!-- [2025.07.23 로딩추가] -->
+		                        <script>
+		                            onLoading('#location .graph-data');
+		                            setTimeout(function(){
+		                                // 로딩이 완료된 후
+		                                removeLoading('#location .graph-data', 1000);
+		                            }, 2000 );
+		                        </script>
+		                        <!-- // [2025.07.23 로딩추가] -->
+		                        <!-- // 퍼블리싱 확인 -->
+		                    </div>
+		                </div>
+		            </div><!-- //.cont-location -->
+		        </div>
+		        <!-- //[상권핵심지표] 위치 -->
+		    </div>
+		        
+
+		    <!-- [지역 요약] (확인용) -->
+		    <div class="analysis-contents">
+		        <div class="a-contents" id="summary">
+		            <h2 class="title"><em class="t-highlight">$강남구$</em>, 한눈에 요약하면</h2><!-- [2025.09.08] 수정 -->
+		            <p class="title-guidetext">신규 창업부터 주 소비층까지, <br class="is-mobile">지금 이상권의 핵심 특징만 모았어요.</p>
+
+		            <div class="cont-summary">
+		                <div class="flags">
+		                    <!-- 업종 CASE -->
+		                    <dl class="flag">
+		                        <dt>신규 창업 많은 업종</dt>
+		                        <dd>
+		                            <strong>🍜 음식</strong>
+		                            <p>서울시는 🛍️ 쇼핑 업종 <br>창업을 많이했어요</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 매출액 성장률 CASE -->
+		                    <dl class="flag">
+		                        <dt>매출액 성장률</dt>
+		                        <dd>
+		                            <strong>📈 + 3.0%</strong>
+		                            <p>서울시 평균 대비 <br>📈 + 3.0% 높아요.</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 객단가 CASE -->
+		                    <dl class="flag">
+		                        <dt>객단가</dt>
+		                        <dd>
+		                            <strong>💰 N원</strong>
+		                            <p>서울시 평균 객단가 대비 <br>💰 23,000원 낮아요.</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 주요 소비층 CASE -->
+		                    <dl class="flag">
+		                        <dt>주요 소비층</dt>
+		                        <dd>
+		                            <strong>👩 30대 여성</strong>
+		                            <p>서울시는 <br>👩 30대 여성이 주로 소비했어요.</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 주요 소비 요일 CASE -->
+		                    <dl class="flag">
+		                        <dt>주요 소비 요일</dt>
+		                        <dd>
+		                            <strong>📆 월요일</strong>
+		                            <p>서울시는 <br>📆월요일에 주로 소비했어요.</p>
+		                        </dd>
+		                    </dl>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- //[지역 요약] (확인용) -->
+
+		    <!-- [2025.09.05] 수정 -->
+		    <!-- [지역 요약] -->
+		    <div class="analysis-contents">
+		        <div class="a-contents" id="summary">
+		            <h2 class="title"><em class="t-highlight">$강남구$</em>, 한눈에 요약하면</h2><!-- [2025.09.08] 수정 -->
+		            <p class="title-guidetext">신규 창업부터 주 소비층까지, <br class="is-mobile">지금 이상권의 핵심 특징만 모았어요.</p>
+		            
+		            <div class="cont-summary">
+		                <div class="flags">
+		                    <!-- 업종 CASE -->
+		                    <dl class="flag">
+		                        <dt>신규 창업 많은 업종</dt>
+		                        <dd>
+		                            <strong>🍜 음식</strong>
+		                            <p>$서울시$는 🛍️ 쇼핑 업종 <br>창업을 많이했어요</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>신규 창업 많은 업종</dt>
+		                        <dd>
+		                            <strong>🏨 숙박</strong>
+		                            <p>$서울시$는 $🏨 숙박 $ 업종 <br>창업을 많이했어요</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>신규 창업 많은 업종</dt>
+		                        <dd>
+		                            <strong>🛋️ 여가문화</strong>
+		                            <p>$서울시$는 $🛋️ 여가문화 $ <br>업종 창업을 많이했어요</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>신규 창업 많은 업종</dt>
+		                        <dd>
+		                            <strong>🛍️ 쇼핑</strong>
+		                            <p>$서울시$는 $🛍️ 쇼핑 $ 업종 <br>창업을 많이했어요</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>신규 창업 많은 업종</dt>
+		                        <dd>
+		                            <strong>🏥 의료</strong>
+		                            <p>$서울시$는 $🏥 의료 $ 업종 <br>창업을 많이했어요</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 매출액 성장률 CASE -->
+		                    <dl class="flag">
+		                        <dt>매출액 성장률</dt>
+		                        <dd>
+		                            <strong>📈 + N.N%</strong>
+		                            <p>$서울시$ 평균 대비 <br>$📈 + N.N%$ 높아요.</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>매출액 성장률</dt>
+		                        <dd>
+		                            <strong>📉 - N.N%</strong>
+		                            <p>$서울시$ 평균 대비 <br>$📉 - N.N%$ 낮아요.</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>매출액 성장률</dt>
+		                        <dd>
+		                            <strong>📉 - N.N%</strong>
+		                            <p>$서울시$ 평균과 <br>매출액 성장률이 동일해요.</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 객단가 CASE -->
+		                    <dl class="flag">
+		                        <dt>객단가</dt>
+		                        <dd>
+		                            <strong>💰 N원</strong>
+		                            <p>$서울시$ 평균 객단가 대비 <br>💰 15,000원 낮아요.</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>객단가</dt>
+		                        <dd>
+		                            <strong>💰 N원</strong>
+		                            <p>$서울시$ 평균 객단가 대비 <br>💰 15,000원 높아요.</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>객단가</dt>
+		                        <dd>
+		                            <strong>💰 N원</strong>
+		                            <p>$비교지역$ 평균과 <br>객단가가 동일해요.</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 주요 소비층 CASE -->
+		                    <dl class="flag">
+		                        <dt>주요 소비층</dt>
+		                        <dd>
+		                            <strong>👩 N대 여성</strong>
+		                            <p>$서울시$는 <br>$👩 N대 여성$이 주로 소비했어요.</p>
+		                        </dd>
+		                    </dl>
+		                    <dl class="flag">
+		                        <dt>주요 소비층</dt>
+		                        <dd>
+		                            <strong>👨 N대 남성</strong>
+		                            <p>$서울시$는 <br>$👨 N대 남성$이 주로 소비했어요.</p>
+		                        </dd>
+		                    </dl>
+		                    <!-- 주요 소비 요일 CASE -->
+		                    <dl class="flag">
+		                        <dt>주요 소비 요일</dt>
+		                        <dd>
+		                            <strong>📆  $일요일$</strong>
+		                            <p>$서울시$는 <br>$📆 금요일$에 주로 소비했어요.</p>
+		                        </dd>
+		                    </dl>
+		                </div>
+		            </div><!-- //.cont-summary -->
+		        </div>
+		    </div>
+		    <!-- //[지역 요약] -->
+		    <!-- //[2025.09.05] 수정 -->
+
+		    <div class="analysis-contents">
+		        <!-- [상권핵심지표] 비교 -->
+		        <div class="a-contents" id="compare">
+		            <h2 class="title">이 지역, 다른 곳과 얼마나 다를까?</h2><!-- [2025.09.08] 수정 -->
+		            <p class="title-guidetext">최근 변화율을 기준으로 <br class="is-mobile"><em class="t-highlight">$강남구$</em>와 비교지역을 나란히 보여줘요.</p>
+		            
+		            <div class="cont-compare a-cont"><!-- [2025.09.05] 수정 --><!-- [2025.08.11 수정] -->
+		                <div class="tab-box">
+		                    <ul class="tabs">
+		                        <li class="is-on"><a href="#">한눈에보기</a></li>
+		                        <li><a href="#">결제금액 성장률</a></li>
+		                        <li><a href="#">결제고객 성장률</a></li>
+		                        <li><a href="#">신규 창업율</a></li>
+		                        <li><a href="#">폐업률</a></li>
+		                    </ul>
+		                </div> 
+		        
+		                <div class="swiper compare-slider">
+		                    <!-- Additional required wrapper -->
+		                    <div class="swiper-wrapper">
+		                         <!-- 한눈에보기 -->
+		                        <div class="swiper-slide">
+		                            <div class="compare-slide">
+		                                <p class="guidandce">이 지역의 변화 흐름을 한눈에 볼 수 있어요. <br>소비, 유입, 창업·폐업까지 전반적인 상권 동향을 비교해보세요.</p>
+		                                <div class="data-summary">
+		                                    <div class="data">
+		                                        <p class="title">결제고객 성장률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span><strong>39%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd><span><strong>56%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                    </div>
+		                                    <div class="data">
+		                                        <p class="title">결제금액 성장률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span><strong>21%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd><span><strong>10%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                    </div>
+		                                    <div class="data">
+		                                        <p class="title">신규창업률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span><strong>5%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd><span><strong>3%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                    </div>
+		                                    <div class="data">
+		                                        <p class="title">폐업률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span><strong>23%</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd><span><strong>18 %</strong></span></dd><!-- [2025.09.05] 수정 -->
+		                                        </dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                         <!-- 결제금액 성장률 -->
+		                        <div class="swiper-slide">
+		                            <div class="compare-slide">
+		                                <p class="guidandce">일정 기간 동안 이 지역에서 발생한 <br class="is-mobile">총 결제 금액이 얼마나 증가했는지를 보여줘요.<br>소비 규모의 변화 추이를 확인할 수 있어요.</p>
+		                                <div class="data-partial">
+		                                    <div class="data">
+		                                        <p class="title">결제고객 성장률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd class="minus"><span style="height:100%"><strong>-100%</strong></span></dd><!-- [2025.08.11 수정 : 마이너이 인 경우 .minus] -->
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$전라북도 진안군$ 평균</dt>
+		                                            <dd><span style="height:100%"><strong>100%</strong></span></dd>
+		                                        </dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <!-- 결제고객 성장률 -->
+		                        <div class="swiper-slide">
+		                            <div class="compare-slide">
+		                                <p class="guidandce">일정 기간 동안 결제한 고객 수가 얼마나 늘었는지를 나타내요.<br>방문 고객이 많아졌는지를 파악할 수 있어요.</p>
+		                                <div class="data-partial">
+		                                    <div class="data">
+		                                        <p class="title">결제고객 성장률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span style="height:39%"><strong>39%</strong></span></dd>
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd class="minus"><span style="height:52%"><strong>-52%</strong></span></dd><!-- [2025.08.11 수정 : 마이너이 인 경우 .minus] -->
+		                                        </dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <!-- 신규 창업율 -->
+		                        <div class="swiper-slide">
+		                             <div class="compare-slide">
+		                                <p class="guidandce">이 지역에 새로 생긴 점포(사업장)의 비율을 보여줘요.<br>상권의 활기나 진입 수요를 가늠할 수 있어요.</p>
+		                                <div class="data-partial">
+		                                    <div class="data">
+		                                        <p class="title">결제고객 성장률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span style="height:39%"><strong>39%</strong></span></dd>
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd><span style="height:52%"><strong>52%</strong></span></dd>
+		                                        </dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                         <!-- 폐업률 -->
+		                        <div class="swiper-slide">
+		                             <div class="compare-slide">
+		                                <p class="guidandce">기존 점포 중 문을 닫은 곳의 비율을 나타내요.<br>상권의 안정성과 지속 가능성을 확인할 수 있어요.</p>
+		                                <div class="data-partial">
+		                                    <div class="data">
+		                                        <p class="title">결제고객 성장률</p>
+		                                        <dl class="selected">
+		                                            <dt>$강남구$</dt>
+		                                            <dd><span style="height:39%"><strong>39%</strong></span></dd>
+		                                        </dl>
+		                                        <dl class="comparison">
+		                                            <dt>$서울시$ 평균</dt>
+		                                            <dd><span style="height:52%"><strong>52%</strong></span></dd>
+		                                        </dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <!-- [2025.09.05] 수정 -->
+		                    <div class="control-box">
+		                        <button type="button" class="prev">이전 슬라이드</button>
+		                        <button type="button" class="next">다음 슬라이드</button>
+		                    </div>
+		                    <!-- //[2025.09.05] 수정 -->
+		                    <div class="swiper-pagination"></div>
+		                </div>
+		                <!-- //.compare-slider -->
+		            </div><!-- //.cont-compare -->
+		        </div>
+		        <!-- //[상권핵심지표] 비교 -->
+		    </div>
+
+		    <div class="analysis-contents">
+		        <!-- [상권핵심지표] 업종 -->
+		        <div class="a-contents" id="industry">
+		            <h2 class="title">이 지역, 어떤 업종이 잘 나갈까?</h2><!-- [2025.09.08] 수정 -->
+		            <p class="title-guidetext">앞으로 3개월간 <em class="t-highlight">$강남구$</em>에선 <em class="t-highlight">$의료$</em> 업종의 <br class="is-mobile">예상 매출이 <em class="t-highlight">$증가$</em>할 것으로 보여요. <br><!-- [2025.08.11 수정] -->
+		                상권의 흐름을 미리 읽고, 유망 업종을 확인해보세요.</p>
+
+		            <div class="cont-industry a-cont"><!-- [2025.08.11 수정] -->
+		                <!-- <div class="industry-summary">2024.01 - 2025.03</div> --><!-- [2025.08.11 수정] -->
+		                <div class="tab-box">
+		                    <ul class="tabs">
+		                        <li class="is-on"><a href="#">전체</a></li>
+		                        <li><a href="#">음식</a></li>
+		                        <li><a href="#">숙박</a></li>
+		                        <li><a href="#">여가문화</a></li>
+		                        <li><a href="#">쇼핑</a></li>
+		                        <li><a href="#">의료</a></li>
+		                    </ul> 
+		                </div>
+		                <!-- [2025.09.05] 수정 -->
+		                <!-- <div class="legend">
+		                    <ul>
+		                        <li>강남구</li>
+		                        <li>$서울시$ 평균</li>
+		                    </ul>
+		                </div> -->
+		                <div class="a-cont industry">
+		                    <div class="graph-content">
+		                        <!-- dummy -->
+		                        <div style="width: 936px; border-radius: 20px; background: #fff;">
+		                            <img src="../images/dummy-graph.png" alt="">
+		                        </div>
+		                        <!-- //dummy -->
+		                    </div>
+		                </div>
+		                <!-- //[2025.09.05] 수정 -->
+		            </div><!-- //.cont-industry -->
+		        </div>
+		        <!-- //[상권핵심지표] 업종 -->
+		    </div>
+		    <!-- //[상권핵심지표] -->
+
+		    <!-- [업종별 흐름] -->
+		    <div class="analysis-contents">
+		        <!-- [업종별 흐름] 상세 -->
+		        <div class="a-contents" id="detail">
+		            <h2 class="title">이 지역, 다른 곳과 얼마나 다를까?</h2><!-- [2025.09.08] 수정 -->
+		            <p class="title-guidetext"><em class="t-highlight">$강남구$</em> <em class="t-highlight">$음식$</em>업종의 <br class="is-mobile">매장 수, 소비흐름, 방문자 특성까지 <br>상권을 이루는 다양한 데이터를 하나씩 확인해보세요.</p>
+		            
+		            <div class="cont-detail">
+		                <div class="button-box-medium"><!-- [2025.09.05] 수정 -->
+		                    <button type="button" class="button-p show-explanation">지표 설명 보기</button>
+		                </div>
+		                <!-- [2025.08.07 지표설명보기 모바일슬라이드 적용] -->
+		                <div class="swiper explanation-slider">
+		                    <div class="swiper-wrapper">
+		                        <div class="swiper-slide">
+		                            <div class="detail-list">
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>신규매장수</dt><dd class="count"><strong>23,544</strong> 개</dd></dl>
+		                                        <dl class="comparison"><dt>$서울시$전체 대비</dt><dd>34%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>신규매장수</dt><dd class="explanation">최근 3개월간 새로 생긴 매장의 수예요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>폐업매장수</dt><dd class="count"><strong>23,544</strong> 개</dd></dl>
+		                                        <dl class="comparison"><dt>$서울시$전체 대비</dt><dd>34%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>폐업매장수</dt><dd class="explanation">최근 3개월간 문을 닫은 매장의 수예요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>재방문 비중</dt><dd class="count"><strong>62.4</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="up">▲32.4%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>재방문 비중</dt><dd class="explanation">다시 방문한 고객의 비율을 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>신규고객 비중</dt><dd class="count"><strong>28.1</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="down">▼1.9%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>신규고객 비중</dt><dd class="explanation">처음 방문한 고객의 비율이에요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="swiper-slide">
+		                            <div class="detail-list">
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>매출액 성장률</dt><dd class="count"><strong>+ 3.3</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$ 평균과</dt><dd>동일해요</dd></dl><!-- [2025.09.05] 수정 -->
+		                                        <!-- <p class="infotext">최근 3개월 대비</p> --><!-- [2025.08.06 삭제 : Spec out] -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>매출액 성장률</dt><dd class="explanation">직전 3개월보다 매출이 얼마나 증가했는지를 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>고객수 성장률</dt><dd class="count"><strong>+ 3.3</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="up">▲32.4%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                        <!-- <p class="infotext">최근 3개월 대비</p> --><!-- [2025.08.06 삭제 : Spec out] -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>고객수 성장률</dt><dd class="explanation">직전 3개월보다 고객 수가 얼마나 늘었는지 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>유입인구 비중</dt><dd class="count"><strong>28.1</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="down">▼1.9%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>유입인구 비중</dt><dd class="explanation">다른 지역에서 온 방문자의 비율을 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>거주인구 비중</dt><dd class="count"><strong>28.1</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="down">▼1.9%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>거주인구 비중</dt><dd class="explanation">이 지역에 거주 중인 방문자의 비율을 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="swiper-slide">
+		                            <div class="detail-list">
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>객단가</dt><dd class="count"><strong>12,500</strong> 원</dd></dl>
+		                                        <dl class="comparison"><dt>$서울시$ 평균 대비</dt><dd class="up">▲5,000원</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>객단가</dt><dd class="explanation">한 명의 고객이 한 번에 평균 얼마를 썼는지 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>건단가</dt><dd class="count"><strong>8,000</strong> 원</dd></dl>
+		                                        <dl class="comparison"><dt>$서울시$ 평균 대비</dt><dd class="up">▲5,000원</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>건단가</dt><dd class="explanation">한 번 결제할 때 평균 금액을 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>직장인 비중</dt><dd class="count"><strong>28.1</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="down">▼1.9%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>직장인 비중</dt><dd class="explanation">직장에 다니는 방문자의 비율을 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                                <div class="card">
+		                                    <div class="card-front">
+		                                        <dl class="selected"><dt>법인 비중</dt><dd class="count"><strong>8.1</strong> %</dd></dl><!-- [2025.08.08 수치 단위 사이 여백추가] -->
+		                                        <dl class="comparison"><dt>$서울시$평균 대비</dt><dd class="up">▲32.4%</dd></dl><!-- [2025.09.05] 수정 -->
+		                                    </div>
+		                                    <div class="card-back">
+		                                        <dl class="selected"><dt>법인 비중</dt><dd class="explanation">법인 명의로 결제된 비율을 보여줘요.</dd></dl>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="swiper-pagination"></div>
+		                </div>
+		                <!-- //[2025.08.07 지표설명보기 모바일슬라이드 적용] -->
+		            </div><!-- //.cont-detail -->
+		        </div>
+		        <!-- //[업종별 흐름] 상세 -->
+		    </div>
+
+		    <div class="analysis-contents">
+		        <!-- [업종별 흐름] 성별,연령대&요일 -->
+		        <div class="a-contents" id="pattern">
+		            <h2 class="title">이 지역, 소비자의 시간과 <br class="is-mobile">특성을 살펴보면?</h2><!-- [2025.08.11 수정] --><!-- [2025.09.08] 수정 -->
+		            <p class="title-guidetext"><em class="t-highlight">$강남구$</em> <em class="t-highlight">$음식$</em>업종은 <br>어떤 요일, 어떤 사람이 더 많이 소비하는지 <br class="is-mobile">데이터를 통해 확인해보세요.</p>
+
+		            <div class="cont-pattern">
+		                <div class="a-cont pattern-person">
+		                    <p class="caption">성별/연령대별 매출비율</p>
+		                    <div class="legend">
+		                        <ul>
+		                            <li>여성</li>
+		                            <li>남성</li>
+		                            <li>$서울시$ 평균</li>
+		                        </ul>
+		                    </div>
+		                    <div class="graph">
+		                        <ol>
+		                            <li>
+		                                <div class="graph-title">10대</div>
+		                                <dl class="graph-male">
+		                                    <dt>남성</dt>
+		                                    <dd class="selected"><p style="width: 100%"><span>$강남구$ 100%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 50%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                                <dl class="graph-female">
+		                                    <dt>여성</dt>
+		                                    <dd class="selected"><p style="width: 100%"><span>$강남구$ 100%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 40%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">20대</div>
+		                                <dl class="graph-male">
+		                                    <dt>남성</dt>
+		                                    <dd class="selected"><p style="width: 60%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 50%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                                <dl class="graph-female">
+		                                    <dt>여성</dt>
+		                                    <dd class="selected"><p style="width: 65%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 40%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">30대</div>
+		                                <dl class="graph-male">
+		                                    <dt>남성</dt>
+		                                    <dd class="selected"><p style="width: 60%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 50%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                                <dl class="graph-female">
+		                                    <dt>여성</dt>
+		                                    <dd class="selected"><p style="width: 65%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 40%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">40대</div>
+		                                <dl class="graph-male">
+		                                    <dt>남성</dt>
+		                                    <dd class="selected"><p style="width: 60%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 50%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                                <dl class="graph-female">
+		                                    <dt>여성</dt>
+		                                    <dd class="selected"><p style="width: 65%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 40%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">50대</div>
+		                                <dl class="graph-male">
+		                                    <dt>남성</dt>
+		                                    <dd class="selected"><p style="width: 60%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 50%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                                <dl class="graph-female">
+		                                    <dt>여성</dt>
+		                                    <dd class="selected"><p style="width: 65%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 40%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">60대 이상</div>
+		                                <dl class="graph-male">
+		                                    <dt>남성</dt>
+		                                    <dd class="selected"><p style="width: 60%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 50%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                                <dl class="graph-female">
+		                                    <dt>여성</dt>
+		                                    <dd class="selected"><p style="width: 65%"><span>$강남구$ 60%</span></p></dd>
+		                                    <dd class="comparison"><p style="width: 40%"><span>$서울시$ 평균 50%</span></p></dd>
+		                                </dl>
+		                            </li>
+		                        </ol>
+		                    </div>
+		                </div>
+		                <div class="a-cont pattern-day">
+		                    <p class="caption">요일별 매출비율</p>
+		                    <div class="legend">
+		                        <ul>
+		                            <li>주간</li>
+		                            <li>야간</li>
+		                            <li>$서울시$ 평균 주간</li><!-- [2025.08.07 수정] -->
+		                            <li>$서울시$ 평균 야간</li><!-- [2025.08.07 수정] -->
+		                        </ul>
+		                    </div>
+		                    <div class="graph">
+		                        <ol>
+		                            <li>
+		                                <div class="graph-title">월</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">화</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">수</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 50%"><span>주간 50%</span></p>
+		                                        <p class="night" style="height: 30%"><span>야간 30%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">목</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 50%"><span>주간 50%</span></p>
+		                                        <p class="night" style="height: 30%"><span>야간 30%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">금</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 50%"><span>주간 50%</span></p>
+		                                        <p class="night" style="height: 30%"><span>야간 30%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">토</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 50%"><span>주간 50%</span></p>
+		                                        <p class="night" style="height: 30%"><span>야간 30%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                            <li>
+		                                <div class="graph-title">일</div>
+		                                <dl class="graph-selected">
+		                                    <dt>$강남구$</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 60%"><span>주간 60%</span></p>
+		                                        <p class="night" style="height: 40%"><span>야간 40%</span></p>
+		                                    </dd>
+		                                </dl>
+		                                <dl class="graph-comparison">
+		                                    <dt>$서울시$ 평균</dt>
+		                                    <dd>
+		                                        <p class="day" style="height: 50%"><span>주간 50%</span></p>
+		                                        <p class="night" style="height: 30%"><span>야간 30%</span></p>
+		                                    </dd>
+		                                </dl>
+		                            </li>
+		                        </ol>
+		                    </div>
+		                </div>
+		            </div><!-- //.cont-pattern -->
+		        </div>
+		        <!-- //[업종별 흐름] 성별,연령대&요일 -->
+		    </div>
+		    <!-- //[업종별 흐름] -->
+		</div>
+		<!-- //.content .page-analysis -->
+
+		<div class="analysis-nav">
+		    <!-- [2025.09.05] 수정 -->
+		    <nav>
+		        <button type="button" class="area">강남구</button>
+		        <div class="area-list">
+		            <div class="depth1">
+		                <div class="chip-box">
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value="00" checked><i>전국</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value="11"><i>서울특별시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value="31"><i>경기도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value="21"><i>부산광역시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>인천광역시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>대구광역시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>경상남도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>경상북도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>대전광역시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>충청남도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>광주광역시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>전라북도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>충청북도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>전라남도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>울산광역시</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>강원특별자치도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>제주특별자치도</i></label>
+		                    <label class="chip"><input type="radio" name="navi-loc-radio1" value=""><i>세종특별자치시</i></label>
+		                </div>
+		            </div>
+		        </div>
+		        <button type="button" class="industry">전체</button>
+		        <div class="industry-list">
+		            <ul class="chip-box">
+		                <li><label class="chip"><input type="radio" name="navi-ind-radio1" value="00" checked><i>전체</i></label></li>
+		                <li><label class="chip"><input type="radio" name="navi-ind-radio1" value="00"><i>음식</i></label></li>
+		                <li><label class="chip"><input type="radio" name="navi-ind-radio1" value="00"><i>숙박</i></label></li>
+		                <li><label class="chip"><input type="radio" name="navi-ind-radio1" value="00"><i>여가문화</i></label></li>
+		                <li><label class="chip"><input type="radio" name="navi-ind-radio1" value="00"><i>쇼핑</i></label></li>
+		                <li><label class="chip"><input type="radio" name="navi-ind-radio1" value="00"><i>의료</i></label></li>
+		            </ul>
+		        </div>
+		    </nav>
+		    <!-- //[2025.09.05] 수정 -->
+		</div>
+
+		<!-- 지역검색 팝업 -->
+		<div class="pop-modal modal-hidden" id="modalArea">
+		    <div class="modal modal-large" tabindex="0">
+		        <div class="modal-header">지역선택</div>
+		        <div class="modal-content"><!-- [2025.09.05] 수정 -->
+		            <div class="modal-content-analysis-select">
+		                <div class="location-breadcrumb">
+		                    <a href="#" class="breadcrumb">
+		                        <span class="none">시/도</span><span class="none">구/군/시</span>
+		                    </a>
+		                </div>
+		                <div class="depth1">
+		                    <div class="chip-box">
+		                        <label class="chip"><input type="radio" name="location-radio1" value="00" checked><i>전국</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value="11"><i>서울특별시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value="31"><i>경기도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value="21"><i>부산광역시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>인천광역시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>대구광역시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>경상남도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>경상북도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>대전광역시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>충청남도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>광주광역시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>전라북도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>충청북도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>전라남도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>울산광역시</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>강원특별자치도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>제주특별자치도</i></label>
+		                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>세종특별자치시</i></label>
+		                    </div>
+		                </div>
+		                <div class="depth2">
+		                </div>
+		            </div>
+		        </div>
+		        <div class="button-box-medium">
+		            <button class="button-q" type="button">취소</button>
+		            <button class="button-p close-modal" type="button">선택</button>
+		        </div>
+		        <button class="modal-close" type="button">닫기</button>
+		    </div>
+		</div>
+		<!-- //지역검색 팝업 -->
+
+		<!-- 업종선택 팝업 -->
+		<div class="pop-modal modal-hidden" id="modalIndustry">
+		    <div class="modal modal-large" tabindex="0">
+		        <div class="modal-header">업종선택</div>
+		        <div class="modal-content"><!-- [2025.09.05] 수정 -->
+		            <div class="modal-content-analysis-select">
+		                <div class="chip-box">
+		                    <label class="chip"><input type="radio" name="industry-radio1" value="00" checked><i>전체</i></label>
+		                    <label class="chip"><input type="radio" name="industry-radio1" value="00"><i>음식</i></label>
+		                    <label class="chip"><input type="radio" name="industry-radio1" value="00"><i>숙박</i></label>
+		                    <label class="chip"><input type="radio" name="industry-radio1" value="00"><i>여가문화</i></label>
+		                    <label class="chip"><input type="radio" name="industry-radio1" value="00"><i>쇼핑</i></label>
+		                    <label class="chip"><input type="radio" name="industry-radio1" value="00"><i>의료</i></label>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="button-box-medium">
+		            <button class="button-q" type="button" >취소</button>
+		            <button class="button-p close-modal" type="button">선택</button>
+		        </div>
+		        <button class="modal-close" type="button">닫기</button>
+		    </div>
+		</div>
+		<!-- //업종선택 팝업 -->
+		<script>
+		fn_tabsCompareSlider();
+		fn_cardToBack();
+		fn_analysisNav();
+		fn_navPopup();
+		fn_explanationSlider(); /* [2025.08.07 지표설명보기 모바일슬라이드 적용] */
+
+		// 네비게이션 팝업
+		function fn_navPopup(){
+		    document.querySelector('.analysis-nav').querySelector('.area').addEventListener('click', function(e){
+		        e.preventDefault();
+		        if ( windowWidth < 768 ) {
+		            fn_modalPopOpen('modalArea'); // [2025.07.29 모달팝업 변경]
+		        }
+		    });
+		        
+		    document.querySelector('.analysis-nav').querySelector('.industry').addEventListener('click', function(e){
+		        e.preventDefault();
+		        if ( windowWidth < 768 ) {
+		            fn_modalPopOpen('modalIndustry'); // [2025.07.29 모달팝업 변경]
+		        }
+		    });
+		};
+		</script>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+</body>
+</html>

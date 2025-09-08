@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>퍼블리싱리스트</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../../images/bigdatafavicon.png" type="image/x-icon">
+<link href="../../css/common.css" rel="stylesheet" />
+<link href="../../css/guide.css" rel="stylesheet" />
+<script src="../../js/jquery-3.7.0.min.js"></script>
+<script src="../../js/jquery-ui.min.js"></script>
+<script src="../../js/swiper-bundle.min.js"></script>
+<script src="../../js/air-datepicker.js"></script>
+<script src="../../js/main.js"></script>
+</head>
+<body>
+  
+<div class="wrap guide">
+  <header class="header">
+	    <nav class="is-mobile">
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+	<aside class="aside">
+	    <div class="aside-menu">
+	        <nav class="navigation">
+	            <div class="main-nav">
+	                <ul class="main-menu">
+	                    <li>
+	                        <a href="#">퍼블리싱 리스트</a>
+	                        <ul class="dep1">
+	                            
+	                            <li><a href="index.html#datafolio">데이터폴리오 (8/14)</a></li>
+	                            <li><a href="index.html#aisearch">AI검색 (8/12)</a></li>
+	                            <li><a href="index.html#datamarket">데이터마켓/OPEN API (8/5)</a></li>
+	                            <li><a href="index.html#aiinsight">AI인사이트 (7/25)</a></li>
+	                            <li><a href="index.html#mypage">마이페이지 (8/26)</a></li>
+	                            <li><a href="index.html#datapartner">데이터파트너 (7/25)</a></li>
+	                            <li><a href="index.html#analysis">상권분석 서비스 (7/18)</a></li>
+	                            <li><a href="index.html#login">로그인/회원가입 (7/11)</a></li>
+	                            <li><a href="index.html#datacontest">데이터경진대회 (8/29)</a></li>
+	                            <li><a href="index.html#guidance">이용안내 (9/3)</a></li>
+	                            <li><a href="index.html#common">공통 (수시 업데이트)</a></li>
+	                        </ul>
+	                    </li>
+	                    <li>
+	                        <a href="#">가이드</a>
+	                        <ul class="dep1">
+	                            
+	                            <li><a href="guide_color.html">Color/ Typography</a></li>
+	                            <li><a href="guide_button.html">Button/ Icon</a></li>
+	                            <li><a href="guide_form.html">Form/ Textarea</a></li>
+	                            <li><a href="guide_tab.html">Tab/ Table/ Paging</a></li>
+	                            <li><a href="guide_modal.html">Modal/ Toast/ Loading</a></li>
+	                            <li><a href="guide_etc.html">라이브러리/ etc</a></li>
+	                            <li><a href="guide_icons.html"></a></li>
+	                        </ul>
+	                    </li>
+	                </ul>
+	            </div>
+	        </nav>
+	    </div>
+	</aside>
+
+  <main class="container">
+    <div class="content">
+	        
+	<h1 class="title1">Modal/Toast/Loading/Popover</h1>
+
+	<h2 class="title2">Toast</h2>
+
+	<div class="codeview">
+	    <pre>
+	        fn_toast('삭제되었습니다');
+	        fn_toast('삭제되었습니다',1);
+	        fn_toast('삭제되었습니다',2);
+	    </pre>
+	</div>
+
+	<div class="button-box-xsmall">
+	    <a class="toast-message on" style="position:static;z-index:0;" onclick="fn_toast('삭제되었습니다');"><p>기본</p></a>
+	    <a class="toast-message on" style="position:static;z-index:0;" onclick="fn_toast('삭제되었습니다',1);"><p class="pass">체크아이콘</p></a>
+	    <a class="toast-message on" style="position:static;z-index:0;" onclick="fn_toast('삭제되었습니다',2);"><p class="error">엑스아이콘</p></a>
+	</div>
+
+
+	<h2 class="title2">Modal</h2>
+
+	<div class="codeview">
+	    <pre>
+	    fn_modalOpen('모달Id');
+	    fn_modalPopClose('모달Id');
+
+	    모바일 풀팝업
+	    fn_modalPopOpen('모달Id',true);
+
+	    ✔이전 사용하던 fn_modal(_data) 삭제예정
+	    </pre>
+	</div>
+	<div class="textarea">
+	    <textarea rows="25" style="font-size: 12px;">
+	    <div class="pop-modal modal-hidden" id="modalId">
+	    <div class="pop-modal modal-hidden is-full" id="modalId"><!-- .is-full : 모바일 풀팝업 height: 100%; -->
+	        <div class="modal" tabindex="0"><!-- width: 320px -->
+	        <div class="modal modal-medium2" tabindex="0"><!-- .modal-medium2 : width: 420px -->
+	        <div class="modal modal-medium" tabindex="0"><!-- .modal-medium : width: 480px -->
+	        <div class="modal modal-large" tabindex="0"><!-- .modal-large : width: 600px -->
+	            <div class="modal-header">OPEN API 사용 요청</div>
+	            <div class="modal-content">
+	                <div class="modal-data-info">
+	                    <div style="height: 1200px; background: #aaa;"></div>
+	                </div>
+	            </div>
+	            <div class="button-box-medium">
+	            <div class="button-box-medium col-3"><!-- .col-3 : 버튼 비율 1:2 -->
+	                <button class="button-s" type="button">취소</button>
+	                <button class="button-p" type="button">사용 요청하기</button>
+	                <button class="button-p" type="button maintain-modal">사용 요청하기</button><!-- .maintain-modal : 팝업닫지 않고 유지/ fn_modalPopClose('모달Id') 별도 호출 -->
+	            </div>
+	            <button type="button" class="modal-close">닫기</button>
+	        </div>
+	    </div>
+	    </textarea>
+	</div>
+
+	<h3 class="title3">[알럿]</h3>
+	<div class="pop-modal modal-hidden" id="modal1">
+	    <div class="modal" tabindex="0">
+	        <div class="message-box">
+	            <p>비밀번호를 5회 이상 잘못 입력하셨습니다. <br>비밀번호 재설정 후 다시 로그인해주세요.</p>
+	        </div>
+	        <div class="button-box-medium"><button class="button-p" type="button">확인</button></div>
+	    </div>
+	</div>
+	<div class="pop-modal modal-hidden" id="modal2">
+	    <div class="modal" tabindex="0">
+	        <div class="message-box">
+	            <p>안전한 정보 보호를 위해 비밀번호를 정기적으로 변경해주세요.</p>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-q" type="button">나중에 변경하기</button>
+	            <button class="button-p" type="button">지금 변경하기</button>
+	        </div>
+	    </div>
+	</div>
+	<div class="pop-modal modal-hidden" id="modal3">
+	    <div class="modal" tabindex="0">
+	        <div class="message-box">
+	            <p>해당 정보로 가입된 계정이 없어요. <br>회원가입 후 로그인해주세요.</p>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-s" type="button">회원가입</button>
+	            <button class="button-p" type="button">재입력</button>
+	        </div>
+	    </div>
+	</div>
+	<div class="pop-modal modal-hidden" id="modal4">
+	    <div class="modal" tabindex="0">
+	        <div class="message-box">
+	            <p>해당 데이터 상품을 삭제할 경우 해당 데이터 상품 하위에 등록된 모든 데이터가 삭제됩니다. <br>삭제하시겠습니까?</p>
+	        </div>
+	        <div class="button-box-medium col-3">
+	            <button class="button-q" type="button">아니요</button>
+	            <button class="button-p" type="button">삭제</button>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="button-box-xsmall">
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');">[기본알럿]</a>
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');">[button2 > button-q]</a>
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');">[button2 > button-s]</a>
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');">[버튼 비율 col-3]</a>
+	</div>
+
+
+	<h3 class="title3">.modal-medium</h3>
+	<div class="pop-modal modal-hidden" id="shareModal">
+	    <div class="modal modal-medium" tabindex="0">
+	        <div class="modal-header">공유하기</div>
+	        <div class="share-sns">
+	            <a href="#" class="kakao"><span class="icon-kakao"></span><i class="txt">카카오톡</i></a>
+	            <a href="#" class="facebook"><span class="icon-facebook"></span><i class="txt">페이스북</i></a>
+	            <a href="#" class="naverblog"><span class="icon-naverblog"></span><i class="txt">네이버블로그</i></a>
+	            <a href="#" class="url-copy" onclick="fn_copyUrl()"><span class="icon-url"></span><i class="txt">URL복사</i></a>
+	        </div>
+	        <button class="modal-close" type="button">닫기</button>
+	    </div>
+	</div>
+
+	<div class="button-box-xsmall">
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('shareModal');">[medium: 공유하기]</a>
+	</div>
+
+	<h3 class="title3">.modal-medium2</h3>
+	<div class="pop-modal modal-hidden" id="modalRequireAPI">
+	    <div class="modal modal-medium2" tabindex="0">
+	        <div class="modal-header">OPEN API 사용 요청</div>
+	        <div class="modal-content">
+	            <div class="modal-data-info">
+	                <div class="require-api">
+	                    <ul class="list-bul">
+	                        <li><i class="mark">•</i>OPEN API 사용요청 이후 승인이 되면  사용하실 수 있어요.</li>
+	                        <li><i class="mark">•</i>OPEN API 사용 시작일자는 승인일자 부터 계산되어집니다.</li>
+	                        <li><i class="mark">•</i>위치기반 서비스에 OPEN API를 이용하실 경우 “위치기반서비스 사업신고필증”을 꼭 첨부해주세요.</li>
+	                    </ul>
+
+	                    <div class="info-box">
+	                        <dl class="info">
+	                            <dt>OPEN API명</dt>
+	                            <dd>업종별 소상공인 분포 현황 API</dd>
+	                        </dl>
+	                        <dl class="info">
+	                            <dt>위치기반 서비스 <br>사용여부</dt>
+	                            <dd class="align-center">
+	                                <label class="ipt-radio"><input type="radio" name="radio1" checked><i>미사용</i></label>
+	                                <label class="ipt-radio"><input type="radio" name="radio1"><i>사용</i></label>
+	                            </dd>
+	                        </dl>
+	                    </div>
+	                    <!-- 위치기반 서비스 사용 -->
+	                    <div class="service-selected">
+	                        <ul class="list-bul">
+	                            <li><i class="mark">•</i>위치기반 서비스를 사용하고자 할 경우 “위치정보의 보호 및 이용 등에 관한 법률”에 따라 방송통신위원회 “위치정보서비스 허가”를 받거나 “위치기반 서비스사업 신고”를 하여야합니다. 이에 해당하는 경우에는 첨부파일에 “위치기반서비스 사업자신고필증”을 첨부해주시기 바랍니다.</li>
+	                        </ul>
+	                
+	                        <div class="attach-file">
+	                            <div class="file-drop">
+	                                <p class="message">파일을 선택하거나 이곳에 끌어다 놓으세요</p>
+	                                <p class="sub-message">PDF 최대 50MB</p>
+	                                <div class="button-box-small">
+	                                    <label class="button-t file-attach">파일 찾기<input type="file"></label>
+	                                </div>
+	                            </div>
+	                            <div class="file-uploaded">
+	                                <i class="icon-file-pdf">pdf 파일</i>
+	                                <p class="file-title">사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증.pdf</p>
+	                                <p class="file-info">
+	                                    <span class="byte"><i>94</i> KB of 94 KB</span>
+	                                    <span class="stat"><i class="icon-stat-loading"></i>Uploading...</span>
+	                                    <span class="stat"><i class="icon-stat-complete"></i>Completed</span>
+	                                </p>
+	                                <p class="file-info-statbar"><span class="bar" style="width: 60%">60%</span></p>
+	                                <button type="button" class="icon-waste">삭제</button>
+	                            </div>
+	                        </div>
+	                        
+	                        <!-- 퍼블리싱 확인 -->
+	                        <script>
+	                        $(function(){
+	                            $('#modalRequireAPI').find('.info-box .ipt-radio').eq(0).on('click', function(){
+	                                $('.service-selected').hide();
+	                            });
+	                            $('#modalRequireAPI').find('.info-box .ipt-radio').eq(1).on('click', function(){
+	                                $('.service-selected').show();
+	                            });
+	                            fileAttatch();
+	                        });
+
+	                        function fileAttatch () {
+	                            const dropArea = $('.file-drop');
+
+	                            const dropedArea = $('.file-uploaded');
+	                            const dropedFileTitle = dropedArea.find('.file-title');
+	                            const dropedFileDel = dropedArea.find('.icon-waste');
+
+	                            
+	                            const attachFileBtb = dropArea.find('input[type="file"]');
+	                            attachFileBtb.on('change', function(){
+	                                dropArea.hide();
+	                                dropedFileTitle.text(this.value);
+	                                dropedArea.show();
+	                            });
+
+
+	                            dropArea.on('dragover', function(e){
+	                                e.stopPropagation();
+	                                e.preventDefault();
+	                            });
+
+	                            dropArea.on('drop', function(e) {
+	                                e.preventDefault();
+
+	                                var files = e.originalEvent.dataTransfer.files;
+	                                if (files.length > 1) {
+	                                    fn_modalPopOpen('modal_5')
+	                                    return false;
+	                                }
+	                                
+	                                dropArea.hide();
+	                                dropedFileTitle.text(files[0].name);
+	                                dropedArea.show();
+	                            });
+
+	                            dropedFileDel.on('click', function(){
+	                                dropedArea.hide();
+	                                dropArea.show();
+	                            });
+	                        }
+	                        </script>
+	                        <!-- //퍼블리싱 확인 -->
+	                    </div>
+	                    <!-- //위치기반 서비스 사용 -->
+
+	                    <label for="publicRequire" class="input-title">요청사항</label>
+	                    <div class="textarea">
+	                        <textarea name="" id="publicRequire" placeholder="요청사항 작성" rows="4"></textarea>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-s" type="button">취소</button>
+	            <button class="button-p" type="button">사용 요청하기</button>
+	        </div>
+	        <button type="button" class="modal-close">닫기</button>
+	    </div>
+	</div>
+
+	<div class="button-box-xsmall">
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalRequireAPI');">[medium2: OPEN API 사용 요청 ]</a>
+	</div>
+
+	<h3 class="title3">.modal-large</h3>
+	<!-- 약관보기 팝업 -->
+	<div class="pop-modal modal-hidden" id="modalLarge1">
+	    <div class="modal modal-large" tabindex="0">
+	        <div class="modal-header">회원약관</div>
+	        <div class="modal-content">
+	            <!--  -->
+	            회원약관 약관내용
+	            <!-- // -->
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-p" type="button">확인</button>
+	        </div>
+	        <button class="modal-close" type="button">닫기</button>
+	    </div>
+	</div>
+	<!-- //약관보기 팝업 -->
+
+	<!-- 데이터 등록 팝업 -->
+	<div class="pop-modal modal-hidden" id="modalLarge2">
+	    <div class="modal modal-large" tabindex="0">
+	        <div class="modal-header">데이터 등록</div>
+	        <div class="message-box">
+	            <div class="regist-box">
+	            <form>
+	                <div class="condition">
+	                    <label class="input-title" for="">데이터명<span class="required">(필수)</span></label>
+	                    <div class="input-box">
+	                        <input type="text" class="ipt" placeholder="데이터명을 입력해주세요.">
+	                        <span class="util-box">
+	                            <button type="button" class="ipt-clear">내용 지우기</button>
+	                        </span>
+	                    </div>
+	                </div>
+
+	                <div class="condition">
+	                    <p class="input-title">데이터파일(xls)<span class="required">(필수)</span></p>
+	                    <div class="input-file">
+	                        <div class="input-box">
+	                            <input type="file" id="fileDataRegi">
+	                            <input type="text" class="ipt" placeholder="파일을 등록하세요." disabled="" id="fileDataRegiPath">
+	                        </div>
+	                        <div class="button-box-large">
+	                            <label type="button" class="button-s" for="fileDataRegi">파일 찾기</label>
+	                        </div>
+	                    </div>
+	                    <p class="info-text">
+	                        파일은 최대 850MB까지 업로드 가능합니다. <br>
+	                        850MB 이상의 파일을 업로드해야 하는 경우에는 운영담당자에게 연락 바랍니다.<br>
+	                        첨부 가능 확장자 : zip, csv, xlsx, txt, pdf, json
+	                    </p>
+	                </div>
+	                
+	                <div class="condition">
+	                    <label class="input-title">데이터 총 용량</label>
+	                    <div class="options">
+	                        <p><span>0.0KB</span></p>
+	                    </div>
+	                </div>
+	                
+	                <div class="condition">
+	                    <label class="input-title">판매금액<span class="required">(필수)</span></label>
+	                    <div class="input-box">
+	                        <input type="text" class="ipt" placeholder="0원">
+	                        <span class="util-box">
+	                            <button type="button" class="ipt-clear">내용 지우기</button>
+	                        </span>
+	                    </div>
+	                </div>
+
+	                <div class="condition">
+	                    <label class="input-title">노출여부<span class="required">(필수)</span></label>
+	                    <div class="options">
+	                        <label class="ipt-radio"><input type="radio" id="" name="radio1" checked=""><i>노출</i></label>
+	                        <label class="ipt-radio"><input type="radio" id="" name="radio1"><i>비노출</i></label>
+	                    </div>
+	                </div>
+	            </form>
+	            </div>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-q" type="button">취소</button>
+	            <button class="button-p close-modal" type="button">등록</button>
+	        </div>
+	    <button class="modal-close" type="button">닫기</button>
+	    </div>
+	</div>
+	<!-- //데이터 등록 팝업 -->
+
+	<!-- 지역검색 팝업 -->
+	<div class="pop-modal modal-hidden" id="modalLarge3">
+	    <div class="modal modal-large" tabindex="0">
+	        <div class="modal-header">지역선택</div>
+	        <div class="message-box">
+	            <div class="modal-content-analysis-select">
+	                <div class="location-breadcrumb">
+	                    <a href="#" class="breadcrumb">
+	                        <span>전국</span><span class="none" style="display:none;"></span>
+	                    </a>
+	                </div>
+	                <div class="depth1">
+	                    <div class="chip-box">
+	                        <label class="chip"><input type="radio" name="location-radio1" value="00" checked=""><i>전국</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value="11"><i>서울특별시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value="31"><i>경기도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value="21"><i>부산광역시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>인천광역시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>대구광역시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>경상남도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>경상북도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>대전광역시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>충청남도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>광주광역시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>전라북도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>충청북도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>전라남도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>울산광역시</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>강원특별자치도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>제주특별자치도</i></label>
+	                        <label class="chip"><input type="radio" name="location-radio1" value=""><i>세종특별자치시</i></label>
+	                    </div>
+	                </div>
+	                <div class="depth2">
+	                </div>
+	            </div>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-q" type="button">취소</button>
+	            <button class="button-p close-modal" type="button">선택</button>
+	        </div>
+	        <button class="modal-close" type="button">닫기</button>
+	    </div>
+	</div>
+	<!-- //지역검색 팝업 -->
+
+	<!-- 필터 팝업 -->
+	<div class="pop-modal modal-hidden" id="modalLarge4">
+	    <div class="modal modal-large" tabindex="0">
+	        <div class="modal-header">필터</div>
+	        <div class="message-box">
+	            <p class="message-title">분야</p>
+	            <div class="chip-box">
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value="" checked><i>분야</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>전체</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>외식</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>여행</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>의료</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>커머스</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>부동산</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>유통</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>소셜</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>통신</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>공공</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>환경</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>모빌리티</i></label>
+	            </div>
+	            <p class="message-title">사용목적</p>
+	            <div class="chip-box">
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>사용목적</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>전체</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>시장조사</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>상권분석</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>고객분석</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>정책</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>상품전략</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>채널분석</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>마케팅</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>연구</i></label>
+	                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>리스크</i></label>
+	            </div>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-q maintain-modal" type="button">초기화</button><!-- [2025.08.08 모달유지 .maintain-modal 추가] -->
+	            <button class="button-p close-modal" type="button">적용하기</button>
+	        </div>
+	        <button class="modal-close" type="button">닫기</button>
+	    </div>
+	</div>
+	<!-- //필터 팝업 -->
+
+	<div class="button-box-xsmall">
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge1');">[large: 약관보기]</a>
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge2');">[large: 데이터 등록]</a>
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge3');">[large: 지역검색]</a>
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalLarge4');">[large: 필터] [2025.08.08 모달유지 .maintain-modal 추가]</a>
+	</div>
+
+	<h3 class="title3">[모바일 풀팝업] fn_modalPopOpen('팝업아이디',true);</h3>
+	<!-- 문의하기 -->
+	<div class="pop-modal modal-hidden" id="modalFaq">
+	    <div class="modal modal-medium" tabindex="0">
+	        <div class="modal-header">문의하기</div>
+	        <div class="modal-content modal-faq"><!-- [2025.09.04 문의하기 팝업 수정] -->
+	            <div class="tab-box">
+	                <ul class="tabs-small">
+	                    <li class="is-on"><a href="#tabContent1">일반 문의</a></li>
+	                    <li><a href="#tabContent2">상품 문의</a></li>
+	                    <li><a href="#tabContent3">FAQ</a></li>
+	                </ul>
+	            </div>
+	            <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">
+	                <div class="formbox">
+	                    <form>
+	                        <label for="QnA01Title" class="input-title">제목<span class="required">(필수)</span></label>
+	                        <div class="input-box">
+	                            <input type="text" placeholder="제목을 작성해주세요." id="QnA01Title">
+	                            <span class="util-box">
+	                                <a href="#" class="ipt-clear">내용 지우기</a>
+	                            </span>
+	                        </div>
+
+	                        <label for="QnA01Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+	                        <div class="input-box">
+	                            <select name="" id="QnA01Provider">
+	                                <option value="" disabled>제공기관을 선택해주세요.</option>
+	                                <option value="">제공기관 1_1</option>
+	                                <option value="">제공기관 1_2</option>
+	                                <option value="">제공기관 1_3</option>
+	                                <option value="">제공기관 1_4</option>
+	                            </select>
+	                        </div>
+
+	                        <label for="QnA01Content" class="input-title">내용<span class="required">(필수)</span></label>
+	                        <p class="text-byte">0/4,000Byte</p>
+	                        <div class="textarea">
+	                            <textarea name="" id="QnA01Content" placeholder="문의 내용을 작성해주세요"></textarea>
+	                        </div>
+
+	                        <label for="QnA01Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+	                        <div class="input-box">
+	                            <input type="text" id="QnA01Eamil" value="Ho********@naver.com" readonly disabled>
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	            <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+	                <div class="formbox">
+	                    <form>
+	                        <label for="QnA02Title" class="input-title">제목<span class="required">(필수)</span></label>
+	                        <div class="input-box">
+	                            <input type="text" placeholder="제목을 작성해주세요." id="QnA02Title">
+	                            <span class="util-box">
+	                                <a href="#" class="ipt-clear">내용 지우기</a>
+	                            </span>
+	                        </div>
+	                        <label for="QnA02Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+	                        <div class="input-box">
+	                            <select name="" id="QnA02Provider">
+	                                <option value="" disabled>제공기관을 선택해주세요.</option>
+	                                <option value="">제공기관 2_1</option>
+	                                <option value="">제공기관 2_2</option>
+	                                <option value="">제공기관 2_3</option>
+	                                <option value="">제공기관 2_4</option>
+	                            </select>
+	                        </div>
+
+	                        <label for="QnA02Content" class="input-title">내용<span class="required">(필수)</span></label>
+	                        <div class="input-box">
+	                            <textarea name="" id="QnA02Content" placeholder="문의 내용을 작성해주세요"></textarea>
+	                            <p class="text-byte">0/4,000Byte</p>
+	                        </div>
+
+	                        <label for="QnA02Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+	                        <div class="input-box">
+	                            <input type="text" id="QnA02Eamil" value="Ho********@naver.com" readonly disabled>
+	                        </div>
+	                    </form>
+	                </div>
+	            </div>
+	            <div class="tab-contents" aria-role="tabpanel" id="tabContent3" tabindex="0" style="display:none;">
+	                <div class="faq-category">
+	                    <div class="chip-box">
+	                        <div class="chips">
+	                            <label class="chip"><input type="radio" name="radio1"><i>전체<em>22</em></i><label>
+	                            <label class="chip"><input type="radio" name="radio1"><i>회원/계정<em>7</em></i><label>
+	                            <label class="chip"><input type="radio" name="radio1"><i>데이터 이용<em>6</em></i><label>
+	                            <label class="chip"><input type="radio" name="radio1"><i>구매/취소<em>5</em></i><label>
+	                            <label class="chip"><input type="radio" name="radio1"><i>기타<em>4</em></i><label>
+	                        </div> 
+	                    </div>
+	                </div>
+	                <div class="faq-list">
+	                    <ul>
+	                        <li class="list-item">
+	                            <div class="item-title">
+	                                <span class="category">회원/계정</span>
+	                                <p class="question">휴면 해제를 어떻게 하나요?</p>
+	                            </div>
+	                            <div class="item-content">
+	                                <p class="answer">회원정보는 로그인 후 [마이페이지 > 개인정보 관리] 페이지에서 수정하실 수 있습니다.</p>
+	                            </div>
+	                        </li>
+	                        <li class="list-item">
+	                            <span class="category">회원/이용안내</span>
+	                            <p class="f"></p>
+	                            <p class="q" style="white-space:pre-line;">휴면 회원의 경우 로그인한 후, 본인인증을 통해 해제 가능합니다.
+	                                정상 회원으로 상태 변경 시 개인정보 수집/이용 선택 동의 항목이 철회됩니다.
+	                                당사가 제공하는 유익한 서비스나 제휴 혜택, 상품 등을 안내받고자 하실 경우 마이페이지 > 개인정보관리 에서 개인정보 수집/이용 선택 동의 항목에 재동의 해주셔야 합니다.</p>
+	                        </li>
+	                    </ul>
+	                    <div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+	                </div>
+	            </div>
+	        </div> 
+	        <div class="button-box-medium">
+	            <button class="button-p" type="button">문의하기</button>
+	        </div>
+	        <button class="modal-close" type="button">닫기</button>
+	    </div>
+	</div>
+	<!-- //문의하기 -->
+
+	<!-- Full 팝업 기본셋팅 -->
+	<div class="pop-modal modal-hidden" id="modalInfoAPI">
+	    <div class="modal modal-medium" tabindex="0">
+	        <div class="modal-header">OPEN API 정보</div>
+	        <div class="modal-content">
+	            <div class="modal-data-info">
+	                <div class="info-details">
+	                    <dl class="info">
+	                        <dt>상태</dt>
+	                        <dd>사용중</dd>
+	                    </dl>
+	                    <dl class="info">
+	                        <dt>사용일자</dt>
+	                        <dd>2025.07.11 ~ 2026.01.11 (6개월)</dd>
+	                    </dl>
+	                    <dl class="info">
+	                        <dt>호출수</dt>
+	                        <dd>0</dd>
+	                    </dl>
+	                    <dl class="info">
+	                        <dt>OPEN API KEY<button type="button" class="icon-copy">복사하기</button></dt> 
+	                    </dl>
+	                    <dl class="info">
+	                        <dt>요청주소<button type="button" class="icon-copy">복사하기</button></dt>
+	                        <dd><p>https://dev.bigdata-finance.kr/openApi/v1/API20200917001.json</p></dd>
+	                    </dl>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="button-box-medium">
+	            <button class="button-p" type="button">확인</button>
+	        </div>
+	        <button type="button" class="modal-close">닫기</button>
+	    </div>
+	</div>
+	<div class="button-box-xsmall">
+	    <a href="#" class="button-s" onclick="fn_modalPopOpen('modalFaq',true);">[medium: 문의하기]</a>
+	    
+	</div>
+
+
+	<h2 class="title2">Loading</h2>
+	<div class="codeview">
+	<pre>
+	onLoading(_target);
+	ex) onLoading('#location .graph-data');
+	removeLoading(_target, _removeTime);
+	ex) removeLoading('#location .graph-data', 1000);
+	</pre>
+	</div>
+
+	<div class="loading"><i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i></div>
+
+
+	<h2 class="title2">Popover</h2>
+	<div class="codeview">
+	    <pre>
+	    </pre>
+	</div>
+	      </div>
+  </main>
+  <!-- // content -->
+
+</div>
+<!-- //wrap -->
+</body>
+</html>

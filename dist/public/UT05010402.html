@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-mypage">
+		    <h1 class="headline1">개인정보수정</h1>
+		    <p class="head-guidetext">내 정보, 직접 수정하고 관리하세요.</p>
+
+		    <div class="myinfo-contents">
+		        <form>
+		            <div class="myinfo-box">
+		                <h3 class="title">내 프로필</h3>
+		                <dl class="info">
+		                    <dt>이름</dt>
+		                    <dd><span class="description">김*진</span></dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>아이디(이메일)</dt>
+		                    <dd><span class="description">ky******@mvint.co.kr</span></dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>휴대폰번호</dt>
+		                    <dd><span class="description">010-51**-****<span></dd>
+		                    <dd class="btn">
+		                        <div class="button-box-small">
+		                            <button class="button-s" type="button">변경 하기</button>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>비밀번호</dt>
+		                    <dd class="btn">
+		                        <div class="button-box-small">
+		                            <button class="button-s" type="button">비밀번호 변경하기</button>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>기업</dt>
+		                    <dd class="btn">
+		                        <div class="button-box-small">
+		                            <button class="button-s" type="button">등록 하기</button>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>기업</dt>
+		                    <dd class="items"><span class="flag-stat stat-none">승인대기중</span><span class="description">매그넘빈트</span></dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>기업</dt>
+		                    <dd class="items"><span class="flag-stat stat-reject">반려</span><a href="#" class="description">매그넘빈트<i class="icon-info-m">기업등록 반려 사유 보기</i></a></dd>
+		                    <dd class="btn">
+		                        <div class="button-box-small">
+		                            <button class="button-s" type="button">수정하기</button>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>기업</dt>
+		                    <dd class="items"><span class="description">매그넘빈트</span></dd>
+		                    <dd class="btn">
+		                        <div class="button-box-small">
+		                            <button class="button-s" type="button">변경하기</button>
+		                        </div>
+		                    </dd>
+		                </dl>
+		            </div>
+		            
+		            <!-- [2025.09.05] 추가 -->
+		            <div class="myinfo-box">
+		                <h3 class="title">약관</h3>
+		                <dl class="info">
+		                    <dt>AI 서비스 이용약관<br class="is-mobile">
+		                        <button type="button" class="button-xsmall">상세 보기</button>
+		                    </dt>
+		                    <dd>
+		                        <div class="switch-box">
+		                            <input type="checkbox" id="switch1" role="switch" aria-label="활성화 여부" checked>
+		                            <label for="switch1" class="switch">
+		                                <i class="slider"></i>
+		                            </label>
+		                            <span class="switch-label off" aria-hidden="true">미동의</span>
+		                            <span class="switch-label on" aria-hidden="true">동의</span>
+		                        </div>
+		                    </dd>
+		                </dl>
+		            </div>
+		            <!-- //[2025.09.05] 추가 -->
+
+		            <div class="myinfo-box">
+		                <h3 class="title">광고, 마케팅 수신 동의</h3>
+		                <dl class="info">
+		                    <dt>마케팅 목적의 수집 및 이용 동의<br class="is-mobile">
+		                        <button type="button" class="button-xsmall">상세 보기</button>
+		                    </dt>
+		                    <dd>
+		                        <div class="switch-box">
+		                            <input type="checkbox" id="switch1" role="switch" aria-label="활성화 여부" checked>
+		                            <label for="switch1" class="switch">
+		                                <i class="slider"></i>
+		                            </label>
+		                            <span class="switch-label off" aria-hidden="true">미동의</span>
+		                            <span class="switch-label on" aria-hidden="true">동의</span>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>SMS 수신여부(마케팅 수신채널)
+		                        <p><span class="sub-txt">SMS 수신동의일 2025.05.24</span></p>
+		                    </dt>
+		                    <dd>
+		                        <div class="switch-box">
+		                            <input type="checkbox" id="switch2" role="switch" aria-label="SMS 수신 여부" checked>
+		                            <label for="switch2" class="switch">
+		                                <i class="slider"></i>
+		                            </label>
+		                            <span class="switch-label off" aria-hidden="true">수신 안함</span>
+		                            <span class="switch-label on" aria-hidden="true">수신 동의</span>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <dl class="info">
+		                    <dt>Email 수신여부(마케팅 수신채널)
+		                        <p><span class="sub-txt">SMS 수신동의일 2025.05.24</span></p>
+		                    </dt>
+		                    <dd>
+		                        <div class="switch-box">
+		                            <input type="checkbox" id="switch3" role="switch" aria-label="Email 수신 여부" checked>
+		                            <label for="switch3" class="switch">
+		                                <i class="slider"></i>
+		                            </label>
+		                            <span class="switch-label off" aria-hidden="true">수신 안함</span>
+		                            <span class="switch-label on" aria-hidden="true">수신 동의</span>
+		                        </div>
+		                    </dd>
+		                </dl>
+		                <p class="info-text">당사가 제공하는 유익한 서비스나 제휴혜택, 상품등을 선택하신 채널을 통해 안내 받으실 수 있습니다. 마케팅 수신여부에 동의하지 않더라도 서비스 이용에 제약은 없습니다.</p>
+		            </div>
+
+		            <div class="myinfo-box">
+		                <h3 class="title">계약서</h3>
+		                <p class="info-tit">
+		                    데이터 공급 기본계약서
+		                    <button type="button" class="button-xsmall">상세 보기</button>
+		                </p>
+		            </div>
+		        </form>
+		    </div>
+
+		    <div class="button-box-large">
+		        <button class="button-t" type="button">회원 탈퇴</button>
+		    </div>
+		</div>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-mycompany">
+		    <h1 class="headline1">기업 등록</h1>
+		    <p class="head-guidetext">기업 정보를 등록하고 관리하세요.</p>
+
+		    <div class="companyregi-contents">
+		        <div class="formbox">
+		            <form>
+		                <label for="name" class="input-title">기업명</label>
+		                <div class="input-box">
+		                    <input type="text" placeholder="기업 찾기 버튼을 클릭해 기업을 검색해주세요." name="name" readonly>
+		                    <span class="util-box button-box-xsmall">
+		                        <a href="#" type="button" class="button-t">기업 찾기</a>
+		                    </span>
+		                </div>
+		                <div class="input-box">
+		                    <input type="text" placeholder="기업 찾기 버튼을 클릭해 기업을 검색해주세요." name="name" readonly value="매그넘빈트">
+		                    <span class="util-box button-box-xsmall">
+		                        <a href="#" type="button" class="button-t">수정하기</a>
+		                        <a href="#" type="button" class="button-t">기업 찾기</a>
+		                    </span>
+		                </div>
+		                <div class="input-box is-error">
+		                    <input type="text" placeholder="기업 찾기 버튼을 클릭해 기업을 검색해주세요." name="name" readonly value="매그넘빈트">
+		                    <span class="util-box button-box-xsmall">
+		                        <a href="#" type="button" class="button-t">수정하기</a>
+		                        <a href="#" type="button" class="button-t">기업 찾기</a>
+		                    </span>
+		                </div>
+		                <p class="input-help is-error">등록한 기업 정보가 반려되었습니다. 다시 등록해주세요.</p>
+
+		                <label for="email" class="input-title">기업 이메일</label>
+		                <div class="input-box">
+		                    <input type="text" placeholder="이메일 아이디 입력" name="email">
+		                    <span class="util-box button-box-xsmall">
+		                        <a href="#" class="ipt-clear">내용 지우기</a>
+		                        <a href="#" type="button" class="button-t disabled">인증번호 전송</a>
+		                        <a href="#" type="button" class="button-t">인증번호 전송</a>
+		                        <a href="#" type="button" class="button-t">재전송</a>
+		                    </span>
+		                </div>
+
+		                <label for="passnum" class="input-title">인증번호</label>
+		                <div class="input-box">
+		                    <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6">
+		                    <span class="util-box">
+		                        <a href="#" class="ipt-clear">내용 지우기</a>
+		                        <strong class="ipt-count">02:59</strong>
+		                    </span>
+		                </div>
+
+		                <div class="input-box is-error">
+		                    <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6" value="123456">
+		                    <span class="util-box">
+		                        <a href="#" class="ipt-clear">내용 지우기</a>
+		                        <strong class="ipt-count">02:59</strong>
+		                    </span>
+		                </div>
+		                <p class="input-help is-error">인증번호를 다시 확인해주세요.</p>
+		                <p class="input-help is-error">인증시간이 초과했습니다. 다시 전송 후 진행해주세요.</p>
+
+		                <div class="input-box">
+		                    <input type="text" placeholder="숫자 6자리 입력" name="passnum" maxlength="6" value="123456">
+		                    <span class="util-box">
+		                        <a href="#" class="ipt-clear">내용 지우기</a>
+		                        <strong class="ipt-count">02:59</strong>
+		                    </span>
+		                </div>
+		                <p class="input-help is-pass">인증번호가 확인되었습니다.</p>
+		            </form>
+		        </div>
+		    </div>
+
+		    <div class="button-box-large">
+		        <button type="button" class="button-p" disabled>기업 등록하기</button>
+		    </div>
+		</div>
+		<!-- //.content .page-mypage -->
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modalRegiCompany">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">기업 추가</div>
+        <div class="modal-content">
+            <div class="formbox">
+            <form>
+                <label for="companyName" class="input-title">법인명</label>
+                <div class="input-box">
+                    <input type="text" placeholder="법인명을 입력해주세요." id="companyName">
+                    <span class="util-box">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                    </span>
+                </div>
+
+                <label for="companyCode" class="input-title">사업자등록번호</label>
+                <div class="input-box">
+                    <input type="text" placeholder="- 를 제외한 사업자등록번호를 입력해주세요." id="companyCode">
+                    <span class="util-box button-box-xsmall">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                        <a href="#" type="button" class="button-t">확인</a>
+                    </span>
+                </div>
+                <div class="input-box is-error">
+                    <input type="text" placeholder="- 를 제외한 사업자등록번호를 입력해주세요." id="companyCode">
+                    <span class="util-box button-box-xsmall">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                        <a href="#" type="button" class="button-t">확인</a>
+                    </span>
+                </div>
+                <p class="input-help is-error">사업자등록번호는 숫자 10자리로 입력해주세요.</p>
+
+                <label for="companyDomain" class="input-title">법인도메인</label>
+                <div class="input-box">
+                    <input type="text" placeholder="@를 제외한 주소 입력" id="companyDomain">
+                    <span class="util-box">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                    </span>
+                </div>
+
+                <label for="companyOrner" class="input-title">대표자명</label>
+                <div class="input-box">
+                    <input type="text" placeholder="대표자명을 입력해주세요" id="companyOrner">
+                    <span class="util-box">
+                        <a href="#" class="ipt-clear">내용 지우기</a>
+                    </span>
+                </div>
+                <p class="input-help">대표자명은 사업자명과 동일하게 입력되어야 합니다.</p>
+
+                <label for="companyAddress" class="input-title">소재지 주소</label>
+                <div class="input-box-row">
+                    <div class="input-box">
+                        <input type="text" placeholder="주소를 검색해주세요" id="companyAddress" disabled>
+                        <span class="util-box button-box-xsmall">
+                            <a href="#" type="button" class="button-t">주소검색</a>
+                        </span>
+                    </div>
+                    <div class="input-box" style="display: none;">
+                        <input type="text" placeholder="상세주소를 입력해주세요." id="companyAddress2">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+                </div>
+
+                <label for="companyAddress" class="input-title">소재지 주소</label>
+                <div class="input-box-row">
+                    <div class="input-box">
+                        <input type="text" placeholder="주소를 검색해주세요" id="companyAddress" disabled value="서울 강남구 강남대로 132길 55(논현동, 엠브이타워)">
+                        <span class="util-box button-box-xsmall">
+                            <a href="#" type="button" class="button-t">주소검색</a>
+                        </span>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="상세주소를 입력해주세요." id="companyAddress2">
+                        <span class="util-box">
+                            <a href="#" class="ipt-clear">내용 지우기</a>
+                        </span>
+                    </div>
+                </div>
+
+                <p for="companyAddress" class="input-title">사업자등록증</p>
+                <div class="attach-file">
+                    <div class="file-drop">
+                        <p class="message">파일을 선택하거나 이곳에 끌어다 놓으세요</p>
+                        <p class="sub-message">PDF 최대 50MB</p>
+                        <div class="button-box-small">
+                            <label class="button-t file-attach">파일 찾기<input type="file"></label>
+                        </div>
+                    </div>
+                    <div class="file-uploaded">
+                        <i class="icon-file-pdf">pdf 파일</i>
+                        <p class="file-title">사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증_사업자신고필증.pdf</p>
+                        <p class="file-info">
+                            <span class="byte"><i>94</i> KB of 94 KB</span>
+                            <span class="stat"><i class="icon-stat-loading"></i>Uploading...</span>
+                            <span class="stat"><i class="icon-stat-complete"></i>Completed</span>
+                        </p>
+                        <p class="file-info-statbar"><span class="bar" style="width: 60%">60%</span></p>
+                        <button type="button" class="icon-waste">삭제</button>
+                    </div>
+                </div>
+                <!-- 퍼블리싱 확인 -->
+                <script>
+                    $(function(){
+                        fileAttatch();
+                    });
+
+                    function fileAttatch () {
+                        const dropArea = $('.file-drop');
+
+                        const dropedArea = $('.file-uploaded');
+                        const dropedFileTitle = dropedArea.find('.file-title');
+                        const dropedFileDel = dropedArea.find('.icon-waste');
+
+                        
+                        const attachFileBtb = dropArea.find('input[type="file"]');
+                        attachFileBtb.on('change', function(){
+                            dropArea.hide();
+                            dropedFileTitle.text(this.value);
+                            dropedArea.show();
+                        });
+
+
+                        dropArea.on('dragover', function(e){
+                            e.stopPropagation();
+                            e.preventDefault();
+                        });
+
+                        dropArea.on('drop', function(e) {
+                            e.preventDefault();
+
+                            var files = e.originalEvent.dataTransfer.files;
+                            if (files.length > 1) {
+                                fn_modalPopOpen('modal_5')
+                                return false;
+                            }
+                            
+                            dropArea.hide();
+                            dropedFileTitle.text(files[0].name);
+                            dropedArea.show();
+                        });
+
+                        dropedFileDel.on('click', function(){
+                            dropedArea.hide();
+                            dropArea.show();
+                        });
+                    }
+                </script>
+                <!-- //퍼블리싱 확인 -->
+            </form>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">취소하기</button>
+            <button class="button-p" type="button">동의하기</button>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modalInfoCompany">
+    <div class="modal modal-medium2" tabindex="0">
+        <div class="modal-header"><button type="button" class="modal-close">닫기</button></div>
+        <div class="modal-content">
+            <div class="modal-data-info">
+                <p class="title">매그넘빈트</p>
+                <div class="info-details">
+                    <dl class="info">
+                        <dt>법인명</dt>
+                        <dd>매그넘빈트</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>사업자등록번호</dt>
+                        <dd>123103132103</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>법인도메인</dt>
+                        <dd>mvint.co.kr</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>대표자명</dt>
+                        <dd>이형주</dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>소재지 주소</dt>
+                        <dd><span>서울 강남구 강남대로 132길 55</span><br><span>(논현동, 엠브이타워)</span></dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>파일</dt>
+                        <dd class="attach-file">
+                            <div class="file-uploaded">
+                                <i class="icon-file-pdf">pdf 파일</i>
+                                <p class="file-title">사업자신고필증_사업자신고필증_사업자신고필증.pdf</p>
+                                <p class="file-info">
+                                    <span class="byte">94 KB</span>
+                                </p>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">기업 탈퇴하기</button>
+            <button class="button-p" type="button">수정하기</button>
+        </div>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modalFindCompany">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">기업 찾기</div>
+        <div class="modal-content">
+            <div class="modal-find-company">
+                <div class="input-box">
+                    <input type="text" class="ipt" placeholder="법인명 또는 - 없이 사업자등록번호를 입력해주세요.">
+                    <span class="util-box">
+                        <button class="ipt-clear">내용 지우기</button>
+                        <button type="button" class="ipt-search"><i>검색</i></button>
+                    </span>
+                </div>
+                <div class="result-none">
+                    <p class="message">검색 결과가 없습니다</p>
+                    <p class="message-sub">검색하신 조건에 해당하는 기업이 없습니다.<br>직접 기업을 추가해주세요.</p>
+                    <div class="button-box-medium">
+                        <button type="button" class="button-s">기업 추가하기</button>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <div class="table">
+                        <table summary="법인명 검색결과 리스트 테이블">
+                            <colgroup>
+                                <col width="48%" style="min-width: 125px;">
+                                <col width="28%">
+                                <col width="*" style="min-width: 70px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>법인명</th>
+                                    <th>사업자등록번호</th>
+                                    <th>선택</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td class="title">가그넘빈트</td>
+                                    <td>220-88-00636</td>
+                                    <td>
+                                        <div class="button-box-xsmall">
+                                            <button type="button" class="button-s">선택</button>
+                                        </div>
+                                    </td>
+                                </tr> 
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="regi-company">
+                        <p>소속된 기업을 찾을 수 없다면?</p>
+                        <div class="button-box-small">
+                            <button type="button" class="button-p">기업 추가</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>등록된 기업의 도메인과 입력하신 기업 이메일의 도메인이 일치하지 않습니다. 이메일을 다시 확인해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>파일 형식 PDF, 용량 50MB 이하의 파일만 업로드 가능합니다.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>해당 기업에서 탈퇴하시겠습니까?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">아니요</button>
+            <button class="button-p" type="button">네, 탈퇴할게요.</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>다른 회원님이 요청하신 해당 기업 정보 수정 건은 아직 관리자에 의해 승인 또는 반려가 결정되지 않았습니다. 관리자의 처리가 완료되면 기업 정보 수정을 진행하실 수 있습니다.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall"> 
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal_1');return false;">[기입한 도메인과 이메일 도메인이 상이할 경우 ]</a>
+        <a href="#" class="button-t" onclick="fn_toast('인증번호를 발송했어요.',1);return false;">[인증번호 전송] 토스트팝업</a>
+        <a href="#" class="button-q" onclick="fn_toast('기업 등록을 신청했습니다.',1);return false;">[기업 등록하기] 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalFindCompany', true);return false;">[기업찾기]</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modalRegiCompany', true);return false;">[기업추가]</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal_2');return false;">파일 유효성 Alert</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modalInfoCompany');return false;">[기업정보]</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal_3');return false;">[기업정보] > 탈퇴하기</a>
+        <a href="#" class="button-q" onclick="fn_toast('기업에서 탈퇴 되었습니다.',1);return false;">[기업정보] > 탈퇴하기 토스트팝업</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_4');return false;">[기업정보] > 수정하기</a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+</body>
+</html>

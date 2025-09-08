@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-footer">
+		    <div class="content-head-btn">
+		        <div class="content-head">
+		            <h1 class="headline1">개인정보처리방침</h1>
+		            <p class="head-guidetext">금융 빅데이터 플랫폼 개인정보처리방침을<br class="is-mobile"> 확인할 수 있어요.</p><!-- 250828 br 추가 -->
+		        </div>
+		    </div> 
+		    <div class="footer-contents">
+		        <div class="input-box">
+		            <select name="" id="QnA02Provider" style="display: none;">
+		                <option value="" selected="">2025.02.05 이전</option>
+		                <option value="option1">2025.02.05 이전</option>
+		                <option value="option2">2025.02.05 이전</option>
+		                <option value="option3">2025.02.05 이전</option>
+		                <option value="option4">2025.02.05 이전</option>
+		            </select>
+		        </div>
+		        <div class="security-box">
+		            <span class="title2">개인정보처리방침 안내사항</span>
+		            <p class="description">비씨카드주식회사(이하 "비씨카드"라 함)는 『개인정보보호법』 제30조 및 동법 시행령 제31조에 따라 고객의 개인정보 및 권익을 보호하고 이와 관련한 고충을 원활하게 처리 할 수 있도록 다음과 같이 개인정보처리방침을 수립·공개합니다.</p>
+		            <p class="description">비씨카드는 개인정보처리방침을 통하여 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지 알려드립니다.
+		            비씨카드는 관계법령, 정부의 지침 및 비씨카드의 정책 변경 등에 따라 개인정보처리방침을 개정할 수 있고, 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지하도록 하겠습니다.</p>
+
+		            <h2 class="title4">1. 개인정보의 처리(수집·이용) 목적</h2>
+		            <p class="description">비씨카드는 다음의 목적을 위하여 개인정보를 처리합니다.<br>
+		            처리하고 있는 개인정보는 다음의 목적 이외의 용도로는 이용되지 않으며, 이용 목적이 변경되는 경우에는 별도 안내 후 동의를 받는 등 필요한 조치를 이행할 예정입니다. </p>
+		            <ul class="depth-1">
+		                <li>① 회원 가입 및 관리 
+		                    <ul class="depth-2">
+		                        <li>1. 회원 가입의사 확인, 가입 시 본인확인11</li>
+		                        <li>2. 서비스 제공에 따른 본인 식별·인증</li>
+		                        <li>3. 회원자격 유지 및 관리</li>
+		                        <li>4. 고지사항 전달, 법령상 의무이행 등</li>
+		                        <li>5.  서비스 부정이용 방지, 비인가 사용방지, 사고 예방∙조사, 분쟁 해결 등</li>
+		                    </ul>
+		                </li>
+		                <li>② 데이터 또는 서비스 제공
+		                    <ul class="depth-2">
+		                        <li>1. 데이터 및 서비스 이용, 신청 및 제공</li>
+		                        <li>2. 데이터 및 서비스 관련 계약 체결, 유지, 이행, 관리, 개선</li>
+		                        <li>3. 대금 및 요금 결제</li>
+		                        <li>4. 플랫폼 이용 관련 통계 산출</li>
+		                    </ul>
+		                </li>
+		                <li>③ 민원 처리
+		                    <ul class="depth-2">
+		                        <li>1. 민원인의 신원 및 민원사항 확인</li>
+		                        <li>2. 사실조사를 위한 연락·통지, 처리결과 통보</li>
+		                        <li>3. 고지사항 전달, 본인 의사 확인, 불만처리 등 원활한 의사소통 경로의 확보</li>
+		                    </ul>
+		                </li>
+		                <li>④ 마케팅 및 광고
+		                    <ul class="depth-2">
+		                        <li>1. 데이터 및 서비스 안내 및 이용권유, 이벤트 등의 광고성 정보 안내</li>
+		                        <li>2. 시장조사, 고객만족도 조사, 상품∙서비스 연구 개발</li>
+		                        <li>3. 인구통계학적 특성에 따른 마케팅등</li>
+		                        <li>4. 접속 빈도 파악 또는 회원의 서비스이용에 대한 통계 등</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">2. 처리하는 개인정보의 항목 및 수집방법</h2>
+		            <p class="description">비씨카드는 서비스 제공을 위해 다음의 개인정보 항목을 처리하고 있습니다.</p>
+		            <ul class="depth-1">
+		                <li>① 수집하는 개인정보의 항목 
+		                    <ul class="depth-2">
+		                        <li>1. 개인식별정보
+		                            <ul class="depth-3">
+		                                <li>- 필수 : 성명, 아이디, 비밀번호, 생년월일, 휴대폰 번호, 이메일 주소, 직종</li>
+		                                <li>- 선택 : 추천인 이메일, 소속기관/부서명, 직장 전화번호</li>
+		                            </ul>
+		                        </li>
+		                        <li>2. 기타 계약 및 서비스의 체결·유지·이행·관리∙개선 등과 관련하여 본인이 제공한 정보</li>
+		                        <li>3. 온라인 서비스 이용 과정에서 자동 생성되어 수집 될 수 있는 정보
+		                            <ul class="depth-3">
+		                                <li>- IP주소, 접속일자, 접속기록, 서비스 이용기록 등 접속기록정보 및 서비스 이용 관련 정보 일체</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li>② 개인정보의 수집방법
+		                    <ul class="depth-2">
+		                        <li>1. 홈페이지, 서면양식, 팩스, 전화, 상담게시판, 이메일, 이벤트 응모</li>
+		                        <li>2. 제휴사로부터의 제공</li>
+		                        <li>3. 생성정보 수집 툴을 통한 수집</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">3. 개인정보의 처리 및 보유 기간</h2>
+		            <p class="description">비씨카드는 고객의 개인정보 수집 시 동의 받은 보유·이용 기간 내에서 개인정보를 처리 및 보유하며, 원칙적으로 개인정보의 처리 목적이 달성되면 지체 없이 파기합니다. 다만, 고객에게 사전 동의 받았거나, 관련 법령에 의거하여 보존할 필요성이 있는 경우에는 일정기간 동안 보유합니다.</p>
+		            <ul class="depth-1">
+		                <li>① 계약 또는 청약철회 등에 관한 기록
+		                    <ul class="depth-2">
+		                        <li>1. 보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률</li>
+		                        <li>2. 보존기간 : 5년</li>
+		                    </ul>
+		                </li>
+		                <li>② 대금결제 및 재화 등의 공급에 관한 기록
+		                    <ul class="depth-2">
+		                        <li>1. 보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률</li>
+		                        <li>2. 보존기간 : 5년</li>
+		                    </ul>
+		                </li>
+		                <li>③ 소비자의 불만 또는 분쟁처리에 관한 기록
+		                    <ul class="depth-2">
+		                        <li>1. 보존근거 : 전자상거래 등에서의 소비자보호에 관한 법률</li>
+		                        <li>2. 보존기간 : 3년</li>
+		                    </ul>
+		                </li>
+		                <li>④ 고객의 동의를 받은 경우
+		                    <ul class="depth-2">
+		                        <li>1. 보존기간 : 동의를 받은 기간까지</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">4. 개인정보의 제3자 제공</h2>
+		            <p class="description">비씨카드는 고객의 개인정보를 처리 목적에 명시한 범위 내에서만 처리합니다.
+		            다만, 고객의 동의, 법률의 특별한 규정 등 아래에 해당하는 경우에는 개인정보를 제3자에게 제공합니다.</p>
+		            <ul class="depth-1">
+		                <li>① 개인정보 제3자 제공 기준
+		                    <ul class="depth-2">
+		                        <li>1. 고객으로부터 별도의 동의를 받은 경우</li>
+		                        <li>2. ‘법률 등에 특별한 규정이 있는 경우</li>
+		                        <li>3. 사람의 생명 및 신체에 긴급한 위험이 발생한 경우에 정보주체의 동의를 받을 수 없는 정당한 사유가 있는 경우</li>
+		                        <li>4. 통계작성 및 학술연구 등의 목적을 위하여 필요한 경우로서 특정 개인을 알아볼 수 없는 형태로 개인정보를 제공하는 경우</li>
+		                    </ul>
+		                </li>
+		                <li>② 개인정보 제3자 제공 현황
+		                    <ul class="depth-2">
+		                        <li>해당사항 없음</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">5. 개인정보의 파기에 관한 사항</h2>
+		            <p class="description">비씨카드는 개인정보 보유기간의 경과, 처리목적 달성 등 개인정보가 불필요하게 되었을 때에는 지체 없이 해당 개인정보를 파기합니다.
+		            다만, 고객으로부터 동의 받은 개인정보 보유기간이 경과하거나 처리목적이 달성되었음에도 불구하고 다른 법령에 따라 개인정보를 계속 보존하여야 하는 아래와 같은 경우에는, 해당 개인정보를 별도의 데이터베이스(DB)로 옮기거나 보관장소를 달리하여 보존합니다.</p>
+		            <ul class="depth-1">
+		                <li>① 비씨카드 등이 민·형사상의 책임 또는 시효가 지속되거나 분쟁의 입증자료로서 개인정보를 보유하는 경우</li>
+		                <li>② 상법 제33조 등 법령에 따라 보존하여야 하는 경우</li>
+		                <li>③ 기타 이와 유사한 정당한 사유가 있는 경우</li>
+		            </ul>
+		            <p class="description">비씨카드는 전자적 파일 형태로 기록∙저장된 개인정보는 기록을 재생할 수 없도록 파기하며, 종이 문서에 기록·저장된 개인정보는 분쇄기로 분쇄하거나 소각하여 파기합니다.</p>
+
+		            <h2 class="title4">6. 개인정보 처리의 위탁</h2>
+		            <p class="description">비씨카드는 원활한 개인정보의 업무처리를 위하여 고객이 동의한 목적 또는 계약의 체결·유지·이행·관리 등의 목적으로 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.</p>
+		            <div class="table align-left">
+		                <table summary="분야별 통계 정보 테이블">
+		                    <colgroup>
+		                        <col width="*" style="min-width:180px;">
+		                        <col width="*" style="min-width:180px;">
+		                        <col width="*" style="min-width:180px;">
+		                        <col width="*" style="min-width:180px;">
+		                    </colgroup>
+		                    <thead>
+		                        <tr>
+		                            <th>위탁업체명</th>
+		                            <th>제공목적</th>
+		                            <th>제공하는 개인정보</th>
+		                            <th>테이이용 및 보유기간</th>
+		                        </tr>
+		                    </thead>
+		                    <tbody>
+		                        <tr>
+		                            <td>삼정데이타서비스㈜</td>
+		                            <td>문자, 메일 발송 대행</td>
+		                            <td>성명(마스킹), 이메일, 휴대폰번호</td>
+		                            <td>15일</td>
+		                        </tr>
+		                        <tr>
+		                            <td>알앤비소프트</td>
+		                            <td>Cloud서비스 제공<br>(정보처리 위탁)</td>
+		                            <td>수집하는 개인정보<br>(상세내용은 주1 참고)</td>
+		                            <td>위탁계약 종료일까지</td>
+		                        </tr>
+		                    </tbody>
+		                </table>
+		            </div>
+		            <p class="description">주1) 수집하는 개인정보</p>
+		            <ul class="depth-1">
+		                <li>① 개인식별정보
+		                    <ul class="depth-2">
+		                        <li>1. 아이디(ID), P/W, 성명, 생년월일, 연락처(휴대폰, 직장), 이메일, 직장명(기업회원), 부서명(기업회원), 성별</li>
+		                    </ul>
+		                </li>
+		                <li>② 기타 계약 및 서비스의 체결·유지·이행·관리∙개선 등과 관련하여 본인이 제공한 정보</li>
+		                <li>③ 온라인 서비스 이용 과정에서 자동 생성되어 수집 될 수 있는 정보
+		                    <ul class="depth-2">
+		                        <li>1. IP주소, 접속일자, 접속기록, 서비스 이용기록 등 접속기록정보 및 서비스 이용 관련 정보 일체</li>
+		                    </ul>
+		                </li>
+		            </ul>
+		            <p class="description">비씨카드는 위탁계약 체결 시 개인정보보호법에 따라 위탁업무 수행목적 외 개인정보 처리금지, 기술적∙관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리∙감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 해당업체가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.</p>
+		            <p class="description">위탁업무의 내용이나 위탁업체가 변경될 경우에는 지체 없이 본 개인정보처리방침을 통하여 공개하도록 하겠습니다.</p>
+
+		            <h2 class="title4">7. 개인정보의 안전성확보 조치에 관한 사항</h2>
+		            <p class="description">비씨카드는 귀하의 개인정보를 취급함에 있어 개인정보가 분실, 도난, 누출, 변조 또는 훼손되지 않도록 안전성 확보를 위하여 다음과 같은 보호 대책을 강구하고 있습니다.</p>
+		            <ul class="depth-1">
+		                <li>① 내부 관리계획의 수립·시행
+		                    <ul class="depth-2">
+		                        <li>1. 비씨카드는 개인정보의 안전한 처리를 위하여 아래사항을 포함하는 내부관리계획을 수립·시행하고 있으며, 중요한 변경이 있는 경우에는 즉시 반영 및 수정하고 있습니다. 
+		                            <ul class="depth-3">
+		                                <li>- 개인정보 보호책임자의 지정에 관한 사항</li>
+		                                <li>- 개인정보 보호책임자 및 개인정보취급자의 역할 및 책임에 관한 사항</li>
+		                                <li>- 개인정보의 안전성 확보에 필요한 조치에 관한 사항</li>
+		                                <li>- 개인정보취급자에 대한 교육에 관한 사항</li>
+		                                <li>- 그 밖에 개인정보 보호를 위하여 필요한 사항</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li>② 접근 통제 및 접근 권한의 관리
+		                    <ul class="depth-2">
+		                        <li>1. 비씨카드는 개인정보처리시스템에 대한 접근권한을 업무 수행에 필요한 최소한의 범위로 하여 업무 담당자에 따라 한 개의 사용자 계정을 차등 부여하고 있으며, 개인정보취급자가 변경되었을 경우 지체 없이 개인정보처리시스템의 접근권한을 변경 또는 말소하고 그 기록을 최소 3년간 보관하고 있습니다.</li>
+		                        <li>2. 비씨카드는 개인정보취급자가 정보통신망을 통해 외부에서 개인정보처리시스템에 접속하려는 경우에는 VPN(Virtual Private Network) 또는 전용선 등 안전한 접속수단을 적용하고 있으며, 개인정보가 열람권한이 없는 자에게 공개되거나 외부에 유출되지 않도록 개인정보처리시스템 및 업무용 컴퓨터에 조치를 취하고 있습니다.</li>
+		                        <li>3. 비씨카드는 개인정보취급자가 안전한 비밀번호를 설정하여 이행할 수 있도록 비밀번호 작성규칙을 수립하여 적용하고 있습니다.</li>
+		                    </ul>
+		                </li>
+		                <li>③ 개인정보의 암호화
+		                    <ul class="depth-2">
+		                        <li>1. 비씨카드는 개인정보를 정보통신망을 통하여 송·수신하거나 보조저장매체 등을 통하여 전달하는 경우에는 이를 반드시 암호화하여 처리하고 있습니다.</li>
+		                        <li>2. 비씨카드는 비밀번호 및 바이오정보는 안전한 알고리즘으로 일방향 암호화하고 있으며, 주민등록번호에 대해 개인정보보호법에 의거하여 암호화하여 저장하고 있습니다.</li>
+		                        <li>3. 비씨카드는 업무용 컴퓨터에 개인정보를 보관하고 있지 않으며 업무상 부득이한 사유로 저장 및 관리하는 경우, 상용 암호화 소프트웨어를 사용하여 안전하게 암호화하고 있습니다.</li>
+		                    </ul>
+		                </li>
+		                <li>④ 접속기록의 보관 및 위·변조 방지
+		                    <ul class="depth-2">
+		                        <li>1. 비씨카드는 개인정보취급자가 개인정보처리시스템에 접속한 기록을 최소 2년 이상 보관 관리하며, 개인정보취급자의 접속기록이 위 변조 및 도난, 분실되지 않도록 해당 접속기록을 안전하게 보관하고 있습니다.</li>
+		                    </ul>
+		                </li>
+		                <li>⑤ 보안프로그램의 설치 및 운영
+		                    <ul class="depth-2">
+		                        <li>1. 비씨카드는 개인정보처리시스템 또는 업무용 컴퓨터에 악성 프로그램 등을 방지 치료할 수 있는 백신 소프트웨어 등의 보안 프로그램을 설치 운영하고 있으며, 일 1회 이상 업데이트 및 PC 검사를 실시하고 있습니다.</li>
+		                        <li>2. 비씨카드는 악성 프로그램관련 경보가 발령된 경우 또는 사용 중인 응용 프로그램이나 운영체제 소프트웨어의 제작업체에서 보안 업데이트 공지가 있는 경우, 즉시 이에 따른 업데이트를 실시하고 있습니다.</li>
+		                    </ul>
+		                </li>
+		                <li>⑥ 개인정보의 물리적 조치
+		                    <ul class="depth-2">
+		                        <li>1. 비씨카드는 전산실, 자료보관실 등 개인정보를 보관하고 있는 물리적 보관 장소에 대한 출입통제 절차를 수립·운영하고 있으며, 개인정보가 포함된 서류, 보조저장매체 등을 잠금장치가 있는 안전한 장소에 보관하고 있습니다.</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">8. 인터넷 접속정보파일 등 개인정보를 자동으로 수집하는 장치의 설치·운영 및 그 거부에 관한 사항</h2>
+		            <p class="description">비씨카드는 귀하의 정보를 수시로 저장하고 찾아내는 '쿠키(cookie)' 등 개인정보를 자동으로 수집하는 장치를 설치/운용합니다. 쿠키란 회사의 웹사이트를 운영하는데 이용되는 서버가 귀하의 웹 브라우저에 보내는 아주 작은 텍스트 파일로서 귀하의 컴퓨터 하드디스크에 저장됩니다.</p>
+		            <p class="description">회사는 다음과 같은 목적을 위해 쿠키 등을 사용합니다.</p>
+		            <ul class="depth-1">
+		                <li>① 인터넷 서비스 이용과정에서 자동 수집되는 개인정보 항목
+		                    <ul class="depth-2">
+		                        <li>1. IP 주소, 접속 URL, 웹접속 정보, 접속일자, 방문시간, 서비스 이용 기록 등</li>
+		                    </ul>
+		                </li>
+		                <li>② 쿠키 등 사용목적
+		                    <ul class="depth-2">
+		                        <li>1. 이용자의 관심 분야에 따라 차별화된 정보를 제공</li>
+		                        <li>2. 이용자의 취향과 관심분야를 파악하여 타겟(target) 마케팅에 활용</li>
+		                        <li>3. 회사가 제공하는 데이터 및 서비스 구매시 인증</li>
+		                        <li>4. 검색∙조회∙이용한 데이터 및 서비스에 대한 자취를 추적하여 개인 맞춤 서비스를 제공</li>
+		                        <li>5. 서비스 이용 시 이용기간 안내</li>
+		                        <li>6. 이용자의 이용패턴을 분석하여 서비스 개선 등의 척도</li>
+		                        <li>7. 게시판 글 등록</li>
+		                        <li>8. 이벤트 및 설문조사 시 참여내역 확인 등</li>
+		                        <li class="depth-2-descript">고객은 쿠키 설치에 대한 선택권을 가지고 있습니다. 따라서 고객은 웹 브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 아니면 모든 쿠키의 저장을 거부할 수도  있습니다.</li>
+		                    </ul>
+		                </li>
+		                <li>③ 쿠키 설정 거부 방법
+		                    <ul class="depth-2">
+		                        <li>1. (인터넷 익스플로러의 경우) 웹 브라우저 상단의 도구 > 인터넷 옵션 > 개인정보 탭에서 설정<br>단, 귀하께서 쿠키 설치를 거부하였을 경우 로그인이 필요한 서비스는 이용할 수 없습니다.</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">9. 정보주체의 권리·의무 및 그 행사방법</h2>
+		            <p class="description">고객 및 법정대리인(만14세 미만 아동의 경우)은 비씨카드에 대해 언제든지 아래에 대한 개인정보 보호 관련 권리를 행사할 수 있습니다.</p>
+		            <ul class="depth-1">
+		                <li>① 개인정보 열람, 정정 요구
+		                    <ul class="depth-2">
+		                        <li>1. 정보주체는 본인 정보에 대해 열람 청구가 가능하며, 사실과 다른 경우에는 정정을 요구할 수 있습니다.</li>
+		                        <li>2. 웹/앱 회원제 서비스의 경우, 각 서비스별 마이페이지 또는 정보관리 화면 등을 통해 정보주체가 직접 본인 기본정보를 조회하고, 필요한 경우 수정하실 수 있습니다.</li>
+		                        <li>3. 신청방법
+		                            <ul class="depth-3">
+		                                <li>- 금융빅데이터플랫폼 > 마이페이지 > 개인정보관리</li>
+		                                <li>- 금융빅데이터플랫폼 홈페이지 하단 > 정보주체권리보장</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li>② 개인(신용)정보의 삭제, 처리정지 요구
+		                    <ul class="depth-2">
+		                        <li>1. 정보주체는 본인 개인(신용)정보의 삭제, 처리의 정지를 요구할 수 있습니다.</li>
+		                        <li>2. 다만, 다음의 어느 하나에 해당하는 경우에는 삭제, 처리정지 요구가 거절, 제한될 수 있습니다.
+		                            <ul class="depth-3">
+		                                <li>- 다른 법령에서 삭제 요구된 개인정보가 수집 대상으로 명시되어 있는 경우</li>
+		                                <li>- 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</li>
+		                                <li>- 다른 사람의 생명ㆍ신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</li>
+		                                <li>- 개인정보를 처리하지 아니하면 고객과 약정한 서비스를 제공하지 못하는 등 계약의 이행이 곤란한 경우로서 고객이 그 계약의 해지 의사를 명확하게 밝히지 아니한 경우</li>
+		                                <li>- 금융거래 등 상거래 관계가 종료되고 해당 법령에서 정하는 기간이 경과되지 않은 경우</li>
+		                            </ul>
+		                        </li>
+		                        <li>3. 신청방법
+		                            <ul class="depth-3">
+		                                <li>- 금융빅데이터플랫폼 > 마이페이지 > 개인정보관리 > 회원탈퇴하기</li>
+		                                <li>- 금융빅데이터플랫폼 홈페이지 하단 > 정보주체권리보장</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li>③ 개인(신용)정보 수집/이용, 제공 등의 동의 철회 요구
+		                    <ul class="depth-2">
+		                        <li>1. 정보주체는 언제든지 개인신용 수집, 이용, 제공 등의 동의를 철회할 수 있습니다.</li>
+		                        <li>2. 다만, 고객과 약정한 서비스 제공 및 계약 이행을 위한 필수 동의 철회는 계약 해지, 탈회로 처리되며, 그 계약의 해지, 탈회 의사를 명확하게 밝히지 않은 경우에는 철회 요구가 거절, 제한될 수 있습니다.</li>
+		                        <li>3. 신청방법
+		                            <ul class="depth-3">
+		                                <li>- 금융빅데이터플랫폼 > 마이페이지 > 개인정보관리 > 개인정보 수집/이용 선택동의 철회</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li>④ 연락중지 요구
+		                    <ul class="depth-2">
+		                        <li>1. 정보주체는 회사에 상품이나 서비스를 소개하거나 구매를 권유할 목적으로 본인에게 연락하는 것을 중지하도록 청구할 수 있습니다.</li>
+		                        <li>2. 신청방법
+		                            <ul class="depth-3">
+		                                <li>- 금융빅데이터플랫폼 > 마이페이지 > 개인정보관리 > 개인정보 수집/이용 선택동의 철회</li>
+		                                <li>- 금융빅데이터플랫폼 홈페이지 하단 > 정보주체권리보장</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li>⑤ 이용자는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보 보호법 시행규칙 별지 제11호 서식에 따른 위임장을 제출하여야 합니다.</li>
+		            </ul>
+
+		            <h2 class="title4">10. 개인정보 보호책임자에 관한 사항</h2>
+		            <p class="description">비씨카드는 고객의 개인정보를 보호하고 개인정보와 관련한 불만 및 열람 청구 등을 처리하기 위하여 아래와 같이 개인정보보호책임자(CPO)를 두고 있습니다. 개인정보와 관련한 문의사항이 있으시면 아래의 개인정보보호담당자에게 연락하여 주시기 바랍니다.</p>
+		            <ul class="depth-1">
+		                <li>① 개인정보보호책임자(CPO)
+		                    <ul class="depth-2">
+		                        <li>1. 성 명 : 강대일</li>
+		                        <li>2. 직 책 : 상무</li>
+		                        <li>3. 소속부서 : 정보보호인</li>
+		                    </ul>
+		                </li>
+		                <li>② 개인정보보호담당자
+		                    <ul class="depth-2">
+		                        <li>1. 성 명 : 오자영</li>
+		                        <li>2. 직 책 : 팀장</li>
+		                        <li>3. 소속부서 : 정보보호인 개인정보보호팀</li>
+		                        <li>4. 이메일주소 : privacy@bccard.com</li>
+		                    </ul>
+		                </li>
+		                <li>③ 금융빅데이터플랫폼 책임자
+		                    <ul class="depth-2">
+		                        <li>1. 성 명 : 이동연</li>
+		                        <li>2. 직 책 : 센터장</li>
+		                        <li>3. 소속부서 : 데이터사업본부 데이터사업팀</li>
+		                        <li>4. 이메일주소 : fnbigdata@bccard.com</li>
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">11. 개인정보의 열람청구를 접수·처리하는 부서</h2>
+		            <p class="description">고객은 정보주체로서 다음과 같은 권리를 행사할 수 있습니다.</p>
+		            <ul class="depth-1">
+		                <li>① 개인정보 열람 요구 : 비씨카드에서 보유하고 있는 개인정보파일은 「개인정보보호법」 제35조(개인정보의 열람)에 따라 열람을 요구할 수 있습니다. 다만 개인정보 열람 요구는 「개인정보보호법」 제35조에 의하여 다음과 같이 제한될 수 있습니다.
+		                    <ul class="depth-2">
+		                        <li>1. 법률에 따라 열람이 금지되거나 제한되는 경우</li>
+		                        <li>2. 다른 사람의 생명ㆍ신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</li>
+		                    </ul>
+		                </li>
+		                <li>② 개인정보 정정ㆍ삭제요구 : 비씨카드에서 보유하고 있는 개인정보파일에 대해서는 「개인정보보호법」 제36조(개인정보의 정정ㆍ삭제)에 따라 비씨카드에 개인정보의 정정ㆍ삭제를 요구할 수 있습니다. 다만, 다른 법령에서 그 개인정보가 수집 대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.</li>
+		                <li>③ 개인정보 처리정지 요구 : 비씨카드에서 보유하고 있는 개인정보파일에 대해서는 「개인정보보호법」 제37조(개인정보의 처리정지 등)에 따라 비씨카드에 개인정보의 처리정지를 요구할 수 있습니다. 또한 만 14세 미만 아동의 법정대리인은 비씨카드에 그 아동의 개인정보의 열람, 정정ㆍ삭제, 처리정지 요구를 할 수 있습니다. 다만, 개인정보 처리정지 요구시 「개인정보보호법」 제37조제2항에 의하여 처리정지 요구가 거절될 수 있습니다.
+		                    <ul class="depth-2">
+		                        <li>1. 법률에 특별한 규정이 있거나 법령상 의무를 준수하기 위하여 불가피한 경우</li>
+		                        <li>2. 다른 사람의 생명ㆍ신체를 해할 우려가 있거나 다른 사람의 재산과 그 밖의 이익을 부당하게 침해할 우려가 있는 경우</li>
+		                        <li>3. 공공기관이 개인정보를 처리하지 아니하면 다른 법률에서 정하는 소관 업무를 수행할 수 없는 경우</li>
+		                        <li>4. 개인정보를 처리하지 아니하면 정보주체와 약정한 서비스를 제공하지 못하는 등 계약의 이행이 곤란한 경우로서 정보주체가 그 계약의 해지 의사를 명확하게 밝히지 아니한 경우</li>
+		                    </ul>
+		                </li>
+		                <li>④ 개인정보의 열람, 정정ㆍ삭제, 처리정지 요구에 대해서는 10일 이내에 해당 사항에 대한 비씨카드의 조치를 통지합니다. 개인정보의 열람, 정정ㆍ삭제, 처리정지 요구는 해당 부서를 통해서 가능합니다.</li>
+		                <li>⑤ 위 사항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다.
+		                    <ul class="depth-2">
+		                        <li>1. 정보주체권리보장<br>비씨카드는 고객과의 원활한 의사소통을 위해 정보주체권리보장 종합 요청 페이지를 운영하고 있습니다.
+		                            <ul class="depth-3">
+		                                <li>- 신청방법: 금융 빅데이터 플랫폼 홈페이지 하단 > 정보주체권리보장</li>
+		                            </ul>                            
+		                        </li>
+		                            
+		                    </ul>
+		                </li>
+		            </ul>
+
+		            <h2 class="title4">12. 정보주체의 권익침해 구제방법</h2>
+		            <p class="description">고객은 아래의 기관에 대해 개인정보 침해에 대한 피해구제, 상담 등을 문의하실 수 있습니다.</p>
+		            <ul class="depth-1">
+		                <li>① 개인정보 침해신고센터 (한국인터넷진흥원 운영)
+		                    <ul class="depth-2">
+		                        <li>1. 소관업무 : 개인정보 침해사실 신고, 상담 신청</li>
+		                        <li>2. 전화 : (국번없이) 118 (ARS 내선 2번) </li>
+		                        <li>3. 홈페이지 주소 : <a href="www.privacy.go.kr" class="textbutton-p underline">www.privacy.go.kr</a></li>
+		                    </ul>
+		                </li>
+		                <li>② 경찰청 사이버안전국
+		                    <ul class="depth-2">
+		                        <li>1. 소관업무 : 해킹, 서비스거부공격(DDoS 등), 악성프로그램 등 정보통신망 침해 범죄</li>
+		                        <li>2. 전화 : (국번없이) 182</li>
+		                        <li>3. 홈페이지 주소 : <a href="cyberbureau.police.go.kr" class="textbutton-p underline">cyberbureau.police.go.kr</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+		            
+		            <h2 class="title4">13. 개인정보 처리방침의 변경에 관한 사항</h2>
+		            <p class="description">이 개인정보처리방침은 2023. 11. 09일부터 적용됩니다.</p>
+		        </div>
+		    </div>
+		    
+		</div>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+</body>
+</html>

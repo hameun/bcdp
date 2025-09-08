@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 이용안내 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-info"></i><i class="txt">플랫폼 소개</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-bcdata"></i><i class="txt">BC Data</i></a></li>
+	                <li><a href="#"><i class="icon-n-notice"></i><i class="txt">공지사항</i></a></li>
+	                <li><a href="#"><i class="icon-n-faq"></i><i class="txt">FAQ</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //이용안내 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    
+    
+
+    <main class="container">
+        <!-- content -->
+        <div class="content page-platformIntro">
+		    <h1 class="headline1">BC Data</h1>
+		    <p class="head-guidetext">국내 최대 카드 데이터와 전문 인프라를 통해 신뢰받는 카드결제 데이터 서비스를 제공하고 있어요.</p>
+		    <div class="bcdata-contents">
+		        <div class="tab-box">
+		            <ul class="tabs">
+		                <li class="is-on"><a href="#tabContent1">비씨카드</a></li>
+		                <li class=""><a href="#tabContent2">플랫폼 Biz</a></li>
+		                <li class=""><a href="#tabContent3">Biz credit</a></li>
+		                <li class=""><a href="#tabContent4">광고마케팅</a></li>
+		                <li class=""><a href="#tabContent5">데이터 전문기관</a></li>
+		            </ul>
+		        </div>
+		        <!-- 비씨카드 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0">
+		            <div class="tab-bccard">
+		                <div class="bcdata-info">
+		                    <div class="partner is-pc">
+		                        <img src="../images/bccard-kor.png" alt="BC비씨카드">
+		                    </div>
+		                    <span class="txt-s">Bring Creativity to your business with BCcard</span>
+		                    <span class="txt-m">대한민국 카드결제 인프라를 이끌어온<br class="is-mobile"> 국내 최초의 카드사</span>
+		                    <img src="../images/bccard-kor.png" alt="BC비씨카드" class="is-mobile">
+		                    <span class="title2 is-pc">비씨카드(주)</span>
+		                    <p class="txt-n">비씨카드는 국내 최초로 설립된 카드사로, 약 50여개 은행 및 핀테크사의 카드결제 업무를 수행하고 있습니다.
+		                    수도권부터 도서산간 지역까지 전국 단위의 탄탄한 고객 기반을 바탕으로 국내에서 가장 오랫동안 카드사업을 운영해온 덕분에 업계 최고 수준의 방대한 카드결제 및 가맹점 데이터를 보유하고 있습니다.</p>
+		                    <div class="button-box-large">
+		                        <button type="button left-btn" class="button-p">데이터 소개서<i class="icon-right icon-download"></i></button>
+		                    </div>
+		                </div>
+		                <h2 class="title3">소개</h2>
+		                <div class="bc-box">
+		                    <div class="txt-box">
+		                        <i>1</i>가장 많은 고객수,<br class="is-pc">가장 많은 데이터
+		                    </div>
+		                    <div class="cont-box">
+		                        <ul class="circle-a">
+		                            <li>
+		                                <span class="txt">고객수</span>
+		                                <span class="count">3,380만명</span>
+		                            </li>
+		                            <li>
+		                                <span class="txt">가맹점수</span>
+		                                <span class="count">350만개</span>
+		                            </li>
+		                            <li>
+		                                <span class="txt">거래건수</span>
+		                                <span class="count">월 5억건</span>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		                <div class="bc-box">
+		                    <div class="txt-box">
+		                        <i>2</i>전국적으로<br class="is-pc">균일한 데이터 보유
+		                    </div>
+		                    <div class="cont-box">
+		                        <img src="../images/bank-guid.png" alt="하나카드 우리은행 신한카드 standard chartered BNK부산은행 우리카드">
+		                    </div>
+		                </div>
+		                <div class="bc-box">
+		                    <div class="txt-box">
+		                        <i>3</i>검증된 데이터 기관
+		                    </div>
+		                    <div class="cont-box">
+		                        <ul class="circle-b">
+		                            <li>개인사업자CB업</li>
+		                            <li>기업정보조회업</li>
+		                            <li>데이터전문기관</li>
+		                            <li>가명정보결합<br>전문기관</li>
+		                            <li>마이데이터사업</li>
+		                        </ul>
+		                    </div>
+		                </div>
+		                <div class="bc-box">
+		                    <div class="txt-box">
+		                        <i>4</i>방대한 외국인 데이터 보유
+		                    </div>
+		                    <div class="cont-box flex-line">
+		                        <ul class="img-card">
+		                            <li class="logo-visa"><i class="blind">VISA</i></li>
+		                            <li class="logo-bc"><i class="blind">BC</i></li>
+		                            <li class="logo-jcb"><i class="blind">JCB</i></li>
+		                            <li class="logo-uni"><i class="blind">UnionPay</i></li>
+		                            <li class="logo-ameri"><i class="blind">AMERICAN EXPRESS</i></li>
+		                            <li class="logo-discover"><i class="blind">DISCOVER</i></li>
+		                        </ul>
+		                        
+		                        <span class="card-txt">카드사 중 유일하게<br>6개 해외 브랜드 거래데이터 보유</span>
+		                        <div class="line-down"></div>
+		                        <span class="card-color-txt">국적별 외국인 결제 데이터 <em>정밀하게 분석 가능</em></span>
+		                    </div>
+		                </div>
+
+		                <h2 class="title3">주요 서비스</h2>
+		                <div class="service-box">
+		                    <ul>
+		                        <li class="bc-box">
+		                            <span class="txt">자사/경쟁사 분석</span>
+		                            <span class="sub-txt">지역별/매장별 영업현황 모니터링 및<br class="is-pc"> 고객유형별 마케팅 전략 수립 지원</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">고객 분석</span>
+		                            <span class="sub-txt">고객 소비성향 프로파일링, 신규/이탈/휴면고객 <br class="is-pc"> 특성 분석을 통한 타겟 전략 모색</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">상권/입지 분석</span>
+		                            <span class="sub-txt">가맹점 영업가치 지수, 상권 생애주기 분석으로<br class="is-pc"> 효율적이고 최적화된 입지 선정 지원</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">사회이슈 분석</span>
+		                            <span class="sub-txt">사건사고, 자연재해 발생 전후 소비변화를 탐지하여<br class="is-pc"> 대응전략 수립지원</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">정책 효과 분석</span>
+		                            <span class="sub-txt">정책 도입 전후 지역별, 인구특성별 소비행동<br class="is-pc"> 데이터를 통한 정책파급력 파악 지원</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">시장/축제/관광 분석</span>
+		                            <span class="sub-txt">전통시장/축제/관광지역 국내외 방문객 특성 분석을<br class="is-pc"> 통한 축제/관광 활성화 전략 수립 지원</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">타겟마케팅</span>
+		                            <span class="sub-txt">마케팅 목적에 부합하는 최적의 타겟고객 및<br class="is-pc"> 타이밍을 선정하여 제공하는 정교한 마케팅 지원</span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">데이터 사업제휴</span>
+		                            <span class="sub-txt">고객사에서 보유한 데이터를<br class="is-pc"> 카드데이터와 결합/융합하여 데이터 시너지 창출</span>
+		                        </li>
+		                    </ul>
+		                </div>
+		            </div>
+		            <div class="partner-message">
+		                <p class="txt-n">데이터 구매/제휴 관련 문의사항은 <span>bigdata@bccard.com</span>으로 연락주세요.</p>
+		            </div>
+				</div>
+		        <!-- //비씨카드 -->
+
+		        <!-- 플랫폼 Biz -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+		            <div class="tab-biz">
+		                <h2 class="title2">데이터 파트너</h2>
+		                <p class="txt-sub">금빅플의 데이터파트너가 되면 여러분의 데이터로 수익창출이 가능합니다.</p>
+		                <h3 class="title3">소개</h3>
+		                <p class="txt-sub">우리 회사/기관이 보유한 데이터를 데이터 상품으로 등록하여 판매할 수 있습니다.<br class="is-pc">
+		                중개수수료를 제외한 판매수익은 데이터파트너에게 정산됩니다.</p>
+		                <h3 class="title3">데이터파트너의 장점</h3>
+		                <div class="partner-pros">
+		                    <ul>
+		                        <li class="bc-box">
+		                            <p>우리 기관이 보유한 데이터의 시장성을 검증할 수 있습니다.</p>
+		                        </li>
+		                        <li class="bc-box">
+		                            <p>금빅플을 통한 데이터 판매 및 우리 회사/기관 홍보가 가능합니다.</p>
+		                        </li>
+		                        <li class="bc-box">
+		                            <p>데이터 판매금액 정산까지 모두 금빅플이 대신 해드립니다.</p>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <h3 class="title3">신청절차</h3>
+		                <div class="bc-box partner-step">
+		                    <ul>
+		                        <li>
+		                            <span class="title4"><em>1</em>데이터파트너 가입 신청서 작성</span>
+		                            <p class="txt-n">빠른 가입을 위해 통신사업자신고증, 기업로고, 통장사본을 미리 준비해주세요.</p>
+		                        </li>
+		                        <li>
+		                            <span class="title4"><em>2</em>데이터파트너 승인</span>
+		                            <p class="txt-n">기업 승인은 7영업일 이내 완료되며, 승인이 완료되면 메일로 안내해 드립니다.</p>
+		                        </li>
+		                        <li>
+		                            <span class="title4"><em>3</em>데이터 상품 등록 후 판매 시작</span>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <div class="footer-etc">
+		                    <div class="footer-etc-cont">
+		                        <a href="#" class="etc-req">
+		                            <div>
+		                                <p class="title">데이터파트너 신청하기</p>
+		                            </div>
+		                        </a>
+		                    </div>
+		                    <div class="footer-etc-cont">
+		                        <a href="#" class="etc-faq">
+		                            <div>
+		                                <p class="title">FAQ 바로가기</p>
+		                                <p class="txt">데이터파트너에 대해 더 알아보세요.</p>
+		                            </div>
+		                        </a>
+		                    </div>
+		                    
+		                </div>
+		            </div>
+				</div>
+		        <!-- //플랫폼 Biz -->
+
+		        <!-- Biz credit -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContent3" tabindex="0" style="display:none;">
+		            <div class="tab-credit">
+		                <h2 class="title2">Biz Credit</h2>
+		                <p class="txt-sub">비씨카드는 소상공인의 대안신용평가 및 심사전략을 지원할 수 있도록 금융기관에 Biz Credit 서비스를 제공하고 있어요.<br>소상공인이 합리적이고 편리한 금융서비스를 이용할 수 있도록 Biz Credit이 앞장서겠습니다.</p>
+		                <h3 class="title3">소개</h3>
+		                <p class="txt-sub">Biz Credit 서비스는 비씨카드가 보유한 국내 최대 가맹점 정보(상권, 민원 등)와 실시간 결제데이터를 분석하여 개인사업자들이 신용평가서비스를 제공하고 있습니다. 금융회사의 대출, 카드발급 등 여신업무와 관련하여 개인사업자의 상환 가능성을 평가하고 이를 금융회사 등에 제공함으로써 개인사업자들이 더욱 원활히 금융서비스를 이용할 수 있도록 지원합니다.</p>
+		                <div class="bc-box">
+		                    <div class="box-outer">
+		                        <span class="icon-txt">개인사업자</span>
+		                        <div class="box-flow">
+		                            <span>1. 개인(신용)정보 동의서</span>
+		                            <div class="line-right"></div>
+		                            <div class="line-left"></div>
+		                            <span>4. 금융서비스 등 제공</span>
+		                        </div>
+		                        <span class="icon-txt">요청기관</span>
+		                        <div class="box-flow">
+		                            <span>2. 조회</span>
+		                            <div class="line-right"></div>
+		                            <div class="line-left"></div>
+		                            <span>3. 수집 및 산출 후 응답</span>
+		                        </div>
+		                        <span class="icon-txt">개인 BC사 및<br>외부 신용정보 제공기관</span>
+		                    </div>
+		                    <div class="box-inner">
+		                        <div class="inner-cont">
+		                            <span class="txt is-pc">
+		                                <img src="../images/bccard-kor.png" alt="bc-비씨카드">
+		                            </span>
+		                            <span class="txt is-mobile">
+		                                비씨카드
+		                            </span>
+		                            <ul>
+		                                <li>가맹점 원장 데이터 수집</li>
+		                                <li>가맹점 카드매출 데이터 수집</li>
+		                                <li>외부기관 데이터 수집</li>
+		                            </ul>
+		                        </div>
+		                        <div class="inner-cont center-cont">
+		                            <span>Big Data</span>
+		                            <span>AI</span>
+		                            <span>데이터 분석결과</span>
+		                            <em>개인사업자 신용판단<br>&middot; 신용점수 / 매출추정 / 요약정보</em>
+		                            
+		                        </div>
+		                        <div class="inner-cont">
+		                            <span class="txt">요청기관</span>
+		                            <ul>
+		                                <li>신용등급 및 요약정보 제공</li>
+		                                <li>데이터 분석 컨설팅 지원</li>
+		                            </ul>
+		                        </div>
+		                        <div class="line-right"></div>
+		                    </div>
+		                </div>
+		                <h3 class="title3">주요서비스</h3>
+		                <div class="bc-box d-list">
+		                    <ul class="">
+		                        <li>가맹점 원장 데이터</li>
+		                        <li>가맹점 카드매출 데이터</li>
+		                        <li>금융 연체정보 데이터</li>
+		                        <li>채무불이행 정보 데이터</li>
+		                        <li>상권 정보 데이터</li>
+		                        <li>업종 정보 데이터</li>
+		                        <li>공공 정보 데이터</li>
+		                    </ul>
+		                </div>
+		                <div class="line-txt">
+		                    <p>Biz Credit 서비스는 다양한 데이터를 활용하여<br>온/오프라인 개인사업자 대상으로 다양하고 차별화된 서비스를 제공하고 있어요.</p>
+		                    <div class="line-down"></div>
+		                </div>
+		                
+		                <div class="service-box">
+		                    <ul>
+		                        <li class="bc-box">
+		                            <span class="txt">신용평가 서비스</span>
+		                            <span class="sub-txt">카드사 정보를 활용한 <br><em>개인사업자 신용평가등급/점수 제공<button class="tooltip"></button></em></span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">매출 추정 서비스</span>
+		                            <span class="sub-txt">가맹점의 카드 및 현금 매출을 합산한<br><em>전체 매출 추정 금액 제공</em></span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">요약항목 서비스</span>
+		                            <span class="sub-txt">가맹점 매출실적, 이용고객패턴 등<br><em>가맹점관련 통계정보 제공</em></span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">휴·폐업 예측 서비스</span>
+		                            <span class="sub-txt">매출정보를 활용한<br><em>개인사업자 휴·폐업 예측등급/점수 제공</em></span>
+		                        </li>
+		                        <li class="bc-box">
+		                            <span class="txt">알림 서비스</span>
+		                            <span class="sub-txt">가맹점 비정상 영업행위, 소비자 민원 다발 등 
+		카드사가 보유한 Fraud 정보를 기반으로<br><em>부도위험사업에 대한 조기경보 제공</em></span>
+		                        </li>
+		                    </ul>
+		                </div>
+		            </div>
+		            <div class="partner-message">
+		                <p class="txt-n">Biz Credit 관련 문의사항은 <span>bizcredit@bccard.com</span>으로 연락주세요.</p>
+		            </div>
+				</div>
+		        <!-- //Biz credit -->
+
+		        <!-- 광고마케팅 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContent4" tabindex="0" style="display:none;">
+		            <div class="tab-marketing">
+		                <h2 class="title2">LMS마케팅</h2>
+		                <p class="txt-sub">풍부한 경험의 마케팅 전문가들이 BC카드의 국내외 결제데이터를 바탕으로<br>고객사 니즈에 부합하는 최적의 고객을 발굴하여 최고의 타이밍에 고객에게 다가갑니다.</p>
+		                <h3 class="title3">소개</h3>
+		                <div class="marketing-info">
+		                    <ul>
+		                        <li>
+		                            <em>마케팅 역량</em>
+		                            <span class="txt">풍부한 마케팅 경험 보유</span>
+		                            <ul class="list-bul">
+		                                <li><i class="mark">•</i>다양한 홍보 채널을 통한 브랜드/가맹점 노출  마케팅 경험 다수 보유</li>
+		                                <li><i class="mark">•</i>수년 간 정교한 타겟마케팅 서비스를 통한 초개인화 마케팅 역량 보유</li>
+		                            </ul>
+		                        </li>
+		                        <li>
+		                            <em>생활밀접</em>
+		                            <span class="txt">생활밀착업종에 특화된 카드사</span>
+		                            <ul class="list-bul">
+		                                <li><i class="mark">•</i>편의점, 음식점, 약국, 주유, 쇼핑, 영화, 공연, 전시, 골프 등 생활과 밀접한 분야 최다 데이터 보유</li>
+		                            </ul>
+		                        </li>
+		                        <li>
+		                            <em>데이터</em>
+		                            <span class="txt">국내 최대, 최고 데이터 보유</span>
+		                            <ul class="list-bul">
+		                                <li><i class="mark">•</i>약 50개 고객사를 보유하여 수도권~제주 전국 균등한 M/S</li>
+		                                <li><i class="mark">•</i>국내 최다 회원 DB 확보 및 전국 최대 가맹점 보유</li>
+		                            </ul>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <h3 class="title3">서비스 프로세스</h3>
+		                <div class="bc-box partner-step">
+		                    <ul>
+		                        <li>
+		                            <span class="title4"><em>1</em>광고문의</span>
+		                            <p class="txt-n">발송목적 및 타겟희망</p>
+		                        </li>
+		                        <li>
+		                            <span class="title4"><em>2</em>전략 및 일정 협의</span>
+		                            <p class="txt-n">발송목적 및 타겟희망 대상에 맞게 일정과 문구를 협의해요.</p>
+		                        </li>
+		                        <li>
+		                            <span class="title4 strong-txt"><em>3</em>광고 검수</span>
+		                            <p class="txt-n strong-txt">광고 집행을 위한 내부 검수를 실시해요.</p>
+		                        </li>
+		                        <li>
+		                            <span class="title4 strong-txt"><em>4</em>LMS 발송</span>
+		                        </li>
+		                    </ul>
+		                </div>
+		            </div>
+		            <div class="partner-message">
+		                <p class="txt-n">LMS 마케팅 이용문의는 <span>bizcredit@bccard.com</span>으로 연락주세요.</p>
+		            </div>
+				</div>
+		        <!-- //광고마케팅 -->
+
+		        <!-- 데이터 전문기관 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContent5" tabindex="0" style="display:none;">
+		            <div class="tab-data">
+		                <h2 class="title2">데이터 전문기관</h2>
+		                <p class="txt-sub">기업간 데이터 결합을 통해 새로운 가치창출 및 비즈니스에 활용할 수 있습니다.</p>
+		                <h3 class="title3">소개</h3>
+		                <p class="txt-sub">데이터 전문기관은 신용정보법에 따라 금융위가 지정한 공식 기관으로, 여러 기업과 기관의 데이터(정보집합물)를 안전하게 관리하고 익명·가명처리의 적정성을 평가하는 역할을 수행합니다. 결합을 희망하는 데이터가 있다면 비씨카드 데이터전문기관에 맡겨주세요.</p>
+		                <h3 class="title3">이런 분들께 추천합니다!</h3>
+		                <div class="partner-pros">
+		                    <ul>
+		                        <li class="bc-box">
+		                            <p>기업 간 데이터 결합을 통해 신규 서비스 개발을 희망하는 기업 및 공공기관</p>
+		                        </li>
+		                        <li class="bc-box">
+		                            <p>안전한 데이터 융합을 희망하는 기업</p>
+		                        </li>
+		                        <li class="bc-box">
+		                            <p>빅데이터 구축 및 분석이 필요한 연구기관이나 스타트업</p>
+		                        </li>
+		                        <li class="bc-box">
+		                            <p>신뢰성 있는 데이터처리와 활용이 필요한 모든 단체</p>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <h3 class="title3">주요 서비스</h3>
+		                <div class="bc-box organ-wrap">
+		                    <div class="organ-box">
+		                        <div class="organ-img organ-a">
+		                            <span class="title">이용기관 A</span>
+		                            <span class="txt">정보집합물 결합신청<br>(결합대상 데이터 전달)</span>
+		                        </div>
+		                        <div class="line-right is-pc"></div>
+		                        <div class="organ-center">
+		                            <span class="tit">데이터 전문기관</span>
+		                            <span class="sub-tit"><em>1</em>정보집합물 결합</span>
+		                        </div>
+		                        <div class="line-right"></div>
+		                        <div class="organ-img organ-b">
+		                            <span class="title">이용기관 B</span>
+		                            <span class="txt">결과 반출<br>(결합데이터)</span>
+		                        </div>
+		                    </div>
+		                    <div class="organ-box">
+		                        <div class="organ-img organ-c">
+		                            <span class="title">이용기관 C</span>
+		                            <span class="txt">익명적정성 평가 신청</span>
+		                        </div>
+		                        <div class="line-right is-pc"></div>
+		                        <div class="organ-center">
+		                            <span class="tit">데이터 전문기관</span>
+		                            <span class="sub-tit"><em>2</em>익명적정성 평가</span>
+		                        </div>
+		                        <div class="line-right"></div>
+		                        <div class="organ-img organ-d">
+		                            <span class="title">이용기관 C</span>
+		                            <span class="txt">평가결과 제공</span>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="partner-message">
+		                <p class="txt-n">데이터 전문기관 관련 내용은 url 에서 확인하세요.</p>
+		                <a href="#" class="link">바로가기</a>
+		            </div>
+				</div>
+		        <!-- //데이터 전문기관 -->
+		    </div>
+
+		</div>
+    </main>
+    <!-- // content -->
+
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+
+<!-- 개인사업자 신용등급 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">개인사업자 신용등급이란?</div>       
+            <p class="txt-n">비씨카드 개인사업자 신용등급은 개인사업자에 대한 다양한 신용정보와 가맹점 매출 데이터를 기반으로 향후 1년 내 장기연체 등 신용위험이 발생할 가능성을 수치화한 지표예요.<br>이 지표는 통계적 방법론을 통해 산출되며, 신용평점과 등급이 높을수록 연체 등의 불량 사유가 발생할 가능성이 낮다는 의미로 해석돼요. 금융사 등에서는 이를 신용거래 의사결정 시 참고 지표로 활용하고 있어요.<p>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //개인사업자 신용등급 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">  
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">개인사업자 신용등급이란?</a>
+    </div>
+</div>
+<!-- //퍼블리싱 확인 -->
+</body>
+</html>

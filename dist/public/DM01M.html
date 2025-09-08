@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-datamarket">
+		    <h1 class="headline1">데이터마켓</h1>
+		    <p class="head-guidetext">골라보기만 하면 끝! 데이터는 다 준비돼 있어요.</p>
+
+		    <!-- [데이터마켓] -->
+		    <div class="datamarket-search">
+		        <form>
+		        <div class="search-data">
+		            <div class="input-box">
+		                <input type="text" class="ipt" placeholder="무슨 데이터가 필요하세요?">
+		                <span class="util-box">
+		                    <button class="ipt-clear">내용 지우기</button>
+		                    <button type="button" class="ipt-search"><i>검색</i></button>
+		                </span>
+		            </div>
+		            <div class="button-box-large">
+		                <button class="button-p">Filter<i class="icon-right icon-filter"></i></button>
+		            </div>
+		        </div>
+		        <div class="search-filter">
+		            <div class="chip-list">
+		                <span class="chip"><i>서울</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
+		            </div>
+		            <button type="button" class="icon-reload">삭제</button>
+		        </div>
+		        </form>
+		    </div>
+
+		    <div class="datamarket-contents">
+		        
+		        <div class="contents-summary">
+		            <p class="title">데이터마켓 <strong>0</strong></p>
+		        </div>
+		        <div class="result-none">
+		            <p class="message">검색 결과가 없습니다</p>
+		            <p class="message-sub">검색하신 조건에 해당하는 게시물이 없습니다.<br> 조건을 기반으로 데이터를 직접 만들어보시겠어요?</p>
+		            <div class="button-box-small">
+		                <button type="button" class="button-s">데이터 만들기</button>
+		            </div>
+		        </div>
+
+		        
+		        <div class="contents-summary">
+		            <p class="title">데이터마켓 <strong>17</strong></p>
+		            <div class="page-select">
+		                <select>
+		                    <option value="10">최신순</option>
+		                    <option value="10">조회순</option>
+		                </select>
+		            </div>
+		            <div class="list-type">
+		                <button type="button" class="type-col-3 is-show">카드</button>
+		                <button type="button" class="type-col-1">리스트</button>
+		            </div>
+		        </div>
+		        <div class="data-list">
+		            <ul class="col-3">
+		                <li>
+		                    <div class="data-card">
+		                        <!-- [2025.09.04] 데이터상품 수정 -->
+		                        <a href="#" class="item">
+		                            <p class="logo"></p>
+		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
+		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
+		                        </a>
+		                        <div class="tag-list">
+		                            <p class="data-tag">
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적 사용목적 사용목적</button>
+		                            </p>
+		                        </div>
+		                        <!-- //[2025.09.04] 데이터상품 수정 -->
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="data-card">
+		                        <!-- [2025.09.04] 데이터상품 수정 -->
+		                        <a href="#" class="item">
+		                            <p class="logo"><img src="../images/" alt=""></p>
+		                            <p class="title">국내 오픈마켓 디지털가전(광학기기)</p>
+		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기)</p>
+		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
+		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
+		                        </a>
+		                        <div class="tag-list">
+		                            <p class="data-tag">
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적 사용목적 사용목적</button>
+		                            </p>
+		                        </div>
+		                        <p class="api"><a href="#">API</a></p>
+		                        <!-- //[2025.09.04] 데이터상품 수정 -->
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="data-card">
+		                        <!-- [2025.09.04] 데이터상품 수정 -->
+		                        <a href="#" class="item">
+		                            <p class="logo"></p>
+		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
+		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
+		                        </a>
+		                        <div class="tag-list">
+		                            <p class="data-tag">
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                            </p>
+		                        </div>
+		                        <!-- //[2025.09.04] 데이터상품 수정 -->
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="data-card">
+		                        <!-- [2025.09.04] 데이터상품 수정 -->
+		                        <a href="#" class="item">
+		                            <p class="logo"></p>
+		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
+		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
+		                        </a>
+		                        <div class="tag-list">
+		                            <p class="data-tag">
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                            </p>
+		                        </div>
+		                        <!-- //[2025.09.04] 데이터상품 수정 -->
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="data-card">
+		                        <!-- [2025.09.04] 데이터상품 수정 -->
+		                        <a href="#" class="item">
+		                            <p class="logo"></p>
+		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
+		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
+		                        </a>
+		                        <div class="tag-list">
+		                            <p class="data-tag">
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                            </p>
+		                        </div>
+		                        <p class="api"><a href="#">API</a></p>
+		                        <!-- //[2025.09.04] 데이터상품 수정 -->
+		                    </div>
+		                </li>
+		                <li>
+		                    <div class="data-card">
+		                        <!-- [2025.09.04] 데이터상품 수정 -->
+		                        <a href="#" class="item">
+		                            <p class="logo"></p>
+		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
+		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
+		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
+		                        </a>
+		                        <div class="tag-list">
+		                            <p class="data-tag">
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                            </p>
+		                        </div>
+		                        <!-- //[2025.09.04] 데이터상품 수정 -->
+		                    </div>
+		                </li>
+		            </ul>
+		        </div>
+		        <!-- 퍼블리싱 확인 -->
+		        <!-- [2025.07.23 로딩추가] -->
+		        <script>
+		            onLoading('.data-list');
+		            setTimeout(function(){
+		                // 로딩이 완료된 후
+		                // removeLoading('.data-list', 1000);
+		            }, 2000 );
+		        </script>
+		        <!-- // 퍼블리싱 확인 -->
+		    </div>
+		    <!-- //[데이터마켓] -->
+		</div>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 필터 팝업 -->
+<div class="pop-modal modal-hidden" id="modal1">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">필터</div>
+        <div class="message-box">
+            <p class="message-title">분야</p>
+            <div class="chip-box">
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value="" checked><i>분야</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>전체</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>외식</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>여행</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>의료</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>커머스</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>부동산</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>유통</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>소셜</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>통신</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>공공</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>환경</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox1" value=""><i>모빌리티</i></label>
+            </div>
+            <p class="message-title">사용목적</p>
+            <div class="chip-box">
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>사용목적</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>전체</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>시장조사</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>상권분석</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>고객분석</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>정책</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>상품전략</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>채널분석</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>마케팅</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>연구</i></label>
+                <label class="chip"><input type="checkbox" name="location-checkbox2" value=""><i>리스크</i></label>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q maintain-modal" type="button">초기화</button><!-- [2025.08.08 모달유지 .maintain-modal 추가] -->
+            <button class="button-p close-modal" type="button">적용하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //필터 팝업 -->
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal1');return false;">[필터]</button>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+</body>
+</html>

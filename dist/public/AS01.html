@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-aisearch">
+		    <div class="aisearch-body">
+
+		        <div class="search-request">
+		            <div class="request-text">
+		                <p>강남구 주요 가맹점 방문자 수는 어떻게 되나요?</p>
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		            </div>
+		        </div>
+
+		        <div class="search-request">
+		            <div class="answer-text">
+		                <p>안녕하세요. 강남구 주요 가맹점의 방문자 수는 서울시 유동인구 데이터, 카드사 소비 패턴, 그리고 민간 상권분석 데이터를 종합해 다음과 같이 분석할 수 있습니다. <br>2025년 1분기 기준, 강남구 전체 상권 방문자는 약 1,200만 명 수준입니다. 이 중 프랜차이즈(음식/카페/의류 등) 중심 가맹점 밀집 지역인 강남역, 삼성역, 신논현 일대가 전체 방문의 65% 이상을 차지합니다.</p>
+		            </div>
+		            <div class="contents">
+		                 <div class="graph">
+		                    <!-- dummy -->
+		                    <div style="height:300px; background: #aaa;">그래프</div>
+		                    <!-- //dummy -->
+		                </div>
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		                <button type="button" class="icon-good">답변 좋아요</button>
+		                <button type="button" class="icon-bad">답변 별로에요</button>
+		            </div>
+		            <div class="feedback-modal">
+		                <div class="modal" tabindex="0">
+		                    <p class="modal-title">더 나은 답변을 위해, <br class="is-mobile">어떤 부분이 부족했는지 알려주세요.</p>
+		                    <div class="modal-content">
+		                        <div class="chip-box">
+		                            <label class="chip"><input type="radio" name="radio1"><i>부정확해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 부족해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 길어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>의도와 달라요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>이전 대화를 잊었어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>너무 오래 걸렸어요</i></label>
+		                        </div>
+		                    </div>
+		                    <button class="modal-close" type="button">닫기</button>
+		                </div>
+		            </div>
+		        </div>
+
+		        
+
+		        <div class="search-request">
+		            <div class="request-text">
+		                <p>해당 지역에 BC카드 가맹점이 있을까?</p>
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		            </div>
+		        </div>
+
+		        <div class="search-request">
+		            <div class="answer-text">
+		                <p>네, 강남구의 BC카드 가맹점 정보는 다음과 같습니다.</p>
+		            </div>
+		            <div class="contents">
+		                <div class="aisearch-slider-wrap" id="slider2">
+		                    <div class="swiper aisearch-slider">
+		                        <div class="swiper-wrapper">
+		                            <div class="swiper-slide">
+		                                <a href="#" class="aisearch-slide">
+		                                    <p class="txt">브런치몽 신논현점</p>
+		                                    <p class="location">서울 강남구 신사동</p>
+		                                </a>
+		                            </div>
+		                            <div class="swiper-slide">
+		                                <a href="#" class="aisearch-slide">
+		                                    <p class="txt">카페 드롭 신사점</p>
+		                                    <p class="location">서울 강남구 봉은사로</p>
+		                                </a>
+		                            </div>
+		                            <div class="swiper-slide">
+		                                <a href="#" class="aisearch-slide">
+		                                    <p class="txt">테라로사 성수점 카페 드롭 신사점 브런치몽 신논현점 테라로사 성수점</p>
+		                                    <p class="location">서울 성동구 성수동2가</p>
+		                                </a>
+		                            </div>
+		                            <div class="swiper-slide">
+		                                <a href="#" class="aisearch-slide">
+		                                    <p class="txt">브런치몽 신논현점</p>
+		                                    <p class="location">서울 강남구 신사동</p>
+		                                </a>
+		                            </div>
+		                            <div class="swiper-slide">
+		                                <a href="#" class="aisearch-slide">
+		                                    <p class="txt">카페 드롭 신사점</p>
+		                                    <p class="location">서울 강남구 봉은사로</p>
+		                                </a>
+		                            </div>
+		                            <div class="swiper-slide">
+		                                <a href="#" class="aisearch-slide">
+		                                    <p class="txt">테라로사 성수점 카페 드롭 신사점 브런치몽 신논현점 테라로사 성수점</p>
+		                                    <p class="location">서울 성동구 성수동2가</p>
+		                                </a>
+		                            </div>
+		                        </div>
+		                    </div>
+
+		                    <div class="swiper-pagination"></div>
+		                    <div class="control-box">
+		                        <button type="button" class="prev">이전 슬라이드</button>
+		                        <button type="button" class="next">다음 슬라이드</button>
+		                    </div>
+		                </div>
+		                <!-- 퍼블리싱 확인 -->
+		                <script>
+		                    $(function(){
+		                        fn_aisearchSlider('slider2');
+		                    });
+		                </script>
+		                <!-- //퍼블리싱 확인 -->
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		                <button type="button" class="icon-good">답변 좋아요</button>
+		                <button type="button" class="icon-bad">답변 별로에요</button>
+		            </div>
+		            <div class="feedback-modal">
+		                <div class="modal" tabindex="0">
+		                    <p class="modal-title">더 나은 답변을 위해, <br class="is-mobile">어떤 부분이 부족했는지 알려주세요.</p>
+		                    <div class="modal-content">
+		                        <div class="chip-box">
+		                            <label class="chip"><input type="radio" name="radio1"><i>부정확해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 부족해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 길어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>의도와 달라요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>이전 대화를 잊었어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>너무 오래 걸렸어요</i></label>
+		                        </div>
+		                    </div>
+		                    <button class="modal-close" type="button">닫기</button>
+		                </div>
+		            </div>
+		        </div>
+
+		        <!-- <div class="search-request">
+		            <div class="request-text">
+		                <p>관련된 뉴스기사도 찾아줄 수 있어요? 관련된 뉴스기사도 찾아줄 수 있어요? 관련된 뉴스기사도 찾아줄 수 있어요?</p>
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		            </div>
+		        </div>
+
+		        <div class="search-request">
+		            <div class="answer-text">
+		                <p>관련된 뉴스 기사는 다음과 같습니다.</p>
+		            </div>
+		            <div class="contents">
+		                <ul class="link">
+		                    <li>
+		                        <p><a href="#" target="_blank">강남구, 공공배달앱 땡겨요 상품권 3월 22억 원 조기 발행</a></p>
+		                        <span class="source">gangna.go.kr</span>
+		                    </li>
+		                    <li>
+		                        <p><a href="#" target="_blank">명동 웃고 강남 울고...2025 뜨는 상권, 지는 상권</a></p>
+		                        <span class="source">sangga114.co.k</span>
+		                    </li>
+		                </ul>
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		                <button type="button" class="icon-good">답변 좋아요</button>
+		                <button type="button" class="icon-bad">답변 별로에요</button>
+		            </div>
+		            <div class="feedback-modal">
+		                <div class="modal" tabindex="0">
+		                    <p class="modal-title">더 나은 답변을 위해, <br class="is-mobile">어떤 부분이 부족했는지 알려주세요.</p>
+		                    <div class="modal-content">
+		                        <div class="chip-box">
+		                            <label class="chip"><input type="radio" name="radio1"><i>부정확해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 부족해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 길어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>의도와 달라요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>이전 대화를 잊었어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>너무 오래 걸렸어요</i></label>
+		                        </div>
+		                    </div>
+		                    <button class="modal-close" type="button">닫기</button>
+		                </div>
+		            </div>
+		        </div> [2025.09.03] 삭제 -->
+
+		        <div class="search-request">
+		            <div class="request-text">
+		                <p>회원가입은 어디서 해야해?</p>
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		            </div>
+		        </div>
+
+		        <div class="search-request">
+
+		            <div class="contents">
+		                <!-- 스켈레톤 -->
+		                <div class="skeleton-box">
+		                    <div class="skeleton-text">
+		                        <div class="skeleton"></div>
+		                        <div class="skeleton"></div>
+		                        <div class="skeleton"></div>
+		                    </div>
+		                    <div class="skeleton-thumbs">
+		                        <span class="skeleton"></span>
+		                        <span class="skeleton"></span>
+		                        <span class="skeleton"></span>
+		                    </div>
+		                </div>
+		                <!-- //스켈레톤 -->
+		            </div>
+
+		            <div class="contents">
+		                <!-- [2025.09.03] 수정 -->
+		                <div class="request-list">
+		                    <ul>
+		                        <li class="request-item">
+		                            <a href="#" class="request-title"><p>회원정보를 수정하려면 어떻게 하나요? 회원정보를 수정하려면 어떻게 하나요? 회원정보를 수정하려면 어떻게 하나요? 회원정보를 수정하려면 어떻게 하나요? </p></a>
+		                        </li>
+		                        <li class="request-item">
+		                            <a href="#" class="request-title"><p>회원정보를 수정하려면 어떻게 하나요? 회원정보를 수정하려면 어떻게 하나요?</p></a>
+		                        </li>
+		                        <li class="request-item">
+		                            <a href="#" class="request-title"><p>회원정보를 수정하려면 어떻게 하나요?</p></a>
+		                        </li>
+		                    </ul>
+		                </div>
+		                <!-- //[2025.09.03] 수정 -->
+		                <!-- <script>
+		                    $(function(){
+		                        fn_aisearchAccordion('accordion1');
+		                    });
+		                </script> [2025.09.03] 삭제 -->
+		            </div>
+		            <div class="util">
+		                <button type="button" class="icon-copy">복사하기</button>
+		                <button type="button" class="icon-good">답변 좋아요</button>
+		                <button type="button" class="icon-bad">답변 별로에요</button>
+		            </div>
+		            <div class="feedback-modal">
+		                <div class="modal" tabindex="0">
+		                    <p class="modal-title">더 나은 답변을 위해, <br class="is-mobile">어떤 부분이 부족했는지 알려주세요.</p>
+		                    <div class="modal-content">
+		                        <div class="chip-box">
+		                            <label class="chip"><input type="radio" name="radio1"><i>부정확해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 부족해요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>답변이 길어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>의도와 달라요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>이전 대화를 잊었어요</i></label>
+		                            <label class="chip"><input type="radio" name="radio1"><i>너무 오래 걸렸어요</i></label>
+		                        </div>
+		                    </div>
+		                    <button class="modal-close" type="button">닫기</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+		<div class="page-aisearch-bottom">
+		    <div class="search-area is-loading"><!-- 검색결과 로딩 중 -->
+		        <textarea placeholder="어떤 데이터가 궁금하세요?"></textarea>
+		        <button type="button">검색</button>
+		    </div>
+		    <div class="pop-aiside-button">
+		        <a href="#" class="buttons"><i class="txt">데이터 만들기</i></a>
+		    </div>
+		</div>
+
+		<!-- 퍼블리싱 확인 -->
+		<script>
+		$(function(){
+
+		    // fn_scrollBottom();
+
+		    const copyBtns = document.querySelectorAll('.search-request .util .icon-copy');
+		    copyBtns.forEach(function(copy){
+		        copy.addEventListener('click', function(){
+		            fn_toast('본문 내용이 복사되었습니다.',1);
+		        });
+		    });
+
+		    
+		    const goodBtns = document.querySelectorAll('.search-request .util .icon-good');
+		    goodBtns.forEach(function(good){
+		        good.addEventListener('click', function(){
+		            const bad = good.closest('.util').querySelector('.icon-bad');
+		            if (good.classList.contains('is-on')){
+		                good.classList.remove('is-on');
+		                bad.classList.remove('is-off');
+		            } else {
+		                good.classList.add('is-on');
+		                bad.classList.add('is-off');
+		            }
+		        });
+		    })
+
+		    const badBtns = document.querySelectorAll('.search-request .util .icon-bad');
+		    badBtns.forEach(function(bad){
+		        bad.addEventListener('click', function(){
+		            const good = bad.closest('.util').querySelector('.icon-good');
+		            const feedback = good.closest('.util').nextElementSibling;
+		            if (bad.classList.contains('is-on')){
+		                bad.classList.remove('is-on');
+		                good.classList.remove('is-off');
+		                feedback.classList.remove('is-show');
+		            } else {
+		                bad.classList.add('is-on');
+		                good.classList.add('is-off');
+		                feedback.classList.add('is-show');
+		            }
+		        });
+		    })
+		});
+
+		function fn_scrollBottom () {
+		    $(".page-aisearch").scrollTop($(".page-aisearch")[0].scrollHeight);
+		}
+		</script>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 데이터 만들기 -->
+<div class="pop-aiside pop-modal modal-hidden" id="modalAiSide">
+    <div class="modal modal-medium2" tabindex="0">
+        <div class="modal-header">연관상품</div>
+        <div class="modal-content">
+            <p class="aiside-content-tit">데이터를 직접 만들어보시겠어요?</p>
+            <div class="aiside-keyword-content">
+                <p class="title">AI가 분석한 키워드</p>
+                <div class="keyword-list">
+                    <span class="keyword">2021~2022</span>
+                    <span class="keyword">서울특별시 강남 전체</span>
+                    <span class="keyword">가정통신 > 전체</span>
+                    <span class="keyword">아침</span>
+                    <span class="keyword-more">+7</span>
+                </div>
+                <div class="button-box-small">
+                    <a href="#" class="button-s">데이터 만들기 </a>
+                </div>
+            </div>
+
+            <p class="aiside-content-tit">연관된 데이터 상품이에요.</p>
+            <div class="aiside-recomend-content">
+                <ul class="recomend-list">
+                    <li class="item-recomend">
+                        <a href="#">
+                            <div class="flags"><span class="flag data-market">데이터마켓</span></div>
+                            <dl>
+                                <dt>강남구 카페 매출 리포트</dt>
+                                <dd>강남구 주요 상권의 카페 매출 흐름을 한눈에 확인해보세요.</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li class="item-recomend">
+                        <a href="#">
+                            <div class="flags"><span class="flag data-market">데이터마켓</span></div>
+                            <dl>
+                                <dt>신논현역 상권 분석 콘텐츠</dt>
+                                <dd>신논현역 주변 유동인구, 매출, 업종 경쟁도까지 정리된 인사이트 리포트를 추천해드릴게요.</dd>
+                            </dl>
+                        </a>
+                    </li>
+                    <li class="item-recomend">
+                        <a href="#">
+                            <div class="flags"><span class="flag data-market">데이터마켓</span></div>
+                            <dl>
+                                <dt>강남구 카페 매출 리포트 강남구 카페 매출 리포트</dt>
+                                <dd>강남구 주요 상권의 카페 매출 흐름을 한눈에 확인해보세요. 강남구 주요 상권의 카페 매출 흐름을 한눈에 확인해보세요.</dd>
+                            </dl>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //데이터 만들기 -->
+</body>
+</html>

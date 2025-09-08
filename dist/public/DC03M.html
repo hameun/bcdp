@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>금융 빅데이터 플랫폼</title>
+<meta name="description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta name="naver-site-verification" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:title" content="금융 빅데이터 플랫폼">
+<meta property="og:description" content="금융 빅데이터 플랫폼은 과학기술정보통신부와 한국지능정보사회진흥원이 빅데이터 생태계 조성과 혁신 성장 기반 마련을 위해 비씨카드 및 10개의 기업을 선정하여 구축한 플랫폼입니다.">
+<meta property="og:site_name" content="금융 빅데이터 플랫폼">
+<meta property="og:url" content="https://www.bigdata-finance.kr/main.do">
+<meta property="og:image" content="https://www.bigdata-finance.kr/prj_html/images/common/logo_sub.png">
+<link rel="shortcut icon" href="../images/bigdatafavicon.png" type="image/x-icon">
+<link rel="stylesheet" href="../css/common.css" />
+<link rel="stylesheet" href="../css/page.css" />
+<script src="../js/jquery-3.7.0.min.js"></script>
+<script src="../js/jquery-ui.min.js"></script>
+<script src="../js/swiper-bundle.min.js"></script>
+<script src="../js/air-datepicker.js"></script>
+<script src="../js/main.js"></script>
+</head>
+<body>
+<div class="wrap">
+    
+    <header class="header">
+	    <nav>
+	        <a href="#" class="icon-home">메인으로</a>
+	        <a href="#" class="icon-menu">메뉴보기</a>
+	    </nav>
+	</header><!-- // .header -->
+
+	<aside class="aside">
+	    <nav class="statebar">
+	        
+	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        
+	        <a href="#" class="icon-mypage">마이페이지</a>
+	        <a href="#" class="icon-login">로그인</a>
+	        <div class="mypage-menu">
+	            <ul>
+	                <li><a href="#">마이페이지</a></li>
+	                <li><a href="#">개인정보 수정</a></li>
+	                <li><a href="#">로그아웃</a> </li>
+	            </ul>
+	        </div>
+	        <a href="#" class="icon-menuclose">메뉴닫기</a>
+	    </nav>
+	    <!-- 통합검색 -->
+	    <div class="totalSearch" id="searchBox" style="display:none">
+	        <div class="input-box">
+	            <i class="icon-totalsearch"></i>
+	            <input type="text" placeholder="무엇이 궁금하신가요?" id="loginId">
+	            <span class="util-box">
+	                <a href="#" class="ipt-clear">내용 지우기</a>
+	            </span>
+	            
+	        </div>
+	        <button type="button" class="text-close">취소</button>
+	    </div>
+	    <!-- //통합검색 -->
+	    <div class="navigation">
+	        <div class="util-menu">
+	            <a href="#" class="icon-home">메인으로</a>
+	            <a href="#" class="icon-menufold">메뉴접기</a>
+	            <a href="#" class="icon-aisearch">AI 검색하기</a>
+	        </div>
+	        
+	        <!-- 메인 메뉴 -->
+	        <nav class="main-nav">
+	            <ul class="main-menu">
+	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
+	            </ul>
+	            <ul class="guidance-menu">
+	                <li><a href="#"><i class="icon-n-contest"></i><i class="txt">데이터경진대회</i></a></li>
+	                <li><a href="#"><i class="icon-n-analysis"></i><i class="txt">상권분석서비스</i></a></li>
+	                <li><a href="#"><i class="icon-n-request"></i><i class="txt">문의하기</i></a></li>
+	                <li><a href="#" target="_blank"><i class="icon-n-guidenace"></i><i class="txt">이용안내<i class="icon-extlink">새창</i></i></a></li>
+	            </ul>
+	            <footer class="footer">
+	                <ul class="footer-menu">
+	                    <li><a href="#">회사소개</a></li>
+	                    <li><a href="#">이용약관</a></li>
+	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
+	                </ul>
+	                <ul class="company-info">
+	                    <li><address>서울시 중구 을지로 170 비씨카드(주)</address></li>
+	                    <li><span>대표이사 최원석</span><span>사업자번호 214-81-37726</span></li>
+	                    <li>통신판매업 신고번호 제2019-서울중구-2167호</li>
+	                </ul>
+	                <p class="copyright">© Copyright 2025 BC Card </p>
+	            </footer>
+	        </nav>
+	        <!-- //메인 메뉴 -->
+	        
+	    </div>
+	</aside><!-- // .aside -->
+    <main class="container">
+        <div class="content page-datacontest">
+		    <!-- [데이터경진대회] -->
+		    <div class="datacontest-view">
+		        <div class="ai-content">
+		            <p class="image"><img src="../images/dummy-contest1-1000x280.png" alt="이미지"></p>
+		            <div class="info-box-view">
+		                <p class="host">
+		                    <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+		                    <span class="company">비씨카드</span>
+		                </p>
+		                <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+		                <div class="info">
+		                    <p class="date">기간 <em class="txt">2025.06.30~2025.07.31</em><span class="tag deadline">D-31</span></p>
+		                    <p class="reward">수상혜택 <em class="txt">1,300만원</em></p>
+		                    <p class="count"><strong>23명</strong><em class="txt">이 참가했어요!</em></p>
+		                </div>
+		                <div class="button-box-large">
+		                    <button type="button" class="button-t">공유하기</button>
+		                    <button type="button" class="button-p">참가하기</button>
+		                </div>
+		            </div>
+		            <div class="info-box-view">
+		                <p class="host">
+		                    <span class="logo"><img src="../images/logo-bc-20x20.png" alt=""></span>
+		                    <span class="company">비씨카드</span>
+		                </p>
+		                <p class="title">Boost up AI 2025 : 신약 개발 경진대회 Boost up AI 2025 : 신약 개발 경진대회</p>
+		                <div class="info">
+		                    <p class="date">기간 <em class="txt">2025.06.30~2025.07.31</em><span class="tag deadline">D-31</span></p>
+		                    <p class="reward">수상혜택 <em class="txt">1,300만원</em></p>
+		                    <p class="count"><strong>23명</strong><em class="txt">이 참가했어요!</em></p>
+		                </div>
+		                <div class="button-box-large">
+		                    <button type="button" class="button-t">공유하기</button>
+		                    <button type="button" class="button-p" disabled>참가중</button>
+		                </div>
+		            </div>
+		        </div>
+
+		        <div class="tab-box is-static">
+		            <ul class="tabs">
+		                <li class="is-on"><a href="#tabContentContest1">대회안내</a></li>
+		                <li><a href="#tabContentContest2">데이터</a></li>
+		                <li><a href="#tabContentContest3">리더보드</a></li>
+		                <li><a href="#tabContentContest4">제출</a></li>
+		            </ul>
+		        </div>
+		        
+		        <!-- 대회안내 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContentContest1" tabindex="0">
+		            <!-- dummy -->
+		            <div style="background-color: #aaa; height: 500px;">
+		                <h2 class="content-title">대회안내</h2>
+		                <p>
+		                    관리자 호출 영역<br>(관리자 경로 TBD)
+		                </p>
+		            </div>
+		            <!-- //dummy -->
+		        </div>
+
+		        <!-- 데이터 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContentContest2" tabindex="0" style="display:none;">
+		            <h2 class="content-title">데이터 설명</h2>
+		            <!-- dummy -->
+		            <div style="background-color: #aaa; height: 500px;">
+		                <p>
+		                    관리자 호출 영역<br>(관리자 경로 TBD)
+		                </p>
+		            </div>
+		            <!-- //dummy -->
+
+		            <h2 class="content-title">데이터</h2>
+		            <div class="tab-box">
+		                <ul class="tabs-sub-small">
+		                    <li class="is-on"><a href="#tabContentContest2_1">분석용 파일1</a></li>
+		                    <li><a href="#tabContentContest2_2">분석용 파일2</a></li>
+		                    <li><a href="#tabContentContest2_3">분석용 파일3</a></li>
+		                </ul>
+		            </div>
+		            <div class="tabs-sub-contents">
+		                <div class="tab-contents" aria-role="tabpanel" id="tabContentContest2_1" tabindex="0">
+		                    <div class="table">
+		                        <table summary="분석용 파일 정보 테이블">
+		                            <colgroup>
+		                                <col width="*" style="min-width:100px;">
+		                                <col width="160px" style="min-width:100px;">
+		                                <col width="160px" style="min-width:100px;">
+		                                <col width="210px" style="min-width:100px;">
+		                                <col width="210px" style="min-width:100px;">
+		                            </colgroup>
+		                            <thead>
+		                                <tr>
+		                                    <th>분야</th>
+		                                    <th>조회수</th>
+		                                    <th>다운로드수</th>
+		                                    <th>결제건수</th>
+		                                    <th>판매금액</th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                            </tbody>
+		                        </table>
+		                    </div>
+		                </div>
+		                <div class="tab-contents" aria-role="tabpanel" id="tabContentContest2_2" tabindex="0" style="display:none;">
+		                    <div class="table">
+		                        <table summary="분석용 파일 정보 테이블">
+		                            <colgroup>
+		                                <col width="*" style="min-width:100px;">
+		                                <col width="160px" style="min-width:100px;">
+		                                <col width="160px" style="min-width:100px;">
+		                                <col width="210px" style="min-width:100px;">
+		                                <col width="210px" style="min-width:100px;">
+		                            </colgroup>
+		                            <thead>
+		                                <tr>
+		                                    <th>분야2</th>
+		                                    <th>조회수2</th>
+		                                    <th>다운로드수2</th>
+		                                    <th>결제건수2</th>
+		                                    <th>판매금액2</th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                            </tbody>
+		                        </table>
+		                    </div>
+		                </div>
+		                <div class="tab-contents" aria-role="tabpanel" id="tabContentContest2_3" tabindex="0" style="display:none;">
+		                    <div class="table">
+		                        <table summary="분석용 파일 정보 테이블">
+		                            <colgroup>
+		                                <col width="*" style="min-width:100px;">
+		                                <col width="160px" style="min-width:100px;">
+		                                <col width="160px" style="min-width:100px;">
+		                                <col width="210px" style="min-width:100px;">
+		                                <col width="210px" style="min-width:100px;">
+		                            </colgroup>
+		                            <thead>
+		                                <tr>
+		                                    <th>분야3</th>
+		                                    <th>조회수3</th>
+		                                    <th>다운로드수3</th>
+		                                    <th>결제건수3</th>
+		                                    <th>판매금액3</th>
+		                                </tr>
+		                            </thead>
+		                            <tbody>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                                <tr>
+		                                    <td>여행</td>
+		                                    <td>452</td>
+		                                    <td>452</td>
+		                                    <td>231,321</td>
+		                                    <td class="right">12,313,131원</td>
+		                                </tr>
+		                            </tbody>
+		                        </table>
+		                    </div>
+		                </div>
+		                <div class="button-box-small">
+		                    <button type="button" class="button-s right-btn">다운로드<i class="icon-download icon-right"></i></button>
+		                </div>
+		            </div>
+		        </div>
+
+		        <!-- 리더보드 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContentContest3" tabindex="0" style="display:none;">
+
+		            <!-- [Case.로그인 && 참가 && 제출] -->
+		            <div class="leaderboad">
+		                <div class="message">
+		                    <p class="current">2025년 07월 01일 13:00 기준 <button type="button" class="icon-reload">새로고침</button></p>
+		                    <p class="count">총 153명이 제출했어요.</p>
+		                    <p class="myscore">지금 내 순위는 <em>4</em>등이에요.</p>
+		                </div>
+		                <div class="score">
+		                    <dl>
+		                        <dt>내 점수</dt>
+		                        <dd>0.75231</dd>
+		                    </dl>
+		                    <dl>
+		                        <dt>내 제출수</dt>
+		                        <dd>25</dd>
+		                    </dl> 
+		                </div>
+		                <div class="button-box-medium">
+		                    <button type="button" class="button-p">제출하기</button>
+		                </div>
+		            </div>
+
+		            <!-- [Case.로그인 && 참가 && 미제출] -->
+		            <div class="leaderboad">
+		                <div class="message">
+		                    <p class="current">2025년 07월 01일 13:00 기준 <button type="button" class="icon-reload">새로고침</button></p>
+		                    <p class="count">총 153명이 제출했어요.</p>
+		                    <p class="myscore">아직 제출한 내역이 없어요. <br>대회에 참가하고 순위를 확인해보세요!</p>
+		                </div>
+		                <div class="button-box-medium">
+		                    <button type="button" class="button-p">제출하기</button>
+		                </div>
+		            </div>
+
+		            <!-- [Case.로그인 && 미참가] -->
+		            <div class="leaderboad">
+		                <div class="message">
+		                    <p class="current">2025년 07월 01일 13:00 기준 <button type="button" class="icon-reload">새로고침</button></p>
+		                    <p class="count">총 153명이 제출했어요.</p>
+		                    <p class="myscore">당신의 데이터 분석 실력을 증명할 시간! <br>지금 바로 대회에 참가해보세요.</p>
+		                </div>
+		                <div class="button-box-medium">
+		                    <button type="button" class="button-p">참가하기</button>
+		                </div>
+		            </div>
+
+		            <!-- [Case.비로그인] -->
+		            <div class="leaderboad">
+		                <div class="message">
+		                    <p class="current">2025년 07월 01일 13:00 기준 <button type="button" class="icon-reload">새로고침</button></p>
+		                    <p class="count">총 153명이 제출했어요.</p>
+		                    <p class="myscore">대회에 참가하거나 <br>내 순위가 궁금하다면 로그인해주세요.</p>
+		                </div>
+		                <div class="button-box-medium">
+		                    <button type="button" class="button-p">로그인하기</button>
+		                </div>
+		            </div>
+
+		            <div class="result-none">
+		                <p class="message">아직 제출한 사람이 없어 <br>순위가 집계되지 않았어요.</p>
+		            </div>
+
+		            <div class="score-list">
+		                <p class="score-title" aria-hidden="true">
+		                    <span class="name">
+		                        <span class="ranking" aria-label="순위"></span>
+		                        <span class="txt">이름</span>
+		                    </span>
+		                    <span class="score">점수</span>
+		                    <span class="count">제출수</span>
+		                    <span class="date">제출일</span>
+		                </p>
+		                <ul>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking ranking1">1</span><!-- 1위 .ranking1 -->
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking ranking2">2</span><!-- 2위 .ranking2 -->
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking ranking3">3</span><!-- 1위 .ranking3 -->
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item myranking"><!-- 나 : .myranking -->
+		                            <p class="name">
+		                                <span class="ranking">4</span>
+		                                <span class="txt" aria-label="이름">홍*동<em class="flag">나</em></span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking">5</span>
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking">6</span>
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking">7</span>
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking">8</span>
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking">9</span>
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="score-item">
+		                            <p class="name">
+		                                <span class="ranking">10</span>
+		                                <span class="txt" aria-label="이름">홍*동</span>
+		                            </p>
+		                            <dl class="score">
+		                                <dt>점수</dt>
+		                                <dd>0.94188</dd>
+		                            </dl>
+		                            <dl class="count">
+		                                <dt>제출수</dt>
+		                                <dd>30</dd>
+		                            </dl>
+		                            <dl class="date">
+		                                <dt>제출일</dt>
+		                                <dd>2025.07.01</dd>
+		                            </dl>
+		                        </div>
+		                    </li>
+		                </ul>
+		            </div>
+		            <div class="loading">
+		                <i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i>
+		            </div>
+		        </div>
+
+		        <!-- 제출 -->
+		        <div class="tab-contents" aria-role="tabpanel" id="tabContentContest4" tabindex="0" style="display:none;">
+		            <h2 class="content-title">제출하기</h2>
+		            <div class="submit-box">
+		                <div class="guide-desc">
+		                    <p class="guide-text type-bul color-point">1일 최대 5회 / 총 30회까지 업로드 가능해요.</p>
+		                    <p class="guide-text type-bul">문의사항이 있으신 경우 Q&A를 이용해주세요.</p>
+		                    <a href="#" target="_blank" class="qna-link">Q&A 바로가기</a>
+		                </div>
+		                <div class="input-file">
+		                    <div class="input-box">
+		                        <input type="file" id="fileTable">
+		                        <input type="text" class="ipt" placeholder="파일을 업로드해주세요." disabled id="fileTablePath">
+		                    </div>
+		                    <div class="button-box-large">
+		                        <label type="button" class="button-s" for="fileTable">파일 찾기</label>
+		                    </div>
+		                </div>
+		                <p class="info-text">파일 유형 : CSV, 파일 용량 : 20MB 이하</p>
+
+		                <div class="bottom-counts">
+		                    <p class="txt">
+		                        <span>오늘 제출<strong><i class="new">2</i>/<i class="total">5</i></strong></span>
+		                        <span>총 제출<strong><i class="new">12</i>/<i class="total">30</i></strong></span>
+		                    </p>
+		                    <!-- [제출 횟수 다 찼을 경우] -->
+		                    <p class="txt">
+		                        <span>오늘 제출<strong><i class="new is-full">2</i>/<i class="total">5</i></strong></span>
+		                        <span>총 제출<strong><i class="new is-full">12</i>/<i class="total">30</i></strong></span>
+		                    </p>
+		                    <div class="button-box-large">
+				                <button class="button-q" type="button" disabled>제출하기</button>
+				            </div>
+		                </div>
+		            </div>
+
+		            <h2 class="content-title">나의 제출내역 <em>0</em></h2>
+		            <div class="myhistory">
+		                <div class="result-none">
+		                    <p class="message">제출한 내역이 없습니다.</p>
+		                </div>
+		            </div>
+
+		            <h2 class="content-title">나의 제출내역 <em>17</em></h2>
+		            <div class="myhistory">
+		                <p class="test-date">2025.07.07</p>
+		                <ul>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1_Submission1_Submission1_Submission1_Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                    <li>
+		                        <div class="item">
+		                            <p class="title">Submission1.csv</p>
+		                            <p class="info"><span class="date">2025.07.07 15:30:20</span></p>
+		                            <span class="score">점수 0.94188</span>
+		                        </div>
+		                    </li>
+		                </ul>
+		            </div>
+		            <div class="loading">
+		                <i class="dot dot1"></i><i class="dot dot2"></i><i class="dot dot3"></i>
+		            </div>
+		        </div>
+		    </div>
+		    <!-- //[데이터경진대회] -->
+		</div>
+    </main>
+</div>
+<!-- //wrap -->
+
+<div class="pop-history modal-hidden" id="modalHistory">
+    <div class="modal" tabindex="0">
+        <div class="modal-header">히스토리</div>
+        <div class="modal-history">
+            <div class="tab-box">
+                <ul class="segment-xsmall">
+                    <li class="is-on"><a href="#tabHistory1">AI검색</a></li>
+                    <li><a href="#tabHistory2">AI인사이트</a></li>
+                    <li><a href="#tabHistory3">데이터마켓</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory1" tabindex="0" style="display: block;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI검색</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory2" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">AI인사이트</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabHistory3" tabindex="0" style="display: none;">
+                <div class="history-box">
+                    <div class="item-scroll-wrap">
+                        <ul class="history-list">
+                            <li>
+                                <a href="#">
+                                    <p class="title">데이터마켓</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">헬스장 회원권은 신용카드 할부로 결제하지마세요 헬스장 회원권은 신용카드 할부로 결제하지마세요.</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p class="title">결국 마음이 머무는 곳에 시장이 생긴다</p>
+                                    <p class="info"><span class="date">2025.05.19</span></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<!-- 공통 -->
+<div class="pop-modal modal-hidden" id="shareModal">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">공유하기</div>
+        <div class="share-sns">
+            <a href="#" class="kakao"><span class="icon-kakao"></span><i class="txt">카카오톡</i></a>
+            <a href="#" class="facebook"><span class="icon-facebook"></span><i class="txt">페이스북</i></a>
+            <a href="#" class="naverblog"><span class="icon-naverblog"></span><i class="txt">네이버블로그</i></a>
+            <a href="#" class="url-copy"><span class="icon-url"></span><i class="txt">URL복사</i></a>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+
+<div class="pop-modal modal-hidden" id="modalJoinContestAgree">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">데이터경진대회 참가 동의</div>
+        <div class="modal-content">
+            <div class="security-box">
+                <h2>1. 데이터 이용 및 보안</h2>
+                <ul class="depth-bul">
+                    <li>• 참가자는 주최사가 제공하는 데이터(이하 ‘대회 데이터’)를 본 대회 목적 외로 사용하거나 복제, 배포, 공개하지 않습니다.</li>
+                    <li>• 대회 데이터의 보안을 위해 필요한 보호조치를 취하고, 무단 접근이나 유출 발생 시 즉시 주최사에 알려야 합니다.</li>
+                </ul>
+
+                <h2>2. 제출물과 사용 권리</h2>
+                <ul class="depth-bul">
+                    <li>• 참가자가 제출한 결과물(이하 ‘제출물’)은 참가자가 직접 작성한 독창적인 것이어야 하며, 제3자의 권리를 침해하지 않아야 합니다.</li>
+                    <li>• 제출물에 대한 권리는 참가자에게 그대로 있으며, 주최사는 대회 홍보, 결과 검증, 내부 연구, 서비스 개선 등을 위해 이를 무상으로 사용, 복제, 공개할 수 있는 비독점 권리를 가집니다.</li>
+                </ul>
+            
+                <h2>3. 시상 및 세금</h2>
+                <ul class="depth-bul">
+                    <li>• 시상은 각 대회 공고에서 안내된 방식에 따르며, 상금, 상품, 상장 등 다양한 형태일 수 있습니다.</li>
+                    <li>• 시상에 따른 제세공과금은 수상자가 부담하며, 관련 법령에 따라 주최사가 원천징수할 수 있습니다.</li>
+                </ul>
+
+                <h2>4. 시스템 오류 및 책임</h2>
+                <ul class="depth-bul">
+                    <li>• 주최사는 네트워크 장애, 서버 오류, 악성코드, 기술적 문제 등 불가항력적 사유로 인해 발생한 제출 실패, 데이터 유실, 대회 중단 등에 대해 책임을 지지 않으며, 필요한 경우 대회를 연기·변경·취소할 수 있습니다.</li>
+                </ul>
+
+                <h2>5. 실격 및 제출 검증</h2>
+                <ul class="depth-bul">
+                    <li>• 참가자가 허위 정보, 부정행위, 규칙 위반, 주최사나 타인을 방해·위협하는 행위를 한 경우 제출물은 심사에서 제외되며 참가 자격이 박탈될 수 있습니다.</li>
+                    <li>• 제출물이 규정된 형식이나 요건을 충족하지 않을 경우, 주최사는 제출을 거부하거나 실격 처리할 수 있습니다.</li>
+                </ul>
+
+                <h2>6. 개인정보 및 홍보 활용</h2>
+                <ul class="depth-bul">
+                    <li>• 참가자가 대회 신청 시 제출한 이름, 연락처, 이메일 등은 회원 가입 시 제공된 정보로 갈음하며, 대회 운영과 수상자 통보, 시상 절차를 위해 사용됩니다.</li>
+                    <li>• 주최사는 참가자의 이름과 제출 결과를 대회 홍보, 사례 공유 등 목적으로 별도 추가 동의 없이 활용할 수 있습니다(법에서 금지된 경우 제외).</li>
+                </ul>
+
+                <h2>7. 준거법 및 분쟁 해결</h2>
+                <ul class="depth-bul">
+                    <li>• 본 동의사항은 대한민국 법률에 따라 해석되며, 대회와 관련된 분쟁은 주최사 본사 소재지를 관할하는 법원의 전속 관할로 합니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">동의하기</button>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- 문의하기 -->
+<div class="pop-modal modal-hidden" id="modalFaq">
+    <div class="modal modal-medium" tabindex="0">
+        <div class="modal-header">문의하기</div>
+        <div class="modal-content modal-faq"><!-- [2025.09.04 문의하기 팝업 수정] -->
+            <div class="tab-box">
+                <ul class="tabs-small">
+                    <li class="is-on"><a href="#tabContent1">일반 문의</a></li>
+                    <li><a href="#tabContent2">상품 문의</a></li>
+                </ul>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent1" tabindex="0" style="display:block;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA01Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA01Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+
+                        <label for="QnA01Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="textarea">
+                            <textarea name="" id="QnA01Content" placeholder="문의 내용을 작성해주세요" rows="4"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA01Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA01Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+            <div class="tab-contents" aria-role="tabpanel" id="tabContent2" tabindex="0" style="display:none;">
+                <div class="formbox">
+                    <form>
+                        <label for="QnA02Title" class="input-title">제목<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <input type="text" placeholder="제목을 작성해주세요." id="QnA02Title">
+                            <span class="util-box">
+                                <a href="#" class="ipt-clear">내용 지우기</a>
+                            </span>
+                        </div>
+                        <label for="QnA02Provider" class="input-title">제공기관<span class="required">(필수)</span></label>
+                        <div class="input-box">
+                            <select name="" id="QnA02Provider">
+                                <option value="" disabled selected>제공기관을 선택해주세요.</option>
+                                <option value="option1">제공기관 2_1</option>
+                                <option value="option2">제공기관 2_2</option>
+                                <option value="option3">제공기관 2_3</option>
+                                <option value="option4">제공기관 2_4</option>
+                            </select>
+                        </div>
+
+                        <label for="QnA02Content" class="input-title">내용<span class="required">(필수)</span></label>
+                        <div class="textarea">
+                            <textarea name="" id="QnA02Content" placeholder="문의 내용을 작성해주세요" rows="4"></textarea>
+                            <p class="text-byte">0/4,000Byte</p>
+                        </div>
+
+                        <label for="QnA02Eamil" class="input-title">답변완료 시, 아래 이메일 정보로 알려드려요.</label>
+                        <div class="input-box">
+                            <input type="text" id="QnA02Eamil" value="Ho********@naver.com" readonly disabled>
+                        </div>
+                    </form>
+                </div>
+                <div class="button-box-medium">
+                    <button class="button-p" type="button">문의하기</button>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close" type="button">닫기</button>
+    </div>
+</div>
+<!-- //문의하기 -->
+<!-- //공통 -->
+
+<div class="pop-modal modal-hidden" id="modal_0">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>대회 참가를 위해서는 로그인이 필요합니다. <br> 지금 로그인하시겠어요?</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">취소</button>
+            <button class="button-p close-modal" type="button">로그인하기</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_1">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>로그인 후 다운로드가 가능해요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">다음에</button>
+            <button class="button-p close-modal" type="button">로그인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_2">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>대회 참가 시에만 다운로드가 가능해요.</p>
+        </div>
+        <div class="button-box-medium col-3">
+            <button class="button-q" type="button">다음에</button>
+            <button class="button-p close-modal" type="button">참가하기</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_3">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>하루에 업로드 할 수 있는 횟수(5회)를 <br>초과했어요. 내일 다시 제출해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>총 업로드할 수 있는 횟수(30회)를 <br>초과했어요. 더이상 제출할 수 없어요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_5">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지원되는 형식은 CSV이며, <br>20MB 이내 파일만 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal_6">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>잘못된 파일 형식이에요. <br>제공한 템플릿과 동일한 파일만 제출 가능해요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p close-modal" type="button">확인</button>
+        </div>
+    </div>
+</div>
+
+<!-- 퍼블리싱 확인 -->
+<div class="modal-test">
+    <div class="button-box-xsmall">
+        <!-- 공통 -->
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('shareModal');return false;">[공유하기]</a>
+        <a href="#" class="button-q" onclick="fn_toast('URL이 복사 되었습니다.',1);return false;">[공유하기] > URL복사 토스트팝업 </a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalFaq');return false;">[문의하기]</a>
+        <a href="#" class="button-p" onclick="fn_toast('문의가 접수되었어요.',1);return false;">[문의하기] > 등록시</a>
+        <!-- //공통 -->
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_0');return false;">[참가하기/연습하기] > 로그인 전</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modalJoinContestAgree',true);return false;">[참가하기]</a>
+        <a href="#" class="button-q" onclick="fn_toast('참가가 완료되었습니다.',1);return false;">[참가하기] > 참가완료  토스트팝업 </a>
+
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_1');return false;">데이터(T) [다운로드] 로그인 전</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal_2');return false;">데이터(T) [다운로드] 로그인 후 > 대회 참가 전</a>
+
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_3');return false;">제출(T) [제출하기] > 하루 최대 업로드수 초과</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_4');return false;">제출(T) [제출하기] > 총 업로드수 초과</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_5');return false;">제출(T) [제출하기] > 파일유형(csv) 및 용량(최대 20MB) 오류</a>
+        <a href="#" class="button-p" onclick="fn_modalPopOpen('modal_6');return false;">제출(T) [제출하기] > 컬럼명과 순서 불일치</a>
+        <a href="#" class="button-q" onclick="fn_toast('제출이 완료되었습니다..',1);return false;">제출(T) [제출하기] > 제출완료 토스트팝업 </a>
+    </div> 
+</div>
+<!-- //퍼블리싱 확인 -->
+</body>
+</html>

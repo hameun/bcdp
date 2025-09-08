@@ -1,0 +1,364 @@
+.guide {
+  /***** index *****/
+  /***** color *****/
+  /***** Form *****/
+  /***** Tab *****/
+}
+.guide .aside {
+  overflow: auto;
+}
+.guide .aside .dep1 {
+  margin-bottom: 20px;
+  border-top: 2px solid #CDD1DA;
+}
+.guide .aside .main-menu > li > a {
+  font-weight: 600;
+  font-size: 16px;
+}
+.guide .aside .main-menu > li li > a {
+  padding: 4px 10px;
+  font-size: 14px;
+}
+.guide .content {
+  max-width: none;
+}
+.guide h2 {
+  margin-top: 20px;
+  padding: 10px 0;
+}
+.guide h2 p {
+  font-size: 16px;
+  color: #6361FC;
+}
+.guide h3.title3 {
+  margin: 10px;
+  text-align: center;
+}
+.guide h4 {
+  margin: 10px 0;
+}
+.guide .pub-flag {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6361FC;
+}
+.guide .publist * {
+  font-size: 14px;
+  font-weight: 400;
+  color: #191B1E;
+}
+.guide .publist > li {
+  padding: 2px 0;
+  border-bottom: 1px solid #E7E9EF;
+}
+.guide .publist > li:hover {
+  background-color: #fff;
+}
+.guide .publist > li:hover * {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.guide .publist .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.guide .publist .location.ing .menu-stat .caption {
+  background-color: #E05656;
+}
+.guide .publist .location.end .menu-stat .caption {
+  background-color: #6361FC;
+}
+.guide .publist .location.del {
+  background-color: #CDD1DA;
+}
+.guide .publist .location.del .title {
+  color: #4B515D;
+  text-decoration: line-through;
+}
+.guide .publist .location.del .menu-stat .caption {
+  color: #F3F5F8;
+}
+.guide .publist .menu-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 400px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.guide .publist .menu-title .title {
+  min-width: 100px;
+}
+.guide .publist .menu-title.dep0 {
+  padding-left: 0px;
+}
+.guide .publist .menu-title.dep1 {
+  padding-left: 100px;
+}
+.guide .publist .menu-title.dep2 {
+  padding-left: 200px;
+}
+.guide .publist .menu-title.dep3 {
+  padding-left: 300px;
+}
+.guide .publist .menu-stat {
+  -ms-flex-preferred-size: 70px;
+      flex-basis: 70px;
+  min-width: 80px;
+  margin-right: 4px;
+  text-align: right;
+}
+.guide .publist .menu-stat .caption {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #B2B7C2;
+  font-size: 12px;
+  font-weight: 400;
+  color: #fff;
+}
+.guide .publist .menu-link {
+  -ms-flex-preferred-size: 40px;
+      flex-basis: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 160px;
+}
+.guide .publist .menu-link a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #CDD1DA;
+  font-size: 14px;
+  font-weight: 500;
+  color: #191B1E;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #191B1E;
+  min-width: inherit;
+}
+.guide .publist .menu-link a:hover.button-p, .guide .publist .menu-link aa:hover.button-p {
+  background-color: #5957E3;
+}
+.guide .publist .menu-link a:hover.button-s, .guide .publist .menu-link aa:hover.button-s {
+  background-color: #EFEFFF;
+}
+.guide .publist .menu-link a:hover.button-t, .guide .publist .menu-link aa:hover.button-t {
+  background-color: #E7E9EF;
+}
+.guide .publist .menu-link a:hover.button-q, .guide .publist .menu-link aa:hover.button-q {
+  background-color: #CDD1DA;
+}
+.guide .publist .menu-link a:is(:disabled).button-p, .guide .publist .menu-link a:is(:disabled).button-q, .guide .publist .menu-link a:is(.disabled).button-p, .guide .publist .menu-link a:is(.disabled).button-q {
+  color: #CDD1DA;
+  background-color: #E7E9EF;
+  border-color: transparent;
+}
+.guide .publist .menu-link a:is(:disabled).button-s, .guide .publist .menu-link a:is(:disabled).button-t, .guide .publist .menu-link a:is(.disabled).button-s, .guide .publist .menu-link a:is(.disabled).button-t {
+  color: #CDD1DA;
+  background-color: #fff;
+  border-color: #E7E9EF;
+}
+.guide .publist .menu-link a i[class^=icon] {
+  margin: 0 4px 0 0;
+}
+.guide .publist .menu-link a i.icon-right {
+  margin: 0 -4px 0 4px;
+}
+.guide .publist .menu-link a i.icon-left {
+  margin: 0 4px 0 -4px;
+}
+.guide .publist .menu-link a.disabled {
+  pointer-events: none;
+}
+.guide .publist .menu-link a.left-btn {
+  margin-right: auto;
+}
+.guide .publist .menu-link a.right-btn {
+  margin-left: auto;
+}
+.guide .publist .menu-text {
+  padding: 0 8px;
+}
+.guide .publist .menu-text li {
+  list-style: circle;
+  font-size: 12px;
+  font-weight: 400;
+  color: #626A7A;
+}
+.guide .palette ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.guide .palette li {
+  width: 150px;
+  padding: 20px 10px;
+  margin: 5px;
+  color: #fff;
+  -webkit-box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1019607843);
+          box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1019607843);
+}
+.guide .text-color ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.guide .text-color li {
+  width: 150px;
+  padding: 20px 10px;
+  margin: 5px;
+  color: #fff;
+  -webkit-box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1019607843);
+          box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1019607843);
+}
+.guide .typography li {
+  margin: 10px 5px;
+}
+.guide .typography .text-weight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin: 10px 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.guide .typography .text-weight span {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #E8E7FF;
+  font-size: 32px;
+  background: #fff;
+  -webkit-box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1019607843);
+          box-shadow: 4px 4px 16px 0px rgba(0, 0, 0, 0.1019607843);
+}
+.guide .typography .bodytext {
+  margin: 20px 5px;
+}
+.guide .typography .bodytext span {
+  margin-right: 20px;
+}
+.guide .inputfield {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.guide .inputfield .fieldset {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 10px;
+}
+.guide .tab-box {
+  margin-bottom: 20px;
+}
+.preview {
+  padding: 10px;
+  width: 50%;
+  border: 2px solid #6361FC;
+}
+
+.codeview {
+  white-space: pre-line;
+  height: auto;
+  font-size: 14px;
+  font-weight: 400;
+  color: #191B1E;
+}
+
+.codetest {
+  padding: 10px 20px;
+}
+.codetest .codeview2 {
+  margin-left: -120px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #191B1E;
+}
+.codetest .comments {
+  color: darkgreen;
+}
+
+@media screen and (max-width: 820px) {
+  .guide h2 {
+    font-size: 20px;
+  }
+  .guide .container {
+    padding: 0 12px;
+  }
+  .guide .publist .location {
+    width: auto;
+  }
+  .guide .publist .menu-title {
+    -ms-flex-preferred-size: calc(100% - 40px);
+        flex-basis: calc(100% - 40px);
+    min-width: auto !important;
+  }
+  .guide .publist .menu-title .title {
+    min-width: 70px;
+    font-size: 12px;
+  }
+  .guide .publist .menu-title .title del {
+    font-size: 12px;
+  }
+  .guide .publist .menu-title.dep1 {
+    padding-left: 70px;
+  }
+  .guide .publist .menu-title.dep2 {
+    padding-left: 140px;
+  }
+  .guide .publist .menu-title.dep3 {
+    padding-left: 200px;
+  }
+  .guide .publist .menu-link {
+    min-width: auto;
+    justify-items: right;
+  }
+  .guide .publist .menu-link a {
+    padding: 2px 6px;
+    font-size: 0;
+  }
+  .guide .publist .menu-link a i.icon-extlink {
+    margin: 0;
+  }
+  .guide .publist .menu-link a del {
+    display: none;
+  }
+  .guide .publist .menu-stat,
+  .guide .publist .menu-text {
+    display: none;
+  }
+}
