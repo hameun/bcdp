@@ -777,6 +777,9 @@ INPUT TEXT
       display: flex;
       align-items: center;
       flex-wrap: wrap;
+      .ipt-check-sub {
+        flex: 1;
+      }
       & +li {
         margin-top: 16px;
       }
@@ -963,7 +966,7 @@ BREADCRUMB
     width: 24px;
     height: 24px;
     margin-right: 4px;
-    background: url(svg-icon(breadcrumb)) no-repeat 0 50%;
+    background: url(svg-icon(breadcrumb)) no-repeat 50% 50%;
     background-size: 20px 20px;
   }
   &> span {
@@ -1044,6 +1047,8 @@ TAPS / SWITCH
       position: relative;
       padding: 0 20px;
       gap: 20px;
+      display: inline-flex;
+      min-width: 100%;
       & >li {
         flex: 0;
       }
@@ -1318,7 +1323,7 @@ MODAL POPUP
     // padding: 20px 0 16px; 07.22 수정
     margin-bottom: 16px; // 07.22 수정
     min-height: 27px;
-    @include text-title(4);
+    @include text-title(4); 
     .count{
       color:$navy-300;
     }
@@ -1594,6 +1599,7 @@ MODAL POPUP
   }
   
   .modal-content-analysis-select {
+    padding-bottom: 20px;
     .chip-box {
       gap: 16px 8px;
     }
@@ -2061,7 +2067,7 @@ MODAL POPUP
     
   }
   .modal-content-analysis-select {
-    padding: 8px 0;
+    // padding: 8px 0;
     .location-breadcrumb {
       margin-bottom: 20px;
     }
@@ -2251,7 +2257,9 @@ MODAL POPUP
       appearance: none;
       z-index: -1;
       &:checked + i {
-        border-color: $primary;
+        // padding: 7px 12px;
+        border: 1.5px solid $primary;
+        // border-color: $primary;
         color: $primary;
       }
       &:focus + i {
@@ -2260,18 +2268,22 @@ MODAL POPUP
     }
     i {
       flex: 0;
-      padding: 6px 12px;
+      padding: 0 12px;
+      height: 40px;
+      box-sizing: border-box;
       border: 1px solid $gray-100;
       border-radius: 8px; 
       background-color: $white;
       white-space: nowrap;
+      align-content: center;
       @include text-body(1,'r',$gray-700);
     }
   }
   &-large {
     .chip i {
       flex: auto;
-      padding: 11px 16px;
+      padding: 0 16px;
+      height: 48px;
       font-weight: 600;
       text-align: center;
     }
@@ -4101,6 +4113,29 @@ TOAST POPUP
       @include set-icon(64px, 64px, $icon-data-none, 64px);
   }
 
+  .location-breadcrumb {
+    display: flex;
+    .breadcrumb {
+      &::before {
+        width: 20px;
+        height: 20px;
+        background-size: 16px;
+      }
+      &> span {
+        font-size: 14px;
+        font-weight: 500;
+        &.none {
+          font-weight: 400;
+        }
+        & +span {
+          background-size: 16px 16px;
+          padding-left: 20px;
+          background-position: 2px 50%;
+        }
+      }
+    }
+  }
+
 
   .pop-modal .modal-large,
   .pop-modal .modal-medium,
@@ -4112,10 +4147,16 @@ TOAST POPUP
     align-self: flex-end;
     width: 100%;
     max-width: none;
-    .modal-header { flex: 0;}
+    .modal-header { flex: 0; font-size: 18px; font-weight: 600;}
     .message-box,
     .modal-content { flex: 1;}
-    .button-box-medium { flex: 0;}
+    .button-box-medium { 
+      flex: 0;
+      button {
+        height: 56px;
+        border-radius: 16px;
+      }
+    }
   }
   .modal-large {
     .chip-box .chip {

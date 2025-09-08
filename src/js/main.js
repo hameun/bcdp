@@ -1,11 +1,11 @@
-var windowWidth;
+var windowWidth = $(window).width();
 var windowHeight;
 var windowScrollTopFix;
 var aside;
 var lastTrigger = null;
 
 $(function(){
-    windowWidth = window.innerWidth;
+    windowWidth = $(window).width();
     windowHeight = window.innerHeight;
     aside = document.querySelector('.aside');
 
@@ -37,11 +37,11 @@ $(function(){
     fn_totalSearch();
 
     window.addEventListener('scroll', function(e){
-        windowWidth = window.innerWidth;
+        windowWidth = $(window).width();
         fn_tabSticky();
     });
     window.addEventListener('resize', function(e){
-        windowWidth = window.innerWidth;
+        windowWidth = $(window).width();
         windowHeight = window.innerHeight;
         fn_asideFixed();
         fn_tabSticky();
@@ -645,7 +645,7 @@ function fn_modalPopOpen(_modalId, _isFull, _hasDim){
 
     // focus 방지
     lastFocusElement = $(document.activeElement);
-    console.log(lastFocusElement);
+    // console.log(lastFocusElement);
 
     function fn_focusAbleElments() {
         return modal2.find('a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])');
@@ -691,7 +691,7 @@ function fn_modalPopOpen(_modalId, _isFull, _hasDim){
     //     });
     // });
     $(modalButtons).on('click', function(){
-        console.log(1);
+        // console.log(1);
         fn_modalPopClose(modal);
     });
     
@@ -1138,30 +1138,64 @@ function fn_explanationSlider(){
 
 // 하단내비
 function fn_analysisNav(){
-    const nav = document.querySelector('.analysis-nav');
+    const nav = $('.analysis-nav');
     if (!nav) return false;
 
-    const navMenus = nav.querySelectorAll('.area, .industry');
-    navMenus.forEach(function(navMenu){
-        const list = navMenu.nextElementSibling;
-        navMenu.addEventListener('click', function(e){
-            e.preventDefault();
-            const current = this.parentElement;
-            const currentClassName = 'is-current';
-            const prev = current.parentElement.querySelector('.'+currentClassName);
-            prev.classList.remove(currentClassName);
-            current.classList.add(currentClassName);
-            if ( windowWidth > 767 ) {
-                list.classList.add('is-open');
-            }
+    // const navMenus = nav.querySelectorAll('.area, .industry');
+    // navMenus.forEach(function(navMenu){
+    //     const list = navMenu.nextElementSibling;
+    //     navMenu.addEventListener('click', function(e){
+    //         e.preventDefault();
+    //         const current = this.parentElement;
+    //         const currentClassName = 'is-current';
+    //         const prev = current.parentElement.querySelector('.'+currentClassName);
+    //         prev.classList.remove(currentClassName);
+    //         current.classList.add(currentClassName);
+    //         if ( windowWidth > 767 ) {
+    //             list.classList.add('is-open');
+    //         }
+    //     });
+    //     list.addEventListener('mouseleave', function(){
+    //         if ( windowWidth > 767 ) {
+    //             list.classList.remove('is-open');
+    //         }
+    //     });
+    // });
+
+    if ( windowWidth > 767 ) {
+        const navMenuArea = nav.find('.area');
+        const navMenuAreaList = nav.find('.area-list');
+        navMenuArea.on('click', function(){
+            $(this).addClass('is-current');
+            navMenuAreaList.addClass('is-open');
+            navMenuIndustryList.removeClass('is-open');
+            navMenuIndustry.removeClass('is-current');
         });
-        list.addEventListener('mouseleave', function(){
-            if ( windowWidth > 767 ) {
-                list.classList.remove('is-open');
-            }
+        navMenuAreaList.find('input').on('click', function(){
+            navMenuAreaList.removeClass('is-open');
+            navMenuArea.removeClass('is-current');
         });
-    });
-    
+        navMenuAreaList.on('mouseleave', function(){
+            $(this).removeClass('is-open');
+            navMenuArea.removeClass('is-current');
+        });
+        const navMenuIndustry = nav.find('.industry');
+        const navMenuIndustryList = nav.find('.industry-list');
+        navMenuIndustry.on('click', function(){
+            $(this).addClass('is-current');
+            navMenuIndustryList.addClass('is-open');
+            navMenuAreaList.removeClass('is-open');
+            navMenuArea.removeClass('is-current');
+        });
+        navMenuIndustryList.find('input').on('click', function(){
+            navMenuIndustryList.removeClass('is-open');
+            navMenuIndustry.removeClass('is-current');
+        });
+        navMenuIndustryList.on('mouseleave', function(){
+            $(this).removeClass('is-open');
+            navMenuIndustry.removeClass('is-current');
+        });
+    }
 };
 /** //상권분석 */
 

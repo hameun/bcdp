@@ -74,7 +74,7 @@ page : login-find
 .page-login-find {
   display: flex;
   flex-direction: column;
-  padding-top: 0;
+  // padding-top: 0;
   max-width: $pageLogin-width;
   margin: auto;
   @include set-page-login;
@@ -94,9 +94,16 @@ page : join
   display: flex;
   flex-direction: column;
   max-width: $pageLogin-width;
+  padding-bottom: 40px;
   @include set-page-login;
+  // & +.bottom-box {
+  //   padding-bottom: 0;
+  // }
   .step-box {
     margin-bottom: 24px;
+  }
+  .agree-box {
+    height: 205px;
   }
   .welcome-copy {
     margin: -32px 0 40px;
@@ -147,8 +154,10 @@ $graph-color3: $gray-100;
     }
     .a-contents {
       // padding: 80px 0;
-      .title1 {
-        // @include text-title(2);
+      .title {
+        font-size: 28px;
+        font-weight: 700;
+        color: $gray-900;
         text-align: center;
         word-break: keep-all;
       }
@@ -180,10 +189,10 @@ $graph-color3: $gray-100;
   .cont-location {
     display: flex;
     gap: 22px;
-    .title {
+    .title-location {
       margin-bottom: 40px;
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 700;
       color: $gray-700;
     }
     .map {
@@ -247,7 +256,7 @@ $graph-color3: $gray-100;
         .prev,
         .next {
           position: absolute;
-          bottom: 200px;
+          bottom: 201px;
           width: 40px;
           height: 40px;
           border: 1px solid $gray-60;
@@ -355,14 +364,14 @@ $graph-color3: $gray-100;
     .data-partial {
       display: flex;
       flex: 1;
-      padding: 20px 0;
+      padding: 60px 0;
       .guidandce {
         position: absolute;
         @include blind;
       }
       .data {
         flex: 1;
-        padding-bottom: 36px;
+        // padding-bottom: 36px;
       }
       .title {
         @include blind;
@@ -373,7 +382,8 @@ $graph-color3: $gray-100;
         flex-direction: column;
         align-items: center;
         max-width: 270px;
-        margin: 20px 0 164px;
+        height: 100px;
+        margin: 0 0 100px;
         border-bottom: 1px solid $gray-100;
         dt {
           position: absolute;
@@ -381,7 +391,7 @@ $graph-color3: $gray-100;
           font-size: 18px;
           font-weight: 600;
           flex: 0;
-          margin-top: 20px;
+          // margin-top: 20px;
           display: flex;
           height: 3em;
           align-items: center;
@@ -403,8 +413,9 @@ $graph-color3: $gray-100;
             border-radius: 12px 12px 0 0;
             strong {
               position: absolute;
-              bottom: calc(100% + 10px);
+              bottom: calc(100% + 7px);
               width: 100%;
+              height: 30px;
               text-align: center;
             }
           }
@@ -416,7 +427,7 @@ $graph-color3: $gray-100;
             }
             strong {
               bottom: auto;
-              top: calc(100% + 10px);
+              top: calc(100% + 7px);
             }
           }
         }
@@ -529,6 +540,7 @@ $graph-color3: $gray-100;
         transition: 500ms;
         transform-style: preserve-3d;
         height: 184px;
+        cursor: pointer;
         .selected dt {
             display: inline-block;
             padding: 4px 10px;
@@ -612,12 +624,12 @@ $graph-color3: $gray-100;
     }
     .explanation-slider {
       .swiper-wrapper {
-        gap: 12px;
+        gap: 20px;
         flex-direction: column;
       }
       .detail-list {
         display: grid;
-        gap: 12px;
+        gap: 20px;
         grid-template-columns: repeat(4, 1fr);
         // grid-template-columns: repeat(2, 1fr); // 모바일
       }
@@ -627,7 +639,7 @@ $graph-color3: $gray-100;
   .cont-pattern {
     .caption {
       margin-bottom: 20px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 20px;
       color: $gray-700;
       text-align: center;
@@ -752,20 +764,21 @@ $graph-color3: $gray-100;
         &> li {
           flex: 1;
           display: flex;
-          gap: 8px;
+          gap: 12px 8px;
           flex-wrap: wrap;
           justify-content: center;
           dl {
-            flex: 0;
+            flex: 1;
             display: flex;
             justify-content: center;
+            max-width: 40px;
             dt {
               @include blind;
             }
             dd {
               display: flex;
               flex-direction: column;
-              width: 40px;
+              width: 100%;
               height: 188px;
               justify-content: flex-end;
               p span {
@@ -774,7 +787,7 @@ $graph-color3: $gray-100;
             }
           }
           .graph-title {
-            margin-top: 12px;
+            // margin-top: 12px;
             flex: 0 0 100%;
             order: 1;
             @include text-body(1 ,'m',$gray-700);
@@ -813,15 +826,29 @@ $graph-color3: $gray-100;
       gap: 20px;
     }
     .flag {
-      padding: 18px;
+      padding: 20px;
       border-radius: 30px;
-      border: 2px solid;
-      border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-      background: #FFFFFFCC;
-      box-shadow: 0px 4px 8px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
+      background: #FFFFFFCC, #FFFFFFCC;
+      background-color: transparent;
+      box-shadow: 0px 4px 8px 0px #23225814;
       backdrop-filter: blur(20px);
       width: 260px;
       text-align: center;
+      position: relative;
+      // z-index: 1;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        border-radius: 30px;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        padding: 2px;
+        box-shadow: 0px 4px 12px 0px #23225805 inset;
+        z-index: 0;
+      }
       dt {
         @include text-body(2,'sb');
       }
@@ -839,6 +866,7 @@ $graph-color3: $gray-100;
   }
 }
 .analysis-nav {
+  display: flex;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -851,78 +879,104 @@ $graph-color3: $gray-100;
     bottom: 0;
     padding: 6px 8px;
     margin: 0 auto;
-    border: 1px solid $white;
-    border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0px 16px 32px 0px #23225814;
-    backdrop-filter: blur(20px);
-  }
-  ul {
     display: flex;
-    li {
-      flex: auto;
-      .area, .industry {
-        display: flex;
-        gap: 2px;
-        align-items: center;
-        padding: 7px 14px 7px 12px;
-        border: 1px solid transparent; 
-        border-radius: 20px;
-        @include text-body(2,'m');
-        &.area::before {
-          content: '';
-          display: inline-flex;
-          width: 20px;
-          height: 20px;
-          background: url(svg-icon(breadcrumb)) no-repeat 50% 50%;
-          background-size: 16px auto;
-        }
-        &.industry::before {
-          content: '';
-          display: inline-flex;
-          width: 20px;
-          height: 20px;
-          background: url(svg-icon(chart)) no-repeat 50% 50%;
-          background-size: 16px auto;
-        }
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 30px;
+      // background: #FFFFFFCC, #FFFFFFCC;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
+      box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
+      backdrop-filter: blur(20px);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 30px;
+      background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      padding: 2px;
+      z-index: 0;
+    }
+  }
+
+  .area, .industry {
+    position: relative;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    padding: 7px 14px 7px 12px;
+    border: 1px solid transparent; 
+    border-radius: 20px;
+    @include text-body(2,'m');
+    z-index: 1;
+    transition: all 300ms ease;
+    &.area::before {
+      content: '';
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      background: url(svg-icon(breadcrumb)) no-repeat 50% 50%;
+      background-size: 16px auto;
+    }
+    &.industry::before {
+      content: '';
+      display: inline-flex;
+      width: 20px;
+      height: 20px;
+      background: url(svg-icon(chart)) no-repeat 50% 50%;
+      background-size: 16px auto;
+    }
+  }
+  .is-current {
+    &.area {
+      color: $white;
+      background-color: $primary;
+      &::before {
+        background-image: url(svg-icon(breadcrumb,$white));
       }
-      &.is-current {
-        .area {
-          color: $white;
-          background-color: $primary;
-          &::before {
-            background-image: url(svg-icon(breadcrumb,$white));
-          }
-        }
-        .industry {
-          color: $white;
-          background-color: $primary;
-          &::before {
-            background-image: url(svg-icon(chart,$white));
-          }
-        }
+    }
+    &.industry {
+      color: $white;
+      background-color: $primary;
+      &::before {
+        background-image: url(svg-icon(chart,$white));
       }
     }
   }
   .area-list,
   .industry-list {
     display: none;
+    left: calc(50% - 80px);
     position: absolute;
     box-sizing: border-box;
-    bottom: calc(100% + 10px);
-    background-color: #FFFFFFCC;
-    box-shadow: 0px 16px 32px 0px #23225814;
-    padding: 0 4px 0 8px;
+    width: 160px;
+    bottom: 62px;
+    padding: 0 6px 0 10px;
+    border-radius: 16px;
     backdrop-filter: blur(20px);
-    border: 1px solid $white;
-    border-radius: 20px;
+    box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      padding: 2px;
+      z-index: 0;
+    }
     .chip-box {
       gap: 0;
       flex-direction: column;
       flex-wrap: nowrap;
-      width: 160px;
-      max-height: 206px;
-      padding: 7px 0;
+      // width: 160px;
+      max-height: 208px;
+      padding: 8px 0;
       box-sizing: border-box;
       overflow: hidden;
       overflow-y: auto;
@@ -947,6 +1001,8 @@ $graph-color3: $gray-100;
           color: $gray-900;
           @include text-body(2,'m',$gray-900);
           line-height: 1.4;
+          height: 32px;
+          transition: all 300ms ease;
         }
         &:hover i {
           background-color: $gray-60;
@@ -5317,8 +5373,16 @@ MEDIA QUERY
   .page-analysis {
     .cont-location {
       flex-direction: column;
-      .title {
+      .title-location {
+        font-weight: 600;
         font-size: 18px;
+      }
+      .map-control {
+        .icon-return {
+          width: 24px;
+          height: 24px;
+          background-size: 24px auto;
+        }
       }
       .map .map-data,
       .graph .graph-data {
@@ -5328,27 +5392,33 @@ MEDIA QUERY
       & + .analysis-contents {
         margin-top: 120px;
       }
-      .location-breadcrumb {
-        .breadcrumb {
-          &::before {
-            width: 20px;
-            height: 20px;
-          }
-          &> span {
-            font-size: 14px;
-            & +span {
-              background-size: 16px 16px;
-            }
-          }
-        }
-      }
+      // .location-breadcrumb {
+      //   .breadcrumb {
+      //     &::before {
+      //       width: 20px;
+      //       height: 20px;
+      //     }
+      //     &> span {
+      //       font-size: 14px;
+      //       & +span {
+      //         background-size: 16px 16px;
+      //       }
+      //     }
+      //   }
+      // }
       .a-cont {
         .title3 {
         }
       }
       .a-contents {
+        .title {
+          font-size: 24px;
+        }
         .title-guidetext {
           font-size: 16px;
+          .t-highlight {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -5391,10 +5461,33 @@ MEDIA QUERY
         background: none;
         .a-cont.industry {
           margin: 0 -20px;
-          padding: 0 20px;
           background-color: transparent;
+          -webkit-overflow-scrolling: touch;
           // 모바일에서는 스크롤 노출 X
-          &::-webkit-scrollbar {height: 0;}
+          // &::-webkit-scrollbar {height: 0;}
+          &::-webkit-scrollbar-thumb {
+            background-color: $gray-100;
+            border-left: 20px solid $layout-bg;
+            border-right: 20px solid $layout-bg;
+            border-top: 8px solid $layout-bg;
+            border-bottom: 8px solid $layout-bg;
+            border-radius: 8px;
+          }
+          display: flex;
+          &::before,
+          &::after {
+            content: '';
+            flex: 0 0 20px;
+          }
+        }
+        .graph-content {
+          // overflow: auto;
+          border-radius: 20px;
+          // padding: 32px 20px 20px;
+          // background-color: $white;
+          // overflow: hidden;
+          // &::-webkit-scrollbar {height: 0;}
+          // overflow: auto;
           // &::-webkit-scrollbar-thumb {
           //   background-color: $gray-100;
           //   border-left: 20px solid $layout-bg;
@@ -5403,12 +5496,9 @@ MEDIA QUERY
           //   border-bottom: 8px solid $layout-bg;
           //   border-radius: 8px;
           // }
-        }
-        .graph-content {
-          border-radius: 20px;
-          // padding: 32px 20px 20px;
-          // background-color: $white;
-          overflow: hidden;
+          & >div {
+            padding: 20px;
+          }
         }
       }
       .tab-box {
@@ -5428,7 +5518,7 @@ MEDIA QUERY
       }
       .pattern-person {
         &.a-cont {
-          padding: 20px;
+          padding: 20px 20px 40px;
         }
         ol > li .graph-title {
           flex-basis: 80px;
@@ -5436,14 +5526,15 @@ MEDIA QUERY
       }
       .pattern-day {
         &.a-cont {
-          padding: 20px;
+          padding: 20px 20px 40px;
         }
         ol {
           gap: 8px;
           & > li {
+            gap: 10px 4px;
             justify-content: center;
             .graph-title {
-              margin-top: 24px;
+              // margin-top: 12px;
             }
             dl {
               flex: 0;
