@@ -1,4 +1,5 @@
 var windowWidth = $(window).width();
+var windowScrollTop = $(window).scrollTop();
 var windowHeight;
 var windowScrollTopFix;
 var aside;
@@ -22,6 +23,7 @@ $(function(){
     fn_fileInput();
     fn_selectbox();
     fn_selectIpt();
+    fn_tabSticky();
 
     fn_paymentHistoryItemFold();
     fn_questionHistoryItemFold();
@@ -36,8 +38,10 @@ $(function(){
     fn_filter();
     fn_totalSearch();
 
+   
     window.addEventListener('scroll', function(e){
         windowWidth = $(window).width();
+        windowScrollTop = $(window).scrollTop();
         fn_tabSticky();
     });
     window.addEventListener('resize', function(e){
@@ -83,10 +87,10 @@ function fn_asideFixed(){
 function fn_tabSticky(){
     const tab = document.querySelector('.tab-box');
     if (!tab) return false;
-
     let tabY  = tab.getBoundingClientRect().y;
+    let fixTop = windowWidth < 1024 ? 60 : 32;
     if ( tab.classList.contains('is-static') || tab.classList.contains('is-sticky') ) {
-        if( tabY <= 0 ) {
+        if( tabY <= fixTop ) {
             tab.classList.remove('is-static');
             tab.classList.add('is-sticky');
         } else {
@@ -1006,14 +1010,12 @@ function fn_insightSlider(){
 /** 상권분석 */
 // 핵심지표 슬라이드
 function fn_tabsCompareSlider(){
-    const slider = document.querySelector('.compare-slider');
+    const slider = $('.compare-slider-wrap');
     if (!slider) return false;
 
-    const sliderTabBox = slider.previousElementSibling;
-    const sliderTabLinks = sliderTabBox.querySelectorAll('a');
-    const sliderTabs = sliderTabBox.querySelectorAll('li');
-    const sliderPrev = slider.querySelector('.prev');
-    const sliderNext = slider.querySelector('.next');
+    const sliderTabBox = $('.cont-compare .tab-box');
+    const sliderTabLinks = sliderTabBox.find('a');
+    const sliderTabs = sliderTabBox.find('li');
                 
     const swiper = new Swiper(".compare-slider", {
         pagination: {
@@ -1026,43 +1028,19 @@ function fn_tabsCompareSlider(){
         },
         on: {
             transitionEnd: function(swiper){
-                currentIndex = swiper.activeIndex;
-                swiper.el.previousElementSibling.querySelector('li.is-on').classList.remove('is-on');
-                sliderTabs[currentIndex].classList.add('is-on');
-                
+                const currentIndex = swiper.activeIndex;
+                sliderTabBox.find('li.is-on').removeClass('is-on');
+                sliderTabs.eq(currentIndex).addClass('is-on');
             }
         }
     });
-    const sliderPage = slider.querySelectorAll('.swiper-pagination > span');
-    let currentIndex = 0;
     //  탭을 클릭했을때 슬라이드 이동
-    sliderTabLinks.forEach(function(sliderTabLink){
-        sliderTabLink.addEventListener('click', function(e){
-            e.preventDefault;
-            e.stopPropagation;
-            for ( let i = 0; i < sliderTabs.length; i++ ) {
-                if ( sliderTabs[i] == this.parentElement ) {
-                    currentIndex = i;
-                }
-            }
-            sliderPage[currentIndex].click();
-        });
+    sliderTabLinks.on('click', function(e){
+        e.preventDefault;
+        e.stopPropagation;
+        const _idx = $(this).parent().index();
+        swiper.slideTo(_idx);
     });
-    
-    // 좌우 버튼 클릭했을때 슬라이드 이동
-    sliderPrev.addEventListener('click touch', function(){
-        if (!currentIndex) return false;
-        sliderTabs[currentIndex].classList.remove('is-on');
-        sliderTabs[currentIndex-1].classList.add('is-on');
-        currentIndex--;
-    });
-    sliderNext.addEventListener('click touch', function(){
-        if (currentIndex == sliderTabs.length-1) return false;
-        sliderTabs[currentIndex].classList.remove('is-on');
-        sliderTabs[currentIndex+1].classList.add('is-on');
-        currentIndex++;
-    });
-    
 }
 
 // 지표설명보기
@@ -1141,188 +1119,187 @@ function fn_analysisNav(){
     const nav = $('.analysis-nav');
     if (!nav) return false;
 
-    // const navMenus = nav.querySelectorAll('.area, .industry');
-    // navMenus.forEach(function(navMenu){
-    //     const list = navMenu.nextElementSibling;
-    //     navMenu.addEventListener('click', function(e){
-    //         e.preventDefault();
-    //         const current = this.parentElement;
-    //         const currentClassName = 'is-current';
-    //         const prev = current.parentElement.querySelector('.'+currentClassName);
-    //         prev.classList.remove(currentClassName);
-    //         current.classList.add(currentClassName);
-    //         if ( windowWidth > 767 ) {
-    //             list.classList.add('is-open');
-    //         }
-    //     });
-    //     list.addEventListener('mouseleave', function(){
-    //         if ( windowWidth > 767 ) {
-    //             list.classList.remove('is-open');
-    //         }
-    //     });
-    // });
 
-    if ( windowWidth > 767 ) {
-        const navMenuArea = nav.find('.area');
-        const navMenuAreaList = nav.find('.area-list');
-        navMenuArea.on('click', function(){
-            $(this).addClass('is-current');
-            navMenuAreaList.addClass('is-open');
-            navMenuIndustryList.removeClass('is-open');
-            navMenuIndustry.removeClass('is-current');
-        });
-        navMenuAreaList.find('input').on('click', function(){
-            navMenuAreaList.removeClass('is-open');
-            navMenuArea.removeClass('is-current');
-        });
-        navMenuAreaList.on('mouseleave', function(){
-            $(this).removeClass('is-open');
-            navMenuArea.removeClass('is-current');
-        });
-        const navMenuIndustry = nav.find('.industry');
-        const navMenuIndustryList = nav.find('.industry-list');
-        navMenuIndustry.on('click', function(){
-            $(this).addClass('is-current');
-            navMenuIndustryList.addClass('is-open');
-            navMenuAreaList.removeClass('is-open');
-            navMenuArea.removeClass('is-current');
-        });
-        navMenuIndustryList.find('input').on('click', function(){
-            navMenuIndustryList.removeClass('is-open');
-            navMenuIndustry.removeClass('is-current');
-        });
-        navMenuIndustryList.on('mouseleave', function(){
-            $(this).removeClass('is-open');
-            navMenuIndustry.removeClass('is-current');
-        });
+    const navMenuArea = nav.find('.area');
+    const navMenuAreaList = nav.find('.area-list');
+    const navMenuIndustry = nav.find('.industry');
+    const navMenuIndustryList = nav.find('.industry-list');
+    var _isLayerClose = true;
+
+    navMenuArea.on('click', function(){
+        const _this = $(this);
+        if ( windowWidth < 768 ) return false;
+        _this.addClass('is-current');
+        _this.next().removeClass('is-current');
+        navMenuAreaList.addClass('is-open');
+        navMenuIndustryList.removeClass('is-open');
+        _isLayerClose = false;
+    });
+    navMenuIndustry.on('click', function(){
+        const _this = $(this);
+        if ( windowWidth < 768 ) return false;
+        _this.addClass('is-current');
+        _this.prev().removeClass('is-current');
+        navMenuAreaList.removeClass('is-open');
+        navMenuIndustryList.addClass('is-open');
+        _isLayerClose = false;
+    });
+        
+
+    // 닫기
+    // navMenuAreaList.on('mouseleave', function(){
+    //     const _this = $(this);
+    //     closeLayer(_this, navMenuArea);
+    // });
+    // navMenuIndustryList.on('mouseleave', function(){
+    //     const _this = $(this);
+    //     closeLayer(_this, navMenuIndustry);
+    // });
+    
+    function closeLayer (_this, _thisBtn) {
+        _this.removeClass('is-open');
+        _thisBtn.removeClass('is-current');
+        _isLayerClose = true;
     }
+
+    $(document).on('click', function(e){
+        if ( !_isLayerClose ) {
+            const _target = $(e.target);
+            if ( _target.hasClass('area') || _target.hasClass('industry') ) {
+                e.stopPropagation();
+            } else {
+                closeLayer(navMenuAreaList, navMenuArea);
+                closeLayer(navMenuIndustryList, navMenuIndustry);
+            }
+        }
+    });
 };
 /** //상권분석 */
 
 /** 로그인/회원가입 */
-// 약관동의
-function fn_agreeTerms(_id){
-    if (!_id) { return false; }
+// 약관동의 [2025.09.11] 페이지로 이동
+// function fn_agreeTerms(_id){
+//     if (!_id) { return false; }
 
-    const nextButton = _id;
-    const agreeBox = document.querySelector('.agree-box');
-    const agreeAll = agreeBox.querySelector('.agree-all input');
-    const terms = agreeBox.querySelectorAll('.agree-list >li > label >input');
-    const optionalTerms = agreeBox.querySelectorAll('.agree-list >li.has-sub');
-    const optionalTermsItems = agreeBox.querySelectorAll('.agree-list-sub input');
-    let _optionalCheckedLength = 0;
-    let _checkedLength = 0;
+//     const nextButton = _id;
+//     const agreeBox = document.querySelector('.agree-box');
+//     const agreeAll = agreeBox.querySelector('.agree-all input');
+//     const terms = agreeBox.querySelectorAll('.agree-list >li > label >input');
+//     const optionalTerms = agreeBox.querySelectorAll('.agree-list >li.has-sub');
+//     const optionalTermsItems = agreeBox.querySelectorAll('.agree-list-sub input');
+//     let _optionalCheckedLength = 0;
+//     let _checkedLength = 0;
 
-    // 선택약관
-    for ( optionalTerm of optionalTerms ) {
-        const optionalTermsTitle = optionalTerm.firstElementChild.querySelector('input');
-        // console.log(optionalTermsTitle);
-        // 선택약관 타이틀
+//     // 선택약관
+//     for ( optionalTerm of optionalTerms ) {
+//         const optionalTermsTitle = optionalTerm.firstElementChild.querySelector('input');
+//         // console.log(optionalTermsTitle);
+//         // 선택약관 타이틀
 
-        optionalTermsTitle.addEventListener('click', function(){
-            const _this = this;
-            const _subTerms = _this.closest('.has-sub');
-            const _thisTerms =_subTerms.querySelectorAll('.agree-list-sub input');
+//         optionalTermsTitle.addEventListener('click', function(){
+//             const _this = this;
+//             const _subTerms = _this.closest('.has-sub');
+//             const _thisTerms =_subTerms.querySelectorAll('.agree-list-sub input');
         
-            for ( _thisTerm of _thisTerms ) {
-                if ( _this.checked ) {
-                    _optionalCheckedLength = _thisTerms.length;
-                    _checkedLength + _thisTerms.length;
-                } else {
-                    _optionalCheckedLength = 0;
-                    _checkedLength - _thisTerms.length;
-                }
-                _thisTerm.checked = _this.checked;
-            }
+//             for ( _thisTerm of _thisTerms ) {
+//                 if ( _this.checked ) {
+//                     _optionalCheckedLength = _thisTerms.length;
+//                     _checkedLength + _thisTerms.length;
+//                 } else {
+//                     _optionalCheckedLength = 0;
+//                     _checkedLength - _thisTerms.length;
+//                 }
+//                 _thisTerm.checked = _this.checked;
+//             }
 
-            if ( _this.checked ) {
-                _subTerms.classList.remove('is-unchecked');
-            } else {
-                _subTerms.classList.add('is-unchecked');
-            }
+//             if ( _this.checked ) {
+//                 _subTerms.classList.remove('is-unchecked');
+//             } else {
+//                 _subTerms.classList.add('is-unchecked');
+//             }
             
-        });
+//         });
 
-        // 선택약관 서브항목
-        const _optionalTerms = optionalTerm.querySelectorAll('.agree-list-sub input');
-        for ( _optionalTerm of _optionalTerms ) {
-            _optionalTerm.addEventListener('click', function(){
-                const _this = this;
-                const _subTerms = _this.closest('.has-sub');
-                // const _thisTermsTitle = _subTerms.querySelector('& >label input');
-                const _thisTermsTitle = _subTerms.firstElementChild.querySelector('input');
-                // console.log(_thisTermsTitle);
-                if ( _this.checked ) {
-                    ++_optionalCheckedLength;
-                } else {
-                    --_optionalCheckedLength;
-                }
+//         // 선택약관 서브항목
+//         const _optionalTerms = optionalTerm.querySelectorAll('.agree-list-sub input');
+//         for ( _optionalTerm of _optionalTerms ) {
+//             _optionalTerm.addEventListener('click', function(){
+//                 const _this = this;
+//                 const _subTerms = _this.closest('.has-sub');
+//                 // const _thisTermsTitle = _subTerms.querySelector('& >label input');
+//                 const _thisTermsTitle = _subTerms.firstElementChild.querySelector('input');
+//                 // console.log(_thisTermsTitle);
+//                 if ( _this.checked ) {
+//                     ++_optionalCheckedLength;
+//                 } else {
+//                     --_optionalCheckedLength;
+//                 }
 
-                if ( _optionalCheckedLength > 0 ) {
-                    _thisTermsTitle.checked = true;
-                    _subTerms.classList.remove('is-unchecked');
-                    if (_optionalCheckedLength === _optionalTerms.length) {
-                        ++_checkedLength;
-                    }
-                } else {
-                    _thisTermsTitle.checked = false;
-                    _subTerms.classList.add('is-unchecked');
-                    if (_optionalCheckedLength === 0) {
-                        --_checkedLength;
-                    }
-                }
+//                 if ( _optionalCheckedLength > 0 ) {
+//                     _thisTermsTitle.checked = true;
+//                     _subTerms.classList.remove('is-unchecked');
+//                     if (_optionalCheckedLength === _optionalTerms.length) {
+//                         ++_checkedLength;
+//                     }
+//                 } else {
+//                     _thisTermsTitle.checked = false;
+//                     _subTerms.classList.add('is-unchecked');
+//                     if (_optionalCheckedLength === 0) {
+//                         --_checkedLength;
+//                     }
+//                 }
 
-                if ( terms.length === _checkedLength ) {
-                    agreeAll.checked = true;
-                } else {
-                    agreeAll.checked = false;
-                }
+//                 if ( terms.length === _checkedLength ) {
+//                     agreeAll.checked = true;
+//                 } else {
+//                     agreeAll.checked = false;
+//                 }
                 
-            });
-        }
-    }
+//             });
+//         }
+//     }
     
-    // 필수약관
-    for ( term of terms ) {
-        term.addEventListener('click', function(){
-            let _this = this;
-            if ( _this.checked ) {
-                ++_checkedLength;
-            } else {
-                --_checkedLength;
-                agreeAll.checked = _this.checked;
-            }
-            if ( terms.length === _checkedLength ) {
-                agreeAll.checked = true;
-            }
-        });
-    };
+//     // 필수약관
+//     for ( term of terms ) {
+//         term.addEventListener('click', function(){
+//             let _this = this;
+//             if ( _this.checked ) {
+//                 ++_checkedLength;
+//             } else {
+//                 --_checkedLength;
+//                 agreeAll.checked = _this.checked;
+//             }
+//             if ( terms.length === _checkedLength ) {
+//                 agreeAll.checked = true;
+//             }
+//         });
+//     };
 
-    // 전체동의
-    agreeAll.addEventListener('click', function(){
-        let _this = this;
-        for ( term of terms ) {
-            term.checked = _this.checked;
-        };
-        for (optionalTermsItem  of optionalTermsItems) {
-            optionalTermsItem.checked = _this.checked;
-        }
+//     // 전체동의
+//     agreeAll.addEventListener('click', function(){
+//         let _this = this;
+//         for ( term of terms ) {
+//             term.checked = _this.checked;
+//         };
+//         for (optionalTermsItem  of optionalTermsItems) {
+//             optionalTermsItem.checked = _this.checked;
+//         }
 
-        if ( _this.checked ) {
-            _checkedLength = terms.length;
-            _optionalCheckedLength = optionalTermsItems.length;
-            for(optionalTerm of optionalTerms) {
-                optionalTerm.classList.remove('is-unchecked');
-            }
-        } else {
-            _checkedLength = 0;
-            _optionalCheckedLength = 0;
-            for(optionalTerm of optionalTerms) {
-                optionalTerm.classList.add('is-unchecked');
-            }
-        }
-    });    
-};
+//         if ( _this.checked ) {
+//             _checkedLength = terms.length;
+//             _optionalCheckedLength = optionalTermsItems.length;
+//             for(optionalTerm of optionalTerms) {
+//                 optionalTerm.classList.remove('is-unchecked');
+//             }
+//         } else {
+//             _checkedLength = 0;
+//             _optionalCheckedLength = 0;
+//             for(optionalTerm of optionalTerms) {
+//                 optionalTerm.classList.add('is-unchecked');
+//             }
+//         }
+//     });    
+// };
 /** //로그인/회원가입 */
 
 /** 필터 */
@@ -1365,37 +1342,10 @@ function fn_filter() {
 
 /** 아코디언 */
 function fn_accordion() {
-//   const items = document.querySelectorAll('.page-polio .accordion-item ,.accordion-item');
-  const items2 = $('.page-polio .step-content .accordion-item');
-  if (!items2) { return false; }
-
-//   items.forEach(item => {
-//     const header = item.querySelector('.accordion-header');
-//     const toggleText = header.querySelector('button');
-
-//     header.addEventListener('click', () => {
-//       const isActive = item.classList.contains('active');
-
-//       if (isActive) {
-//         // 이미 열려있으면 -> 닫기
-//         item.classList.remove('active');
-//         toggleText.textContent = '상세화면 열기';
-//       } else {
-//         // 다른 아이템 닫기
-//         items.forEach(i => {
-//           i.classList.remove('active');
-//           const textEl = i.querySelector('.accordion-header button');
-//           if (textEl) textEl.textContent = '상세화면 열기';
-//         });
-
-//         // 현재 클릭한 항목 열기
-//         item.classList.add('active');
-//         toggleText.textContent = '상세화면 닫기';
-//       }
-//     });
-//   });
-    $(items2).on('click', function(){
-        $(this).toggleClass('active');
+  const items = $('.accordion-item'); //데이터 폴리오에서 전체 펼침 가능으로 변경
+  if (!items) { return false; }
+    items.find('.accordion-header').on('click', function(){
+        $(this).parent().toggleClass('active');
     });
 };
 /** //아코디언 */

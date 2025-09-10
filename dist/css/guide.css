@@ -148,7 +148,7 @@
   height: 32px;
   padding: 0 10px;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #CDD1DA;
   font-size: 14px;
   font-weight: 500;
@@ -171,12 +171,12 @@
 .guide .publist .menu-link a:hover.button-q, .guide .publist .menu-link aa:hover.button-q {
   background-color: #CDD1DA;
 }
-.guide .publist .menu-link a:is(:disabled).button-p, .guide .publist .menu-link a:is(:disabled).button-q, .guide .publist .menu-link a:is(.disabled).button-p, .guide .publist .menu-link a:is(.disabled).button-q {
+.guide .publist .menu-link a:disabled.button-p, .guide .publist .menu-link a:disabled.button-q, .guide .publist .menu-link a.disabled.button-p, .guide .publist .menu-link a.disabled.button-q {
   color: #CDD1DA;
   background-color: #E7E9EF;
   border-color: transparent;
 }
-.guide .publist .menu-link a:is(:disabled).button-s, .guide .publist .menu-link a:is(:disabled).button-t, .guide .publist .menu-link a:is(.disabled).button-s, .guide .publist .menu-link a:is(.disabled).button-t {
+.guide .publist .menu-link a:disabled.button-s, .guide .publist .menu-link a:disabled.button-t, .guide .publist .menu-link a.disabled.button-s, .guide .publist .menu-link a.disabled.button-t {
   color: #CDD1DA;
   background-color: #fff;
   border-color: #E7E9EF;

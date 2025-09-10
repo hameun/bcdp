@@ -110,25 +110,25 @@ body.is-fixed {
     margin-top: 60px;
   }
 }
-.bottom-box {
-  max-width: 1000px;
-  margin: 0 auto;
-  flex: 0;
-  width: 100%;
-  padding-bottom: 80px;
-  text-align: center;
-  .textbutton-box {
-    justify-content: center;
-  }
-  .button-box-large {
-    button {
-      flex-basis: 160px;
-    }
-  }
-}
-.content +.bottom-box {
-  margin-top: -48px;
-}
+// .bottom-box {
+//   max-width: 1000px;
+//   margin: 0 auto;
+//   flex: 0;
+//   width: 100%;
+//   padding-bottom: 80px;
+//   text-align: center;
+//   .textbutton-box {
+//     justify-content: center;
+//   }
+//   .button-box-large {
+//     button {
+//       flex-basis: 160px;
+//     }
+//   }
+// }
+// .content +.bottom-box {
+//   margin-top: -48px;
+// }
 /***********
 header
 ***********/
@@ -166,10 +166,10 @@ aside
   // border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
   // background: rgba(255, 255, 255, 0.8);
   // box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
-  // backdrop-filter: blur(20px);
+  // backdrop-filter: blur(10px);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
   box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   position: fixed;
   z-index: 2;
   @content;
@@ -191,12 +191,16 @@ aside
 .aside {
   .statebar {
     display: flex;
+    position: relative;
+    z-index: 1;
     .mypage-menu {
       display: none;
     }
   }
   .navigation {
     flex: auto;
+    position: relative;
+    z-index: 1;
     .util-menu {
       display: flex;
       align-items: center;
@@ -236,7 +240,7 @@ aside
         //   border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
         //   background: rgba(255, 255, 255, 0.6);
         //   box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
-        //   backdrop-filter: blur(20px);
+        //   backdrop-filter: blur(10px);
         // }
       }
     }
@@ -351,7 +355,7 @@ aside
   z-index: 10;
   .modal {
     box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
   }
   .tab-box {
     margin-bottom: 20px;
@@ -428,7 +432,7 @@ aside
       border-radius: 20px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
       box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(10px);
       &::after {
         content: '';
         position: absolute;
@@ -456,7 +460,7 @@ aside
         border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(10px);
         a {
           display: block;
           min-width: 100px;
@@ -500,7 +504,7 @@ aside
             border-radius: 16px;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
             box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             &::before {
               content: '';
               position: absolute;
@@ -598,7 +602,7 @@ aside
         }
       }
       & ~.container {
-        margin-left: 64px + 20px;
+        padding-left: 64px + 20px;
       }
     }
   }
@@ -618,7 +622,7 @@ aside
       margin-left: auto;
       background-color: #FFFFFF99;
       box-shadow: 0px 16px 32px 0px #23225814;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(10px);
       border-radius: 16px;
       border: 1px solid $white;
     }
@@ -741,20 +745,20 @@ aside
     }
   }
 
-  .bottom-box {
-    margin-bottom: 40px;
-    max-width: 405px;
-    &:has(.button-box-large) {
-      .button-box-large {
-        position: fixed;
-        padding: 24px $layout-padding $layout-padding;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(180deg, rgba($layout-bg, 0) 0, $layout-bg 24px, $layout-bg 100%);
-      }
-    }
-  }
+  // .bottom-box {
+  //   margin-bottom: 40px;
+  //   max-width: 405px;
+  //   &:has(.button-box-large) {
+  //     .button-box-large {
+  //       position: fixed;
+  //       padding: 24px $layout-padding $layout-padding;
+  //       bottom: 0;
+  //       left: 0;
+  //       right: 0;
+  //       background: linear-gradient(180deg, rgba($layout-bg, 0) 0, $layout-bg 24px, $layout-bg 100%);
+  //     }
+  //   }
+  // }
 
   .pop-history {
     top: 0;
@@ -777,16 +781,13 @@ aside
 /***********
 page : 레이아웃 변경 테스트
 ***********/
-
 $_containAsideWidth: 20px + 240px + 20px;
 $_containAsideFoldWidth: 20px + 64px + 20px;
 $_containAisideWidth: 20px + 300px + 20px;
 .container {
   margin: 0 !important;
-  // padding: 0 $_containAisideWidth 0 $_containAsideWidth;
   padding: 0 20px 0 $_containAsideWidth;
-
-  z-index: 1;
+  // overflow-x: hidden;
   &:has(.page-main) {
     overflow: hidden;
     padding: 0 0 0 260px;
@@ -796,13 +797,18 @@ $_containAisideWidth: 20px + 300px + 20px;
     padding: 0 $_containAisideWidth 0 $_containAsideWidth;
   }
 }
-.aside.is-fold + .container {
-  padding: 0 20px 0 $_containAsideFoldWidth;
-  &:has(.page-aisearch) {
-    padding: 0 $_containAisideWidth 0 $_containAsideFoldWidth;
+@media screen and (min-width: 1024px) {
+  .aside.is-fold ~ .container {
+    padding: 0 20px 0 $_containAsideFoldWidth;
+    &:has(.page-aisearch) {
+      padding: 0 $_containAisideWidth 0 $_containAsideFoldWidth;
+    }
+
+    .analysis-nav {
+      left: $_containAsideFoldWidth;
+    }
   }
 }
-
 $contentWidth: 700px;
 
 /***********
@@ -941,7 +947,7 @@ page : .page-main /.page-aisearch
             border: 2px solid;
             border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
             box-shadow: 0px 8px 16px 0px #23225814;
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             box-shadow: 0px 4px 12px 0px #23225805 inset;
             @include text-body(3,'m',$gray-500);
           }
@@ -1088,7 +1094,7 @@ page : .page-main /.page-aisearch
           border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
           // padding: 10px;
           background-color: #FFFFFF99;
-          backdrop-filter: blur(20px);
+          backdrop-filter: blur(10px);
           box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
           &:has(.image) {
             // height: 246px;
@@ -1424,7 +1430,7 @@ page : .page-main /.page-aisearch
     z-index: 9;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
     box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     &::before {
       content: '';
       position: absolute;

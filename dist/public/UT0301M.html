@@ -104,11 +104,138 @@
 	    </div>
 	</aside><!-- // .aside -->
     <main class="container">
-        <script>
+        <!-- [2025.09.11] 추가 -->
+		<!-- 퍼블 확인용 -->
+		<script>
 		window.onload = function(){
 		    fn_agreeTerms(joinMember);
+		    // 약관동의
+		    function fn_agreeTerms(_id){
+		        if (!_id) { return false; }
+
+		        const nextButton = _id;
+		        const agreeBox = document.querySelector('.agree-box');
+		        const agreeAll = agreeBox.querySelector('.agree-all input');
+		        const terms = agreeBox.querySelectorAll('.agree-list >li > label >input');
+		        const optionalTerms = agreeBox.querySelectorAll('.agree-list >li.has-sub');
+		        const optionalTermsItems = agreeBox.querySelectorAll('.agree-list-sub input');
+		        let _optionalCheckedLength = 0;
+		        let _checkedLength = 0;
+
+		        // 선택약관
+		        for ( optionalTerm of optionalTerms ) {
+		            const optionalTermsTitle = optionalTerm.firstElementChild.querySelector('input');
+		            // console.log(optionalTermsTitle);
+		            // 선택약관 타이틀
+
+		            optionalTermsTitle.addEventListener('click', function(){
+		                const _this = this;
+		                const _subTerms = _this.closest('.has-sub');
+		                const _thisTerms =_subTerms.querySelectorAll('.agree-list-sub input');
+		            
+		                for ( _thisTerm of _thisTerms ) {
+		                    if ( _this.checked ) {
+		                        _optionalCheckedLength = _thisTerms.length;
+		                        _checkedLength + _thisTerms.length;
+		                    } else {
+		                        _optionalCheckedLength = 0;
+		                        _checkedLength - _thisTerms.length;
+		                    }
+		                    _thisTerm.checked = _this.checked;
+		                }
+
+		                if ( _this.checked ) {
+		                    _subTerms.classList.remove('is-unchecked');
+		                } else {
+		                    _subTerms.classList.add('is-unchecked');
+		                }
+		                
+		            });
+
+		            // 선택약관 서브항목
+		            const _optionalTerms = optionalTerm.querySelectorAll('.agree-list-sub input');
+		            for ( _optionalTerm of _optionalTerms ) {
+		                _optionalTerm.addEventListener('click', function(){
+		                    const _this = this;
+		                    const _subTerms = _this.closest('.has-sub');
+		                    // const _thisTermsTitle = _subTerms.querySelector('& >label input');
+		                    const _thisTermsTitle = _subTerms.firstElementChild.querySelector('input');
+		                    // console.log(_thisTermsTitle);
+		                    if ( _this.checked ) {
+		                        ++_optionalCheckedLength;
+		                    } else {
+		                        --_optionalCheckedLength;
+		                    }
+
+		                    if ( _optionalCheckedLength > 0 ) {
+		                        _thisTermsTitle.checked = true;
+		                        _subTerms.classList.remove('is-unchecked');
+		                        if (_optionalCheckedLength === _optionalTerms.length) {
+		                            ++_checkedLength;
+		                        }
+		                    } else {
+		                        _thisTermsTitle.checked = false;
+		                        _subTerms.classList.add('is-unchecked');
+		                        if (_optionalCheckedLength === 0) {
+		                            --_checkedLength;
+		                        }
+		                    }
+
+		                    if ( terms.length === _checkedLength ) {
+		                        agreeAll.checked = true;
+		                    } else {
+		                        agreeAll.checked = false;
+		                    }
+		                    
+		                });
+		            }
+		        }
+		        
+		        // 필수약관
+		        for ( term of terms ) {
+		            term.addEventListener('click', function(){
+		                let _this = this;
+		                if ( _this.checked ) {
+		                    ++_checkedLength;
+		                } else {
+		                    --_checkedLength;
+		                    agreeAll.checked = _this.checked;
+		                }
+		                if ( terms.length === _checkedLength ) {
+		                    agreeAll.checked = true;
+		                }
+		            });
+		        };
+
+		        // 전체동의
+		        agreeAll.addEventListener('click', function(){
+		            let _this = this;
+		            for ( term of terms ) {
+		                term.checked = _this.checked;
+		            };
+		            for (optionalTermsItem  of optionalTermsItems) {
+		                optionalTermsItem.checked = _this.checked;
+		            }
+
+		            if ( _this.checked ) {
+		                _checkedLength = terms.length;
+		                _optionalCheckedLength = optionalTermsItems.length;
+		                for(optionalTerm of optionalTerms) {
+		                    optionalTerm.classList.remove('is-unchecked');
+		                }
+		            } else {
+		                _checkedLength = 0;
+		                _optionalCheckedLength = 0;
+		                for(optionalTerm of optionalTerms) {
+		                    optionalTerm.classList.add('is-unchecked');
+		                }
+		            }
+		        });    
+		    };
 		}
 		</script>
+		<!-- //퍼블 확인용 -->
+		<!-- //[2025.09.11] 추가 -->
 		<div class="content page-join">
 		    <h1 class="headline1">회원가입</h1>
 		    <p class="welcome-copy">금융 빅데이터플랫폼에 회원가입하고<br> 다양한 데이터 서비스를 이용해보세요.</p>
@@ -136,13 +263,13 @@
 		                <!-- <li>
 		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 회원약관</i></label>
 		                    <a href="#" class="agreement-open">내용보기</a>
-		                </li> [2025.09.08] 삭제 -->
+		                </li> [2025.09.11] 삭제 -->
 		                <li>
-		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 개인정보 수집 및 이용 동의</i></label><!-- [2025.09.08] 수정 -->
+		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 개인정보 수집 및 이용 동의</i></label><!-- [2025.09.11] 수정 -->
 		                    <a href="#" class="agreement-open">내용보기</a>
 		                </li>
 		                <li>
-		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 개인정보 수집 및 이용 동의</i></label><!-- [2025.09.08] 수정 -->
+		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 개인정보 수집 및 이용 동의</i></label><!-- [2025.09.11] 수정 -->
 		                    <a href="#" class="agreement-open">내용보기</a>
 		                </li>
 		                <!-- <li>
@@ -152,15 +279,15 @@
 		                <li>
 		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] 정보 보안관리 약정서</i></label>
 		                    <a href="#" class="agreement-open">내용보기</a>
-		                </li> [2025.09.08] 삭제 -->
-		                <!-- [2025.09.08] 추가 -->
+		                </li> [2025.09.11] 삭제 -->
+		                <!-- [2025.09.11] 추가 -->
 		                <li>
-		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[필수] AI 서비스 이용약관</i></label>
+		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[선택] AI 서비스 이용약관</i></label>
 		                    <a href="#" class="agreement-open">내용보기</a>
 		                </li>
-		                <!-- //[2025.09.08] 추가 -->
+		                <!-- //[2025.09.11] 추가 -->
 		                <li class="has-sub is-unchecked"><!-- toggle .is-unchecked -->
-		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[선택] 마케팅 목적의 수집 및 이용 동의</i></label><!-- [2025.09.08] 수정 -->
+		                    <label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>[선택] 마케팅 목적의 수집 및 이용 동의</i></label><!-- [2025.09.11] 수정 -->
 		                    <a href="#" class="agreement-open">내용보기</a>
 		                    <ul class="agree-list-sub">
 		                        <li><label class="ipt-check-sub"><input type="checkbox" name="checkbox1"><i>메일 수신</i></label></li>
@@ -172,11 +299,11 @@
 		        </div>
 		    </form>
 		    </div>
-		</div>
 		    
-		<div class="bottom-box">
-		    <div class="button-box-large">
-		        <button type="button" class="button-p" disabled id="joinMember">다음</button>
+		    <div class="bottom-box">
+		        <div class="button-box-large">
+		            <button type="button" class="button-p" disabled id="joinMember">다음</button>
+		        </div>
 		    </div>
 		</div>
     </main>

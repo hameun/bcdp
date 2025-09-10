@@ -133,30 +133,6 @@ body.is-fixed {
   margin-top: 60px;
 }
 
-.bottom-box {
-  max-width: 1000px;
-  margin: 0 auto;
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
-  width: 100%;
-  padding-bottom: 80px;
-  text-align: center;
-}
-.bottom-box .textbutton-box {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.bottom-box .button-box-large button {
-  -ms-flex-preferred-size: 160px;
-      flex-basis: 160px;
-}
-
-.content + .bottom-box {
-  margin-top: -48px;
-}
-
 /***********
 header
 ***********/
@@ -190,6 +166,8 @@ aside
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 .aside .statebar .mypage-menu {
   display: none;
@@ -198,6 +176,8 @@ aside
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
+  position: relative;
+  z-index: 1;
 }
 .aside .navigation .util-menu {
   display: -webkit-box;
@@ -719,7 +699,7 @@ aside
 .pop-history .modal {
   -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
           box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
 }
 .pop-history .tab-box {
   margin-bottom: 20px;
@@ -804,7 +784,7 @@ aside
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
   }
   .aside .statebar::after {
     content: "";
@@ -839,7 +819,7 @@ aside
     background: rgba(255, 255, 255, 0.8);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
   }
   .aside .statebar .mypage-menu a {
     display: block;
@@ -874,7 +854,7 @@ aside
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     position: fixed;
     z-index: 2;
     top: 0;
@@ -912,7 +892,7 @@ aside
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
   }
   .aside .navigation .main-menu li.is-current a::before {
     content: "";
@@ -1032,7 +1012,7 @@ aside
     display: none;
   }
   .aside.is-fold ~ .container {
-    margin-left: 84px;
+    padding-left: 84px;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -1054,7 +1034,7 @@ aside
     background-color: rgba(255, 255, 255, 0.6);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725);
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border-radius: 16px;
     border: 1px solid #fff;
   }
@@ -1086,7 +1066,7 @@ aside
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     position: fixed;
     z-index: 2;
     width: calc(100% - 40px);
@@ -1199,18 +1179,6 @@ aside
   .content .head-guidetext {
     font-size: 16px;
   }
-  .bottom-box {
-    margin-bottom: 40px;
-    max-width: 405px;
-  }
-  .bottom-box:has(.button-box-large) .button-box-large {
-    position: fixed;
-    padding: 24px 20px 20px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(180deg, rgba(248, 249, 252, 0) 0, #F8F9FC 24px, #F8F9FC 100%);
-  }
   .pop-history {
     top: 0;
     right: 0;
@@ -1242,7 +1210,6 @@ page : 레이아웃 변경 테스트
 .container {
   margin: 0 !important;
   padding: 0 20px 0 280px;
-  z-index: 1;
 }
 .container:has(.page-main) {
   overflow: hidden;
@@ -1253,13 +1220,17 @@ page : 레이아웃 변경 테스트
   padding: 0 340px 0 280px;
 }
 
-.aside.is-fold + .container {
-  padding: 0 20px 0 104px;
+@media screen and (min-width: 1024px) {
+  .aside.is-fold ~ .container {
+    padding: 0 20px 0 104px;
+  }
+  .aside.is-fold ~ .container:has(.page-aisearch) {
+    padding: 0 340px 0 104px;
+  }
+  .aside.is-fold ~ .container .analysis-nav {
+    left: 104px;
+  }
 }
-.aside.is-fold + .container:has(.page-aisearch) {
-  padding: 0 340px 0 104px;
-}
-
 /***********
 page : .page-main /.page-aisearch
 ***********/
@@ -1436,7 +1407,7 @@ page : .page-main /.page-aisearch
   border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
   -webkit-box-shadow: 0px 8px 16px 0px rgba(35, 34, 88, 0.0784313725);
           box-shadow: 0px 8px 16px 0px rgba(35, 34, 88, 0.0784313725);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   -webkit-box-shadow: 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
           box-shadow: 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
   font-size: 12px;
@@ -1594,7 +1565,7 @@ page : .page-main /.page-aisearch
      border-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(rgba(255, 255, 255, 0.2)));
      border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
   background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   -webkit-box-shadow: 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset, 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725);
           box-shadow: 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset, 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725);
 }
@@ -1966,7 +1937,7 @@ page : .page-main /.page-aisearch
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
   }
   .pop-aiside .modal::before {
     content: "";

@@ -159,6 +159,7 @@
 
 .icon-alram {@include set-icon(24px, 24px, svg-icon(alram));}
 .on .icon-alram {background-image: url(svg-icon(alram-on, $primary));}
+
 @media screen and (max-width: 767px) {
   .icon-alram {@include set-icon(16px, 16px, svg-icon(alram-s));}
 .on .icon-alram {background-image: url(svg-icon(alram-s-on, $primary));}
@@ -1002,11 +1003,41 @@ TAPS / SWITCH
   }
   &.is-sticky {
     position: sticky;
-    top: 0;
+    top: 60px;
     z-index: 1;
     background-color:  $layout-bg;
+    overflow: visible; // 박스쉐도우
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -32px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $layout-bg;
+      box-shadow: 40px 0 0px 0px $layout-bg;
+      z-index: 0;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: -32px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $layout-bg;
+      box-shadow: -40px 0 0px 0px $layout-bg;
+      z-index: 0;
+    }
     .tabs {
-      gap: 20px;
+      // height: 88px;
+      position: relative;
+      z-index: 1;
+    }
+
+    ._tabs {
+      gap: 24px;
       & >li {
         flex: 0;
       }
@@ -1017,36 +1048,63 @@ TAPS / SWITCH
 
 @media screen and (min-width: 1024px){
   .tab-box {
-    &.is-static,
     &.is-sticky {
-      height: 88px;
-      .tabs {
-        padding-top: 32px; // 88 - 56
-        height: 88px;
-      }
-    }
-  }
-}
+      top: 32px;
+      overflow: visible;
+      // &::before {
+      //   content: '';
+      //   position: absolute;
+      //   top: -32px;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   background-color: $layout-bg;
+      //   box-shadow: 40px 0 0px 0px $layout-bg;
+      //   z-index: 0;
+      // }
+      // &::after {
+      //   content: '';
+      //   position: absolute;
+      //   top: -32px;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   background-color: $layout-bg;
+      //   box-shadow: -40px 0 0px 0px $layout-bg;
+      //   z-index: 0;
+      // }
+      // .tabs {
+      //   // height: 88px;
+      //   position: relative;
+      //   z-index: 1;
+      // }
 
-@media screen and (max-width: 1023px){
-  .tab-box {
-    &.is-static,
-    &.is-sticky {
-      height: 116px;
       .tabs {
-        padding-top: 60px;
-        height: 116px;
+        gap: 24px;
+        & >li {
+          flex: 0;
+        }
       }
     }
   }
 }
-@media screen and (max-width: 767px){
+@media screen and (max-width: 1023px) {
   .tab-box {
+    &.is-sticky {
+      margin: 0 -20px;
+      .tabs {
+        position: relative;
+        padding: 0 20px;
+      }
+    }
+  }
+
+  ._tab-box {
     margin: 0 -20px;
     .tabs {
       position: relative;
       padding: 0 20px;
-      gap: 20px;
+      gap: 24px;
       display: inline-flex;
       min-width: 100%;
       & >li {
@@ -1054,6 +1112,40 @@ TAPS / SWITCH
       }
     }
   }
+}
+
+@media screen and (min-width: 768px){
+  .tab-box {
+    &.is-sticky {
+      // height: 116px;
+      .tabs {
+        // padding-top: 60px;
+        // height: 116px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px){
+
+  // 스크롤 탭
+  .page-analysis,
+  .page-datamarket,
+  .page-datacontest .datacontest-view {
+    .tab-box {
+      margin: 0 -20px;
+      .tabs {
+        position: relative;
+        padding: 0 20px;
+        gap: 24px;
+        display: inline-flex;
+        min-width: 100%;
+        & >li {
+          flex: 0;
+        }
+      }
+    }
+  }
+
 }
 .segment {@include set-tabs-segment(48px, 1);}
 .segment-small {@include set-tabs-segment(40px, 2);}
@@ -1242,7 +1334,7 @@ TAPS / SWITCH
   background-clip: padding-box;
   overflow: hidden;
   box-shadow: 0px 16px 32px 0px #23225814;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   border:0 !important;
   &::after{
     content:"";
@@ -1458,7 +1550,7 @@ MODAL POPUP
   .modal-close {
     position: absolute;
     top: 20px;
-    right: 14px;
+    right: 20px;
     @include set-icon(24px, 24px, $icon-close);
   }
   
@@ -1598,11 +1690,11 @@ MODAL POPUP
     }
   }
   
+
   .modal-content-analysis-select {
-    padding-bottom: 20px;
     .chip-box {
-      gap: 16px 8px;
-    }
+      gap: 8px;
+    } 
   }
 
   .modal-find-company {
@@ -2070,9 +2162,10 @@ MODAL POPUP
     // padding: 8px 0;
     .location-breadcrumb {
       margin-bottom: 20px;
-    }
-    .chip-box {
-      gap: 8px;
+      display: flex;
+      .breadcrumb {
+        display: inline-flex;
+      }
     }
   }
   .modal-data-info {
@@ -2252,14 +2345,17 @@ MODAL POPUP
     align-items: center;
     input {
       position: absolute;
-      width: 0;
-      height: 0;
+      // width: 0;
+      // height: 0;
+      margin: 0;
+      inset: 0;
       appearance: none;
-      z-index: -1;
+      // z-index: -1;
       &:checked + i {
-        // padding: 7px 12px;
-        border: 1.5px solid $primary;
-        // border-color: $primary;
+        // border: 1.5px solid $primary;
+        border: 1px solid $primary;
+        // padding: 0 11.5px;
+        // line-height: 29px;
         color: $primary;
       }
       &:focus + i {
@@ -2270,6 +2366,7 @@ MODAL POPUP
       flex: 0;
       padding: 0 12px;
       height: 40px;
+      line-height: 40px;
       box-sizing: border-box;
       border: 1px solid $gray-100;
       border-radius: 8px; 
@@ -2284,6 +2381,7 @@ MODAL POPUP
       flex: auto;
       padding: 0 16px;
       height: 48px;
+      line-height: 48px;
       font-weight: 600;
       text-align: center;
     }
@@ -3580,7 +3678,7 @@ POPOVER POPUP
   border: 2px solid $white;
   background-color: #FFFFFF99;
   box-shadow: 0px 16px 32px 0px #23225814;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   overflow: hidden;
   border-radius: 20px;
   height: 100%;
@@ -3663,7 +3761,7 @@ POPOVER POPUP
         background-clip: padding-box;
         overflow: hidden;
         box-shadow: 0px 16px 32px 0px #23225814;
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(10px);
     }
     .tournament-content{
       display:block;
@@ -3795,7 +3893,7 @@ POPOVER POPUP
   right:280px;
   width: 360px;
   box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.08);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   background-size: 24px;
   z-index:9;
@@ -3902,16 +4000,6 @@ TOAST POPUP
   // .headline1 {font-size: 32px;}
   .pop-modal {padding-left: 0;}
   .toast-message {left: 0;}
-  // .tab-box {
-  //   &.is-static,
-  //   &.is-sticky {
-  //     height: 116px;
-  //     .tabs {
-  //       padding-top: 60px;
-  //       height: 116px;
-  //     }
-  //   }
-  // }
   .data-list > ul.col-3 {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3966,6 +4054,14 @@ TOAST POPUP
   
 }
 @media screen and (min-width: 768px){
+  .modal .modal-content-analysis-select {
+    .chip-box {
+      i {
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
   /** page select */
   .ui-selectmenu-menu {
     padding: 0;
@@ -3980,7 +4076,7 @@ TOAST POPUP
       border-radius: 16px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
       box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(10px);
       &::before {
         content: ''; 
         position: absolute;
@@ -4167,6 +4263,8 @@ TOAST POPUP
       button {
         height: 56px;
         border-radius: 16px;
+        font-size: 18px;
+        font-weight: 600;
       }
     }
   }
@@ -4192,73 +4290,70 @@ TOAST POPUP
       }
     }
   }
-  .modal .modal-price-cart {
-    flex: auto;
-    overflow: scroll;
-    // margin-right: -20px;
-    .item-scroll-wrap {
-      max-height: 100%;
+
+  .modal {
+    .modal-price-cart {
+      flex: auto;
+      overflow: scroll;
+      // margin-right: -20px;
+      .item-scroll-wrap {
+        max-height: 100%;
+      }
+      .item {
+        display: block;
+      }
+      .item label {
+        display: block;
+      }
+      .item label i {
+        padding-right: 30px;
+        white-space: inherit;
+        max-width: none;
+        &::before {
+          position: absolute;
+          right: 0;
+          top: calc(50% + 10px);
+          transform: translateY(-50%);
+          margin: 0;
+        }
+      }
     }
-    .item {
-      display: block;
+    .modal-data-info .info-col-2 {
+      grid-template-columns: repeat(1, 1fr);
     }
-    .item label {
-      display: block;
+    .modal-login .title{text-align: left;}
+    
+    .modal-content-analysis-select {
+      .chip-box {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .depth2 {
+        .chip-box {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
     }
-    .item label i {
-      padding-right: 30px;
-      white-space: inherit;
-      max-width: none;
-      &::before {
-        position: absolute;
-        right: 0;
-        top: calc(50% + 10px);
-        transform: translateY(-50%);
-        margin: 0;
+    .modal-faq .tab-contents {
+      // 팝업 상하여백 40
+      // 팝업 타이틀 46
+      // 탭 높이 46
+      // .formbox 여백 64
+      // .formbox 버튼 46
+      // .faqbox 필터 56
+      $contentMargin: calc(40px + 46px + 46px);
+      $formboxMargin: calc(64px + 46px); // // 132px > 362px
+      .formbox {
+          // height: calc(100vh - $contentMargin - $formboxMargin);
+          height: calc(100vh - 362px - $formboxMargin);
+      }
+      .faqbox {
+        .faq-list {
+          height: calc(100vh - $contentMargin - 56px);
+        }
       }
     }
   }
-  .modal .modal-data-info .info-col-2 {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .modal .modal-login .title{text-align: left;}
-  .modal-faq .tab-contents {
-    // 팝업 상하여백 40
-    // 팝업 타이틀 46
-    // 탭 높이 46
-    // .formbox 여백 64
-    // .formbox 버튼 46
-    // .faqbox 필터 56
-    $contentMargin: calc(40px + 46px + 46px);
-    $formboxMargin: calc(64px + 46px); // // 132px > 362px
-    .formbox {
-        // height: calc(100vh - $contentMargin - $formboxMargin);
-        height: calc(100vh - 362px - $formboxMargin);
-    }
-    .faqbox {
-      .faq-list {
-        height: calc(100vh - $contentMargin - 56px);
-      }
-    }
-  }
-  // .tab-box {
-  //   &.is-static,
-  //   &.is-sticky {
-  //     // margin: 0 -24px; // 레이아웃 수정필요로 일단 주석처리
-  //     .tabs {
-  //       // display: flex !important;
-  //       // position: absolute; 
-  //       // left: 24px; // 레이아웃 수정필요로 일단 주석처리
-  //       // right: 24px; // 레이아웃 수정필요로 일단 주석처리
-  //       & >li {
-  //         display: inline-flex;
-  //         & +li {
-  //           margin-left: 24px;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   .switch-box {
     .switch-label {
       display: none;
