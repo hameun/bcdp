@@ -1390,7 +1390,7 @@ page : page-mypage
       .item2 {
         flex: 1;
         display: flex;
-        width: 100%;
+        max-width: 100%;
         .date-info {
           display: inline-flex;
           align-items: center;

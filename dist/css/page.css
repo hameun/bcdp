@@ -1844,7 +1844,7 @@ page : page-mypage
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  max-width: 100%;
 }
 .datamarket-pay.payment-history .item-group .item2-box .item2 .date-info {
   display: -webkit-inline-box;
