@@ -119,7 +119,7 @@ body.is-fixed {
 .content {
   width: 100%;
   max-width: 1000px;
-  padding: 100px 0 80px;
+  padding: 100px 0;
   margin: 0 auto;
 }
 .content .head-guidetext {

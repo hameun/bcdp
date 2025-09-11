@@ -356,7 +356,8 @@ function fn_passwordMask(){
     // console.log(maskBtns.length);
     
     maskBtns.forEach(function(maskBtn){
-        maskBtn.addEventListener('click', function(){
+        maskBtn.addEventListener('click', function(e){
+            e.preventDefault();
             toggle(this);
         });
     });
@@ -373,6 +374,7 @@ function fn_passwordMask(){
         button.classList.toggle('off');
         button.innerHTML = '<i>'+ _option.text[_val] +'</i>';
         input.setAttribute( 'type' , _option.maskon[_val] );
+        input.focus();
     }   
 }
 

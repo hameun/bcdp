@@ -174,9 +174,12 @@ page : join
     .bottom-box {
       position: fixed;
       left: 0;
-      bottom: 0;
       right: 0;
+      bottom: 0px;
+      margin-top: 0;
       padding: 20px;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(248, 249, 252, 0) 0, #F8F9FC 24px, #F8F9FC 100%);
       .button-box-large {
         max-width: 405px;
         margin: 0 auto;
