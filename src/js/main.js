@@ -687,7 +687,7 @@ function fn_modalPopOpen(_modalId, _isFull, _hasDim){
         }
     }
 
-    modal2.on("keydown",fn_keyTrap);
+    // modal2.on("keydown",fn_keyTrap);
 
     // const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
     const modalButtons = $(modal2).find('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
