@@ -306,14 +306,16 @@ $topHeader_h: 60px;
   $padding: 12px 16px;
   $border-radius: 16px;
   $text-type: 0;
+  $font-weight: 'm';
   @if ($button-size == 'l') {
     $padding: 18px 16px;
     $border-radius: 16px;
     height: 56px;
     flex-basis: 120px;
+    $font-weight: 'sb';
   } @else if ($button-size == 'm') {
     $padding: 14px 16px;
-    $border-radius: 16px;
+    $border-radius: 12px; // 0912 팝업내 공통
   } @else if ($button-size == 's') {
     $padding: 7px 16px;
     $border-radius: 8px;
@@ -351,7 +353,7 @@ $topHeader_h: 60px;
 
   background-color: $background-color;
   border: 1px solid $border-color;
-  @include text-body($text-type, 'm', $font-color);
+  @include text-body($text-type, $font-weight, $font-color);
   
   &:hover,
   &a:hover {

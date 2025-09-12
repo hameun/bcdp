@@ -14,6 +14,7 @@ $(function(){
     ui_navi();
     ui_glassBg();
 
+    fn_main();
     fn_asideFixed();
     fn_tabs();
 
@@ -53,6 +54,76 @@ $(function(){
     });
 });
 
+function _fn_main(){
+    // const $wrap = $('.flow-wrap');
+    function active($wrap){
+        var center = $wrap.width()/2;
+
+        $wrap.find('.exquestion-list .exquestion-item').each(function(){
+            var rect = this.getBoundingClientRect();
+            var spanCenter = rect.left + rect.width / 2;
+            $(this).data("dist", Math.abs(spanCenter - (window.innerWidth / 2)));
+        });
+
+        // 
+        var $spans = $wrap.find('.exquestion-list .exquestion-item');
+        $spans.removeClass("active");
+
+        $spans.sort(function(a,b) {
+            return $(a).data("dist") - $(b).data("dist");
+        }).slice(0,3).addClass("active");
+    }
+
+    setInterval(function(){
+        $(".flow-text").each(function(){
+            active($(this));
+        });
+    }, 300)
+}
+
+function fn_main(){
+    function active($wrap){
+        var menuWidth = $('.navigation').outerWidth() || 0;
+        var center = (window.innerWidth / 2) + (menuWidth / 2);
+        var closest = null;
+        var minDist = Infinity;
+
+        $wrap.find('.exquestion-list .exquestion-item').each(function(){
+            var rect = this.getBoundingClientRect();
+            var spanCenter = rect.left + rect.width / 2;
+            var dist = Math.abs(spanCenter - center);
+
+            if (dist < minDist) {
+                minDist = dist;
+                closest = this;
+            }
+        });
+
+        if (!closest) return;
+
+        $wrap.find('.exquestion-list .exquestion-item').removeClass("active");
+
+        var $spans = $wrap.find('.exquestion-list .exquestion-item');
+        var idx = $spans.index(closest);
+
+        $spans.eq(idx).addClass("active");
+        $spans.eq((idx-1 + $spans.length) % $spans.length).addClass("active");
+        $spans.eq((idx+1) % $spans.length).addClass("active");
+    }
+
+    // setInterval(function(){
+    //     $(".flow-text").each(function(){
+    //         active($(this));
+    //     });
+    // }, 300)
+    function loop() {
+        $(".flow-text").each(function(){
+            active($(this));
+        });
+        requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+}
 function fn_exquestionSwipe(){
     const slider = document.querySelector('.exquestion-type.swiper-container');
     if (!slider) return false;
@@ -131,13 +202,18 @@ function fn_selectbox(){
 function fn_selectIpt(){
     const selects = document.querySelectorAll(".input-box select");
     if (!selects.length) return false;
-
+    
+    // const isBottom = false;
+    // const posAt = isBottom ? 'left top' : 'left bottom';
+    // const posMy = isBottom ? 'left bottom-8' : 'left top+8';
     selects.forEach(function(select){
         $(select).selectmenu({
             position: {
                 of: select.parentElement,
                 at: "left bottom",
                 my: "left top+8"
+                // at: posAt,
+                // my: posMy
             },
             create: function( event, ui ) {
                 $(this).selectmenu('widget').find('.ui-selectmenu-text').addClass('placeholder');
@@ -170,7 +246,7 @@ function fn_selectIpt(){
             $(selectModal).on('touchend', e => {
                 const distance = endY - startY;
                 if ( distance > _threshold ) {
-                    $(select).selectmenu( "close" );
+                   selects.selectmenu( "close" );
                 }
             });
         }

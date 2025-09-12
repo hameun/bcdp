@@ -586,7 +586,7 @@ INPUT TEXT
     width: 100%;
     // box-sizing: border-box;
     height: 30px;
-    @include text-body(0);
+    @include text-body(0,'m'); // 로그인회원가입 09.12
     outline: transparent;
     &:disabled {
       margin: -2px;
@@ -605,7 +605,9 @@ INPUT TEXT
       }
     }
     &::placeholder {
-      color: $gray-300;
+      // font-weight: 400;
+      // color: $gray-300; // 로그인회원가입 09.12
+      @include text-body(0,'r',$gray-300);
     }
   }
   .util-box {
@@ -786,6 +788,7 @@ INPUT TEXT
       flex-wrap: wrap;
       .ipt-check-sub {
         flex: 1;
+        @include text-body(1,'m');
       }
       & +li {
         margin-top: 16px;
@@ -821,7 +824,9 @@ INPUT TEXT
     position: absolute;
     top: 20px;
     left: 20px;
-
+    .ipt-check {
+      @include text-body(0,'sb');
+    }
   }
 }
 
@@ -2687,6 +2692,12 @@ CONTENT COMPONENT
     background-color: $gray-60;
     border-radius: 16px;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: auto;
+    }
   }
   .title {
     max-height: 3em;
@@ -3429,7 +3440,8 @@ CONTENT COMPONENT
     border-radius: 50%;
   }
   .msg-complete {
-    @include text-title(4, $gray-700);
+    // @include text-title(4, $gray-700);
+    @include text-body(0, 'sb'); // 09.12 로그인회원가입 수정
     strong {
       color: $primary;
     }

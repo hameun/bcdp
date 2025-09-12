@@ -874,51 +874,135 @@ page : .page-main /.page-aisearch
       color: $gray-900;
       transition: font-size 300ms ease;
     }
+    .flow-wrap {
+      margin: 20px 0 -40px;
+    }
     .flow-text {
-      // overflow-x: hidden;
-      overflow: auto;
       padding: 40px 0;
-      margin: 20px 0 -40px
+
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      // background-color: #111;
+      display: flex; 
+      align-items: center;
+      // flex-wrap: wrap;
+      color: #fff;
+
+      &.text1 {
+        margin-bottom: -68px;
+      }
+
+      ._center {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 300px * 3;
+        height: 100%;
+        background: #555;
+        transform: translateX(-50%);
+      }
+      ._test {
+        position: absolute;
+        left: auto;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: yellow;
+        z-index: 1;
+      }
+      &:first-child .exquestion-list {
+        animation: marqee1 20s linear infinite; 
+      }
+      &:nth-child(even) .exquestion-list {
+        animation: marqee2 20s linear infinite;
+      }
     }
     .exquestion-list {
-      display: grid;
-      grid-template-columns: repeat(20,1fr);
+      // display: grid;
+      // grid-template-columns: repeat(20,1fr);
       gap: 12px;
-      // transform: translateX(-100px);
       transition: all;
+
+
+      display: flex;
+
       & +.exquestion-list {
         margin-top: 12px;
-        // transform: translateX(-500px);
       }
       .exquestion-item {
+        position: relative;
+        z-index: 1;
         display: flex;
         align-items: center;
         box-sizing: border-box;
         width: 280px;
-        padding: 14px 18px;
+        height: 74px;
+        flex-basis: 280px;
+        padding: 16px 20px;
+
         border-radius: 16px;
-        border: 2px solid #FFFFFF;
-        border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-        background-color: #FFFFFF99;
-        box-shadow: 0px 4px 12px 0px #23225805 inset, 0px 16px 32px 0px #23225814;
+        // background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+        background: #FFFFFF99;
+        box-shadow: 0px 16px 32px 0px transparent,  0px 4px 12px 0px transparent inset;
+        backdrop-filter: blur(10px);
         cursor: pointer;
         transition: all 300ms ease;
         p {
-          @include text-body(2);
+          position: relative;
+          z-index: 1;
+          @include text-body(2,'r',$gray-100);
           max-height: 3em;
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
+          transition: all 300ms ease;
         }
-       &:hover {
-        text-decoration: underline;
-       }
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 16px;
+          // background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+          padding: 2px;
+          z-index: 0;
+          transition: all 300ms ease;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+        &.active {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
+          box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
+          backdrop-filter: blur(10px);
+          &::before {
+          content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask-composite: exclude;
+          }
+          p {
+            color: $gray-900;
+          }
+        }
       }
-
     }
   }
+}
+@keyframes marqee1 {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
+}
+@keyframes marqee2 {
+  0% {transform: translateX(-50%);}
+  100% {transform: translateX(0%);}
 }
 .page-aisearch {
   overflow: scroll;

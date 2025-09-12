@@ -1947,10 +1947,10 @@ page : page-datamarket
         display: inline-flex;
         align-items: center;
         border-radius: 12px;
-        padding: 6px 12px;
+        padding: 4px 11px;
         background-color: $navy-50;
         i {
-          @include text-body(0,'m',$point);
+          @include text-body(1,'m',$point);
           padding: 0 2px;
         }
       }
@@ -3164,6 +3164,9 @@ page : page-polio
           font-size: 16px;
           color:$gray-500;
           border-top:1px solid $gray-60;
+          p {
+            white-space: pre-line;
+          }
         }
       }
       

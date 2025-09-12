@@ -2472,11 +2472,11 @@ page : page-datamarket
       -ms-flex-align: center;
           align-items: center;
   border-radius: 12px;
-  padding: 6px 12px;
+  padding: 4px 11px;
   background-color: #EFEFFF;
 }
 .page-datamarket .datamarket-search .search-filter .chip i {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #5957E3;
   padding: 0 2px;
@@ -4047,6 +4047,9 @@ page : page-polio
   font-size: 16px;
   color: #626A7A;
   border-top: 1px solid #E7E9EF;
+}
+.faq-contents .accordion ul .accordion-item .accordion-info p {
+  white-space: pre-line;
 }
 
 .notice-list ul {
