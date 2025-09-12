@@ -38,15 +38,16 @@
 	        
 	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
 	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
-	        <a href="#" class="icon-cart">장바구니</a><!-- MAIN & 로그인 -->
+	        <a href="#" class="icon-cart">장바구니<i class="my-item">+99</i></a><!-- MAIN & 로그인 --><!-- [2025.09.11] 추가 -->
 	        
 	        <a href="#" class="icon-mypage">마이페이지</a>
 	        <a href="#" class="icon-login">로그인</a>
+	        <a href="#" class="icon-logout">로그아웃</a><!-- [2025.09.11] 추가 -->
 	        <div class="mypage-menu">
 	            <ul>
 	                <li><a href="#">마이페이지</a></li>
 	                <li><a href="#">개인정보 수정</a></li>
-	                <li><a href="#">로그아웃</a> </li>
+	                <li><a href="#">로그아웃</a></li>
 	            </ul>
 	        </div>
 	        <a href="#" class="icon-menuclose">메뉴닫기</a>
@@ -138,7 +139,7 @@
 		            </span>
 		        </p>
 		        <p class="login-util is-mobile">
-		            <label class="ipt-check-small">
+		            <label class="ipt-check"><!-- [2025.09.11] 수정 -->
 		                <input type="checkbox" name="checkbox1">
 		                <i>자동 로그인</i>
 		            </label>
@@ -369,7 +370,7 @@
             <button class="button-p close-modal" type="button">지금 변경하기</button>
         </div>
     </div>
-</div> [2025.09.08] 삭제 -->
+</div> [2025.09.11] 삭제 -->
 <!-- <div class="pop-modal modal-hidden" id="modal2">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -377,11 +378,11 @@
         </div>
         <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
     </div>
-</div> [2025.09.08] 삭제 -->
+</div> [2025.09.11] 삭제 -->
 <div class="pop-modal modal-hidden" id="modal3">
     <div class="modal" tabindex="0">
         <div class="message-box">
-            <p>아이디 또는 비밀번호가 일치하지 않습니다. <br>5회 오류 시 로그인이 제한돼요. (N/5)</p>
+            <p>아이디 또는 비밀번호가 일치하지 않습니다. <br>5회 오류 시 로그인이 제한돼요.</p><!-- [2025.09.11] 수정 -->
         </div>
         <div class="button-box-medium"><button class="button-p close-modal" type="button">확인</button></div>
     </div>
@@ -398,8 +399,8 @@
 <!-- 퍼블리싱 확인 -->
 <div class="modal-test">
     <div class="button-box-xsmall">
-        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[비밀번호 변경 주기 도래 시]</a> [2025.09.08] 삭제 -->
-        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">[비밀번호 변경 주기 만료 시]</a> [2025.09.08] 삭제 -->
+        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[비밀번호 변경 주기 도래 시]</a> [2025.09.11] 삭제 -->
+        <!-- <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">[비밀번호 변경 주기 만료 시]</a> [2025.09.11] 삭제 -->
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');return false;">[로그인 오류일 경우(1~4회)]</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">[로그인 오류일 경우(5회 이상)]</a>
     </div>

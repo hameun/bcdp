@@ -6,9 +6,7 @@ page : login
 ***********/
 $pageLogin-width: 405px;
 @mixin set-page-login {
-  padding: 0;
   h1 {
-    margin-top: 16px; // Mobile
     margin-bottom: 40px;
     text-align: center;
   }
@@ -26,27 +24,38 @@ $pageLogin-width: 405px;
   display: flex;
   flex-direction: column;
   max-width: $pageLogin-width;
-  padding-top: 0;
   // margin: auto;
   @include set-page-login;
   .login-util {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin: 16px 0 32px;
-    .ipt-check-small {
-      margin-right: auto;
+    &.is-pc {
+      margin: 16px 0 32px;
+      .ipt-check-small {
+        margin-right: auto;
+      }
+    }
+    &.is-mobile {
+      margin: 12px 0 32px;
+      .ipt-check {
+        margin-right: auto;
+        i {
+          @include text-body(1,'r',$gray-700); 
+        }
+      }
     }
   }
   .member-join {
-    margin-top: 24px;
-    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
     .copy {
       margin-right: 8px;
       @include text-body(2,'r',$gray-500);
     }
     .textbutton-p {
-      @include text-body(2,'r',$gray-900);
+      @include text-body(2,'m',$gray-900);
     }
   }
   .formbox {
@@ -59,7 +68,6 @@ page : login-find
 .page-login-find {
   display: flex;
   flex-direction: column;
-  // padding-top: 0;
   max-width: $pageLogin-width;
   // margin: auto;
   @include set-page-login;
@@ -79,7 +87,6 @@ page : join
   display: flex;
   flex-direction: column;
   max-width: $pageLogin-width;
-  padding-bottom: 40px;
   @include set-page-login;
   // & +.bottom-box {
   //   padding-bottom: 0;
@@ -137,9 +144,6 @@ page : join
   .page-login-find,
   .page-join {
     margin: auto;
-    padding: 50px 0;
-  }
-  .page-login {
   }
   .page-login-find {
     #tabContent1 {
@@ -157,20 +161,19 @@ page : join
       .formbox:nth-child(2) {
         min-height: 389px;
       }
-      .formbox:nth-child(2) {
+      .formbox:nth-child(3) {
         min-height: 315px;
       }
     }
   }
   .page-join {
-    margin-top: 10vh;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 767px){
   .page-login,
   .page-login-find,
   .page-join {
-    padding: 0 0 100px;
     .bottom-box {
       position: fixed;
       left: 0;
@@ -185,6 +188,14 @@ page : join
         margin: 0 auto;
       }
     }
+  }
+  .page-login {
+    .bottom-box {
+      padding-bottom: 40px;
+    }
+  }
+  .page-join .agree-box {
+    margin: 0 -20px;
   }
 }
 /***********

@@ -11,11 +11,8 @@ page : login
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 405px;
-  padding-top: 0;
-  padding: 0;
 }
 .page-login h1 {
-  margin-top: 16px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -37,14 +34,32 @@ page : login
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+.page-login .login-util.is-pc {
   margin: 16px 0 32px;
 }
-.page-login .login-util .ipt-check-small {
+.page-login .login-util.is-pc .ipt-check-small {
   margin-right: auto;
 }
+.page-login .login-util.is-mobile {
+  margin: 12px 0 32px;
+}
+.page-login .login-util.is-mobile .ipt-check {
+  margin-right: auto;
+}
+.page-login .login-util.is-mobile .ipt-check i {
+  font-size: 16px;
+  font-weight: 400;
+  color: #343841;
+}
 .page-login .member-join {
-  margin-top: 24px;
-  text-align: center;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .page-login .member-join .copy {
   margin-right: 8px;
@@ -54,7 +69,7 @@ page : login
 }
 .page-login .member-join .textbutton-p {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: #191B1E;
 }
 .page-login .formbox {
@@ -73,10 +88,8 @@ page : login-find
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 405px;
-  padding: 0;
 }
 .page-login-find h1 {
-  margin-top: 16px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -111,11 +124,8 @@ page : join
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 405px;
-  padding-bottom: 40px;
-  padding: 0;
 }
 .page-join h1 {
-  margin-top: 16px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -194,7 +204,6 @@ page : join
   .page-login-find,
   .page-join {
     margin: auto;
-    padding: 50px 0;
   }
   .page-login-find #tabContent1 .formbox:nth-child(1) {
     min-height: 338px;
@@ -208,19 +217,14 @@ page : join
   .page-login-find #tabContent2 .formbox:nth-child(2) {
     min-height: 389px;
   }
-  .page-login-find #tabContent2 .formbox:nth-child(2) {
+  .page-login-find #tabContent2 .formbox:nth-child(3) {
     min-height: 315px;
   }
   .page-join {
-    margin-top: 10vh;
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 767px) {
-  .page-login,
-  .page-login-find,
-  .page-join {
-    padding: 0 0 100px;
-  }
   .page-login .bottom-box,
   .page-login-find .bottom-box,
   .page-join .bottom-box {
@@ -238,6 +242,12 @@ page : join
   .page-join .bottom-box .button-box-large {
     max-width: 405px;
     margin: 0 auto;
+  }
+  .page-login .bottom-box {
+    padding-bottom: 40px;
+  }
+  .page-join .agree-box {
+    margin: 0 -20px;
   }
 }
 /***********

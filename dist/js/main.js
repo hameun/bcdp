@@ -12,7 +12,7 @@ $(function(){
 
     /** 기본 로드될 함수 */
     ui_navi();
-    // ui_glassBg();
+    ui_glassBg();
 
     fn_asideFixed();
     fn_tabs();
@@ -24,6 +24,7 @@ $(function(){
     fn_selectbox();
     fn_selectIpt();
     fn_tabSticky();
+    fn_popover();
 
     fn_paymentHistoryItemFold();
     fn_questionHistoryItemFold();
@@ -316,36 +317,31 @@ function ui_navi(){
 
 /** 백그라운드 적용 */
 function ui_glassBg(){
-    const filepath = this.location.pathname;
-    const filename = filepath.substring(filepath.lastIndexOf('/') + 1).split(".")[0];
-    const glassBgPages = ["UT01"];
-    for ( glassBgPage of glassBgPages ) {
-        if (filename == glassBgPage) {
-            const body = document.getElementsByTagName('body')[0];
-            body.classList.add('has-glassbg');
-            const bodyBg = document.createElement('div');
-            bodyBg.id = 'bg';
-            document.body.appendChild(bodyBg);
+    const main = $('.page-login, .page-main');
+    if ( !main.length ) return false;
 
-            const lottieScript = document.createElement('script');
-            lottieScript.type = "text/javascript";
-            lottieScript.src = "../js/lottie.min.js";
+    $('body').addClass('is-main');
+    const bodyBg = document.createElement('div');
+    bodyBg.id = 'bg';
+    document.body.appendChild(bodyBg);
 
-            document.body.appendChild(lottieScript);
-            lottieScript.onload = function() {
-                lottie();
-                
-                function lottie(){
-                    const animation = bodymovin.loadAnimation({
-                        container: document.getElementById('bg'),
-                        renderer: 'svg',
-                        loop: true,
-                        autoplay: true,
-                        path: '../images/bg_gradient.json'
-                    });
-                }
-            };
-        };
+    const lottieScript = document.createElement('script');
+    lottieScript.type = "text/javascript";
+    lottieScript.src = "../js/lottie.min.js";
+
+    document.body.appendChild(lottieScript);
+    lottieScript.onload = function() {
+        lottie();
+        
+        function lottie(){
+            const animation = bodymovin.loadAnimation({
+                container: document.getElementById('bg'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: '../images/bg_gradient.json'
+            });
+        }
     };
 };
 
@@ -719,41 +715,71 @@ function fn_modalPopClose(_this){
     lastFocusElement.focus();
 };
 /** 팝오버 [작업중] */
-function fn_popOver(_e,_message){
-    console.log(_e);
-    const posX = _e.target.offsetLeft + 'px';
-    const posY = _e.target.offsetTop + 'px';
-    const popoverHtml = document.createElement("div");
-    popoverHtml.classList = "pop-popover";
-    popoverHtml.style.position = "absolute";
-    popoverHtml.style.top = posY;
-    popoverHtml.style.left = posX;
+function fn_popover(){
+    var pop = $("#popover");
+    $(".info").on("mouseenter focus", function(){
+        var _this = $(this);
+        console.log(_this);
+        var pos = _this.data("tip-position") || "top";
+        var text = _this.data("tip");
+        pop.text(text).attr("data-pos", pos).show();
+        
+        var rect = this.getBoundingClientRect();
+        var popRect = pop[0].getBoundingClientRect();
 
-    const pop = document.createElement("div");
-    pop.classList = "popover";
-    pop.setAttribute('tabindex', 0);
-    const messege = document.createElement("p");
-    messege.innerText = _message;
-    const buttonClose = document.createElement('button');
-    buttonClose.classList = 'popover-close';
-    buttonClose.type = "button";
-    buttonClose.innerText = '닫기';
+        var top, left;
+        switch(pos){
+            case "top-left":
+                top = rect.top + window.scrollY - popRect.height - 8;
+                left = rect.left - popRect.width - 8;
+                break;
+            case "top":
+                top = rect.top + window.scrollY - popRect.height - 8;
+                left = rect.left + window.scrollX + (rect.width - popRect.width)/2;
+                break;
+            case "top-right":
+                top = rect.top + window.scrollY - popRect.height;
+                left = rect.right + window.scrollX - popRect.width - 8;
+                break;
+            case "middle-left":
+                top = rect.top + window.scrollY + (rect.height - popRect.height)/2;
+                left = rect.left - popRect.width - 8;
+                break;
+            case "middle-right":
+                top = rect.top + window.scrollY + (rect.height - popRect.height)/2;
+                left = rect.right + 8;
+                break;
+            case "bottom-left":
+                top = rect.bottom + 8;
+                left = rect.left - popRect.width - 8;
+                break;
+            case "bottom":
+                top = rect.bottom + 8;
+                left = rect.left + window.scrollX + (rect.width - popRect.width)/2;
+                break;
+            case "bottom-right":
+                top = rect.bottom + 8;
+                left = rect.right + 8;
+                break;
+        }
 
-    popoverHtml.appendChild(pop);
-    pop.append(messege, buttonClose);
+        if (left < 8) left = 8;
+        if (left + popRect.width > window.innerWidth - 8) {
+            left = window.innerWidth - popRect.width - 8;
+        }
 
-    document.querySelector('main.container').appendChild(popoverHtml);
-    pop.focus();
-    
-    buttonClose.addEventListener('click', function(){
-        fn_popOverClose();
+        if (top < 8) top = 8;
+        if (top + popRect.height > window.innerHeight - 8) {
+            left = window.innerHeight - popRect.height - 8;
+        }
+
+        pop.css({ top: top +"px" , left: left + "px" });
     });
-    
+
+    $(".info").on("mouseleave blur", function(){
+        pop.hidePopover();
+    });
 }
-function fn_popOverClose(){
-    const popoverHtml = document.querySelector('.pop-popover');
-    popoverHtml.remove();
-}; // fn_popOverClose
 
 /** 토스트 */
 function fn_toast(_message, _type){

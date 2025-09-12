@@ -49,7 +49,11 @@
 
 .underline {text-decoration: underline;}
 
-.headline1 {font-weight: 700; font-size: 36px; color: $gray-900;}
+.headline1 {
+  font-weight: 700;
+  font-size: 36px;
+  color: $gray-900;
+}
 .title1 {@include text-title(1);}
 .title2 {@include text-title(2);}
 .title3 {@include text-title(3);}
@@ -854,6 +858,7 @@ CHECKBOX / RADIO
     $icon-check-unSelected,
     $icon-check-unSelected-hover
   );
+  background-size: 24px auto;
   @include text-body(0);
   &-small {
     @include set-ipt-unit (
@@ -4007,7 +4012,12 @@ TOAST POPUP
 
 }
 @media screen and (max-width: 1023px){
-  // .headline1 {font-size: 32px;}
+  .content {
+    padding-top: 60px;
+  }
+  .headline1 {
+    font-size: 32px;
+  }
   .pop-modal {padding-left: 0;}
   .toast-message {left: 0;}
   .data-list > ul.col-3 {
@@ -4082,7 +4092,7 @@ TOAST POPUP
     left: 0;
     display: none;
     z-index: 11;
-    width: 160px;
+    // width: 160px;
       border-radius: 16px;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
       box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
@@ -4104,6 +4114,8 @@ TOAST POPUP
       padding-bottom: 1px;
       padding: 8px;
       max-height: 232px;
+      position: relative;
+      z-index: 1;
       .ui-selectmenu-optgroup {
         font-size: 1em;
         font-weight: bold;
@@ -4163,13 +4175,17 @@ TOAST POPUP
   }
 }
 @media screen and (max-width: 767px){
-  .headline1 {font-size: 24px;} // 상권분석에서 확인
+  .headline1 {
+    
+    margin-top: 16px;
+    font-size: 24px; // 상권분석에서 확인
+  }
   .title1 {font-size: 24px;}
   .title3 {font-size: 20px;} // 상권분석에서 확인 20  
   .title4 {font-size: 20px;}
   .guide-text {font-size: 12px;}
 
-  .button-box-medium { // 상권분석
+  .button-box-medium { // 상권분석 카드 버튼
     .button-p,
     .button-s,
     .button-t,
@@ -4181,6 +4197,21 @@ TOAST POPUP
     }
   }
 
+  .modal:not(.modal-medium2),
+  .modal:not(.modal-medium),
+  .modal:not(.modal-large) {
+    .button-box-medium {
+       .button-p,
+      .button-s,
+      .button-t,
+      .button-q {
+        border-radius: 16px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+        font-size: 18px;
+      }
+    }
+  }
   
   .result-none,
   .result-complete,
@@ -4391,6 +4422,8 @@ TOAST POPUP
       padding-bottom: calc(constant(safe-area-inset-bottom) + $layout-padding);
       padding-bottom: calc(env(safe-area-inset-bottom) + $layout-padding);
       border-radius: 24px 24px 0 0;
+      position: relative;
+      z-index: 1;
       .ui-selectmenu-optgroup {
         font-size: 1em;
         font-weight: bold;

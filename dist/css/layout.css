@@ -2,7 +2,7 @@
 /***********
 Layout
 ***********/
-html, body, textarea, button, a {
+html, body, textarea, button, a, input {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -64,7 +64,12 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-button {
   height: 7px;
 }
-
+body.is-main::-webkit-scrollbar {
+  width: 0;
+}
+body.is-main .header {
+  background-color: transparent;
+}
 body.has-glassbg {
   overflow: hidden;
   position: relative;
@@ -76,17 +81,14 @@ body.has-glassbg {
   -webkit-animation-delay: 1ms;
           animation-delay: 1ms;
 }
-
 body.is-fixed {
   position: fixed;
 }
 
 #bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
 }
 #bg svg {
   position: absolute;
@@ -170,6 +172,32 @@ aside
   z-index: 1;
 }
 .aside .statebar .mypage-menu {
+  display: none;
+}
+.aside .statebar .icon-cart {
+  overflow: visible;
+  position: relative;
+}
+.aside .statebar .icon-cart .my-item {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 26px;
+  top: 7px;
+  height: 16px;
+  padding: 0 4px;
+  font-weight: 600;
+  font-size: 11px;
+  color: #fff;
+  text-indent: 0;
+  background: #6361FC;
+  border-radius: 16px;
+}
+.aside .statebar .icon-logout {
   display: none;
 }
 .aside .navigation {
@@ -1106,6 +1134,9 @@ aside
     right: 20px;
     border-bottom: 1px solid #E7E9EF;
   }
+  .aside .statebar .icon-logout {
+    display: block;
+  }
   .aside .statebar .icon-menuclose {
     margin-left: auto;
   }
@@ -1171,8 +1202,7 @@ aside
         align-content: stretch;
   }
   .content {
-    margin: 60px auto 0;
-    padding-top: 12px;
+    padding-top: 60px;
     padding-bottom: calc(constant(safe-area-inset-bottom) + 100px);
     padding-bottom: calc(env(safe-area-inset-bottom) + 100px);
   }
