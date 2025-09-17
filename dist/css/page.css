@@ -3072,6 +3072,7 @@ page : page-polio
   font-weight: 700;
   font-size: 24px;
   color: #5957E3;
+  margin-left: 4px;
 }
 .page-polio .step-content .title3 .text-button::after {
   content: "";
@@ -3082,8 +3083,8 @@ page : page-polio
   bottom: 0;
   border-bottom: 2px solid #5957E3;
 }
-.page-polio .step-content .title3 .icon-info-m {
-  margin-left: 8px;
+.page-polio .step-content .title3 .icon-info-l {
+  margin-left: 6px;
 }
 .page-polio .step-content .btn-box {
   display: -webkit-box;
@@ -3101,6 +3102,7 @@ page : page-polio
   border-radius: 8px;
   border: 1px solid #CDD1DA;
   color: #343841;
+  background: #fff;
   gap: 12px;
   opacity: 1;
 }
@@ -3531,9 +3533,8 @@ page : page-polio
   border: 1px solid #E7E9EF;
   gap: 2px;
   opacity: 1;
-  padding-right: 8px;
-  padding-left: 8px;
-  height: 30px;
+  padding: 5px 7px;
+  min-height: 20px;
   font-size: 14px;
   font-weight: 500;
   color: #343841;
@@ -3553,6 +3554,8 @@ page : page-polio
   overflow: hidden;
   color: transparent;
   font-size: 0;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 .page-polio .datapolio-bottom .filter-content .filter-option .option-box .option-filter-box .option-txt.is-ai {
   border: var(--border) solid transparent;
@@ -3564,23 +3567,10 @@ page : page-polio
 .page-polio .datapolio-bottom .filter-content .filter-option .option-box .option-filter-box .option-txt.is-ai span {
   padding-left: 22px;
   color: #5957E3;
-  background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.8144%204.73417L11.881%207.60495C11.9723%207.84724%2012.1622%208.03814%2012.4033%208.12624L15.2634%209.17984C16.0231%209.45884%2016.0231%2010.5418%2015.2634%2010.8208L12.4033%2011.8744C12.1622%2011.9625%2011.9686%2012.1534%2011.881%2012.3957L10.8144%2015.2665C10.5331%2016.0227%209.46655%2016.0227%209.18529%2015.2665L8.11871%2012.3957C8.02739%2012.1534%207.83745%2011.9625%207.59637%2011.8744L4.73632%2010.8208C3.97656%2010.5418%203.97656%209.45884%204.73632%209.17984L7.59637%208.12624C7.83745%208.03814%208.03104%207.84724%208.11871%207.60495L9.18529%204.73417C9.46655%203.97793%2010.5331%203.97793%2010.8144%204.73417Z%22%20fill%3D%22url(%23paint0_linear_2911_14921)%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22paint0_linear_2911_14921%22%20x1%3D%226.5%22%20y1%3D%226.5%22%20x2%3D%2213.5%22%20y2%3D%2213.5%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%236361FC%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235957E3%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E") no-repeat center left;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M10.8144%204.73417L11.881%207.60495C11.9723%207.84724%2012.1622%208.03814%2012.4033%208.12624L15.2634%209.17984C16.0231%209.45884%2016.0231%2010.5418%2015.2634%2010.8208L12.4033%2011.8744C12.1622%2011.9625%2011.9686%2012.1534%2011.881%2012.3957L10.8144%2015.2665C10.5331%2016.0227%209.46655%2016.0227%209.18529%2015.2665L8.11871%2012.3957C8.02739%2012.1534%207.83745%2011.9625%207.59637%2011.8744L4.73632%2010.8208C3.97656%2010.5418%203.97656%209.45884%204.73632%209.17984L7.59637%208.12624C7.83745%208.03814%208.03104%207.84724%208.11871%207.60495L9.18529%204.73417C9.46655%203.97793%2010.5331%203.97793%2010.8144%204.73417Z%22%20fill%3D%22url(%23paint0_linear_2911_14921)%22%2F%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22paint0_linear_2911_14921%22%20x1%3D%226.5%22%20y1%3D%226.5%22%20x2%3D%2213.5%22%20y2%3D%2213.5%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%236361FC%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%235957E3%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E") no-repeat 0 0;
 }
 .page-polio .datapolio-bottom .filter-content .filter-option .option-box .option-filter-box .option-txt.is-ai .del {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.6663%203.33325L3.33301%2012.6666M3.33301%203.33325L12.6663%2012.6666%22%20stroke%3D%22%235957E3%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
-  background-size: 16px auto;
-  border: 0 none;
-  line-height: 1;
-  text-indent: -9999px;
-  white-space: nowrap;
-  overflow: hidden;
-  color: transparent;
-  font-size: 0;
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.6663%203.33325L3.33301%2012.6666M3.33301%203.33325L12.6663%2012.6666%22%20stroke%3D%22%235957E3%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
 }
 .page-polio .datapolio-bottom .filter-content .filter-option .option-box + .option-box {
   margin-top: 20px;
@@ -3933,7 +3923,7 @@ page : page-polio
 }
 .accordion ul .accordion-item .accordion-header button {
   position: absolute;
-  top: 20px;
+  top: 14px;
   right: 20px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -7689,6 +7679,9 @@ MEDIA QUERY
     overflow: hidden;
     overflow-x: auto;
   }
+  .page-polio .content-step::-webkit-scrollbar {
+    height: 0;
+  }
   .page-polio .step-content {
     margin-top: 32px;
     -webkit-box-align: start;
@@ -7697,10 +7690,14 @@ MEDIA QUERY
   }
   .page-polio .step-content .title3 {
     margin-bottom: 12px;
+    font-weight: 600;
     font-size: 18px;
   }
   .page-polio .step-content .title3 .text-button {
     font-size: 18px;
+  }
+  .page-polio .step-content .title3 .icon-info-l {
+    margin-left: 4px;
   }
   .page-polio .step-content .btn-box {
     width: 100%;
@@ -7859,9 +7856,23 @@ MEDIA QUERY
     width: 100%;
     gap: 20px;
   }
-  .page-polio .step-content .picker-wrap .input-box input {
-    padding-right: 40px;
-    background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M15.3333%203.66699V7.00033M8.66667%203.66699V7.00033M4.5%2010.3337H19.5M6.16667%205.33366H17.8333C18.7538%205.33366%2019.5%206.07985%2019.5%207.00033V18.667C19.5%2019.5875%2018.7538%2020.3337%2017.8333%2020.3337H6.16667C5.24619%2020.3337%204.5%2019.5875%204.5%2018.667V7.00033C4.5%206.07985%205.24619%205.33366%206.16667%205.33366Z%22%20stroke%3D%22%23191B1E%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat center right 20px;
+  .page-polio .step-content .picker-wrap .input-box .icon-calendar {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 54px;
+            flex: 0 0 54px;
+    height: 54px;
+    margin: -1px 0;
+    background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M15.3333%203.66699V7.00033M8.66667%203.66699V7.00033M4.5%2010.3337H19.5M6.16667%205.33366H17.8333C18.7538%205.33366%2019.5%206.07985%2019.5%207.00033V18.667C19.5%2019.5875%2018.7538%2020.3337%2017.8333%2020.3337H6.16667C5.24619%2020.3337%204.5%2019.5875%204.5%2018.667V7.00033C4.5%206.07985%205.24619%205.33366%206.16667%205.33366Z%22%20stroke%3D%22%23191B1E%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
+  }
+  .page-polio .step-content .picker-wrap .input-box .icon-calendar i {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    line-height: 0;
+    text-indent: -9999px;
+    opacity: 0;
+    z-index: -1;
   }
   .page-polio .step-content .picker-wrap > ::after {
     content: none;

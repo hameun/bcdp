@@ -135,7 +135,10 @@
 .icon-info-s {@include set-icon(16px, 16px, svg-icon(info-16, $gray-400), 16px);}
 .icon-info-m {@include set-icon(20px, 20px, svg-icon(info-16, $gray-400), 20px);}
 .icon-info {@include set-icon(24px, 24px, svg-icon(info, $gray-400), 24px);}
-
+.icon-info-l {@include set-icon(24px, 24px, svg-icon(info-24, $gray-400), 24px);}
+@media screen and (max-width: 767px) {
+  .icon-info-l {width: 20px; height: 20px; background-size: 20px auto;}
+}
 .icon-new{@include set-icon(24px, 24px, $icon-new);}
 .icon-file{@include set-icon(24px, 24px, $icon-file);}
 
@@ -1166,6 +1169,29 @@ TAPS / SWITCH
     }
   }
 
+  
+
+    .modal-header-tab {
+      // &.sub-small {
+      //   height: 40px;
+      // }
+      .tab-box {
+        margin: 0 -20px;
+        .tabs-sub-small {
+          position: relative;
+          padding: 0 20px;
+          gap: 8px;
+          display: inline-flex;
+          min-width: 100%;
+          flex-wrap: nowrap;
+          & >li {
+            flex: 0;
+          }
+        }
+      }
+    }
+
+
 }
 .segment {@include set-tabs-segment(48px, 1);}
 .segment-small {@include set-tabs-segment(40px, 2);}
@@ -1337,7 +1363,7 @@ TAPS / SWITCH
 .item-scroll-wrap {
   max-height: auto;
   overflow: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 8px 0; // 스크롤바상하단 여백제거
   margin: -8px 0; // 스크롤바상하단 여백제거
   &::-webkit-scrollbar {width: 20px;}
@@ -1433,8 +1459,8 @@ MODAL POPUP
   position: relative;
   .modal-header {
     // padding: 20px 0 16px; 07.22 수정
-    margin-bottom: 16px; // 07.22 수정
-    min-height: 27px;
+    margin-bottom: 20px; // 07.22 수정 // 09.17 임시저장팝업에서 수정
+    // min-height: 27px; // 임시저장 하단 텍스트 겹침으로 주석
     @include text-title(4); 
     .count{
       color:$navy-300;
@@ -1576,6 +1602,99 @@ MODAL POPUP
   
 }
 
+@media screen and (min-width: 768px){
+
+  .tooltip.tooltip-long {
+    position: fixed;
+    top: 50%; // 임시
+    left: 50%; // 임시
+    max-width: 270px;
+    min-width: 215px;
+    padding: 8px 36px 8px 12px;
+    background-color: $gray-800;
+    border-radius: 8px;  
+    z-index: 10;
+    &.tooltip-hidden {
+      display: none;
+    }
+    .tooltip-container {
+      .tooltip-tit {
+        margin-bottom: 8px;
+        @include text-body(1,'sb',$white);
+      }
+      .tooltip-message {
+        @include text-body(2,'r',$white);
+      }
+      .tooltip-close {
+        position: absolute;
+        right: 12px;
+        top: 10.5px;
+        width: 16px;
+        height: 16px;
+        background: url(svg-icon(close-popover, $white)) no-repeat 50% 50%;
+        background-size: 17px auto;
+        @include set-icon-text-blind;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        background-color: $gray-800;
+        transform: rotate(45deg);
+      }
+    }
+  // 데이터폴리오 견적
+  .tt-estimate {
+    p + p {
+      margin-top: 16px;
+    }
+  }
+  }
+}
+@media screen and (max-width: 767px){
+  .tooltip.tooltip-long {
+    position: fixed;
+    inset: 0;
+    outline-width: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    &.tooltip-hidden {
+      display: none;
+    }
+    .tooltip-container {
+      position: relative;
+      border-radius: 24px 24px 0 0;
+      display: flex;
+      flex-direction: column;
+      flex-basis: 100%;
+      align-self: flex-end;
+      padding: 20px;
+      max-width: none;
+      background: $white;
+      .tooltip-tit {
+        margin-bottom: 20px;
+        @include text-body(0,'sb');
+      }
+      .tooltip-message {
+        @include text-body(1,'r');
+      }
+      .tooltip-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        @include set-icon(24px, 24px, $icon-close);
+        @include set-icon-text-blind;
+      }
+    }
+  }
+}
 // 페이지로 옮기기
 .modal {
   .coupon-box {
@@ -1808,6 +1927,7 @@ MODAL POPUP
     }
   }
   .model-ipt{
+    padding-top: 4px;
     padding-bottom:20px;
   }
   .datapolio{
@@ -1834,6 +1954,7 @@ MODAL POPUP
     .item-scroll-wrap {
       max-height: 142px;
       margin-bottom: 16px;
+      margin-right: -20px;
       .datapolio {
         padding-bottom: 0;
       }
@@ -1867,6 +1988,9 @@ MODAL POPUP
   }
 
   //임시저장
+  .draft-list {
+    padding-top: 8px;
+  }
   .draft-box {
     // margin-right:-20px;
     .result-none{
@@ -2114,7 +2238,7 @@ MODAL POPUP
           grid-column-start: 1;
 	        grid-column-end: 3;
           margin-bottom: 8px;
-          @include text-body(1,'sb',$gray-700);
+          @include text-body(2,'sb',$gray-700);
         }
         dd {
           flex-basis: 50%;
@@ -2130,7 +2254,7 @@ MODAL POPUP
   }
   @media screen and (max-width: 767px) {
     .modal-login {
-      padding: 44px 0 0;
+      padding: 80px 0 0;
     }
   }
   .modal-aiagree {
@@ -2201,16 +2325,19 @@ MODAL POPUP
     }
   }
   .modal-tabs-sub-paragraph {
-    margin-right: -20px;  
+    // margin-right: -20px;  
     // &:has(.item:nth-child(12)) {
     //   margin-right: -20px;
     // }
     .tabs-sub-contents {
-      padding: 24px 0 20px;
-      .item-scroll-wrap {
-        max-height: 350px;
-      }
+      padding: 24px 0 0;
+      // .item-scroll-wrap {
+      //   max-height: 350px;
+      // }
       @include text-body(1,'r',$gray-700);
+      .list-bul {
+        margin-top: 12px;
+      }
       h1 {
         & ~ h1 {
           margin-top: 20px;
@@ -3629,7 +3756,7 @@ PAGING
 /***********
 POPOVER POPUP
 ***********/
-.popover {
+._popover {
   position: fixed;
   max-width: 270px;
   min-width: 215px;
@@ -4296,11 +4423,12 @@ TOAST POPUP
     }
   }
 
+  // modal 320 알럿사이즈
   .modal:not(.modal-medium2),
   .modal:not(.modal-medium),
   .modal:not(.modal-large) {
     .button-box-medium {
-       .button-p,
+      .button-p,
       .button-s,
       .button-t,
       .button-q {
@@ -4493,7 +4621,16 @@ TOAST POPUP
         }
       }
     }
+
+    .industry-view .list-box {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
+
+
+  
+
+
   .switch-box {
     .switch-label {
       display: none;

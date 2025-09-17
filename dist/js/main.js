@@ -837,6 +837,25 @@ function fn_popover(){
         // pop.hidePopover();
     });
 }
+function fn_tooltipOpen(_tooltipId) {
+    const tooltip = $('#'+ _tooltipId);
+
+    tooltip.removeClass('tooltip-hidden');
+    
+    windowScrollTopFix = window.scrollY;
+    document.body.style.top = `-${windowScrollTopFix}px`;
+    document.body.classList.add('is-fixed');
+
+    const tooltipBtn = tooltip.find('.tooltip-close');
+
+    tooltipBtn.on('click', function(){
+        tooltip.addClass('tooltip-hidden');
+
+        document.body.style.removeProperty('top');
+        document.body.classList.remove('is-fixed');
+        window.scrollTo(0,windowScrollTopFix);
+    });
+}
 
 /** 토스트 */
 function fn_toast(_message, _type){
@@ -1283,7 +1302,7 @@ function fn_filter() {
   // 필터 열기 버튼 클릭
   btnFilter.addEventListener('click', function () {
     filterContent.style.display = 'flex';
-    btnFilter.style.display = 'none';
+    // btnFilter.style.display = 'none';
 
     // 모바일 사이즈일 때 header z-index 초기화
     if (window.innerWidth <= 768) {
@@ -1295,7 +1314,7 @@ function fn_filter() {
   // 필터 닫기 버튼 클릭
   btnClose.addEventListener('click', function () {
     filterContent.style.display = 'none';
-    btnFilter.style.display = 'block';
+    // btnFilter.style.display = 'block';
 
     // 모바일 사이즈일 때 header z-index 20으로 복원
     if (window.innerWidth <= 768) {

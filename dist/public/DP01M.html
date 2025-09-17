@@ -230,6 +230,10 @@
 		                    <div class="option-box">
 		                        <span class="option-tit">데이터유형 <em class="count">1</em></span>
 		                        <div class="option-filter-box">
+		                            <div class="option-txt">
+		                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
 		                            <div class="option-txt is-ai">
 		                                <span>내국인 카드소비 데이터</span>
 		                                <button type="button" class="del">삭제</button>
@@ -248,7 +252,7 @@
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                            <div class="option-txt">
-		                                <span>내국인 카드소비 데이터</span>
+		                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                        </div>
@@ -256,12 +260,12 @@
 		                    <div class="option-box">
 		                        <span class="option-tit">지역 <em class="count">2</em></span>
 		                        <div class="option-filter-box">
-		                            <div class="option-txt is-ai">
-		                                <span>서울특별시 강남구 논현동</span>
+		                            <div class="option-txt is-ai"> 
+		                                <span>서울특별시 > 서울특별시강남구 > 서울특별시논현동</span>
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                            <div class="option-txt">
-		                                <span>서울특별시 강남구 청담동</span>
+		                                <span>서울특별시 > 강남구 > 청담동</span>
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                        </div>
@@ -347,9 +351,6 @@
 		        </div>
 		    </div>
 		</div>
-		 
-
-
     </main>
 </div>
 <!-- //wrap -->
@@ -972,6 +973,47 @@
 </div>
 <!-- //  250902 조건 1개 이상 선택 안할 시-->
 
+<div class="pop-modal modal-hidden" id="modal7">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금까지 선택한 내용이 리셋됩니다. <br>리셋할까요?</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">네</button>
+            <button class="button-p" type="button">아니요</button>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 팝오버 -->
+<div class="tooltip tooltip-long tooltip-hidden" style="" id="tooltip1">
+    <div class="tooltip-container">
+        <p class="tooltip-tit">이렇게해서 견적이 나왔어요!</p>
+        <div class="tooltip-message">
+            <div class="tt-estimate">
+                <p>① 기본 금액 계산<br>
+                → %N개월% × %N개 시도% × %N개 소분류% × (단가 20,000원)→ %28,000,000% × %0.5% = 14,000,000%</p>
+                <p>② 추가 선택 가중치 %25%% 적용<br>
+                → %14,000,000% × %1.25% = 17,500,000%</p>
+            </div>
+        </div>
+        <button type="button" class="tooltip-close">닫기</button>
+    </div>
+</div>
+<div class="tooltip tooltip-long tooltip-hidden" style="" id="tooltip2">
+    <div class="tooltip-container">
+        <p class="tooltip-tit">이렇게해서 견적이 나왔어요!</p>
+        <div class="tooltip-message">
+            <div class="tt-estimate">
+                <p>필수항목을 다 선택해야 견적 확인이 가능해요.</p>
+            </div>
+        </div>
+        <button type="button" class="tooltip-close">닫기</button>
+    </div>
+</div>
+<!-- //팝오버 -->
 
 
 
@@ -996,6 +1038,12 @@
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal14');return false;">샘플데이터</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal15');return false;">새로 작성하기</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal16');return false;">[임시저장] 1개이상 선택안할시</a>
+        <!-- [2025.09.17] 추가 -->
+        <a href="#" class="button-q" onclick="fn_toast('조건이 추가되었습니다.',1);return false;">조건선택 완료시 토스트팝업</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal7');return false;">[집계기준 선택 후 항목 선택 중에, 동일한 집계기준 재선택 시]</a>
+        <a href="#" class="button-q" onclick="fn_tooltipOpen('tooltip1');return false;">툴팁 견적 / 위치는 차주 반영</a>
+        <a href="#" class="button-q" onclick="fn_tooltipOpen('tooltip2');return false;">툴팁 견적 필수항목 미선택 / 위치는 차주 반영</a>
+        <!-- //[2025.09.17] 추가 -->
     </div>
 </div>
 <!-- //퍼블리싱 확인 -->

@@ -2352,10 +2352,10 @@ page : page-polio
   .content-step{
     margin-top:40px;
     margin-right: -20px;
-    ul{
+    ul {
       display:flex;
       gap:12px;
-      li{
+      li {
         &:last-child {
           padding-right: 20px;
         }
@@ -2438,6 +2438,7 @@ page : page-polio
         font-weight: 700;
         font-size: 24px;
         color: $point;
+        margin-left: 4px;
         &::after {
           content: '';
           position: absolute;
@@ -2448,8 +2449,8 @@ page : page-polio
           border-bottom: 2px solid $point;
         }
       }
-      .icon-info-m {
-        margin-left: 8px;
+      .icon-info-l {
+        margin-left: 6px;
       }
     }
     .btn-box{
@@ -2462,6 +2463,7 @@ page : page-polio
         border-radius: 8px;
         border: 1px solid $gray-100;
         color:$gray-700;
+        background: $white;
         gap: 12px;
         opacity: 1;
         &.is-on{
@@ -2762,15 +2764,17 @@ page : page-polio
               gap: 2px;
               opacity: 1;
               // padding-top: 4px;
-              padding-right: 8px;
+              // padding-right: 8px;
               // padding-bottom: 4px;
-              padding-left: 8px;
-              height: 30px;
+              // padding-left: 8px;
+              padding: 5px 7px;
+              min-height: 20px;
               font-size:14px;
               font-weight: 500;
               color:$gray-700;
               .del{
                 @include set-icon(20px, 20px, svg-icon(close-16, $gray-700), 16px);
+                align-self: flex-start;
               }
               &.is-ai{
                 border:var(--border) solid transparent;
@@ -2780,17 +2784,17 @@ page : page-polio
                 span{
                   padding-left:22px;
                   color:$navy-400;
-                  background:url($icon-ai) no-repeat center left;
+                  background:url($icon-ai) no-repeat 0 0;
                 }
                 .del{
-                  @include set-icon(20px, 20px, svg-icon(close-16, $navy-400), 16px);
+                  background-image: url(svg-icon(close-16, $navy-400));
                 }
               }
               
             }
             
           }
-          +.option-box{
+          &+.option-box{
             margin-top:20px;
           }
         } 
@@ -3062,7 +3066,7 @@ page : page-polio
         cursor: pointer;
         button{
           position: absolute;
-          top: 20px;
+          top: 14px;
           right: 20px; 
           @include set-icon(28px, 28px, svg-icon(chevron-right, $gray-300));
           background-size:24px auto;
@@ -6432,23 +6436,23 @@ MEDIA QUERY
       padding: 0 20px;
       overflow: hidden;
       overflow-x: auto;
-      // &::-webkit-scrollbar {height: 4px;}
+      &::-webkit-scrollbar {height: 0;}
       // &::-webkit-scrollbar-thumb {
-      //   background-color: $gray-100;
+      //   background-color: transparent;
       //   border-radius: 4px;
-      // }
-      // &::-webkit-scrollbar-button {
-      //   height: 7px;
-      //   width: 20px;
       // }
     }
     .step-content{
       margin-top:32px; align-items:flex-start;
       .title3{
         margin-bottom: 12px;
+        font-weight: 600;
         font-size: 18px;
         .text-button {
           font-size: 18px;
+        }
+        .icon-info-l {
+          margin-left: 4px;
         }
       }
       .btn-box{width:100%;}
@@ -6550,9 +6554,14 @@ MEDIA QUERY
         flex-direction: column;
         width:100%;
         gap:20px;
-        .input-box input{
-          padding-right:40px;
-          background: url($icon-calendar) no-repeat center right 20px;
+        .input-box .icon-calendar {
+          flex: 0 0 54px;
+          height: 54px;
+          margin: -1px 0;
+          background: url($icon-calendar) no-repeat 50% 50%;
+          i {
+            @include blind;
+          }
         }
       } 
       .picker-wrap > ::after{content: none;}

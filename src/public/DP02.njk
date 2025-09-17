@@ -49,11 +49,12 @@ function fn_datapicker() {
       
       // 모바일
       else {
+        const calendarBtn = input.nextElementSibling; // [2025.09.17] 추가
         const modal = document.querySelector('#picker-mo');
         const pickerWrap = modal.querySelector('.mo-picker-wrap');
         const closeBtn = modal.querySelector('.modal-close');
 
-        input.addEventListener('click', function () {
+        calendarBtn.addEventListener('click', function () { // [2025.09.17] 수정
           modal.style.display = 'block';
           pickerWrap.innerHTML = ''; // 이전 달력 제거
 
@@ -201,6 +202,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="input-picker">
                         <div class="input-box is-error"><!--error : is-error-->
                             <input type="text" class="ipt year-picker-input" id="year-picker-s" data-type="year" placeholder="YYYY" >
+                            <button type="button" class="icon-calendar is-mobile"><i>달력으로 보기</i></button><!-- [2025.09.17] 추가 -->
                         </div>
                         <p class="input-help is-error">날짜를 입력해 주세요.</p>
                     </div>
@@ -210,6 +212,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="input-picker">
                         <div class="input-box is-error"><!--error : is-error-->
                             <input type="text" class="ipt year-picker-input" id="year-picker-e" data-type="year" placeholder="YYYY" >
+                            <button type="button" class="icon-calendar is-mobile"><i>달력으로 보기</i></button><!-- [2025.09.17] 추가 -->
                         </div>
                         <p class="input-help is-error">날짜를 입력해 주세요.</p>
                     </div>
@@ -223,6 +226,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="input-picker">
                         <div class="input-box">
                             <input type="text" class="ipt month-picker-input" id="month-picker-s" data-type="month" placeholder="YYYY.MM" >
+                            <button type="button" class="icon-calendar is-mobile"><i>달력으로 보기</i></button><!-- [2025.09.17] 추가 -->
                         </div>
                     </div>
                 </div>
@@ -231,6 +235,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="input-picker">
                         <div class="input-box">
                             <input type="text" class="ipt month-picker-input" id="month-picker-e" data-type="month" placeholder="YYYY.MM" >
+                            <button type="button" class="icon-calendar is-mobile"><i>달력으로 보기</i></button><!-- [2025.09.17] 추가 -->
                         </div>
                     </div>
                 </div>
@@ -243,6 +248,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="input-picker">
                         <div class="input-box">
                             <input type="text" class="ipt day-picker-input" id="day-picker-s" data-type="day" placeholder="YYYY.MM.DD" >
+                            <button type="button" class="icon-calendar is-mobile"><i>달력으로 보기</i></button><!-- [2025.09.17] 추가 -->
                         </div>
                     </div>
                 </div>
@@ -251,6 +257,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="input-picker">
                         <div class="input-box">
                             <input type="text" class="ipt day-picker-input" id="day-picker-e" data-type="day" placeholder="YYYY.MM.DD" >
+                            <button type="button" class="icon-calendar is-mobile"><i>달력으로 보기</i></button><!-- [2025.09.17] 추가 -->
                         </div>
                     </div>
                 </div>
@@ -280,6 +287,10 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="option-box">
                         <span class="option-tit">데이터유형 <em class="count">1</em></span>
                         <div class="option-filter-box">
+                            <div class="option-txt">
+                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
                             <div class="option-txt is-ai">
                                 <span>내국인 카드소비 데이터</span>
                                 <button type="button" class="del">삭제</button>
@@ -298,7 +309,7 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                                 <button type="button" class="del">삭제</button>
                             </div>
                             <div class="option-txt">
-                                <span>내국인 카드소비 데이터</span>
+                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
                                 <button type="button" class="del">삭제</button>
                             </div>
                         </div>
@@ -306,12 +317,12 @@ document.addEventListener('DOMContentLoaded', fn_datapicker);
                     <div class="option-box">
                         <span class="option-tit">지역 <em class="count">2</em></span>
                         <div class="option-filter-box">
-                            <div class="option-txt is-ai">
-                                <span>서울특별시 강남구 논현동</span>
+                            <div class="option-txt is-ai"> 
+                                <span>서울특별시 > 서울특별시강남구 > 서울특별시논현동</span>
                                 <button type="button" class="del">삭제</button>
                             </div>
                             <div class="option-txt">
-                                <span>서울특별시 강남구 청담동</span>
+                                <span>서울특별시 > 강남구 > 청담동</span>
                                 <button type="button" class="del">삭제</button>
                             </div>
                         </div>

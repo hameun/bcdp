@@ -305,6 +305,10 @@
 		                    <div class="option-box">
 		                        <span class="option-tit">데이터유형 <em class="count">1</em></span>
 		                        <div class="option-filter-box">
+		                            <div class="option-txt">
+		                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
 		                            <div class="option-txt is-ai">
 		                                <span>내국인 카드소비 데이터</span>
 		                                <button type="button" class="del">삭제</button>
@@ -323,7 +327,7 @@
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                            <div class="option-txt">
-		                                <span>내국인 카드소비 데이터</span>
+		                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                        </div>
@@ -332,7 +336,7 @@
 		                        <span class="option-tit">지역 <em class="count">2</em></span>
 		                        <div class="option-filter-box">
 		                            <div class="option-txt is-ai"> 
-		                                <span>서울특별시 > 강남구 > 논현동</span>
+		                                <span>서울특별시 > 서울특별시강남구 > 서울특별시논현동</span>
 		                                <button type="button" class="del">삭제</button>
 		                            </div>
 		                            <div class="option-txt">
@@ -901,18 +905,21 @@
 <!-- //정보보안관리 약정서 -->
 
 <!-- 전자계약안내 -->
-<div class="pop-modal modal-hidden" id="modal8">
+<div class="pop-modal modal-hidden is-full" id="modal8"><!-- [2025.09.17] 수정 -->
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">전자계약안내</div>
-        <div class="modal-tabs-sub-paragraph">
+        <!-- [2025.09.17] 수정 -->
+        <div class="modal-header-tab sub-small">
             <div class="tab-box is-static">
                 <ul class="tabs-sub-small">
                     <li class="is-on"><a href="#">전자계약 결제 안내</a></li>
                     <li><a href="#">전자계약 결제 방식별 절차 안내</a></li>
                 </ul>
             </div>
-            <div class="tabs-sub-contents">
-                <div class="item-scroll-wrap">
+        </div>
+        <div class="modal-content">
+            <div class="modal-tabs-sub-paragraph">
+                <div class="tabs-sub-contents"><!-- [2025.09.17] 수정 -->
                     <h1 id="tabContent1">전자계약 결제 안내</h1>
 
                     <p>전자계약 결제는 법인인증 완료 회원만 이용 가능합니다.<br>
@@ -947,9 +954,10 @@
                         <li><i class="mark">•</i>관리자 서명까지 평균 1~2일 소요될 수 있습니다.</li>
                         <li><i class="mark">•</i>전자계약은 승인 절차로 시간이 소요될 수 있습니다. 빠른 진행을 원하시면 카드결제를 선택해 주세요.</li>
                     </ul>
-                </div>
-            </div><!-- //.tabs-sub-contents -->
+                </div><!-- //.tabs-sub-contents -->
+            </div>
         </div>
+        <!-- //[2025.09.17] 수정 -->
         <div class="button-box-medium">
             <button class="button-q" type="button">확인</button>
             <button class="button-p" type="button">법인회원 인증하기</button>

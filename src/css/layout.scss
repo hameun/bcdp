@@ -331,6 +331,9 @@ aside
         margin-top: 8px;
         li {
           @include text-caption2($gray-300);
+          span + span {
+            margin-left: 6px;
+          }
         }
       }
       .copyright {

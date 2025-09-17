@@ -190,11 +190,11 @@
 		        </div>
 
 		        <div class="step-content">
-		            <p class="title3">어떤 기준으로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+		            <p class="title3">어떤 기준으로 업종 데이터를 만들까요? <button type="button" class="icon-info-l"><i>업종 보기</i></button></p>
 		            <!-- [2025.09.17] 추가 -->
-		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%대분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
-		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%중분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
-		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%소분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%대분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-l"><i>업종 보기</i></button></p>
+		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%중분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-l"><i>업종 보기</i></button></p>
+		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%소분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-l"><i>업종 보기</i></button></p>
 		            <!-- //[2025.09.17] 추가 -->
 		            <div class="chip-box chip-box-large">
 		                <label class="chip"><input type="radio" name="radio1" checked=""><i>대분류</i></label>
@@ -267,6 +267,17 @@
 		                    <span class="tit">
 		                        <span>
 		                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+		                            <a href="javascript:void(0);" class="txt-link">%중분류%</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
 		                            <a href="javascript:void(0);" class="txt-link">중분류 전체</a>
 		                            <span>소분류</span>
 		                        </span>
@@ -279,6 +290,17 @@
 		                        <span>
 		                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
 		                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+		                            <a href="javascript:void(0);" class="txt-link">%중분류%</a>
 		                            <span>소분류</span>
 		                        </span>
 		                        <span class="sub_tit">(다중선택 가능)</span>
@@ -377,6 +399,111 @@
 		            </button>
 		        </div>
 		        <!-- //[2025.09.17] 수정 -->
+		        <div class="filter_box">
+		            <div class="filter-content">
+		                <span class="filter-tit">선택한 조건</span>
+		                
+		                <!-- 선택한 조건 있을 경우 -->
+		                <button type="button" class="filter-reset">초기화</button>
+		                <div class="filter-option item-scroll-wrap">
+		                    <div class="option-box">
+		                        <span class="option-tit">데이터유형 <em class="count">1</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt">
+		                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">기간 <em class="count">1</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>2024</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>2024</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt">
+		                                <span>내국인 카드소비 데이터 내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">지역 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai"> 
+		                                <span>서울특별시 > 서울특별시강남구 > 서울특별시논현동</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt">
+		                                <span>서울특별시 > 강남구 > 청담동</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">업종 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>가정통신 > 가전 > 건강가전</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>가정통신 > 가전 > 건강가전</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">요일 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>주말</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">시간대 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>저녁</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">연령 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>20대</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>30대</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		                <!-- //선택한 조건 있을 경우 -->
+		                <!-- 선택한 조건 없을 경우 -->
+		                <button type="button" class="filter-reset disabled">초기화</button>
+		                <div class="result-none">
+		                    <p class="message">선택한 조건이 없어요</p>
+		                </div>
+		                <!-- //선택한 조건 없을 경우 -->
+		                <button class="filter-close" type="button">닫기</button>
+		            </div>
+		        </div>
 		        <div class="bottom-content">
 		            <div class="polio-quote">
 		                <div class="quote-box">
@@ -771,17 +898,12 @@
                             <dt>학원</dt>
                             <dd>기술교육학원</dd>
                             <dd>무용학원</dd>
-                            <dd>체육학원</dd>
-                            <dd>학원기타</dd>
                             <dd>미술학원</dd>
                             <dd>외국어학원</dd>
-                            <dd>초중고교과학원</dd>
                             <dd>운전학원</dd>
                             <dd>유아학원</dd>
-                            <dd>컴퓨터학원</dd>
                             <dd>음악학원</dd>
                             <dd>전문자격/고시학원</dd>
-                            <dd>태권도/무술학원</dd>
                             <dd>체육학원</dd>
                             <dd>학원기타</dd>
                             <dd>초중고교과학원</dd>
@@ -856,7 +978,7 @@
                     </div>
                 </div>
 
-                <h2>문화</h2>
+                <h2>생활</h2>
                 <div class="list-box">
                     <div class="item">
                         <dl>
@@ -991,7 +1113,8 @@
                 <div class="list-box">
                     <div class="item">
                         <dl>
-                            <dt>면세점</dt>
+                            <dt>대형복합</dt>
+                            <dd>면세점</dd>
                             <dd>백화점</dd>
                             <dd>아울렛</dd>
                         </dl>
@@ -1264,6 +1387,27 @@
                             <dd>교육지원플랫폼</dd>
                             <dd>인터넷강강의</dd>
                             <dd>학습지</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>이커머스</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>전문몰</dt>
+                            <dd>IT/디지털몰</dd>
+                            <dd>식품/식자재몰</dd>
+                            <dd>패션/잡화몰</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>종합몰</dt>
+                            <dd>라이브커머스</dd>
+                            <dd>일반종합몰</dd>
+                            <dd>중고거래</dd>
+                            <dd>해외직구</dd>
                         </dl>
                     </div>
                 </div>

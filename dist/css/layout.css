@@ -330,6 +330,9 @@ aside
   font-size: 10px;
   color: #969DAB;
 }
+.aside .navigation .footer .company-info li span + span {
+  margin-left: 6px;
+}
 .aside .navigation .footer .copyright {
   margin-top: 8px;
   font-weight: 500;
