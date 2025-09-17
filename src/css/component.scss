@@ -121,7 +121,7 @@
 .button-s .icon-download {background-image: url(svg-icon(download, $primary));}
 .button-xsmall .icon-download,
 .button-t .icon-download {background-image: url(svg-icon(download));}
-.button-p.disabled,
+.button-p.disabled .icon-download,
 .button-p:disabled .icon-download {background-image: url(svg-icon(download, $gray-100));}
 .icon-up {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(270deg);}
 .icon-down {@include set-icon(24px, 24px, svg-icon(chevron-right)); transform: rotate(90deg);}
@@ -168,7 +168,8 @@
 
 @media screen and (max-width: 767px) {
   .icon-alram {@include set-icon(16px, 16px, svg-icon(alram-s));}
-.on .icon-alram {background-image: url(svg-icon(alram-s-on, $primary));}
+  .on .icon-alram {background-image: url(svg-icon(alram-s-on, $primary));}
+  .icon-share {width: 16px; height: 16px; background-size: 16px auto;}
 }
 
 .icon-cc {@include set-icon(20px, 20px, svg-icon(data-cc));}
@@ -261,7 +262,7 @@
   height: 32px;
   padding: 0 10px;
   border-radius: 8px;
-  background-color: $white;
+  // background-color: $white;
   border: 1px solid $gray-100;
   font-size: 14px;
   font-weight: 500;
@@ -281,6 +282,8 @@
   $red-font: #FF1C37;
   $blue-bg: #E4F3FF;
   $blue-font: #2D7AEB;
+  $green-bg: #E7F5F0;
+  $green-font: #0B9665;
   .tag {
     display: inline-flex;
     align-items: center;
@@ -292,6 +295,11 @@
     &.red {
       background-color: $red-bg;
       color: $red-font;
+      font-weight: 600;
+    }
+    &.green {
+      background-color: $green-bg;
+      color: $green-font;
       font-weight: 600;
     }
     &.blue {
@@ -1823,8 +1831,18 @@ MODAL POPUP
         color:$navy-400;
       }
     }
+    .item-scroll-wrap {
+      max-height: 142px;
+      margin-bottom: 16px;
+      .datapolio {
+        padding-bottom: 0;
+      }
+      & + .datapolio {
+        border-top: 1px solid $gray-60;
+      }
+    }
     .datapolio{
-      padding:12px 0 16px;
+      padding:16px 0;
       margin:0;
       +.datapolio{
         border-top:1px solid $gray-60;
@@ -2069,6 +2087,44 @@ MODAL POPUP
       padding: 20px;
       button {
         flex: 1;
+      }
+    }
+  }
+  // 데이터폴리오 업종팝업
+  .industry-view {
+    h2 {
+      margin-bottom: 12px;
+      @include text-body(1,'sb',$gray-700);
+      ~ h2 {
+        margin-top: 24px;
+      }
+    }
+    .list-box {
+      border: 1px solid $gray-60;
+      padding: 15px;
+      border-radius: 16px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      dl {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px 12px;
+        dt {
+          grid-column-start: 1;
+	        grid-column-end: 3;
+          margin-bottom: 8px;
+          @include text-body(1,'sb',$gray-700);
+        }
+        dd {
+          flex-basis: 50%;
+          @include text-body(2,'r',$gray-500);
+          &::before {
+            content: '•';
+            width: 8px;
+            margin-right: 2px;
+          }
+        }
       }
     }
   }
@@ -2501,7 +2557,7 @@ CONTENT HEAD
   .page-select {
     position: relative;
     margin-left: auto;
-    padding-right: 2px;
+    padding-right: 2px; // 확인
     cursor: pointer;
     &::after {
       content: '';
@@ -2513,6 +2569,7 @@ CONTENT HEAD
       height: 20px;
       background: url(svg-icon(arrow, $gray-500)) no-repeat 50% 50% transparent;
       transform: rotate(90deg);
+      z-index: 0;
     }
     &:has(.ui-selectmenu-button-open) {
       &::after {
@@ -2525,6 +2582,14 @@ CONTENT HEAD
       appearance: none;
       border: 0 none;
       background-color: transparent;
+      color: $gray-500;
+    }
+    .ui-selectmenu-button.ui-button {
+      position: relative;
+      z-index: 1;
+    }
+    .ui-selectmenu-text {
+      padding-right: 26px;
       color: $gray-500;
     } 
   }
@@ -3564,37 +3629,56 @@ PAGING
 /***********
 POPOVER POPUP
 ***********/
-.pop-popover {
-  position: relative;
-  display: flex;
-
-  .popover {
-    margin: auto;
-    // position: absolute;
-    bottom: 100%; // default
-    box-sizing: border-box;
-    display: flex;
-    max-width: 270px;
-    min-width: 215px;
-    padding: 8px 12px;
-    background-color: $gray-800;
-    border-radius: 8px;
-    p {
-      flex: 1;
-      color: $white;
-      text-align: left;
-      @include text-body(2,'r',$white);
-    }
-    .popover-close {
-      flex: 0 1 24px;
-      margin-left: 8px;
-      width: 24px;
-      height: 24px;
-      margin: -2px 0 0 8px;
-      background: url(svg-icon(close-popover, $white)) no-repeat 50% 50%;
-      @include set-icon-text-blind;
+.popover {
+  position: fixed;
+  max-width: 270px;
+  min-width: 215px;
+  padding: 8px 36px 8px 12px;
+  background-color: $gray-800;
+  border-radius: 8px;  
+  &.popover-long {
+    max-width: 320px;
+  }
+  .pop-tit {
+    margin-bottom: 8px;
+    @include text-body(2,'sb',$white);
+  }
+  .pop-message {
+    color: $white;
+    text-align: left;
+    @include text-body(2,'r',$gray-60);
+    p + p {
+      margin-top: 8px;
     }
   }
+  .popover-close {
+    position: absolute;
+    top: 10.5px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    background: url(svg-icon(close-popover, $white)) no-repeat 50% 50%;
+    background-size: 17px auto;
+    @include set-icon-text-blind;
+  }
+  // &::after {
+  //   content: '';
+  //   position: absolute;
+  //   width: 10px;
+  //   height: 10px;
+  //   border-radius: 4px;
+  //   background-color: $gray-800;
+  //   transform: rotate(45deg);
+  // }
+  // .popover-close {
+  //   flex: 0 1 24px;
+  //   margin-left: 8px;
+  //   width: 24px;
+  //   height: 24px;
+  //   margin: -2px 0 0 8px;
+  //   background: url(svg-icon(close-popover, $white)) no-repeat 50% 50%;
+  //   @include set-icon-text-blind;
+  // }
 }
 
 .data-list {
@@ -3702,13 +3786,16 @@ POPOVER POPUP
   position: relative;
   display: block;
   // padding: 11px;
-  border: 2px solid $white;
-  background-color: #FFFFFF99;
-  box-shadow: 0px 16px 32px 0px #23225814;
-  backdrop-filter: blur(10px);
+  // border: 2px solid $white;
+  // background-color: #FFFFFF99;
+  // box-shadow: 0px 16px 32px 0px #23225814;
+  // backdrop-filter: blur(10px);
+  height: 100%;
   overflow: hidden;
   border-radius: 20px;
-  height: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
+  backdrop-filter: blur(10px);
   .info-box {
     padding:20px;
     .insight-tag {
@@ -4487,7 +4574,7 @@ TOAST POPUP
     float: right;
     margin-top: 0;
   }
-  .pop-modal .draft-box .result-none{padding:20px 0;}
+  .pop-modal .draft-box .result-none{padding:24px 0 20px;}
   .data-list > ul.col-3 {
     grid-template-columns: repeat(1, 1fr);
   }

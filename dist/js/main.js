@@ -25,7 +25,7 @@ $(function(){
     fn_selectbox();
     fn_selectIpt();
     fn_tabSticky();
-    fn_popover();
+    // fn_popover();
 
     fn_paymentHistoryItemFold();
     fn_questionHistoryItemFold();
@@ -53,33 +53,6 @@ $(function(){
         fn_tabSticky();
     });
 });
-
-function _fn_main(){
-    // const $wrap = $('.flow-wrap');
-    function active($wrap){
-        var center = $wrap.width()/2;
-
-        $wrap.find('.exquestion-list .exquestion-item').each(function(){
-            var rect = this.getBoundingClientRect();
-            var spanCenter = rect.left + rect.width / 2;
-            $(this).data("dist", Math.abs(spanCenter - (window.innerWidth / 2)));
-        });
-
-        // 
-        var $spans = $wrap.find('.exquestion-list .exquestion-item');
-        $spans.removeClass("active");
-
-        $spans.sort(function(a,b) {
-            return $(a).data("dist") - $(b).data("dist");
-        }).slice(0,3).addClass("active");
-    }
-
-    setInterval(function(){
-        $(".flow-text").each(function(){
-            active($(this));
-        });
-    }, 300)
-}
 
 function fn_main(){
     function active($wrap){
@@ -501,18 +474,26 @@ function fn_iptClear(){
 
 /** 파일열기 */
 function fn_fileInput (){
-    const fileInputs = document.querySelectorAll('input[type="file"]');
+    // const fileInputs = document.querySelectorAll('input[type="file"]');
+    const fileInputs = $('.input-box input[type="file"]');
     if (!fileInputs) return false;
-    fileInputs.forEach(function(fileInput){
-        fileInput.addEventListener('change', function(){
-            const _this = this;
-            _this.nextElementSibling.value = _this.value;
-        });
+    // fileInputs.forEach(function(fileInput){
+    //     fileInput.addEventListener('change', function(){
+    //         const _this = this;
+    //         const filePath = _this.nextElementSibling;
+    //         if ( filePath ) filePath.value = _this.value;
+    //     });
+    // });
+    fileInputs.on('change', function(){
+        const _this = this;
+        const filePath = _this.nextElementSibling;
+        if ( filePath ) filePath.value = _this.value;
+        filePath.value = _this.value;
     });
 }
 
-/** 모달팝업 [8월 중순 삭제예정] */
-function fn_modal(_data) {
+/** 모달팝업 [8월 중순 삭제예정] */ /* [2025.09.15] 삭제테스트 */
+function _fn_modal(_data) {
     const data = _data;
     const modalId = _data.modalId;
     let isOpenedModal = document.getElementById(modalId);
@@ -692,8 +673,8 @@ function fn_modal(_data) {
         });
     };
 }
-/** 모달팝업 닫기 [8월 중순 삭제예정] */
-function fn_modalClose(_remove, _this){
+/** 모달팝업 닫기 [8월 중순 삭제예정] */ /* [2025.09.15] 삭제테스트 */
+function _fn_modalClose(_remove, _this){
     const modal = _this.closest('.pop-modal');
     if (_remove) {
         modal.remove();
@@ -705,10 +686,10 @@ function fn_modalClose(_remove, _this){
 /** 모달팝업 */
 var lastFocusElement = null;
 function fn_modalPopOpen(_modalId, _isFull, _hasDim){
-    const modal = document.getElementById(_modalId);
+    // const modal = document.getElementById(_modalId);
     const modal2 = $('#'+ _modalId);
-    const modalPop = modal.firstElementChild;
-    // const modalPop2 = modal2.find('> .modal');
+    // const modalPop = modal2.firstElementChild;
+    const modalPop2 = modal2.find('> .modal');
 
     // modal.classList.remove('modal-hidden');
     modal2.removeClass('modal-hidden');
@@ -752,14 +733,14 @@ function fn_modalPopOpen(_modalId, _isFull, _hasDim){
             } else {
                 if ( document.activeElement === focusAbleLast ) {
                     e.preventDefault();
-                    // $(last).focus();
+                    // $(first).focus();
                     // console.log("focusAbleLast");
                 }
             }
         }
     }
 
-    // modal2.on("keydown",fn_keyTrap);
+    modal2.on("keydown",fn_keyTrap);
 
     // const modalButtons = modal.querySelectorAll('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
     const modalButtons = $(modal2).find('.button-box-medium button:not(.maintain-modal), .modal-close, .modal-close-text');
@@ -770,14 +751,14 @@ function fn_modalPopOpen(_modalId, _isFull, _hasDim){
     // });
     $(modalButtons).on('click', function(){
         // console.log(1);
-        fn_modalPopClose(modal);
+        fn_modalPopClose(_modalId);
     });
     
     windowScrollTopFix = window.scrollY;
     document.body.style.top = `-${windowScrollTopFix}px`;
     document.body.classList.add('is-fixed');
     
-    modalPop.focus();
+    modalPop2.focus();
 }
 function fn_modalPopClose(_this){
     if ( typeof _this == 'string' ) {
@@ -853,7 +834,7 @@ function fn_popover(){
     });
 
     $(".info").on("mouseleave blur", function(){
-        pop.hidePopover();
+        // pop.hidePopover();
     });
 }
 
@@ -1282,127 +1263,7 @@ function fn_analysisNav(){
 
 /** 로그인/회원가입 */
 // 약관동의 [2025.09.11] 페이지로 이동
-// function fn_agreeTerms(_id){
-//     if (!_id) { return false; }
-
-//     const nextButton = _id;
-//     const agreeBox = document.querySelector('.agree-box');
-//     const agreeAll = agreeBox.querySelector('.agree-all input');
-//     const terms = agreeBox.querySelectorAll('.agree-list >li > label >input');
-//     const optionalTerms = agreeBox.querySelectorAll('.agree-list >li.has-sub');
-//     const optionalTermsItems = agreeBox.querySelectorAll('.agree-list-sub input');
-//     let _optionalCheckedLength = 0;
-//     let _checkedLength = 0;
-
-//     // 선택약관
-//     for ( optionalTerm of optionalTerms ) {
-//         const optionalTermsTitle = optionalTerm.firstElementChild.querySelector('input');
-//         // console.log(optionalTermsTitle);
-//         // 선택약관 타이틀
-
-//         optionalTermsTitle.addEventListener('click', function(){
-//             const _this = this;
-//             const _subTerms = _this.closest('.has-sub');
-//             const _thisTerms =_subTerms.querySelectorAll('.agree-list-sub input');
-        
-//             for ( _thisTerm of _thisTerms ) {
-//                 if ( _this.checked ) {
-//                     _optionalCheckedLength = _thisTerms.length;
-//                     _checkedLength + _thisTerms.length;
-//                 } else {
-//                     _optionalCheckedLength = 0;
-//                     _checkedLength - _thisTerms.length;
-//                 }
-//                 _thisTerm.checked = _this.checked;
-//             }
-
-//             if ( _this.checked ) {
-//                 _subTerms.classList.remove('is-unchecked');
-//             } else {
-//                 _subTerms.classList.add('is-unchecked');
-//             }
-            
-//         });
-
-//         // 선택약관 서브항목
-//         const _optionalTerms = optionalTerm.querySelectorAll('.agree-list-sub input');
-//         for ( _optionalTerm of _optionalTerms ) {
-//             _optionalTerm.addEventListener('click', function(){
-//                 const _this = this;
-//                 const _subTerms = _this.closest('.has-sub');
-//                 // const _thisTermsTitle = _subTerms.querySelector('& >label input');
-//                 const _thisTermsTitle = _subTerms.firstElementChild.querySelector('input');
-//                 // console.log(_thisTermsTitle);
-//                 if ( _this.checked ) {
-//                     ++_optionalCheckedLength;
-//                 } else {
-//                     --_optionalCheckedLength;
-//                 }
-
-//                 if ( _optionalCheckedLength > 0 ) {
-//                     _thisTermsTitle.checked = true;
-//                     _subTerms.classList.remove('is-unchecked');
-//                     if (_optionalCheckedLength === _optionalTerms.length) {
-//                         ++_checkedLength;
-//                     }
-//                 } else {
-//                     _thisTermsTitle.checked = false;
-//                     _subTerms.classList.add('is-unchecked');
-//                     if (_optionalCheckedLength === 0) {
-//                         --_checkedLength;
-//                     }
-//                 }
-
-//                 if ( terms.length === _checkedLength ) {
-//                     agreeAll.checked = true;
-//                 } else {
-//                     agreeAll.checked = false;
-//                 }
-                
-//             });
-//         }
-//     }
-    
-//     // 필수약관
-//     for ( term of terms ) {
-//         term.addEventListener('click', function(){
-//             let _this = this;
-//             if ( _this.checked ) {
-//                 ++_checkedLength;
-//             } else {
-//                 --_checkedLength;
-//                 agreeAll.checked = _this.checked;
-//             }
-//             if ( terms.length === _checkedLength ) {
-//                 agreeAll.checked = true;
-//             }
-//         });
-//     };
-
-//     // 전체동의
-//     agreeAll.addEventListener('click', function(){
-//         let _this = this;
-//         for ( term of terms ) {
-//             term.checked = _this.checked;
-//         };
-//         for (optionalTermsItem  of optionalTermsItems) {
-//             optionalTermsItem.checked = _this.checked;
-//         }
-
-//         if ( _this.checked ) {
-//             _checkedLength = terms.length;
-//             _optionalCheckedLength = optionalTermsItems.length;
-//             for(optionalTerm of optionalTerms) {
-//                 optionalTerm.classList.remove('is-unchecked');
-//             }
-//         } else {
-//             _checkedLength = 0;
-//             _optionalCheckedLength = 0;
-//             for(optionalTerm of optionalTerms) {
-//                 optionalTerm.classList.add('is-unchecked');
-//             }
-//         }
-//     });    
+// function fn_agreeTerms(_id){ 
 // };
 /** //로그인/회원가입 */
 
@@ -1508,4 +1369,3 @@ function fn_totalSearch() {
     });
   }
 }
-

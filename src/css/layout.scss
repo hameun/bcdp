@@ -198,20 +198,19 @@ aside
     display: flex;
     position: relative;
     z-index: 1;
-    .mypage-menu {
-      display: none;
-    }
     .icon-cart {
       overflow: visible;
       position: relative;
       .my-item {
         display: inline-flex;
         align-items: center;
+        justify-content: center;
         position: absolute;
         left: 26px;
         top: 7px;
         height: 16px;
         padding: 0 4px;
+        min-width: 8px;
         font-weight: 600;
         font-size: 11px;
         color: #fff;
@@ -223,6 +222,9 @@ aside
     .icon-logout {
       display: none;
     }
+  }
+  .mypage-menu {
+    display: none;
   }
   .navigation {
     flex: auto;
@@ -475,31 +477,45 @@ aside
         position: relative;
         z-index: 1;
       }
-
-      .mypage-menu {
-        position: absolute;
-        right: -2px;
-        top: calc(100% + 14px);
-        padding: 6px;
-
-        border-radius: 20px;
-        border: 2px solid #FFF;
-        border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0px 16px 32px 0px #23225814, 0px 4px 12px 0px #23225805 inset;
-        backdrop-filter: blur(10px);
-        a {
-          display: block;
-          min-width: 100px;
-          padding: 9.5px 32px 9.5px 12px;
-          @include text-body(2,'m');
-        }
-        &.is-open {
-          display: block;
-        }
-      }
       .icon-menuclose {
         display: none;
+      }
+    }
+    .mypage-menu {
+      position: fixed;
+      z-index: 1;
+      // right: -2px;
+      // top: calc(100% + 14px);
+      top: 88px;
+      right: 20px;
+      padding: 8px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.68);
+      box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
+      backdrop-filter: blur(10px);
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        padding: 2px;
+        z-index: 0;
+      }
+      & >ul {
+      position: relative;
+      z-index: 1;
+      }
+      a {
+        display: block;
+        min-width: 100px;
+        padding: 9.5px 32px 9.5px 12px;
+        @include text-body(2,'m');
+      }
+      &.is-open {
+        display: block;
       }
     }
     .navigation {
@@ -817,13 +833,19 @@ $_containAisideWidth: 20px + 300px + 20px;
   margin: 0 !important;
   padding: 0 20px 0 $_containAsideWidth;
   // overflow-x: hidden;
-  &:has(.page-main) {
-    overflow: hidden;
-    padding: 0 0 0 260px;
-  }
+  // &:has(.page-main) {
+  //   overflow: hidden;
+  //   padding: 0 0 0 260px;
+  // }
   &:has(.page-aisearch) {
     overflow: hidden;
     padding: 0 $_containAisideWidth 0 $_containAsideWidth;
+  }
+}
+.is-main {
+  .container {
+    overflow: hidden;
+    padding: 0 0 0 260px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -835,6 +857,15 @@ $_containAisideWidth: 20px + 300px + 20px;
 
     .analysis-nav {
       left: $_containAsideFoldWidth;
+    }
+  }
+  .is-main {
+    .container {
+      overflow: hidden;
+      padding: 0 0 0 260px;
+    }
+    .aside.is-fold ~ .container {
+      padding: 0 0 0 $_containAsideFoldWidth;
     }
   }
 }
@@ -867,6 +898,11 @@ page : .page-main /.page-aisearch
   justify-content: center;
   margin: auto;
   .aisearch-header {
+    .logo-video {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+    }
     h1 {
       text-align: center;
       font-size: 40px;
@@ -888,45 +924,19 @@ page : .page-main /.page-aisearch
       align-items: center;
       // flex-wrap: wrap;
       color: #fff;
-
       &.text1 {
         margin-bottom: -68px;
       }
-
-      ._center {
-        position: absolute;
-        left: 50%;
-        top: 0;
-        width: 300px * 3;
-        height: 100%;
-        background: #555;
-        transform: translateX(-50%);
+      &.text1 .exquestion-list {
+        animation: marqee1 60s linear infinite; 
       }
-      ._test {
-        position: absolute;
-        left: auto;
-        top: 0;
-        width: 2px;
-        height: 100%;
-        background-color: yellow;
-        z-index: 1;
-      }
-      &:first-child .exquestion-list {
-        animation: marqee1 20s linear infinite; 
-      }
-      &:nth-child(even) .exquestion-list {
-        animation: marqee2 20s linear infinite;
+      &.text2 .exquestion-list {
+        animation: marqee2 60s linear infinite;
       }
     }
     .exquestion-list {
-      // display: grid;
-      // grid-template-columns: repeat(20,1fr);
       gap: 12px;
-      transition: all;
-
-
       display: flex;
-
       & +.exquestion-list {
         margin-top: 12px;
       }
@@ -972,9 +982,6 @@ page : .page-main /.page-aisearch
           z-index: 0;
           transition: all 300ms ease;
         }
-        &:hover {
-          text-decoration: underline;
-        }
         &.active {
           background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
           box-shadow: 0px 16px 32px 0px #23225814,  0px 4px 12px 0px #23225805 inset;
@@ -990,6 +997,9 @@ page : .page-main /.page-aisearch
           }
           p {
             color: $gray-900;
+          }
+          &:hover p {
+            text-decoration: underline;
           }
         }
       }
@@ -1588,14 +1598,31 @@ page : .page-main /.page-aisearch
   }
   .container {
     padding: 0 24px;
-    &:has(.page-main),
-    &:has(.page-aisearch) {
-      padding: 0 0 0 0;
+    // &:has(.page-main),
+    // &:has(.page-aisearch) {
+    //   padding: 60px 0 0;
+    // }
+  }
+  .is-main {
+    .container {
+      padding: 0;
     }
   }
   .page-main,
   .page-aisearch {
     padding-top: 60px;
+  }
+  .page-main {
+    .aisearch-header {
+      .logo-video {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 8px;
+      }
+      .flow-wrap {
+        margin: -20px 0 -40px;
+      }
+    }
   }
   .aside.is-fold + .container:has(.page-aisearch) {
       padding: 0 0 0 0;

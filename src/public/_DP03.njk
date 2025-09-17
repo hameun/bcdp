@@ -1,0 +1,383 @@
+<div class="content page-polio">
+    <div class="content-head-btn">
+        <div class="content-head">
+            <h1 class="headline1">데이터폴리오</h1>
+            <p class="head-guidetext">원하는 조건을 선택하면 맞춤형 데이터를 생성해드려요.</p>
+        </div>
+        <!-- 250818 임시저장 버튼 수정-->
+        <div class="button-box-small">
+            <button type="button" class="btn-ts">임시저장</button>
+            <button type="button" class="count">7</button>
+        </div>
+        <!-- //250818 임시저장 버튼 수정-->
+    </div>             
+
+    <div class="datapolio-search">
+        <div class="input-box">
+            <input type="text" class="ipt" placeholder="조건을 입력하면 AI가 자동 선택해드려요.">
+            <span class="util-box">
+                <button type="button" class="ipt-search"><i>검색</i></button>
+            </span>
+        </div>
+    </div>
+
+    <div class="datapolio-contents">
+        <div class="content-step">
+            <ul>
+                <!-- [2025.09.04] 수정 : 버튼 태그 추가 -->
+                <li>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">데이터유형</em>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">기간</em>
+                        </span>
+                    </button>
+                </li>
+                <li class="on" aria-selected="true">
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">지역</em>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-bedge">필수</em>
+                            <em class="step-txt">업종</em>
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="step-button">
+                        <i class="bar" aria-hidden="true"></i>
+                        <span class="step-title">
+                            <em class="step-txt">세부항목</em>
+                        </span>
+                    </button>
+                </li>
+                <!-- //[2025.09.04] 수정 : 버튼 태그 추가 -->
+            </ul>
+        </div>
+
+        <div class="step-content">
+            <p class="title3">어떤 기준으로 지역 데이터를 만들까요?</p>
+            <!-- [2025.09.17] 추가 -->
+            <p class="title3">어떤 <a href="#" class="text-button">%광역시/도%</a>로 지역 데이터를 만들까요?</p>
+            <p class="title3">어떤 <a href="#" class="text-button">%시/군/구%</a>로 지역 데이터를 만들까요?</p>
+            <p class="title3">어떤 <a href="#" class="text-button">%행정동%</a>으로 지역 데이터를 만들까요?</p>
+            <!-- //[2025.09.17] 추가 -->
+            <div class="chip-box chip-box-large">
+                <label class="chip"><input type="radio" name="radio1" checked=""><i>광역시/도</i></label>
+                <label class="chip"><input type="radio" name="radio1"><i>시/군/구</i></label>
+                <label class="chip"><input type="radio" name="radio1"><i>행정동</i></label>
+            </div>
+            <div class="chip-check-wrap">
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            광역시/도
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset" disabled>초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link none">광역시/도</a>
+                            시/군/구
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset" disabled>초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link">%광역시/도%</a>
+                            시/군/구
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link">광역시/도 전체</a>
+                            시/군/구
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link none">광역시/도</a>
+                            <a href="#" class="txt-link none">시/군/구</a>
+                            행정동
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset" disabled>초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link">%광역시/도%</a>
+                            <a href="#" class="txt-link none">시/군/구</a>
+                            행정동
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link">%광역시/도%</a>
+                            <a href="#" class="txt-link">시/군/구 전체</a>
+                            행정동
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit"> 
+                        <span>
+                            <a href="#" class="txt-link">광역시/도 전체</a>
+                            <a href="#" class="txt-link none">시/군/구</a>
+                            행정동
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="#" class="txt-link">광역시/도 전체</a>
+                            <a href="#" class="txt-link">시/군/구 전체</a>
+                            행정동
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+
+                <!-- 광역시/도 --> 
+                <div class="checkbox">
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>광역시/도 전체</i></label>          
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>서울시</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>인천시</i></label>   
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>경기도</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>부산시</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>대전시</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>대구시</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>울산시</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>세종시</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>광주시</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>강원도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>충청북도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>충청남도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>경상북도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>경상남도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전라북도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전라남도</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>제주도</i></label>
+                </div>
+                <!-- //광역시/도 -->
+                <!-- 시/군/구 -->
+                <div class="checkbox">
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>시/군/구 전체</i></label>          
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%시/군/구명%</i></label>  
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%시/군/구명%</i></label>
+                </div>
+                <!-- //시/군/구 -->
+                <!-- 행정동 -->
+                <div class="checkbox">
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>행정동 전체</i></label>            
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%행정동명%</i></label>
+                </div>
+                <!-- //행정동 -->
+            </div>
+        </div>
+    </div>
+
+    <div class="datapolio-bottom">
+        <!-- [2025.09.17] 수정 -->
+        <div class="btn-top">
+            <a href="#" class="btn-icon-top"><i>최상단으로 이동</i></a>
+        </div>
+        <div class="btn-filter">
+            <button type="button" class="btn-icon-filter">
+                <i>+99</i>
+            </button>
+        </div>
+        <!-- //[2025.09.17] 수정 -->
+        <div class="filter_box">
+            <div class="filter-content">
+                <span class="filter-tit">선택한 조건</span>
+                
+                <!-- 선택한 조건 있을 경우 -->
+                <button type="button" class="filter-reset">초기화</button>
+                <div class="filter-option item-scroll-wrap">
+                    <div class="option-box">
+                        <span class="option-tit">데이터유형 <em class="count">1</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai">
+                                <span>내국인 카드소비 데이터</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-box">
+                        <span class="option-tit">기간 <em class="count">1</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai">
+                                <span>2024</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                            <div class="option-txt is-ai">
+                                <span>2024</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                            <div class="option-txt">
+                                <span>내국인 카드소비 데이터</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-box">
+                        <span class="option-tit">지역 <em class="count">2</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai"> 
+                                <span>서울특별시 > 강남구 > 논현동</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                            <div class="option-txt">
+                                <span>서울특별시 > 강남구 > 청담동</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-box">
+                        <span class="option-tit">업종 <em class="count">2</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai">
+                                <span>가정통신 > 가전 > 건강가전</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                            <div class="option-txt is-ai">
+                                <span>가정통신 > 가전 > 건강가전</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-box">
+                        <span class="option-tit">요일 <em class="count">2</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai">
+                                <span>주말</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-box">
+                        <span class="option-tit">시간대 <em class="count">2</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai">
+                                <span>저녁</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="option-box">
+                        <span class="option-tit">연령 <em class="count">2</em></span>
+                        <div class="option-filter-box">
+                            <div class="option-txt is-ai">
+                                <span>20대</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                            <div class="option-txt is-ai">
+                                <span>30대</span>
+                                <button type="button" class="del">삭제</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //선택한 조건 있을 경우 -->
+                <!-- 선택한 조건 없을 경우 -->
+                <button type="button" class="filter-reset disabled">초기화</button>
+                <div class="result-none">
+                    <p class="message">선택한 조건이 없어요</p>
+                </div>
+                <!-- //선택한 조건 없을 경우 -->
+                <button class="filter-close" type="button">닫기</button>
+            </div>
+        </div>
+        <div class="bottom-content">
+            <div class="polio-quote">
+                <div class="quote-box">
+                    <div class="quote-tit">
+                        <span class="tit">견적</span>
+                        <span class="sub">(VAT 포함)</span>
+                        <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+                    </div>
+                    <div class="quote-result">
+                        <span class="price">
+                            <i>0</i>원
+                        </span>
+                        <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+                    </div>
+                </div>
+                <div class="textbutton-box-xsmall">
+                    <!-- <a href="#" class="textbutton-s underline disabled">샘플데이터 확인</a> -->
+                    <a href="#" class="textbutton-s underline">샘플데이터 확인</a>
+                </div>
+            </div> 
+            <div class="button-box-large">
+                <button class="button-q" type="button">이전(기간)</button><!-- [2025.09.17] 수정 -->
+                <button class="button-p" type="button">다음(업종)</button><!-- [2025.09.17] 수정 -->
+            </div>
+        </div>
+    </div>
+</div>

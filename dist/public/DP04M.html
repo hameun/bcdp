@@ -43,15 +43,24 @@
 	        <a href="#" class="icon-mypage">마이페이지</a>
 	        <a href="#" class="icon-login">로그인</a>
 	        <a href="#" class="icon-logout">로그아웃</a><!-- [2025.09.11] 추가 -->
-	        <div class="mypage-menu">
+	        <!-- <div class="mypage-menu">
 	            <ul>
 	                <li><a href="#">마이페이지</a></li>
 	                <li><a href="#">개인정보 수정</a></li>
 	                <li><a href="#">로그아웃</a></li>
 	            </ul>
-	        </div>
+	        </div> [2025.09.17] 위치이동 -->
 	        <a href="#" class="icon-menuclose">메뉴닫기</a>
 	    </nav>
+	    <!-- [2025.09.17] 위치이동 -->
+	    <div class="mypage-menu">
+	        <ul>
+	            <li><a href="#">마이페이지</a></li>
+	            <li><a href="#">개인정보 수정</a></li>
+	            <li><a href="#">로그아웃</a></li>
+	        </ul>
+	    </div>
+	    <!-- //[2025.09.17] 위치이동 -->
 	    <!-- 통합검색 -->
 	    <div class="totalSearch" id="searchBox" style="display:none">
 	        <div class="input-box">
@@ -181,20 +190,115 @@
 		        </div>
 
 		        <div class="step-content">
-		            <p class="title3">어떤 기준으로 업종 데이터를 만들까요?</p>
+		            <p class="title3">어떤 기준으로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+		            <!-- [2025.09.17] 추가 -->
+		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%대분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%중분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+		            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%소분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+		            <!-- //[2025.09.17] 추가 -->
 		            <div class="chip-box chip-box-large">
 		                <label class="chip"><input type="radio" name="radio1" checked=""><i>대분류</i></label>
 		                <label class="chip"><input type="radio" name="radio1"><i>중분류</i></label>
 		                <label class="chip"><input type="radio" name="radio1"><i>소분류</i></label>
 		            </div>
-		            <!-- 대분류 -->
 		            <div class="chip-check-wrap">
 		                <div class="chip-tit-wrap">
-		                    <span class="tit">대분류<span class="sub_tit">(다중선택 가능)</span></span>
-		                    <button type="button" class="filter-reset disabled">초기화</button>
+		                    <span class="tit">
+		                        <span>
+		                            대분류
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset" disabled>초기화</button>
 		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link none">대분류</a>
+		                            중분류
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset" disabled>초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+		                            <span>중분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+		                            <span>중분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link none">대분류</a>
+		                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset" disabled>초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+		                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+		                            <a href="javascript:void(0);" class="txt-link">중분류 전체</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit"> 
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+		                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <div class="chip-tit-wrap">
+		                    <span class="tit">
+		                        <span>
+		                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+		                            <a href="javascript:void(0);" class="txt-link">중분류 전체</a>
+		                            <span>소분류</span>
+		                        </span>
+		                        <span class="sub_tit">(다중선택 가능)</span>
+		                    </span>
+		                    <button type="button" class="filter-reset">초기화</button>
+		                </div>
+		                <!-- 대분류 -->
 		                <div class="checkbox">
-		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전체</i></label>          
+		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>대분류 전체</i></label>          
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>  
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>   
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>  
@@ -212,21 +316,11 @@
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
-
 		                </div>
-		            </div>
-		            <!-- //대분류 -->
-		            <!-- 중분류 -->
-		            <div class="chip-check-wrap">
-		                <div class="chip-tit-wrap">
-		                    <span class="tit">
-		                        <span><a href="#" class="txt-link">대분류</a> 교과학원, 교육기타</span>
-		                        <span class="sub_tit">(다중선택 가능)</span>
-		                    </span>
-		                    <button type="button" class="filter-reset">초기화</button>
-		                </div>
+		                <!-- //대분류 -->
+		                <!-- 중분류 -->
 		                <div class="checkbox">
-		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전체</i></label>          
+		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>중분류 전체</i></label>          
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>  
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%중분류명%</i></label>   
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%중분류명%</i></label>  
@@ -244,20 +338,11 @@
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명% </i></label>
-
 		                </div>
-		            </div>
-		            <!-- //중분류 -->
-		            <!-- 소분류 -->
-		            <div class="chip-check-wrap">
-		                <div class="chip-tit-wrap">
-		                    <span class="tit">
-		                        <span><a href="#" class="txt-link">가전통신</a> <a href="#" class="txt-link">가전</a>소분류</span>
-		                        <span class="sub_tit">(다중선택 가능)</span></span>
-		                    <button type="button" class="filter-reset">초기화</button>
-		                </div>
+		                <!-- //중분류 -->
+		                <!-- 소분류 -->
 		                <div class="checkbox">
-		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>            
+		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>소분류 전체</i></label>            
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>  
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%소분류명%</i></label>   
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%소분류명%</i></label>  
@@ -275,47 +360,51 @@
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
 		                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
-
 		                </div>
+		                <!-- //소분류 -->
 		            </div>
-		            <!-- //소분류 -->
 		        </div>
-		        
 		    </div>
 
 		    <div class="datapolio-bottom">
-		    <div class="btn-filter">
-		        <button type="button" class="btn-icon-filter is-filter">
-		            <i>선택조건 있음</i>
-		        </button>
-		    </div>
-		    <div class="bottom-content">
-		        <div class="polio-quote">
-		            <div class="quote-box">
-		                <div class="quote-tit">
-		                    <span class="tit">견적</span>
-		                    <span class="sub">(VAT 포함)</span>
-		                    <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+		        <!-- [2025.09.17] 수정 -->
+		        <div class="btn-top">
+		            <a href="#" class="btn-icon-top"><i>최상단으로 이동</i></a>
+		        </div>
+		        <div class="btn-filter">
+		            <button type="button" class="btn-icon-filter">
+		                <i>+99</i>
+		            </button>
+		        </div>
+		        <!-- //[2025.09.17] 수정 -->
+		        <div class="bottom-content">
+		            <div class="polio-quote">
+		                <div class="quote-box">
+		                    <div class="quote-tit">
+		                        <span class="tit">견적</span>
+		                        <span class="sub">(VAT 포함)</span>
+		                        <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+		                    </div>
+		                    <div class="quote-result">
+		                        <span class="price">
+		                            <i>0</i>원
+		                        </span>
+		                        <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+		                    </div>
 		                </div>
-		                <div class="quote-result">
-		                    <span class="price">
-		                        <i>0</i>원
-		                    </span>
-		                    <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+		                <div class="textbutton-box-xsmall">
+		                    <!-- <a href="#" class="textbutton-s underline disabled">샘플데이터 확인</a> -->
+		                    <a href="#" class="textbutton-s underline">샘플데이터 확인</a>
 		                </div>
+		            </div> 
+		            <div class="button-box-large">
+		                <button class="button-q" type="button">이전(지역)</button><!-- [2025.09.17] 수정 -->
+		                <button class="button-p" type="button">데이터 구매하기</button>
+		                <!-- <button class="button-p" type="button">다음(세부항목)</button> --><!-- [2025.09.17] 수정 -->
+		                <!-- <a href="#" class="icon-cart"></a> [2025.09.17] 삭제 -->
 		            </div>
-		            <div class="textbutton-box-xsmall">
-		                <a href="#" class="textbutton-p underline disabled">샘플데이터 확인</a>
-		            </div>
-		        </div> 
-		        <div class="button-box-large">
-		            <button class="button-q" type="button">이전</button>
-		            <button class="button-p" type="button">데이터 구매하기</button>
-		            <a href="#" class="icon-cart"></a>
 		        </div>
 		    </div>
-		    </div>
-		    
 		</div> 
     </main>
 </div>
@@ -527,7 +616,6 @@
 </div>
 <!-- //데이터구매하기 - 비로그인-->
 
-<!--  250902 추가 - 광역시/도 선택안한 상태에서 시/군/구 버튼 선택 시 -->
 <div class="pop-modal modal-hidden" id="modal2">
     <div class="modal" tabindex="0">
         <div class="message-box">
@@ -553,11 +641,652 @@
 </div>
 <!-- //대분류 선택안한 상태에서 중분류 버튼 선택 시-->
 
+
+<!-- [2025.09.17] 추가 -->
+<div class="pop-modal modal-hidden" id="modal4">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>기간을 필수로 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal5">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지역을 필수로 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal6">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>업종을 필수로 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal7">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지금까지 선택한 내용이 리셋됩니다. <br>리셋할까요?</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-q" type="button">네</button>
+            <button class="button-p" type="button">아니요</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden is-full" id="modal8">
+    <div class="modal modal-large" tabindex="0">
+        <div class="modal-header">업종</div>
+        <div class="modal-content">
+            <div class="industry-view">
+                <h2>경제활동</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>산업용품</dt>
+                            <dd>건축자재</dd>
+                            <dd>농기계</dd>
+                            <dd>농업용자재</dd>
+                            <dd>미용기자재</dd>
+                            <dd>사무비품</dd>
+                            <dd>업소주방용품</dd>
+                            <dd>유류판매</dd>
+                            <dd>의약품도매</dd>
+                            <dd>전자제품도매</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>용역서비스</dt>
+                            <dd>건설기계장비대여/수리</dd>
+                            <dd>운송</dd>
+                            <dd>건축/인테리어</dd>
+                            <dd>인쇄</dd>
+                            <dd>비영리</dd>
+                            <dd>전시행사</dd>
+                            <dd>광고</dd>
+                            <dd>용역서비스기타</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>전문서비스</dt>
+                            <dd>IT</dd>
+                            <dd>영상오디오</dd>
+                            <dd>법률</dd>
+                            <dd>출판</dd>
+                            <dd>부동산산서비스</dd>
+                            <dd>컨설팅</dd>
+                            <dd>사무행정</dd>
+                            <dd>세무회계</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>제조</dt>
+                            <dd>건축자재제조</dd>
+                            <dd>전자제품제제조</dd>
+                            <dd>금속제조</dd>
+                            <dd>종합제조</dd>
+                            <dd>기계제조</dd>
+                            <dd>화학제조</dd>
+                            <dd>기타제조</dd>
+                            <dd>유리제조</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>교육</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>교육기타</dt>
+                            <dd>기타</dd>
+                            <dd>유학입시</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>학교기관</dt>
+                            <dd>고등학교</dd>
+                            <dd>대학교</dd>
+                            <dd>어린이집</dd>
+                            <dd>유치원</dd>
+                            <dd>중학교</dd>
+                            <dd>초등학교</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>학원</dt>
+                            <dd>기술교육학원</dd>
+                            <dd>무용학원</dd>
+                            <dd>체육학원</dd>
+                            <dd>학원기타</dd>
+                            <dd>미술학원</dd>
+                            <dd>외국어학원</dd>
+                            <dd>초중고교과학원</dd>
+                            <dd>운전학원</dd>
+                            <dd>유아학원</dd>
+                            <dd>컴퓨터학원</dd>
+                            <dd>음악학원</dd>
+                            <dd>전문자격/고시학원</dd>
+                            <dd>태권도/무술학원</dd>
+                            <dd>체육학원</dd>
+                            <dd>학원기타</dd>
+                            <dd>초중고교과학원</dd>
+                            <dd>컴퓨터학원</dd>
+                            <dd>태권도/무술학원</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>문화</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>숙박</dt>
+                            <dd>3성호텔</dd>
+                            <dd>4성호텔</dd>
+                            <dd>5성호텔</dd>
+                            <dd>기타숙박시설</dd>
+                            <dd>캠핑/글램핑</dd>
+                            <dd>콘도/리조트</dd>
+                            <dd>펜션/게스트하우스</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>스포츠</dt>
+                            <dd>골프장</dd>
+                            <dd>기타체육시설</dd>
+                            <dd>당구장</dd>
+                            <dd>볼링장</dd>
+                            <dd>수상레저</dd>
+                            <dd>수영장</dd>
+                            <dd>스크린골프</dd>
+                            <dd>스키장</dd>
+                            <dd>요가/필라테스</dd>
+                            <dd>워터파크</dd>
+                            <dd>종합스포츠센터</dd>
+                            <dd>클라이밍</dd>
+                            <dd>탁구장</dd>
+                            <dd>테니스장</dd>
+                            <dd>헬스/크로스핏</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>여가활동</dt>
+                            <dd>갤러리/화랑</dd>
+                            <dd>공예공방</dd>
+                            <dd>관광/체험</dd>
+                            <dd>기타여가활동</dd>
+                            <dd>낚시터</dd>
+                            <dd>놀이공원/동물원</dd>
+                            <dd>수족관/아쿠아리움</dd>
+                            <dd>영화관</dd>
+                            <dd>전시관람</dd>
+                            <dd>휴양림/식물원</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>오락컨텐츠</dt>
+                            <dd>PC방</dd>
+                            <dd>노래방</dd>
+                            <dd>만화방</dd>
+                            <dd>사격장</dd>
+                            <dd>오락기타</dd>
+                            <dd>오락실</dd>
+                            <dd>유아놀이시설</dd>
+                            <dd>즉석사진</dd>
+                            <dd>체험카페</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>문화</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>미용</dt>
+                            <dd>네일샵</dd>
+                            <dd>미용기타</dd>
+                            <dd>미용실</dd>
+                            <dd>안마/마사지</dd>
+                            <dd>이발소/바버샵</dd>
+                            <dd>피부미용</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>반려동물</dt>
+                            <dd>동물병원</dd>
+                            <dd>반려동물미용/관리</dd>
+                            <dd>반려동물용품</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>생활용품</dt>
+                            <dd>기타생활용품</dd>
+                            <dd>꽃가게</dd>
+                            <dd>드럭스토어</dd>
+                            <dd>문구</dd>
+                            <dd>뷰티</dd>
+                            <dd>아동용품</dd>
+                            <dd>안경</dd>
+                            <dd>욕실/주방/청소</dd>
+                            <dd>전자담배</dd>
+                            <dd>종합용품점</dd>
+                            <dd>철물/공구</dd>
+                        <dd>휴대폰액세서리</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>생활편의</dt>
+                            <dd>결혼서비스</dd>
+                            <dd>기타생활서비스</dd>
+                            <dd>보일러</dd>
+                            <dd>사진촬영</dd>
+                            <dd>생활수리</dd>
+                            <dd>소독/구축/방제</dd>
+                            <dd>영유아돌봄</dd>
+                            <dd>예식장</dd>
+                            <dd>이사</dd>
+                            <dd>장례장의</dd>
+                            <dd>조경유지/관리</dd>
+                            <dd>청소/가사</dd>
+                            <dd>택배</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>소매일반</dt>
+                            <dd>기타유통소매</dd>
+                            <dd>대형할인점</dd>
+                            <dd>매점</dd>
+                            <dd>슈퍼마켓</dd>
+                            <dd>자판기</dd>
+                            <dd>편의점</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>식품</dt>
+                            <dd>건강식식품</dd>
+                            <dd>건어물/젓갈</dd>
+                            <dd>곡물</dd>
+                            <dd>기타식품</dd>
+                            <dd>농축수산도매</dd>
+                            <dd>무인식품점</dd>
+                            <dd>반찬</dd>
+                            <dd>수산물</dd>
+                            <dd>수입식료품점</dd>
+                            <dd>유제품</dd>
+                            <dd>음식료품도매</dd>
+                            <dd>정육점</dd>
+                            <dd>종합식품점</dd>
+                            <dd>주류판매점</dd>
+                            <dd>청과물</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>연료</dt>
+                            <dd>가스충전</dd>
+                            <dd>연료기타</dd>
+                            <dd>전기차충전</dd>
+                            <dd>주유소</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>자동차</dt>
+                            <dd>세차장</dd>
+                            <dd>자동차부품</dd>
+                            <dd>자동차정비</dd>
+                            <dd>자동차판매</dd>
+                            <dd>주차장</dd>
+                            <dd>카인테리어</dd>
+                            <dd>타이어</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>주거생활</dt>
+                            <dd>가구</dd>
+                            <dd>배관자재</dd>
+                            <dd>생활가전</dd>
+                            <dd>인테리어</dd>
+                            <dd>조명</dd>
+                            <dd>창호</dd>
+                            <dd>침구</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>편의시설</dt>
+                            <dd>기숙사/고시원</dd>
+                            <dd>독서실/스터티카페</dd>
+                            <dd>사우나</dd>
+                            <dd>세탁소</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>쇼핑</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>면세점</dt>
+                            <dd>백화점</dd>
+                            <dd>아울렛</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>레저문화용품</dt>
+                            <dd>골프용품</dd>
+                            <dd>낚시용품</dd>
+                            <dd>레저용품</dd>
+                            <dd>레저용품기타</dd>
+                            <dd>서적/음반</dd>
+                            <dd>스포츠용품</dd>
+                            <dd>악기점</dd>
+                            <dd>자전거판매</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>의류</dt>
+                            <dd>교복/단체복</dd>
+                            <dd>기타의류</dd>
+                            <dd>빈티지샵</dd>
+                            <dd>성인의류</dd>
+                            <dd>스포츠브랜드</dd>
+                            <dd>신발</dd>
+                            <dd>아동의류</dd>
+                            <dd>의류대여</dd>
+                            <dd>이너웨어</dd>
+                            <dd>한복</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>잡화</dt>
+                            <dd>가발</dd>
+                            <dd>가방</dd>
+                            <dd>기념품</dd>
+                            <dd>기타잡화</dd>
+                            <dd>시계귀금속</dd>
+                            <dd>액세서리</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>외식</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>디저트/카페</dt>
+                            <dd>기타베이커리</dd>
+                            <dd>떡/한과</dd>
+                            <dd>브런치카페/샐러드</dd>
+                            <dd>빵/도넛</dd>
+                            <dd>아이스크림/빙수</dd>
+                            <dd>카페</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>분식/간편식</dt>
+                            <dd>김밥전문점</dd>
+                            <dd>도시락/죽</dd>
+                            <dd>떡볶이전문점</dd>
+                            <dd>분식</dd>
+                            <dd>샌드위치/토스트</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>세계음식</dt>
+                            <dd>기타외국식</dd>
+                            <dd>멕시칸</dd>
+                            <dd>서양식</dd>
+                            <dd>아시안</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>일반식당</dt>
+                            <dd>구내식당</dd>
+                            <dd>뷔페</dd>
+                            <dd>비건/채식/사찰</dd>
+                            <dd>푸드코트</dd>
+                            <dd>휴게소</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>일식</dt>
+                            <dd>기타일식</dd>
+                            <dd>스시/초밥</dd>
+                            <dd>일식돈가스</dd>
+                            <dd>일식라멘</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>주점/주류</dt>
+                            <dd>기타주점</dd>
+                            <dd>바(bar)</dd>
+                            <dd>유흥주점</dd>
+                            <dd>이자카야</dd>
+                            <dd>호프</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>중식</dt>
+                            <dd>기타중식</dd>
+                            <dd>마라탕</dd>
+                            <dd>양꼬치</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>패스트푸드</dt>
+                            <dd>버거</dd>
+                            <dd>치킨</dd>
+                            <dd>피자</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>한식</dt>
+                            <dd>고기구이</dd>
+                            <dd>곱창전골/구이</dd>
+                            <dd>국수/면/만두</dd>
+                            <dd>기타한식</dd>
+                            <dd>백반/한정식</dd>
+                            <dd>전/부침개</dd>
+                            <dd>족발/보쌈</dd>
+                            <dd>찜/탕/찌개</dd>
+                            <dd>해산물구이/찜</dd>
+                            <dd>횟집</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>의료</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>내과의원</dt>
+                            <dd>내과소아과의원</dd>
+                            <dd>비뇨기과의원</dd>
+                            <dd>이비인후과의원</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>복지시설</dt>
+                            <dd>기타복지시설</dd>
+                            <dd>산후조리원</dd>
+                            <dd>요양병원</dd>
+                            <dd>요양양로복지시설</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>외과의원</dt>
+                            <dd>산부인과의원</dd>
+                            <dd>성형외과의원</dd>
+                            <dd>일반외과의원</dd>
+                            <dd>정형외과의원</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>의료기타</dt>
+                            <dd>건강검검진센터</dd>
+                            <dd>기타의학치료</dd>
+                            <dd>보건소</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>의약품</dt>
+                            <dd>약국</dd>
+                            <dd>한약방</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>전문의원</dt>
+                            <dd>기타전문의원</dd>
+                            <dd>신경정신과의원</dd>
+                            <dd>안과의원</dd>
+                            <dd>치과병의원</dd>
+                            <dd>피부과의원</dd>
+                            <dd>한의원</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>종합병원</dt>
+                            <dd>상급종합병병원</dd>
+                            <dd>일반병원</dd>
+                            <dd>종합병원</dd>
+                            <dd>한방병원</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>금융/생활요금</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>교통요금</dt>
+                            <dd>교통/선불충전</dd>
+                            <dd>버스/지하철</dd>
+                            <dd>여객선</dd>
+                            <dd>철도</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>금융</dt>
+                            <dd>PG/온라인결제</dd>
+                            <dd>기타보험</dd>
+                            <dd>생명보험</dd>
+                            <dd>손해보험</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>생활요금</dt>
+                            <dd>가전/가구렌탈</dd>
+                            <dd>공공요금</dd>
+                            <dd>상품권/캐시</dd>
+                            <dd>신문/정기간행물</dd>
+                            <dd>조세/행정</dd>
+                            <dd>통신요금</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <h2>앱/웹 서비스</h2>
+                <div class="list-box">
+                    <div class="item">
+                        <dl>
+                            <dt>O2O</dt>
+                            <dd>여행상품</dd>
+                            <dd>음식배달</dd>
+                            <dd>전시/관람</dd>
+                            <dd>항공권</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>디지털콘텐츠</dt>
+                            <dd>OTT</dd>
+                            <dd>게임</dd>
+                            <dd>디지털콘텐츠 기타</dd>
+                            <dd>웹툰/전자책</dd>
+                            <dd>음원/오디오북</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>교통</dt>
+                            <dd>렌터카</dd>
+                            <dd>카쉐어링</dd>
+                            <dd>택시/모빌리티</dd>
+                        </dl>
+                    </div>
+                    <div class="item">
+                        <dl>
+                            <dt>이러닝</dt>
+                            <dd>교육지원플랫폼</dd>
+                            <dd>인터넷강강의</dd>
+                            <dd>학습지</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="modal-close">닫기</button>
+    </div>
+</div>
+<!-- //[2025.09.17] 추가 -->
+
 <!-- 퍼블리싱 확인 -->
 <div class="modal-test">
     <div class="button-box-xsmall"> 
-        <a href="#" class="button-q" onclick="fn_toast('상품을 장바구니에 담았아요.',1);return false;">장바구니 완료 토스트팝업</a>
+        <!-- <a href="#" class="button-q" onclick="fn_toast('상품을 장바구니에 담았아요.',1);return false;">장바구니 완료 토스트팝업</a> -->
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[데이터구매하기]비로그인인 상태</a>
+        <!-- [2025.09.17] 추가 -->
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">[데이터구매하기] 기간 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal6');return false;">[데이터구매하기] 업종 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal5');return false;">[데이터구매하기] 지역 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal7');return false;">[집계기준 선택 후 항목 선택 중에, 동일한 집계기준 재선택 시]</a>
+        <a href="#" class="button-q" onclick="fn_toast('조건이 추가되었습니다',1);return false;">[조건 선택완료 시] 토스트팝업</a>
+        <a href="#" class="button-q" onclick="fn_modalPopOpen('modal8');return false;">업종 데이터 팝업</a>
+        <!-- //[2025.09.17] 추가 -->
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">광역시/도 미선택</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');return false;">대분류 미선택</a>
     </div>

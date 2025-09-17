@@ -74,20 +74,115 @@
         </div>
 
         <div class="step-content">
-            <p class="title3">어떤 기준으로 업종 데이터를 만들까요?</p>
+            <p class="title3">어떤 기준으로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+            <!-- [2025.09.17] 추가 -->
+            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%대분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%중분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+            <p class="title3">어떤 <a href="javascript:void(0);" class="text-button">%소분류%</a>로 업종 데이터를 만들까요? <button type="button" class="icon-info-m"><i>업종 보기</i></button></p>
+            <!-- //[2025.09.17] 추가 -->
             <div class="chip-box chip-box-large">
                 <label class="chip"><input type="radio" name="radio1" checked=""><i>대분류</i></label>
                 <label class="chip"><input type="radio" name="radio1"><i>중분류</i></label>
                 <label class="chip"><input type="radio" name="radio1"><i>소분류</i></label>
             </div>
-            <!-- 대분류 -->
             <div class="chip-check-wrap">
                 <div class="chip-tit-wrap">
-                    <span class="tit">대분류<span class="sub_tit">(다중선택 가능)</span></span>
-                    <button type="button" class="filter-reset disabled">초기화</button>
+                    <span class="tit">
+                        <span>
+                            대분류
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset" disabled>초기화</button>
                 </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link none">대분류</a>
+                            중분류
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset" disabled>초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+                            <span>중분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+                            <span>중분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link none">대분류</a>
+                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+                            <span>소분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset" disabled>초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+                            <span>소분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link">%대분류%</a>
+                            <a href="javascript:void(0);" class="txt-link">중분류 전체</a>
+                            <span>소분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit"> 
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+                            <a href="javascript:void(0);" class="txt-link none">중분류</a>
+                            <span>소분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <div class="chip-tit-wrap">
+                    <span class="tit">
+                        <span>
+                            <a href="javascript:void(0);" class="txt-link">대분류 전체</a>
+                            <a href="javascript:void(0);" class="txt-link">중분류 전체</a>
+                            <span>소분류</span>
+                        </span>
+                        <span class="sub_tit">(다중선택 가능)</span>
+                    </span>
+                    <button type="button" class="filter-reset">초기화</button>
+                </div>
+                <!-- 대분류 -->
                 <div class="checkbox">
-                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전체</i></label>          
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>대분류 전체</i></label>          
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>  
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>   
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>  
@@ -105,21 +200,11 @@
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%대분류명%</i></label>
-
                 </div>
-            </div>
-            <!-- //대분류 -->
-            <!-- 중분류 -->
-            <div class="chip-check-wrap">
-                <div class="chip-tit-wrap">
-                    <span class="tit">
-                        <span><a href="#" class="txt-link">대분류</a> 교과학원, 교육기타</span>
-                        <span class="sub_tit">(다중선택 가능)</span>
-                    </span>
-                    <button type="button" class="filter-reset">초기화</button>
-                </div>
+                <!-- //대분류 -->
+                <!-- 중분류 -->
                 <div class="checkbox">
-                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>전체</i></label>          
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>중분류 전체</i></label>          
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>  
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%중분류명%</i></label>   
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%중분류명%</i></label>  
@@ -137,20 +222,11 @@
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명%</i></label>
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%중분류명% </i></label>
-
                 </div>
-            </div>
-            <!-- //중분류 -->
-            <!-- 소분류 -->
-            <div class="chip-check-wrap">
-                <div class="chip-tit-wrap">
-                    <span class="tit">
-                        <span><a href="#" class="txt-link">가전통신</a> <a href="#" class="txt-link">가전</a>소분류</span>
-                        <span class="sub_tit">(다중선택 가능)</span></span>
-                    <button type="button" class="filter-reset">초기화</button>
-                </div>
+                <!-- //중분류 -->
+                <!-- 소분류 -->
                 <div class="checkbox">
-                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>            
+                    <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>소분류 전체</i></label>            
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>  
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%소분류명%</i></label>   
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1" checked><i>%소분류명%</i></label>  
@@ -168,45 +244,49 @@
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
                     <label class="ipt-check-box"><input type="checkbox" name="checkbox1"><i>%소분류명%</i></label>
-
                 </div>
+                <!-- //소분류 -->
             </div>
-            <!-- //소분류 -->
         </div>
-        
     </div>
 
     <div class="datapolio-bottom">
-    <div class="btn-filter">
-        <button type="button" class="btn-icon-filter is-filter">
-            <i>선택조건 있음</i>
-        </button>
-    </div>
-    <div class="bottom-content">
-        <div class="polio-quote">
-            <div class="quote-box">
-                <div class="quote-tit">
-                    <span class="tit">견적</span>
-                    <span class="sub">(VAT 포함)</span>
-                    <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+        <!-- [2025.09.17] 수정 -->
+        <div class="btn-top">
+            <a href="#" class="btn-icon-top"><i>최상단으로 이동</i></a>
+        </div>
+        <div class="btn-filter">
+            <button type="button" class="btn-icon-filter">
+                <i>+99</i>
+            </button>
+        </div>
+        <!-- //[2025.09.17] 수정 -->
+        <div class="bottom-content">
+            <div class="polio-quote">
+                <div class="quote-box">
+                    <div class="quote-tit">
+                        <span class="tit">견적</span>
+                        <span class="sub">(VAT 포함)</span>
+                        <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+                    </div>
+                    <div class="quote-result">
+                        <span class="price">
+                            <i>0</i>원
+                        </span>
+                        <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+                    </div>
                 </div>
-                <div class="quote-result">
-                    <span class="price">
-                        <i>0</i>원
-                    </span>
-                    <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+                <div class="textbutton-box-xsmall">
+                    <!-- <a href="#" class="textbutton-s underline disabled">샘플데이터 확인</a> -->
+                    <a href="#" class="textbutton-s underline">샘플데이터 확인</a>
                 </div>
+            </div> 
+            <div class="button-box-large">
+                <button class="button-q" type="button">이전(지역)</button><!-- [2025.09.17] 수정 -->
+                <button class="button-p" type="button">데이터 구매하기</button>
+                <!-- <button class="button-p" type="button">다음(세부항목)</button> --><!-- [2025.09.17] 수정 -->
+                <!-- <a href="#" class="icon-cart"></a> [2025.09.17] 삭제 -->
             </div>
-            <div class="textbutton-box-xsmall">
-                <a href="#" class="textbutton-p underline disabled">샘플데이터 확인</a>
-            </div>
-        </div> 
-        <div class="button-box-large">
-            <button class="button-q" type="button">이전</button>
-            <button class="button-p" type="button">데이터 구매하기</button>
-            <a href="#" class="icon-cart"></a>
         </div>
     </div>
-    </div>
-    
 </div> 

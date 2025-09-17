@@ -171,9 +171,6 @@ aside
   position: relative;
   z-index: 1;
 }
-.aside .statebar .mypage-menu {
-  display: none;
-}
 .aside .statebar .icon-cart {
   overflow: visible;
   position: relative;
@@ -185,11 +182,15 @@ aside
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   left: 26px;
   top: 7px;
   height: 16px;
   padding: 0 4px;
+  min-width: 8px;
   font-weight: 600;
   font-size: 11px;
   color: #fff;
@@ -198,6 +199,9 @@ aside
   border-radius: 16px;
 }
 .aside .statebar .icon-logout {
+  display: none;
+}
+.aside .mypage-menu {
   display: none;
 }
 .aside .navigation {
@@ -834,22 +838,42 @@ aside
     position: relative;
     z-index: 1;
   }
-  .aside .statebar .mypage-menu {
-    position: absolute;
-    right: -2px;
-    top: calc(100% + 14px);
-    padding: 6px;
+  .aside .statebar .icon-menuclose {
+    display: none;
+  }
+  .aside .mypage-menu {
+    position: fixed;
+    z-index: 1;
+    top: 88px;
+    right: 20px;
+    padding: 8px;
     border-radius: 20px;
-    border: 2px solid #FFF;
-    -o-border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-       border-image: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(rgba(255, 255, 255, 0.2)));
-       border-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.68);
     -webkit-box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
             box-shadow: 0px 16px 32px 0px rgba(35, 34, 88, 0.0784313725), 0px 4px 12px 0px rgba(35, 34, 88, 0.0196078431) inset;
     backdrop-filter: blur(10px);
   }
-  .aside .statebar .mypage-menu a {
+  .aside .mypage-menu::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(rgba(255, 255, 255, 0.2)));
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.2) 100%);
+    -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+            mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #000)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #000));
+            mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    padding: 2px;
+    z-index: 0;
+  }
+  .aside .mypage-menu > ul {
+    position: relative;
+    z-index: 1;
+  }
+  .aside .mypage-menu a {
     display: block;
     min-width: 100px;
     padding: 9.5px 32px 9.5px 12px;
@@ -857,11 +881,8 @@ aside
     font-weight: 500;
     color: #191B1E;
   }
-  .aside .statebar .mypage-menu.is-open {
+  .aside .mypage-menu.is-open {
     display: block;
-  }
-  .aside .statebar .icon-menuclose {
-    display: none;
   }
   .aside .navigation {
     -ms-flex-negative: 0;
@@ -1241,13 +1262,14 @@ page : 레이아웃 변경 테스트
   margin: 0 !important;
   padding: 0 20px 0 280px;
 }
-.container:has(.page-main) {
-  overflow: hidden;
-  padding: 0 0 0 260px;
-}
 .container:has(.page-aisearch) {
   overflow: hidden;
   padding: 0 340px 0 280px;
+}
+
+.is-main .container {
+  overflow: hidden;
+  padding: 0 0 0 260px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1259,6 +1281,13 @@ page : 레이아웃 변경 테스트
   }
   .aside.is-fold ~ .container .analysis-nav {
     left: 104px;
+  }
+  .is-main .container {
+    overflow: hidden;
+    padding: 0 0 0 260px;
+  }
+  .is-main .aside.is-fold ~ .container {
+    padding: 0 0 0 104px;
   }
 }
 /***********
@@ -1296,6 +1325,11 @@ page : .page-main /.page-aisearch
 .page-main::-webkit-scrollbar-button {
   height: 7px;
 }
+.page-main .aisearch-header .logo-video {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+}
 .page-main .aisearch-header h1 {
   text-align: center;
   font-size: 40px;
@@ -1323,37 +1357,16 @@ page : .page-main /.page-aisearch
 .page-main .aisearch-header .flow-text.text1 {
   margin-bottom: -68px;
 }
-.page-main .aisearch-header .flow-text ._center {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 900px;
-  height: 100%;
-  background: #555;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+.page-main .aisearch-header .flow-text.text1 .exquestion-list {
+  -webkit-animation: marqee1 60s linear infinite;
+          animation: marqee1 60s linear infinite;
 }
-.page-main .aisearch-header .flow-text ._test {
-  position: absolute;
-  left: auto;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background-color: yellow;
-  z-index: 1;
-}
-.page-main .aisearch-header .flow-text:first-child .exquestion-list {
-  -webkit-animation: marqee1 20s linear infinite;
-          animation: marqee1 20s linear infinite;
-}
-.page-main .aisearch-header .flow-text:nth-child(even) .exquestion-list {
-  -webkit-animation: marqee2 20s linear infinite;
-          animation: marqee2 20s linear infinite;
+.page-main .aisearch-header .flow-text.text2 .exquestion-list {
+  -webkit-animation: marqee2 60s linear infinite;
+          animation: marqee2 60s linear infinite;
 }
 .page-main .aisearch-header .exquestion-list {
   gap: 12px;
-  -webkit-transition: all;
-  transition: all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1417,9 +1430,6 @@ page : .page-main /.page-aisearch
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
 }
-.page-main .aisearch-header .exquestion-list .exquestion-item:hover {
-  text-decoration: underline;
-}
 .page-main .aisearch-header .exquestion-list .exquestion-item.active {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6)));
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 100%);
@@ -1443,6 +1453,9 @@ page : .page-main /.page-aisearch
 }
 .page-main .aisearch-header .exquestion-list .exquestion-item.active p {
   color: #191B1E;
+}
+.page-main .aisearch-header .exquestion-list .exquestion-item.active:hover p {
+  text-decoration: underline;
 }
 
 @-webkit-keyframes marqee1 {
@@ -2142,12 +2155,20 @@ page : .page-main /.page-aisearch
   .container {
     padding: 0 24px;
   }
-  .container:has(.page-main), .container:has(.page-aisearch) {
-    padding: 0 0 0 0;
+  .is-main .container {
+    padding: 0;
   }
   .page-main,
   .page-aisearch {
     padding-top: 60px;
+  }
+  .page-main .aisearch-header .logo-video {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 8px;
+  }
+  .page-main .aisearch-header .flow-wrap {
+    margin: -20px 0 -40px;
   }
   .aside.is-fold + .container:has(.page-aisearch) {
     padding: 0 0 0 0;

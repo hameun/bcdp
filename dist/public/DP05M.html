@@ -43,15 +43,24 @@
 	        <a href="#" class="icon-mypage">마이페이지</a>
 	        <a href="#" class="icon-login">로그인</a>
 	        <a href="#" class="icon-logout">로그아웃</a><!-- [2025.09.11] 추가 -->
-	        <div class="mypage-menu">
+	        <!-- <div class="mypage-menu">
 	            <ul>
 	                <li><a href="#">마이페이지</a></li>
 	                <li><a href="#">개인정보 수정</a></li>
 	                <li><a href="#">로그아웃</a></li>
 	            </ul>
-	        </div>
+	        </div> [2025.09.17] 위치이동 -->
 	        <a href="#" class="icon-menuclose">메뉴닫기</a>
 	    </nav>
+	    <!-- [2025.09.17] 위치이동 -->
+	    <div class="mypage-menu">
+	        <ul>
+	            <li><a href="#">마이페이지</a></li>
+	            <li><a href="#">개인정보 수정</a></li>
+	            <li><a href="#">로그아웃</a></li>
+	        </ul>
+	    </div>
+	    <!-- //[2025.09.17] 위치이동 -->
 	    <!-- 통합검색 -->
 	    <div class="totalSearch" id="searchBox" style="display:none">
 	        <div class="input-box">
@@ -276,38 +285,144 @@
 		    </div>
 
 		    <div class="datapolio-bottom">
-		    <div class="btn-filter">
-		        <button type="button" class="btn-icon-filter is-filter"><!--조건 있을 시 : is-filter-->
-		            <i>선택조건 있음</i>
-		        </button>
-		    </div>
-		    <div class="bottom-content">
-		        <div class="polio-quote">
-		            <div class="quote-box">
-		                <div class="quote-tit">
-		                    <span class="tit">견적</span>
-		                    <span class="sub">(VAT 포함)</span>
-		                    <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+		        <!-- [2025.09.17] 수정 -->
+		        <div class="btn-top">
+		            <a href="#" class="btn-icon-top"><i>최상단으로 이동</i></a>
+		        </div>
+		        <div class="btn-filter">
+		            <button type="button" class="btn-icon-filter">
+		                <i>+99</i>
+		            </button>
+		        </div>
+		        <!-- //[2025.09.17] 수정 -->
+		        <div class="filter_box">
+		            <div class="filter-content">
+		                <span class="filter-tit">선택한 조건</span>
+		                
+		                <!-- 선택한 조건 있을 경우 -->
+		                <button type="button" class="filter-reset">초기화</button>
+		                <div class="filter-option item-scroll-wrap">
+		                    <div class="option-box">
+		                        <span class="option-tit">데이터유형 <em class="count">1</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">기간 <em class="count">1</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>2024</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>2024</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt">
+		                                <span>내국인 카드소비 데이터</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">지역 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai"> 
+		                                <span>서울특별시 > 강남구 > 논현동</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt">
+		                                <span>서울특별시 > 강남구 > 청담동</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">업종 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>가정통신 > 가전 > 건강가전</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>가정통신 > 가전 > 건강가전</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">요일 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>주말</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">시간대 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>저녁</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <div class="option-box">
+		                        <span class="option-tit">연령 <em class="count">2</em></span>
+		                        <div class="option-filter-box">
+		                            <div class="option-txt is-ai">
+		                                <span>20대</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                            <div class="option-txt is-ai">
+		                                <span>30대</span>
+		                                <button type="button" class="del">삭제</button>
+		                            </div>
+		                        </div>
+		                    </div>
 		                </div>
-		                <div class="quote-result">
-		                    <span class="price">
-		                        <i>0</i>원
-		                    </span>
-		                    <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+		                <!-- //선택한 조건 있을 경우 -->
+		                <!-- 선택한 조건 없을 경우 -->
+		                <button type="button" class="filter-reset disabled">초기화</button>
+		                <div class="result-none">
+		                    <p class="message">선택한 조건이 없어요</p>
 		                </div>
+		                <!-- //선택한 조건 없을 경우 -->
+		                <button class="filter-close" type="button">닫기</button>
 		            </div>
-		            <div class="textbutton-box-xsmall">
-		                <a href="#" class="textbutton-p underline disabled">샘플데이터 확인</a>
+		        </div>
+		        <div class="bottom-content">
+		            <div class="polio-quote">
+		                <div class="quote-box">
+		                    <div class="quote-tit">
+		                        <span class="tit">견적</span>
+		                        <span class="sub">(VAT 포함)</span>
+		                        <button type="button" class="detail-info"><i class="icon-info-s">세부정보</i></button>
+		                    </div>
+		                    <div class="quote-result">
+		                        <span class="price">
+		                            <i>0</i>원
+		                        </span>
+		                        <span class="my-price">(나의 예상 구매 가격 <i>139,570,000</i>원)</span>
+		                    </div>
+		                </div>
+		                <div class="textbutton-box-xsmall">
+		                    <!-- <a href="#" class="textbutton-s underline disabled">샘플데이터 확인</a> -->
+		                    <a href="#" class="textbutton-s underline">샘플데이터 확인</a>
+		                </div>
+		            </div> 
+		            <div class="button-box-large">
+		                <button class="button-q" type="button">이전(업종)</button><!-- [2025.09.17] 수정 -->
+		                <button class="button-p" type="button">데이터 구매하기</button>
+		                <!-- <a href="#" class="icon-cart"></a> [2025.09.17] 삭제 -->
 		            </div>
-		        </div> 
-		        <div class="button-box-large">
-		            <button class="button-q" type="button">이전</button>
-		            <button class="button-p" type="button">데이터 구매하기</button>
-		            <a href="#" class="icon-cart"></a>
 		        </div>
 		    </div>
-		    </div>
-		    
 		</div>
     </main>
 </div>
@@ -525,23 +640,25 @@
         <div class="modal-header">최종 견적 확인 후 결제를 진행해주세요.</div>
         <div class="modal-description">선택하신 조건 중 일부 항목은 현재 보유한 데이터가 없어 제외되었어요. 실제 구매 가능한 항목을 기준으로 최종 견적이 산정됩니다.</div>
         <div class="datapolio-box">
-            <div class="title">제외항목 <span class="count">4</span></div>
-            <div class="modal-data-info datapolio">
-                <dl class="info">
-                    <dt>업종</dt>
-                    <dd>
-                        <span>(소분류)가정통신>가전>건강가전</span>
-                        <span>(소분류)가정통신>가전>건강가전</span>
-                    </dd>
-                </dl>
-                <dl class="info">
-                    <dt>지역</dt>
-                    <dd>
-                        <span>(광역시/도)인천시</span>
-                        <span>(광역시/도)경기도</span>
-                    </dd>
-                </dl>
-            </div>
+            <div class="item-scroll-wrap"><!-- [2025.09.17] div 추가 -->
+                <div class="title">제외항목 <span class="count">4</span></div>
+                <div class="modal-data-info datapolio">
+                    <dl class="info">
+                        <dt>업종</dt>
+                        <dd>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                        </dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>지역</dt>
+                        <dd>
+                            <span>(광역시/도)인천시</span>
+                            <span>(광역시/도)경기도</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div><!-- //[2025.09.17] div 추가 -->
             <div class="modal-data-info datapolio">
                 <dl class="info">
                     <dt>예상 견적금액</dt>
@@ -575,23 +692,38 @@
         <div class="modal-header">최종 견적 확인 후 결제를 진행해주세요.</div>
         <div class="modal-description">선택하신 조건 중 일부 항목은 현재 보유한 데이터가 없어 제외되었어요. 실제 구매 가능한 항목을 기준으로 최종 견적이 산정됩니다.</div>
         <div class="datapolio-box">
-            <div class="title">제외항목 <span class="count">4</span></div>
-            <div class="modal-data-info datapolio">
-                <dl class="info">
-                    <dt>업종</dt>
-                    <dd>
-                        <span>(소분류)가정통신>가전>건강가전</span>
-                        <span>(소분류)가정통신>가전>건강가전</span>
-                    </dd>
-                </dl>
-                <dl class="info">
-                    <dt>지역</dt>
-                    <dd>
-                        <span>(광역시/도)인천시</span>
-                        <span>(광역시/도)경기도</span>
-                    </dd>
-                </dl>
-            </div>
+            <div class="item-scroll-wrap"><!-- [2025.09.17] div 추가 -->
+                <div class="title">제외항목 <span class="count">4</span></div>
+                <div class="modal-data-info datapolio">
+                    <dl class="info">
+                        <dt>업종</dt>
+                        <dd>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                            <span>(소분류)가정통신>가전>건강가전</span>
+                        </dd>
+                    </dl>
+                    <dl class="info">
+                        <dt>지역</dt>
+                        <dd>
+                            <span>(광역시/도)인천시</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                            <span>(광역시/도)경기도</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div><!-- //[2025.09.17] div 추가 -->
             <div class="modal-data-info datapolio">
                 <dl class="info">
                     <dt>예상 견적금액</dt>
@@ -599,11 +731,11 @@
                 </dl>
                 <dl class="info">
                     <dt>제외항목 차감</dt>
-                    <dd>-20,000원</dd>
+                    <dd>-320,000원</dd>
                 </dl>
                 <dl class="info total">
                     <dt>최종 견적금액</dt>
-                    <dd>300,000원</dd>
+                    <dd>0원</dd>
                 </dl>
             </div>
             <div class="datapolio">
@@ -715,8 +847,8 @@
 <div class="pop-modal modal-hidden is-full" id="modal7">
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">정보 보안관리 약정서</div>
-        <div class="security-box">
-            <div class="item-scroll-wrap">
+        <div class="modal-content"><!-- [2025.09.17] 수정 -->
+            <div class="security-box"><!-- [2025.09.17] 수정 -->
                 <p class="description">비씨카드주식회사(이하 ‘공급자’라 함)가 금융 빅데이터 플랫폼 회원(이하 "구매자"라 함)에게 익명 정보(이하 “데이터”이라 함)를 공급하는데 있어서 다음과 같이 정보 보안관리 약정을 체결합니다.</p>
 
                 <h2>제 1조(개요)</h2>
@@ -842,10 +974,49 @@
     </div>
 </div>
 
+<!-- [2025.09.17] 추가 -->
+<div class="pop-modal modal-hidden" id="modal10">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>기간을 필수로 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal11">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>지역을 필수로 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<div class="pop-modal modal-hidden" id="modal12">
+    <div class="modal" tabindex="0">
+        <div class="message-box">
+            <p>업종을 필수로 선택해주세요.</p>
+        </div>
+        <div class="button-box-medium">
+            <button class="button-p" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!-- //[2025.09.17] 추가 -->
+
 <!-- 퍼블리싱 확인 -->
 <div class="modal-test">
     <div class="button-box-xsmall">
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">[데이터구매하기]비로그인인 상태</a>
+        <!-- [2025.09.17] 추가 -->
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal10');return false;">[데이터구매하기] 기간 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal11');return false;">[데이터구매하기] 업종 미선택</a>
+        <a href="#" class="button-s" onclick="fn_modalPopOpen('modal12');return false;">[데이터구매하기] 지역 미선택</a>
+        <a href="#" class="button-q" onclick="fn_toast('조건이 추가되었습니다',1);return false;">[조건 선택완료 시] 토스트팝업</a>
+        <!-- //[2025.09.17] 추가 -->
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal2');return false;">최종견적확인</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal3');return false;">조건변경</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">데이터폴리오 상세</a>

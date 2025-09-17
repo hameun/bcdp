@@ -2,7 +2,7 @@
 
 {% block content %}
 {{ include( "_html/_DP01.njk" ) }}
-{%- endblock %}                  
+{%- endblock %}
 
 {% block modal %}
 
@@ -229,8 +229,8 @@
     <div class="modal modal-large" tabindex="0">
         <div class="modal-header">임시저장 <span class="count">10</span>
         <p class="info-txt">최대 10개까지만 저장됩니다.</p></div>
-        <div class="draft-box">
-            <div class="draft-list item-scroll-wrap">
+        <div class="modal-content draft-box"><!-- [2025.09.17] 수정 -->
+            <div class="draft-list"><!-- [2025.09.17] 수정 -->
                 <ul>
                     <li>
                         <a href="#" class="draft-list-box">
