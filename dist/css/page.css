@@ -2489,13 +2489,39 @@ page : page-datamarket
       -ms-flex: auto;
           flex: auto;
 }
+.page-datamarket .datamarket-search .search-data .button-box-large .button-p {
+  min-width: 105px;
+  padding: 18px 18px 18px 20px;
+}
+.page-datamarket .datamarket-search .search-data .button-box-large .button-p .icon-right {
+  margin: 0 0 0 6px;
+}
+@media screen and (max-width: 767px) {
+  .page-datamarket .datamarket-search .search-data .button-box-large .button-p {
+    min-width: 56px;
+    font-size: 0;
+    padding: 18px;
+  }
+  .page-datamarket .datamarket-search .search-data .button-box-large .button-p .icon-right {
+    margin: 0;
+  }
+}
 .page-datamarket .datamarket-search .search-filter {
   margin-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .page-datamarket .datamarket-search .search-filter .chip-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -2507,23 +2533,78 @@ page : page-datamarket
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-radius: 12px;
-  padding: 4px 11px;
+  border-radius: 8px;
+  padding: 4px 8px;
   background-color: #EFEFFF;
 }
 .page-datamarket .datamarket-search .search-filter .chip i {
   font-size: 16px;
   font-weight: 500;
-  color: #5957E3;
   padding: 0 2px;
+}
+.page-datamarket .datamarket-search .search-filter .chip.green {
+  background-color: #E7F5F0;
+}
+.page-datamarket .datamarket-search .search-filter .chip.green i {
+  color: #0B9665;
+}
+.page-datamarket .datamarket-search .search-filter .chip.green .item-del {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.6663%203.33325L3.33301%2012.6666M3.33301%203.33325L12.6663%2012.6666%22%20stroke%3D%22%230B9665%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+}
+.page-datamarket .datamarket-search .search-filter .chip.blue {
+  background-color: #E4F3FF;
+}
+.page-datamarket .datamarket-search .search-filter .chip.blue i {
+  color: #2D7AEB;
+}
+.page-datamarket .datamarket-search .search-filter .chip.blue .item-del {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.6663%203.33325L3.33301%2012.6666M3.33301%203.33325L12.6663%2012.6666%22%20stroke%3D%22%232D7AEB%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
 }
 .page-datamarket .datamarket-search .search-filter .item-del {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.6663%203.33325L3.33301%2012.6666M3.33301%203.33325L12.6663%2012.6666%22%20stroke%3D%22%236361FC%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
+  background-size: 16px auto;
+  border: 0 none;
+  line-height: 1;
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+  -ms-flex-preferred-size: 16px;
+      flex-basis: 16px;
+  margin-left: 4px;
+}
+.page-datamarket .datamarket-search .search-filter .btn-reset {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 4px;
+  min-width: 105px;
+  padding-right: 4px;
+  color: #626A7A;
+  font-weight: 500;
+  font-size: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.page-datamarket .datamarket-search .search-filter .btn-reset .icon-reload {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M1%203.99995V9.99995M1%209.99995H7M1%209.99995L5.64%205.63995C7.02091%204.26137%208.81245%203.36892%2010.7447%203.09707C12.6769%202.82521%2014.6451%203.18868%2016.3528%204.13271C18.0605%205.07674%2019.4152%206.55019%2020.2126%208.33105C21.0101%2010.1119%2021.2072%2012.1037%2020.7742%2014.0063C20.3413%2015.9089%2019.3017%2017.6193%2017.8121%2018.8797C16.3226%2020.1401%2014.4637%2020.8823%2012.5157%2020.9944C10.5677%2021.1065%208.63598%2020.5825%207.01166%2019.5013C5.38734%2018.4201%204.15839%2016.8403%203.51%2014.9999%22%20stroke%3D%22%23626A7A%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
   background-size: 20px auto;
   border: 0 none;
   line-height: 1;
@@ -2532,8 +2613,88 @@ page : page-datamarket
   overflow: hidden;
   color: transparent;
   font-size: 0;
-  -ms-flex-preferred-size: 24px;
-      flex-basis: 24px;
+}
+@media screen and (max-width: 767px) {
+  .page-datamarket .datamarket-search .search-filter .chip-list {
+    gap: 4px;
+  }
+  .page-datamarket .datamarket-search .search-filter .chip {
+    padding: 3.5px 6px;
+  }
+  .page-datamarket .datamarket-search .search-filter .chip i {
+    font-size: 14px;
+  }
+  .page-datamarket .datamarket-search .search-filter .chip .item-del {
+    width: 16px;
+    height: 16px;
+    background-size: 16px;
+    -ms-flex-preferred-size: 16px;
+        flex-basis: 16px;
+    margin-left: 2px;
+  }
+  .page-datamarket .datamarket-search .search-filter .btn-reset {
+    font-size: 14px;
+    min-width: auto;
+    padding-right: 4px;
+  }
+  .page-datamarket .datamarket-search .search-filter .btn-reset .icon-reload {
+    width: 16px;
+    height: 16px;
+    background-size: 16px auto;
+  }
+}
+.page-datamarket .datamarket-contents .data-list > ul > li {
+  overflow-x: auto;
+  max-width: 100%;
+  width: 100%;
+}
+.page-datamarket .datamarket-contents .data-list > ul.col-1 .data-card .item {
+  height: auto;
+}
+.page-datamarket .datamarket-contents .data-list > ul.col-1 .data-card .price {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.page-datamarket .datamarket-contents .data-list .data-card {
+  width: 100%;
+  padding: 0;
+}
+.page-datamarket .datamarket-contents .data-list .data-card .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 307px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+}
+.page-datamarket .datamarket-contents .data-list .data-card .item:focus-visible {
+  outline-offset: -1px;
+}
+.page-datamarket .datamarket-contents .data-list .data-card .desc {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.page-datamarket .datamarket-contents .data-list .data-card .price {
+  margin-bottom: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .page-datamarket .data-view-header {
   min-height: 320px;
@@ -2556,9 +2717,35 @@ page : page-datamarket
           flex-direction: column;
   justify-items: flex-start;
 }
+.page-datamarket .data-view-header .data-card .logo {
+  margin-bottom: 16px;
+}
+.page-datamarket .data-view-header .data-card .title {
+  font-size: 20px;
+}
+.page-datamarket .data-view-header .data-card .desc {
+  font-size: 16px;
+  color: #626A7A;
+  margin-top: 12px;
+}
 .page-datamarket .data-view-header .data-card .etc {
   margin-top: auto;
   margin-bottom: 12px;
+}
+.page-datamarket .data-view-header .data-card .etc span {
+  font-size: 14px;
+  color: #969DAB;
+}
+.page-datamarket .data-view-header .data-card .etc a.partner {
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.page-datamarket .data-view-header .data-card .etc .date, .page-datamarket .data-view-header .data-card .etc .count i {
+  font-weight: 500;
+}
+.page-datamarket .data-view-header .data-card .tag-list {
+  border-top-color: #E7E9EF;
 }
 .page-datamarket .data-view-header .data-price {
   display: -webkit-box;
@@ -2611,6 +2798,7 @@ page : page-datamarket
   height: 16px;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9%2019.3691L16%2012.3691L9%205.36914%22%20stroke%3D%22%237A8394%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 200% 50%;
   background-size: 16px 16px;
+  margin-left: 4px;
 }
 .page-datamarket .data-view-header .data-price .price-cart {
   overflow-y: hidden;
@@ -2656,6 +2844,8 @@ page : page-datamarket
   color: #343841;
 }
 .page-datamarket .data-view-header .data-price .price-cart .item .i-price {
+  min-width: 84px;
+  text-align: right;
   margin-left: auto;
   font-size: 12px;
   font-weight: 500;
@@ -2680,9 +2870,11 @@ page : page-datamarket
   color: #191B1E;
 }
 .page-datamarket .data-view-header .data-price .price-result .result-total .sub {
+  display: inline-block;
   font-size: 12px;
   font-weight: 400;
   color: #969DAB;
+  margin-left: 2px;
 }
 .page-datamarket .data-view-header .data-price .price-result .result-total .num {
   float: right;
@@ -2753,6 +2945,22 @@ page : page-datamarket
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.page-datamarket .tab-data-view .data-recommend-wrap .data-recommend-slider .data-card .price {
+  margin-bottom: 25px;
+}
+@media screen and (max-width: 767px) {
+  .page-datamarket .tab-data-view .data-recommend-wrap {
+    overflow: hidden;
+    padding: 0 20px;
+    margin: 0 -20px;
+  }
+  .page-datamarket .tab-data-view .data-recommend-wrap .data-recommend-slider {
+    overflow: visible;
+  }
+  .page-datamarket .tab-data-view .data-recommend-wrap .data-recommend-slider .swiper-slide {
+    max-width: calc(100% - 12px);
+  }
+}
 .page-datamarket .tab-data-view .data-recommend-wrap .control-box {
   position: absolute;
   right: 0;
@@ -2762,6 +2970,11 @@ page : page-datamarket
   display: -ms-flexbox;
   display: flex;
   gap: 8px;
+}
+@media screen and (max-width: 767px) {
+  .page-datamarket .tab-data-view .data-recommend-wrap .control-box {
+    display: none;
+  }
 }
 .page-datamarket .tab-data-view .data-recommend-wrap .control-box .prev,
 .page-datamarket .tab-data-view .data-recommend-wrap .control-box .next {
@@ -2792,8 +3005,131 @@ page : page-datamarket
 .page-datamarket .datamarket-pay {
   margin-top: 60px;
 }
+.page-datamarket .datamarket-pay .item-group .item-header .summary p {
+  font-size: 18px;
+}
+.page-datamarket .datamarket-pay .item-group .item-bottom dl.set-coupon dd .price {
+  margin-right: 8px;
+}
+.page-datamarket .datamarket-pay .item-pqyment .chip-box-large .chip i {
+  font-size: 16px;
+  font-weight: 400;
+  color: #343841;
+}
+.page-datamarket .datamarket-pay .item-pqyment .chip-box-large .chip input:checked + i {
+  font-weight: 600;
+  color: #5957E3;
+}
+.page-datamarket .datamarket-pay .pay-items .item-polio .item .price {
+  margin: 20px 0 0 0;
+}
+.page-datamarket .datamarket-pay .flags .flag.data-type, .page-datamarket .datamarket-pay .flags .flag.data-capa {
+  background-color: #E7E9EF;
+  color: #626A7A;
+}
 .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set dd .show-detail {
-  top: 24px;
+  top: 20px;
+  color: #626A7A;
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  .page-datamarket .datamarket-pay {
+    gap: 32px;
+    margin-top: 32px;
+  }
+  .page-datamarket .datamarket-pay .pay-items .item-group + .item-group {
+    margin-top: 12px;
+  }
+  .page-datamarket .datamarket-pay .pay-items .item-polio .item .price {
+    margin-top: 32px;
+  }
+  .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set dd .show-detail {
+    font-size: 14px;
+  }
+  .page-datamarket .datamarket-pay .pay-items .item-polio .data-polio-set dd .show-detail .icon-link {
+    width: 20px;
+    height: 20px;
+    margin-left: 2px;
+  }
+  .page-datamarket .datamarket-pay .item-bottom dl.set-coupon dd .price {
+    margin-right: 6px;
+  }
+  .page-datamarket .datamarket-pay .item-group .item-bottom dl {
+    padding: 0 8px;
+  }
+  .page-datamarket .datamarket-pay .item-group .item .desc {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-datamarket .datamarket-pay .item-pqyment {
+    margin-top: 32px;
+  }
+  .page-datamarket .datamarket-pay .item-pqyment .chip-box.chip-box-large {
+    display: block;
+  }
+  .page-datamarket .datamarket-pay .item-pqyment .chip-box.chip-box-large .chip + .chip {
+    margin-top: 8px;
+  }
+  .page-datamarket .datamarket-pay .pay-total .total-item .coupon {
+    margin-top: 16px;
+  }
+  .page-datamarket .datamarket-pay .pay-total .total-header dl {
+    margin-top: 23px;
+  }
+  .page-datamarket .datamarket-pay .pay-total .total-header dl + dl {
+    margin-top: 16px;
+  }
+  .page-datamarket .datamarket-pay .pay-total .total-header dl dt {
+    font-size: 16px;
+  }
+  .page-datamarket .datamarket-pay .pay-total .total-header dl dd {
+    font-size: 18px;
+  }
+  .page-datamarket .datamarket-pay .pay-total .item-del {
+    width: 20px;
+    height: 20px;
+    -ms-flex-preferred-size: 20px;
+        flex-basis: 20px;
+    background-size: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M12.6663%203.33325L3.33301%2012.6666M3.33301%203.33325L12.6663%2012.6666%22%20stroke%3D%22%23343841%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+  }
+}
+
+.modal .modal-content:has(.coupon-box) {
+  max-height: 422px;
+}
+.modal .modal-content:has(.coupon-box) + .button-box-medium {
+  margin-top: 40px;
+}
+@media screen and (max-width: 767px) {
+  .modal .modal-content:has(.coupon-box) {
+    max-height: none;
+  }
+  .modal .modal-content:has(.coupon-box) + .button-box-medium {
+    margin-top: 20px;
+  }
+}
+
+.modal.modal-filter .modal-content .message-title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.modal.modal-filter .modal-content .message-title ~ .message-title {
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  .modal.modal-filter .chip-box .chip {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+  .modal.modal-filter .modal-content + .button-box-medium {
+    margin-top: 24px;
+  }
 }
 
 /***********
@@ -2975,13 +3311,13 @@ page : page-polio
   display: flex;
   gap: 12px;
 }
+.page-polio .content-step ul li:last-child {
+  padding-right: 20px;
+}
 .page-polio .content-step ul li {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-}
-.page-polio .content-step ul li:last-child {
-  padding-right: 20px;
 }
 .page-polio .content-step ul li .step-button {
   display: -webkit-box;
@@ -6832,6 +7168,20 @@ MEDIA QUERY
     margin-top: 0;
   }
 }
+@media screen and (max-width: 1000px) {
+  .page-datamarket .data-view-header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-datamarket .data-view-header .data-card .etc {
+    margin-top: 12px;
+  }
+  .page-datamarket .data-view-header .data-price {
+    max-width: none;
+  }
+}
 @media screen and (max-width: 767px) {
   .myinfo-box {
     padding: 20px;
@@ -7104,9 +7454,6 @@ MEDIA QUERY
     margin: 0 -20px;
     background-color: transparent;
     -webkit-overflow-scrolling: touch;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   .page-analysis .cont-industry.a-cont .a-cont.industry::-webkit-scrollbar-thumb {
     background-color: #CDD1DA;
@@ -7115,6 +7462,11 @@ MEDIA QUERY
     border-top: 8px solid #F8F9FC;
     border-bottom: 8px solid #F8F9FC;
     border-radius: 8px;
+  }
+  .page-analysis .cont-industry.a-cont .a-cont.industry {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .page-analysis .cont-industry.a-cont .a-cont.industry::before, .page-analysis .cont-industry.a-cont .a-cont.industry::after {
     content: "";
@@ -7310,15 +7662,6 @@ MEDIA QUERY
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
-  }
-  .page-datamarket .data-view-header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .page-datamarket .data-view-header .data-price {
-    max-width: none;
   }
   .page-datamarket .datamarket-pay .item-pqyment .desc {
     display: block;

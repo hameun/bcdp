@@ -1966,27 +1966,157 @@ page : page-datamarket
       .input-box {
         flex: auto;
       }
+      .button-box-large {
+        .button-p {
+          min-width: 105px;
+          padding: 18px 18px 18px 20px;
+          .icon-right {
+            margin: 0 0 0 6px;
+          }
+          @media screen and (max-width: 767px){
+            min-width: 56px;
+            font-size: 0;
+            padding: 18px;
+            .icon-right {
+              margin: 0;
+            }
+          }
+        }
+      }
     }
     .search-filter {
       margin-top: 16px;
       display: flex;
+      align-items: flex-start;
       .chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
         flex: auto;
       }
       .chip {
         display: inline-flex;
         align-items: center;
-        border-radius: 12px;
-        padding: 4px 11px;
+        border-radius: 8px;
+        padding: 4px 8px;
         background-color: $navy-50;
         i {
-          @include text-body(1,'m',$point);
+          font-size: 16px;
+          font-weight: 500;
           padding: 0 2px;
+        }
+        &.green {
+          background-color: $flag-green-bg;
+          i {
+            color: $flag-green;
+          }
+          .item-del {
+            background-image: url(svg-icon(close-16, $flag-green));
+          }
+        }
+        &.blue {
+          background-color: $flag-polio-bg;
+          i {
+            color: $flag-blue;
+          }
+          .item-del {
+            background-image: url(svg-icon(close-16, $flag-blue));
+          }
         }
       }
       .item-del {
-        @include set-icon(24px, 24px, svg-icon(close-16, $primary), 20px);
-        flex-basis: 24px;
+        @include set-icon(16px, 16px, svg-icon(close-16, $primary), 16px);
+        flex-basis: 16px;
+        margin-left: 4px;
+      }
+      .btn-reset {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+        min-width: 105px;
+        padding-right: 4px;
+        color: $gray-500;
+        font-weight: 500;
+        font-size: 16px;
+        flex-shrink: 0;
+        .icon-reload {
+          @include set-icon(20px, 20px, svg-icon(reload, $gray-500), 20px);
+        }
+      }
+      @media screen and (max-width: 767px){
+        .chip-list {
+          gap: 4px;
+        }
+        .chip {
+          padding: 3.5px 6px;
+          i {
+            font-size: 14px;
+          }
+          .item-del {
+            width: 16px;
+            height: 16px;
+            background-size: 16px;
+            flex-basis: 16px;
+            margin-left: 2px;
+          }
+        }
+        .btn-reset {
+          font-size: 14px;
+          min-width: auto;
+          padding-right: 4px;
+          .icon-reload {
+            width: 16px;
+            height: 16px;
+            background-size: 16px auto;
+          }
+        }
+      }
+    }
+  }
+  .datamarket-contents {
+    .data-list {
+      > ul > li {
+        overflow-x: auto;
+        max-width: 100%;
+        width: 100%;
+      }
+      //리스트형 목록 재선언
+      > ul.col-1 {
+        .data-card {
+          .item {
+            height: auto;
+          }
+          .price {
+            justify-content: flex-start;
+          }
+        }
+      }
+      .data-card {
+        width: 100%;
+        padding: 0;
+        .item {
+          display: flex;
+          height: 307px;
+          box-sizing: border-box;
+          flex-direction: column;
+          margin: 0;
+          &:focus-visible {
+            outline-offset: -1px;
+          }
+        }
+        .desc {
+          display: block;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .price {
+          margin-bottom: 25px;
+          flex: 1;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
       }
     }
   }
@@ -2001,9 +2131,35 @@ page : page-datamarket
       display: flex;
       flex-direction: column;
       justify-items: flex-start;
+      .logo {
+        margin-bottom: 16px;
+      }
+      .title {
+        font-size: 20px;
+      }
+      .desc {
+        font-size: 16px;
+        color: $gray-500;
+        margin-top: 12px;
+      }
       .etc {
         margin-top: auto;
         margin-bottom: 12px;
+        span {
+          font-size: 14px;
+          color: $gray-300;
+        }
+        a.partner {
+          font-size: 14px;
+          text-decoration: underline;
+          cursor: pointer;
+        }
+        .date, .count i {
+          font-weight: 500;
+        }
+      }
+      .tag-list {
+        border-top-color: $gray-60;
       }
     }
     .data-price {
@@ -2037,6 +2193,7 @@ page : page-datamarket
           height: 16px;
           background: url(svg-icon(chevron-right, $gray-400)) no-repeat 200% 50%;
           background-size: 16px 16px;
+          margin-left: 4px;
         }
       }
       .price-cart {
@@ -2070,6 +2227,8 @@ page : page-datamarket
             @include text-body(3,'m',$gray-700);
           }
           .i-price {
+            min-width: 84px;
+            text-align: right;
             margin-left: auto;
             @include text-body(3,'m',$point);
           }
@@ -2088,7 +2247,9 @@ page : page-datamarket
         .result-total {
           @include text-body(1,'sb');
           .sub {
+            display: inline-block;
             @include text-body(3,'r',$gray-300);
+            margin-left: 2px;
           }
           .num {
             float: right;
@@ -2160,6 +2321,20 @@ page : page-datamarket
             text-overflow: ellipsis;
             white-space: nowrap;
           }
+          .price {
+            margin-bottom: 25px;
+          }
+        }
+      }
+      @media screen and (max-width: 767px){
+        overflow: hidden;
+        padding: 0 20px;
+        margin: 0 -20px;
+        .data-recommend-slider {
+          overflow: visible;
+          .swiper-slide {
+            max-width: calc(100% - 12px);
+          }
         }
       }
       .control-box {
@@ -2169,6 +2344,9 @@ page : page-datamarket
         z-index: 1;
         display: flex;
         gap: 8px;
+        @media screen and (max-width: 767px){
+          display: none;
+        }
         .prev,
         .next {
           width: 40px;
@@ -2191,11 +2369,152 @@ page : page-datamarket
       }
     }
   }
+  //결제하기
   .datamarket-pay {
     margin-top: 60px;
+    .item-group {
+      .item-header {
+        .summary {
+          p {
+            font-size: 18px;
+          }
+        }
+      }
+      .item-bottom {
+        dl.set-coupon {
+          dd {
+            .price {
+              margin-right: 8px; 
+            }
+          }
+        }
+      }
+    }
+    .item-pqyment {
+      .chip-box-large {
+        .chip {
+          i {
+            font-size: 16px;
+            font-weight: 400;
+            color: $gray-700;
+          }
+          input:checked + i {
+            font-weight: 600;
+            color: $navy-400;
+          }
+        }
+      }
+    }
+    .pay-items {
+      .item-polio {
+        .item {
+          .price {
+            margin: 20px 0 0 0;
+          }
+        }
+      }
+    }
+    .flags {
+      .flag {
+        &.data-type, &.data-capa {
+          background-color: $gray-60;
+          color: $gray-500;
+        }
+      }
+    }
     .pay-items .item-polio {
       .data-polio-set dd .show-detail {
-        top: 24px;
+        top: 20px;
+        color: $gray-500;
+        font-weight: 500;
+      }
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .datamarket-pay {
+      gap: 32px;
+      margin-top: 32px;
+      .pay-items {
+        .item-group {
+          + .item-group {
+            margin-top: 12px;
+          }
+        }
+        .item-polio {
+          .item {
+              .price {
+                margin-top: 32px;
+              }
+            }
+          .data-polio-set dd .show-detail {
+            font-size: 14px;
+            .icon-link {
+              width: 20px;
+              height: 20px;
+              margin-left: 2px;
+            }
+          }
+        }
+      }
+      .item-bottom {
+        dl.set-coupon {
+          dd {
+            .price {
+              margin-right: 6px; 
+            }
+          }
+        }
+      }
+      .item-group {
+        .item-bottom {
+          dl {
+            padding: 0 8px;
+          }
+        }
+        .item {
+          .desc {
+            flex-direction: column;
+          }
+        }
+      }
+      .item-pqyment {
+        margin-top: 32px;
+        .chip-box.chip-box-large {
+          display: block;
+          .chip {
+            +.chip {
+              margin-top: 8px;
+            }
+          }
+        }
+      }
+      .pay-total {
+        .total-item {
+          .coupon {
+            margin-top: 16px;
+          }
+        }
+        .total-header {
+          dl {
+            margin-top: 23px;
+            + dl {
+              margin-top: 16px;
+            }
+            dt {
+              font-size: 16px;
+            }
+            dd {
+              font-size: 18px;
+            }
+          }
+        }
+        .item-del {
+          width: 20px;
+          height: 20px;
+          flex-basis: 20px;
+          background-size: 20px;
+          background-image: url(svg-icon(close-16, $gray-700))
+        }
       }
     }
   }
@@ -2203,6 +2522,48 @@ page : page-datamarket
   // .datamarket-pay {
   // 공통으로 사용하기 위해 이동
   // }
+}
+.modal {
+  .modal-content {
+    &:has(.coupon-box) {
+      max-height: 422px;
+      + .button-box-medium {
+        margin-top: 40px;
+      }
+      @media screen and (max-width: 767px) {
+        max-height: none;
+        + .button-box-medium {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+// 데이터마켓 필터 모달
+.modal.modal-filter {
+  .modal-content {
+    .message-title {
+      margin-bottom: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #000;
+      ~ .message-title {
+        margin-top: 20px;
+      }
+    }
+  }
+  @media screen and (max-width: 767px){
+    .chip-box {
+      .chip {
+        flex: 0 1 auto;
+      }
+    }
+    .modal-content {
+      + .button-box-medium {
+        margin-top: 24px;
+      }
+    }
+  }
 }
 /***********
 page : page-polio
@@ -5542,6 +5903,22 @@ MEDIA QUERY
   }
 }
 
+@media screen and (max-width: 1000px) {
+  .page-datamarket {
+    .data-view-header {
+      flex-direction: column;
+      .data-card {
+        .etc {
+          margin-top: 12px;
+        }
+      }
+    }
+    .data-view-header .data-price {
+      max-width: none;
+    }
+  }
+}
+
 @media screen and (max-width: 767px) {
   .myinfo-box {
     padding: 20px;
@@ -6072,12 +6449,12 @@ MEDIA QUERY
   }
 
   .page-datamarket {
-    .data-view-header {
-      flex-direction: column;
-    }
-    .data-view-header .data-price {
-      max-width: none;
-    }
+    // .data-view-header {
+    //   flex-direction: column;
+    // }
+    // .data-view-header .data-price {
+    //   max-width: none;
+    // }
     .datamarket-pay {
       .item-pqyment {
         .desc {

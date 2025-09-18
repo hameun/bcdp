@@ -234,12 +234,13 @@
 
 .share-sns {
   display: flex;
-  padding: 12px 20px;
+  padding: 20px 12px;
   a {
     flex: 1;
     text-align: center;
     span {
-      display: inline-flex;
+      display: flex;
+      margin: 0 auto;
       width: 60px;
       height: 60px;
       border-radius: 50%;
@@ -247,7 +248,22 @@
     }
     .txt {
       text-align: center;
+      font-weight: 500;
       display: block;
+      margin-top: 8px;
+      color: $gray-700;
+    }
+  }
+  @media screen and (max-width: 767px){
+    padding: 12px 0;
+    a {
+      span {
+        width: 48px;
+        height: 48px;
+      }
+      .txt {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -400,8 +416,8 @@ BUTTON
     @include text-body(3,'sb',$gray-500);
     &.data-market {
       margin-right: auto;
-      color: $flag-market;
-      background-color: $flag-market-bg;
+      color: $flag-polio;
+      background-color: $flag-polio-bg;
     }
     &.data-openapi {
       margin-right: auto;
@@ -410,8 +426,8 @@ BUTTON
     }
     &.data-polio {
       margin-right: auto;
-      color: $flag-polio;
-      background-color: $flag-polio-bg;
+      color: $flag-market;
+      background-color: $flag-market-bg;
     }
   }
 }
@@ -1465,6 +1481,9 @@ MODAL POPUP
     .count{
       color:$navy-300;
     }
+    @media screen and (max-width: 767px){
+      margin-bottom: 16px;
+    }
   }
   
   .modal-content {
@@ -1597,7 +1616,12 @@ MODAL POPUP
     position: absolute;
     top: 20px;
     right: 20px;
-    @include set-icon(24px, 24px, $icon-close);
+    @include set-icon(28px, 28px, $icon-close, 24px);
+    @media screen and (max-width: 767px) {
+      width: 24px;
+      height: 24px;
+      background-size: 20px;
+    }
   }
   
 }
@@ -1699,9 +1723,18 @@ MODAL POPUP
 .modal {
   .coupon-box {
     .coupon {
+      margin-top: 8px;
       border-color: transparent;
       & +.coupon {
         margin-top: 12px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      &:has(.result-none) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1;
       }
     }
   }
@@ -2375,6 +2408,7 @@ MODAL POPUP
     .info {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       & +.info {
         margin-top: 12px;
       }
@@ -2399,6 +2433,11 @@ MODAL POPUP
           margin-top: 8px;
           background-color: $gray-20;
           border-color: transparent;
+        }
+        &:has([class^="icon-"]) {
+          display: flex;
+          gap: 4px;
+          justify-content: flex-end;
         }
       }
     }
@@ -2477,7 +2516,13 @@ MODAL POPUP
       .i-price {
         margin-left: auto;
         @include text-body(1,'m',$point);
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
+        }
       }
+    }
+    + .button-box-medium {
+      margin-top: 20px;
     }
   }
 }
@@ -2551,7 +2596,8 @@ MODAL POPUP
         border: 1px solid $primary;
         // padding: 0 11.5px;
         // line-height: 29px;
-        color: $primary;
+        color: $point;
+        font-weight: 500;
       }
       &:focus + i {
         border-color: $primary;
@@ -2559,16 +2605,16 @@ MODAL POPUP
     }
     i {
       flex: 0;
-      padding: 0 12px;
+      padding: 0 16px;
       height: 40px;
       line-height: 40px;
       box-sizing: border-box;
       border: 1px solid $gray-100;
-      border-radius: 8px; 
+      border-radius: 12px; 
       background-color: $white;
       white-space: nowrap;
       align-content: center;
-      @include text-body(1,'r',$gray-700);
+      @include text-body(0,'r',$gray-900);
     }
   }
   &-large {
@@ -2871,6 +2917,9 @@ CONTENT COMPONENT
     padding: 20px;
     padding-bottom: 42px;
     margin: -20px;
+    &:focus-visible {
+      outline-offset: -1px;
+    }
     & +.tag-list {
       position: absolute;
       bottom: 20px;
@@ -2881,8 +2930,8 @@ CONTENT COMPONENT
   .logo {
     width: 48px;
     height: 48px;
-    background-color: $gray-60;
-    border-radius: 16px;
+    background-color: $gray-40;
+    border-radius: 12px;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -2917,7 +2966,7 @@ CONTENT COMPONENT
     span {
       display: inline-flex;
       align-items: center;
-      @include text-body(3, 'r', $gray-400);
+      @include text-body(3, 'r', $gray-300);
       & +span::before {
         content: '';
         display: inline-block;
@@ -2929,6 +2978,10 @@ CONTENT COMPONENT
       &.count i {
         margin-left: 4px;
       }
+    }
+    .partner {
+      color: $gray-500;
+      font-weight: 500;
     }
     .detail-info {
       display: inline-flex;
@@ -2971,17 +3024,17 @@ CONTENT COMPONENT
     top: 20px;
     width: 24px;
     height: 24px;
+    background-size: 100% auto;
   }
   &.make-data {
-    height: 255px;
+    box-sizing: border-box;
+    height: 307px;
     display: flex;
     flex-direction: column;
     .title {
       max-height: none;
       -webkit-line-clamp: inherit;
-    }
-    .tag-list {
-      margin-top: 12px;
+      font-size: 16px;
     }
     .button-box-small {
       margin-top: auto;
@@ -3472,9 +3525,12 @@ CONTENT COMPONENT
       dt {
         // margin-bottom: 20px;
         margin-bottom: auto;
-        @include text-body(1,'sb', $gray-700);
+        @include text-body(1,'sb', $gray-900);
         & +dd {
-          margin-top: 20px;
+          margin-top: 32px;
+        }
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
         }
       }
       dd {
@@ -3656,7 +3712,7 @@ CONTENT COMPONENT
     margin: 0 auto;
   }
   .message {
-    margin-top: 16px;
+    margin-top: 12px;
     @include text-title(3);
   }
   .message-sub {
@@ -3696,6 +3752,7 @@ CONTENT COMPONENT
 .data-none {margin-top: 0;}
 .data-none::before {
     @include set-icon(64px, 64px, $icon-data-none, 64px);
+    display: flex;
 }
 /***********
 PAGING
@@ -3821,6 +3878,9 @@ POPOVER POPUP
         .item {
           margin-left: -80px;
           padding-left: 80px;
+          + .tag-list {
+            left: 80px;
+          }
         }
         .logo {
           position: absolute;
@@ -4447,7 +4507,6 @@ TOAST POPUP
     &::before {
     }
     .message {
-      margin-top: 12px;
       font-size: 18px;
     }
     .message-sub {
@@ -4486,7 +4545,7 @@ TOAST POPUP
   }
   .data-none {margin-top: 0;}
   .data-none::before {
-      @include set-icon(64px, 64px, $icon-data-none, 64px);
+      // @include set-icon(64px, 64px, $icon-data-none, 64px);
   }
 
   .location-breadcrumb {
@@ -4543,6 +4602,11 @@ TOAST POPUP
     }
     .chip-box .chip i {
       flex: 1;
+      font-size: 16px;
+      height: 32px;
+      line-height: 32px;
+      padding: 0 12px;
+      border-radius: 8px;
     }
   }
   
@@ -4556,13 +4620,19 @@ TOAST POPUP
       & >.button-box-large {
         margin-top: auto;
       }
+      .modal-price-cart {
+        padding-top: 20px;
+        +.button-box-medium {
+          margin-top: 20px;
+        }
+      }
     }
   }
 
   .modal {
     .modal-price-cart {
       flex: auto;
-      overflow: scroll;
+      overflow-y: scroll;
       // margin-right: -20px;
       .item-scroll-wrap {
         max-height: 100%;
@@ -4575,8 +4645,8 @@ TOAST POPUP
       }
       .item label i {
         padding-right: 30px;
-        white-space: inherit;
-        max-width: none;
+        // white-space: inherit;
+        max-width: 100%;
         &::before {
           position: absolute;
           right: 0;

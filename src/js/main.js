@@ -990,8 +990,8 @@ function fn_marketSlider(){
 
     const swiper = new Swiper('.data-recommend-slider', {
         // slidesPerView: 3,
-        slidesPerView: "auto",
-        spaceBetween: 20,
+        slidesPerView: 1,
+        spaceBetween: 12,
         navigation: {
             nextEl: ".next",
             prevEl: ".prev"
@@ -999,7 +999,14 @@ function fn_marketSlider(){
         pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      },
+        },
+        breakpoints: { 
+            768: {
+            slidesPerView: "auto",  //브라우저가 768보다 클 때
+            spaceBetween: 20,
+            initialSlide: 1,
+            },
+        },
     });
 }
 

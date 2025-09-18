@@ -1281,7 +1281,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 12px 20px;
+  padding: 20px 12px;
 }
 .share-sns a {
   -webkit-box-flex: 1;
@@ -1290,9 +1290,10 @@
   text-align: center;
 }
 .share-sns a span {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -1300,7 +1301,22 @@
 }
 .share-sns a .txt {
   text-align: center;
+  font-weight: 500;
   display: block;
+  margin-top: 8px;
+  color: #343841;
+}
+@media screen and (max-width: 767px) {
+  .share-sns {
+    padding: 12px 0;
+  }
+  .share-sns a span {
+    width: 48px;
+    height: 48px;
+  }
+  .share-sns a .txt {
+    font-size: 14px;
+  }
 }
 
 .item-del {
@@ -2612,8 +2628,8 @@ BUTTON
 }
 .flags .flag.data-market {
   margin-right: auto;
-  color: #5957E3;
-  background-color: #EFEFFF;
+  color: #2D7AEB;
+  background-color: #E4F3FF;
 }
 .flags .flag.data-openapi {
   margin-right: auto;
@@ -2622,8 +2638,8 @@ BUTTON
 }
 .flags .flag.data-polio {
   margin-right: auto;
-  color: #2D7AEB;
-  background-color: #E4F3FF;
+  color: #5957E3;
+  background-color: #EFEFFF;
 }
 
 .flag-stat {
@@ -3100,13 +3116,13 @@ INPUT TEXT
 .input-box .ui-selectmenu-button.ui-state-disabled .ui-selectmenu-icon.ui-icon {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9%2016.6309L14%2011.6309L9%206.63086%22%20stroke%3D%22%23969DAB%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
 }
+.input-box .ui-selectmenu-text.placeholder {
+  color: #969DAB;
+}
 .input-box .ui-selectmenu-text {
   font-size: 18px;
   font-weight: 400;
   color: #191B1E;
-}
-.input-box .ui-selectmenu-text.placeholder {
-  color: #969DAB;
 }
 .input-box .ui-selectmenu-icon.ui-icon {
   position: absolute;
@@ -3242,9 +3258,6 @@ CHECKBOX / RADIO
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 400;
-  color: #191B1E;
 }
 .ipt-radio input {
   position: absolute;
@@ -3290,15 +3303,17 @@ CHECKBOX / RADIO
 .ipt-radio:hover i::before {
   background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M12%200.5C18.3513%200.5%2023.5%205.64873%2023.5%2012C23.5%2018.3513%2018.3513%2023.5%2012%2023.5C5.64873%2023.5%200.5%2018.3513%200.5%2012C0.5%205.64873%205.64873%200.5%2012%200.5Z%22%20fill%3D%22white%22%20stroke%3D%22%23969DAB%22%2F%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22%20fill%3D%22%23CDD1DA%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
+.ipt-radio {
+  font-size: 18px;
+  font-weight: 400;
+  color: #191B1E;
+}
 .ipt-radio-small {
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  color: #191B1E;
 }
 .ipt-radio-small input {
   position: absolute;
@@ -3344,6 +3359,11 @@ CHECKBOX / RADIO
 .ipt-radio-small:hover i::before {
   background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M10%200.5C15.2467%200.5%2019.5%204.7533%2019.5%2010C19.5%2015.2467%2015.2467%2019.5%2010%2019.5C4.7533%2019.5%200.5%2015.2467%200.5%2010C0.5%204.7533%204.7533%200.5%2010%200.5Z%22%20fill%3D%22white%22%20stroke%3D%22%23969DAB%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%2210%22%20r%3D%224%22%20fill%3D%22%23CDD1DA%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
+.ipt-radio-small {
+  font-size: 14px;
+  font-weight: 400;
+  color: #191B1E;
+}
 
 .ipt-check {
   position: relative;
@@ -3351,10 +3371,6 @@ CHECKBOX / RADIO
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
-  background-size: 24px auto;
-  font-size: 18px;
-  font-weight: 400;
-  color: #191B1E;
 }
 .ipt-check input {
   position: absolute;
@@ -3400,15 +3416,18 @@ CHECKBOX / RADIO
 .ipt-check:hover i::before {
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M8%200.5H16C20.1421%200.5%2023.5%203.85786%2023.5%208V16C23.5%2020.1421%2020.1421%2023.5%2016%2023.5H8C3.85786%2023.5%200.5%2020.1421%200.5%2016V8C0.5%203.85786%203.85786%200.5%208%200.5Z%22%20fill%3D%22white%22%20stroke%3D%22%23969DAB%22%2F%3E%3Cpath%20d%3D%22M17.3337%208.21094L10.0003%2015.5443L6.66699%2012.2109%22%20stroke%3D%22%23CDD1DA%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
+.ipt-check {
+  background-size: 24px auto;
+  font-size: 18px;
+  font-weight: 400;
+  color: #191B1E;
+}
 .ipt-check-small {
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 400;
-  color: #191B1E;
 }
 .ipt-check-small input {
   position: absolute;
@@ -3454,15 +3473,17 @@ CHECKBOX / RADIO
 .ipt-check-small:hover i::before {
   background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M6%200.5H14C17.0376%200.5%2019.5%202.96243%2019.5%206V14C19.5%2017.0376%2017.0376%2019.5%2014%2019.5H6C2.96243%2019.5%200.5%2017.0376%200.5%2014V6C0.5%202.96243%202.96243%200.5%206%200.5Z%22%20fill%3D%22white%22%20stroke%3D%22%23969DAB%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.5663%207.03437C14.8787%207.34681%2014.8787%207.85336%2014.5663%208.16579L9.76607%2012.966C9.45364%2013.2784%208.94709%2013.2784%208.63465%2012.966L5.43452%209.76586C5.12209%209.45343%205.12209%208.94687%205.43452%208.63444C5.74695%208.32201%206.25351%208.32201%206.56594%208.63444L9.20036%2011.2689L13.4349%207.03437C13.7473%206.72194%2014.2538%206.72194%2014.5663%207.03437Z%22%20fill%3D%22%23CDD1DA%22%2F%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.5663%207.03437C14.8787%207.34681%2014.8787%207.85336%2014.5663%208.16579L9.76607%2012.966C9.45364%2013.2784%208.94709%2013.2784%208.63465%2012.966L5.43452%209.76586C5.12209%209.45343%205.12209%208.94687%205.43452%208.63444C5.74695%208.32201%206.25351%208.32201%206.56594%208.63444L9.20036%2011.2689L13.4349%207.03437C13.7473%206.72194%2014.2538%206.72194%2014.5663%207.03437Z%22%20fill%3D%22%23CDD1DA%22%2F%3E%3C%2Fsvg%3E") no-repeat;
 }
+.ipt-check-small {
+  font-size: 14px;
+  font-weight: 400;
+  color: #191B1E;
+}
 .ipt-check-sub {
   position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 400;
-  color: #191B1E;
 }
 .ipt-check-sub input {
   position: absolute;
@@ -3507,6 +3528,11 @@ CHECKBOX / RADIO
 }
 .ipt-check-sub:hover i::before {
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M17.3337%208L10.0003%2015.3333L6.66699%2012%22%20stroke%3D%22%23969DAB%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat;
+}
+.ipt-check-sub {
+  font-size: 16px;
+  font-weight: 400;
+  color: #191B1E;
 }
 
 .textarea {
@@ -4064,7 +4090,6 @@ TAPS / SWITCH
   gap: 8px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-color: #F8F9FC;
 }
 .tabs-sub > li {
   -webkit-box-flex: 0;
@@ -4092,6 +4117,9 @@ TAPS / SWITCH
 .tabs-sub > li.is-on a {
   background-color: #22252A;
   color: #fff;
+}
+.tabs-sub {
+  background-color: #F8F9FC;
 }
 
 .tabs-sub-small {
@@ -4418,6 +4446,11 @@ MODAL POPUP
 .modal .modal-header .count {
   color: #6361FC;
 }
+@media screen and (max-width: 767px) {
+  .modal .modal-header {
+    margin-bottom: 16px;
+  }
+}
 .modal .modal-content {
   overflow: hidden;
   overflow-y: scroll;
@@ -4582,10 +4615,10 @@ MODAL POPUP
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M18%206L6%2018M6%206L18%2018%22%20stroke%3D%22%23191B1E%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
-  background-size: 20px auto;
+  background-size: 24px auto;
   border: 0 none;
   line-height: 1;
   text-indent: -9999px;
@@ -4593,6 +4626,13 @@ MODAL POPUP
   overflow: hidden;
   color: transparent;
   font-size: 0;
+}
+@media screen and (max-width: 767px) {
+  .modal .modal-close {
+    width: 24px;
+    height: 24px;
+    background-size: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -4728,10 +4768,28 @@ MODAL POPUP
   }
 }
 .modal .coupon-box .coupon {
+  margin-top: 8px;
   border-color: transparent;
 }
 .modal .coupon-box .coupon + .coupon {
   margin-top: 12px;
+}
+@media screen and (max-width: 767px) {
+  .modal .coupon-box:has(.result-none) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 .modal .require-api .info-box {
   margin: 24px 0;
@@ -5438,14 +5496,14 @@ MODAL POPUP
 .modal .modal-tabs-sub-paragraph .tabs-sub-contents .list-bul {
   margin-top: 12px;
 }
+.modal .modal-tabs-sub-paragraph .tabs-sub-contents h1 ~ h1 {
+  margin-top: 20px;
+}
 .modal .modal-tabs-sub-paragraph .tabs-sub-contents h1 {
   margin-bottom: 12px;
   font-size: 18px;
   font-weight: 600;
   color: #343841;
-}
-.modal .modal-tabs-sub-paragraph .tabs-sub-contents h1 ~ h1 {
-  margin-top: 20px;
 }
 .modal .modal-tabs-sub-paragraph .tabs-sub-contents h2 {
   margin-top: 12px;
@@ -5481,6 +5539,9 @@ MODAL POPUP
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .modal .modal-data-info .info + .info {
   margin-top: 12px;
@@ -5514,6 +5575,15 @@ MODAL POPUP
   margin-top: 8px;
   background-color: #F8F9FC;
   border-color: transparent;
+}
+.modal .modal-data-info .info dd:has([class^=icon-]) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .modal .modal-data-info .info-col-2 {
   display: grid;
@@ -5611,6 +5681,14 @@ MODAL POPUP
   font-weight: 500;
   color: #5957E3;
 }
+@media screen and (max-width: 767px) {
+  .modal .modal-price-cart .item .i-price {
+    font-size: 14px;
+  }
+}
+.modal .modal-price-cart + .button-box-medium {
+  margin-top: 20px;
+}
 
 .security-box {
   font-size: 16px;
@@ -5680,7 +5758,8 @@ MODAL POPUP
 }
 .chip-box .chip input:checked + i {
   border: 1px solid #6361FC;
-  color: #6361FC;
+  color: #5957E3;
+  font-weight: 500;
 }
 .chip-box .chip input:focus + i {
   border-color: #6361FC;
@@ -5689,20 +5768,20 @@ MODAL POPUP
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
-  padding: 0 12px;
+  padding: 0 16px;
   height: 40px;
   line-height: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 1px solid #CDD1DA;
-  border-radius: 8px;
+  border-radius: 12px;
   background-color: #fff;
   white-space: nowrap;
   -ms-flex-line-pack: center;
       align-content: center;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  color: #343841;
+  color: #191B1E;
 }
 .chip-box-large .chip i {
   -webkit-box-flex: 1;
@@ -6051,6 +6130,9 @@ CONTENT COMPONENT
   padding-bottom: 42px;
   margin: -20px;
 }
+.data-card .item:focus-visible {
+  outline-offset: -1px;
+}
 .data-card .item + .tag-list {
   position: absolute;
   bottom: 20px;
@@ -6060,8 +6142,8 @@ CONTENT COMPONENT
 .data-card .logo {
   width: 48px;
   height: 48px;
-  background-color: #E7E9EF;
-  border-radius: 16px;
+  background-color: #F3F5F8;
+  border-radius: 12px;
   margin-bottom: 12px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6117,7 +6199,7 @@ CONTENT COMPONENT
           align-items: center;
   font-size: 12px;
   font-weight: 400;
-  color: #7A8394;
+  color: #969DAB;
 }
 .data-card .etc span + span::before {
   content: "";
@@ -6129,6 +6211,10 @@ CONTENT COMPONENT
 }
 .data-card .etc span.count i {
   margin-left: 4px;
+}
+.data-card .etc .partner {
+  color: #626A7A;
+  font-weight: 500;
 }
 .data-card .etc .detail-info {
   display: -webkit-inline-box;
@@ -6191,9 +6277,12 @@ CONTENT COMPONENT
   top: 20px;
   width: 24px;
   height: 24px;
+  background-size: 100% auto;
 }
 .data-card.make-data {
-  height: 255px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 307px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6205,9 +6294,7 @@ CONTENT COMPONENT
 .data-card.make-data .title {
   max-height: none;
   -webkit-line-clamp: inherit;
-}
-.data-card.make-data .tag-list {
-  margin-top: 12px;
+  font-size: 16px;
 }
 .data-card.make-data .button-box-small {
   margin-top: auto;
@@ -6528,6 +6615,9 @@ CONTENT COMPONENT
 .datamarket-pay .pay-items .item-polio .item .price {
   margin: 16px 0 20px;
 }
+.datamarket-pay .pay-items .item-polio .data-polio-set + .data-polio-set {
+  margin-top: 20px;
+}
 .datamarket-pay .pay-items .item-polio .data-polio-set {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6535,9 +6625,6 @@ CONTENT COMPONENT
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-}
-.datamarket-pay .pay-items .item-polio .data-polio-set + .data-polio-set {
-  margin-top: 20px;
 }
 .datamarket-pay .pay-items .item-polio .data-polio-set dt {
   padding: 6px 0;
@@ -6848,10 +6935,15 @@ CONTENT COMPONENT
   margin-bottom: auto;
   font-size: 16px;
   font-weight: 600;
-  color: #343841;
+  color: #191B1E;
 }
 .coupon-box .coupon .coupon-details dt + dd {
-  margin-top: 20px;
+  margin-top: 32px;
+}
+@media screen and (max-width: 767px) {
+  .coupon-box .coupon .coupon-details dt {
+    font-size: 14px;
+  }
 }
 .coupon-box .coupon .coupon-details dd {
   margin-top: 4px;
@@ -7045,7 +7137,7 @@ CONTENT COMPONENT
 .result-complete .message,
 .data-none .message,
 .result-error .message {
-  margin-top: 16px;
+  margin-top: 12px;
   font-size: 20px;
   font-weight: 700;
   color: #191B1E;
@@ -7155,6 +7247,9 @@ CONTENT COMPONENT
   overflow: hidden;
   color: transparent;
   font-size: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /***********
@@ -7310,6 +7405,9 @@ POPOVER POPUP
 .data-list > ul.col-1 .data-card .item {
   margin-left: -80px;
   padding-left: 80px;
+}
+.data-list > ul.col-1 .data-card .item + .tag-list {
+  left: 80px;
 }
 .data-list > ul.col-1 .data-card .logo {
   position: absolute;
@@ -8032,7 +8130,6 @@ TOAST POPUP
   .result-complete .message,
   .data-none .message,
   .result-error .message {
-    margin-top: 12px;
     font-size: 18px;
   }
   .result-none .message-sub,
@@ -8118,22 +8215,6 @@ TOAST POPUP
   .data-none {
     margin-top: 0;
   }
-  .data-none::before {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    width: 64px;
-    height: 64px;
-    background: url("data:image/svg+xml,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M41.6709%205H13.5999C11.0585%205%209%207.01375%209%209.5V54.5C9%2056.9863%2011.0585%2059%2013.5999%2059H50.3992C52.9407%2059%2054.9991%2056.9863%2054.9991%2054.5V18.0387L41.6709%205Z%22%20fill%3D%22%23E7E9EF%22%2F%3E%3Cpath%20d%3D%22M32%2024V34.5M32%2042.5H32.025%22%20stroke%3D%22%237A8394%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M46.2718%2018.0387C43.7303%2018.0387%2041.6719%2016.025%2041.6719%2013.5387V5L55.0001%2018.0387H46.2718Z%22%20fill%3D%22%23CDD1DA%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
-    background-size: 64px auto;
-    border: 0 none;
-    line-height: 1;
-    text-indent: -9999px;
-    white-space: nowrap;
-    overflow: hidden;
-    color: transparent;
-    font-size: 0;
-  }
   .location-breadcrumb {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8218,6 +8299,11 @@ TOAST POPUP
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    border-radius: 8px;
   }
   .pop-modal.is-full .modal {
     max-width: none;
@@ -8228,11 +8314,17 @@ TOAST POPUP
   .pop-modal.is-full .modal > .button-box-medium, .pop-modal.is-full .modal > .button-box-large {
     margin-top: auto;
   }
+  .pop-modal.is-full .modal .modal-price-cart {
+    padding-top: 20px;
+  }
+  .pop-modal.is-full .modal .modal-price-cart + .button-box-medium {
+    margin-top: 20px;
+  }
   .modal .modal-price-cart {
     -webkit-box-flex: 1;
         -ms-flex: auto;
             flex: auto;
-    overflow: scroll;
+    overflow-y: scroll;
   }
   .modal .modal-price-cart .item-scroll-wrap {
     max-height: 100%;
@@ -8245,8 +8337,7 @@ TOAST POPUP
   }
   .modal .modal-price-cart .item label i {
     padding-right: 30px;
-    white-space: inherit;
-    max-width: none;
+    max-width: 100%;
   }
   .modal .modal-price-cart .item label i::before {
     position: absolute;
