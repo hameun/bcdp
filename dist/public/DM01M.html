@@ -142,12 +142,26 @@
 		            </div>
 		        </div>
 		        <div class="search-filter">
+		            <!-- [2025.09.19] 수정 -->
 		            <div class="chip-list">
-		                <span class="chip"><i>서울</i><button type="button" class="item-del">삭제</button></span>
-		                <span class="chip"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
-		                <span class="chip"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip green"><i>서울</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip green"><i>서울</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip green"><i>서울</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip green"><i>서울</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip green"><i>서울</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>온라인</i><button type="button" class="item-del">삭제</button></span>
+		                <span class="chip blue"><i>트렌드</i><button type="button" class="item-del">삭제</button></span>
 		            </div>
-		            <button type="button" class="icon-reload">삭제</button>
+		            <!-- //[2025.09.19] 수정 -->
+		            <button type="button" class="btn-reset">초기화<i class="icon-reload"></i></button>
 		        </div>
 		        </form>
 		    </div>
@@ -192,11 +206,14 @@
 		                            <p class="price"><i class="num">2,860,000,000,000</i>원</p>
 		                        </a>
 		                        <div class="tag-list">
+		                            <!-- [2025.09.19] 수정 : 클래스명 수정(공통) -->
 		                            <p class="data-tag">
-		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
-		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
-		                                <button type="button" class="tag blue">#사용목적 사용목적 사용목적</button>
+		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
 		                            </p>
+		                            <!-- //[2025.09.19] 수정 : 클래스명 수정(공통) -->
 		                        </div>
 		                        <!-- //[2025.09.04] 데이터상품 수정 -->
 		                    </div>
@@ -213,9 +230,10 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
-		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
-		                                <button type="button" class="tag blue">#사용목적 사용목적 사용목적</button>
+		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적</button>
 		                            </p>
 		                        </div>
 		                        <p class="api"><a href="#">API</a></p>
@@ -519,9 +537,9 @@
 
 <!-- 필터 팝업 -->
 <div class="pop-modal modal-hidden" id="modal1">
-    <div class="modal modal-large" tabindex="0">
+    <div class="modal modal-large modal-filter" tabindex="0"><!-- [2025.09.19] 수정 -->
         <div class="modal-header">필터</div>
-        <div class="message-box">
+        <div class="modal-content"><!-- [2025.09.19] 수정 -->
             <p class="message-title">분야</p>
             <div class="chip-box">
                 <label class="chip"><input type="checkbox" name="location-checkbox1" value="" checked><i>분야</i></label>
