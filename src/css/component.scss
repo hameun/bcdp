@@ -112,6 +112,7 @@
 .icon-mypage {@include set-icon(48px, 48px, $icon-mypage, 48px);}
 .icon-login {@include set-icon(48px, 48px, $icon-login, 20px);}
 .icon-logout {@include set-icon(48px, 48px, $icon-logout, 20px);}
+.icon-mymenuext {@include set-icon(20px, 20px, $icon-mymenuext, 20px);}
 
 .icon-menu {@include set-icon(40px, 40px, $icon-menu);}
 // .icon-reload {@include set-icon(24px, 24px, $icon-reload);}
@@ -1425,7 +1426,7 @@ MODAL POPUP
     max-height: 80vh; // 문의하기 팝업에서 버튼이 밀려남
     .modal-content {
       & +.button-box-medium {
-        margin-top: 20px;
+        margin-top: 24px; // 2025.09.18 데이터폴리오 수정하면서 딤처리 추가
       }
       .content-title {
         @include text-body(0,'sb');
@@ -1645,12 +1646,12 @@ MODAL POPUP
         transform: rotate(45deg);
       }
     }
-  // 데이터폴리오 견적
-  .tt-estimate {
-    p + p {
-      margin-top: 16px;
+    // 데이터폴리오 견적
+    .tt-estimate {
+      p + p {
+        margin-top: 16px;
+      }
     }
-  }
   }
 }
 @media screen and (max-width: 767px){
@@ -1692,6 +1693,13 @@ MODAL POPUP
         @include set-icon(24px, 24px, $icon-close);
         @include set-icon-text-blind;
       }
+    }
+  }
+  
+  // 데이터폴리오 견적
+  .tt-estimate {
+    p + p {
+      margin-top: 16px;
     }
   }
 }
@@ -2250,11 +2258,6 @@ MODAL POPUP
           }
         }
       }
-    }
-  }
-  @media screen and (max-width: 767px) {
-    .modal-login {
-      padding: 80px 0 0;
     }
   }
   .modal-aiagree {
@@ -4151,6 +4154,7 @@ POPOVER POPUP
     border-radius: 20px ;
     background: #FFFFFF99;
     border:none;
+    flex: 1;
     input{
       padding-left:48px;
       background:initial;
@@ -4169,7 +4173,10 @@ POPOVER POPUP
       background: linear-gradient(180deg, #FFFFFF, rgba(255,255,255,0.2));
     }
   }
-  .text-close{display:none;}
+  .text-close{
+    display:none;
+    flex: 0;
+  }
 }
 
 /***********
@@ -4265,7 +4272,7 @@ TOAST POPUP
 
     
     .input-box{
-      width:280px;
+      max-width:280px;
       border-radius: 12px;
       background:#fff;
       .icon-totalsearch{
@@ -4285,6 +4292,7 @@ TOAST POPUP
       font-weight: 500;
       color:$gray-500;
       width:48px;
+      flex-basis: 48px;
     }
     &:after {
       content: "";
@@ -4589,7 +4597,22 @@ TOAST POPUP
     .modal-data-info .info-col-2 {
       grid-template-columns: repeat(1, 1fr);
     }
-    .modal-login .title{text-align: left;}
+    
+    .modal-login {
+      padding: 80px 0 0;
+      .title {
+        font-size: 24px;
+        text-align: left;
+      }
+      & + .button-box-large {
+        padding: 0;
+      }
+    }
+    .modal-aiagree {
+      .guide-text {
+        font-size: 14px;
+      }
+    }
     
     .modal-content-analysis-select {
       .chip-box {

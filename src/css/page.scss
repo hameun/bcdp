@@ -2767,7 +2767,7 @@ page : page-polio
               // padding-right: 8px;
               // padding-bottom: 4px;
               // padding-left: 8px;
-              padding: 5px 7px;
+              padding: 5px 9px;
               min-height: 20px;
               font-size:14px;
               font-weight: 500;
@@ -2931,6 +2931,25 @@ page : page-polio
           background-size: 24px;
         }
       }      
+    }
+    .flag-beta-txt {
+      display: none;
+    }
+    &.is-beta {
+      
+      .flag-beta-txt {
+        margin-top: 8px;
+        display: block;
+        text-align: center;
+        width: 100%;
+        // height: 0;
+        p {
+          // position: relative;
+          // bottom: 20px;
+          // font-size: 12px;
+          @include text-body(3,'r',$gray-400);
+        }
+      }
     }
   }
   //초기화
@@ -6359,6 +6378,9 @@ MEDIA QUERY
   .page-aisearch {
     .aisearch-body .search-request .aisearch-slider-wrap {
       padding-bottom: 0;
+      padding: 40px;
+      margin: -40px;
+      overflow: hidden;
     }
     .aisearch-body .search-request .aisearch-slider-wrap .swiper-pagination,
     .aisearch-slider-wrap .control-box {
@@ -6388,7 +6410,9 @@ MEDIA QUERY
   }
 
   .page-polio{
-    padding-bottom:270px;
+    // padding-bottom:270px; // 25.09.18 탑버튼이 캘린더 영역을 가려서 여백 추가
+    // padding-bottom:320px; // 25.09.18 하단 AI베타문구 추가
+    padding-bottom:350px;
     .content-head-btn{
       flex-direction:column;
       align-items: flex-start;
@@ -6472,7 +6496,7 @@ MEDIA QUERY
     .datapolio-bottom .bottom-content{
       border-radius: 20px 20px 0 0; 
       gap:16px; 
-      padding:16px 20px 20px;
+      padding: 20px; // 25.09.18 퍼블검수
       &::before {
         border-radius: 20px 20px 0 0;
         padding: 2px 2px 0;
@@ -6513,6 +6537,9 @@ MEDIA QUERY
       z-index:9;
     }
     .datapolio-bottom .filter-content .result-none{padding:20px 0;}
+    .datapolio-bottom.is-beta .flag-beta-txt {
+      margin-top: -8px;
+    }
     .ipt-check-box{
       width:calc(( 100% - 8px ) / 2 );
       i{width:100%;}

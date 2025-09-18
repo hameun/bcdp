@@ -434,6 +434,23 @@
   font-size: 0;
 }
 
+.icon-mymenuext {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6.66699%2013.3337L13.3337%206.66699M13.3337%206.66699H6.66699M13.3337%206.66699V13.3337%22%20stroke%3D%22%23969DAB%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E") no-repeat 50% 50%;
+  background-size: 20px auto;
+  border: 0 none;
+  line-height: 1;
+  text-indent: -9999px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+}
+
 .icon-menu {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -4374,7 +4391,7 @@ MODAL POPUP
   max-height: 80vh;
 }
 .pop-modal .modal .modal-content + .button-box-medium {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 .pop-modal .modal .modal-content .content-title {
   font-size: 18px;
@@ -4725,6 +4742,9 @@ MODAL POPUP
     overflow: hidden;
     color: transparent;
     font-size: 0;
+  }
+  .tt-estimate p + p {
+    margin-top: 16px;
   }
 }
 .modal .coupon-box .coupon {
@@ -5348,11 +5368,6 @@ MODAL POPUP
   content: "•";
   width: 8px;
   margin-right: 2px;
-}
-@media screen and (max-width: 767px) {
-  .modal .modal-login {
-    padding: 80px 0 0;
-  }
 }
 .modal .modal-aiagree {
   padding: 0 0 20px;
@@ -7676,6 +7691,9 @@ POPOVER POPUP
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.6);
   border: none;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .totalSearch .input-box input {
   padding-left: 48px;
@@ -7717,6 +7735,9 @@ POPOVER POPUP
 }
 .totalSearch .text-close {
   display: none;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
 }
 
 /***********
@@ -7833,7 +7854,7 @@ TOAST POPUP
             box-sizing: border-box;
   }
   .totalSearch .input-box {
-    width: 280px;
+    max-width: 280px;
     border-radius: 12px;
     background: #fff;
   }
@@ -7865,6 +7886,8 @@ TOAST POPUP
     font-weight: 500;
     color: #626A7A;
     width: 48px;
+    -ms-flex-preferred-size: 48px;
+        flex-basis: 48px;
   }
   .totalSearch:after {
     content: "";
@@ -8259,8 +8282,18 @@ TOAST POPUP
   .modal .modal-data-info .info-col-2 {
     grid-template-columns: repeat(1, 1fr);
   }
+  .modal .modal-login {
+    padding: 80px 0 0;
+  }
   .modal .modal-login .title {
+    font-size: 24px;
     text-align: left;
+  }
+  .modal .modal-login + .button-box-large {
+    padding: 0;
+  }
+  .modal .modal-aiagree .guide-text {
+    font-size: 14px;
   }
   .modal .modal-content-analysis-select .chip-box {
     display: grid;

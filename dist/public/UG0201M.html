@@ -36,10 +36,17 @@
 
 	<aside class="aside">
 	    <nav class="statebar">
-	        
-	        <a href="#" class="icon-mypage">마이페이지</a>
-	        <a href="#" class="icon-login">로그인</a>
-	        <a href="#" class="icon-logout">로그아웃</a><!-- [2025.09.11] 추가 -->
+	        <!-- [2025.09.18] 수정 -->
+	        <div class="statebar-menu">
+	            
+	            <a href="#" class="icon-logout">로그아웃</a><!-- 1024 미만 노출 -->
+	            <a href="#" class="icon-mypage">마이페이지</a>
+	            
+	        </div>
+	        <div class="statebar-login">
+	            <a href="#" class="txt-login">로그인</a>
+	        </div>
+	        <!-- //[2025.09.18] 수정 -->
 	        <!-- <div class="mypage-menu">
 	            <ul>
 	                <li><a href="#">마이페이지</a></li>
@@ -49,15 +56,16 @@
 	        </div> [2025.09.17] 위치이동 -->
 	        <a href="#" class="icon-menuclose">메뉴닫기</a>
 	    </nav>
-	    <!-- [2025.09.17] 위치이동 -->
+	    <!-- [2025.09.18] 위치이동/ 수정 -->
 	    <div class="mypage-menu">
 	        <ul>
-	            <li><a href="#">마이페이지</a></li>
-	            <li><a href="#">개인정보 수정</a></li>
+	            <li><a href="#" class="ext">마이페이지</a></li>
+	            <li><a href="#" class="ext">개인정보 수정</a></li>
 	            <li><a href="#">로그아웃</a></li>
 	        </ul>
 	    </div>
-	    <!-- //[2025.09.17] 위치이동 -->
+	    <!-- //[2025.09.18] 위치이동/ 수정 -->
+	    <nav>
 	    <!-- 통합검색 -->
 	    <div class="totalSearch" id="searchBox" style="display:none">
 	        <div class="input-box">
@@ -91,6 +99,7 @@
 	                <ul class="footer-menu">
 	                    <li><a href="#">회사소개</a></li>
 	                    <li><a href="#">이용약관</a></li>
+	                    <!-- <li><a href="#">AI서비스 안내</a></li> --><!-- [2025.09.18] 원복 -->
 	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
 	                </ul>
 	                <ul class="company-info">

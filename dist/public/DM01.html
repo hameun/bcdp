@@ -35,14 +35,20 @@
 
 	<aside class="aside">
 	    <nav class="statebar">
-	        
-	        <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
-	        <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
-	        <a href="#" class="icon-cart">장바구니<i class="my-item">+99</i></a><!-- MAIN & 로그인 --><!-- [2025.09.11] 추가 -->
-	        
-	        <a href="#" class="icon-mypage">마이페이지</a>
-	        <a href="#" class="icon-login">로그인</a>
-	        <a href="#" class="icon-logout">로그아웃</a><!-- [2025.09.11] 추가 -->
+	        <!-- [2025.09.18] 수정 -->
+	        <div class="statebar-menu">
+	            
+	            <a href="#" class="icon-logout">로그아웃</a><!-- 1024 미만 노출 -->
+	            <a href="#" class="icon-search">통합검색</a><!-- MAIN -->
+	            <a href="#" class="icon-mypage">마이페이지</a>
+	            <a href="#" class="icon-history">히스토리</a><!-- MAIN & 로그인 -->
+	            <a href="#" class="icon-cart">장바구니<i class="my-item">+99</i></a><!-- MAIN & 로그인 --><!-- [2025.09.11] 추가 -->
+	            
+	        </div>
+	        <div class="statebar-login">
+	            <a href="#" class="txt-login">로그인</a>
+	        </div>
+	        <!-- //[2025.09.18] 수정 -->
 	        <!-- <div class="mypage-menu">
 	            <ul>
 	                <li><a href="#">마이페이지</a></li>
@@ -52,15 +58,16 @@
 	        </div> [2025.09.17] 위치이동 -->
 	        <a href="#" class="icon-menuclose">메뉴닫기</a>
 	    </nav>
-	    <!-- [2025.09.17] 위치이동 -->
+	    <!-- [2025.09.18] 위치이동/ 수정 -->
 	    <div class="mypage-menu">
 	        <ul>
-	            <li><a href="#">마이페이지</a></li>
-	            <li><a href="#">개인정보 수정</a></li>
+	            <li><a href="#" class="ext">마이페이지</a></li>
+	            <li><a href="#" class="ext">개인정보 수정</a></li>
 	            <li><a href="#">로그아웃</a></li>
 	        </ul>
 	    </div>
-	    <!-- //[2025.09.17] 위치이동 -->
+	    <!-- //[2025.09.18] 위치이동/ 수정 -->
+	    <nav>
 	    <!-- 통합검색 -->
 	    <div class="totalSearch" id="searchBox" style="display:none">
 	        <div class="input-box">
@@ -84,9 +91,9 @@
 	        <!-- 메인 메뉴 -->
 	        <nav class="main-nav">
 	            <ul class="main-menu">
-	                <li class="is-current"><a href="#"><i class="icon-n-search"></i><i class="txt">AI검색</i></a></li><!-- 현재메뉴 .is-current -->
-	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트</i></a></li>
-	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오</i></a></li>
+	                <li class="is-current"><a href="#" ><i class="icon-n-search"></i><i class="txt">AI검색<span class="flag-beta">Beta</span></i></a></li><!-- [2025.09.18] 수정 -->
+	                <li><a href="#"><i class="icon-n-insight"></i><i class="txt">AI인사이트<span class="flag-beta">Beta</span></i></a></li><!-- [2025.09.18] 수정 -->
+	                <li><a href="#"><i class="icon-n-polio"></i><i class="txt">데이터폴리오<span class="flag-beta">Beta</span> </i></a></li><!-- [2025.09.18] 수정 -->
 	                <li><a href="#"><i class="icon-n-market"></i><i class="txt">데이터마켓</i></a></li>
 	            </ul>
 	            <ul class="guidance-menu">
@@ -99,6 +106,7 @@
 	                <ul class="footer-menu">
 	                    <li><a href="#">회사소개</a></li>
 	                    <li><a href="#">이용약관</a></li>
+	                    <!-- <li><a href="#">AI서비스 안내</a></li> --><!-- [2025.09.18] 원복 -->
 	                    <li><a href="#"><strong>개인정보처리방침</strong></a></li>
 	                </ul>
 	                <ul class="company-info">
@@ -177,7 +185,7 @@
 		                    <div class="data-card">
 		                        <!-- [2025.09.04] 데이터상품 수정 -->
 		                        <a href="#" class="item">
-		                            <p class="logo"><img src="../images/datamarket-logo-default.png" alt="로고 이미지"></p><!-- [2025.09.15] 로고 이미지 추가 -->
+		                            <p class="logo"><img src="../images/datamarket-logo-default.png" alt="로고 이미지"></p><!-- [2025.09.12] 로고 이미지 추가 -->
 		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
@@ -185,10 +193,9 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag blue">#사용목적</button>
-		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적 사용목적 사용목적</button>
 		                            </p>
 		                        </div>
 		                        <!-- //[2025.09.04] 데이터상품 수정 -->
@@ -198,7 +205,7 @@
 		                    <div class="data-card">
 		                        <!-- [2025.09.04] 데이터상품 수정 -->
 		                        <a href="#" class="item">
-		                            <p class="logo"><img src="../images/datamarket-logo-bccard.png" alt="로고 이미지"></p><!-- [2025.09.15] 로고 이미지 추가 -->
+		                            <p class="logo"><img src="../images/datamarket-logo-bccard.png" alt="로고 이미지"></p><!-- [2025.09.12] 로고 이미지 추가 -->
 		                            <p class="title">국내 오픈마켓 디지털가전(광학기기)</p>
 		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기)</p>
 		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
@@ -206,10 +213,9 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag blue">#사용목적</button>
-		                                <button type="button" class="tag blue">#사용목적</button>
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag red">#분야 사용목적 사용목적</button>
+		                                <button type="button" class="tag blue">#사용목적 사용목적 사용목적</button>
 		                            </p>
 		                        </div>
 		                        <p class="api"><a href="#">API</a></p>
@@ -220,7 +226,7 @@
 		                    <div class="data-card">
 		                        <!-- [2025.09.04] 데이터상품 수정 -->
 		                        <a href="#" class="item">
-		                            <p class="logo"><img src="../images/logo-jcb.png" alt="로고 이미지"></p><!-- [2025.09.15] 로고 이미지 추가 : dummy -->
+		                            <p class="logo"><img src="../images/logo-jcb.png" alt="로고 이미지"></p>
 		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="etc"><span class="partner">JCB</span><span class="date">2025.05.09</span></p>
@@ -228,8 +234,8 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                            </p>
@@ -241,7 +247,7 @@
 		                    <div class="data-card">
 		                        <!-- [2025.09.04] 데이터상품 수정 -->
 		                        <a href="#" class="item">
-		                            <p class="logo"><img src="../images/logo-visa.png" alt="로고 이미지"></p><!-- [2025.09.15] 로고 이미지 추가 : dummy -->
+		                            <p class="logo"><img src="../images/logo-visa.png" alt="로고 이미지"></p>
 		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="etc"><span class="partner">VISA</span><span class="date">2025.05.09</span></p>
@@ -249,8 +255,8 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                            </p>
@@ -262,7 +268,7 @@
 		                    <div class="data-card">
 		                        <!-- [2025.09.04] 데이터상품 수정 -->
 		                        <a href="#" class="item">
-		                            <p class="logo"><img src="../images/logo-unionpay.png" alt="로고 이미지"></p><!-- [2025.09.15] 로고 이미지 추가 : dummy -->
+		                            <p class="logo"><img src="../images/logo-unionpay.png" alt="로고 이미지"></p>
 		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="etc"><span class="partner">UnionPay</span><span class="date">2025.05.09</span></p>
@@ -270,8 +276,8 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                            </p>
@@ -284,7 +290,7 @@
 		                    <div class="data-card">
 		                        <!-- [2025.09.04] 데이터상품 수정 -->
 		                        <a href="#" class="item">
-		                            <p class="logo"><img src="../images/datamarket-logo-bccard.png" alt="로고 이미지"></p><!-- [2025.09.15] 로고 이미지 추가 -->
+		                            <p class="logo"><img src="../images/datamarket-logo-bccard.png" alt="로고 이미지"></p>
 		                            <p class="title">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="desc">국내 오픈마켓 디지털가전(광학기기) 분야 온라인스토어 판매 동향</p>
 		                            <p class="etc"><span class="partner">BC카드</span><span class="date">2025.05.09</span></p>
@@ -292,8 +298,8 @@
 		                        </a>
 		                        <div class="tag-list">
 		                            <p class="data-tag">
-		                                <button type="button" class="tag green">#분야</button>
-		                                <button type="button" class="tag green">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
+		                                <button type="button" class="tag red">#분야</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                                <button type="button" class="tag blue">#사용목적</button>
 		                            </p>
@@ -315,6 +321,7 @@
 		        <!-- // 퍼블리싱 확인 -->
 		    </div>
 		    <!-- //[데이터마켓] -->
+		    
 		</div>
     </main>
 </div>

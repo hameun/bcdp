@@ -20,7 +20,7 @@
 <!-- //미입력 삳태에서 검색버튼 선택시 -->
 
 <!-- 비로그인상태 -->
-<div class="pop-modal modal-hidden" id="modal2">
+<div class="pop-modal modal-hidden is-full" id="modal2"><!-- [2025.09.17] 수정 -->
     <div class="modal modal-medium" tabindex="0">
         <div class="modal-login">
             <p class="title">로그인하고<br class="is-mobile"> AI검색을 시작해보세요!</p>
@@ -481,7 +481,7 @@
 <div class="modal-test">
     <div class="button-box-xsmall">  
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal1');return false;">미입력 상태에서 검색버튼 선택시</a>
-        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal2',true);return false;">[비로그인상태 && 프롬프트 영역]</button>
+        <button type="button" class="button-p" onclick="fn_modalPopOpen('modal2');return false;">[비로그인상태 && 프롬프트 영역]</button>
         <button type="button" class="button-p" onclick="fn_modalPopOpen('modal3');return false;">[로그인상태 && 프롬프트 영역&&AI약관 미동의 회원]</button>
         <a href="#" class="button-q" onclick="fn_toast('AI 조건 자동 선택이 완료되었어요.',1);return false;">AI 자동선택 완료 토스트팝업</a>
         <a href="#" class="button-s" onclick="fn_modalPopOpen('modal4');return false;">[임시저장] 메뉴 이탈시</a>

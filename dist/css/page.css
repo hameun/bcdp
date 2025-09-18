@@ -3533,7 +3533,7 @@ page : page-polio
   border: 1px solid #E7E9EF;
   gap: 2px;
   opacity: 1;
-  padding: 5px 7px;
+  padding: 5px 9px;
   min-height: 20px;
   font-size: 14px;
   font-weight: 500;
@@ -3752,6 +3752,20 @@ page : page-polio
           box-sizing: border-box;
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M3%205.99995L5.99996%202H17.9998L20.9998%205.99995M3%205.99995V19.9998C3%2020.5302%203.21071%2021.0389%203.58578%2021.4139C3.96085%2021.789%204.46955%2021.9997%204.99997%2021.9997H18.9998C19.5302%2021.9997%2020.0389%2021.789%2020.414%2021.4139C20.789%2021.0389%2020.9998%2020.5302%2020.9998%2019.9998V5.99995M3%205.99995H20.9998M15.9998%209.99989C15.9998%2011.0607%2015.5784%2012.0781%2014.8283%2012.8283C14.0781%2013.5784%2013.0607%2013.9998%2011.9999%2013.9998C10.939%2013.9998%209.92162%2013.5784%209.17149%2012.8283C8.42135%2012.0781%207.99993%2011.0607%207.99993%209.99989%22%20stroke%3D%22%236361FC%22%20stroke-width%3D%221.79998%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
   background-size: 24px;
+}
+.page-polio .datapolio-bottom .flag-beta-txt {
+  display: none;
+}
+.page-polio .datapolio-bottom.is-beta .flag-beta-txt {
+  margin-top: 8px;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.page-polio .datapolio-bottom.is-beta .flag-beta-txt p {
+  font-size: 12px;
+  font-weight: 400;
+  color: #7A8394;
 }
 .page-polio .filter-reset {
   display: -webkit-inline-box;
@@ -7586,6 +7600,9 @@ MEDIA QUERY
   }
   .page-aisearch .aisearch-body .search-request .aisearch-slider-wrap {
     padding-bottom: 0;
+    padding: 40px;
+    margin: -40px;
+    overflow: hidden;
   }
   .page-aisearch .aisearch-body .search-request .aisearch-slider-wrap .swiper-pagination,
   .page-aisearch .aisearch-slider-wrap .control-box {
@@ -7617,7 +7634,7 @@ MEDIA QUERY
     grid-template-columns: repeat(1, 1fr);
   }
   .page-polio {
-    padding-bottom: 270px;
+    padding-bottom: 350px;
   }
   .page-polio .content-head-btn {
     -webkit-box-orient: vertical;
@@ -7720,7 +7737,7 @@ MEDIA QUERY
   .page-polio .datapolio-bottom .bottom-content {
     border-radius: 20px 20px 0 0;
     gap: 16px;
-    padding: 16px 20px 20px;
+    padding: 20px;
   }
   .page-polio .datapolio-bottom .bottom-content::before {
     border-radius: 20px 20px 0 0;
@@ -7775,6 +7792,9 @@ MEDIA QUERY
   }
   .page-polio .datapolio-bottom .filter-content .result-none {
     padding: 20px 0;
+  }
+  .page-polio .datapolio-bottom.is-beta .flag-beta-txt {
+    margin-top: -8px;
   }
   .page-polio .ipt-check-box {
     width: calc((100% - 8px) / 2);

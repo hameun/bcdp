@@ -335,9 +335,11 @@ function ui_navi(){
     if (mypageBtn) {
         mypageBtn.addEventListener('mouseover', function(){
             mypageMenu.classList.add('is-open');
+            $('.wrap').css({'z-index':10}); // ai 검색 데이터만들기 팝업 가려짐으로 임시 적용
         });
         mypageMenu.addEventListener('mouseleave', function(){
             mypageMenu.classList.remove('is-open');
+            $('.wrap').css({'z-index':1}); // ai 검색 데이터만들기 팝업 가려짐으로 임시 적용
         });
     }
 
@@ -354,10 +356,14 @@ function ui_navi(){
             historyModal.classList.add('modal-hidden');
         });
     }
+    modalHistory.addEventListener('mouseleave', function(){
+        historyModal.classList.add('modal-hidden');
+    });
     
     const aisearchBtn = document.querySelector('.pop-aiside-button');
     const aisideModal = document.getElementById('modalAiSide');
     if (aisearchBtn) {
+        $('.container').addClass('has-aiside')
         aisearchBtn.addEventListener('click', function(){
             fn_modalPopOpen('modalAiSide', true);
         });
